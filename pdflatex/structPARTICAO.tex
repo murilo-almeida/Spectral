@@ -1,0 +1,211 @@
+\hypertarget{structPARTICAO}{}\section{P\+A\+R\+T\+I\+C\+AO Struct Reference}
+\label{structPARTICAO}\index{P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}}
+
+
+{\ttfamily \#include $<$Particao.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structPARTICAO_a81e58f447b3c4971d69d2b2f72883241}{P\+A\+R\+T\+I\+C\+AO} ()
+\item 
+\hyperlink{structPARTICAO_a66ddff2bfc683b115de034fd56fd1457}{$\sim$\+P\+A\+R\+T\+I\+C\+AO} ()
+\item 
+void \hyperlink{structPARTICAO_aef22e80bae9b273f319d73b39931c713}{Aloca\+\_\+memoria} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structPARTICAO_a8465cb3d4cbe1aec08d4ed2901d7e9c3}{nele}
+\item 
+int \hyperlink{structPARTICAO_a8e5312eb634675d39d52fd2f999b66c4}{nbor}
+\item 
+int \hyperlink{structPARTICAO_a99fe0b2dd7b5315525d69831a5ef36c2}{ngho}
+\item 
+std\+::vector$<$ int $>$ \hyperlink{structPARTICAO_a1fac22569e19bcd3263740493f6ade13}{ele}
+\item 
+std\+::vector$<$ int $>$ \hyperlink{structPARTICAO_ac37aba358c6ada60310d8ebc054ffb5c}{bor}
+\item 
+std\+::vector$<$ int $>$ \hyperlink{structPARTICAO_ac90e9e5bcdfe5645bfa5ae8bb165669c}{gho}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{structPARTICAO}{P\+A\+R\+T\+I\+C\+AO} = Dados contendo vertices, elementos e bordas da particao
+
+
+\begin{DoxyParams}{Parameters}
+{\em nele} & = numero de elementos \\
+\hline
+{\em nbor} & = numero de bordas \\
+\hline
+{\em ngho} & = numero de elementos ghosts \\
+\hline
+{\em ele} & = arrray dos elementos \\
+\hline
+{\em bor} & = array das bordas \\
+\hline
+{\em gho} & = array dos elementos ghosts \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 14 of file Particao.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structPARTICAO_a81e58f447b3c4971d69d2b2f72883241}\label{structPARTICAO_a81e58f447b3c4971d69d2b2f72883241}} 
+\index{P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}!P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}}
+\index{P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}!P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}}
+\subsubsection{\texorpdfstring{P\+A\+R\+T\+I\+C\+A\+O()}{PARTICAO()}}
+{\footnotesize\ttfamily P\+A\+R\+T\+I\+C\+A\+O\+::\+P\+A\+R\+T\+I\+C\+AO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 18 of file Particao.\+h.
+
+\mbox{\Hypertarget{structPARTICAO_a66ddff2bfc683b115de034fd56fd1457}\label{structPARTICAO_a66ddff2bfc683b115de034fd56fd1457}} 
+\index{P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}!````~P\+A\+R\+T\+I\+C\+AO@{$\sim$\+P\+A\+R\+T\+I\+C\+AO}}
+\index{````~P\+A\+R\+T\+I\+C\+AO@{$\sim$\+P\+A\+R\+T\+I\+C\+AO}!P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}}
+\subsubsection{\texorpdfstring{$\sim$\+P\+A\+R\+T\+I\+C\+A\+O()}{~PARTICAO()}}
+{\footnotesize\ttfamily P\+A\+R\+T\+I\+C\+A\+O\+::$\sim$\+P\+A\+R\+T\+I\+C\+AO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19 of file Particao.\+h.
+
+
+
+References Aloca\+\_\+memoria().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{structPARTICAO_a66ddff2bfc683b115de034fd56fd1457_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structPARTICAO_aef22e80bae9b273f319d73b39931c713}\label{structPARTICAO_aef22e80bae9b273f319d73b39931c713}} 
+\index{P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}!Aloca\+\_\+memoria@{Aloca\+\_\+memoria}}
+\index{Aloca\+\_\+memoria@{Aloca\+\_\+memoria}!P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}}
+\subsubsection{\texorpdfstring{Aloca\+\_\+memoria()}{Aloca\_memoria()}}
+{\footnotesize\ttfamily void P\+A\+R\+T\+I\+C\+A\+O\+::\+Aloca\+\_\+memoria (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file Particao.\+cpp.
+
+
+
+References bor, ele, gho, nbor, nele, and ngho.
+
+
+
+Referenced by $\sim$\+P\+A\+R\+T\+I\+C\+A\+O().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{structPARTICAO_aef22e80bae9b273f319d73b39931c713_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structPARTICAO_ac37aba358c6ada60310d8ebc054ffb5c}\label{structPARTICAO_ac37aba358c6ada60310d8ebc054ffb5c}} 
+\index{P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}!bor@{bor}}
+\index{bor@{bor}!P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}}
+\subsubsection{\texorpdfstring{bor}{bor}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ P\+A\+R\+T\+I\+C\+A\+O\+::bor}
+
+
+
+Definition at line 23 of file Particao.\+h.
+
+
+
+Referenced by Aloca\+\_\+memoria().
+
+\mbox{\Hypertarget{structPARTICAO_a1fac22569e19bcd3263740493f6ade13}\label{structPARTICAO_a1fac22569e19bcd3263740493f6ade13}} 
+\index{P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}!ele@{ele}}
+\index{ele@{ele}!P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}}
+\subsubsection{\texorpdfstring{ele}{ele}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ P\+A\+R\+T\+I\+C\+A\+O\+::ele}
+
+
+
+Definition at line 22 of file Particao.\+h.
+
+
+
+Referenced by Aloca\+\_\+memoria().
+
+\mbox{\Hypertarget{structPARTICAO_ac90e9e5bcdfe5645bfa5ae8bb165669c}\label{structPARTICAO_ac90e9e5bcdfe5645bfa5ae8bb165669c}} 
+\index{P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}!gho@{gho}}
+\index{gho@{gho}!P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}}
+\subsubsection{\texorpdfstring{gho}{gho}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ P\+A\+R\+T\+I\+C\+A\+O\+::gho}
+
+
+
+Definition at line 24 of file Particao.\+h.
+
+
+
+Referenced by Aloca\+\_\+memoria().
+
+\mbox{\Hypertarget{structPARTICAO_a8e5312eb634675d39d52fd2f999b66c4}\label{structPARTICAO_a8e5312eb634675d39d52fd2f999b66c4}} 
+\index{P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}!nbor@{nbor}}
+\index{nbor@{nbor}!P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}}
+\subsubsection{\texorpdfstring{nbor}{nbor}}
+{\footnotesize\ttfamily int P\+A\+R\+T\+I\+C\+A\+O\+::nbor}
+
+
+
+Definition at line 21 of file Particao.\+h.
+
+
+
+Referenced by Aloca\+\_\+memoria(), and Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Particionar\+\_\+malha().
+
+\mbox{\Hypertarget{structPARTICAO_a8465cb3d4cbe1aec08d4ed2901d7e9c3}\label{structPARTICAO_a8465cb3d4cbe1aec08d4ed2901d7e9c3}} 
+\index{P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}!nele@{nele}}
+\index{nele@{nele}!P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}}
+\subsubsection{\texorpdfstring{nele}{nele}}
+{\footnotesize\ttfamily int P\+A\+R\+T\+I\+C\+A\+O\+::nele}
+
+
+
+Definition at line 21 of file Particao.\+h.
+
+
+
+Referenced by Aloca\+\_\+memoria(), and Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Particionar\+\_\+malha().
+
+\mbox{\Hypertarget{structPARTICAO_a99fe0b2dd7b5315525d69831a5ef36c2}\label{structPARTICAO_a99fe0b2dd7b5315525d69831a5ef36c2}} 
+\index{P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}!ngho@{ngho}}
+\index{ngho@{ngho}!P\+A\+R\+T\+I\+C\+AO@{P\+A\+R\+T\+I\+C\+AO}}
+\subsubsection{\texorpdfstring{ngho}{ngho}}
+{\footnotesize\ttfamily int P\+A\+R\+T\+I\+C\+A\+O\+::ngho}
+
+
+
+Definition at line 21 of file Particao.\+h.
+
+
+
+Referenced by Aloca\+\_\+memoria(), and Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Particionar\+\_\+malha().
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Particao_8h}{Particao.\+h}\item 
+\hyperlink{Particao_8cpp}{Particao.\+cpp}\end{DoxyCompactItemize}

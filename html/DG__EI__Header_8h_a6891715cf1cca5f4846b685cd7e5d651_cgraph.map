@@ -1,0 +1,7 @@
+<map id="for" name="for">
+<area shape="rect" id="node2" href="$classDG__Elem.html#ad288d45acae59787b21a35b38fe47b10" title="DG_Elem::Traco_Kgrad_pc" alt="" coords="93,5,238,32"/>
+<area shape="rect" id="node4" href="$classDG__Elem.html#a0109cc28854e31b5df555513e9fccfed" title="DG_Elem::Traco_Kgrad\l_phi_n" alt="" coords="101,57,230,98"/>
+<area shape="rect" id="node5" href="$classDG__Elem.html#ae98efe920078bc5fd18eceee997d44a2" title="DG_Elem::Traco_Kgrad_pw" alt="" coords="92,123,239,149"/>
+<area shape="rect" id="node6" href="$classDG__Elem.html#ae64a1118040aad9dd3c18ac68b2d5d4f" title="DG_Elem::Traco_Kgrad_sn" alt="" coords="93,173,238,200"/>
+<area shape="rect" id="node3" href="$classStdel.html#a457d20e34fb7a32eb1e4aca6c19f53a2" title="Stdel::qborder_val" alt="" coords="287,93,389,120"/>
+</map>

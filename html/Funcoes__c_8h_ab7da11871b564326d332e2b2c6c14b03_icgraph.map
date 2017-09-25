@@ -1,0 +1,23 @@
+<map id="Gauss_Jacobi_parameters" name="Gauss_Jacobi_parameters">
+<area shape="rect" id="node2" href="$classDG__Prob.html#a68cc239c50661a6856fe3f06b4cdc2c0" title="DG_Prob::DG_EI_flux" alt="" coords="215,63,335,90"/>
+<area shape="rect" id="node3" href="$classDG__Prob.html#a8241ca6884495f863179ea86129b055e" title="DG_Prob::DG_initial\l_conditions" alt="" coords="411,5,523,47"/>
+<area shape="rect" id="node7" href="$classQuadrilateral.html#a468bd309dfdd1efdb7e58eb795554f0d" title="Quadrilateral::elem\l_traces" alt="" coords="222,115,329,156"/>
+<area shape="rect" id="node8" href="$classHexahedral.html#a795f04a1d90b00114cc30a26355a6e9b" title="Hexahedral::elem_traces" alt="" coords="209,181,342,207"/>
+<area shape="rect" id="node9" href="$classTriangle.html#ad27047d488aa9454fb5dbce44493bc52" title="Triangle::elem_traces" alt="" coords="216,231,335,258"/>
+<area shape="rect" id="node10" href="$classQuadrilateral.html#a6d2aa65447f4ca5c0957aba5da287a7a" title="Quadrilateral::gauss\l_parameters_default" alt="" coords="219,283,332,324"/>
+<area shape="rect" id="node12" href="$classLinear.html#a7a27c4d5b5484419361a828ee0640d5d" title="Linear::gauss_parameters\l_default" alt="" coords="206,348,345,389"/>
+<area shape="rect" id="node14" href="$classHexahedral.html#a6c04539f29299a71e90ba1860adf702b" title="Hexahedral::gauss_parameters\l_default" alt="" coords="195,413,356,455"/>
+<area shape="rect" id="node16" href="$classTriangle.html#a37e1fe2af0b509986126c978e9dbbe76" title="Triangle::gauss_parameters\l_default" alt="" coords="202,479,349,520"/>
+<area shape="rect" id="node18" href="$classDG__Prob.html#a7933929b9873b4e40fc5152bd746dcf3" title="DG_Prob::Processa_condicoes\l_contorno" alt="" coords="195,544,356,585"/>
+<area shape="rect" id="node20" href="$classTriangle.html#a1361a3e5ff11ed02786bf62325a2614f" title="Triangle::trace" alt="" coords="233,610,318,637"/>
+<area shape="rect" id="node21" href="$classHexahedral.html#a19ff3c9bf760964284ee86ad06c795d6" title="Hexahedral::trace" alt="" coords="225,661,326,687"/>
+<area shape="rect" id="node22" href="$classQuadrilateral.html#aaa950602df5656278e6a36863666c0c4" title="Quadrilateral::trace" alt="" coords="222,711,329,738"/>
+<area shape="rect" id="node5" href="$classDG__Prob.html#afd8b8c1330587f232b2f1bd9f9cc8a38" title="DG_Prob::DG_imprimir\l_taxas_de_producao" alt="" coords="404,71,529,112"/>
+<area shape="rect" id="node4" href="$classDG__Prob.html#a015d792341ee05b1b3eaef7990bf1e06" title="DG_Prob::Driver" alt="" coords="744,46,840,73"/>
+<area shape="rect" id="node6" href="$classDG__Prob.html#ac4dfaa4ea6466833ecb5cc5c3fcb3875" title="DG_Prob::DG_Iterate" alt="" coords="577,71,696,98"/>
+<area shape="rect" id="node11" href="$classQuadrilateral.html#a369e691d1ae71d00f9474078d176f032" title="Quadrilateral::set" alt="" coords="417,290,516,317"/>
+<area shape="rect" id="node13" href="$classLinear.html#a5cd90cf088a548e3440c905c063d9d6f" title="Linear::set" alt="" coords="432,355,501,382"/>
+<area shape="rect" id="node15" href="$classHexahedral.html#aed81c3a2149b36e9bdc0dd67bc5f3bdc" title="Hexahedral::set" alt="" coords="421,421,513,447"/>
+<area shape="rect" id="node17" href="$classTriangle.html#a51d0da1119ccde5c695ea4da980bda8d" title="Triangle::set" alt="" coords="428,486,505,513"/>
+<area shape="rect" id="node19" href="$classDG__Prob.html#a43fca83a2395515cd1c0c3083463532d" title="DG_Prob::preamble" alt="" coords="411,551,522,578"/>
+</map>

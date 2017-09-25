@@ -1,0 +1,30 @@
+<map id="DG_Prob::DG_imprimir_taxas_de_producao" name="DG_Prob::DG_imprimir_taxas_de_producao">
+<area shape="rect" id="node2" href="$classDG__Prob.html#a68cc239c50661a6856fe3f06b4cdc2c0" title="DG_Prob::DG_EI_flux" alt="" coords="187,360,307,387"/>
+<area shape="rect" id="node20" href="$classDG__Elem.html#a84fab76e27b414367eb553f9d4841889" title="DG_Elem::VolumeTracos" alt="" coords="179,715,315,741"/>
+<area shape="rect" id="node3" href="$Funcoes__c_8h.html#ab7da11871b564326d332e2b2c6c14b03" title="Gauss_Jacobi_parameters" alt="" coords="365,107,507,133"/>
+<area shape="rect" id="node11" href="$classFluids.html#a01d25f71f5c00a566032c19bd63a473f" title="Fluids::Krn" alt="" coords="401,512,471,539"/>
+<area shape="rect" id="node12" href="$classFluids.html#abaa29b5611ffefe8f2171692ffd62d38" title="Fluids::Krw" alt="" coords="400,563,472,589"/>
+<area shape="rect" id="node13" href="$classStdel.html#a383df930bee8dc298d7d412b3b632ebb" title="Stdel::ndim_val" alt="" coords="391,309,481,336"/>
+<area shape="rect" id="node14" href="$classStdel.html#a457d20e34fb7a32eb1e4aca6c19f53a2" title="Stdel::qborder_val" alt="" coords="557,233,660,260"/>
+<area shape="rect" id="node15" href="$classFluids.html#a426336b6a2fe1d6eb97b2af958d0b5e6" title="Fluids::show_mun" alt="" coords="385,411,487,437"/>
+<area shape="rect" id="node16" href="$classFluids.html#ad465f29caf6e368ebaa7662156482c9b" title="Fluids::show_muw" alt="" coords="384,461,488,488"/>
+<area shape="rect" id="node17" href="$classPhElem.html#a227c31195c6832f8e36f8d507806bd54" title="PhElem::show_ptr_stdel" alt="" coords="371,360,501,387"/>
+<area shape="rect" id="node18" href="$classDG__Elem.html#ad288d45acae59787b21a35b38fe47b10" title="DG_Elem::Traco_Kgrad_pc" alt="" coords="363,208,509,235"/>
+<area shape="rect" id="node19" href="$classDG__Elem.html#ae98efe920078bc5fd18eceee997d44a2" title="DG_Elem::Traco_Kgrad_pw" alt="" coords="363,259,509,285"/>
+<area shape="rect" id="node4" href="$ASPFunctions_8cpp.html#ad2b054769d09e23f58c382461a33fda5" title="Jacobi_P" alt="" coords="714,132,777,159"/>
+<area shape="rect" id="node5" href="$ASPFunctions_8cpp.html#a36e194a1b28057104e85e101e96dad23" title="Jacobi_roots" alt="" coords="569,107,648,133"/>
+<area shape="rect" id="node6" href="$ASPFunctions_8cpp.html#af2ec04a3aa3462cb36aa0a564d022914" title="my_gamma" alt="" coords="571,56,646,83"/>
+<area shape="rect" id="node7" href="$ASPFunctions_8cpp.html#ac3f705ccfdcb247014c373929aa4b358" title="gamma_log" alt="" coords="708,56,783,83"/>
+<area shape="rect" id="node8" href="$ASPFunctions_8cpp.html#adbb9227db329a95b79f56bc1bc599a36" title="d_epsilon" alt="" coords="831,5,896,32"/>
+<area shape="rect" id="node9" href="$Funcoes__c_8h.html#a06a315d5c541c5118010c5dd958cec0c" title="p1" alt="" coords="844,56,883,83"/>
+<area shape="rect" id="node10" href="$Funcoes__c_8h.html#a66ec9f5cd02b067ff05c1f11fe152748" title="p2" alt="" coords="844,107,883,133"/>
+<area shape="rect" id="node21" href="$classFluids.html#a860c3c2af6dae8c158a78770dfc76ce8" title="Fluids::d2pc" alt="" coords="398,664,474,691"/>
+<area shape="rect" id="node22" href="$classFluids.html#a66c100be378f015b8bbe47a0e0c176c1" title="Fluids::dkrn" alt="" coords="399,715,473,741"/>
+<area shape="rect" id="node23" href="$classFluids.html#abd769e3a9081140ed4fc7d877c6672d4" title="Fluids::dkrw" alt="" coords="398,765,474,792"/>
+<area shape="rect" id="node24" href="$classFluids.html#aa332e363bb05e9c5559386000241d66f" title="Fluids::dpc" alt="" coords="401,816,471,843"/>
+<area shape="rect" id="node25" href="$classStdel.html#aac725224c4c3433228ca6841fe7aba49" title="Stdel::evalGQ" alt="" coords="394,917,478,944"/>
+<area shape="rect" id="node26" href="$classStdel.html#af3e65d1ad0d59ded925a3f5a9d0fb100" title="Stdel::Gradiente" alt="" coords="389,968,483,995"/>
+<area shape="rect" id="node27" href="$classStdel.html#a2f964819235e0a55fd60733518b592f2" title="Stdel::NGQP_val" alt="" coords="387,1019,485,1045"/>
+<area shape="rect" id="node28" href="$classFluids.html#a26c1a1fba1aa34becddfbc4fb07692dd" title="Fluids::pressao_capilar" alt="" coords="373,1069,499,1096"/>
+<area shape="rect" id="node29" href="$classStdel.html#aeb2fe03bbd8af61e503e29d3dd5ae4f0" title="Stdel::trace" alt="" coords="400,613,472,640"/>
+</map>

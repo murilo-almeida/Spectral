@@ -1,0 +1,2587 @@
+\hypertarget{classHexahedral}{}\section{Hexahedral Class Reference}
+\label{classHexahedral}\index{Hexahedral@{Hexahedral}}
+
+
+{\ttfamily \#include $<$Hexahedral.\+h$>$}
+
+
+
+Inheritance diagram for Hexahedral\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=135pt]{classHexahedral__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Hexahedral\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=135pt]{classHexahedral__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHexahedral_accce80b563e28b4f372419b510c5f122}{Hexahedral} (int=3, int=4)
+\item 
+\hyperlink{classHexahedral_a5dd55bffa5429ce058c3a4db675a55ac}{$\sim$\+Hexahedral} ()
+\item 
+void \hyperlink{classHexahedral_af30ff09b60c553acabb51c5aa27d8d22}{print} (F\+I\+LE $\ast$)
+\item 
+void \hyperlink{classHexahedral_a0090804316dd33890d611b294cc2df91}{make\+\_\+local\+\_\+matrices} ()
+\item 
+void \hyperlink{classHexahedral_a2bf67c9399982ead12bd08efaf90dc3c}{make\+\_\+gbnmap} (int \hyperlink{DG__EI__Header_8h_a5f7b79d1f60dd1c85e99108c66052098}{n0}, int n1, int n2, int n3, int ng0, int ng1, int ng2, int ng3, int sign0, int sign1, int sign2, int sgn3, int map\mbox{[}$\,$\mbox{]}, int sgn\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classHexahedral_a6debdf2dd1221b9e039b29cae8a4e517}{superficie\+\_\+externa} (const int Vert\+\_\+map\mbox{[}$\,$\mbox{]}, const int \&num\+\_\+local, double \&area, double normal\mbox{[}3\mbox{]})
+\item 
+void \hyperlink{classHexahedral_a9692307cd160489de6e8467863938dae}{local\+Face\+Mode\+Map} (const int fnum, int lmap\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classHexahedral_aed81c3a2149b36e9bdc0dd67bc5f3bdc}{set} (int \hyperlink{classStdel_a05cbb3f2a3fa0bc04a74e347dc6574cf}{P}, int \hyperlink{classStdel_a82074e598ad5af5ec45a3257a3c2b684}{Q})
+\item 
+virtual void \hyperlink{classHexahedral_aa12d6d2abce9f0c7f6065e907be71201}{Jacobian} (const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]}, double $\ast$JV)
+\item 
+virtual double \hyperlink{classHexahedral_a8a25a3772962f7cb6d2f8c6b6871c0d1}{mass} (int, int, const double \mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classHexahedral_a062fb995d31193f800fbf12ff7f19571}{printtofile} (F\+I\+LE $\ast$fout, const double u\mbox{[}$\,$\mbox{]}, double($\ast$)(double, double, double), const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classHexahedral_a50af1e899b7b2642cbe7a2291e949ad3}{printtofile} (F\+I\+LE $\ast$fout, const double u\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classHexahedral_ae32d2d1e79c93e4346fcf0b4483ae218}{print\+G\+Qtofile} (F\+I\+LE $\ast$fout, const double ftemp\mbox{[}$\,$\mbox{]}, const double ftemp1\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classHexahedral_a49c5ff368a7d79790d94eef711cb8537}{printw\+G\+Qtofile} (F\+I\+LE $\ast$fout, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]}, const double JV\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classHexahedral_a55f51d6ec6006bde842a4f72260fbdba}{compute\+Vertice} (double f\+\_\+vert\mbox{[}$\,$\mbox{]}, const double u\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classHexahedral_a49a57b40396ae96449b3a2aa765b1e8b}{compute\+At\+Points} (const int npoints, const double Loc\+Coord\mbox{[}$\,$\mbox{]}, const double u\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]}, double f\mbox{[}$\,$\mbox{]}, double Glo\+Coord\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classHexahedral_a56081550e866c3e12d0705da7d7908bf}{eval\+GQ} (double f0\mbox{[}$\,$\mbox{]}, double f1\mbox{[}$\,$\mbox{]}, const double u0\mbox{[}$\,$\mbox{]}, const double u1\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classHexahedral_a57cb0909590d8f68c7ea9106e4218127}{eval\+GQ} (double f0\mbox{[}$\,$\mbox{]}, const double u0\mbox{[}$\,$\mbox{]}, const int NF=1, const int nvar=0)
+\item 
+virtual void \hyperlink{classHexahedral_ae26647440a5b8a60d0f7075435acfe44}{eval\+\_\+\+Phi} (const int \hyperlink{DG__EI__Header_8h_a742204794ea328ba293fe59cec79b990}{m}, double Phi\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classHexahedral_a74909a28bef5ee2b4de02d571061fed8}{eval\+\_\+\+Grad\+Phi} (const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]}, const int \hyperlink{DG__EI__Header_8h_a742204794ea328ba293fe59cec79b990}{m}, double $\ast$$\ast$der)
+\item 
+virtual void \hyperlink{classHexahedral_a95829c691aa24fd293bdeeb60826f729}{Gradiente} (F\+I\+LE $\ast$fout, double $\ast$grad\mbox{[}$\,$\mbox{]}, double($\ast$func)(double, double, double), const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classHexahedral_a244f208541f6a22826ff5265445ff4d7}{Gradiente} (F\+I\+LE $\ast$fout, double $\ast$grad\mbox{[}$\,$\mbox{]}, const double fvec\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classHexahedral_ad675fb552d1b36518636aaa3f93f7969}{Gradiente} (double $\ast$grad\mbox{[}$\,$\mbox{]}, const double fvec\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classHexahedral_a53c693b47166842fd72c51750c68297d}{print\+\_\+nome} (F\+I\+LE $\ast$)
+\item 
+virtual void \hyperlink{classHexahedral_a86088799f63b981f6a350397d10e2efa}{Dirichlet} (const int \hyperlink{classHexahedral_a195b8018b7e8b6d1366b1937803051e1}{aresta}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int vert\+\_\+map\mbox{[}$\,$\mbox{]}, const int nmap\mbox{[}$\,$\mbox{]}, const int sgn\mbox{[}$\,$\mbox{]}, int bflag\mbox{[}$\,$\mbox{]}, double Xbc\mbox{[}$\,$\mbox{]}, double($\ast$f)(double, double, double))
+\item 
+virtual void \hyperlink{classHexahedral_adc767ec026a292f3d434e825779bf51a}{teste} (int \&)
+\item 
+virtual void \hyperlink{classHexahedral_a19ff3c9bf760964284ee86ad06c795d6}{trace} (const int lado, const int \hyperlink{classStdel_a82074e598ad5af5ec45a3257a3c2b684}{Q}, const int sinal, const double $\ast$valores, double $\ast$saida)
+\item 
+virtual void \hyperlink{classHexahedral_a016d039e52e05f96f2db7ed13e78bcdc}{compute\+Func\+GQ} (double f\+\_\+\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]}, double($\ast$func)(double, double, double))
+\item 
+virtual void \hyperlink{classHexahedral_a22d3f788ce0bdf8209c800282868b8c1}{vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv} (double vec\mbox{[}$\,$\mbox{]}, const double func\mbox{[}$\,$\mbox{]}, const double JV\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classHexahedral_acbbaec7da99759f1d6df6587a9825c22}{vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv} (double vec\mbox{[}$\,$\mbox{]}, double($\ast$func)(double, double, double), const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]}, const double JV\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classHexahedral_a795f04a1d90b00114cc30a26355a6e9b}{elem\+\_\+traces} (const \hyperlink{structVertice}{Vertice} ptvert\mbox{[}$\,$\mbox{]}, const int Vert\+\_\+map\mbox{[}$\,$\mbox{]}, const int sinal\mbox{[}$\,$\mbox{]}, double $\ast$$\ast$$\ast$TP, double $\ast$$\ast$$\ast$$\ast$T\+GP, double $\ast$Jb)
+\item 
+virtual const int \hyperlink{classHexahedral_a75bd23113c34de6bef3bcee8957f8f99}{aresta\+\_\+lvert} (const int \&i, const int \&j) const
+\item 
+virtual const int \hyperlink{classHexahedral_aacb21d16b3f2d28f29ae0b9b5cf3fbf2}{face\+\_\+lvert} (const int \&i, const int \&j) const
+\item 
+virtual const int \hyperlink{classHexahedral_a92b12c1e273117e9cc481e3a7204d90a}{show\+\_\+nvf} (const int \&i) const
+\item 
+virtual const int \hyperlink{classHexahedral_a178069c54d64ffb98dba409cd5080ede}{show\+\_\+face\+\_\+tipo} (const int \&i) const
+\item 
+virtual const int \hyperlink{classHexahedral_a370ec08c7979d9bcca581ee5b4759285}{show\+\_\+fd0} (const int \&i) const
+\item 
+virtual const int \hyperlink{classHexahedral_aba5fb014249bf374e52bcfbfa9576288}{show\+\_\+fd1} (const int \&i) const
+\item 
+virtual const int \hyperlink{classHexahedral_a5eadccb0e54a1852c01a1f90a3a2bfd9}{show\+\_\+fv2} (const int \&i) const
+\item 
+virtual const int \hyperlink{classHexahedral_a3a21196cfe9b317868868985f33aa425}{show\+\_\+ind\+\_\+mode} (const int \&i, const int \&j=0, const int \&k=0) const
+\item 
+virtual void \hyperlink{classHexahedral_a0ba51c2cf3ee2718366e6699fe20aaf4}{superficie\+\_\+externa} (const int Vert\+\_\+map\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int \&num\+\_\+local, double \&area, double normal\mbox{[}3\mbox{]})
+\item 
+int \hyperlink{classStdel_a56288a857b95a55c8b7eb5b473e836d9}{show\+\_\+vtk\+\_\+type} () const
+\item 
+void \hyperlink{classStdel_a54b5768d09f500cb949e66fc234eac70}{print\+Stdel} () const
+\item 
+int \hyperlink{classStdel_a75023fc369db2752845a9ce278f10929}{tipo\+\_\+val} () const
+\item 
+int \hyperlink{classStdel_a383df930bee8dc298d7d412b3b632ebb}{ndim\+\_\+val} () const
+\item 
+int \hyperlink{classStdel_a457d20e34fb7a32eb1e4aca6c19f53a2}{qborder\+\_\+val} () const
+\item 
+int \hyperlink{classStdel_aac8e97661e46c48fafa91f13caa03a9f}{nborder\+\_\+val} () const
+\item 
+int \hyperlink{classStdel_a2f964819235e0a55fd60733518b592f2}{N\+G\+Q\+P\+\_\+val} () const
+\item 
+int \hyperlink{classStdel_ae2ab461d1bc8d9f6006665fe03684845}{nv\+\_\+val} () const
+\item 
+int \hyperlink{classStdel_aa45f211663f5e8e47fdea32232ff23ea}{ne\+\_\+val} () const
+\item 
+int \hyperlink{classStdel_a2eed3ce0b73050e868989be78d918e5c}{nf\+\_\+val} () const
+\item 
+int \hyperlink{classStdel_a6086dceed8fe3dd410da0d6b84f02377}{nn\+\_\+val} () const
+\item 
+int \hyperlink{classStdel_a4fb0a049dc27d8e67665a56d1b5a18ba}{nb\+\_\+val} () const
+\item 
+int \hyperlink{classStdel_a701c7d5595d4f6632333c4202898983b}{P\+\_\+val} (int i) const
+\item 
+int \hyperlink{classStdel_aeea4659f5bcabbf1acb374180c43a293}{Q\+\_\+val} (int i) const
+\item 
+int \hyperlink{classStdel_a0775d0c4f7f15ae26bd45fc949e6f6b9}{gqt\+\_\+val} (int i) const
+\item 
+double \hyperlink{classStdel_a6565c36150823a1f52a2daf05806f7a4}{show\+\_\+\+Phi\+\_\+val} (const int i, const int j) const
+\item 
+double \hyperlink{classStdel_a4860f0f650640f859c5f75c206ee1f60}{show\+\_\+\+Mb\+\_\+comp} (int, int) const
+\item 
+double \hyperlink{classStdel_a11bf2897170ada9a9dd8f641a39585e5}{show\+\_\+\+Mi\+\_\+inv} (int, int) const
+\item 
+double \hyperlink{classStdel_a44d5aa234e02fb41afd5a4e5e45fadc4}{show\+\_\+\+Mc\+Mi\+\_\+inv} (int, int) const
+\item 
+void \hyperlink{classStdel_a319e6a16011b22e12028a841b7686f03}{print\+\_\+matrices} (F\+I\+LE $\ast$)
+\item 
+void \hyperlink{classStdel_a20afd536025caf1aad1c4e3f41fcb866}{show\+\_\+ind} (int i, int \&p, int \&q, int \&r)
+\item 
+void \hyperlink{classStdel_a922b779be1f8f12b7a5535ab529bff64}{duplicar\+\_\+mass\+\_\+matrix} (int Nfields)
+\item 
+int \hyperlink{classStdel_a395c8d7d7890a9efdea23932fa22b420}{w\+\_\+vec} (double saida\mbox{[}$\,$\mbox{]})
+\item 
+int \hyperlink{classStdel_ad474ffc52b051ae8317b3fdb583c4c98}{show\+\_\+emapv} (int i) const
+\item 
+int \hyperlink{classStdel_aca7fb885191a952c013e930521a42213}{show\+\_\+emapi} (int i) const
+\item 
+int \hyperlink{classStdel_ac8787dabfb1d767b89e39806522c1161}{show\+\_\+bmapv} (int i) const
+\item 
+int \hyperlink{classStdel_ad3a0646ad7ec2567e46da36285dee331}{show\+\_\+bmapi} (int i) const
+\item 
+const int \hyperlink{classStdel_abb022f0ad81707e11e3a3091d2d87c46}{is\+\_\+on\+\_\+border} (int \hyperlink{DG__EI__Header_8h_a742204794ea328ba293fe59cec79b990}{m}, int \hyperlink{DG__EI__Header_8h_ab1ff01ebd410ddf016a3c7bbe9d98944}{e}, int \&\hyperlink{DG__EI__Header_8h_a1910d262855b71da353ed0d07a6c7823}{pos}) const
+\item 
+void \hyperlink{classStdel_a9a0c69dca7564f6ca4aa4f3c9864ea01}{print\+\_\+border\+\_\+map} (F\+I\+LE $\ast$fout)
+\item 
+virtual void \hyperlink{classStdel_af3e65d1ad0d59ded925a3f5a9d0fb100}{Gradiente} (F\+I\+LE $\ast$fout, double $\ast$$\ast$grad, double($\ast$func)(double, double, double), const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]})=0
+\item 
+virtual void \hyperlink{classStdel_abf44e457d99e8c559c14cb1f7423da12}{Gradiente} (F\+I\+LE $\ast$fout, double $\ast$$\ast$grad, const double fvec\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]})=0
+\item 
+virtual void \hyperlink{classStdel_aec200dfb0b00bebf70a1d845675eeafd}{Gradiente} (double $\ast$$\ast$grad, const double fvec\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]})=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classStdel_a68f8781a42728758ccde39e15cd319ed}{tipo}
+\begin{DoxyCompactList}\small\item\em type of the element \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_a912f36b591d847eed2531a3b3a51a520}{ndim}
+\begin{DoxyCompactList}\small\item\em number of geometrical dimension \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_a20c0e35541cab4a1f07974659ae7a9ad}{nv}
+\begin{DoxyCompactList}\small\item\em number of vertices \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_aef3d1b34184b9fd03c0b655640c243b6}{ne}
+\begin{DoxyCompactList}\small\item\em number of edges \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_a61987080026986a40412a8937aad4b24}{nf}
+\begin{DoxyCompactList}\small\item\em number of faces \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_ad0f111a2ba3d9415618c8408da3fc100}{nborder}
+\begin{DoxyCompactList}\small\item\em number of borders \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_a63a106b928d211c71d5fec6449ef4d51}{qborder}
+\begin{DoxyCompactList}\small\item\em number of Gauss quadrature points on the faces (borders) \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_a55624584790a08437c03540489d04898}{vtk\+\_\+type}
+\begin{DoxyCompactList}\small\item\em number of element for vtk file \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_af4d02765d362e2f0469633ff78734f89}{nn}
+\begin{DoxyCompactList}\small\item\em number of modes (and/or modes) \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_ad1d9acc38335d3fd779ba5c14f1507f8}{nb}
+\begin{DoxyCompactList}\small\item\em number of boundary (shared) modes (or modes) \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_a05cbb3f2a3fa0bc04a74e347dc6574cf}{P} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em (number of modes -\/ 1) in each direction \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_a82074e598ad5af5ec45a3257a3c2b684}{Q} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em number of Gauss Quadrature points in direction i \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_aa3cff31280606cd3eb95af770dd6f5b4}{N\+G\+QP}
+\begin{DoxyCompactList}\small\item\em total number of Gauss Quadrature points \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_afc321b60cb9b577b71794e346196c07a}{gqt} \mbox{[}3\mbox{]}
+\item 
+double \hyperlink{classStdel_adedcb4d4faa12adf348054780a3b2c1a}{x\+GQ} \mbox{[}3\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}
+\item 
+double \hyperlink{classStdel_af99d72cbda49c30e23e83705c95a1c5b}{w\+GQ} \mbox{[}3\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}
+\item 
+\hyperlink{classMode}{Mode} \hyperlink{classStdel_a7a09cf048f14496813a914ca6afe7366}{mode\+\_\+} \mbox{[}\hyperlink{MyOptions_8h_aa75ccd382acf88cec3e9c8025c1f88b7}{M\+A\+X\+M\+O\+D\+ES}\mbox{]}
+\begin{DoxyCompactList}\small\item\em mode\+\_\+\mbox{[}m(ijk)\mbox{]}= number of the expansion function into the local \end{DoxyCompactList}\item 
+double \hyperlink{classStdel_a61f02fa483b00cb98ff5c8d951068211}{D} \mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}\mbox{[}3\mbox{]}
+\item 
+double \hyperlink{classStdel_ab7849f154bd766857aac9557c19f7f84}{Phi\+\_\+val} \mbox{[}\hyperlink{MyOptions_8h_aa75ccd382acf88cec3e9c8025c1f88b7}{M\+A\+X\+M\+O\+D\+ES}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ} $\ast$\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Contem os vetores Phi nos pontos de quadratura. \end{DoxyCompactList}\item 
+double \hyperlink{classStdel_aa1627cb39fa5da75764809412159c825}{Mb\+\_\+comp} \mbox{[}\hyperlink{MyOptions_8h_aed8828a63ec0a2a0461b7c9ed39dd648}{M\+A\+X\+N\+BL}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_aed8828a63ec0a2a0461b7c9ed39dd648}{M\+A\+X\+N\+BL}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Matriz de massa compacta de Schur. \end{DoxyCompactList}\item 
+double \hyperlink{classStdel_a53a9490d5a02a96473d96848bac3711a}{Mi\+\_\+inv} \mbox{[}\hyperlink{MyOptions_8h_a463cdf068fb6289d1f81dac7e0f76ab5}{M\+A\+X\+N\+IL}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_a463cdf068fb6289d1f81dac7e0f76ab5}{M\+A\+X\+N\+IL}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Matriz de massa inversa dos modos internos de Schur. \end{DoxyCompactList}\item 
+double \hyperlink{classStdel_acc685141e80bcce9703e37f32cc5c42c}{Mc\+Mi\+\_\+inv} \mbox{[}\hyperlink{MyOptions_8h_aed8828a63ec0a2a0461b7c9ed39dd648}{M\+A\+X\+N\+BL}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_a463cdf068fb6289d1f81dac7e0f76ab5}{M\+A\+X\+N\+IL}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Matriz de massa inversa dos modos compacta de Schur. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{classStdel_a39326d0ef108403223402c79b424a41b}{emapv} = nullptr
+\begin{DoxyCompactList}\small\item\em edge\+\_\+map\+\_\+valores \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{classStdel_a9ba8eb743aeb36984b7c4ececa837e16}{emapi} = nullptr
+\begin{DoxyCompactList}\small\item\em edge\+\_\+map\+\_\+inicio \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{classStdel_ac3cd818c98aa400279f28c22c8e0abaa}{bmapv} = nullptr
+\begin{DoxyCompactList}\small\item\em border\+\_\+map\+\_\+valores \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{classStdel_a8b082d27e5c3cab7ad2045b464af0fd9}{bmapi} = nullptr
+\begin{DoxyCompactList}\small\item\em border\+\_\+map\+\_\+inicio \end{DoxyCompactList}\item 
+double $\ast$ \hyperlink{classStdel_a80a6c89c61bfef1160257e97b3ffb0a2}{D\+\_\+\+Phi\+\_\+val} = nullptr
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classHexahedral_ad35eabd52192c877cc6198b14405b614}{make\+\_\+mass\+\_\+matrices} (int nfields)
+\item 
+virtual void \hyperlink{classHexahedral_a5e18ffc000cd95595f652d67ce21eeac}{printtoarray} (const double u\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]}, double x\mbox{[}$\,$\mbox{]}, double y\mbox{[}$\,$\mbox{]}, double z\mbox{[}$\,$\mbox{]}, double ftemp\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classHexahedral_a6c04539f29299a71e90ba1860adf702b}{gauss\+\_\+parameters\+\_\+default} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{classHexahedral_a195b8018b7e8b6d1366b1937803051e1}{aresta} \mbox{[}12\mbox{]}\mbox{[}2\mbox{]}
+\item 
+const int \hyperlink{classHexahedral_a94a89e53e7dd2f1d490205e97a2a82d8}{face\+\_\+tipo} \mbox{[}6\mbox{]} = \{3,3,3,3,3,3\}
+\item 
+const int \hyperlink{classHexahedral_a2ee5b71919dfc0b878e5282bb86909f9}{nvf} \mbox{[}6\mbox{]} = \{4,4,4,4,4,4\}
+\item 
+const int \hyperlink{classHexahedral_a65cf7e5570801bd2fa3c5c35b263fbf2}{face} \mbox{[}6\mbox{]}\mbox{[}4\mbox{]}
+\item 
+const int \hyperlink{classHexahedral_a39fe746c1ec3283acf9748af64a6252c}{fd0} \mbox{[}6\mbox{]} = \{0,0,1,1,0,0\}
+\item 
+const int \hyperlink{classHexahedral_a9f60ba5d3fbfabfad6fb34516ed3b685}{fd1} \mbox{[}6\mbox{]} = \{1,2,2,2,2,1\}
+\item 
+const int \hyperlink{classHexahedral_a7aeb094f58a7932918fe74fa4ebc66ec}{fv2} \mbox{[}6\mbox{]} = \{0,0,0,1,1,1\}
+\item 
+const int \hyperlink{classHexahedral_a20e8fb8b0d5bbe0b16676290f82324cf}{sinal\+\_\+normal} \mbox{[}6\mbox{]} = \{-\/1,1,-\/1,1,-\/1,1\}
+\item 
+int $\ast$$\ast$$\ast$ \hyperlink{classHexahedral_ab4a2ad7d8c0e9509f8eb0ef64bc44d4c}{ind\+\_\+mode\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file Hexahedral.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHexahedral_accce80b563e28b4f372419b510c5f122}\label{classHexahedral_accce80b563e28b4f372419b510c5f122}} 
+\index{Hexahedral@{Hexahedral}!Hexahedral@{Hexahedral}}
+\index{Hexahedral@{Hexahedral}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{Hexahedral()}{Hexahedral()}}
+{\footnotesize\ttfamily Hexahedral\+::\+Hexahedral (\begin{DoxyParamCaption}\item[{int}]{p0 = {\ttfamily 3},  }\item[{int}]{q0 = {\ttfamily 4} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file Hexahedral.\+cpp.
+
+
+
+References Stdel\+::emapi, Stdel\+::emapv, Stdel\+::nborder, Stdel\+::ndim, Stdel\+::ne, Stdel\+::nf, Stdel\+::nv, Stdel\+::tipo, and Stdel\+::vtk\+\_\+type.
+
+\mbox{\Hypertarget{classHexahedral_a5dd55bffa5429ce058c3a4db675a55ac}\label{classHexahedral_a5dd55bffa5429ce058c3a4db675a55ac}} 
+\index{Hexahedral@{Hexahedral}!````~Hexahedral@{$\sim$\+Hexahedral}}
+\index{````~Hexahedral@{$\sim$\+Hexahedral}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{$\sim$\+Hexahedral()}{~Hexahedral()}}
+{\footnotesize\ttfamily Hexahedral\+::$\sim$\+Hexahedral (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 23 of file Hexahedral.\+cpp.
+
+
+
+References Stdel\+::\+D\+\_\+\+Phi\+\_\+val, Stdel\+::emapi, Stdel\+::emapv, ind\+\_\+mode\+\_\+, and Stdel\+::P.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classHexahedral_a75bd23113c34de6bef3bcee8957f8f99}\label{classHexahedral_a75bd23113c34de6bef3bcee8957f8f99}} 
+\index{Hexahedral@{Hexahedral}!aresta\+\_\+lvert@{aresta\+\_\+lvert}}
+\index{aresta\+\_\+lvert@{aresta\+\_\+lvert}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{aresta\+\_\+lvert()}{aresta\_lvert()}}
+{\footnotesize\ttfamily const int Hexahedral\+::aresta\+\_\+lvert (\begin{DoxyParamCaption}\item[{const int \&}]{i,  }\item[{const int \&}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a69b8ef7def7891fcb2d5d8fd9b75bdc8}{Stdel}.
+
+
+
+Definition at line 2062 of file Hexahedral.\+cpp.
+
+
+
+References aresta.
+
+\mbox{\Hypertarget{classHexahedral_a49a57b40396ae96449b3a2aa765b1e8b}\label{classHexahedral_a49a57b40396ae96449b3a2aa765b1e8b}} 
+\index{Hexahedral@{Hexahedral}!compute\+At\+Points@{compute\+At\+Points}}
+\index{compute\+At\+Points@{compute\+At\+Points}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{compute\+At\+Points()}{computeAtPoints()}}
+{\footnotesize\ttfamily void Hexahedral\+::compute\+At\+Points (\begin{DoxyParamCaption}\item[{const int}]{npoints,  }\item[{const double}]{Loc\+Coord\mbox{[}$\,$\mbox{]},  }\item[{const double}]{u\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]},  }\item[{double}]{f\mbox{[}$\,$\mbox{]},  }\item[{double}]{Glo\+Coord\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a03e038055d238608efce470629863c36}{Stdel}.
+
+
+
+Definition at line 960 of file Hexahedral.\+cpp.
+
+
+
+References aux, Stdel\+::mode\+\_\+, Stdel\+::nn, Stdel\+::P, Mode\+::p\+\_\+val(), Psia(), Mode\+::q\+\_\+val(), Vertice\+::x, Vertice\+::y, and Vertice\+::z.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHexahedral_a49a57b40396ae96449b3a2aa765b1e8b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_a016d039e52e05f96f2db7ed13e78bcdc}\label{classHexahedral_a016d039e52e05f96f2db7ed13e78bcdc}} 
+\index{Hexahedral@{Hexahedral}!compute\+Func\+GQ@{compute\+Func\+GQ}}
+\index{compute\+Func\+GQ@{compute\+Func\+GQ}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{compute\+Func\+G\+Q()}{computeFuncGQ()}}
+{\footnotesize\ttfamily void Hexahedral\+::compute\+Func\+GQ (\begin{DoxyParamCaption}\item[{double}]{f\+\_\+\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]},  }\item[{double($\ast$)(double, double, double)}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a59195ad1ce9b90ef83fd935698dc3305}{Stdel}.
+
+
+
+Definition at line 1018 of file Hexahedral.\+cpp.
+
+
+
+References a, aux, aux1, aux2, Stdel\+::Q, Vertice\+::x, Stdel\+::x\+GQ, Vertice\+::y, and Vertice\+::z.
+
+\mbox{\Hypertarget{classHexahedral_a55f51d6ec6006bde842a4f72260fbdba}\label{classHexahedral_a55f51d6ec6006bde842a4f72260fbdba}} 
+\index{Hexahedral@{Hexahedral}!compute\+Vertice@{compute\+Vertice}}
+\index{compute\+Vertice@{compute\+Vertice}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{compute\+Vertice()}{computeVertice()}}
+{\footnotesize\ttfamily void Hexahedral\+::compute\+Vertice (\begin{DoxyParamCaption}\item[{double}]{f\+\_\+vert\mbox{[}$\,$\mbox{]},  }\item[{const double}]{u\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a74eed41f670878759c84e2014b4a2cd5}{Stdel}.
+
+
+
+Definition at line 909 of file Hexahedral.\+cpp.
+
+
+
+References aux, Stdel\+::mode\+\_\+, Stdel\+::nn, Stdel\+::P, Mode\+::p\+\_\+val(), Psia(), and Mode\+::q\+\_\+val().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHexahedral_a55f51d6ec6006bde842a4f72260fbdba_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_a86088799f63b981f6a350397d10e2efa}\label{classHexahedral_a86088799f63b981f6a350397d10e2efa}} 
+\index{Hexahedral@{Hexahedral}!Dirichlet@{Dirichlet}}
+\index{Dirichlet@{Dirichlet}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{Dirichlet()}{Dirichlet()}}
+{\footnotesize\ttfamily void Hexahedral\+::\+Dirichlet (\begin{DoxyParamCaption}\item[{const int}]{aresta,  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{vert\+\_\+map\mbox{[}$\,$\mbox{]},  }\item[{const int}]{nmap\mbox{[}$\,$\mbox{]},  }\item[{const int}]{sgn\mbox{[}$\,$\mbox{]},  }\item[{int}]{bflag\mbox{[}$\,$\mbox{]},  }\item[{double}]{Xbc\mbox{[}$\,$\mbox{]},  }\item[{double($\ast$)(double, double, double)}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a92e13b000249ba73b35407d925cbd7a8}{Stdel}.
+
+
+
+Definition at line 1544 of file Hexahedral.\+cpp.
+
+
+
+References face, fd0, Ph\+Elem$<$ Num\+Variaveis $>$\+::finaliza\+\_\+vetores(), Ph\+Elem$<$ Num\+Variaveis $>$\+::inicia\+\_\+gbnmap(), Ph\+Elem$<$ Num\+Variaveis $>$\+::inicia\+\_\+vetores(), local\+Face\+Mode\+Map(), M\+A\+X\+M\+O\+D\+ES, Stdel\+::nn\+\_\+val(), Stdel\+::P, Ph\+Elem$<$ Num\+Variaveis $>$\+::projetar\+\_\+\+C0(), Stdel\+::Q, Ph\+Elem$<$ Num\+Variaveis $>$\+::set\+\_\+ptr\+\_\+stdel(), Ph\+Elem$<$ Num\+Variaveis $>$\+::set\+\_\+ptvert(), Ph\+Elem$<$ Num\+Variaveis $>$\+::set\+\_\+type(), Ph\+Elem$<$ Num\+Variaveis $>$\+::set\+\_\+\+Vert\+\_\+map(), and Ph\+Elem$<$ Num\+Variaveis $>$\+::show\+\_\+u().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHexahedral_a86088799f63b981f6a350397d10e2efa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a922b779be1f8f12b7a5535ab529bff64}\label{classStdel_a922b779be1f8f12b7a5535ab529bff64}} 
+\index{Hexahedral@{Hexahedral}!duplicar\+\_\+mass\+\_\+matrix@{duplicar\+\_\+mass\+\_\+matrix}}
+\index{duplicar\+\_\+mass\+\_\+matrix@{duplicar\+\_\+mass\+\_\+matrix}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{duplicar\+\_\+mass\+\_\+matrix()}{duplicar\_mass\_matrix()}}
+{\footnotesize\ttfamily void Stdel\+::duplicar\+\_\+mass\+\_\+matrix (\begin{DoxyParamCaption}\item[{int}]{Nfields }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 117 of file Stdel.\+cpp.
+
+
+
+References a, Stdel\+::\+Mb\+\_\+comp, Stdel\+::\+Mc\+Mi\+\_\+inv, Stdel\+::\+Mi\+\_\+inv, Stdel\+::nb, Stdel\+::nn, Stdel\+::show\+\_\+\+Mb\+\_\+comp(), Stdel\+::show\+\_\+\+Mc\+Mi\+\_\+inv(), and Stdel\+::show\+\_\+\+Mi\+\_\+inv().
+
+
+
+Referenced by Stdel\+::show\+\_\+\+Phi\+\_\+val().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{classStdel_a922b779be1f8f12b7a5535ab529bff64_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a922b779be1f8f12b7a5535ab529bff64_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_a795f04a1d90b00114cc30a26355a6e9b}\label{classHexahedral_a795f04a1d90b00114cc30a26355a6e9b}} 
+\index{Hexahedral@{Hexahedral}!elem\+\_\+traces@{elem\+\_\+traces}}
+\index{elem\+\_\+traces@{elem\+\_\+traces}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{elem\+\_\+traces()}{elem\_traces()}}
+{\footnotesize\ttfamily void Hexahedral\+::elem\+\_\+traces (\begin{DoxyParamCaption}\item[{const \hyperlink{structVertice}{Vertice}}]{ptvert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{Vert\+\_\+map\mbox{[}$\,$\mbox{]},  }\item[{const int}]{sinal\mbox{[}$\,$\mbox{]},  }\item[{double $\ast$$\ast$$\ast$}]{TP,  }\item[{double $\ast$$\ast$$\ast$$\ast$}]{T\+GP,  }\item[{double $\ast$}]{Jb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a3d72869352a2ff5eeb23972eca3b391e}{Stdel}.
+
+
+
+Definition at line 1863 of file Hexahedral.\+cpp.
+
+
+
+References aux1, aux2, D\+Psia(), Dtemp, Gauss\+\_\+\+Jacobi\+\_\+parameters(), m, M\+A\+XQ, Stdel\+::mode\+\_\+, Stdel\+::nborder, Stdel\+::nn, Stdel\+::P, Mode\+::p\+\_\+val(), Psia(), Mode\+::q\+\_\+val(), Stdel\+::qborder, Vertice\+::x, and Vertice\+::y.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHexahedral_a795f04a1d90b00114cc30a26355a6e9b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_a74909a28bef5ee2b4de02d571061fed8}\label{classHexahedral_a74909a28bef5ee2b4de02d571061fed8}} 
+\index{Hexahedral@{Hexahedral}!eval\+\_\+\+Grad\+Phi@{eval\+\_\+\+Grad\+Phi}}
+\index{eval\+\_\+\+Grad\+Phi@{eval\+\_\+\+Grad\+Phi}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{eval\+\_\+\+Grad\+Phi()}{eval\_GradPhi()}}
+{\footnotesize\ttfamily void Hexahedral\+::eval\+\_\+\+Grad\+Phi (\begin{DoxyParamCaption}\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]},  }\item[{const int}]{m,  }\item[{double $\ast$$\ast$}]{der }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a83a7a53e4be6da7c3a615967e4504b07}{Stdel}.
+
+
+
+Definition at line 1108 of file Hexahedral.\+cpp.
+
+
+
+References aux1, aux2, D\+Psia(), m, Stdel\+::mode\+\_\+, Stdel\+::P, Mode\+::p\+\_\+val(), Psia(), Stdel\+::Q, Mode\+::q\+\_\+val(), Vertice\+::x, Stdel\+::x\+GQ, and Vertice\+::y.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHexahedral_a74909a28bef5ee2b4de02d571061fed8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_ae26647440a5b8a60d0f7075435acfe44}\label{classHexahedral_ae26647440a5b8a60d0f7075435acfe44}} 
+\index{Hexahedral@{Hexahedral}!eval\+\_\+\+Phi@{eval\+\_\+\+Phi}}
+\index{eval\+\_\+\+Phi@{eval\+\_\+\+Phi}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{eval\+\_\+\+Phi()}{eval\_Phi()}}
+{\footnotesize\ttfamily void Hexahedral\+::eval\+\_\+\+Phi (\begin{DoxyParamCaption}\item[{const int}]{m,  }\item[{double}]{Phi\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a2aa6ea12ceaa1fa4a7f63909ce41bc0b}{Stdel}.
+
+
+
+Definition at line 1101 of file Hexahedral.\+cpp.
+
+
+
+References Stdel\+::\+Phi\+\_\+val, and Stdel\+::Q.
+
+\mbox{\Hypertarget{classHexahedral_a56081550e866c3e12d0705da7d7908bf}\label{classHexahedral_a56081550e866c3e12d0705da7d7908bf}} 
+\index{Hexahedral@{Hexahedral}!eval\+GQ@{eval\+GQ}}
+\index{eval\+GQ@{eval\+GQ}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{eval\+G\+Q()}{evalGQ()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Hexahedral\+::eval\+GQ (\begin{DoxyParamCaption}\item[{double}]{f0\mbox{[}$\,$\mbox{]},  }\item[{double}]{f1\mbox{[}$\,$\mbox{]},  }\item[{const double}]{u0\mbox{[}$\,$\mbox{]},  }\item[{const double}]{u1\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_aac725224c4c3433228ca6841fe7aba49}{Stdel}.
+
+
+
+Definition at line 808 of file Hexahedral.\+cpp.
+
+
+
+References a, aux1, Stdel\+::P, Psia(), Stdel\+::Q, and Stdel\+::x\+GQ.
+
+
+
+Referenced by printtoarray(), and printtofile().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{classHexahedral_a56081550e866c3e12d0705da7d7908bf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{classHexahedral_a56081550e866c3e12d0705da7d7908bf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_a57cb0909590d8f68c7ea9106e4218127}\label{classHexahedral_a57cb0909590d8f68c7ea9106e4218127}} 
+\index{Hexahedral@{Hexahedral}!eval\+GQ@{eval\+GQ}}
+\index{eval\+GQ@{eval\+GQ}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{eval\+G\+Q()}{evalGQ()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Hexahedral\+::eval\+GQ (\begin{DoxyParamCaption}\item[{double}]{f0\mbox{[}$\,$\mbox{]},  }\item[{const double}]{u0\mbox{[}$\,$\mbox{]},  }\item[{const int}]{NF = {\ttfamily 1},  }\item[{const int}]{nvar = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_ae144597c3199b1757a5fbbc255e17baa}{Stdel}.
+
+
+
+Definition at line 754 of file Hexahedral.\+cpp.
+
+
+
+References aux, ind\+\_\+mode\+\_\+, Stdel\+::P, Psia(), Stdel\+::Q, and Stdel\+::x\+GQ.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{classHexahedral_a57cb0909590d8f68c7ea9106e4218127_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_aacb21d16b3f2d28f29ae0b9b5cf3fbf2}\label{classHexahedral_aacb21d16b3f2d28f29ae0b9b5cf3fbf2}} 
+\index{Hexahedral@{Hexahedral}!face\+\_\+lvert@{face\+\_\+lvert}}
+\index{face\+\_\+lvert@{face\+\_\+lvert}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{face\+\_\+lvert()}{face\_lvert()}}
+{\footnotesize\ttfamily const int Hexahedral\+::face\+\_\+lvert (\begin{DoxyParamCaption}\item[{const int \&}]{i,  }\item[{const int \&}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a0df3b2fe6d87c6d0067d07ac2a2d3a32}{Stdel}.
+
+
+
+Definition at line 2063 of file Hexahedral.\+cpp.
+
+
+
+References face.
+
+\mbox{\Hypertarget{classHexahedral_a6c04539f29299a71e90ba1860adf702b}\label{classHexahedral_a6c04539f29299a71e90ba1860adf702b}} 
+\index{Hexahedral@{Hexahedral}!gauss\+\_\+parameters\+\_\+default@{gauss\+\_\+parameters\+\_\+default}}
+\index{gauss\+\_\+parameters\+\_\+default@{gauss\+\_\+parameters\+\_\+default}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{gauss\+\_\+parameters\+\_\+default()}{gauss\_parameters\_default()}}
+{\footnotesize\ttfamily void Hexahedral\+::gauss\+\_\+parameters\+\_\+default (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 424 of file Hexahedral.\+cpp.
+
+
+
+References Stdel\+::D, Dtemp, Gauss\+\_\+\+Jacobi\+\_\+parameters(), Gauss\+\_\+\+Lobatto\+\_\+\+Jacobi\+\_\+parameters(), Gauss\+\_\+\+Radau\+\_\+\+Jacobi\+\_\+parameters(), Stdel\+::gqt, M\+A\+XQ, Stdel\+::ndim, Stdel\+::Q, Stdel\+::w\+GQ, and Stdel\+::x\+GQ.
+
+
+
+Referenced by set().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHexahedral_a6c04539f29299a71e90ba1860adf702b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{classHexahedral_a6c04539f29299a71e90ba1860adf702b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a0775d0c4f7f15ae26bd45fc949e6f6b9}\label{classStdel_a0775d0c4f7f15ae26bd45fc949e6f6b9}} 
+\index{Hexahedral@{Hexahedral}!gqt\+\_\+val@{gqt\+\_\+val}}
+\index{gqt\+\_\+val@{gqt\+\_\+val}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{gqt\+\_\+val()}{gqt\_val()}}
+{\footnotesize\ttfamily int Stdel\+::gqt\+\_\+val (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 25 of file Stdel.\+h.
+
+
+
+References Stdel\+::gqt.
+
+\mbox{\Hypertarget{classHexahedral_a95829c691aa24fd293bdeeb60826f729}\label{classHexahedral_a95829c691aa24fd293bdeeb60826f729}} 
+\index{Hexahedral@{Hexahedral}!Gradiente@{Gradiente}}
+\index{Gradiente@{Gradiente}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{Gradiente()}{Gradiente()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void Hexahedral\+::\+Gradiente (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{double $\ast$}]{grad\mbox{[}$\,$\mbox{]},  }\item[{double($\ast$)(double, double, double)}]{func,  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 1494 of file Hexahedral.\+cpp.
+
+
+
+References m, M\+A\+XQ, Stdel\+::Q, Vertice\+::x, Stdel\+::x\+GQ, and Vertice\+::y.
+
+
+
+Referenced by Gradiente().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classHexahedral_a95829c691aa24fd293bdeeb60826f729_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_a244f208541f6a22826ff5265445ff4d7}\label{classHexahedral_a244f208541f6a22826ff5265445ff4d7}} 
+\index{Hexahedral@{Hexahedral}!Gradiente@{Gradiente}}
+\index{Gradiente@{Gradiente}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{Gradiente()}{Gradiente()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void Hexahedral\+::\+Gradiente (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{double $\ast$}]{grad\mbox{[}$\,$\mbox{]},  }\item[{const double}]{fvec\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 1440 of file Hexahedral.\+cpp.
+
+
+
+References g(), Gradiente(), m, Stdel\+::Q, Vertice\+::x, Stdel\+::x\+GQ, Vertice\+::y, and Vertice\+::z.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classHexahedral_a244f208541f6a22826ff5265445ff4d7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_ad675fb552d1b36518636aaa3f93f7969}\label{classHexahedral_ad675fb552d1b36518636aaa3f93f7969}} 
+\index{Hexahedral@{Hexahedral}!Gradiente@{Gradiente}}
+\index{Gradiente@{Gradiente}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{Gradiente()}{Gradiente()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void Hexahedral\+::\+Gradiente (\begin{DoxyParamCaption}\item[{double $\ast$}]{grad\mbox{[}$\,$\mbox{]},  }\item[{const double}]{fvec\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 1359 of file Hexahedral.\+cpp.
+
+
+
+References aux1, Stdel\+::D, m, M\+A\+XQ, Stdel\+::Q, Vertice\+::x, Stdel\+::x\+GQ, and Vertice\+::y.
+
+\mbox{\Hypertarget{classStdel_af3e65d1ad0d59ded925a3f5a9d0fb100}\label{classStdel_af3e65d1ad0d59ded925a3f5a9d0fb100}} 
+\index{Hexahedral@{Hexahedral}!Gradiente@{Gradiente}}
+\index{Gradiente@{Gradiente}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{Gradiente()}{Gradiente()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily virtual void Stdel\+::\+Gradiente (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{double $\ast$$\ast$}]{grad,  }\item[{double($\ast$)(double, double, double)}]{func,  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+
+
+Referenced by Ph\+Elem$<$ 2 $>$\+::check\+\_\+gradiente(), D\+G\+\_\+\+Elem\+::inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), D\+G\+\_\+\+Elem\+::inicia\+\_\+tracos(), Stdel\+::print\+\_\+border\+\_\+map(), Ph\+Elem$<$ 2 $>$\+::teste\+\_\+gradiente(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_af3e65d1ad0d59ded925a3f5a9d0fb100_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_abf44e457d99e8c559c14cb1f7423da12}\label{classStdel_abf44e457d99e8c559c14cb1f7423da12}} 
+\index{Hexahedral@{Hexahedral}!Gradiente@{Gradiente}}
+\index{Gradiente@{Gradiente}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{Gradiente()}{Gradiente()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily virtual void Stdel\+::\+Gradiente (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{double $\ast$$\ast$}]{grad,  }\item[{const double}]{fvec\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classStdel_aec200dfb0b00bebf70a1d845675eeafd}\label{classStdel_aec200dfb0b00bebf70a1d845675eeafd}} 
+\index{Hexahedral@{Hexahedral}!Gradiente@{Gradiente}}
+\index{Gradiente@{Gradiente}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{Gradiente()}{Gradiente()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily virtual void Stdel\+::\+Gradiente (\begin{DoxyParamCaption}\item[{double $\ast$$\ast$}]{grad,  }\item[{const double}]{fvec\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classStdel_abb022f0ad81707e11e3a3091d2d87c46}\label{classStdel_abb022f0ad81707e11e3a3091d2d87c46}} 
+\index{Hexahedral@{Hexahedral}!is\+\_\+on\+\_\+border@{is\+\_\+on\+\_\+border}}
+\index{is\+\_\+on\+\_\+border@{is\+\_\+on\+\_\+border}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{is\+\_\+on\+\_\+border()}{is\_on\_border()}}
+{\footnotesize\ttfamily const int Stdel\+::is\+\_\+on\+\_\+border (\begin{DoxyParamCaption}\item[{int}]{m,  }\item[{int}]{e,  }\item[{int \&}]{pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 42 of file Stdel.\+h.
+
+
+
+References aux, Stdel\+::emapi, and Stdel\+::emapv.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), and D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_abb022f0ad81707e11e3a3091d2d87c46_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_aa12d6d2abce9f0c7f6065e907be71201}\label{classHexahedral_aa12d6d2abce9f0c7f6065e907be71201}} 
+\index{Hexahedral@{Hexahedral}!Jacobian@{Jacobian}}
+\index{Jacobian@{Jacobian}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{Jacobian()}{Jacobian()}}
+{\footnotesize\ttfamily void Hexahedral\+::\+Jacobian (\begin{DoxyParamCaption}\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]},  }\item[{double $\ast$}]{JV }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a953ff994c1bb423245aff079932c648f}{Stdel}.
+
+
+
+Definition at line 1292 of file Hexahedral.\+cpp.
+
+
+
+References a, aux, aux1, m, Stdel\+::Q, Vertice\+::x, Stdel\+::x\+GQ, Vertice\+::y, and Vertice\+::z.
+
+\mbox{\Hypertarget{classHexahedral_a9692307cd160489de6e8467863938dae}\label{classHexahedral_a9692307cd160489de6e8467863938dae}} 
+\index{Hexahedral@{Hexahedral}!local\+Face\+Mode\+Map@{local\+Face\+Mode\+Map}}
+\index{local\+Face\+Mode\+Map@{local\+Face\+Mode\+Map}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{local\+Face\+Mode\+Map()}{localFaceModeMap()}}
+{\footnotesize\ttfamily void Hexahedral\+::local\+Face\+Mode\+Map (\begin{DoxyParamCaption}\item[{const int}]{fnum,  }\item[{int}]{lmap\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2100 of file Hexahedral.\+cpp.
+
+
+
+References a, fd0, fd1, fv2, ind\+\_\+mode\+\_\+, Stdel\+::mode\+\_\+, Stdel\+::P, and Mode\+::print().
+
+
+
+Referenced by Dirichlet().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{classHexahedral_a9692307cd160489de6e8467863938dae_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{classHexahedral_a9692307cd160489de6e8467863938dae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_a2bf67c9399982ead12bd08efaf90dc3c}\label{classHexahedral_a2bf67c9399982ead12bd08efaf90dc3c}} 
+\index{Hexahedral@{Hexahedral}!make\+\_\+gbnmap@{make\+\_\+gbnmap}}
+\index{make\+\_\+gbnmap@{make\+\_\+gbnmap}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{make\+\_\+gbnmap()}{make\_gbnmap()}}
+{\footnotesize\ttfamily void Hexahedral\+::make\+\_\+gbnmap (\begin{DoxyParamCaption}\item[{int}]{n0,  }\item[{int}]{n1,  }\item[{int}]{n2,  }\item[{int}]{n3,  }\item[{int}]{ng0,  }\item[{int}]{ng1,  }\item[{int}]{ng2,  }\item[{int}]{ng3,  }\item[{int}]{sign0,  }\item[{int}]{sign1,  }\item[{int}]{sign2,  }\item[{int}]{sgn3,  }\item[{int}]{map\mbox{[}$\,$\mbox{]},  }\item[{int}]{sgn\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHexahedral_a0090804316dd33890d611b294cc2df91}\label{classHexahedral_a0090804316dd33890d611b294cc2df91}} 
+\index{Hexahedral@{Hexahedral}!make\+\_\+local\+\_\+matrices@{make\+\_\+local\+\_\+matrices}}
+\index{make\+\_\+local\+\_\+matrices@{make\+\_\+local\+\_\+matrices}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{make\+\_\+local\+\_\+matrices()}{make\_local\_matrices()}}
+{\footnotesize\ttfamily void Hexahedral\+::make\+\_\+local\+\_\+matrices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 296 of file Hexahedral.\+cpp.
+
+
+
+References aux, aux1, Stdel\+::\+Mb\+\_\+comp, Stdel\+::\+Mc\+Mi\+\_\+inv, Stdel\+::\+Mi\+\_\+inv, Stdel\+::mode\+\_\+, Stdel\+::nb, Stdel\+::nn, Stdel\+::P, p1(), p2(), Mode\+::p\+\_\+val(), Psia(), Stdel\+::Q, Mode\+::q\+\_\+val(), Mode\+::r\+\_\+val(), Stdel\+::w\+GQ, and Stdel\+::x\+GQ.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHexahedral_a0090804316dd33890d611b294cc2df91_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_ad35eabd52192c877cc6198b14405b614}\label{classHexahedral_ad35eabd52192c877cc6198b14405b614}} 
+\index{Hexahedral@{Hexahedral}!make\+\_\+mass\+\_\+matrices@{make\+\_\+mass\+\_\+matrices}}
+\index{make\+\_\+mass\+\_\+matrices@{make\+\_\+mass\+\_\+matrices}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{make\+\_\+mass\+\_\+matrices()}{make\_mass\_matrices()}}
+{\footnotesize\ttfamily void Hexahedral\+::make\+\_\+mass\+\_\+matrices (\begin{DoxyParamCaption}\item[{int}]{nfields }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 403 of file Hexahedral.\+cpp.
+
+\mbox{\Hypertarget{classHexahedral_a8a25a3772962f7cb6d2f8c6b6871c0d1}\label{classHexahedral_a8a25a3772962f7cb6d2f8c6b6871c0d1}} 
+\index{Hexahedral@{Hexahedral}!mass@{mass}}
+\index{mass@{mass}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{mass()}{mass()}}
+{\footnotesize\ttfamily double Hexahedral\+::mass (\begin{DoxyParamCaption}\item[{int}]{m1,  }\item[{int}]{m2,  }\item[{const double}]{JV\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_ab475cc8bc82a3b8a5200d4d841ef0a51}{Stdel}.
+
+
+
+Definition at line 254 of file Hexahedral.\+cpp.
+
+
+
+References aux, aux1, Stdel\+::mode\+\_\+, Stdel\+::P, p1(), p2(), Mode\+::p\+\_\+val(), Psia(), Stdel\+::Q, Mode\+::q\+\_\+val(), Mode\+::r\+\_\+val(), Stdel\+::w\+GQ, and Stdel\+::x\+GQ.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classHexahedral_a8a25a3772962f7cb6d2f8c6b6871c0d1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a4fb0a049dc27d8e67665a56d1b5a18ba}\label{classStdel_a4fb0a049dc27d8e67665a56d1b5a18ba}} 
+\index{Hexahedral@{Hexahedral}!nb\+\_\+val@{nb\+\_\+val}}
+\index{nb\+\_\+val@{nb\+\_\+val}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{nb\+\_\+val()}{nb\_val()}}
+{\footnotesize\ttfamily int Stdel\+::nb\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 22 of file Stdel.\+h.
+
+
+
+References Stdel\+::nb.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+eco(), Ph\+Elem$<$ 2 $>$\+::set\+\_\+ptr\+\_\+stdel(), Ph\+Elem$<$ 2 $>$\+::set\+\_\+ptr\+\_\+stdel\+\_\+var(), and E\+D\+\_\+\+Prob\+::\+Solve\+Elast2\+D\+\_\+dyn().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a4fb0a049dc27d8e67665a56d1b5a18ba_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_aac8e97661e46c48fafa91f13caa03a9f}\label{classStdel_aac8e97661e46c48fafa91f13caa03a9f}} 
+\index{Hexahedral@{Hexahedral}!nborder\+\_\+val@{nborder\+\_\+val}}
+\index{nborder\+\_\+val@{nborder\+\_\+val}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{nborder\+\_\+val()}{nborder\_val()}}
+{\footnotesize\ttfamily int Stdel\+::nborder\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 16 of file Stdel.\+h.
+
+
+
+References Stdel\+::nborder.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+eco(), E\+D\+\_\+\+Prob\+::preamble(), D\+G\+\_\+\+Prob\+::preamble(), and Ph\+Elem$<$ 2 $>$\+::\+Processar\+\_\+dados().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_aac8e97661e46c48fafa91f13caa03a9f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a383df930bee8dc298d7d412b3b632ebb}\label{classStdel_a383df930bee8dc298d7d412b3b632ebb}} 
+\index{Hexahedral@{Hexahedral}!ndim\+\_\+val@{ndim\+\_\+val}}
+\index{ndim\+\_\+val@{ndim\+\_\+val}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{ndim\+\_\+val()}{ndim\_val()}}
+{\footnotesize\ttfamily int Stdel\+::ndim\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 14 of file Stdel.\+h.
+
+
+
+References Stdel\+::ndim.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions(), and Ph\+Elem$<$ 2 $>$\+::\+Processar\+\_\+dados().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a383df930bee8dc298d7d412b3b632ebb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_aa45f211663f5e8e47fdea32232ff23ea}\label{classStdel_aa45f211663f5e8e47fdea32232ff23ea}} 
+\index{Hexahedral@{Hexahedral}!ne\+\_\+val@{ne\+\_\+val}}
+\index{ne\+\_\+val@{ne\+\_\+val}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{ne\+\_\+val()}{ne\_val()}}
+{\footnotesize\ttfamily int Stdel\+::ne\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 19 of file Stdel.\+h.
+
+
+
+References Stdel\+::ne.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+eco(), and Ph\+Elem$<$ 2 $>$\+::\+Processar\+\_\+dados().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_aa45f211663f5e8e47fdea32232ff23ea_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a2eed3ce0b73050e868989be78d918e5c}\label{classStdel_a2eed3ce0b73050e868989be78d918e5c}} 
+\index{Hexahedral@{Hexahedral}!nf\+\_\+val@{nf\+\_\+val}}
+\index{nf\+\_\+val@{nf\+\_\+val}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{nf\+\_\+val()}{nf\_val()}}
+{\footnotesize\ttfamily int Stdel\+::nf\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 20 of file Stdel.\+h.
+
+
+
+References Stdel\+::nf.
+
+
+
+Referenced by Ph\+Elem$<$ 2 $>$\+::\+Processar\+\_\+dados().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classStdel_a2eed3ce0b73050e868989be78d918e5c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a2f964819235e0a55fd60733518b592f2}\label{classStdel_a2f964819235e0a55fd60733518b592f2}} 
+\index{Hexahedral@{Hexahedral}!N\+G\+Q\+P\+\_\+val@{N\+G\+Q\+P\+\_\+val}}
+\index{N\+G\+Q\+P\+\_\+val@{N\+G\+Q\+P\+\_\+val}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{N\+G\+Q\+P\+\_\+val()}{NGQP\_val()}}
+{\footnotesize\ttfamily int Stdel\+::\+N\+G\+Q\+P\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 17 of file Stdel.\+h.
+
+
+
+References Stdel\+::\+N\+G\+QP.
+
+
+
+Referenced by Ph\+Elem$<$ 2 $>$\+::check\+\_\+gradiente(), Ph\+Elem$<$ 2 $>$\+::compute\+\_\+\+J\+V(), D\+G\+\_\+\+Elem\+::echo\+\_\+traco(), D\+G\+\_\+\+Elem\+::inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), D\+G\+\_\+\+Elem\+::inicia\+\_\+tracos(), D\+G\+\_\+\+Elem\+::inicia\+\_\+vetores(), print(), Ph\+Elem$<$ 2 $>$\+::projetar\+\_\+\+C0(), Ph\+Elem$<$ 2 $>$\+::teste\+\_\+gradiente(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+T(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a2f964819235e0a55fd60733518b592f2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a6086dceed8fe3dd410da0d6b84f02377}\label{classStdel_a6086dceed8fe3dd410da0d6b84f02377}} 
+\index{Hexahedral@{Hexahedral}!nn\+\_\+val@{nn\+\_\+val}}
+\index{nn\+\_\+val@{nn\+\_\+val}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{nn\+\_\+val()}{nn\_val()}}
+{\footnotesize\ttfamily int Stdel\+::nn\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 21 of file Stdel.\+h.
+
+
+
+References Stdel\+::nn.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+eco(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Epetra\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Epetra\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Epetra\+\_\+\+Outflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions(), Tetrahedral\+::\+Dirichlet(), Dirichlet(), Linear\+::print(), Quadrilateral\+::print(), Triangle\+::print(), D\+G\+\_\+\+Prob\+::projetar\+\_\+\+C0(), Ph\+Elem$<$ 2 $>$\+::set\+\_\+ptr\+\_\+stdel(), Ph\+Elem$<$ 2 $>$\+::set\+\_\+ptr\+\_\+stdel\+\_\+var(), E\+D\+\_\+\+Prob\+::\+Solve\+Elast2\+D\+\_\+dyn(), and D\+G\+\_\+\+Prob\+::$\sim$\+D\+G\+\_\+\+Prob().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a6086dceed8fe3dd410da0d6b84f02377_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_ae2ab461d1bc8d9f6006665fe03684845}\label{classStdel_ae2ab461d1bc8d9f6006665fe03684845}} 
+\index{Hexahedral@{Hexahedral}!nv\+\_\+val@{nv\+\_\+val}}
+\index{nv\+\_\+val@{nv\+\_\+val}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{nv\+\_\+val()}{nv\_val()}}
+{\footnotesize\ttfamily int Stdel\+::nv\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 18 of file Stdel.\+h.
+
+
+
+References Stdel\+::nv.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+eco(), Ph\+Elem$<$ 2 $>$\+::print\+\_\+modes(), and Ph\+Elem$<$ 2 $>$\+::\+Processar\+\_\+dados().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_ae2ab461d1bc8d9f6006665fe03684845_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a701c7d5595d4f6632333c4202898983b}\label{classStdel_a701c7d5595d4f6632333c4202898983b}} 
+\index{Hexahedral@{Hexahedral}!P\+\_\+val@{P\+\_\+val}}
+\index{P\+\_\+val@{P\+\_\+val}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{P\+\_\+val()}{P\_val()}}
+{\footnotesize\ttfamily int Stdel\+::\+P\+\_\+val (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 23 of file Stdel.\+h.
+
+
+
+References Stdel\+::P.
+
+
+
+Referenced by D\+G\+\_\+\+Elem\+::finaliza\+\_\+vetores(), and Ph\+Elem$<$ 2 $>$\+::gbnmap\+\_\+faces().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a701c7d5595d4f6632333c4202898983b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_af30ff09b60c553acabb51c5aa27d8d22}\label{classHexahedral_af30ff09b60c553acabb51c5aa27d8d22}} 
+\index{Hexahedral@{Hexahedral}!print@{print}}
+\index{print@{print}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Hexahedral\+::print (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout }\end{DoxyParamCaption})}
+
+
+
+Definition at line 238 of file Hexahedral.\+cpp.
+
+
+
+References Stdel\+::mode\+\_\+, Stdel\+::\+N\+G\+Q\+P\+\_\+val(), Stdel\+::nn, Stdel\+::\+Phi\+\_\+val, Mode\+::print(), and Stdel\+::print\+Stdel().
+
+
+
+Referenced by set().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{classHexahedral_af30ff09b60c553acabb51c5aa27d8d22_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classHexahedral_af30ff09b60c553acabb51c5aa27d8d22_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a9a0c69dca7564f6ca4aa4f3c9864ea01}\label{classStdel_a9a0c69dca7564f6ca4aa4f3c9864ea01}} 
+\index{Hexahedral@{Hexahedral}!print\+\_\+border\+\_\+map@{print\+\_\+border\+\_\+map}}
+\index{print\+\_\+border\+\_\+map@{print\+\_\+border\+\_\+map}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{print\+\_\+border\+\_\+map()}{print\_border\_map()}}
+{\footnotesize\ttfamily void Stdel\+::print\+\_\+border\+\_\+map (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 57 of file Stdel.\+h.
+
+
+
+References Stdel\+::aresta\+\_\+lvert(), Stdel\+::compute\+At\+Points(), Stdel\+::compute\+Func\+G\+Q(), Stdel\+::compute\+Vertice(), Stdel\+::\+Dirichlet(), Stdel\+::elem\+\_\+traces(), Stdel\+::emapi, Stdel\+::emapv, Stdel\+::eval\+\_\+\+Grad\+Phi(), Stdel\+::eval\+\_\+\+Phi(), Stdel\+::eval\+G\+Q(), Stdel\+::face\+\_\+lvert(), Stdel\+::\+Gradiente(), Stdel\+::\+Jacobian(), m, Stdel\+::mass(), Stdel\+::ne, Stdel\+::P, Stdel\+::print\+\_\+nome(), Stdel\+::print\+G\+Qtofile(), Stdel\+::printtofile(), Stdel\+::printw\+G\+Qtofile(), Stdel\+::Q, Stdel\+::show\+\_\+face\+\_\+tipo(), Stdel\+::show\+\_\+fd0(), Stdel\+::show\+\_\+fd1(), Stdel\+::show\+\_\+fv2(), Stdel\+::show\+\_\+ind\+\_\+mode(), Stdel\+::show\+\_\+nvf(), Stdel\+::superficie\+\_\+externa(), Stdel\+::teste(), Stdel\+::trace(), and Stdel\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classStdel_a9a0c69dca7564f6ca4aa4f3c9864ea01_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a319e6a16011b22e12028a841b7686f03}\label{classStdel_a319e6a16011b22e12028a841b7686f03}} 
+\index{Hexahedral@{Hexahedral}!print\+\_\+matrices@{print\+\_\+matrices}}
+\index{print\+\_\+matrices@{print\+\_\+matrices}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{print\+\_\+matrices()}{print\_matrices()}}
+{\footnotesize\ttfamily void Stdel\+::print\+\_\+matrices (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 87 of file Stdel.\+cpp.
+
+
+
+References Stdel\+::\+Mb\+\_\+comp, Stdel\+::\+Mc\+Mi\+\_\+inv, Stdel\+::\+Mi\+\_\+inv, Stdel\+::nb, and Stdel\+::nn.
+
+
+
+Referenced by Stdel\+::show\+\_\+\+Phi\+\_\+val().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a319e6a16011b22e12028a841b7686f03_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_a53c693b47166842fd72c51750c68297d}\label{classHexahedral_a53c693b47166842fd72c51750c68297d}} 
+\index{Hexahedral@{Hexahedral}!print\+\_\+nome@{print\+\_\+nome}}
+\index{print\+\_\+nome@{print\+\_\+nome}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{print\+\_\+nome()}{print\_nome()}}
+{\footnotesize\ttfamily void Hexahedral\+::print\+\_\+nome (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_ac654f45f744ec4cfeab74ed4ded99ef5}{Stdel}.
+
+
+
+Definition at line 1534 of file Hexahedral.\+cpp.
+
+\mbox{\Hypertarget{classHexahedral_ae32d2d1e79c93e4346fcf0b4483ae218}\label{classHexahedral_ae32d2d1e79c93e4346fcf0b4483ae218}} 
+\index{Hexahedral@{Hexahedral}!print\+G\+Qtofile@{print\+G\+Qtofile}}
+\index{print\+G\+Qtofile@{print\+G\+Qtofile}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{print\+G\+Qtofile()}{printGQtofile()}}
+{\footnotesize\ttfamily void Hexahedral\+::print\+G\+Qtofile (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{const double}]{ftemp\mbox{[}$\,$\mbox{]},  }\item[{const double}]{ftemp1\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a8196ddf2ec3c88627e33d19f93fdb354}{Stdel}.
+
+
+
+Definition at line 669 of file Hexahedral.\+cpp.
+
+
+
+References aux, aux1, Stdel\+::nv, Stdel\+::\+Phi\+\_\+val, Stdel\+::Q, Vertice\+::x, Vertice\+::y, and Vertice\+::z.
+
+\mbox{\Hypertarget{classStdel_a54b5768d09f500cb949e66fc234eac70}\label{classStdel_a54b5768d09f500cb949e66fc234eac70}} 
+\index{Hexahedral@{Hexahedral}!print\+Stdel@{print\+Stdel}}
+\index{print\+Stdel@{print\+Stdel}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{print\+Stdel()}{printStdel()}}
+{\footnotesize\ttfamily void Stdel\+::print\+Stdel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 80 of file Stdel.\+cpp.
+
+
+
+References Stdel\+::gqt, Stdel\+::ndim, Stdel\+::P, and Stdel\+::Q.
+
+
+
+Referenced by Linear\+::print(), Quadrilateral\+::print(), print(), Triangle\+::print(), and Stdel\+::show\+\_\+vtk\+\_\+type().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a54b5768d09f500cb949e66fc234eac70_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_a5e18ffc000cd95595f652d67ce21eeac}\label{classHexahedral_a5e18ffc000cd95595f652d67ce21eeac}} 
+\index{Hexahedral@{Hexahedral}!printtoarray@{printtoarray}}
+\index{printtoarray@{printtoarray}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{printtoarray()}{printtoarray()}}
+{\footnotesize\ttfamily void Hexahedral\+::printtoarray (\begin{DoxyParamCaption}\item[{const double}]{u\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]},  }\item[{double}]{x\mbox{[}$\,$\mbox{]},  }\item[{double}]{y\mbox{[}$\,$\mbox{]},  }\item[{double}]{z\mbox{[}$\,$\mbox{]},  }\item[{double}]{ftemp\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 724 of file Hexahedral.\+cpp.
+
+
+
+References eval\+G\+Q(), Stdel\+::nv, Stdel\+::\+Phi\+\_\+val, Stdel\+::Q, Vertice\+::x, Vertice\+::y, and Vertice\+::z.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHexahedral_a5e18ffc000cd95595f652d67ce21eeac_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_a062fb995d31193f800fbf12ff7f19571}\label{classHexahedral_a062fb995d31193f800fbf12ff7f19571}} 
+\index{Hexahedral@{Hexahedral}!printtofile@{printtofile}}
+\index{printtofile@{printtofile}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{printtofile()}{printtofile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Hexahedral\+::printtofile (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{const double}]{u\mbox{[}$\,$\mbox{]},  }\item[{double($\ast$)(double, double, double)}]{func,  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a315869f4c1fe1fdf4911c0d4ab092176}{Stdel}.
+
+
+
+Definition at line 613 of file Hexahedral.\+cpp.
+
+
+
+References aux, eval\+G\+Q(), Stdel\+::nv, Stdel\+::\+Phi\+\_\+val, Stdel\+::Q, Vertice\+::x, Vertice\+::y, and Vertice\+::z.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHexahedral_a062fb995d31193f800fbf12ff7f19571_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_a50af1e899b7b2642cbe7a2291e949ad3}\label{classHexahedral_a50af1e899b7b2642cbe7a2291e949ad3}} 
+\index{Hexahedral@{Hexahedral}!printtofile@{printtofile}}
+\index{printtofile@{printtofile}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{printtofile()}{printtofile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Hexahedral\+::printtofile (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{const double}]{u\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a6863f8aeb8e4fb01299b109b0dd3fe13}{Stdel}.
+
+
+
+Definition at line 641 of file Hexahedral.\+cpp.
+
+
+
+References aux, eval\+G\+Q(), Stdel\+::nv, Stdel\+::\+Phi\+\_\+val, Stdel\+::Q, Vertice\+::x, Vertice\+::y, and Vertice\+::z.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHexahedral_a50af1e899b7b2642cbe7a2291e949ad3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_a49c5ff368a7d79790d94eef711cb8537}\label{classHexahedral_a49c5ff368a7d79790d94eef711cb8537}} 
+\index{Hexahedral@{Hexahedral}!printw\+G\+Qtofile@{printw\+G\+Qtofile}}
+\index{printw\+G\+Qtofile@{printw\+G\+Qtofile}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{printw\+G\+Qtofile()}{printwGQtofile()}}
+{\footnotesize\ttfamily void Hexahedral\+::printw\+G\+Qtofile (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]},  }\item[{const double}]{JV\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_aec7751f7873772d930c91cf93ec6b07b}{Stdel}.
+
+
+
+Definition at line 697 of file Hexahedral.\+cpp.
+
+
+
+References aux, Stdel\+::nv, Stdel\+::\+Phi\+\_\+val, Stdel\+::Q, Stdel\+::w\+GQ, Vertice\+::x, Vertice\+::y, and Vertice\+::z.
+
+\mbox{\Hypertarget{classStdel_aeea4659f5bcabbf1acb374180c43a293}\label{classStdel_aeea4659f5bcabbf1acb374180c43a293}} 
+\index{Hexahedral@{Hexahedral}!Q\+\_\+val@{Q\+\_\+val}}
+\index{Q\+\_\+val@{Q\+\_\+val}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{Q\+\_\+val()}{Q\_val()}}
+{\footnotesize\ttfamily int Stdel\+::\+Q\+\_\+val (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 24 of file Stdel.\+h.
+
+
+
+References Stdel\+::Q.
+
+\mbox{\Hypertarget{classStdel_a457d20e34fb7a32eb1e4aca6c19f53a2}\label{classStdel_a457d20e34fb7a32eb1e4aca6c19f53a2}} 
+\index{Hexahedral@{Hexahedral}!qborder\+\_\+val@{qborder\+\_\+val}}
+\index{qborder\+\_\+val@{qborder\+\_\+val}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{qborder\+\_\+val()}{qborder\_val()}}
+{\footnotesize\ttfamily int Stdel\+::qborder\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 15 of file Stdel.\+h.
+
+
+
+References Stdel\+::qborder.
+
+
+
+Referenced by D\+G\+\_\+\+Elem\+::calcula\+\_\+tracos(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions(), D\+G\+\_\+\+Elem\+::echo\+\_\+traco(), Ph\+Elem$<$ 2 $>$\+::get\+\_\+trace\+\_\+border\+\_\+map(), D\+G\+\_\+\+Elem\+::inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), Ph\+Elem$<$ 2 $>$\+::inicia\+\_\+gbtrbmap(), D\+G\+\_\+\+Elem\+::inicia\+\_\+tracos(), D\+G\+\_\+\+Elem\+::inicia\+\_\+vetores(), D\+G\+\_\+\+Prob\+::projetar\+\_\+\+C0(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+grad\+\_\+phi(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+\+Kgrad\+\_\+pc(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+\+Kgrad\+\_\+phi\+\_\+n(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+\+Kgrad\+\_\+pw(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+\+Kgrad\+\_\+sn(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+phi(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+phi\+\_\+1(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+pw(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+sn(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a457d20e34fb7a32eb1e4aca6c19f53a2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_aed81c3a2149b36e9bdc0dd67bc5f3bdc}\label{classHexahedral_aed81c3a2149b36e9bdc0dd67bc5f3bdc}} 
+\index{Hexahedral@{Hexahedral}!set@{set}}
+\index{set@{set}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void Hexahedral\+::set (\begin{DoxyParamCaption}\item[{int}]{P,  }\item[{int}]{Q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_ab42c46493ab17be6f2642a558fea8a05}{Stdel}.
+
+
+
+Definition at line 45 of file Hexahedral.\+cpp.
+
+
+
+References a, aresta, Stdel\+::emapi, Stdel\+::emapv, face, gauss\+\_\+parameters\+\_\+default(), Stdel\+::gqt, ind\+\_\+mode\+\_\+, m, M\+A\+X\+M\+O\+D\+ES, M\+A\+X\+NB, M\+A\+X\+NI, Stdel\+::mode\+\_\+, Stdel\+::nb, Stdel\+::nf, Stdel\+::\+N\+G\+QP, Stdel\+::nn, Stdel\+::nv, Stdel\+::P, Mode\+::p\+\_\+val(), Stdel\+::\+Phi\+\_\+val, print(), Psia(), Stdel\+::Q, Mode\+::q\+\_\+val(), Stdel\+::qborder, Mode\+::r\+\_\+val(), Mode\+::set\+\_\+mode(), and Stdel\+::x\+GQ.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHexahedral_aed81c3a2149b36e9bdc0dd67bc5f3bdc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_ad3a0646ad7ec2567e46da36285dee331}\label{classStdel_ad3a0646ad7ec2567e46da36285dee331}} 
+\index{Hexahedral@{Hexahedral}!show\+\_\+bmapi@{show\+\_\+bmapi}}
+\index{show\+\_\+bmapi@{show\+\_\+bmapi}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{show\+\_\+bmapi()}{show\_bmapi()}}
+{\footnotesize\ttfamily int Stdel\+::show\+\_\+bmapi (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 40 of file Stdel.\+h.
+
+
+
+References Stdel\+::bmapi.
+
+\mbox{\Hypertarget{classStdel_ac8787dabfb1d767b89e39806522c1161}\label{classStdel_ac8787dabfb1d767b89e39806522c1161}} 
+\index{Hexahedral@{Hexahedral}!show\+\_\+bmapv@{show\+\_\+bmapv}}
+\index{show\+\_\+bmapv@{show\+\_\+bmapv}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{show\+\_\+bmapv()}{show\_bmapv()}}
+{\footnotesize\ttfamily int Stdel\+::show\+\_\+bmapv (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 39 of file Stdel.\+h.
+
+
+
+References Stdel\+::bmapv.
+
+\mbox{\Hypertarget{classStdel_aca7fb885191a952c013e930521a42213}\label{classStdel_aca7fb885191a952c013e930521a42213}} 
+\index{Hexahedral@{Hexahedral}!show\+\_\+emapi@{show\+\_\+emapi}}
+\index{show\+\_\+emapi@{show\+\_\+emapi}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{show\+\_\+emapi()}{show\_emapi()}}
+{\footnotesize\ttfamily int Stdel\+::show\+\_\+emapi (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 38 of file Stdel.\+h.
+
+
+
+References Stdel\+::emapi.
+
+
+
+Referenced by Ph\+Elem$<$ 2 $>$\+::gbnmap\+\_\+aresta(), and Ph\+Elem$<$ 2 $>$\+::gbnmap\+\_\+arestas().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{classStdel_aca7fb885191a952c013e930521a42213_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_ad474ffc52b051ae8317b3fdb583c4c98}\label{classStdel_ad474ffc52b051ae8317b3fdb583c4c98}} 
+\index{Hexahedral@{Hexahedral}!show\+\_\+emapv@{show\+\_\+emapv}}
+\index{show\+\_\+emapv@{show\+\_\+emapv}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{show\+\_\+emapv()}{show\_emapv()}}
+{\footnotesize\ttfamily int Stdel\+::show\+\_\+emapv (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 37 of file Stdel.\+h.
+
+
+
+References Stdel\+::emapv.
+
+
+
+Referenced by Ph\+Elem$<$ 2 $>$\+::gbnmap\+\_\+aresta(), and Ph\+Elem$<$ 2 $>$\+::gbnmap\+\_\+arestas().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{classStdel_ad474ffc52b051ae8317b3fdb583c4c98_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_a178069c54d64ffb98dba409cd5080ede}\label{classHexahedral_a178069c54d64ffb98dba409cd5080ede}} 
+\index{Hexahedral@{Hexahedral}!show\+\_\+face\+\_\+tipo@{show\+\_\+face\+\_\+tipo}}
+\index{show\+\_\+face\+\_\+tipo@{show\+\_\+face\+\_\+tipo}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{show\+\_\+face\+\_\+tipo()}{show\_face\_tipo()}}
+{\footnotesize\ttfamily const int Hexahedral\+::show\+\_\+face\+\_\+tipo (\begin{DoxyParamCaption}\item[{const int \&}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_ae76b0893dabd93ae9f86a9ed445852ba}{Stdel}.
+
+
+
+Definition at line 2065 of file Hexahedral.\+cpp.
+
+
+
+References face\+\_\+tipo.
+
+\mbox{\Hypertarget{classHexahedral_a370ec08c7979d9bcca581ee5b4759285}\label{classHexahedral_a370ec08c7979d9bcca581ee5b4759285}} 
+\index{Hexahedral@{Hexahedral}!show\+\_\+fd0@{show\+\_\+fd0}}
+\index{show\+\_\+fd0@{show\+\_\+fd0}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{show\+\_\+fd0()}{show\_fd0()}}
+{\footnotesize\ttfamily const int Hexahedral\+::show\+\_\+fd0 (\begin{DoxyParamCaption}\item[{const int \&}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a0e05ccae64925915af5f07c91d61c7bc}{Stdel}.
+
+
+
+Definition at line 2066 of file Hexahedral.\+cpp.
+
+
+
+References fd0.
+
+\mbox{\Hypertarget{classHexahedral_aba5fb014249bf374e52bcfbfa9576288}\label{classHexahedral_aba5fb014249bf374e52bcfbfa9576288}} 
+\index{Hexahedral@{Hexahedral}!show\+\_\+fd1@{show\+\_\+fd1}}
+\index{show\+\_\+fd1@{show\+\_\+fd1}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{show\+\_\+fd1()}{show\_fd1()}}
+{\footnotesize\ttfamily const int Hexahedral\+::show\+\_\+fd1 (\begin{DoxyParamCaption}\item[{const int \&}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_af4a394fae421489159f40ddcb736353b}{Stdel}.
+
+
+
+Definition at line 2067 of file Hexahedral.\+cpp.
+
+
+
+References fd1.
+
+\mbox{\Hypertarget{classHexahedral_a5eadccb0e54a1852c01a1f90a3a2bfd9}\label{classHexahedral_a5eadccb0e54a1852c01a1f90a3a2bfd9}} 
+\index{Hexahedral@{Hexahedral}!show\+\_\+fv2@{show\+\_\+fv2}}
+\index{show\+\_\+fv2@{show\+\_\+fv2}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{show\+\_\+fv2()}{show\_fv2()}}
+{\footnotesize\ttfamily const int Hexahedral\+::show\+\_\+fv2 (\begin{DoxyParamCaption}\item[{const int \&}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a67f16a65f02fc8a5aa10274539bd1ad8}{Stdel}.
+
+
+
+Definition at line 2068 of file Hexahedral.\+cpp.
+
+
+
+References fv2.
+
+\mbox{\Hypertarget{classStdel_a20afd536025caf1aad1c4e3f41fcb866}\label{classStdel_a20afd536025caf1aad1c4e3f41fcb866}} 
+\index{Hexahedral@{Hexahedral}!show\+\_\+ind@{show\+\_\+ind}}
+\index{show\+\_\+ind@{show\+\_\+ind}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{show\+\_\+ind()}{show\_ind()}}
+{\footnotesize\ttfamily void Stdel\+::show\+\_\+ind (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int \&}]{p,  }\item[{int \&}]{q,  }\item[{int \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 73 of file Stdel.\+cpp.
+
+
+
+References Stdel\+::mode\+\_\+, Mode\+::p\+\_\+val(), Mode\+::q\+\_\+val(), and Mode\+::r\+\_\+val().
+
+
+
+Referenced by Ph\+Elem$<$ 2 $>$\+::check\+\_\+connectivity(), and Stdel\+::show\+\_\+\+Phi\+\_\+val().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classStdel_a20afd536025caf1aad1c4e3f41fcb866_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a20afd536025caf1aad1c4e3f41fcb866_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_a3a21196cfe9b317868868985f33aa425}\label{classHexahedral_a3a21196cfe9b317868868985f33aa425}} 
+\index{Hexahedral@{Hexahedral}!show\+\_\+ind\+\_\+mode@{show\+\_\+ind\+\_\+mode}}
+\index{show\+\_\+ind\+\_\+mode@{show\+\_\+ind\+\_\+mode}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{show\+\_\+ind\+\_\+mode()}{show\_ind\_mode()}}
+{\footnotesize\ttfamily const int Hexahedral\+::show\+\_\+ind\+\_\+mode (\begin{DoxyParamCaption}\item[{const int \&}]{i,  }\item[{const int \&}]{j = {\ttfamily 0},  }\item[{const int \&}]{k = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_aa97cf7534697be1f2e02ff540ed7433b}{Stdel}.
+
+
+
+Definition at line 2069 of file Hexahedral.\+cpp.
+
+
+
+References ind\+\_\+mode\+\_\+.
+
+\mbox{\Hypertarget{classStdel_a4860f0f650640f859c5f75c206ee1f60}\label{classStdel_a4860f0f650640f859c5f75c206ee1f60}} 
+\index{Hexahedral@{Hexahedral}!show\+\_\+\+Mb\+\_\+comp@{show\+\_\+\+Mb\+\_\+comp}}
+\index{show\+\_\+\+Mb\+\_\+comp@{show\+\_\+\+Mb\+\_\+comp}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{show\+\_\+\+Mb\+\_\+comp()}{show\_Mb\_comp()}}
+{\footnotesize\ttfamily double Stdel\+::show\+\_\+\+Mb\+\_\+comp (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 58 of file Stdel.\+cpp.
+
+
+
+References Stdel\+::\+Mb\+\_\+comp.
+
+
+
+Referenced by Stdel\+::duplicar\+\_\+mass\+\_\+matrix(), and Stdel\+::show\+\_\+\+Phi\+\_\+val().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a4860f0f650640f859c5f75c206ee1f60_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a44d5aa234e02fb41afd5a4e5e45fadc4}\label{classStdel_a44d5aa234e02fb41afd5a4e5e45fadc4}} 
+\index{Hexahedral@{Hexahedral}!show\+\_\+\+Mc\+Mi\+\_\+inv@{show\+\_\+\+Mc\+Mi\+\_\+inv}}
+\index{show\+\_\+\+Mc\+Mi\+\_\+inv@{show\+\_\+\+Mc\+Mi\+\_\+inv}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{show\+\_\+\+Mc\+Mi\+\_\+inv()}{show\_McMi\_inv()}}
+{\footnotesize\ttfamily double Stdel\+::show\+\_\+\+Mc\+Mi\+\_\+inv (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 68 of file Stdel.\+cpp.
+
+
+
+References Stdel\+::\+Mc\+Mi\+\_\+inv.
+
+
+
+Referenced by Stdel\+::duplicar\+\_\+mass\+\_\+matrix(), and Stdel\+::show\+\_\+\+Phi\+\_\+val().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a44d5aa234e02fb41afd5a4e5e45fadc4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a11bf2897170ada9a9dd8f641a39585e5}\label{classStdel_a11bf2897170ada9a9dd8f641a39585e5}} 
+\index{Hexahedral@{Hexahedral}!show\+\_\+\+Mi\+\_\+inv@{show\+\_\+\+Mi\+\_\+inv}}
+\index{show\+\_\+\+Mi\+\_\+inv@{show\+\_\+\+Mi\+\_\+inv}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{show\+\_\+\+Mi\+\_\+inv()}{show\_Mi\_inv()}}
+{\footnotesize\ttfamily double Stdel\+::show\+\_\+\+Mi\+\_\+inv (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 63 of file Stdel.\+cpp.
+
+
+
+References Stdel\+::\+Mi\+\_\+inv.
+
+
+
+Referenced by Stdel\+::duplicar\+\_\+mass\+\_\+matrix(), and Stdel\+::show\+\_\+\+Phi\+\_\+val().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a11bf2897170ada9a9dd8f641a39585e5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_a92b12c1e273117e9cc481e3a7204d90a}\label{classHexahedral_a92b12c1e273117e9cc481e3a7204d90a}} 
+\index{Hexahedral@{Hexahedral}!show\+\_\+nvf@{show\+\_\+nvf}}
+\index{show\+\_\+nvf@{show\+\_\+nvf}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{show\+\_\+nvf()}{show\_nvf()}}
+{\footnotesize\ttfamily const int Hexahedral\+::show\+\_\+nvf (\begin{DoxyParamCaption}\item[{const int \&}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a2a504322269a749dd3c443d0e86c4a6c}{Stdel}.
+
+
+
+Definition at line 2064 of file Hexahedral.\+cpp.
+
+
+
+References nvf.
+
+\mbox{\Hypertarget{classStdel_a6565c36150823a1f52a2daf05806f7a4}\label{classStdel_a6565c36150823a1f52a2daf05806f7a4}} 
+\index{Hexahedral@{Hexahedral}!show\+\_\+\+Phi\+\_\+val@{show\+\_\+\+Phi\+\_\+val}}
+\index{show\+\_\+\+Phi\+\_\+val@{show\+\_\+\+Phi\+\_\+val}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{show\+\_\+\+Phi\+\_\+val()}{show\_Phi\_val()}}
+{\footnotesize\ttfamily double Stdel\+::show\+\_\+\+Phi\+\_\+val (\begin{DoxyParamCaption}\item[{const int}]{i,  }\item[{const int}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 28 of file Stdel.\+h.
+
+
+
+References Stdel\+::duplicar\+\_\+mass\+\_\+matrix(), Stdel\+::\+Phi\+\_\+val, Stdel\+::print\+\_\+matrices(), Stdel\+::show\+\_\+ind(), Stdel\+::show\+\_\+\+Mb\+\_\+comp(), Stdel\+::show\+\_\+\+Mc\+Mi\+\_\+inv(), Stdel\+::show\+\_\+\+Mi\+\_\+inv(), and Stdel\+::w\+\_\+vec().
+
+
+
+Referenced by Ph\+Elem$<$ 2 $>$\+::\+Phi\+\_\+val().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a6565c36150823a1f52a2daf05806f7a4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{classStdel_a6565c36150823a1f52a2daf05806f7a4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a56288a857b95a55c8b7eb5b473e836d9}\label{classStdel_a56288a857b95a55c8b7eb5b473e836d9}} 
+\index{Hexahedral@{Hexahedral}!show\+\_\+vtk\+\_\+type@{show\+\_\+vtk\+\_\+type}}
+\index{show\+\_\+vtk\+\_\+type@{show\+\_\+vtk\+\_\+type}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{show\+\_\+vtk\+\_\+type()}{show\_vtk\_type()}}
+{\footnotesize\ttfamily int Stdel\+::show\+\_\+vtk\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 11 of file Stdel.\+h.
+
+
+
+References Stdel\+::print\+Stdel(), and Stdel\+::vtk\+\_\+type.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classStdel_a56288a857b95a55c8b7eb5b473e836d9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_a6debdf2dd1221b9e039b29cae8a4e517}\label{classHexahedral_a6debdf2dd1221b9e039b29cae8a4e517}} 
+\index{Hexahedral@{Hexahedral}!superficie\+\_\+externa@{superficie\+\_\+externa}}
+\index{superficie\+\_\+externa@{superficie\+\_\+externa}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{superficie\+\_\+externa()}{superficie\_externa()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Hexahedral\+::superficie\+\_\+externa (\begin{DoxyParamCaption}\item[{const int}]{Vert\+\_\+map\mbox{[}$\,$\mbox{]},  }\item[{const int \&}]{num\+\_\+local,  }\item[{double \&}]{area,  }\item[{double}]{normal\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classHexahedral_a0ba51c2cf3ee2718366e6699fe20aaf4}\label{classHexahedral_a0ba51c2cf3ee2718366e6699fe20aaf4}} 
+\index{Hexahedral@{Hexahedral}!superficie\+\_\+externa@{superficie\+\_\+externa}}
+\index{superficie\+\_\+externa@{superficie\+\_\+externa}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{superficie\+\_\+externa()}{superficie\_externa()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Hexahedral\+::superficie\+\_\+externa (\begin{DoxyParamCaption}\item[{const int}]{Vert\+\_\+map\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int \&}]{num\+\_\+local,  }\item[{double \&}]{area,  }\item[{double}]{normal\mbox{[}3\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a4e4aa3bbd0299054ec5447bd73efc6a0}{Stdel}.
+
+
+
+Definition at line 2070 of file Hexahedral.\+cpp.
+
+
+
+References face, sinal\+\_\+normal, Vertice\+::x, Vertice\+::y, and Vertice\+::z.
+
+\mbox{\Hypertarget{classHexahedral_adc767ec026a292f3d434e825779bf51a}\label{classHexahedral_adc767ec026a292f3d434e825779bf51a}} 
+\index{Hexahedral@{Hexahedral}!teste@{teste}}
+\index{teste@{teste}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{teste()}{teste()}}
+{\footnotesize\ttfamily void Hexahedral\+::teste (\begin{DoxyParamCaption}\item[{int \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_ae62bc70bb31e48d165593ed1ecd482f8}{Stdel}.
+
+
+
+Definition at line 1816 of file Hexahedral.\+cpp.
+
+\mbox{\Hypertarget{classStdel_a75023fc369db2752845a9ce278f10929}\label{classStdel_a75023fc369db2752845a9ce278f10929}} 
+\index{Hexahedral@{Hexahedral}!tipo\+\_\+val@{tipo\+\_\+val}}
+\index{tipo\+\_\+val@{tipo\+\_\+val}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{tipo\+\_\+val()}{tipo\_val()}}
+{\footnotesize\ttfamily int Stdel\+::tipo\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 13 of file Stdel.\+h.
+
+
+
+References Stdel\+::tipo.
+
+\mbox{\Hypertarget{classHexahedral_a19ff3c9bf760964284ee86ad06c795d6}\label{classHexahedral_a19ff3c9bf760964284ee86ad06c795d6}} 
+\index{Hexahedral@{Hexahedral}!trace@{trace}}
+\index{trace@{trace}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{trace()}{trace()}}
+{\footnotesize\ttfamily void Hexahedral\+::trace (\begin{DoxyParamCaption}\item[{const int}]{lado,  }\item[{const int}]{Q,  }\item[{const int}]{sinal,  }\item[{const double $\ast$}]{valores,  }\item[{double $\ast$}]{saida }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_aeb2fe03bbd8af61e503e29d3dd5ae4f0}{Stdel}.
+
+
+
+Definition at line 1980 of file Hexahedral.\+cpp.
+
+
+
+References Dtemp, Gauss\+\_\+\+Jacobi\+\_\+parameters(), Jac, M\+A\+XQ, Stdel\+::Q, qmax, and Stdel\+::x\+GQ.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHexahedral_a19ff3c9bf760964284ee86ad06c795d6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_a22d3f788ce0bdf8209c800282868b8c1}\label{classHexahedral_a22d3f788ce0bdf8209c800282868b8c1}} 
+\index{Hexahedral@{Hexahedral}!vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv@{vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv}}
+\index{vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv@{vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv()}{vector\_of\_integral\_of\_f\_Phi\_dv()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Hexahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv (\begin{DoxyParamCaption}\item[{double}]{vec\mbox{[}$\,$\mbox{]},  }\item[{const double}]{func\mbox{[}$\,$\mbox{]},  }\item[{const double}]{JV\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_aa5ef347c02106753c2d3961b59a7309e}{Stdel}.
+
+
+
+Definition at line 539 of file Hexahedral.\+cpp.
+
+
+
+References aux, Stdel\+::mode\+\_\+, Stdel\+::nn, Stdel\+::P, Mode\+::p\+\_\+val(), Psia(), Stdel\+::Q, Mode\+::q\+\_\+val(), Mode\+::r\+\_\+val(), Stdel\+::w\+GQ, and Stdel\+::x\+GQ.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHexahedral_a22d3f788ce0bdf8209c800282868b8c1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classHexahedral_acbbaec7da99759f1d6df6587a9825c22}\label{classHexahedral_acbbaec7da99759f1d6df6587a9825c22}} 
+\index{Hexahedral@{Hexahedral}!vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv@{vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv}}
+\index{vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv@{vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv()}{vector\_of\_integral\_of\_f\_Phi\_dv()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Hexahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv (\begin{DoxyParamCaption}\item[{double}]{vec\mbox{[}$\,$\mbox{]},  }\item[{double($\ast$)(double, double, double)}]{func,  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]},  }\item[{const double}]{JV\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a3a22725f255ab04520ce1744eef8e2c0}{Stdel}.
+
+
+
+Definition at line 464 of file Hexahedral.\+cpp.
+
+
+
+References aux, Stdel\+::mode\+\_\+, Stdel\+::nn, Stdel\+::nv, Stdel\+::P, Mode\+::p\+\_\+val(), Stdel\+::\+Phi\+\_\+val, Psia(), Stdel\+::Q, Mode\+::q\+\_\+val(), Mode\+::r\+\_\+val(), Stdel\+::w\+GQ, Vertice\+::x, Stdel\+::x\+GQ, Vertice\+::y, and Vertice\+::z.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classHexahedral_acbbaec7da99759f1d6df6587a9825c22_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a395c8d7d7890a9efdea23932fa22b420}\label{classStdel_a395c8d7d7890a9efdea23932fa22b420}} 
+\index{Hexahedral@{Hexahedral}!w\+\_\+vec@{w\+\_\+vec}}
+\index{w\+\_\+vec@{w\+\_\+vec}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{w\+\_\+vec()}{w\_vec()}}
+{\footnotesize\ttfamily int Stdel\+::w\+\_\+vec (\begin{DoxyParamCaption}\item[{double}]{saida\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 169 of file Stdel.\+cpp.
+
+
+
+References aux1, aux2, Stdel\+::Q, and Stdel\+::w\+GQ.
+
+
+
+Referenced by Stdel\+::show\+\_\+\+Phi\+\_\+val().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a395c8d7d7890a9efdea23932fa22b420_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classHexahedral_a195b8018b7e8b6d1366b1937803051e1}\label{classHexahedral_a195b8018b7e8b6d1366b1937803051e1}} 
+\index{Hexahedral@{Hexahedral}!aresta@{aresta}}
+\index{aresta@{aresta}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{aresta}{aresta}}
+{\footnotesize\ttfamily const int Hexahedral\+::aresta\mbox{[}12\mbox{]}\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= 
+   \{ \{0,1\},
+     \{0,2\},
+     \{0,4\},
+     \{1,3\},
+     \{1,5\},
+     \{2,3\},
+     \{2,6\},
+     \{3,7\},
+     \{4,5\},
+     \{4,6\},
+     \{5,7\},
+     \{6,7\}
+   \}
+\end{DoxyCode}
+
+
+Definition at line 35 of file Hexahedral.\+h.
+
+
+
+Referenced by aresta\+\_\+lvert(), and set().
+
+\mbox{\Hypertarget{classStdel_a8b082d27e5c3cab7ad2045b464af0fd9}\label{classStdel_a8b082d27e5c3cab7ad2045b464af0fd9}} 
+\index{Hexahedral@{Hexahedral}!bmapi@{bmapi}}
+\index{bmapi@{bmapi}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{bmapi}{bmapi}}
+{\footnotesize\ttfamily int$\ast$ Stdel\+::bmapi = nullptr\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+border\+\_\+map\+\_\+inicio 
+
+
+
+Definition at line 191 of file Stdel.\+h.
+
+
+
+Referenced by Quadrilateral\+::\+Quadrilateral(), Stdel\+::show\+\_\+bmapi(), Triangle\+::\+Triangle(), Quadrilateral\+::$\sim$\+Quadrilateral(), and Triangle\+::$\sim$\+Triangle().
+
+\mbox{\Hypertarget{classStdel_ac3cd818c98aa400279f28c22c8e0abaa}\label{classStdel_ac3cd818c98aa400279f28c22c8e0abaa}} 
+\index{Hexahedral@{Hexahedral}!bmapv@{bmapv}}
+\index{bmapv@{bmapv}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{bmapv}{bmapv}}
+{\footnotesize\ttfamily int$\ast$ Stdel\+::bmapv = nullptr\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+border\+\_\+map\+\_\+valores 
+
+
+
+Definition at line 190 of file Stdel.\+h.
+
+
+
+Referenced by Quadrilateral\+::\+Quadrilateral(), Stdel\+::show\+\_\+bmapv(), Triangle\+::\+Triangle(), Quadrilateral\+::$\sim$\+Quadrilateral(), and Triangle\+::$\sim$\+Triangle().
+
+\mbox{\Hypertarget{classStdel_a61f02fa483b00cb98ff5c8d951068211}\label{classStdel_a61f02fa483b00cb98ff5c8d951068211}} 
+\index{Hexahedral@{Hexahedral}!D@{D}}
+\index{D@{D}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{D}{D}}
+{\footnotesize\ttfamily double Stdel\+::D\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+Coeficientes para a derivacao por colocacao Matrizes locais 
+
+Definition at line 182 of file Stdel.\+h.
+
+
+
+Referenced by Quadrilateral\+::gauss\+\_\+parameters\+\_\+default(), Linear\+::gauss\+\_\+parameters\+\_\+default(), gauss\+\_\+parameters\+\_\+default(), Triangle\+::gauss\+\_\+parameters\+\_\+default(), Tetrahedral\+::gauss\+\_\+parameters\+\_\+default(), Quadrilateral\+::\+Gradiente(), Gradiente(), Triangle\+::\+Gradiente(), Linear\+::\+Gradiente(), and Tetrahedral\+::map\+\_\+face().
+
+\mbox{\Hypertarget{classStdel_a80a6c89c61bfef1160257e97b3ffb0a2}\label{classStdel_a80a6c89c61bfef1160257e97b3ffb0a2}} 
+\index{Hexahedral@{Hexahedral}!D\+\_\+\+Phi\+\_\+val@{D\+\_\+\+Phi\+\_\+val}}
+\index{D\+\_\+\+Phi\+\_\+val@{D\+\_\+\+Phi\+\_\+val}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{D\+\_\+\+Phi\+\_\+val}{D\_Phi\_val}}
+{\footnotesize\ttfamily double$\ast$ Stdel\+::\+D\+\_\+\+Phi\+\_\+val = nullptr\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 192 of file Stdel.\+h.
+
+
+
+Referenced by $\sim$\+Hexahedral(), Linear\+::$\sim$\+Linear(), Quadrilateral\+::$\sim$\+Quadrilateral(), Tetrahedral\+::$\sim$\+Tetrahedral(), and Triangle\+::$\sim$\+Triangle().
+
+\mbox{\Hypertarget{classStdel_a9ba8eb743aeb36984b7c4ececa837e16}\label{classStdel_a9ba8eb743aeb36984b7c4ececa837e16}} 
+\index{Hexahedral@{Hexahedral}!emapi@{emapi}}
+\index{emapi@{emapi}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{emapi}{emapi}}
+{\footnotesize\ttfamily int$\ast$ Stdel\+::emapi = nullptr\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+edge\+\_\+map\+\_\+inicio 
+
+
+
+Definition at line 189 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral(), Stdel\+::is\+\_\+on\+\_\+border(), Linear\+::\+Linear(), Stdel\+::print\+\_\+border\+\_\+map(), Quadrilateral\+::\+Quadrilateral(), Quadrilateral\+::set(), Triangle\+::set(), Tetrahedral\+::set(), Linear\+::set(), set(), Stdel\+::show\+\_\+emapi(), Tetrahedral\+::\+Tetrahedral(), Triangle\+::\+Triangle(), $\sim$\+Hexahedral(), Linear\+::$\sim$\+Linear(), Quadrilateral\+::$\sim$\+Quadrilateral(), Tetrahedral\+::$\sim$\+Tetrahedral(), and Triangle\+::$\sim$\+Triangle().
+
+\mbox{\Hypertarget{classStdel_a39326d0ef108403223402c79b424a41b}\label{classStdel_a39326d0ef108403223402c79b424a41b}} 
+\index{Hexahedral@{Hexahedral}!emapv@{emapv}}
+\index{emapv@{emapv}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{emapv}{emapv}}
+{\footnotesize\ttfamily int$\ast$ Stdel\+::emapv = nullptr\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+edge\+\_\+map\+\_\+valores 
+
+
+
+Definition at line 188 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral(), Stdel\+::is\+\_\+on\+\_\+border(), Linear\+::\+Linear(), Stdel\+::print\+\_\+border\+\_\+map(), Quadrilateral\+::\+Quadrilateral(), Quadrilateral\+::set(), Triangle\+::set(), Tetrahedral\+::set(), Linear\+::set(), set(), Stdel\+::show\+\_\+emapv(), Tetrahedral\+::\+Tetrahedral(), Triangle\+::\+Triangle(), $\sim$\+Hexahedral(), Linear\+::$\sim$\+Linear(), Quadrilateral\+::$\sim$\+Quadrilateral(), Tetrahedral\+::$\sim$\+Tetrahedral(), and Triangle\+::$\sim$\+Triangle().
+
+\mbox{\Hypertarget{classHexahedral_a65cf7e5570801bd2fa3c5c35b263fbf2}\label{classHexahedral_a65cf7e5570801bd2fa3c5c35b263fbf2}} 
+\index{Hexahedral@{Hexahedral}!face@{face}}
+\index{face@{face}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{face}{face}}
+{\footnotesize\ttfamily const int Hexahedral\+::face\mbox{[}6\mbox{]}\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= 
+   \{ \{0,1,3,2\},
+     \{0,1,5,4\},
+     \{0,2,6,4\},
+     \{1,3,7,5\},
+     \{2,3,7,6\},
+     \{4,5,7,6\} 
+   \}
+\end{DoxyCode}
+
+
+Definition at line 51 of file Hexahedral.\+h.
+
+
+
+Referenced by Dirichlet(), face\+\_\+lvert(), set(), and superficie\+\_\+externa().
+
+\mbox{\Hypertarget{classHexahedral_a94a89e53e7dd2f1d490205e97a2a82d8}\label{classHexahedral_a94a89e53e7dd2f1d490205e97a2a82d8}} 
+\index{Hexahedral@{Hexahedral}!face\+\_\+tipo@{face\+\_\+tipo}}
+\index{face\+\_\+tipo@{face\+\_\+tipo}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{face\+\_\+tipo}{face\_tipo}}
+{\footnotesize\ttfamily const int Hexahedral\+::face\+\_\+tipo\mbox{[}6\mbox{]} = \{3,3,3,3,3,3\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 49 of file Hexahedral.\+h.
+
+
+
+Referenced by show\+\_\+face\+\_\+tipo().
+
+\mbox{\Hypertarget{classHexahedral_a39fe746c1ec3283acf9748af64a6252c}\label{classHexahedral_a39fe746c1ec3283acf9748af64a6252c}} 
+\index{Hexahedral@{Hexahedral}!fd0@{fd0}}
+\index{fd0@{fd0}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{fd0}{fd0}}
+{\footnotesize\ttfamily const int Hexahedral\+::fd0\mbox{[}6\mbox{]} = \{0,0,1,1,0,0\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 60 of file Hexahedral.\+h.
+
+
+
+Referenced by Dirichlet(), local\+Face\+Mode\+Map(), and show\+\_\+fd0().
+
+\mbox{\Hypertarget{classHexahedral_a9f60ba5d3fbfabfad6fb34516ed3b685}\label{classHexahedral_a9f60ba5d3fbfabfad6fb34516ed3b685}} 
+\index{Hexahedral@{Hexahedral}!fd1@{fd1}}
+\index{fd1@{fd1}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{fd1}{fd1}}
+{\footnotesize\ttfamily const int Hexahedral\+::fd1\mbox{[}6\mbox{]} = \{1,2,2,2,2,1\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 61 of file Hexahedral.\+h.
+
+
+
+Referenced by local\+Face\+Mode\+Map(), and show\+\_\+fd1().
+
+\mbox{\Hypertarget{classHexahedral_a7aeb094f58a7932918fe74fa4ebc66ec}\label{classHexahedral_a7aeb094f58a7932918fe74fa4ebc66ec}} 
+\index{Hexahedral@{Hexahedral}!fv2@{fv2}}
+\index{fv2@{fv2}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{fv2}{fv2}}
+{\footnotesize\ttfamily const int Hexahedral\+::fv2\mbox{[}6\mbox{]} = \{0,0,0,1,1,1\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 62 of file Hexahedral.\+h.
+
+
+
+Referenced by local\+Face\+Mode\+Map(), and show\+\_\+fv2().
+
+\mbox{\Hypertarget{classStdel_afc321b60cb9b577b71794e346196c07a}\label{classStdel_afc321b60cb9b577b71794e346196c07a}} 
+\index{Hexahedral@{Hexahedral}!gqt@{gqt}}
+\index{gqt@{gqt}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{gqt}{gqt}}
+{\footnotesize\ttfamily int Stdel\+::gqt\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+gqt Gauss Quadrature Type\+: 
+\begin{DoxyParams}{Parameters}
+{\em 1=} & Gauss-\/\+Jacobi \\
+\hline
+{\em 2=} & Gauss-\/\+Radau-\/\+Jacobi \\
+\hline
+{\em 3=} & Gauss-\/\+Lobatto-\/\+Jacobi \\
+\hline
+{\em Index} & of the row refers to the direction\+: \\
+\hline
+{\em 0=x;} & \\
+\hline
+{\em 1=y;} & \\
+\hline
+{\em 2=z.} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 164 of file Stdel.\+h.
+
+
+
+Referenced by Quadrilateral\+::gauss\+\_\+parameters\+\_\+default(), Linear\+::gauss\+\_\+parameters\+\_\+default(), gauss\+\_\+parameters\+\_\+default(), Triangle\+::gauss\+\_\+parameters\+\_\+default(), Stdel\+::gqt\+\_\+val(), Stdel\+::print\+Stdel(), Linear\+::set(), Triangle\+::set(), Tetrahedral\+::set(), Quadrilateral\+::set(), and set().
+
+\mbox{\Hypertarget{classHexahedral_ab4a2ad7d8c0e9509f8eb0ef64bc44d4c}\label{classHexahedral_ab4a2ad7d8c0e9509f8eb0ef64bc44d4c}} 
+\index{Hexahedral@{Hexahedral}!ind\+\_\+mode\+\_\+@{ind\+\_\+mode\+\_\+}}
+\index{ind\+\_\+mode\+\_\+@{ind\+\_\+mode\+\_\+}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{ind\+\_\+mode\+\_\+}{ind\_mode\_}}
+{\footnotesize\ttfamily int$\ast$$\ast$$\ast$ Hexahedral\+::ind\+\_\+mode\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 65 of file Hexahedral.\+h.
+
+
+
+Referenced by eval\+G\+Q(), local\+Face\+Mode\+Map(), set(), show\+\_\+ind\+\_\+mode(), and $\sim$\+Hexahedral().
+
+\mbox{\Hypertarget{classStdel_aa1627cb39fa5da75764809412159c825}\label{classStdel_aa1627cb39fa5da75764809412159c825}} 
+\index{Hexahedral@{Hexahedral}!Mb\+\_\+comp@{Mb\+\_\+comp}}
+\index{Mb\+\_\+comp@{Mb\+\_\+comp}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{Mb\+\_\+comp}{Mb\_comp}}
+{\footnotesize\ttfamily double Stdel\+::\+Mb\+\_\+comp\mbox{[}\hyperlink{MyOptions_8h_aed8828a63ec0a2a0461b7c9ed39dd648}{M\+A\+X\+N\+BL}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_aed8828a63ec0a2a0461b7c9ed39dd648}{M\+A\+X\+N\+BL}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Matriz de massa compacta de Schur. 
+
+
+
+Definition at line 185 of file Stdel.\+h.
+
+
+
+Referenced by Stdel\+::duplicar\+\_\+mass\+\_\+matrix(), Linear\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), make\+\_\+local\+\_\+matrices(), Triangle\+::make\+\_\+local\+\_\+matrices(), Stdel\+::print\+\_\+matrices(), and Stdel\+::show\+\_\+\+Mb\+\_\+comp().
+
+\mbox{\Hypertarget{classStdel_acc685141e80bcce9703e37f32cc5c42c}\label{classStdel_acc685141e80bcce9703e37f32cc5c42c}} 
+\index{Hexahedral@{Hexahedral}!Mc\+Mi\+\_\+inv@{Mc\+Mi\+\_\+inv}}
+\index{Mc\+Mi\+\_\+inv@{Mc\+Mi\+\_\+inv}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{Mc\+Mi\+\_\+inv}{McMi\_inv}}
+{\footnotesize\ttfamily double Stdel\+::\+Mc\+Mi\+\_\+inv\mbox{[}\hyperlink{MyOptions_8h_aed8828a63ec0a2a0461b7c9ed39dd648}{M\+A\+X\+N\+BL}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_a463cdf068fb6289d1f81dac7e0f76ab5}{M\+A\+X\+N\+IL}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Matriz de massa inversa dos modos compacta de Schur. 
+
+
+
+Definition at line 187 of file Stdel.\+h.
+
+
+
+Referenced by Stdel\+::duplicar\+\_\+mass\+\_\+matrix(), Linear\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), make\+\_\+local\+\_\+matrices(), Triangle\+::make\+\_\+local\+\_\+matrices(), Stdel\+::print\+\_\+matrices(), and Stdel\+::show\+\_\+\+Mc\+Mi\+\_\+inv().
+
+\mbox{\Hypertarget{classStdel_a53a9490d5a02a96473d96848bac3711a}\label{classStdel_a53a9490d5a02a96473d96848bac3711a}} 
+\index{Hexahedral@{Hexahedral}!Mi\+\_\+inv@{Mi\+\_\+inv}}
+\index{Mi\+\_\+inv@{Mi\+\_\+inv}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{Mi\+\_\+inv}{Mi\_inv}}
+{\footnotesize\ttfamily double Stdel\+::\+Mi\+\_\+inv\mbox{[}\hyperlink{MyOptions_8h_a463cdf068fb6289d1f81dac7e0f76ab5}{M\+A\+X\+N\+IL}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_a463cdf068fb6289d1f81dac7e0f76ab5}{M\+A\+X\+N\+IL}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Matriz de massa inversa dos modos internos de Schur. 
+
+
+
+Definition at line 186 of file Stdel.\+h.
+
+
+
+Referenced by Stdel\+::duplicar\+\_\+mass\+\_\+matrix(), Linear\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), make\+\_\+local\+\_\+matrices(), Triangle\+::make\+\_\+local\+\_\+matrices(), Stdel\+::print\+\_\+matrices(), and Stdel\+::show\+\_\+\+Mi\+\_\+inv().
+
+\mbox{\Hypertarget{classStdel_a7a09cf048f14496813a914ca6afe7366}\label{classStdel_a7a09cf048f14496813a914ca6afe7366}} 
+\index{Hexahedral@{Hexahedral}!mode\+\_\+@{mode\+\_\+}}
+\index{mode\+\_\+@{mode\+\_\+}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{mode\+\_\+}{mode\_}}
+{\footnotesize\ttfamily \hyperlink{classMode}{Mode} Stdel\+::mode\+\_\+\mbox{[}\hyperlink{MyOptions_8h_aa75ccd382acf88cec3e9c8025c1f88b7}{M\+A\+X\+M\+O\+D\+ES}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+mode\+\_\+\mbox{[}m(ijk)\mbox{]}= number of the expansion function into the local 
+
+
+
+Definition at line 180 of file Stdel.\+h.
+
+
+
+Referenced by compute\+At\+Points(), Linear\+::compute\+At\+Points(), Tetrahedral\+::compute\+At\+Points(), Triangle\+::compute\+At\+Points(), Quadrilateral\+::compute\+At\+Points(), Linear\+::compute\+Vertice(), Tetrahedral\+::compute\+Vertice(), Triangle\+::compute\+Vertice(), compute\+Vertice(), Quadrilateral\+::compute\+Vertice(), elem\+\_\+traces(), Linear\+::elem\+\_\+traces(), Triangle\+::elem\+\_\+traces(), Quadrilateral\+::elem\+\_\+traces(), eval\+\_\+\+Grad\+Phi(), Quadrilateral\+::eval\+\_\+\+Grad\+Phi(), Tetrahedral\+::eval\+G\+Q(), local\+Face\+Mode\+Map(), Tetrahedral\+::local\+Face\+Mode\+Map(), Linear\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), make\+\_\+local\+\_\+matrices(), Triangle\+::make\+\_\+local\+\_\+matrices(), mass(), Triangle\+::mass(), Quadrilateral\+::mass(), Linear\+::mass(), Tetrahedral\+::mass(), Linear\+::print(), Quadrilateral\+::print(), print(), Triangle\+::print(), Tetrahedral\+::printtoarray(), Tetrahedral\+::printtofile(), set(), Tetrahedral\+::set(), Linear\+::set(), Quadrilateral\+::set(), Triangle\+::set(), Stdel\+::show\+\_\+ind(), vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Linear\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Tetrahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Quadrilateral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), and Triangle\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv().
+
+\mbox{\Hypertarget{classStdel_ad1d9acc38335d3fd779ba5c14f1507f8}\label{classStdel_ad1d9acc38335d3fd779ba5c14f1507f8}} 
+\index{Hexahedral@{Hexahedral}!nb@{nb}}
+\index{nb@{nb}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{nb}{nb}}
+{\footnotesize\ttfamily int Stdel\+::nb\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+number of boundary (shared) modes (or modes) 
+
+
+
+Definition at line 160 of file Stdel.\+h.
+
+
+
+Referenced by Stdel\+::duplicar\+\_\+mass\+\_\+matrix(), Linear\+::\+Linear(), Tetrahedral\+::local\+Face\+Mode\+Map(), Linear\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), make\+\_\+local\+\_\+matrices(), Triangle\+::make\+\_\+local\+\_\+matrices(), Stdel\+::nb\+\_\+val(), Stdel\+::print\+\_\+matrices(), Quadrilateral\+::set(), Triangle\+::set(), Linear\+::set(), set(), and Tetrahedral\+::set().
+
+\mbox{\Hypertarget{classStdel_ad0f111a2ba3d9415618c8408da3fc100}\label{classStdel_ad0f111a2ba3d9415618c8408da3fc100}} 
+\index{Hexahedral@{Hexahedral}!nborder@{nborder}}
+\index{nborder@{nborder}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{nborder}{nborder}}
+{\footnotesize\ttfamily int Stdel\+::nborder\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+number of borders 
+
+
+
+Definition at line 156 of file Stdel.\+h.
+
+
+
+Referenced by elem\+\_\+traces(), Linear\+::elem\+\_\+traces(), Quadrilateral\+::elem\+\_\+traces(), Hexahedral(), Linear\+::\+Linear(), Stdel\+::nborder\+\_\+val(), Quadrilateral\+::\+Quadrilateral(), Tetrahedral\+::\+Tetrahedral(), and Triangle\+::\+Triangle().
+
+\mbox{\Hypertarget{classStdel_a912f36b591d847eed2531a3b3a51a520}\label{classStdel_a912f36b591d847eed2531a3b3a51a520}} 
+\index{Hexahedral@{Hexahedral}!ndim@{ndim}}
+\index{ndim@{ndim}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{ndim}{ndim}}
+{\footnotesize\ttfamily int Stdel\+::ndim\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+number of geometrical dimension 
+
+
+
+Definition at line 152 of file Stdel.\+h.
+
+
+
+Referenced by Quadrilateral\+::gauss\+\_\+parameters\+\_\+default(), gauss\+\_\+parameters\+\_\+default(), Triangle\+::gauss\+\_\+parameters\+\_\+default(), Hexahedral(), Linear\+::\+Linear(), Stdel\+::ndim\+\_\+val(), Stdel\+::print\+Stdel(), Quadrilateral\+::\+Quadrilateral(), Tetrahedral\+::\+Tetrahedral(), and Triangle\+::\+Triangle().
+
+\mbox{\Hypertarget{classStdel_aef3d1b34184b9fd03c0b655640c243b6}\label{classStdel_aef3d1b34184b9fd03c0b655640c243b6}} 
+\index{Hexahedral@{Hexahedral}!ne@{ne}}
+\index{ne@{ne}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{ne}{ne}}
+{\footnotesize\ttfamily int Stdel\+::ne\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+number of edges 
+
+
+
+Definition at line 154 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral(), Linear\+::\+Linear(), Stdel\+::ne\+\_\+val(), Stdel\+::print\+\_\+border\+\_\+map(), Quadrilateral\+::\+Quadrilateral(), Tetrahedral\+::\+Tetrahedral(), and Triangle\+::\+Triangle().
+
+\mbox{\Hypertarget{classStdel_a61987080026986a40412a8937aad4b24}\label{classStdel_a61987080026986a40412a8937aad4b24}} 
+\index{Hexahedral@{Hexahedral}!nf@{nf}}
+\index{nf@{nf}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{nf}{nf}}
+{\footnotesize\ttfamily int Stdel\+::nf\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+number of faces 
+
+
+
+Definition at line 155 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral(), Linear\+::\+Linear(), Stdel\+::nf\+\_\+val(), Quadrilateral\+::\+Quadrilateral(), set(), Tetrahedral\+::\+Tetrahedral(), and Triangle\+::\+Triangle().
+
+\mbox{\Hypertarget{classStdel_aa3cff31280606cd3eb95af770dd6f5b4}\label{classStdel_aa3cff31280606cd3eb95af770dd6f5b4}} 
+\index{Hexahedral@{Hexahedral}!N\+G\+QP@{N\+G\+QP}}
+\index{N\+G\+QP@{N\+G\+QP}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{N\+G\+QP}{NGQP}}
+{\footnotesize\ttfamily int Stdel\+::\+N\+G\+QP\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+total number of Gauss Quadrature points 
+
+
+
+Definition at line 163 of file Stdel.\+h.
+
+
+
+Referenced by Linear\+::eval\+\_\+\+Phi(), Stdel\+::\+N\+G\+Q\+P\+\_\+val(), Tetrahedral\+::set(), Linear\+::set(), Quadrilateral\+::set(), set(), and Triangle\+::set().
+
+\mbox{\Hypertarget{classStdel_af4d02765d362e2f0469633ff78734f89}\label{classStdel_af4d02765d362e2f0469633ff78734f89}} 
+\index{Hexahedral@{Hexahedral}!nn@{nn}}
+\index{nn@{nn}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{nn}{nn}}
+{\footnotesize\ttfamily int Stdel\+::nn\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+number of modes (and/or modes) 
+
+
+
+Definition at line 159 of file Stdel.\+h.
+
+
+
+Referenced by compute\+At\+Points(), Quadrilateral\+::compute\+At\+Points(), Triangle\+::compute\+At\+Points(), Linear\+::compute\+At\+Points(), Tetrahedral\+::compute\+At\+Points(), Triangle\+::compute\+Vertice(), Linear\+::compute\+Vertice(), Quadrilateral\+::compute\+Vertice(), compute\+Vertice(), Tetrahedral\+::compute\+Vertice(), Stdel\+::duplicar\+\_\+mass\+\_\+matrix(), Triangle\+::elem\+\_\+traces(), Quadrilateral\+::elem\+\_\+traces(), Linear\+::elem\+\_\+traces(), elem\+\_\+traces(), Tetrahedral\+::eval\+G\+Q(), Tetrahedral\+::local\+Face\+Mode\+Map(), Linear\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), make\+\_\+local\+\_\+matrices(), Triangle\+::make\+\_\+local\+\_\+matrices(), Stdel\+::nn\+\_\+val(), print(), Stdel\+::print\+\_\+matrices(), Tetrahedral\+::printtoarray(), Tetrahedral\+::printtofile(), Linear\+::set(), Quadrilateral\+::set(), Tetrahedral\+::set(), set(), Triangle\+::set(), Linear\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Quadrilateral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Triangle\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), and Tetrahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv().
+
+\mbox{\Hypertarget{classStdel_a20c0e35541cab4a1f07974659ae7a9ad}\label{classStdel_a20c0e35541cab4a1f07974659ae7a9ad}} 
+\index{Hexahedral@{Hexahedral}!nv@{nv}}
+\index{nv@{nv}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{nv}{nv}}
+{\footnotesize\ttfamily int Stdel\+::nv\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+number of vertices 
+
+
+
+Definition at line 153 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral(), Linear\+::\+Linear(), Tetrahedral\+::local\+Face\+Mode\+Map(), Stdel\+::nv\+\_\+val(), print\+G\+Qtofile(), printtoarray(), printtofile(), printw\+G\+Qtofile(), Quadrilateral\+::\+Quadrilateral(), Linear\+::set(), Triangle\+::set(), set(), Tetrahedral\+::set(), Quadrilateral\+::set(), Tetrahedral\+::\+Tetrahedral(), Triangle\+::\+Triangle(), and vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv().
+
+\mbox{\Hypertarget{classHexahedral_a2ee5b71919dfc0b878e5282bb86909f9}\label{classHexahedral_a2ee5b71919dfc0b878e5282bb86909f9}} 
+\index{Hexahedral@{Hexahedral}!nvf@{nvf}}
+\index{nvf@{nvf}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{nvf}{nvf}}
+{\footnotesize\ttfamily const int Hexahedral\+::nvf\mbox{[}6\mbox{]} = \{4,4,4,4,4,4\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 50 of file Hexahedral.\+h.
+
+
+
+Referenced by show\+\_\+nvf().
+
+\mbox{\Hypertarget{classStdel_a05cbb3f2a3fa0bc04a74e347dc6574cf}\label{classStdel_a05cbb3f2a3fa0bc04a74e347dc6574cf}} 
+\index{Hexahedral@{Hexahedral}!P@{P}}
+\index{P@{P}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{P}{P}}
+{\footnotesize\ttfamily int Stdel\+::P\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+(number of modes -\/ 1) in each direction 
+
+
+
+Definition at line 161 of file Stdel.\+h.
+
+
+
+Referenced by compute\+At\+Points(), Linear\+::compute\+At\+Points(), Tetrahedral\+::compute\+At\+Points(), Quadrilateral\+::compute\+At\+Points(), Triangle\+::compute\+At\+Points(), compute\+Vertice(), Linear\+::compute\+Vertice(), Tetrahedral\+::compute\+Vertice(), Triangle\+::compute\+Vertice(), Quadrilateral\+::compute\+Vertice(), Dirichlet(), Tetrahedral\+::\+Dirichlet(), Triangle\+::\+Dirichlet(), Quadrilateral\+::\+Dirichlet(), Linear\+::elem\+\_\+traces(), elem\+\_\+traces(), Triangle\+::elem\+\_\+traces(), Quadrilateral\+::elem\+\_\+traces(), Quadrilateral\+::eval\+\_\+\+Grad\+Phi(), eval\+\_\+\+Grad\+Phi(), Linear\+::eval\+G\+Q(), Tetrahedral\+::eval\+G\+Q(), Quadrilateral\+::eval\+G\+Q(), Triangle\+::eval\+G\+Q(), eval\+G\+Q(), local\+Face\+Mode\+Map(), Tetrahedral\+::local\+Face\+Mode\+Map(), Linear\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), make\+\_\+local\+\_\+matrices(), Triangle\+::make\+\_\+local\+\_\+matrices(), mass(), Tetrahedral\+::mass(), Quadrilateral\+::mass(), Triangle\+::mass(), Linear\+::mass(), Stdel\+::\+P\+\_\+val(), Stdel\+::print\+\_\+border\+\_\+map(), Stdel\+::print\+Stdel(), Tetrahedral\+::printtoarray(), Tetrahedral\+::printtofile(), Tetrahedral\+::set(), Quadrilateral\+::set(), Linear\+::set(), set(), Triangle\+::set(), Tetrahedral\+::teste\+\_\+face(), Tetrahedral\+::\+Tetrahedral(), Quadrilateral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Triangle\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Tetrahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Linear\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), $\sim$\+Hexahedral(), Quadrilateral\+::$\sim$\+Quadrilateral(), Tetrahedral\+::$\sim$\+Tetrahedral(), and Triangle\+::$\sim$\+Triangle().
+
+\mbox{\Hypertarget{classStdel_ab7849f154bd766857aac9557c19f7f84}\label{classStdel_ab7849f154bd766857aac9557c19f7f84}} 
+\index{Hexahedral@{Hexahedral}!Phi\+\_\+val@{Phi\+\_\+val}}
+\index{Phi\+\_\+val@{Phi\+\_\+val}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{Phi\+\_\+val}{Phi\_val}}
+{\footnotesize\ttfamily double Stdel\+::\+Phi\+\_\+val\mbox{[}\hyperlink{MyOptions_8h_aa75ccd382acf88cec3e9c8025c1f88b7}{M\+A\+X\+M\+O\+D\+ES}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ} $\ast$\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Contem os vetores Phi nos pontos de quadratura. 
+
+
+
+Definition at line 184 of file Stdel.\+h.
+
+
+
+Referenced by eval\+\_\+\+Phi(), Linear\+::eval\+\_\+\+Phi(), Triangle\+::eval\+\_\+\+Phi(), Quadrilateral\+::eval\+\_\+\+Phi(), Tetrahedral\+::eval\+\_\+\+Phi(), print(), print\+G\+Qtofile(), printtoarray(), printtofile(), printw\+G\+Qtofile(), Linear\+::set(), set(), Quadrilateral\+::set(), Triangle\+::set(), Stdel\+::show\+\_\+\+Phi\+\_\+val(), and vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv().
+
+\mbox{\Hypertarget{classStdel_a82074e598ad5af5ec45a3257a3c2b684}\label{classStdel_a82074e598ad5af5ec45a3257a3c2b684}} 
+\index{Hexahedral@{Hexahedral}!Q@{Q}}
+\index{Q@{Q}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{Q}{Q}}
+{\footnotesize\ttfamily int Stdel\+::Q\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+number of Gauss Quadrature points in direction i 
+
+
+
+Definition at line 162 of file Stdel.\+h.
+
+
+
+Referenced by compute\+Func\+G\+Q(), Quadrilateral\+::compute\+Func\+G\+Q(), Tetrahedral\+::compute\+Func\+G\+Q(), Triangle\+::compute\+Func\+G\+Q(), Linear\+::compute\+Func\+G\+Q(), Tetrahedral\+::\+Dirichlet(), Dirichlet(), Triangle\+::\+Dirichlet(), Quadrilateral\+::\+Dirichlet(), Quadrilateral\+::eval\+\_\+\+Grad\+Phi(), eval\+\_\+\+Grad\+Phi(), Tetrahedral\+::eval\+\_\+\+Phi(), Triangle\+::eval\+\_\+\+Phi(), Quadrilateral\+::eval\+\_\+\+Phi(), eval\+\_\+\+Phi(), Triangle\+::eval\+G\+Q(), Quadrilateral\+::eval\+G\+Q(), Linear\+::eval\+G\+Q(), Tetrahedral\+::eval\+G\+Q(), eval\+G\+Q(), Quadrilateral\+::gauss\+\_\+parameters\+\_\+default(), Linear\+::gauss\+\_\+parameters\+\_\+default(), gauss\+\_\+parameters\+\_\+default(), Triangle\+::gauss\+\_\+parameters\+\_\+default(), Tetrahedral\+::gauss\+\_\+parameters\+\_\+default(), Linear\+::\+Gradiente(), Triangle\+::\+Gradiente(), Quadrilateral\+::\+Gradiente(), Gradiente(), Tetrahedral\+::\+Jacobian(), Quadrilateral\+::\+Jacobian(), Linear\+::\+Jacobian(), Triangle\+::\+Jacobian(), Jacobian(), Linear\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), make\+\_\+local\+\_\+matrices(), Triangle\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::map\+\_\+face(), Quadrilateral\+::mass(), Linear\+::mass(), Triangle\+::mass(), mass(), Tetrahedral\+::mass(), Stdel\+::print\+\_\+border\+\_\+map(), Triangle\+::print\+G\+Qtofile(), print\+G\+Qtofile(), Quadrilateral\+::print\+G\+Qtofile(), Linear\+::print\+G\+Qtofile(), Stdel\+::print\+Stdel(), printtoarray(), Triangle\+::printtoarray(), Quadrilateral\+::printtoarray(), Linear\+::printtoarray(), Tetrahedral\+::printtoarray(), Linear\+::printtofile(), printtofile(), Quadrilateral\+::printtofile(), Triangle\+::printtofile(), Tetrahedral\+::printtofile(), Quadrilateral\+::printw\+G\+Qtofile(), Triangle\+::printw\+G\+Qtofile(), Linear\+::printw\+G\+Qtofile(), printw\+G\+Qtofile(), Stdel\+::\+Q\+\_\+val(), Quadrilateral\+::set(), Triangle\+::set(), Linear\+::set(), Tetrahedral\+::set(), set(), Tetrahedral\+::\+Tetrahedral(), Linear\+::trace(), Quadrilateral\+::trace(), Triangle\+::trace(), trace(), Quadrilateral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Linear\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Triangle\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Tetrahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), and Stdel\+::w\+\_\+vec().
+
+\mbox{\Hypertarget{classStdel_a63a106b928d211c71d5fec6449ef4d51}\label{classStdel_a63a106b928d211c71d5fec6449ef4d51}} 
+\index{Hexahedral@{Hexahedral}!qborder@{qborder}}
+\index{qborder@{qborder}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{qborder}{qborder}}
+{\footnotesize\ttfamily int Stdel\+::qborder\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+number of Gauss quadrature points on the faces (borders) 
+
+
+
+Definition at line 157 of file Stdel.\+h.
+
+
+
+Referenced by elem\+\_\+traces(), Quadrilateral\+::elem\+\_\+traces(), Triangle\+::elem\+\_\+traces(), Linear\+::\+Linear(), Stdel\+::qborder\+\_\+val(), set(), Quadrilateral\+::set(), Tetrahedral\+::set(), and Triangle\+::set().
+
+\mbox{\Hypertarget{classHexahedral_a20e8fb8b0d5bbe0b16676290f82324cf}\label{classHexahedral_a20e8fb8b0d5bbe0b16676290f82324cf}} 
+\index{Hexahedral@{Hexahedral}!sinal\+\_\+normal@{sinal\+\_\+normal}}
+\index{sinal\+\_\+normal@{sinal\+\_\+normal}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{sinal\+\_\+normal}{sinal\_normal}}
+{\footnotesize\ttfamily const int Hexahedral\+::sinal\+\_\+normal\mbox{[}6\mbox{]} = \{-\/1,1,-\/1,1,-\/1,1\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 64 of file Hexahedral.\+h.
+
+
+
+Referenced by superficie\+\_\+externa().
+
+\mbox{\Hypertarget{classStdel_a68f8781a42728758ccde39e15cd319ed}\label{classStdel_a68f8781a42728758ccde39e15cd319ed}} 
+\index{Hexahedral@{Hexahedral}!tipo@{tipo}}
+\index{tipo@{tipo}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{tipo}{tipo}}
+{\footnotesize\ttfamily int Stdel\+::tipo\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+type of the element 
+
+
+
+Definition at line 151 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral(), Linear\+::\+Linear(), Quadrilateral\+::\+Quadrilateral(), Tetrahedral\+::\+Tetrahedral(), Stdel\+::tipo\+\_\+val(), and Triangle\+::\+Triangle().
+
+\mbox{\Hypertarget{classStdel_a55624584790a08437c03540489d04898}\label{classStdel_a55624584790a08437c03540489d04898}} 
+\index{Hexahedral@{Hexahedral}!vtk\+\_\+type@{vtk\+\_\+type}}
+\index{vtk\+\_\+type@{vtk\+\_\+type}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{vtk\+\_\+type}{vtk\_type}}
+{\footnotesize\ttfamily int Stdel\+::vtk\+\_\+type\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+number of element for vtk file 
+
+
+
+Definition at line 158 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral(), Linear\+::\+Linear(), Quadrilateral\+::\+Quadrilateral(), Stdel\+::show\+\_\+vtk\+\_\+type(), Tetrahedral\+::\+Tetrahedral(), and Triangle\+::\+Triangle().
+
+\mbox{\Hypertarget{classStdel_af99d72cbda49c30e23e83705c95a1c5b}\label{classStdel_af99d72cbda49c30e23e83705c95a1c5b}} 
+\index{Hexahedral@{Hexahedral}!w\+GQ@{w\+GQ}}
+\index{w\+GQ@{w\+GQ}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{w\+GQ}{wGQ}}
+{\footnotesize\ttfamily double Stdel\+::w\+GQ\mbox{[}3\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+weights of the Gauss quadrature points 
+\begin{DoxyParams}{Parameters}
+{\em Index} & of the row refers to the direction\+: 0=x; 1=y; 2=z. \\
+\hline
+{\em Index} & of the column refers to the quadrature point \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 177 of file Stdel.\+h.
+
+
+
+Referenced by Quadrilateral\+::gauss\+\_\+parameters\+\_\+default(), Linear\+::gauss\+\_\+parameters\+\_\+default(), gauss\+\_\+parameters\+\_\+default(), Tetrahedral\+::gauss\+\_\+parameters\+\_\+default(), Triangle\+::gauss\+\_\+parameters\+\_\+default(), Linear\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), make\+\_\+local\+\_\+matrices(), Triangle\+::make\+\_\+local\+\_\+matrices(), mass(), Tetrahedral\+::mass(), Quadrilateral\+::mass(), Triangle\+::mass(), Linear\+::mass(), Linear\+::printw\+G\+Qtofile(), printw\+G\+Qtofile(), Triangle\+::printw\+G\+Qtofile(), Quadrilateral\+::printw\+G\+Qtofile(), vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Linear\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Quadrilateral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Triangle\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Tetrahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), and Stdel\+::w\+\_\+vec().
+
+\mbox{\Hypertarget{classStdel_adedcb4d4faa12adf348054780a3b2c1a}\label{classStdel_adedcb4d4faa12adf348054780a3b2c1a}} 
+\index{Hexahedral@{Hexahedral}!x\+GQ@{x\+GQ}}
+\index{x\+GQ@{x\+GQ}!Hexahedral@{Hexahedral}}
+\subsubsection{\texorpdfstring{x\+GQ}{xGQ}}
+{\footnotesize\ttfamily double Stdel\+::x\+GQ\mbox{[}3\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+coordinates of the Gauss quadrature points 
+\begin{DoxyParams}{Parameters}
+{\em Index} & of the row refers to the direction\+: 0=x; 1=y; 2=z. \\
+\hline
+{\em Index} & of the column refers to the quadrature point \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 174 of file Stdel.\+h.
+
+
+
+Referenced by compute\+Func\+G\+Q(), Linear\+::compute\+Func\+G\+Q(), Quadrilateral\+::compute\+Func\+G\+Q(), Tetrahedral\+::compute\+Func\+G\+Q(), Triangle\+::compute\+Func\+G\+Q(), Quadrilateral\+::eval\+\_\+\+Grad\+Phi(), eval\+\_\+\+Grad\+Phi(), Quadrilateral\+::eval\+G\+Q(), Tetrahedral\+::eval\+G\+Q(), Linear\+::eval\+G\+Q(), Triangle\+::eval\+G\+Q(), eval\+G\+Q(), Quadrilateral\+::gauss\+\_\+parameters\+\_\+default(), Linear\+::gauss\+\_\+parameters\+\_\+default(), gauss\+\_\+parameters\+\_\+default(), Tetrahedral\+::gauss\+\_\+parameters\+\_\+default(), Triangle\+::gauss\+\_\+parameters\+\_\+default(), Linear\+::\+Gradiente(), Quadrilateral\+::\+Gradiente(), Gradiente(), Triangle\+::\+Gradiente(), Jacobian(), Quadrilateral\+::\+Jacobian(), Linear\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), make\+\_\+local\+\_\+matrices(), Triangle\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::map\+\_\+face(), Tetrahedral\+::mass(), Triangle\+::mass(), Linear\+::mass(), mass(), Quadrilateral\+::mass(), Linear\+::print\+G\+Qtofile(), Triangle\+::print\+G\+Qtofile(), Quadrilateral\+::print\+G\+Qtofile(), Quadrilateral\+::printtoarray(), Linear\+::printtoarray(), Tetrahedral\+::printtoarray(), Triangle\+::printtoarray(), Linear\+::printtofile(), Quadrilateral\+::printtofile(), Tetrahedral\+::printtofile(), Triangle\+::printtofile(), Triangle\+::printw\+G\+Qtofile(), Linear\+::printw\+G\+Qtofile(), Quadrilateral\+::printw\+G\+Qtofile(), set(), Linear\+::set(), Quadrilateral\+::set(), Triangle\+::set(), trace(), Triangle\+::trace(), Quadrilateral\+::trace(), Quadrilateral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Tetrahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Linear\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), and Triangle\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Hexahedral_8h}{Hexahedral.\+h}\item 
+\hyperlink{Hexahedral_8cpp}{Hexahedral.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,12 @@
+<map id="DG_Prob::DG_EI_Epetra_Inflow" name="DG_Prob::DG_EI_Epetra_Inflow">
+<area shape="rect" id="node2" href="$Funcoes__c_8h.html#a57d673f8d6833fb7a7aced326df10ca9" title="B" alt="" coords="234,31,273,57"/>
+<area shape="rect" id="node9" href="$classDG__Prob.html#a6e6d838559f53cff2a917c3e9a5111ba" title="DG_Prob::DG_EI_Inflow" alt="" coords="188,81,319,108"/>
+<area shape="rect" id="node10" href="$classStdel.html#a6086dceed8fe3dd410da0d6b84f02377" title="Stdel::nn_val" alt="" coords="213,132,293,159"/>
+<area shape="rect" id="node11" href="$classPhElem.html#a227c31195c6832f8e36f8d507806bd54" title="PhElem::show_ptr_stdel" alt="" coords="189,183,318,209"/>
+<area shape="rect" id="node3" href="$ASPFunctions_8cpp.html#ad2b054769d09e23f58c382461a33fda5" title="Jacobi_P" alt="" coords="373,5,435,32"/>
+<area shape="rect" id="node4" href="$ASPFunctions_8cpp.html#af2ec04a3aa3462cb36aa0a564d022914" title="my_gamma" alt="" coords="367,56,441,83"/>
+<area shape="rect" id="node5" href="$ASPFunctions_8cpp.html#ac3f705ccfdcb247014c373929aa4b358" title="gamma_log" alt="" coords="489,56,564,83"/>
+<area shape="rect" id="node6" href="$ASPFunctions_8cpp.html#adbb9227db329a95b79f56bc1bc599a36" title="d_epsilon" alt="" coords="612,5,677,32"/>
+<area shape="rect" id="node7" href="$Funcoes__c_8h.html#a06a315d5c541c5118010c5dd958cec0c" title="p1" alt="" coords="625,56,664,83"/>
+<area shape="rect" id="node8" href="$Funcoes__c_8h.html#a66ec9f5cd02b067ff05c1f11fe152748" title="p2" alt="" coords="625,107,664,133"/>
+</map>

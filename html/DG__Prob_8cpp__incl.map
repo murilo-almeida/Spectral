@@ -1,0 +1,20 @@
+<map id="DG_Prob.cpp" name="DG_Prob.cpp">
+<area shape="rect" id="node2" href="$DG__Prob_8h.html" title="DG_Prob.h" alt="" coords="955,80,1027,107"/>
+<area shape="rect" id="node3" href="$PhElem_8hpp.html" title="PhElem.hpp" alt="" coords="1123,229,1199,256"/>
+<area shape="rect" id="node48" href="$GeProb_8hpp.html" title="GeProb.hpp" alt="" coords="837,155,913,181"/>
+<area shape="rect" id="node49" href="$DG__Elem_8hpp.html" title="DG_Elem.hpp" alt="" coords="989,155,1074,181"/>
+<area shape="rect" id="node50" href="$Fluids_8h.html" title="Fluids.h" alt="" coords="924,229,981,256"/>
+<area shape="rect" id="node4" href="$spectral_8h.html" title="spectral.h" alt="" coords="1128,304,1193,331"/>
+<area shape="rect" id="node5" href="$MyOptions_8h.html" title="MyOptions.h" alt="" coords="1563,379,1641,405"/>
+<area shape="rect" id="node6" href="$MyTrilinos_8h.html" title="MyTrilinos.h" alt="" coords="1792,379,1868,405"/>
+<area shape="rect" id="node38" href="$Geo_8h.html" title="Geo.h" alt="" coords="844,379,893,405"/>
+<area shape="rect" id="node39" href="$Funcoes__c_8h.html" title="Funcoes_c.h" alt="" coords="5,379,84,405"/>
+<area shape="rect" id="node40" href="$Tstruct_8h.html" title="Tstruct.h" alt="" coords="918,379,979,405"/>
+<area shape="rect" id="node41" href="$Particao_8h.html" title="Particao.h" alt="" coords="1003,379,1070,405"/>
+<area shape="rect" id="node42" href="$Stdel_8h.html" title="Stdel.h" alt="" coords="1094,379,1147,405"/>
+<area shape="rect" id="node43" href="$Linear_8h.html" title="Linear.h" alt="" coords="1171,379,1230,405"/>
+<area shape="rect" id="node44" href="$Triangle_8h.html" title="Triangle.h" alt="" coords="1254,379,1321,405"/>
+<area shape="rect" id="node45" href="$Quadrilateral_8h.html" title="Quadrilateral.h" alt="" coords="1345,379,1433,405"/>
+<area shape="rect" id="node46" href="$Tetrahedral_8h.html" title="Tetrahedral.h" alt="" coords="1457,379,1539,405"/>
+<area shape="rect" id="node47" href="$Hexahedral_8h.html" title="Hexahedral.h" alt="" coords="2280,379,2361,405"/>
+</map>

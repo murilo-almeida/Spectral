@@ -1,0 +1,11 @@
+<map id="DG_Prob::DG_EI_Outflow" name="DG_Prob::DG_EI_Outflow">
+<area shape="rect" id="node2" href="$classDG__Prob.html#a7fa0c815d5707dbf3858feb3977f5ee5" title="DG_Prob::DG_EI_Epetra\l_Outflow" alt="" coords="195,74,330,115"/>
+<area shape="rect" id="node10" href="$classDG__Prob.html#a2e99df149cf01faccb484389f8627d33" title="DG_Prob::DG_MatrizVetor\l_UMFPACK" alt="" coords="192,139,333,181"/>
+<area shape="rect" id="node3" href="$classDG__Prob.html#a68ffd2ab09f51c7b29b88b006fbc5c49" title="DG_Prob::DG_MatrizVetor\l_Epetra" alt="" coords="381,74,523,115"/>
+<area shape="rect" id="node4" href="$classDG__Prob.html#a23d58d1583859acafd9a6d5888424374" title="DG_Prob::Eigenvectors" alt="" coords="590,5,717,32"/>
+<area shape="rect" id="node5" href="$classDG__Prob.html#a4874e2992ccde1658a6ab46bc595779f" title="DG_Prob::Ge_MVRA0" alt="" coords="592,56,715,83"/>
+<area shape="rect" id="node8" href="$classDG__Prob.html#af4fefe289d5d1beb69636817eb9f9703" title="DG_Prob::Ge_MVRA" alt="" coords="595,107,712,133"/>
+<area shape="rect" id="node9" href="$classDG__Prob.html#acb4b2ec3201e22d62bcf50b947b10dc5" title="DG_Prob::DG_conditionNumber" alt="" coords="571,157,736,184"/>
+<area shape="rect" id="node6" href="$classDG__Prob.html#ac4dfaa4ea6466833ecb5cc5c3fcb3875" title="DG_Prob::DG_Iterate" alt="" coords="784,81,903,108"/>
+<area shape="rect" id="node7" href="$classDG__Prob.html#a015d792341ee05b1b3eaef7990bf1e06" title="DG_Prob::Driver" alt="" coords="951,81,1047,108"/>
+</map>

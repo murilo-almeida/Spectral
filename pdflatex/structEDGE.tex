@@ -1,0 +1,295 @@
+\hypertarget{structEDGE}{}\section{E\+D\+GE Struct Reference}
+\label{structEDGE}\index{E\+D\+GE@{E\+D\+GE}}
+
+
+{\ttfamily \#include $<$spectral.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structEDGE_a502c871cbb5d66d17475061e7fff548a}{E\+D\+GE} ()
+\item 
+\hyperlink{structEDGE_a5a15e55729034ee840d2eac36fe3be23}{$\sim$\+E\+D\+GE} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structEDGE_ae66eecd49a3fc1c8910631431925d5a4}{tipo}
+\item 
+int \hyperlink{structEDGE_a408340cfa46d83d300c4ed8b2900d30e}{Na}
+\item 
+int \hyperlink{structEDGE_ad0f1a447a4d1b262b2fa1eff986c3091}{Nb}
+\item 
+int \hyperlink{structEDGE_ac581aec971087849378dfbaadcf348d0}{num\+\_\+elem}
+\item 
+int \hyperlink{structEDGE_a60c9d8cbc65e29ca791d0e46f62e3806}{elemento} \mbox{[}2\mbox{]}
+\item 
+int \hyperlink{structEDGE_a90bb5dbccfbd03011a1d804e35cfe14c}{num\+\_\+local} \mbox{[}2\mbox{]}
+\item 
+int \hyperlink{structEDGE_a7f3d4b5d4f9959c2814157d3f5c8a72a}{sinal} \mbox{[}2\mbox{]}
+\item 
+double \hyperlink{structEDGE_a9f301d18d111fbc49b8eb67ead2cece8}{normal} \mbox{[}3\mbox{]}
+\item 
+double \hyperlink{structEDGE_ab4b0765a9fd5095fd67820144a329a94}{comprimento}
+\item 
+double $\ast$ \hyperlink{structEDGE_a8f7ef1d58c0bb5e80eaddf6bdba5e67e}{pdir}
+\item 
+double $\ast$ \hyperlink{structEDGE_a1d4086d11f2d42029de2bf64e8624eff}{sdir}
+\item 
+int \hyperlink{structEDGE_ad7e004eef079a66034a4d3a3d5c2a62e}{gbtrbind} \mbox{[}2\mbox{]}
+\item 
+int \hyperlink{structEDGE_a141ff580277e62d4726b4bdc4f6b8f2f}{part\+\_\+num}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{structEDGE}{E\+D\+GE} = Borda do elemento
+
+Arestas das faces, compostas por dois vertices; 
+\begin{DoxyParams}{Parameters}
+{\em tipo} & =-\/1 inflow; = 0 no-\/flow; =+1 outflow; = 2 interior; \\
+\hline
+{\em Na} & = number of the initial mode \\
+\hline
+{\em Nb} & = number of the final mode \\
+\hline
+{\em elemento\mbox{[}2\mbox{]}} & = numbers of the elements sharing the border \\
+\hline
+{\em num\+\_\+local\mbox{[}2\mbox{]}} & = side numbers the border assumes in the elements \\
+\hline
+{\em sinal\mbox{[}2\mbox{]}} & = sign the border has in the elements; -\/1 if the border is followed backwards; \\
+\hline
+{\em normal\mbox{[}2\mbox{]}=} & components of the normal vector; \\
+\hline
+{\em comprimento} & = length of the border; \\
+\hline
+{\em $\ast$pdir} & = pointer to the array containing the Dirichlet values of pressure \\
+\hline
+{\em $\ast$sdir} & = pointer to the array containing the Dirichlet values of saturation \\
+\hline
+{\em gbtrbind} & = global trace border index for the traces on the sides \\
+\hline
+{\em part\+\_\+num} & = partition number \\
+\hline
+{\em flux\+\_\+w} & = flux of w through the border \\
+\hline
+{\em flux\+\_\+n} & = flux of non-\/wetting fluid through the border \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 149 of file spectral.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structEDGE_a502c871cbb5d66d17475061e7fff548a}\label{structEDGE_a502c871cbb5d66d17475061e7fff548a}} 
+\index{E\+D\+GE@{E\+D\+GE}!E\+D\+GE@{E\+D\+GE}}
+\index{E\+D\+GE@{E\+D\+GE}!E\+D\+GE@{E\+D\+GE}}
+\subsubsection{\texorpdfstring{E\+D\+G\+E()}{EDGE()}}
+{\footnotesize\ttfamily E\+D\+G\+E\+::\+E\+D\+GE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 152 of file spectral.\+h.
+
+\mbox{\Hypertarget{structEDGE_a5a15e55729034ee840d2eac36fe3be23}\label{structEDGE_a5a15e55729034ee840d2eac36fe3be23}} 
+\index{E\+D\+GE@{E\+D\+GE}!````~E\+D\+GE@{$\sim$\+E\+D\+GE}}
+\index{````~E\+D\+GE@{$\sim$\+E\+D\+GE}!E\+D\+GE@{E\+D\+GE}}
+\subsubsection{\texorpdfstring{$\sim$\+E\+D\+G\+E()}{~EDGE()}}
+{\footnotesize\ttfamily E\+D\+G\+E\+::$\sim$\+E\+D\+GE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 157 of file spectral.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structEDGE_ab4b0765a9fd5095fd67820144a329a94}\label{structEDGE_ab4b0765a9fd5095fd67820144a329a94}} 
+\index{E\+D\+GE@{E\+D\+GE}!comprimento@{comprimento}}
+\index{comprimento@{comprimento}!E\+D\+GE@{E\+D\+GE}}
+\subsubsection{\texorpdfstring{comprimento}{comprimento}}
+{\footnotesize\ttfamily double E\+D\+G\+E\+::comprimento}
+
+
+
+Definition at line 167 of file spectral.\+h.
+
+
+
+Referenced by Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Construir\+\_\+bordas(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+eco(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), and teste\+\_\+aresta().
+
+\mbox{\Hypertarget{structEDGE_a60c9d8cbc65e29ca791d0e46f62e3806}\label{structEDGE_a60c9d8cbc65e29ca791d0e46f62e3806}} 
+\index{E\+D\+GE@{E\+D\+GE}!elemento@{elemento}}
+\index{elemento@{elemento}!E\+D\+GE@{E\+D\+GE}}
+\subsubsection{\texorpdfstring{elemento}{elemento}}
+{\footnotesize\ttfamily int E\+D\+G\+E\+::elemento\mbox{[}2\mbox{]}}
+
+
+
+Definition at line 165 of file spectral.\+h.
+
+
+
+Referenced by Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Construir\+\_\+bordas(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+eco(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Epetra\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Epetra\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Epetra\+\_\+\+Outflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+imprimir\+\_\+taxas\+\_\+de\+\_\+producao(), Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Particionar\+\_\+malha(), E\+D\+\_\+\+Prob\+::preamble(), D\+G\+\_\+\+Prob\+::preamble(), D\+G\+\_\+\+Prob\+::\+Processa\+\_\+condicoes\+\_\+contorno(), and teste\+\_\+aresta().
+
+\mbox{\Hypertarget{structEDGE_ad7e004eef079a66034a4d3a3d5c2a62e}\label{structEDGE_ad7e004eef079a66034a4d3a3d5c2a62e}} 
+\index{E\+D\+GE@{E\+D\+GE}!gbtrbind@{gbtrbind}}
+\index{gbtrbind@{gbtrbind}!E\+D\+GE@{E\+D\+GE}}
+\subsubsection{\texorpdfstring{gbtrbind}{gbtrbind}}
+{\footnotesize\ttfamily int E\+D\+G\+E\+::gbtrbind\mbox{[}2\mbox{]}}
+
+
+
+Definition at line 171 of file spectral.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), E\+D\+\_\+\+Prob\+::preamble(), and D\+G\+\_\+\+Prob\+::preamble().
+
+\mbox{\Hypertarget{structEDGE_a408340cfa46d83d300c4ed8b2900d30e}\label{structEDGE_a408340cfa46d83d300c4ed8b2900d30e}} 
+\index{E\+D\+GE@{E\+D\+GE}!Na@{Na}}
+\index{Na@{Na}!E\+D\+GE@{E\+D\+GE}}
+\subsubsection{\texorpdfstring{Na}{Na}}
+{\footnotesize\ttfamily int E\+D\+G\+E\+::\+Na}
+
+
+
+Definition at line 165 of file spectral.\+h.
+
+
+
+Referenced by Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Construir\+\_\+bordas(), D\+G\+\_\+\+Prob\+::\+Processa\+\_\+condicoes\+\_\+contorno(), and teste\+\_\+aresta().
+
+\mbox{\Hypertarget{structEDGE_ad0f1a447a4d1b262b2fa1eff986c3091}\label{structEDGE_ad0f1a447a4d1b262b2fa1eff986c3091}} 
+\index{E\+D\+GE@{E\+D\+GE}!Nb@{Nb}}
+\index{Nb@{Nb}!E\+D\+GE@{E\+D\+GE}}
+\subsubsection{\texorpdfstring{Nb}{Nb}}
+{\footnotesize\ttfamily int E\+D\+G\+E\+::\+Nb}
+
+
+
+Definition at line 165 of file spectral.\+h.
+
+
+
+Referenced by Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Construir\+\_\+bordas(), D\+G\+\_\+\+Prob\+::\+Processa\+\_\+condicoes\+\_\+contorno(), and teste\+\_\+aresta().
+
+\mbox{\Hypertarget{structEDGE_a9f301d18d111fbc49b8eb67ead2cece8}\label{structEDGE_a9f301d18d111fbc49b8eb67ead2cece8}} 
+\index{E\+D\+GE@{E\+D\+GE}!normal@{normal}}
+\index{normal@{normal}!E\+D\+GE@{E\+D\+GE}}
+\subsubsection{\texorpdfstring{normal}{normal}}
+{\footnotesize\ttfamily double E\+D\+G\+E\+::normal\mbox{[}3\mbox{]}}
+
+
+
+Definition at line 167 of file spectral.\+h.
+
+
+
+Referenced by Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Construir\+\_\+bordas(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), D\+G\+\_\+\+Elem\+::inicia\+\_\+tracos(), and teste\+\_\+aresta().
+
+\mbox{\Hypertarget{structEDGE_ac581aec971087849378dfbaadcf348d0}\label{structEDGE_ac581aec971087849378dfbaadcf348d0}} 
+\index{E\+D\+GE@{E\+D\+GE}!num\+\_\+elem@{num\+\_\+elem}}
+\index{num\+\_\+elem@{num\+\_\+elem}!E\+D\+GE@{E\+D\+GE}}
+\subsubsection{\texorpdfstring{num\+\_\+elem}{num\_elem}}
+{\footnotesize\ttfamily int E\+D\+G\+E\+::num\+\_\+elem}
+
+
+
+Definition at line 165 of file spectral.\+h.
+
+
+
+Referenced by Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Construir\+\_\+bordas(), and teste\+\_\+aresta().
+
+\mbox{\Hypertarget{structEDGE_a90bb5dbccfbd03011a1d804e35cfe14c}\label{structEDGE_a90bb5dbccfbd03011a1d804e35cfe14c}} 
+\index{E\+D\+GE@{E\+D\+GE}!num\+\_\+local@{num\+\_\+local}}
+\index{num\+\_\+local@{num\+\_\+local}!E\+D\+GE@{E\+D\+GE}}
+\subsubsection{\texorpdfstring{num\+\_\+local}{num\_local}}
+{\footnotesize\ttfamily int E\+D\+G\+E\+::num\+\_\+local\mbox{[}2\mbox{]}}
+
+
+
+Definition at line 165 of file spectral.\+h.
+
+
+
+Referenced by Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Construir\+\_\+bordas(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+eco(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), E\+D\+\_\+\+Prob\+::preamble(), D\+G\+\_\+\+Prob\+::preamble(), and teste\+\_\+aresta().
+
+\mbox{\Hypertarget{structEDGE_a141ff580277e62d4726b4bdc4f6b8f2f}\label{structEDGE_a141ff580277e62d4726b4bdc4f6b8f2f}} 
+\index{E\+D\+GE@{E\+D\+GE}!part\+\_\+num@{part\+\_\+num}}
+\index{part\+\_\+num@{part\+\_\+num}!E\+D\+GE@{E\+D\+GE}}
+\subsubsection{\texorpdfstring{part\+\_\+num}{part\_num}}
+{\footnotesize\ttfamily int E\+D\+G\+E\+::part\+\_\+num}
+
+
+
+Definition at line 172 of file spectral.\+h.
+
+
+
+Referenced by Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Particionar\+\_\+malha().
+
+\mbox{\Hypertarget{structEDGE_a8f7ef1d58c0bb5e80eaddf6bdba5e67e}\label{structEDGE_a8f7ef1d58c0bb5e80eaddf6bdba5e67e}} 
+\index{E\+D\+GE@{E\+D\+GE}!pdir@{pdir}}
+\index{pdir@{pdir}!E\+D\+GE@{E\+D\+GE}}
+\subsubsection{\texorpdfstring{pdir}{pdir}}
+{\footnotesize\ttfamily double$\ast$ E\+D\+G\+E\+::pdir}
+
+
+
+Definition at line 168 of file spectral.\+h.
+
+
+
+Referenced by Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Construir\+\_\+bordas(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow(), D\+G\+\_\+\+Prob\+::\+Processa\+\_\+condicoes\+\_\+contorno(), and Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::$\sim$\+Ge\+Prob().
+
+\mbox{\Hypertarget{structEDGE_a1d4086d11f2d42029de2bf64e8624eff}\label{structEDGE_a1d4086d11f2d42029de2bf64e8624eff}} 
+\index{E\+D\+GE@{E\+D\+GE}!sdir@{sdir}}
+\index{sdir@{sdir}!E\+D\+GE@{E\+D\+GE}}
+\subsubsection{\texorpdfstring{sdir}{sdir}}
+{\footnotesize\ttfamily double$\ast$ E\+D\+G\+E\+::sdir}
+
+
+
+Definition at line 169 of file spectral.\+h.
+
+
+
+Referenced by Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Construir\+\_\+bordas(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+Processa\+\_\+condicoes\+\_\+contorno(), and Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::$\sim$\+Ge\+Prob().
+
+\mbox{\Hypertarget{structEDGE_a7f3d4b5d4f9959c2814157d3f5c8a72a}\label{structEDGE_a7f3d4b5d4f9959c2814157d3f5c8a72a}} 
+\index{E\+D\+GE@{E\+D\+GE}!sinal@{sinal}}
+\index{sinal@{sinal}!E\+D\+GE@{E\+D\+GE}}
+\subsubsection{\texorpdfstring{sinal}{sinal}}
+{\footnotesize\ttfamily int E\+D\+G\+E\+::sinal\mbox{[}2\mbox{]}}
+
+
+
+Definition at line 165 of file spectral.\+h.
+
+
+
+Referenced by Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Construir\+\_\+bordas(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+eco(), and teste\+\_\+aresta().
+
+\mbox{\Hypertarget{structEDGE_ae66eecd49a3fc1c8910631431925d5a4}\label{structEDGE_ae66eecd49a3fc1c8910631431925d5a4}} 
+\index{E\+D\+GE@{E\+D\+GE}!tipo@{tipo}}
+\index{tipo@{tipo}!E\+D\+GE@{E\+D\+GE}}
+\subsubsection{\texorpdfstring{tipo}{tipo}}
+{\footnotesize\ttfamily int E\+D\+G\+E\+::tipo}
+
+
+
+Definition at line 165 of file spectral.\+h.
+
+
+
+Referenced by Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Construir\+\_\+bordas(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+eco(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+Matriz\+Vetor\+\_\+\+Epetra(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+Matriz\+Vetor\+\_\+\+U\+M\+F\+P\+A\+C\+K(), Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Particionar\+\_\+malha(), E\+D\+\_\+\+Prob\+::preamble(), D\+G\+\_\+\+Prob\+::preamble(), D\+G\+\_\+\+Prob\+::\+Processa\+\_\+condicoes\+\_\+contorno(), Ph\+Elem$<$ 2 $>$\+::set\+\_\+border\+\_\+tipo(), and teste\+\_\+aresta().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{spectral_8h}{spectral.\+h}\end{DoxyCompactItemize}

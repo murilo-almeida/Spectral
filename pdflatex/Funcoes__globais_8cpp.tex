@@ -1,0 +1,333 @@
+\hypertarget{Funcoes__globais_8cpp}{}\section{Funcoes\+\_\+globais.\+cpp File Reference}
+\label{Funcoes__globais_8cpp}\index{Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}}
+{\ttfamily \#include \char`\"{}spectral.\+h\char`\"{}}\newline
+Include dependency graph for Funcoes\+\_\+globais.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Funcoes__globais_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Funcoes__globais_8cpp_a8585dac2b3c01c17f94418510711da51}{quad\+\_\+ordem} (const int Av\mbox{[}4\mbox{]}, const int Bi\mbox{[}4\mbox{]}, int dir\mbox{[}3\mbox{]}, int sgn\mbox{[}3\mbox{]}, int \&v2)
+\item 
+void \hyperlink{Funcoes__globais_8cpp_abffc015e47d56661836ebb8a02d4df14}{ordenar} (const int n, int A\mbox{[}$\,$\mbox{]}, int seq\mbox{[}$\,$\mbox{]})
+\item 
+double \hyperlink{Funcoes__globais_8cpp_a68d140f203301ac32392678eab282490}{norma\+\_\+max} (int N, double V\mbox{[}$\,$\mbox{]})
+\item 
+double \hyperlink{Funcoes__globais_8cpp_a700dfceca74ee8515441447d5bc3a5bf}{norma\+\_\+l2} (int N, double \hyperlink{ASPFunctions_8cpp_a57d673f8d6833fb7a7aced326df10ca9}{B}\mbox{[}$\,$\mbox{]})
+\item 
+int \hyperlink{Funcoes__globais_8cpp_a99cf46319bd8577192f6694a3547b450}{Sinal} (int i)
+\item 
+double \hyperlink{Funcoes__globais_8cpp_aa9acf6f7eed043f6433c6dfdfd467948}{funcao} (double x, double y, double z)
+\item 
+double \hyperlink{Funcoes__globais_8cpp_a1b30ba1f15a8ba4bcca34dbec60ab85d}{g} (double x, double y, double z)
+\item 
+void \hyperlink{Funcoes__globais_8cpp_afd028b5b639936153b8fcc117142c64d}{tetrahedro\+\_\+faz\+\_\+face\+\_\+mask} (const int \&n\+\_\+in, int ver\+\_\+temp\mbox{[}$\,$\mbox{]}, std\+::vector$<$ int $>$ \&face\+\_\+mask)
+\item 
+void \hyperlink{Funcoes__globais_8cpp_ab1941f82ce055738b55fa053cd1985a9}{Hexahedral\+\_\+face\+\_\+modal\+\_\+connectivity} (int Av\mbox{[}4\mbox{]}, int Bi\mbox{[}4\mbox{]}, int P\mbox{[}$\,$\mbox{]}, int mode\+\_\+mask\mbox{[}$\,$\mbox{]}, int sgn\+\_\+mask\mbox{[}$\,$\mbox{]})
+\item 
+int \hyperlink{Funcoes__globais_8cpp_a553774a8925982e61092e70846d4b277}{get\+\_\+linha} (F\+I\+LE $\ast$finput, char linha\mbox{[}256\mbox{]})
+\item 
+int \hyperlink{Funcoes__globais_8cpp_ae30dc97f19ea768be96f41003bca2eb7}{teste\+\_\+aresta} (int p, int \hyperlink{DG__EI__Header_8h_a5f7b79d1f60dd1c85e99108c66052098}{n0}, int n1, int \&sign, int \&ng, int \&NG, int \&NL, std\+::vector$<$ \hyperlink{structEDGE}{E\+D\+GE} $>$ \&border, int Ng\mbox{[}$\,$\mbox{]}, int nel, int naresta, const \hyperlink{structVertice}{Vertice} $\ast$vert, const int sinal\+\_\+normal)
+\item 
+int \hyperlink{Funcoes__globais_8cpp_a2fd416417224c71ae9c1c83bf243637b}{aresta\+\_\+gbnum} (const int na, const int nb, int \&NL, std\+::vector$<$ \hyperlink{structARESTA}{A\+R\+E\+S\+TA} $>$ \&aresta\+\_\+vector)
+\item 
+int \hyperlink{Funcoes__globais_8cpp_a0f08421104098154da7be63c6b402ef8}{face\+\_\+gbnum} (const int nvf, const int v\mbox{[}$\,$\mbox{]}, int \&NF, std\+::vector$<$ \hyperlink{structFACE}{F\+A\+CE} $>$ \&face\+\_\+vector)
+\item 
+int \hyperlink{Funcoes__globais_8cpp_a7704c8b7e71760344e367abefe9e9f96}{Resolver\+Sistema} (const int NumD, const int count, int $\ast$Ti, int $\ast$Tj, double $\ast$Tx, double $\ast$\hyperlink{ASPFunctions_8cpp_a57d673f8d6833fb7a7aced326df10ca9}{B}, double $\ast$x)
+\item 
+void \hyperlink{Funcoes__globais_8cpp_a804f52ada563cebb108ff185d90d0611}{Zerar\+Matriz\+Vetor} (Teuchos\+::\+R\+CP$<$ Epetra\+\_\+\+F\+E\+Crs\+Matrix $>$ A, Teuchos\+::\+R\+CP$<$ Epetra\+\_\+\+F\+E\+Vector $>$ R\+HS)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Funcoes__globais_8cpp_a2fd416417224c71ae9c1c83bf243637b}\label{Funcoes__globais_8cpp_a2fd416417224c71ae9c1c83bf243637b}} 
+\index{Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}!aresta\+\_\+gbnum@{aresta\+\_\+gbnum}}
+\index{aresta\+\_\+gbnum@{aresta\+\_\+gbnum}!Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}}
+\subsubsection{\texorpdfstring{aresta\+\_\+gbnum()}{aresta\_gbnum()}}
+{\footnotesize\ttfamily int aresta\+\_\+gbnum (\begin{DoxyParamCaption}\item[{const int}]{na,  }\item[{const int}]{nb,  }\item[{int \&}]{NL,  }\item[{std\+::vector$<$ \hyperlink{structARESTA}{A\+R\+E\+S\+TA} $>$ \&}]{aresta\+\_\+vector }\end{DoxyParamCaption})}
+
+
+
+Definition at line 407 of file Funcoes\+\_\+globais.\+cpp.
+
+
+
+References A\+R\+E\+S\+T\+A\+::\+Na, and A\+R\+E\+S\+T\+A\+::\+Nb.
+
+
+
+Referenced by Ph\+Elem$<$ 2 $>$\+::\+Processar\+\_\+dados().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{Funcoes__globais_8cpp_a2fd416417224c71ae9c1c83bf243637b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Funcoes__globais_8cpp_a0f08421104098154da7be63c6b402ef8}\label{Funcoes__globais_8cpp_a0f08421104098154da7be63c6b402ef8}} 
+\index{Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}!face\+\_\+gbnum@{face\+\_\+gbnum}}
+\index{face\+\_\+gbnum@{face\+\_\+gbnum}!Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}}
+\subsubsection{\texorpdfstring{face\+\_\+gbnum()}{face\_gbnum()}}
+{\footnotesize\ttfamily int face\+\_\+gbnum (\begin{DoxyParamCaption}\item[{const int}]{nvf,  }\item[{const int}]{v\mbox{[}$\,$\mbox{]},  }\item[{int \&}]{NF,  }\item[{std\+::vector$<$ \hyperlink{structFACE}{F\+A\+CE} $>$ \&}]{face\+\_\+vector }\end{DoxyParamCaption})}
+
+
+
+Definition at line 428 of file Funcoes\+\_\+globais.\+cpp.
+
+
+
+References F\+A\+C\+E\+::\+\_\+nv, F\+A\+C\+E\+::\+\_\+tipo, and F\+A\+C\+E\+::\+\_\+vertice.
+
+
+
+Referenced by Ph\+Elem$<$ 2 $>$\+::\+Processar\+\_\+dados().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{Funcoes__globais_8cpp_a0f08421104098154da7be63c6b402ef8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Funcoes__globais_8cpp_aa9acf6f7eed043f6433c6dfdfd467948}\label{Funcoes__globais_8cpp_aa9acf6f7eed043f6433c6dfdfd467948}} 
+\index{Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}!funcao@{funcao}}
+\index{funcao@{funcao}!Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}}
+\subsubsection{\texorpdfstring{funcao()}{funcao()}}
+{\footnotesize\ttfamily double funcao (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})}
+
+
+
+Definition at line 110 of file Funcoes\+\_\+globais.\+cpp.
+
+\mbox{\Hypertarget{Funcoes__globais_8cpp_a1b30ba1f15a8ba4bcca34dbec60ab85d}\label{Funcoes__globais_8cpp_a1b30ba1f15a8ba4bcca34dbec60ab85d}} 
+\index{Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}!g@{g}}
+\index{g@{g}!Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}}
+\subsubsection{\texorpdfstring{g()}{g()}}
+{\footnotesize\ttfamily double g (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})}
+
+
+
+Definition at line 138 of file Funcoes\+\_\+globais.\+cpp.
+
+
+
+Referenced by Hexahedral\+::\+Gradiente(), Triangle\+::\+Gradiente(), Linear\+::\+Gradiente(), Quadrilateral\+::\+Gradiente(), and Tetrahedral\+::map\+\_\+face().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{Funcoes__globais_8cpp_a1b30ba1f15a8ba4bcca34dbec60ab85d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Funcoes__globais_8cpp_a553774a8925982e61092e70846d4b277}\label{Funcoes__globais_8cpp_a553774a8925982e61092e70846d4b277}} 
+\index{Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}!get\+\_\+linha@{get\+\_\+linha}}
+\index{get\+\_\+linha@{get\+\_\+linha}!Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}}
+\subsubsection{\texorpdfstring{get\+\_\+linha()}{get\_linha()}}
+{\footnotesize\ttfamily int get\+\_\+linha (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{finput,  }\item[{char}]{linha\mbox{[}256\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 289 of file Funcoes\+\_\+globais.\+cpp.
+
+\mbox{\Hypertarget{Funcoes__globais_8cpp_ab1941f82ce055738b55fa053cd1985a9}\label{Funcoes__globais_8cpp_ab1941f82ce055738b55fa053cd1985a9}} 
+\index{Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}!Hexahedral\+\_\+face\+\_\+modal\+\_\+connectivity@{Hexahedral\+\_\+face\+\_\+modal\+\_\+connectivity}}
+\index{Hexahedral\+\_\+face\+\_\+modal\+\_\+connectivity@{Hexahedral\+\_\+face\+\_\+modal\+\_\+connectivity}!Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}}
+\subsubsection{\texorpdfstring{Hexahedral\+\_\+face\+\_\+modal\+\_\+connectivity()}{Hexahedral\_face\_modal\_connectivity()}}
+{\footnotesize\ttfamily void Hexahedral\+\_\+face\+\_\+modal\+\_\+connectivity (\begin{DoxyParamCaption}\item[{int}]{Av\mbox{[}4\mbox{]},  }\item[{int}]{Bi\mbox{[}4\mbox{]},  }\item[{int}]{P\mbox{[}$\,$\mbox{]},  }\item[{int}]{mode\+\_\+mask\mbox{[}$\,$\mbox{]},  }\item[{int}]{sgn\+\_\+mask\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 230 of file Funcoes\+\_\+globais.\+cpp.
+
+
+
+References aux1, aux2, n0, and quad\+\_\+ordem().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{Funcoes__globais_8cpp_ab1941f82ce055738b55fa053cd1985a9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Funcoes__globais_8cpp_a700dfceca74ee8515441447d5bc3a5bf}\label{Funcoes__globais_8cpp_a700dfceca74ee8515441447d5bc3a5bf}} 
+\index{Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}!norma\+\_\+l2@{norma\+\_\+l2}}
+\index{norma\+\_\+l2@{norma\+\_\+l2}!Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}}
+\subsubsection{\texorpdfstring{norma\+\_\+l2()}{norma\_l2()}}
+{\footnotesize\ttfamily double norma\+\_\+l2 (\begin{DoxyParamCaption}\item[{int}]{N,  }\item[{double}]{B\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 96 of file Funcoes\+\_\+globais.\+cpp.
+
+\mbox{\Hypertarget{Funcoes__globais_8cpp_a68d140f203301ac32392678eab282490}\label{Funcoes__globais_8cpp_a68d140f203301ac32392678eab282490}} 
+\index{Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}!norma\+\_\+max@{norma\+\_\+max}}
+\index{norma\+\_\+max@{norma\+\_\+max}!Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}}
+\subsubsection{\texorpdfstring{norma\+\_\+max()}{norma\_max()}}
+{\footnotesize\ttfamily double norma\+\_\+max (\begin{DoxyParamCaption}\item[{int}]{N,  }\item[{double}]{V\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 84 of file Funcoes\+\_\+globais.\+cpp.
+
+
+
+References aux, and aux1.
+
+\mbox{\Hypertarget{Funcoes__globais_8cpp_abffc015e47d56661836ebb8a02d4df14}\label{Funcoes__globais_8cpp_abffc015e47d56661836ebb8a02d4df14}} 
+\index{Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}!ordenar@{ordenar}}
+\index{ordenar@{ordenar}!Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}}
+\subsubsection{\texorpdfstring{ordenar()}{ordenar()}}
+{\footnotesize\ttfamily void ordenar (\begin{DoxyParamCaption}\item[{const int}]{n,  }\item[{int}]{A\mbox{[}$\,$\mbox{]},  }\item[{int}]{seq\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 64 of file Funcoes\+\_\+globais.\+cpp.
+
+
+
+Referenced by tetrahedro\+\_\+faz\+\_\+face\+\_\+mask().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Funcoes__globais_8cpp_abffc015e47d56661836ebb8a02d4df14_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Funcoes__globais_8cpp_a8585dac2b3c01c17f94418510711da51}\label{Funcoes__globais_8cpp_a8585dac2b3c01c17f94418510711da51}} 
+\index{Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}!quad\+\_\+ordem@{quad\+\_\+ordem}}
+\index{quad\+\_\+ordem@{quad\+\_\+ordem}!Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}}
+\subsubsection{\texorpdfstring{quad\+\_\+ordem()}{quad\_ordem()}}
+{\footnotesize\ttfamily void quad\+\_\+ordem (\begin{DoxyParamCaption}\item[{const int}]{Av\mbox{[}4\mbox{]},  }\item[{const int}]{Bi\mbox{[}4\mbox{]},  }\item[{int}]{dir\mbox{[}3\mbox{]},  }\item[{int}]{sgn\mbox{[}3\mbox{]},  }\item[{int \&}]{v2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file Funcoes\+\_\+globais.\+cpp.
+
+
+
+Referenced by Ph\+Elem$<$ 2 $>$\+::gbnmap\+\_\+faces(), and Hexahedral\+\_\+face\+\_\+modal\+\_\+connectivity().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{Funcoes__globais_8cpp_a8585dac2b3c01c17f94418510711da51_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Funcoes__globais_8cpp_a7704c8b7e71760344e367abefe9e9f96}\label{Funcoes__globais_8cpp_a7704c8b7e71760344e367abefe9e9f96}} 
+\index{Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}!Resolver\+Sistema@{Resolver\+Sistema}}
+\index{Resolver\+Sistema@{Resolver\+Sistema}!Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}}
+\subsubsection{\texorpdfstring{Resolver\+Sistema()}{ResolverSistema()}}
+{\footnotesize\ttfamily int Resolver\+Sistema (\begin{DoxyParamCaption}\item[{const int}]{NumD,  }\item[{const int}]{count,  }\item[{int $\ast$}]{Ti,  }\item[{int $\ast$}]{Tj,  }\item[{double $\ast$}]{Tx,  }\item[{double $\ast$}]{B,  }\item[{double $\ast$}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line 464 of file Funcoes\+\_\+globais.\+cpp.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Funcoes__globais_8cpp_a7704c8b7e71760344e367abefe9e9f96_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Funcoes__globais_8cpp_a99cf46319bd8577192f6694a3547b450}\label{Funcoes__globais_8cpp_a99cf46319bd8577192f6694a3547b450}} 
+\index{Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}!Sinal@{Sinal}}
+\index{Sinal@{Sinal}!Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}}
+\subsubsection{\texorpdfstring{Sinal()}{Sinal()}}
+{\footnotesize\ttfamily int Sinal (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Definition at line 104 of file Funcoes\+\_\+globais.\+cpp.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), and D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Funcoes__globais_8cpp_a99cf46319bd8577192f6694a3547b450_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Funcoes__globais_8cpp_ae30dc97f19ea768be96f41003bca2eb7}\label{Funcoes__globais_8cpp_ae30dc97f19ea768be96f41003bca2eb7}} 
+\index{Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}!teste\+\_\+aresta@{teste\+\_\+aresta}}
+\index{teste\+\_\+aresta@{teste\+\_\+aresta}!Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}}
+\subsubsection{\texorpdfstring{teste\+\_\+aresta()}{teste\_aresta()}}
+{\footnotesize\ttfamily int teste\+\_\+aresta (\begin{DoxyParamCaption}\item[{int}]{p,  }\item[{int}]{n0,  }\item[{int}]{n1,  }\item[{int \&}]{sign,  }\item[{int \&}]{ng,  }\item[{int \&}]{NG,  }\item[{int \&}]{NL,  }\item[{std\+::vector$<$ \hyperlink{structEDGE}{E\+D\+GE} $>$ \&}]{border,  }\item[{int}]{Ng\mbox{[}$\,$\mbox{]},  }\item[{int}]{nel,  }\item[{int}]{naresta,  }\item[{const \hyperlink{structVertice}{Vertice} $\ast$}]{vert,  }\item[{const int}]{sinal\+\_\+normal }\end{DoxyParamCaption})}
+
+
+
+Definition at line 317 of file Funcoes\+\_\+globais.\+cpp.
+
+
+
+References E\+D\+G\+E\+::comprimento, E\+D\+G\+E\+::elemento, M\+A\+X\+NG, M\+A\+X\+NL, n0, E\+D\+G\+E\+::\+Na, E\+D\+G\+E\+::\+Nb, E\+D\+G\+E\+::normal, E\+D\+G\+E\+::num\+\_\+elem, E\+D\+G\+E\+::num\+\_\+local, E\+D\+G\+E\+::sinal, E\+D\+G\+E\+::tipo, Vertice\+::x, Vertice\+::y, and Vertice\+::z.
+
+\mbox{\Hypertarget{Funcoes__globais_8cpp_afd028b5b639936153b8fcc117142c64d}\label{Funcoes__globais_8cpp_afd028b5b639936153b8fcc117142c64d}} 
+\index{Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}!tetrahedro\+\_\+faz\+\_\+face\+\_\+mask@{tetrahedro\+\_\+faz\+\_\+face\+\_\+mask}}
+\index{tetrahedro\+\_\+faz\+\_\+face\+\_\+mask@{tetrahedro\+\_\+faz\+\_\+face\+\_\+mask}!Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}}
+\subsubsection{\texorpdfstring{tetrahedro\+\_\+faz\+\_\+face\+\_\+mask()}{tetrahedro\_faz\_face\_mask()}}
+{\footnotesize\ttfamily void tetrahedro\+\_\+faz\+\_\+face\+\_\+mask (\begin{DoxyParamCaption}\item[{const int \&}]{n\+\_\+in,  }\item[{int}]{ver\+\_\+temp\mbox{[}$\,$\mbox{]},  }\item[{std\+::vector$<$ int $>$ \&}]{face\+\_\+mask }\end{DoxyParamCaption})}
+
+
+
+Definition at line 199 of file Funcoes\+\_\+globais.\+cpp.
+
+
+
+References m, and ordenar().
+
+
+
+Referenced by Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Ler\+\_\+e\+\_\+\+Processar\+\_\+malha().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{Funcoes__globais_8cpp_afd028b5b639936153b8fcc117142c64d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Funcoes__globais_8cpp_afd028b5b639936153b8fcc117142c64d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Funcoes__globais_8cpp_a804f52ada563cebb108ff185d90d0611}\label{Funcoes__globais_8cpp_a804f52ada563cebb108ff185d90d0611}} 
+\index{Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}!Zerar\+Matriz\+Vetor@{Zerar\+Matriz\+Vetor}}
+\index{Zerar\+Matriz\+Vetor@{Zerar\+Matriz\+Vetor}!Funcoes\+\_\+globais.\+cpp@{Funcoes\+\_\+globais.\+cpp}}
+\subsubsection{\texorpdfstring{Zerar\+Matriz\+Vetor()}{ZerarMatrizVetor()}}
+{\footnotesize\ttfamily void Zerar\+Matriz\+Vetor (\begin{DoxyParamCaption}\item[{Teuchos\+::\+R\+CP$<$ Epetra\+\_\+\+F\+E\+Crs\+Matrix $>$}]{A,  }\item[{Teuchos\+::\+R\+CP$<$ Epetra\+\_\+\+F\+E\+Vector $>$}]{R\+HS }\end{DoxyParamCaption})}
+
+
+
+Definition at line 501 of file Funcoes\+\_\+globais.\+cpp.
+

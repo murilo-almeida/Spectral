@@ -1,0 +1,215 @@
+\hypertarget{structFACE}{}\section{F\+A\+CE Struct Reference}
+\label{structFACE}\index{F\+A\+CE@{F\+A\+CE}}
+
+
+{\ttfamily \#include $<$spectral.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structFACE_ab27891b21cc65be0ed66bb984bd8f347}{F\+A\+CE} ()
+\item 
+\hyperlink{structFACE_a312735b7baae8686bf238377ff8caf81}{$\sim$\+F\+A\+CE} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structFACE_aa7ed87f6d16ef69445c966c26b9044ff}{\+\_\+tipo}
+\item 
+int \hyperlink{structFACE_a26e0cd25d7a18046b6a80f0815246667}{\+\_\+nv}
+\item 
+int \hyperlink{structFACE_a9eb92fef619b9f6572dad67032f12789}{\+\_\+elemento} \mbox{[}2\mbox{]}
+\item 
+int \hyperlink{structFACE_a350498fd21fda2edb4f660a76204f26d}{\+\_\+face} \mbox{[}2\mbox{]}
+\item 
+std\+::vector$<$ int $>$ \hyperlink{structFACE_a70d99e98683b8ecddb3cd8ba22f747f3}{\+\_\+vertice}
+\item 
+double \hyperlink{structFACE_ae3e59914e6ad07eb003a732ad7905313}{\+\_\+normal} \mbox{[}3\mbox{]}
+\item 
+double \hyperlink{structFACE_a47ac2239337038a14e42f2bb8c9416ae}{\+\_\+area}
+\item 
+double $\ast$ \hyperlink{structFACE_a6ef1293fa7979984be6e8a27126a4e83}{pdir}
+\item 
+double $\ast$ \hyperlink{structFACE_a1ce0e6eb1b664281eec931c0adb2f314}{sdir}
+\item 
+int \hyperlink{structFACE_a2f3e5298e014da1f7bbc8e61a9301ef8}{part\+\_\+num}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{structFACE}{F\+A\+CE} = Borda do elemento tridimensional
+
+Faces dos elementos tridimensionais, compostas por \+\_\+nv vertices; 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+tipo} & =; = ; \\
+\hline
+{\em \+\_\+nv} & = number of vertices \\
+\hline
+{\em \+\_\+vertice} & = vertice number; \\
+\hline
+{\em \+\_\+elemento\mbox{[}2\mbox{]}} & = numbers of the elements sharing the border \\
+\hline
+{\em \+\_\+face\mbox{[}2\mbox{]}} & = local face number which the face assumes in the elements \\
+\hline
+{\em \+\_\+normal\mbox{[}3\mbox{]}=} & components of the normal vector; \\
+\hline
+{\em \+\_\+area} & = face area; \\
+\hline
+{\em $\ast$pdir} & = pointer to the array containing the Dirichlet values of pressure \\
+\hline
+{\em $\ast$sdir} & = pointer to the array containing the Dirichlet values of saturation \\
+\hline
+{\em part\+\_\+num} & = partition number \\
+\hline
+{\em flux\+\_\+w} & = flux of w through the border \\
+\hline
+{\em flux\+\_\+n} & = flux of non-\/wetting fluid through the border \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 197 of file spectral.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structFACE_ab27891b21cc65be0ed66bb984bd8f347}\label{structFACE_ab27891b21cc65be0ed66bb984bd8f347}} 
+\index{F\+A\+CE@{F\+A\+CE}!F\+A\+CE@{F\+A\+CE}}
+\index{F\+A\+CE@{F\+A\+CE}!F\+A\+CE@{F\+A\+CE}}
+\subsubsection{\texorpdfstring{F\+A\+C\+E()}{FACE()}}
+{\footnotesize\ttfamily F\+A\+C\+E\+::\+F\+A\+CE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 200 of file spectral.\+h.
+
+\mbox{\Hypertarget{structFACE_a312735b7baae8686bf238377ff8caf81}\label{structFACE_a312735b7baae8686bf238377ff8caf81}} 
+\index{F\+A\+CE@{F\+A\+CE}!````~F\+A\+CE@{$\sim$\+F\+A\+CE}}
+\index{````~F\+A\+CE@{$\sim$\+F\+A\+CE}!F\+A\+CE@{F\+A\+CE}}
+\subsubsection{\texorpdfstring{$\sim$\+F\+A\+C\+E()}{~FACE()}}
+{\footnotesize\ttfamily F\+A\+C\+E\+::$\sim$\+F\+A\+CE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 205 of file spectral.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structFACE_a47ac2239337038a14e42f2bb8c9416ae}\label{structFACE_a47ac2239337038a14e42f2bb8c9416ae}} 
+\index{F\+A\+CE@{F\+A\+CE}!\+\_\+area@{\+\_\+area}}
+\index{\+\_\+area@{\+\_\+area}!F\+A\+CE@{F\+A\+CE}}
+\subsubsection{\texorpdfstring{\+\_\+area}{\_area}}
+{\footnotesize\ttfamily double F\+A\+C\+E\+::\+\_\+area}
+
+
+
+Definition at line 216 of file spectral.\+h.
+
+\mbox{\Hypertarget{structFACE_a9eb92fef619b9f6572dad67032f12789}\label{structFACE_a9eb92fef619b9f6572dad67032f12789}} 
+\index{F\+A\+CE@{F\+A\+CE}!\+\_\+elemento@{\+\_\+elemento}}
+\index{\+\_\+elemento@{\+\_\+elemento}!F\+A\+CE@{F\+A\+CE}}
+\subsubsection{\texorpdfstring{\+\_\+elemento}{\_elemento}}
+{\footnotesize\ttfamily int F\+A\+C\+E\+::\+\_\+elemento\mbox{[}2\mbox{]}}
+
+
+
+Definition at line 213 of file spectral.\+h.
+
+\mbox{\Hypertarget{structFACE_a350498fd21fda2edb4f660a76204f26d}\label{structFACE_a350498fd21fda2edb4f660a76204f26d}} 
+\index{F\+A\+CE@{F\+A\+CE}!\+\_\+face@{\+\_\+face}}
+\index{\+\_\+face@{\+\_\+face}!F\+A\+CE@{F\+A\+CE}}
+\subsubsection{\texorpdfstring{\+\_\+face}{\_face}}
+{\footnotesize\ttfamily int F\+A\+C\+E\+::\+\_\+face\mbox{[}2\mbox{]}}
+
+
+
+Definition at line 213 of file spectral.\+h.
+
+\mbox{\Hypertarget{structFACE_ae3e59914e6ad07eb003a732ad7905313}\label{structFACE_ae3e59914e6ad07eb003a732ad7905313}} 
+\index{F\+A\+CE@{F\+A\+CE}!\+\_\+normal@{\+\_\+normal}}
+\index{\+\_\+normal@{\+\_\+normal}!F\+A\+CE@{F\+A\+CE}}
+\subsubsection{\texorpdfstring{\+\_\+normal}{\_normal}}
+{\footnotesize\ttfamily double F\+A\+C\+E\+::\+\_\+normal\mbox{[}3\mbox{]}}
+
+
+
+Definition at line 216 of file spectral.\+h.
+
+\mbox{\Hypertarget{structFACE_a26e0cd25d7a18046b6a80f0815246667}\label{structFACE_a26e0cd25d7a18046b6a80f0815246667}} 
+\index{F\+A\+CE@{F\+A\+CE}!\+\_\+nv@{\+\_\+nv}}
+\index{\+\_\+nv@{\+\_\+nv}!F\+A\+CE@{F\+A\+CE}}
+\subsubsection{\texorpdfstring{\+\_\+nv}{\_nv}}
+{\footnotesize\ttfamily int F\+A\+C\+E\+::\+\_\+nv}
+
+
+
+Definition at line 213 of file spectral.\+h.
+
+
+
+Referenced by face\+\_\+gbnum().
+
+\mbox{\Hypertarget{structFACE_aa7ed87f6d16ef69445c966c26b9044ff}\label{structFACE_aa7ed87f6d16ef69445c966c26b9044ff}} 
+\index{F\+A\+CE@{F\+A\+CE}!\+\_\+tipo@{\+\_\+tipo}}
+\index{\+\_\+tipo@{\+\_\+tipo}!F\+A\+CE@{F\+A\+CE}}
+\subsubsection{\texorpdfstring{\+\_\+tipo}{\_tipo}}
+{\footnotesize\ttfamily int F\+A\+C\+E\+::\+\_\+tipo}
+
+
+
+Definition at line 213 of file spectral.\+h.
+
+
+
+Referenced by face\+\_\+gbnum().
+
+\mbox{\Hypertarget{structFACE_a70d99e98683b8ecddb3cd8ba22f747f3}\label{structFACE_a70d99e98683b8ecddb3cd8ba22f747f3}} 
+\index{F\+A\+CE@{F\+A\+CE}!\+\_\+vertice@{\+\_\+vertice}}
+\index{\+\_\+vertice@{\+\_\+vertice}!F\+A\+CE@{F\+A\+CE}}
+\subsubsection{\texorpdfstring{\+\_\+vertice}{\_vertice}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ F\+A\+C\+E\+::\+\_\+vertice}
+
+
+
+Definition at line 215 of file spectral.\+h.
+
+
+
+Referenced by face\+\_\+gbnum().
+
+\mbox{\Hypertarget{structFACE_a2f3e5298e014da1f7bbc8e61a9301ef8}\label{structFACE_a2f3e5298e014da1f7bbc8e61a9301ef8}} 
+\index{F\+A\+CE@{F\+A\+CE}!part\+\_\+num@{part\+\_\+num}}
+\index{part\+\_\+num@{part\+\_\+num}!F\+A\+CE@{F\+A\+CE}}
+\subsubsection{\texorpdfstring{part\+\_\+num}{part\_num}}
+{\footnotesize\ttfamily int F\+A\+C\+E\+::part\+\_\+num}
+
+
+
+Definition at line 221 of file spectral.\+h.
+
+\mbox{\Hypertarget{structFACE_a6ef1293fa7979984be6e8a27126a4e83}\label{structFACE_a6ef1293fa7979984be6e8a27126a4e83}} 
+\index{F\+A\+CE@{F\+A\+CE}!pdir@{pdir}}
+\index{pdir@{pdir}!F\+A\+CE@{F\+A\+CE}}
+\subsubsection{\texorpdfstring{pdir}{pdir}}
+{\footnotesize\ttfamily double$\ast$ F\+A\+C\+E\+::pdir}
+
+
+
+Definition at line 217 of file spectral.\+h.
+
+\mbox{\Hypertarget{structFACE_a1ce0e6eb1b664281eec931c0adb2f314}\label{structFACE_a1ce0e6eb1b664281eec931c0adb2f314}} 
+\index{F\+A\+CE@{F\+A\+CE}!sdir@{sdir}}
+\index{sdir@{sdir}!F\+A\+CE@{F\+A\+CE}}
+\subsubsection{\texorpdfstring{sdir}{sdir}}
+{\footnotesize\ttfamily double$\ast$ F\+A\+C\+E\+::sdir}
+
+
+
+Definition at line 218 of file spectral.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{spectral_8h}{spectral.\+h}\end{DoxyCompactItemize}

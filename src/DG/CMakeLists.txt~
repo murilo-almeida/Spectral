@@ -1,0 +1,31 @@
+cmake_minimum_required(VERSION 3.9)
+
+set(INSTALL_DESTINATION "${CMAKE_INSTALL_PREFIX}/bin")
+#set(CMAKE_BUILD_RPATH ${MY_RPATH})
+set(CMAKE_INSTALL_RPATH ${MY_RPATH})
+
+#Bring the headers, such as Stdel.h into the project
+
+include_directories(${MY_INCLUDE})
+link_directories(${LIB_DIRS})
+
+#However, the file(GLOB...) allows for wildcard additions:
+file(GLOB SOURCES "*.cpp")
+
+#Generate the shared library from the sources
+add_executable(dg ${SOURCES})
+target_link_libraries(dg Spectral ${LIBS})
+#set_target_properties(dg PROPERTIES BUILD_RPATH "/Users/murilo/temp/Spectral/lib")
+
+get_target_property(MY_R dg BUILD_RPATH)
+message("BUILD_RPATH ${MY_R}")
+
+get_target_property(MY_R dg INSTALL_RPATH)
+message("INSTALL_RPATH ${MY_R}")
+
+#Set the location for library installation -- i.e., /usr/lib in this case
+# not really necessary in this example. Use "sudo make install"to apply
+
+install(TARGETS dg DESTINATION ${INSTALL_DESTINATION})
+
+

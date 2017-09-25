@@ -1,0 +1,871 @@
+\hypertarget{DG__EI__Header_8h}{}\section{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h File Reference}
+\label{DG__EI__Header_8h}\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+{\ttfamily \#include \char`\"{}D\+G\+\_\+\+Prob.\+h\char`\"{}}\newline
+Include dependency graph for D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DG__EI__Header_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DG__EI__Header_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{DG__EI__Inflow_8cpp_aaaabfd0bfa2ffccd424074490d64da4c}{D\+G\+\_\+\+E\+I\+\_\+\+Header\+\_\+h}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{DG__EI__Header_8h_ae820cc4ba38bdb99849cc9cd436c7f92}{if} (\hyperlink{DG__EI__Header_8h_a77c66c97503b5c80d04b38a78fba81f8}{ndim}==1)
+\item 
+\hyperlink{DG__EI__Header_8h_a6891715cf1cca5f4846b685cd7e5d651}{for} (int q=0;q$<$ \hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax};q++) \hyperlink{DG__EI__Header_8h_a680a38915b23da05eaa2dea22c468eaf}{w}\mbox{[}q\mbox{]} $\ast$ =border.\+normal\mbox{[}i\mbox{]}
+\item 
+\hyperlink{DG__EI__Header_8h_ab1ff01ebd410ddf016a3c7bbe9d98944}{e} \mbox{[}0\mbox{]} \hyperlink{DG__EI__Header_8h_ae7de51d04fded6d9a3756afc457dd962}{perm\+\_\+val} (\hyperlink{DG__EI__Header_8h_ad22260429c11f48f2815f2db7fd27d98}{perm}\mbox{[}0\mbox{]})
+\item 
+\hyperlink{DG__EI__Header_8h_ab1ff01ebd410ddf016a3c7bbe9d98944}{e} \mbox{[}1\mbox{]} \hyperlink{DG__EI__Header_8h_aaa824435ab6e12c4bb5df11bcf95cfde}{perm\+\_\+val} (\hyperlink{DG__EI__Header_8h_ad22260429c11f48f2815f2db7fd27d98}{perm}\mbox{[}1\mbox{]})
+\item 
+\hyperlink{DG__EI__Header_8h_ad8a7dc4435ee2c3e66a46d03f7243b0a}{if} (\hyperlink{DG__EI__Header_8h_a8091f144cf5589aac1841b53d44ae0d7}{Num\+\_\+elem}==1) \hyperlink{DG__EI__Header_8h_aad73c7394233f3b09cc4804ac552ba1b}{aux}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{DG__EI__Header_8h_a8091f144cf5589aac1841b53d44ae0d7}{Num\+\_\+elem} = (border.\+tipo==2) ? 2 \+: 1
+\item 
+double \hyperlink{DG__EI__Header_8h_aad73c7394233f3b09cc4804ac552ba1b}{aux} = \hyperlink{DG__EI__Header_8h_a9832dd4d544ae425dcc3cbbc7d8617f5}{aaux}\mbox{[}0\mbox{]} $<$ \hyperlink{DG__EI__Header_8h_a9832dd4d544ae425dcc3cbbc7d8617f5}{aaux}\mbox{[}1\mbox{]} ? \hyperlink{DG__EI__Header_8h_a9832dd4d544ae425dcc3cbbc7d8617f5}{aaux}\mbox{[}0\mbox{]} \+: \hyperlink{DG__EI__Header_8h_a9832dd4d544ae425dcc3cbbc7d8617f5}{aaux}\mbox{[}1\mbox{]}
+\item 
+double \hyperlink{DG__EI__Header_8h_ad161e7ea2934eceb6a1b94305b4a35ad}{aux1}
+\item 
+double \hyperlink{DG__EI__Header_8h_aaed919cc209e7aaca7f165cbf77a93f0}{aux2}
+\item 
+int \hyperlink{DG__EI__Header_8h_a742204794ea328ba293fe59cec79b990}{m}
+\item 
+int \hyperlink{DG__EI__Header_8h_aab612776be0b4d3a6f310a993257dcb2}{iE}
+\item 
+int \hyperlink{DG__EI__Header_8h_a1910d262855b71da353ed0d07a6c7823}{pos}
+\item 
+\hyperlink{DG__Prob_8h_a83cd887ced9a6587428f267e50cd4787}{My\+Elem} \hyperlink{DG__EI__Header_8h_ab1ff01ebd410ddf016a3c7bbe9d98944}{e} \mbox{[}2\mbox{]} =el\mbox{[}border.\+elemento\mbox{[}0\mbox{]}\mbox{]}
+\item 
+const int \hyperlink{DG__EI__Header_8h_a77c66c97503b5c80d04b38a78fba81f8}{ndim} =\hyperlink{DG__EI__Header_8h_ab1ff01ebd410ddf016a3c7bbe9d98944}{e}\mbox{[}0\mbox{]}.show\+\_\+ptr\+\_\+stdel(0)-\/$>$ndim\+\_\+val()
+\item 
+const int \hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax} =\hyperlink{DG__EI__Header_8h_ab1ff01ebd410ddf016a3c7bbe9d98944}{e}\mbox{[}0\mbox{]}.show\+\_\+ptr\+\_\+stdel(0)-\/$>$qborder\+\_\+val()
+\item 
+const int \hyperlink{DG__EI__Header_8h_a5f7b79d1f60dd1c85e99108c66052098}{n0} =\hyperlink{DG__EI__Header_8h_ab1ff01ebd410ddf016a3c7bbe9d98944}{e}\mbox{[}0\mbox{]}.show\+\_\+ptr\+\_\+stdel(0)-\/$>$nn\+\_\+val()
+\item 
+const int \hyperlink{DG__EI__Header_8h_af01d48e9515a349111be3909b9ff2a81}{nsat} =\hyperlink{DG__EI__Header_8h_ab1ff01ebd410ddf016a3c7bbe9d98944}{e}\mbox{[}0\mbox{]}.show\+\_\+ptr\+\_\+stdel(\hyperlink{DG__Elem_8hpp_ac395e2733410824b466d4bcdecf11f8ea61332a9f389c4660efc467eb3291930a}{sat})-\/$>$nn\+\_\+val()
+\item 
+const int \hyperlink{DG__EI__Header_8h_ab47785cba577090bf34c319609e1a039}{npres} =\hyperlink{DG__EI__Header_8h_ab1ff01ebd410ddf016a3c7bbe9d98944}{e}\mbox{[}0\mbox{]}.show\+\_\+ptr\+\_\+stdel(\hyperlink{DG__Elem_8hpp_ac395e2733410824b466d4bcdecf11f8ea0d446d703cc72002c5a1d4f66ff9689d}{pres})-\/$>$nn\+\_\+val()
+\item 
+double \hyperlink{DG__EI__Header_8h_af9d495c1655d813d553030485d00fea7}{length} =border.\+comprimento
+\item 
+double \hyperlink{DG__EI__Header_8h_a8e1ac7175e7b2df92c28e621fce42154}{Jac} \mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}
+\item 
+double \hyperlink{DG__EI__Header_8h_a680a38915b23da05eaa2dea22c468eaf}{w} \mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}
+\item 
+double \hyperlink{DG__EI__Header_8h_ac3eda557e8bd6ec6f4b2b45d0ca2ef1b}{Dtemp} \mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}
+\item 
+\hyperlink{DG__EI__Header_8h_a0544c3fe466e421738dae463968b70ba}{else}
+\item 
+const double \hyperlink{DG__EI__Header_8h_ac29ef5cb0c6174a70f8410a605f60b3e}{penalty} =sigma/pow(\hyperlink{DG__EI__Header_8h_af9d495c1655d813d553030485d00fea7}{length},beta)
+\item 
+const double \hyperlink{DG__EI__Header_8h_ab6ef910211b48466d6ccbafdb2d2e8f9}{penalty1} =sigma1/pow(\hyperlink{DG__EI__Header_8h_af9d495c1655d813d553030485d00fea7}{length},beta)
+\item 
+double \hyperlink{DG__EI__Header_8h_a840252f45c570c17d8a7af59530b2da1}{n\+\_\+e} \mbox{[}\hyperlink{DG__EI__Header_8h_a77c66c97503b5c80d04b38a78fba81f8}{ndim}\mbox{]}
+\item 
+double \hyperlink{DG__EI__Header_8h_ad22260429c11f48f2815f2db7fd27d98}{perm} \mbox{[}2\mbox{]}\mbox{[}3\mbox{]}
+\item 
+int \hyperlink{DG__EI__Header_8h_a491bc358fce276972681cc0be8844bd7}{a} \mbox{[}2\mbox{]}
+\item 
+double $\ast$ \hyperlink{DG__EI__Header_8h_a52e510ecdc11d9091099d94c3ba63e74}{sn} \mbox{[}2\mbox{]}
+\item 
+double $\ast$ \hyperlink{DG__EI__Header_8h_a91427980cdd87780d69eb2044ea9d37d}{pw} \mbox{[}2\mbox{]}
+\item 
+double \hyperlink{DG__EI__Header_8h_a88111b29f8d53eb51975c27f5e3b13b4}{lambdaw} \mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}
+\item 
+double \hyperlink{DG__EI__Header_8h_ad8c77409112aa57574f6bb227f5739b7}{lambdan} \mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}
+\item 
+double \hyperlink{DG__EI__Header_8h_a486dc7c17b99c0a27a8a4394a4d69cb9}{lambdat} \mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}
+\item 
+double \hyperlink{DG__EI__Header_8h_ada0f7f63d5dc5967a0c534ceba5ee6b7}{d\+\_\+lambdaw} \mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}
+\item 
+double \hyperlink{DG__EI__Header_8h_aa21a13de957960449d80637026d6d2cf}{d\+\_\+lambdan} \mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}
+\item 
+double \hyperlink{DG__EI__Header_8h_a1b35413f4f6bfe992b45f19439d51949}{d\+\_\+lambdat} \mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}
+\item 
+double \hyperlink{DG__EI__Header_8h_a2131b2dd1e444672082ef517229f56bb}{pc} \mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}
+\item 
+double \hyperlink{DG__EI__Header_8h_a03aa65e875f93ac31960ffe75bbf6835}{d\+\_\+pc} \mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}
+\item 
+double \hyperlink{DG__EI__Header_8h_a025eff33081d71b968ad2d85822124ba}{d2\+\_\+pc} \mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}
+\item 
+double \hyperlink{DG__EI__Header_8h_aa9ffdabddbd18be04a882b8b3176db5f}{mun} =fluids.\+show\+\_\+mun()
+\item 
+double \hyperlink{DG__EI__Header_8h_a8738e44a1b9c3837b8a3ee32a2014e96}{muw} =fluids.\+show\+\_\+muw()
+\item 
+double \hyperlink{DG__EI__Header_8h_aee6150c382b67b73f8588774b642f99d}{K\+\_\+g\+\_\+sn\+\_\+n} \mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}
+\item 
+double \hyperlink{DG__EI__Header_8h_aa4451440eea6c05a042d53ea50d31791}{K\+\_\+g\+\_\+pw\+\_\+n} \mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}
+\item 
+double \hyperlink{DG__EI__Header_8h_ab4a9cff5084a682a4b0595caa6962015}{K\+\_\+g\+\_\+pc\+\_\+n} \mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}
+\item 
+double \hyperlink{DG__EI__Header_8h_a3fa6caf578b09a3757e52965f895f1e3}{phi\+\_\+r} \mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}
+\item 
+double \hyperlink{DG__EI__Header_8h_ac178855ff02ce92cc33dbb478d54318e}{phi\+\_\+l} \mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}
+\item 
+int \hyperlink{DG__EI__Header_8h_a8d494fb4e955e0e10fbc0ccdd34a60fe}{i\+Er}
+\item 
+int \hyperlink{DG__EI__Header_8h_a4e6c0c17910d12c8aed03eeb8408ad83}{i\+El}
+\item 
+double \hyperlink{DG__EI__Header_8h_a87902a18ce5ac11ea0664999f614f516}{kn} =sqrt(\hyperlink{DG__EI__Header_8h_aad73c7394233f3b09cc4804ac552ba1b}{aux})
+\item 
+double \hyperlink{DG__EI__Header_8h_a530baa71d2017130e8a32b57963e62fa}{kln} =1.\+0
+\item 
+double \hyperlink{DG__EI__Header_8h_a59f09790bd89abf07edffe64687a94d3}{klw} =1.\+0
+\item 
+double \hyperlink{DG__EI__Header_8h_a38f7acb829b6dcc1d65c16a96aee438a}{klt} =1.\+0
+\item 
+double \hyperlink{DG__EI__Header_8h_a9832dd4d544ae425dcc3cbbc7d8617f5}{aaux} \mbox{[}2\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{DG__EI__Inflow_8cpp_aaaabfd0bfa2ffccd424074490d64da4c}\label{DG__EI__Inflow_8cpp_aaaabfd0bfa2ffccd424074490d64da4c}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!D\+G\+\_\+\+E\+I\+\_\+\+Header\+\_\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header\+\_\+h}}
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header\+\_\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header\+\_\+h}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{D\+G\+\_\+\+E\+I\+\_\+\+Header\+\_\+h}{DG\_EI\_Header\_h}}
+{\footnotesize\ttfamily \#define D\+G\+\_\+\+E\+I\+\_\+\+Header\+\_\+h}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{DG__EI__Header_8h_a6891715cf1cca5f4846b685cd7e5d651}\label{DG__EI__Header_8h_a6891715cf1cca5f4846b685cd7e5d651}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!for@{for}}
+\index{for@{for}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{for()}{for()}}
+{\footnotesize\ttfamily for (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) =border.\+normal\mbox{[}i\mbox{]}}
+
+
+
+Definition at line 77 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+References aux, iE, m, mun, muw, ndim, npres, nsat, perm, pres, qmax, sat, D\+G\+\_\+\+Elem\+::\+Traco\+\_\+\+Kgrad\+\_\+pc(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+\+Kgrad\+\_\+phi\+\_\+n(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+\+Kgrad\+\_\+pw(), and D\+G\+\_\+\+Elem\+::\+Traco\+\_\+\+Kgrad\+\_\+sn().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DG__EI__Header_8h_a6891715cf1cca5f4846b685cd7e5d651_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{DG__EI__Header_8h_ae820cc4ba38bdb99849cc9cd436c7f92}\label{DG__EI__Header_8h_ae820cc4ba38bdb99849cc9cd436c7f92}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!if@{if}}
+\index{if@{if}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{if()}{if()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily if (\begin{DoxyParamCaption}\item[{\hyperlink{DG__EI__Header_8h_a77c66c97503b5c80d04b38a78fba81f8}{ndim}}]{ = {\ttfamily =1} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 36 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+\mbox{\Hypertarget{DG__EI__Header_8h_ad8a7dc4435ee2c3e66a46d03f7243b0a}\label{DG__EI__Header_8h_ad8a7dc4435ee2c3e66a46d03f7243b0a}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!if@{if}}
+\index{if@{if}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{if()}{if()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily if (\begin{DoxyParamCaption}\item[{\hyperlink{DG__EI__Header_8h_a8091f144cf5589aac1841b53d44ae0d7}{Num\+\_\+elem}}]{ = {\ttfamily =1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DG__EI__Header_8h_ae7de51d04fded6d9a3756afc457dd962}\label{DG__EI__Header_8h_ae7de51d04fded6d9a3756afc457dd962}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!perm\+\_\+val@{perm\+\_\+val}}
+\index{perm\+\_\+val@{perm\+\_\+val}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{perm\+\_\+val()}{perm\_val()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{DG__EI__Header_8h_ab1ff01ebd410ddf016a3c7bbe9d98944}{e} \mbox{[}0\mbox{]} perm\+\_\+val (\begin{DoxyParamCaption}\item[{\hyperlink{DG__EI__Header_8h_ad22260429c11f48f2815f2db7fd27d98}{perm}}]{\mbox{[}0\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DG__EI__Header_8h_aaa824435ab6e12c4bb5df11bcf95cfde}\label{DG__EI__Header_8h_aaa824435ab6e12c4bb5df11bcf95cfde}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!perm\+\_\+val@{perm\+\_\+val}}
+\index{perm\+\_\+val@{perm\+\_\+val}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{perm\+\_\+val()}{perm\_val()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{DG__EI__Header_8h_ab1ff01ebd410ddf016a3c7bbe9d98944}{e} \mbox{[}1\mbox{]} perm\+\_\+val (\begin{DoxyParamCaption}\item[{\hyperlink{DG__EI__Header_8h_ad22260429c11f48f2815f2db7fd27d98}{perm}}]{\mbox{[}1\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{DG__EI__Header_8h_a491bc358fce276972681cc0be8844bd7}\label{DG__EI__Header_8h_a491bc358fce276972681cc0be8844bd7}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!a@{a}}
+\index{a@{a}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{a}{a}}
+{\footnotesize\ttfamily int a\mbox{[}2\mbox{]}}
+
+
+
+Definition at line 60 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by Hexahedral\+::compute\+Func\+G\+Q(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+eco(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow(), Stdel\+::duplicar\+\_\+mass\+\_\+matrix(), Linear\+::eval\+G\+Q(), Quadrilateral\+::eval\+G\+Q(), Hexahedral\+::eval\+G\+Q(), Triangle\+::eval\+G\+Q(), Ph\+Elem$<$ 2 $>$\+::gbnmap\+\_\+arestas(), Quadrilateral\+::\+Jacobian(), Hexahedral\+::\+Jacobian(), Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Ler\+\_\+\+\_\+\+Geometria(), Hexahedral\+::local\+Face\+Mode\+Map(), Tetrahedral\+::local\+Face\+Mode\+Map(), Tetrahedral\+::map\+\_\+face(), Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Renumerar\+Nos(), Linear\+::set(), Tetrahedral\+::set(), Hexahedral\+::set(), Quadrilateral\+::set(), Triangle\+::set(), Vertice\+::set\+\_\+\+Vertice(), Ph\+Elem$<$ 2 $>$\+::show\+\_\+numf(), E\+D\+\_\+\+Prob\+::\+Solve\+Elast2\+D\+\_\+dyn(), and Tetrahedral\+::teste\+\_\+face().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a9832dd4d544ae425dcc3cbbc7d8617f5}\label{DG__EI__Header_8h_a9832dd4d544ae425dcc3cbbc7d8617f5}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!aaux@{aaux}}
+\index{aaux@{aaux}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{aaux}{aaux}}
+{\footnotesize\ttfamily double aaux\mbox{[}2\mbox{]}}
+
+
+
+Definition at line 73 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by Col\+Dif\+G\+L\+J(), Col\+Dif\+G\+R\+J(), Gauss\+\_\+\+Jacobi\+\_\+parameters(), Gauss\+\_\+\+Lobatto\+\_\+\+Jacobi\+\_\+parameters(), Gauss\+\_\+\+Radau\+\_\+\+Jacobi\+\_\+parameters(), Ph\+Elem$<$ 2 $>$\+::make\+\_\+\+K\+\_\+\+Elast2\+D(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), Triangle\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::mass(), Triangle\+::mass(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), and D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_aad73c7394233f3b09cc4804ac552ba1b}\label{DG__EI__Header_8h_aad73c7394233f3b09cc4804ac552ba1b}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!aux@{aux}}
+\index{aux@{aux}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{aux}{aux}}
+{\footnotesize\ttfamily \hyperlink{DG__EI__Header_8h_a0544c3fe466e421738dae463968b70ba}{else} aux = \hyperlink{DG__EI__Header_8h_a9832dd4d544ae425dcc3cbbc7d8617f5}{aaux}\mbox{[}0\mbox{]} $<$ \hyperlink{DG__EI__Header_8h_a9832dd4d544ae425dcc3cbbc7d8617f5}{aaux}\mbox{[}1\mbox{]} ? \hyperlink{DG__EI__Header_8h_a9832dd4d544ae425dcc3cbbc7d8617f5}{aaux}\mbox{[}0\mbox{]} \+: \hyperlink{DG__EI__Header_8h_a9832dd4d544ae425dcc3cbbc7d8617f5}{aaux}\mbox{[}1\mbox{]}}
+
+
+
+Definition at line 18 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by B(), C(), D\+G\+\_\+\+Elem\+::calcula\+\_\+tracos(), Col\+Dif\+G\+L\+J(), Col\+Dif\+G\+R\+J(), Quadrilateral\+::compute\+At\+Points(), Tetrahedral\+::compute\+At\+Points(), Triangle\+::compute\+At\+Points(), Hexahedral\+::compute\+At\+Points(), Linear\+::compute\+At\+Points(), Hexahedral\+::compute\+Func\+G\+Q(), Quadrilateral\+::compute\+Vertice(), Tetrahedral\+::compute\+Vertice(), Hexahedral\+::compute\+Vertice(), Triangle\+::compute\+Vertice(), Linear\+::compute\+Vertice(), Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Construir\+\_\+bordas(), Fluids\+::d2pc(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow(), Quadrilateral\+::\+Dirichlet(), Triangle\+::\+Dirichlet(), Fluids\+::dkrn(), Fluids\+::dkrw(), Fluids\+::dpc(), Hexahedral\+::eval\+G\+Q(), for(), Gauss\+\_\+\+Jacobi\+\_\+parameters(), Gauss\+\_\+\+Lobatto\+\_\+\+Jacobi\+\_\+parameters(), Gauss\+\_\+\+Radau\+\_\+\+Jacobi\+\_\+parameters(), Ph\+Elem$<$ 2 $>$\+::gbnmap\+\_\+aresta(), Ph\+Elem$<$ 2 $>$\+::gbnmap\+\_\+arestas(), Triangle\+::\+Gradiente(), Stdel\+::is\+\_\+on\+\_\+border(), Quadrilateral\+::\+Jacobian(), Hexahedral\+::\+Jacobian(), Kgradn(), Fluids\+::\+Krn(), Fluids\+::\+Krw(), Tetrahedral\+::local\+Face\+Mode\+Map(), Ph\+Elem$<$ 2 $>$\+::make\+\_\+\+K\+\_\+\+Elast2\+D(), Ph\+Elem$<$ 2 $>$\+::make\+\_\+\+Kcomp\+\_\+\+Elast2\+D(), Ph\+Elem$<$ 2 $>$\+::make\+\_\+\+Kcomp\+\_\+\+Elast2\+D\+\_\+dyn(), Linear\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), Hexahedral\+::make\+\_\+local\+\_\+matrices(), Triangle\+::make\+\_\+local\+\_\+matrices(), Ph\+Elem$<$ 2 $>$\+::make\+\_\+vector\+\_\+\+Elast2\+D\+\_\+dyn(), Tetrahedral\+::map\+\_\+face(), Tetrahedral\+::mass(), Quadrilateral\+::mass(), Linear\+::mass(), Hexahedral\+::mass(), Triangle\+::mass(), norma\+\_\+max(), Fluids\+::pressao\+\_\+capilar(), Quadrilateral\+::print\+G\+Qtofile(), Hexahedral\+::print\+G\+Qtofile(), Triangle\+::print\+G\+Qtofile(), Linear\+::print\+G\+Qtofile(), Tetrahedral\+::printtoarray(), Triangle\+::printtofile(), Hexahedral\+::printtofile(), Linear\+::printtofile(), Tetrahedral\+::printtofile(), Quadrilateral\+::printtofile(), Hexahedral\+::printw\+G\+Qtofile(), Triangle\+::printw\+G\+Qtofile(), Linear\+::printw\+G\+Qtofile(), Quadrilateral\+::printw\+G\+Qtofile(), D\+G\+\_\+\+Prob\+::\+Processa\+\_\+condicoes\+\_\+contorno(), Ph\+Elem$<$ 2 $>$\+::projetar\+\_\+\+C0(), E\+D\+\_\+\+Prob\+::\+Solve\+Elast2\+D\+\_\+dyn(), Ph\+Elem$<$ 2 $>$\+::teste\+\_\+gradiente(), Ph\+Elem$<$ 2 $>$\+::transformacao\+\_\+direta(), Quadrilateral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Linear\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Triangle\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Hexahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Tetrahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+T(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_ad161e7ea2934eceb6a1b94305b4a35ad}\label{DG__EI__Header_8h_ad161e7ea2934eceb6a1b94305b4a35ad}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!aux1@{aux1}}
+\index{aux1@{aux1}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{aux1}{aux1}}
+{\footnotesize\ttfamily double aux1}
+
+
+
+Definition at line 18 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Elem\+::calcula\+\_\+tracos(), Hexahedral\+::compute\+Func\+G\+Q(), Linear\+::compute\+Func\+G\+Q(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow(), Hexahedral\+::elem\+\_\+traces(), Quadrilateral\+::elem\+\_\+traces(), Triangle\+::elem\+\_\+traces(), Linear\+::elem\+\_\+traces(), Hexahedral\+::eval\+\_\+\+Grad\+Phi(), Quadrilateral\+::eval\+\_\+\+Grad\+Phi(), Tetrahedral\+::eval\+G\+Q(), Triangle\+::eval\+G\+Q(), Hexahedral\+::eval\+G\+Q(), Linear\+::eval\+G\+Q(), Quadrilateral\+::eval\+G\+Q(), Ph\+Elem$<$ 2 $>$\+::gbnmap\+\_\+faces(), Linear\+::\+Gradiente(), Triangle\+::\+Gradiente(), Hexahedral\+::\+Gradiente(), Quadrilateral\+::\+Gradiente(), Hexahedral\+\_\+face\+\_\+modal\+\_\+connectivity(), Quadrilateral\+::\+Jacobian(), Hexahedral\+::\+Jacobian(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), Hexahedral\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::map\+\_\+face(), Hexahedral\+::mass(), Tetrahedral\+::mass(), norma\+\_\+max(), Triangle\+::print\+G\+Qtofile(), Linear\+::print\+G\+Qtofile(), Quadrilateral\+::print\+G\+Qtofile(), Hexahedral\+::print\+G\+Qtofile(), Linear\+::printtoarray(), Linear\+::printtofile(), Linear\+::printw\+G\+Qtofile(), Linear\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), and Stdel\+::w\+\_\+vec().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_aaed919cc209e7aaca7f165cbf77a93f0}\label{DG__EI__Header_8h_aaed919cc209e7aaca7f165cbf77a93f0}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!aux2@{aux2}}
+\index{aux2@{aux2}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{aux2}{aux2}}
+{\footnotesize\ttfamily double aux2}
+
+
+
+Definition at line 18 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by Hexahedral\+::compute\+Func\+G\+Q(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow(), Hexahedral\+::elem\+\_\+traces(), Quadrilateral\+::elem\+\_\+traces(), Triangle\+::elem\+\_\+traces(), Quadrilateral\+::eval\+\_\+\+Grad\+Phi(), Hexahedral\+::eval\+\_\+\+Grad\+Phi(), Hexahedral\+\_\+face\+\_\+modal\+\_\+connectivity(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::map\+\_\+face(), Tetrahedral\+::mass(), and Stdel\+::w\+\_\+vec().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a025eff33081d71b968ad2d85822124ba}\label{DG__EI__Header_8h_a025eff33081d71b968ad2d85822124ba}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!d2\+\_\+pc@{d2\+\_\+pc}}
+\index{d2\+\_\+pc@{d2\+\_\+pc}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{d2\+\_\+pc}{d2\_pc}}
+{\footnotesize\ttfamily double d2\+\_\+pc\mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}}
+
+
+
+Definition at line 64 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_aa21a13de957960449d80637026d6d2cf}\label{DG__EI__Header_8h_aa21a13de957960449d80637026d6d2cf}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!d\+\_\+lambdan@{d\+\_\+lambdan}}
+\index{d\+\_\+lambdan@{d\+\_\+lambdan}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{d\+\_\+lambdan}{d\_lambdan}}
+{\footnotesize\ttfamily double d\+\_\+lambdan\mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}}
+
+
+
+Definition at line 63 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a1b35413f4f6bfe992b45f19439d51949}\label{DG__EI__Header_8h_a1b35413f4f6bfe992b45f19439d51949}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!d\+\_\+lambdat@{d\+\_\+lambdat}}
+\index{d\+\_\+lambdat@{d\+\_\+lambdat}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{d\+\_\+lambdat}{d\_lambdat}}
+{\footnotesize\ttfamily double d\+\_\+lambdat\mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}}
+
+
+
+Definition at line 63 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_ada0f7f63d5dc5967a0c534ceba5ee6b7}\label{DG__EI__Header_8h_ada0f7f63d5dc5967a0c534ceba5ee6b7}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!d\+\_\+lambdaw@{d\+\_\+lambdaw}}
+\index{d\+\_\+lambdaw@{d\+\_\+lambdaw}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{d\+\_\+lambdaw}{d\_lambdaw}}
+{\footnotesize\ttfamily double d\+\_\+lambdaw\mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}}
+
+
+
+Definition at line 63 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a03aa65e875f93ac31960ffe75bbf6835}\label{DG__EI__Header_8h_a03aa65e875f93ac31960ffe75bbf6835}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!d\+\_\+pc@{d\+\_\+pc}}
+\index{d\+\_\+pc@{d\+\_\+pc}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{d\+\_\+pc}{d\_pc}}
+{\footnotesize\ttfamily double d\+\_\+pc\mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}}
+
+
+
+Definition at line 64 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_ac3eda557e8bd6ec6f4b2b45d0ca2ef1b}\label{DG__EI__Header_8h_ac3eda557e8bd6ec6f4b2b45d0ca2ef1b}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!Dtemp@{Dtemp}}
+\index{Dtemp@{Dtemp}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{Dtemp}{Dtemp}}
+{\footnotesize\ttfamily double Dtemp\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}}
+
+
+
+Definition at line 35 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions(), Quadrilateral\+::\+Dirichlet(), Triangle\+::\+Dirichlet(), Hexahedral\+::elem\+\_\+traces(), Quadrilateral\+::elem\+\_\+traces(), Triangle\+::elem\+\_\+traces(), Quadrilateral\+::gauss\+\_\+parameters\+\_\+default(), Linear\+::gauss\+\_\+parameters\+\_\+default(), Hexahedral\+::gauss\+\_\+parameters\+\_\+default(), Triangle\+::gauss\+\_\+parameters\+\_\+default(), Tetrahedral\+::gauss\+\_\+parameters\+\_\+default(), D\+G\+\_\+\+Prob\+::\+Processa\+\_\+condicoes\+\_\+contorno(), Triangle\+::trace(), Quadrilateral\+::trace(), and Hexahedral\+::trace().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_ab1ff01ebd410ddf016a3c7bbe9d98944}\label{DG__EI__Header_8h_ab1ff01ebd410ddf016a3c7bbe9d98944}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!e@{e}}
+\index{e@{e}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{e}{e}}
+{\footnotesize\ttfamily e\mbox{[}1\mbox{]} =el\mbox{[}border.\+elemento\mbox{[}0\mbox{]}\mbox{]}}
+
+
+
+Definition at line 22 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Construir\+\_\+bordas(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+eco(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow(), D\+G\+\_\+\+Prob\+::\+Eigenvectors(), Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::gbnmap\+\_\+continuous(), Jacobi\+\_\+roots(), Ph\+Elem$<$ 2 $>$\+::make\+\_\+\+Kcomp\+\_\+\+Elast2\+D(), Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Resolver\+Com\+Trilinos(), E\+D\+\_\+\+Prob\+::\+Solve\+Elast2\+D\+\_\+dyn(), and Ph\+Elem$<$ 2 $>$\+::teste\+\_\+gradiente().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a0544c3fe466e421738dae463968b70ba}\label{DG__EI__Header_8h_a0544c3fe466e421738dae463968b70ba}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!else@{else}}
+\index{else@{else}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily else}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+\{
+  \hyperlink{Funcoes__c_8h_ab7da11871b564326d332e2b2c6c14b03}{Gauss\_Jacobi\_parameters}(\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax},0.0,0.0,\hyperlink{DG__EI__Header_8h_a8e1ac7175e7b2df92c28e621fce42154}{Jac},\hyperlink{DG__EI__Header_8h_a680a38915b23da05eaa2dea22c468eaf}{w},
+      \hyperlink{DG__EI__Header_8h_ac3eda557e8bd6ec6f4b2b45d0ca2ef1b}{Dtemp})
+\end{DoxyCode}
+
+
+Definition at line 40 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+\mbox{\Hypertarget{DG__EI__Header_8h_aab612776be0b4d3a6f310a993257dcb2}\label{DG__EI__Header_8h_aab612776be0b4d3a6f310a993257dcb2}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!iE@{iE}}
+\index{iE@{iE}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{iE}{iE}}
+{\footnotesize\ttfamily int iE}
+
+
+
+Definition at line 19 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+alocar\+\_\+mem\+\_\+local(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+liberar\+\_\+mem\+\_\+local(), and for().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a4e6c0c17910d12c8aed03eeb8408ad83}\label{DG__EI__Header_8h_a4e6c0c17910d12c8aed03eeb8408ad83}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!i\+El@{i\+El}}
+\index{i\+El@{i\+El}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{i\+El}{iEl}}
+{\footnotesize\ttfamily int i\+El}
+
+
+
+Definition at line 71 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), and D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a8d494fb4e955e0e10fbc0ccdd34a60fe}\label{DG__EI__Header_8h_a8d494fb4e955e0e10fbc0ccdd34a60fe}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!i\+Er@{i\+Er}}
+\index{i\+Er@{i\+Er}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{i\+Er}{iEr}}
+{\footnotesize\ttfamily int i\+Er}
+
+
+
+Definition at line 71 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), and D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a8e1ac7175e7b2df92c28e621fce42154}\label{DG__EI__Header_8h_a8e1ac7175e7b2df92c28e621fce42154}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!Jac@{Jac}}
+\index{Jac@{Jac}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{Jac}{Jac}}
+{\footnotesize\ttfamily double Jac\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}}
+
+
+
+Definition at line 35 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions(), Quadrilateral\+::trace(), Hexahedral\+::trace(), and Triangle\+::trace().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_ab4a9cff5084a682a4b0595caa6962015}\label{DG__EI__Header_8h_ab4a9cff5084a682a4b0595caa6962015}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!K\+\_\+g\+\_\+pc\+\_\+n@{K\+\_\+g\+\_\+pc\+\_\+n}}
+\index{K\+\_\+g\+\_\+pc\+\_\+n@{K\+\_\+g\+\_\+pc\+\_\+n}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{K\+\_\+g\+\_\+pc\+\_\+n}{K\_g\_pc\_n}}
+{\footnotesize\ttfamily double K\+\_\+g\+\_\+pc\+\_\+n\mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}}
+
+
+
+Definition at line 67 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), and D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_aa4451440eea6c05a042d53ea50d31791}\label{DG__EI__Header_8h_aa4451440eea6c05a042d53ea50d31791}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!K\+\_\+g\+\_\+pw\+\_\+n@{K\+\_\+g\+\_\+pw\+\_\+n}}
+\index{K\+\_\+g\+\_\+pw\+\_\+n@{K\+\_\+g\+\_\+pw\+\_\+n}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{K\+\_\+g\+\_\+pw\+\_\+n}{K\_g\_pw\_n}}
+{\footnotesize\ttfamily double K\+\_\+g\+\_\+pw\+\_\+n\mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}}
+
+
+
+Definition at line 67 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), and D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_aee6150c382b67b73f8588774b642f99d}\label{DG__EI__Header_8h_aee6150c382b67b73f8588774b642f99d}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!K\+\_\+g\+\_\+sn\+\_\+n@{K\+\_\+g\+\_\+sn\+\_\+n}}
+\index{K\+\_\+g\+\_\+sn\+\_\+n@{K\+\_\+g\+\_\+sn\+\_\+n}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{K\+\_\+g\+\_\+sn\+\_\+n}{K\_g\_sn\_n}}
+{\footnotesize\ttfamily double K\+\_\+g\+\_\+sn\+\_\+n\mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}}
+
+
+
+Definition at line 67 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), and D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a530baa71d2017130e8a32b57963e62fa}\label{DG__EI__Header_8h_a530baa71d2017130e8a32b57963e62fa}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!kln@{kln}}
+\index{kln@{kln}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{kln}{kln}}
+{\footnotesize\ttfamily kln =1.\+0}
+
+
+
+Definition at line 72 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), and D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a38f7acb829b6dcc1d65c16a96aee438a}\label{DG__EI__Header_8h_a38f7acb829b6dcc1d65c16a96aee438a}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!klt@{klt}}
+\index{klt@{klt}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{klt}{klt}}
+{\footnotesize\ttfamily klt =1.\+0}
+
+
+
+Definition at line 72 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), and D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a59f09790bd89abf07edffe64687a94d3}\label{DG__EI__Header_8h_a59f09790bd89abf07edffe64687a94d3}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!klw@{klw}}
+\index{klw@{klw}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{klw}{klw}}
+{\footnotesize\ttfamily klw =1.\+0}
+
+
+
+Definition at line 72 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), and D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a87902a18ce5ac11ea0664999f614f516}\label{DG__EI__Header_8h_a87902a18ce5ac11ea0664999f614f516}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!kn@{kn}}
+\index{kn@{kn}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{kn}{kn}}
+{\footnotesize\ttfamily kn =sqrt(\hyperlink{DG__EI__Header_8h_aad73c7394233f3b09cc4804ac552ba1b}{aux})}
+
+
+
+Definition at line 72 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_ad8c77409112aa57574f6bb227f5739b7}\label{DG__EI__Header_8h_ad8c77409112aa57574f6bb227f5739b7}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!lambdan@{lambdan}}
+\index{lambdan@{lambdan}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{lambdan}{lambdan}}
+{\footnotesize\ttfamily double lambdan\mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}}
+
+
+
+Definition at line 62 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a486dc7c17b99c0a27a8a4394a4d69cb9}\label{DG__EI__Header_8h_a486dc7c17b99c0a27a8a4394a4d69cb9}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!lambdat@{lambdat}}
+\index{lambdat@{lambdat}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{lambdat}{lambdat}}
+{\footnotesize\ttfamily double lambdat\mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}}
+
+
+
+Definition at line 62 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a88111b29f8d53eb51975c27f5e3b13b4}\label{DG__EI__Header_8h_a88111b29f8d53eb51975c27f5e3b13b4}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!lambdaw@{lambdaw}}
+\index{lambdaw@{lambdaw}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{lambdaw}{lambdaw}}
+{\footnotesize\ttfamily double lambdaw\mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}}
+
+
+
+Definition at line 62 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_af9d495c1655d813d553030485d00fea7}\label{DG__EI__Header_8h_af9d495c1655d813d553030485d00fea7}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!length@{length}}
+\index{length@{length}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily length =border.\+comprimento}
+
+
+
+Definition at line 34 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), and D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a742204794ea328ba293fe59cec79b990}\label{DG__EI__Header_8h_a742204794ea328ba293fe59cec79b990}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!m@{m}}
+\index{m@{m}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily int m}
+
+
+
+Definition at line 19 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), Linear\+::elem\+\_\+traces(), Quadrilateral\+::elem\+\_\+traces(), Hexahedral\+::elem\+\_\+traces(), Triangle\+::elem\+\_\+traces(), Quadrilateral\+::eval\+\_\+\+Grad\+Phi(), Hexahedral\+::eval\+\_\+\+Grad\+Phi(), for(), Quadrilateral\+::\+Gradiente(), Triangle\+::\+Gradiente(), Hexahedral\+::\+Gradiente(), Jacobi\+\_\+roots(), Quadrilateral\+::\+Jacobian(), Hexahedral\+::\+Jacobian(), Ph\+Elem$<$ 2 $>$\+::make\+\_\+\+K\+\_\+\+Elast2\+D(), Tetrahedral\+::map\+\_\+face(), Stdel\+::print\+\_\+border\+\_\+map(), Linear\+::set(), Quadrilateral\+::set(), Hexahedral\+::set(), Triangle\+::set(), tetrahedro\+\_\+faz\+\_\+face\+\_\+mask(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+T(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_aa9ffdabddbd18be04a882b8b3176db5f}\label{DG__EI__Header_8h_aa9ffdabddbd18be04a882b8b3176db5f}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!mun@{mun}}
+\index{mun@{mun}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{mun}{mun}}
+{\footnotesize\ttfamily double mun =fluids.\+show\+\_\+mun()}
+
+
+
+Definition at line 65 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by for(), E\+D\+\_\+\+Prob\+::preamble(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a8738e44a1b9c3837b8a3ee32a2014e96}\label{DG__EI__Header_8h_a8738e44a1b9c3837b8a3ee32a2014e96}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!muw@{muw}}
+\index{muw@{muw}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{muw}{muw}}
+{\footnotesize\ttfamily double muw =fluids.\+show\+\_\+muw()}
+
+
+
+Definition at line 66 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by for(), E\+D\+\_\+\+Prob\+::preamble(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a5f7b79d1f60dd1c85e99108c66052098}\label{DG__EI__Header_8h_a5f7b79d1f60dd1c85e99108c66052098}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!n0@{n0}}
+\index{n0@{n0}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{n0}{n0}}
+{\footnotesize\ttfamily const int n0 =\hyperlink{DG__EI__Header_8h_ab1ff01ebd410ddf016a3c7bbe9d98944}{e}\mbox{[}0\mbox{]}.show\+\_\+ptr\+\_\+stdel(0)-\/$>$nn\+\_\+val()}
+
+
+
+Definition at line 29 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by Ge\+Prob$<$ My\+Elem, 2, 2 $>$\+::\+Construir\+\_\+bordas(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow(), Hexahedral\+\_\+face\+\_\+modal\+\_\+connectivity(), Ph\+Elem$<$ 2 $>$\+::make\+\_\+\+K\+\_\+\+Elast2\+D(), Ph\+Elem$<$ 2 $>$\+::make\+\_\+\+Kcomp\+\_\+\+Elast2\+D(), Ph\+Elem$<$ 2 $>$\+::make\+\_\+\+Kcomp\+\_\+\+Elast2\+D\+\_\+dyn(), Ph\+Elem$<$ 2 $>$\+::\+Processar\+\_\+dados(), teste\+\_\+aresta(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), and D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a840252f45c570c17d8a7af59530b2da1}\label{DG__EI__Header_8h_a840252f45c570c17d8a7af59530b2da1}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!n\+\_\+e@{n\+\_\+e}}
+\index{n\+\_\+e@{n\+\_\+e}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{n\+\_\+e}{n\_e}}
+{\footnotesize\ttfamily double n\+\_\+e\mbox{[}\hyperlink{DG__EI__Header_8h_a77c66c97503b5c80d04b38a78fba81f8}{ndim}\mbox{]}}
+
+
+
+Definition at line 51 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Elem\+::inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), and D\+G\+\_\+\+Elem\+::inicia\+\_\+tracos().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a77c66c97503b5c80d04b38a78fba81f8}\label{DG__EI__Header_8h_a77c66c97503b5c80d04b38a78fba81f8}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!ndim@{ndim}}
+\index{ndim@{ndim}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{ndim}{ndim}}
+{\footnotesize\ttfamily const int ndim =\hyperlink{DG__EI__Header_8h_ab1ff01ebd410ddf016a3c7bbe9d98944}{e}\mbox{[}0\mbox{]}.show\+\_\+ptr\+\_\+stdel(0)-\/$>$ndim\+\_\+val()}
+
+
+
+Definition at line 27 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions(), for(), Kgradn(), and prodgn().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_ab47785cba577090bf34c319609e1a039}\label{DG__EI__Header_8h_ab47785cba577090bf34c319609e1a039}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!npres@{npres}}
+\index{npres@{npres}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{npres}{npres}}
+{\footnotesize\ttfamily const int npres =\hyperlink{DG__EI__Header_8h_ab1ff01ebd410ddf016a3c7bbe9d98944}{e}\mbox{[}0\mbox{]}.show\+\_\+ptr\+\_\+stdel(\hyperlink{DG__Elem_8hpp_ac395e2733410824b466d4bcdecf11f8ea0d446d703cc72002c5a1d4f66ff9689d}{pres})-\/$>$nn\+\_\+val()}
+
+
+
+Definition at line 31 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+alocar\+\_\+mem\+\_\+local(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+liberar\+\_\+mem\+\_\+local(), for(), D\+G\+\_\+\+Prob\+::projetar\+\_\+\+C0(), and D\+G\+\_\+\+Prob\+::$\sim$\+D\+G\+\_\+\+Prob().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_af01d48e9515a349111be3909b9ff2a81}\label{DG__EI__Header_8h_af01d48e9515a349111be3909b9ff2a81}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!nsat@{nsat}}
+\index{nsat@{nsat}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{nsat}{nsat}}
+{\footnotesize\ttfamily const int nsat =\hyperlink{DG__EI__Header_8h_ab1ff01ebd410ddf016a3c7bbe9d98944}{e}\mbox{[}0\mbox{]}.show\+\_\+ptr\+\_\+stdel(\hyperlink{DG__Elem_8hpp_ac395e2733410824b466d4bcdecf11f8ea61332a9f389c4660efc467eb3291930a}{sat})-\/$>$nn\+\_\+val()}
+
+
+
+Definition at line 30 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+alocar\+\_\+mem\+\_\+local(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+liberar\+\_\+mem\+\_\+local(), for(), D\+G\+\_\+\+Prob\+::projetar\+\_\+\+C0(), and D\+G\+\_\+\+Prob\+::$\sim$\+D\+G\+\_\+\+Prob().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a8091f144cf5589aac1841b53d44ae0d7}\label{DG__EI__Header_8h_a8091f144cf5589aac1841b53d44ae0d7}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!Num\+\_\+elem@{Num\+\_\+elem}}
+\index{Num\+\_\+elem@{Num\+\_\+elem}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{Num\+\_\+elem}{Num\_elem}}
+{\footnotesize\ttfamily const int Num\+\_\+elem = (border.\+tipo==2) ? 2 \+: 1}
+
+
+
+Definition at line 16 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a2131b2dd1e444672082ef517229f56bb}\label{DG__EI__Header_8h_a2131b2dd1e444672082ef517229f56bb}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!pc@{pc}}
+\index{pc@{pc}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{pc}{pc}}
+{\footnotesize\ttfamily double pc\mbox{[}2\mbox{]}\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}}
+
+
+
+Definition at line 64 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_ac29ef5cb0c6174a70f8410a605f60b3e}\label{DG__EI__Header_8h_ac29ef5cb0c6174a70f8410a605f60b3e}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!penalty@{penalty}}
+\index{penalty@{penalty}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{penalty}{penalty}}
+{\footnotesize\ttfamily const double penalty =sigma/pow(\hyperlink{DG__EI__Header_8h_af9d495c1655d813d553030485d00fea7}{length},beta)}
+
+
+
+Definition at line 47 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), and D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_ab6ef910211b48466d6ccbafdb2d2e8f9}\label{DG__EI__Header_8h_ab6ef910211b48466d6ccbafdb2d2e8f9}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!penalty1@{penalty1}}
+\index{penalty1@{penalty1}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{penalty1}{penalty1}}
+{\footnotesize\ttfamily const double penalty1 =sigma1/pow(\hyperlink{DG__EI__Header_8h_af9d495c1655d813d553030485d00fea7}{length},beta)}
+
+
+
+Definition at line 48 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), and D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_ad22260429c11f48f2815f2db7fd27d98}\label{DG__EI__Header_8h_ad22260429c11f48f2815f2db7fd27d98}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!perm@{perm}}
+\index{perm@{perm}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{perm}{perm}}
+{\footnotesize\ttfamily double perm\mbox{[}2\mbox{]}\mbox{[}3\mbox{]}}
+
+
+
+Definition at line 56 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by for(), and E\+D\+\_\+\+Prob\+::preamble().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_ac178855ff02ce92cc33dbb478d54318e}\label{DG__EI__Header_8h_ac178855ff02ce92cc33dbb478d54318e}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!phi\+\_\+l@{phi\+\_\+l}}
+\index{phi\+\_\+l@{phi\+\_\+l}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{phi\+\_\+l}{phi\_l}}
+{\footnotesize\ttfamily double phi\+\_\+l\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}}
+
+
+
+Definition at line 69 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), and D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a3fa6caf578b09a3757e52965f895f1e3}\label{DG__EI__Header_8h_a3fa6caf578b09a3757e52965f895f1e3}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!phi\+\_\+r@{phi\+\_\+r}}
+\index{phi\+\_\+r@{phi\+\_\+r}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{phi\+\_\+r}{phi\_r}}
+{\footnotesize\ttfamily double phi\+\_\+r\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}}
+
+
+
+Definition at line 68 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+T().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a1910d262855b71da353ed0d07a6c7823}\label{DG__EI__Header_8h_a1910d262855b71da353ed0d07a6c7823}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!pos@{pos}}
+\index{pos@{pos}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily int pos}
+
+
+
+Definition at line 19 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Elem\+::calcula\+\_\+tracos(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow(), D\+G\+\_\+\+Elem\+::echo\+\_\+traco(), D\+G\+\_\+\+Elem\+::inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), D\+G\+\_\+\+Elem\+::inicia\+\_\+tracos(), and D\+G\+\_\+\+Elem\+::\+Traco\+\_\+phi().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a91427980cdd87780d69eb2044ea9d37d}\label{DG__EI__Header_8h_a91427980cdd87780d69eb2044ea9d37d}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!pw@{pw}}
+\index{pw@{pw}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{pw}{pw}}
+{\footnotesize\ttfamily double $\ast$ pw\mbox{[}2\mbox{]}}
+
+
+
+Definition at line 61 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}\label{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!qmax@{qmax}}
+\index{qmax@{qmax}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{qmax}{qmax}}
+{\footnotesize\ttfamily const int qmax =\hyperlink{DG__EI__Header_8h_ab1ff01ebd410ddf016a3c7bbe9d98944}{e}\mbox{[}0\mbox{]}.show\+\_\+ptr\+\_\+stdel(0)-\/$>$qborder\+\_\+val()}
+
+
+
+Definition at line 28 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+alocar\+\_\+mem\+\_\+local(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions(), D\+G\+\_\+\+Elem\+::echo\+\_\+traco(), for(), Ph\+Elem$<$ 2 $>$\+::get\+\_\+trace\+\_\+border\+\_\+map(), D\+G\+\_\+\+Elem\+::inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), Ph\+Elem$<$ 2 $>$\+::inicia\+\_\+gbtrbmap(), D\+G\+\_\+\+Elem\+::inicia\+\_\+tracos(), D\+G\+\_\+\+Elem\+::inicia\+\_\+vetores(), Kgradn(), D\+G\+\_\+\+Prob\+::\+Processa\+\_\+condicoes\+\_\+contorno(), prodgn(), D\+G\+\_\+\+Prob\+::projetar\+\_\+\+C0(), Triangle\+::trace(), Quadrilateral\+::trace(), Hexahedral\+::trace(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+grad\+\_\+phi(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+\+Kgrad\+\_\+pc(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+\+Kgrad\+\_\+phi\+\_\+n(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+\+Kgrad\+\_\+pw(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+\+Kgrad\+\_\+sn(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+phi(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+phi\+\_\+1(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+pw(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+sn(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a52e510ecdc11d9091099d94c3ba63e74}\label{DG__EI__Header_8h_a52e510ecdc11d9091099d94c3ba63e74}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!sn@{sn}}
+\index{sn@{sn}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{sn}{sn}}
+{\footnotesize\ttfamily double$\ast$ sn\mbox{[}2\mbox{]}}
+
+
+
+Definition at line 61 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by Ph\+Elem$<$ 2 $>$\+::check\+\_\+gradiente(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::set\+\_\+fontes(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+T(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+\mbox{\Hypertarget{DG__EI__Header_8h_a680a38915b23da05eaa2dea22c468eaf}\label{DG__EI__Header_8h_a680a38915b23da05eaa2dea22c468eaf}} 
+\index{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}!w@{w}}
+\index{w@{w}!D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h@{D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h}}
+\subsubsection{\texorpdfstring{w}{w}}
+{\footnotesize\ttfamily double w\mbox{[}\hyperlink{DG__EI__Header_8h_ae7d322bf04f258ba21ba82aed62c1895}{qmax}\mbox{]}}
+
+
+
+Definition at line 35 of file D\+G\+\_\+\+E\+I\+\_\+\+Header.\+h.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow(), and D\+G\+\_\+\+Prob\+::\+Processa\+\_\+condicoes\+\_\+contorno().
+

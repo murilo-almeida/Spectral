@@ -1,0 +1,27 @@
+<map id="DG_Elem::VolumeIntegrals" name="DG_Elem::VolumeIntegrals">
+<area shape="rect" id="node2" href="$Funcoes__c_8h.html#a57d673f8d6833fb7a7aced326df10ca9" title="B" alt="" coords="239,31,278,57"/>
+<area shape="rect" id="node9" href="$classFluids.html#a860c3c2af6dae8c158a78770dfc76ce8" title="Fluids::d2pc" alt="" coords="221,81,297,108"/>
+<area shape="rect" id="node10" href="$classFluids.html#a66c100be378f015b8bbe47a0e0c176c1" title="Fluids::dkrn" alt="" coords="222,132,295,159"/>
+<area shape="rect" id="node11" href="$classFluids.html#abd769e3a9081140ed4fc7d877c6672d4" title="Fluids::dkrw" alt="" coords="221,183,297,209"/>
+<area shape="rect" id="node12" href="$classFluids.html#aa332e363bb05e9c5559386000241d66f" title="Fluids::dpc" alt="" coords="223,233,294,260"/>
+<area shape="rect" id="node13" href="$classStdel.html#a2aa6ea12ceaa1fa4a7f63909ce41bc0b" title="Stdel::eval_Phi" alt="" coords="214,284,303,311"/>
+<area shape="rect" id="node14" href="$classStdel.html#aac725224c4c3433228ca6841fe7aba49" title="Stdel::evalGQ" alt="" coords="217,335,301,361"/>
+<area shape="rect" id="node15" href="$classStdel.html#af3e65d1ad0d59ded925a3f5a9d0fb100" title="Stdel::Gradiente" alt="" coords="211,385,306,412"/>
+<area shape="rect" id="node16" href="$spectral_8h.html#a95a34c84e8cd16600f64c6161c0a16bd" title="indice" alt="" coords="235,436,283,463"/>
+<area shape="rect" id="node17" href="$Funcoes__c_8h.html#a8ffd912fb4e1544e6bd02a9a13f9a4de" title="integral" alt="" coords="231,487,286,513"/>
+<area shape="rect" id="node18" href="$classFluids.html#a01d25f71f5c00a566032c19bd63a473f" title="Fluids::Krn" alt="" coords="224,537,293,564"/>
+<area shape="rect" id="node19" href="$classFluids.html#abaa29b5611ffefe8f2171692ffd62d38" title="Fluids::Krw" alt="" coords="223,588,295,615"/>
+<area shape="rect" id="node20" href="$classStdel.html#a2f964819235e0a55fd60733518b592f2" title="Stdel::NGQP_val" alt="" coords="209,639,308,665"/>
+<area shape="rect" id="node21" href="$spectral_8h.html#af8621f734854d3b2603d618acb1e931f" title="npos" alt="" coords="237,689,281,716"/>
+<area shape="rect" id="node22" href="$classFluids.html#a26c1a1fba1aa34becddfbc4fb07692dd" title="Fluids::pressao_capilar" alt="" coords="196,740,321,767"/>
+<area shape="rect" id="node23" href="$classStdel.html#a457d20e34fb7a32eb1e4aca6c19f53a2" title="Stdel::qborder_val" alt="" coords="207,791,310,817"/>
+<area shape="rect" id="node24" href="$classFluids.html#a426336b6a2fe1d6eb97b2af958d0b5e6" title="Fluids::show_mun" alt="" coords="207,841,310,868"/>
+<area shape="rect" id="node25" href="$classFluids.html#ad465f29caf6e368ebaa7662156482c9b" title="Fluids::show_muw" alt="" coords="207,892,311,919"/>
+<area shape="rect" id="node26" href="$classStdel.html#aeb2fe03bbd8af61e503e29d3dd5ae4f0" title="Stdel::trace" alt="" coords="223,943,295,969"/>
+<area shape="rect" id="node3" href="$ASPFunctions_8cpp.html#ad2b054769d09e23f58c382461a33fda5" title="Jacobi_P" alt="" coords="375,5,438,32"/>
+<area shape="rect" id="node4" href="$ASPFunctions_8cpp.html#af2ec04a3aa3462cb36aa0a564d022914" title="my_gamma" alt="" coords="369,56,444,83"/>
+<area shape="rect" id="node5" href="$ASPFunctions_8cpp.html#ac3f705ccfdcb247014c373929aa4b358" title="gamma_log" alt="" coords="492,56,567,83"/>
+<area shape="rect" id="node6" href="$ASPFunctions_8cpp.html#adbb9227db329a95b79f56bc1bc599a36" title="d_epsilon" alt="" coords="615,5,680,32"/>
+<area shape="rect" id="node7" href="$Funcoes__c_8h.html#a06a315d5c541c5118010c5dd958cec0c" title="p1" alt="" coords="628,56,667,83"/>
+<area shape="rect" id="node8" href="$Funcoes__c_8h.html#a66ec9f5cd02b067ff05c1f11fe152748" title="p2" alt="" coords="628,107,667,133"/>
+</map>

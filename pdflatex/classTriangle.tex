@@ -1,0 +1,2379 @@
+\hypertarget{classTriangle}{}\section{Triangle Class Reference}
+\label{classTriangle}\index{Triangle@{Triangle}}
+
+
+{\ttfamily \#include $<$Triangle.\+h$>$}
+
+
+
+Inheritance diagram for Triangle\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=124pt]{classTriangle__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Triangle\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=128pt]{classTriangle__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTriangle_a268f528f307fa58b426f5e08b4847adb}{Triangle} (int p0=3, int q0=4)
+\item 
+\hyperlink{classTriangle_a5199760a17454f4dc94c855a57e3a152}{$\sim$\+Triangle} ()
+\item 
+void \hyperlink{classTriangle_ad9159142cf526db5cf44035c62a1f927}{print} (F\+I\+LE $\ast$)
+\item 
+void \hyperlink{classTriangle_a0266527176e45c12a896110a8e5e20f8}{make\+\_\+local\+\_\+matrices} ()
+\item 
+void \hyperlink{classTriangle_a87bdc01aefd328ef819f0b2f8c6448dc}{make\+\_\+gbnmap} (int \hyperlink{DG__EI__Header_8h_a5f7b79d1f60dd1c85e99108c66052098}{n0}, int n1, int n2, int ng0, int ng1, int ng2, int sign0, int sign1, int sign2, int map\mbox{[}$\,$\mbox{]}, int sgn\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classTriangle_a51d0da1119ccde5c695ea4da980bda8d}{set} (int \hyperlink{classStdel_a05cbb3f2a3fa0bc04a74e347dc6574cf}{P}, int \hyperlink{classStdel_a82074e598ad5af5ec45a3257a3c2b684}{Q})
+\item 
+virtual void \hyperlink{classTriangle_a723405bf07d4123a417623114409b74e}{Jacobian} (const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]}, double $\ast$JV)
+\item 
+virtual double \hyperlink{classTriangle_a6728c6239f7edbf04da7246cf0ee0c8c}{mass} (int, int, const double \mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classTriangle_a404774b49104b12d072c9c103f9c357c}{printtofile} (F\+I\+LE $\ast$fout, const double u\mbox{[}$\,$\mbox{]}, double($\ast$)(double, double, double), const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classTriangle_ab95679ba1b3e20ac9e585ffe409f7972}{printtofile} (F\+I\+LE $\ast$fout, const double u\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classTriangle_a0ab3ad47c3e5432601110f246dec7652}{print\+G\+Qtofile} (F\+I\+LE $\ast$fout, const double ftemp\mbox{[}$\,$\mbox{]}, const double ftemp1\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classTriangle_aaedabb652f02c2324f9503816b538d9a}{printw\+G\+Qtofile} (F\+I\+LE $\ast$fout, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]}, const double JV\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classTriangle_ac75851696ddabecfc48a784cf9b3ba8a}{compute\+Vertice} (double f\+\_\+vert\mbox{[}$\,$\mbox{]}, const double u\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classTriangle_a1884216b14c0432a2a56c12da809fb37}{compute\+At\+Points} (const int npoints, const double Loc\+Coord\mbox{[}$\,$\mbox{]}, const double u\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]}, double f\mbox{[}$\,$\mbox{]}, double Glo\+Coord\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classTriangle_acb912416d2fe57c6c4a501fdc123e6d3}{eval\+GQ} (double f0\mbox{[}$\,$\mbox{]}, double f1\mbox{[}$\,$\mbox{]}, const double u0\mbox{[}$\,$\mbox{]}, const double u1\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classTriangle_aac6e3645b886cfd2f4f406157b696d5a}{eval\+GQ} (double f0\mbox{[}$\,$\mbox{]}, const double u0\mbox{[}$\,$\mbox{]}, const int NF=1, const int nvar=0)
+\item 
+virtual void \hyperlink{classTriangle_a871ac2a2f38f1c9f8f36a6cc4bd1eef5}{eval\+\_\+\+Phi} (const int \hyperlink{DG__EI__Header_8h_a742204794ea328ba293fe59cec79b990}{m}, double Phi\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classTriangle_a123dce9963455a2c5d932f677f3405f7}{eval\+\_\+\+Grad\+Phi} (const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]}, const int \hyperlink{DG__EI__Header_8h_a742204794ea328ba293fe59cec79b990}{m}, double $\ast$$\ast$der)
+\item 
+virtual void \hyperlink{classTriangle_ac9b7a18bce51206aa978ec408fa9729c}{Gradiente} (F\+I\+LE $\ast$fout, double $\ast$grad\mbox{[}$\,$\mbox{]}, double($\ast$func)(double, double, double), const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classTriangle_af55fef533efd5d2a7b8f3954d5ad7dda}{Gradiente} (F\+I\+LE $\ast$fout, double $\ast$grad\mbox{[}$\,$\mbox{]}, const double fvec\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classTriangle_a2c5934a28512e5adb9dee4d71fc4bf26}{Gradiente} (double $\ast$grad\mbox{[}$\,$\mbox{]}, const double fvec\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classTriangle_a9943e9f4febaa9025ea324986726fdf6}{print\+\_\+nome} (F\+I\+LE $\ast$)
+\item 
+virtual void \hyperlink{classTriangle_a8895a8448dcfdefefb94681518530c0f}{Dirichlet} (const int \hyperlink{classTriangle_a4f19e62f5f4ca0e2a8f3747401eb2a44}{aresta}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int vert\+\_\+map\mbox{[}$\,$\mbox{]}, const int nmap\mbox{[}$\,$\mbox{]}, const int sgn\mbox{[}$\,$\mbox{]}, int bflag\mbox{[}$\,$\mbox{]}, double Xbc\mbox{[}$\,$\mbox{]}, double($\ast$f)(double, double, double))
+\item 
+virtual void \hyperlink{classTriangle_ab4de79168cc2bf7bf04634681f434610}{teste} (int \&)
+\item 
+virtual void \hyperlink{classTriangle_a1361a3e5ff11ed02786bf62325a2614f}{trace} (const int lado, const int \hyperlink{classStdel_a82074e598ad5af5ec45a3257a3c2b684}{Q}, const int sinal, const double $\ast$valores, double $\ast$saida)
+\item 
+virtual void \hyperlink{classTriangle_ac5aa1a7a531b50d282dbe740efbb9919}{compute\+Func\+GQ} (double f\+\_\+\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]}, double($\ast$func)(double, double, double))
+\item 
+virtual void \hyperlink{classTriangle_afc023a739048c1294b8417bfec3afb7a}{vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv} (double vec\mbox{[}$\,$\mbox{]}, const double func\mbox{[}$\,$\mbox{]}, const double JV\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classTriangle_acc741aa9440446498e212d00cff284e8}{vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv} (double vec\mbox{[}$\,$\mbox{]}, double($\ast$func)(double, double, double), const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]}, const double JV\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{classTriangle_ad27047d488aa9454fb5dbce44493bc52}{elem\+\_\+traces} (const \hyperlink{structVertice}{Vertice} ptvert\mbox{[}$\,$\mbox{]}, const int Vert\+\_\+map\mbox{[}$\,$\mbox{]}, const int sinal\mbox{[}$\,$\mbox{]}, double $\ast$$\ast$$\ast$TP, double $\ast$$\ast$$\ast$$\ast$T\+GP, double $\ast$Jb)
+\item 
+virtual const int \hyperlink{classTriangle_a55b14526652cdeaff82e07083c36a7ba}{aresta\+\_\+lvert} (const int \&i, const int \&j) const
+\item 
+virtual const int \hyperlink{classTriangle_a54ef3345b002746852e4f2eb2f698ae2}{face\+\_\+lvert} (const int \&i, const int \&j) const
+\item 
+virtual const int \hyperlink{classTriangle_ad028de34010b57e995d0206f9257b37b}{show\+\_\+nvf} (const int \&i) const
+\item 
+virtual const int \hyperlink{classTriangle_a7f711afd182aa8bae52c8acfa4ce3690}{show\+\_\+face\+\_\+tipo} (const int \&i) const
+\item 
+virtual const int \hyperlink{classTriangle_a715ce8022208f6b23e980acced093e99}{show\+\_\+fd0} (const int \&i) const
+\item 
+virtual const int \hyperlink{classTriangle_a3635411b31e3fe7dbe226efe5de45094}{show\+\_\+fd1} (const int \&i) const
+\item 
+virtual const int \hyperlink{classTriangle_a89169103df31e2cbe4383617363e48de}{show\+\_\+fv2} (const int \&i) const
+\item 
+virtual const int \hyperlink{classTriangle_ac61acf91a02fd588a70bf75d3e246129}{show\+\_\+ind\+\_\+mode} (const int \&i, const int \&j=0, const int \&k=0) const
+\item 
+virtual void \hyperlink{classTriangle_a1067d23aa0cc1580d0deed90f4cf3d37}{superficie\+\_\+externa} (const int Vert\+\_\+map\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int \&num\+\_\+local, double \&area, double normal\mbox{[}3\mbox{]})
+\item 
+int \hyperlink{classStdel_a56288a857b95a55c8b7eb5b473e836d9}{show\+\_\+vtk\+\_\+type} () const
+\item 
+void \hyperlink{classStdel_a54b5768d09f500cb949e66fc234eac70}{print\+Stdel} () const
+\item 
+int \hyperlink{classStdel_a75023fc369db2752845a9ce278f10929}{tipo\+\_\+val} () const
+\item 
+int \hyperlink{classStdel_a383df930bee8dc298d7d412b3b632ebb}{ndim\+\_\+val} () const
+\item 
+int \hyperlink{classStdel_a457d20e34fb7a32eb1e4aca6c19f53a2}{qborder\+\_\+val} () const
+\item 
+int \hyperlink{classStdel_aac8e97661e46c48fafa91f13caa03a9f}{nborder\+\_\+val} () const
+\item 
+int \hyperlink{classStdel_a2f964819235e0a55fd60733518b592f2}{N\+G\+Q\+P\+\_\+val} () const
+\item 
+int \hyperlink{classStdel_ae2ab461d1bc8d9f6006665fe03684845}{nv\+\_\+val} () const
+\item 
+int \hyperlink{classStdel_aa45f211663f5e8e47fdea32232ff23ea}{ne\+\_\+val} () const
+\item 
+int \hyperlink{classStdel_a2eed3ce0b73050e868989be78d918e5c}{nf\+\_\+val} () const
+\item 
+int \hyperlink{classStdel_a6086dceed8fe3dd410da0d6b84f02377}{nn\+\_\+val} () const
+\item 
+int \hyperlink{classStdel_a4fb0a049dc27d8e67665a56d1b5a18ba}{nb\+\_\+val} () const
+\item 
+int \hyperlink{classStdel_a701c7d5595d4f6632333c4202898983b}{P\+\_\+val} (int i) const
+\item 
+int \hyperlink{classStdel_aeea4659f5bcabbf1acb374180c43a293}{Q\+\_\+val} (int i) const
+\item 
+int \hyperlink{classStdel_a0775d0c4f7f15ae26bd45fc949e6f6b9}{gqt\+\_\+val} (int i) const
+\item 
+double \hyperlink{classStdel_a6565c36150823a1f52a2daf05806f7a4}{show\+\_\+\+Phi\+\_\+val} (const int i, const int j) const
+\item 
+double \hyperlink{classStdel_a4860f0f650640f859c5f75c206ee1f60}{show\+\_\+\+Mb\+\_\+comp} (int, int) const
+\item 
+double \hyperlink{classStdel_a11bf2897170ada9a9dd8f641a39585e5}{show\+\_\+\+Mi\+\_\+inv} (int, int) const
+\item 
+double \hyperlink{classStdel_a44d5aa234e02fb41afd5a4e5e45fadc4}{show\+\_\+\+Mc\+Mi\+\_\+inv} (int, int) const
+\item 
+void \hyperlink{classStdel_a319e6a16011b22e12028a841b7686f03}{print\+\_\+matrices} (F\+I\+LE $\ast$)
+\item 
+void \hyperlink{classStdel_a20afd536025caf1aad1c4e3f41fcb866}{show\+\_\+ind} (int i, int \&p, int \&q, int \&r)
+\item 
+void \hyperlink{classStdel_a922b779be1f8f12b7a5535ab529bff64}{duplicar\+\_\+mass\+\_\+matrix} (int Nfields)
+\item 
+int \hyperlink{classStdel_a395c8d7d7890a9efdea23932fa22b420}{w\+\_\+vec} (double saida\mbox{[}$\,$\mbox{]})
+\item 
+int \hyperlink{classStdel_ad474ffc52b051ae8317b3fdb583c4c98}{show\+\_\+emapv} (int i) const
+\item 
+int \hyperlink{classStdel_aca7fb885191a952c013e930521a42213}{show\+\_\+emapi} (int i) const
+\item 
+int \hyperlink{classStdel_ac8787dabfb1d767b89e39806522c1161}{show\+\_\+bmapv} (int i) const
+\item 
+int \hyperlink{classStdel_ad3a0646ad7ec2567e46da36285dee331}{show\+\_\+bmapi} (int i) const
+\item 
+const int \hyperlink{classStdel_abb022f0ad81707e11e3a3091d2d87c46}{is\+\_\+on\+\_\+border} (int \hyperlink{DG__EI__Header_8h_a742204794ea328ba293fe59cec79b990}{m}, int \hyperlink{DG__EI__Header_8h_ab1ff01ebd410ddf016a3c7bbe9d98944}{e}, int \&\hyperlink{DG__EI__Header_8h_a1910d262855b71da353ed0d07a6c7823}{pos}) const
+\item 
+void \hyperlink{classStdel_a9a0c69dca7564f6ca4aa4f3c9864ea01}{print\+\_\+border\+\_\+map} (F\+I\+LE $\ast$fout)
+\item 
+virtual void \hyperlink{classStdel_af3e65d1ad0d59ded925a3f5a9d0fb100}{Gradiente} (F\+I\+LE $\ast$fout, double $\ast$$\ast$grad, double($\ast$func)(double, double, double), const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]})=0
+\item 
+virtual void \hyperlink{classStdel_abf44e457d99e8c559c14cb1f7423da12}{Gradiente} (F\+I\+LE $\ast$fout, double $\ast$$\ast$grad, const double fvec\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]})=0
+\item 
+virtual void \hyperlink{classStdel_aec200dfb0b00bebf70a1d845675eeafd}{Gradiente} (double $\ast$$\ast$grad, const double fvec\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]})=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classStdel_a68f8781a42728758ccde39e15cd319ed}{tipo}
+\begin{DoxyCompactList}\small\item\em type of the element \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_a912f36b591d847eed2531a3b3a51a520}{ndim}
+\begin{DoxyCompactList}\small\item\em number of geometrical dimension \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_a20c0e35541cab4a1f07974659ae7a9ad}{nv}
+\begin{DoxyCompactList}\small\item\em number of vertices \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_aef3d1b34184b9fd03c0b655640c243b6}{ne}
+\begin{DoxyCompactList}\small\item\em number of edges \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_a61987080026986a40412a8937aad4b24}{nf}
+\begin{DoxyCompactList}\small\item\em number of faces \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_ad0f111a2ba3d9415618c8408da3fc100}{nborder}
+\begin{DoxyCompactList}\small\item\em number of borders \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_a63a106b928d211c71d5fec6449ef4d51}{qborder}
+\begin{DoxyCompactList}\small\item\em number of Gauss quadrature points on the faces (borders) \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_a55624584790a08437c03540489d04898}{vtk\+\_\+type}
+\begin{DoxyCompactList}\small\item\em number of element for vtk file \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_af4d02765d362e2f0469633ff78734f89}{nn}
+\begin{DoxyCompactList}\small\item\em number of modes (and/or modes) \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_ad1d9acc38335d3fd779ba5c14f1507f8}{nb}
+\begin{DoxyCompactList}\small\item\em number of boundary (shared) modes (or modes) \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_a05cbb3f2a3fa0bc04a74e347dc6574cf}{P} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em (number of modes -\/ 1) in each direction \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_a82074e598ad5af5ec45a3257a3c2b684}{Q} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em number of Gauss Quadrature points in direction i \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_aa3cff31280606cd3eb95af770dd6f5b4}{N\+G\+QP}
+\begin{DoxyCompactList}\small\item\em total number of Gauss Quadrature points \end{DoxyCompactList}\item 
+int \hyperlink{classStdel_afc321b60cb9b577b71794e346196c07a}{gqt} \mbox{[}3\mbox{]}
+\item 
+double \hyperlink{classStdel_adedcb4d4faa12adf348054780a3b2c1a}{x\+GQ} \mbox{[}3\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}
+\item 
+double \hyperlink{classStdel_af99d72cbda49c30e23e83705c95a1c5b}{w\+GQ} \mbox{[}3\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}
+\item 
+\hyperlink{classMode}{Mode} \hyperlink{classStdel_a7a09cf048f14496813a914ca6afe7366}{mode\+\_\+} \mbox{[}\hyperlink{MyOptions_8h_aa75ccd382acf88cec3e9c8025c1f88b7}{M\+A\+X\+M\+O\+D\+ES}\mbox{]}
+\begin{DoxyCompactList}\small\item\em mode\+\_\+\mbox{[}m(ijk)\mbox{]}= number of the expansion function into the local \end{DoxyCompactList}\item 
+double \hyperlink{classStdel_a61f02fa483b00cb98ff5c8d951068211}{D} \mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}\mbox{[}3\mbox{]}
+\item 
+double \hyperlink{classStdel_ab7849f154bd766857aac9557c19f7f84}{Phi\+\_\+val} \mbox{[}\hyperlink{MyOptions_8h_aa75ccd382acf88cec3e9c8025c1f88b7}{M\+A\+X\+M\+O\+D\+ES}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ} $\ast$\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Contem os vetores Phi nos pontos de quadratura. \end{DoxyCompactList}\item 
+double \hyperlink{classStdel_aa1627cb39fa5da75764809412159c825}{Mb\+\_\+comp} \mbox{[}\hyperlink{MyOptions_8h_aed8828a63ec0a2a0461b7c9ed39dd648}{M\+A\+X\+N\+BL}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_aed8828a63ec0a2a0461b7c9ed39dd648}{M\+A\+X\+N\+BL}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Matriz de massa compacta de Schur. \end{DoxyCompactList}\item 
+double \hyperlink{classStdel_a53a9490d5a02a96473d96848bac3711a}{Mi\+\_\+inv} \mbox{[}\hyperlink{MyOptions_8h_a463cdf068fb6289d1f81dac7e0f76ab5}{M\+A\+X\+N\+IL}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_a463cdf068fb6289d1f81dac7e0f76ab5}{M\+A\+X\+N\+IL}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Matriz de massa inversa dos modos internos de Schur. \end{DoxyCompactList}\item 
+double \hyperlink{classStdel_acc685141e80bcce9703e37f32cc5c42c}{Mc\+Mi\+\_\+inv} \mbox{[}\hyperlink{MyOptions_8h_aed8828a63ec0a2a0461b7c9ed39dd648}{M\+A\+X\+N\+BL}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_a463cdf068fb6289d1f81dac7e0f76ab5}{M\+A\+X\+N\+IL}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Matriz de massa inversa dos modos compacta de Schur. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{classStdel_a39326d0ef108403223402c79b424a41b}{emapv} = nullptr
+\begin{DoxyCompactList}\small\item\em edge\+\_\+map\+\_\+valores \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{classStdel_a9ba8eb743aeb36984b7c4ececa837e16}{emapi} = nullptr
+\begin{DoxyCompactList}\small\item\em edge\+\_\+map\+\_\+inicio \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{classStdel_ac3cd818c98aa400279f28c22c8e0abaa}{bmapv} = nullptr
+\begin{DoxyCompactList}\small\item\em border\+\_\+map\+\_\+valores \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{classStdel_a8b082d27e5c3cab7ad2045b464af0fd9}{bmapi} = nullptr
+\begin{DoxyCompactList}\small\item\em border\+\_\+map\+\_\+inicio \end{DoxyCompactList}\item 
+double $\ast$ \hyperlink{classStdel_a80a6c89c61bfef1160257e97b3ffb0a2}{D\+\_\+\+Phi\+\_\+val} = nullptr
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classTriangle_ac6e4b288627df0b459fdd5f503952f6c}{make\+\_\+mass\+\_\+matrices} (int nfields)
+\item 
+virtual void \hyperlink{classTriangle_a1a32c77e254ebee6c225720d99e8ef12}{printtoarray} (const double u\mbox{[}$\,$\mbox{]}, const \hyperlink{structVertice}{Vertice} vert\mbox{[}$\,$\mbox{]}, const int map\mbox{[}$\,$\mbox{]}, double x\mbox{[}$\,$\mbox{]}, double y\mbox{[}$\,$\mbox{]}, double z\mbox{[}$\,$\mbox{]}, double ftemp\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classTriangle_a37e1fe2af0b509986126c978e9dbbe76}{gauss\+\_\+parameters\+\_\+default} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{classTriangle_a4f19e62f5f4ca0e2a8f3747401eb2a44}{aresta} \mbox{[}3\mbox{]}\mbox{[}2\mbox{]}
+\item 
+const int \hyperlink{classTriangle_a8cd0ca9207ef546b87d71b3d2d1d69c9}{sinal\+\_\+normal} \mbox{[}3\mbox{]} = \{-\/1,-\/1,1\}
+\item 
+const int \hyperlink{classTriangle_a693659752f394140a7ad5010208b3ab0}{face} \mbox{[}1\mbox{]}\mbox{[}3\mbox{]} =\{\{0,1,2\}\}
+\item 
+int $\ast$$\ast$ \hyperlink{classTriangle_acafeae167367cb8c0def01e37ba0a908}{ind\+\_\+mode\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 4 of file Triangle.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTriangle_a268f528f307fa58b426f5e08b4847adb}\label{classTriangle_a268f528f307fa58b426f5e08b4847adb}} 
+\index{Triangle@{Triangle}!Triangle@{Triangle}}
+\index{Triangle@{Triangle}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{Triangle()}{Triangle()}}
+{\footnotesize\ttfamily Triangle\+::\+Triangle (\begin{DoxyParamCaption}\item[{int}]{p0 = {\ttfamily 3},  }\item[{int}]{q0 = {\ttfamily 4} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file Triangle.\+cpp.
+
+
+
+References Stdel\+::bmapi, Stdel\+::bmapv, Stdel\+::emapi, Stdel\+::emapv, Stdel\+::nborder, Stdel\+::ndim, Stdel\+::ne, Stdel\+::nf, Stdel\+::nv, Stdel\+::tipo, and Stdel\+::vtk\+\_\+type.
+
+\mbox{\Hypertarget{classTriangle_a5199760a17454f4dc94c855a57e3a152}\label{classTriangle_a5199760a17454f4dc94c855a57e3a152}} 
+\index{Triangle@{Triangle}!````~Triangle@{$\sim$\+Triangle}}
+\index{````~Triangle@{$\sim$\+Triangle}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{$\sim$\+Triangle()}{~Triangle()}}
+{\footnotesize\ttfamily Triangle\+::$\sim$\+Triangle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 24 of file Triangle.\+cpp.
+
+
+
+References Stdel\+::bmapi, Stdel\+::bmapv, Stdel\+::\+D\+\_\+\+Phi\+\_\+val, Stdel\+::emapi, Stdel\+::emapv, ind\+\_\+mode\+\_\+, and Stdel\+::P.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTriangle_a55b14526652cdeaff82e07083c36a7ba}\label{classTriangle_a55b14526652cdeaff82e07083c36a7ba}} 
+\index{Triangle@{Triangle}!aresta\+\_\+lvert@{aresta\+\_\+lvert}}
+\index{aresta\+\_\+lvert@{aresta\+\_\+lvert}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{aresta\+\_\+lvert()}{aresta\_lvert()}}
+{\footnotesize\ttfamily const int Triangle\+::aresta\+\_\+lvert (\begin{DoxyParamCaption}\item[{const int \&}]{i,  }\item[{const int \&}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a69b8ef7def7891fcb2d5d8fd9b75bdc8}{Stdel}.
+
+
+
+Definition at line 1944 of file Triangle.\+cpp.
+
+\mbox{\Hypertarget{classTriangle_a1884216b14c0432a2a56c12da809fb37}\label{classTriangle_a1884216b14c0432a2a56c12da809fb37}} 
+\index{Triangle@{Triangle}!compute\+At\+Points@{compute\+At\+Points}}
+\index{compute\+At\+Points@{compute\+At\+Points}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{compute\+At\+Points()}{computeAtPoints()}}
+{\footnotesize\ttfamily void Triangle\+::compute\+At\+Points (\begin{DoxyParamCaption}\item[{const int}]{npoints,  }\item[{const double}]{Loc\+Coord\mbox{[}$\,$\mbox{]},  }\item[{const double}]{u\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]},  }\item[{double}]{f\mbox{[}$\,$\mbox{]},  }\item[{double}]{Glo\+Coord\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a03e038055d238608efce470629863c36}{Stdel}.
+
+
+
+Definition at line 899 of file Triangle.\+cpp.
+
+
+
+References aux, Stdel\+::mode\+\_\+, Stdel\+::nn, Stdel\+::P, Mode\+::p\+\_\+val(), Psia(), Psib(), Mode\+::q\+\_\+val(), Vertice\+::x, Vertice\+::y, and Vertice\+::z.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_a1884216b14c0432a2a56c12da809fb37_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_ac5aa1a7a531b50d282dbe740efbb9919}\label{classTriangle_ac5aa1a7a531b50d282dbe740efbb9919}} 
+\index{Triangle@{Triangle}!compute\+Func\+GQ@{compute\+Func\+GQ}}
+\index{compute\+Func\+GQ@{compute\+Func\+GQ}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{compute\+Func\+G\+Q()}{computeFuncGQ()}}
+{\footnotesize\ttfamily void Triangle\+::compute\+Func\+GQ (\begin{DoxyParamCaption}\item[{double}]{f\+\_\+\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]},  }\item[{double($\ast$)(double, double, double)}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a59195ad1ce9b90ef83fd935698dc3305}{Stdel}.
+
+
+
+Definition at line 1592 of file Triangle.\+cpp.
+
+
+
+References Stdel\+::Q, Vertice\+::x, Stdel\+::x\+GQ, Vertice\+::y, and Vertice\+::z.
+
+\mbox{\Hypertarget{classTriangle_ac75851696ddabecfc48a784cf9b3ba8a}\label{classTriangle_ac75851696ddabecfc48a784cf9b3ba8a}} 
+\index{Triangle@{Triangle}!compute\+Vertice@{compute\+Vertice}}
+\index{compute\+Vertice@{compute\+Vertice}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{compute\+Vertice()}{computeVertice()}}
+{\footnotesize\ttfamily void Triangle\+::compute\+Vertice (\begin{DoxyParamCaption}\item[{double}]{f\+\_\+vert\mbox{[}$\,$\mbox{]},  }\item[{const double}]{u\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a74eed41f670878759c84e2014b4a2cd5}{Stdel}.
+
+
+
+Definition at line 870 of file Triangle.\+cpp.
+
+
+
+References aux, Stdel\+::mode\+\_\+, Stdel\+::nn, Stdel\+::P, Mode\+::p\+\_\+val(), Psia(), Psib(), and Mode\+::q\+\_\+val().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_ac75851696ddabecfc48a784cf9b3ba8a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_a8895a8448dcfdefefb94681518530c0f}\label{classTriangle_a8895a8448dcfdefefb94681518530c0f}} 
+\index{Triangle@{Triangle}!Dirichlet@{Dirichlet}}
+\index{Dirichlet@{Dirichlet}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{Dirichlet()}{Dirichlet()}}
+{\footnotesize\ttfamily void Triangle\+::\+Dirichlet (\begin{DoxyParamCaption}\item[{const int}]{aresta,  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{vert\+\_\+map\mbox{[}$\,$\mbox{]},  }\item[{const int}]{nmap\mbox{[}$\,$\mbox{]},  }\item[{const int}]{sgn\mbox{[}$\,$\mbox{]},  }\item[{int}]{bflag\mbox{[}$\,$\mbox{]},  }\item[{double}]{Xbc\mbox{[}$\,$\mbox{]},  }\item[{double($\ast$)(double, double, double)}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a92e13b000249ba73b35407d925cbd7a8}{Stdel}.
+
+
+
+Definition at line 1404 of file Triangle.\+cpp.
+
+
+
+References aux, B(), Dtemp, Gauss\+\_\+\+Lobatto\+\_\+\+Jacobi\+\_\+parameters(), M\+A\+XQ, Stdel\+::P, p1(), Psia(), Stdel\+::Q, Vertice\+::x, Vertice\+::y, and Vertice\+::z.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_a8895a8448dcfdefefb94681518530c0f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a922b779be1f8f12b7a5535ab529bff64}\label{classStdel_a922b779be1f8f12b7a5535ab529bff64}} 
+\index{Triangle@{Triangle}!duplicar\+\_\+mass\+\_\+matrix@{duplicar\+\_\+mass\+\_\+matrix}}
+\index{duplicar\+\_\+mass\+\_\+matrix@{duplicar\+\_\+mass\+\_\+matrix}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{duplicar\+\_\+mass\+\_\+matrix()}{duplicar\_mass\_matrix()}}
+{\footnotesize\ttfamily void Stdel\+::duplicar\+\_\+mass\+\_\+matrix (\begin{DoxyParamCaption}\item[{int}]{Nfields }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 117 of file Stdel.\+cpp.
+
+
+
+References a, Stdel\+::\+Mb\+\_\+comp, Stdel\+::\+Mc\+Mi\+\_\+inv, Stdel\+::\+Mi\+\_\+inv, Stdel\+::nb, Stdel\+::nn, Stdel\+::show\+\_\+\+Mb\+\_\+comp(), Stdel\+::show\+\_\+\+Mc\+Mi\+\_\+inv(), and Stdel\+::show\+\_\+\+Mi\+\_\+inv().
+
+
+
+Referenced by Stdel\+::show\+\_\+\+Phi\+\_\+val().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{classStdel_a922b779be1f8f12b7a5535ab529bff64_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a922b779be1f8f12b7a5535ab529bff64_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_ad27047d488aa9454fb5dbce44493bc52}\label{classTriangle_ad27047d488aa9454fb5dbce44493bc52}} 
+\index{Triangle@{Triangle}!elem\+\_\+traces@{elem\+\_\+traces}}
+\index{elem\+\_\+traces@{elem\+\_\+traces}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{elem\+\_\+traces()}{elem\_traces()}}
+{\footnotesize\ttfamily void Triangle\+::elem\+\_\+traces (\begin{DoxyParamCaption}\item[{const \hyperlink{structVertice}{Vertice}}]{ptvert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{Vert\+\_\+map\mbox{[}$\,$\mbox{]},  }\item[{const int}]{sinal\mbox{[}$\,$\mbox{]},  }\item[{double $\ast$$\ast$$\ast$}]{TP,  }\item[{double $\ast$$\ast$$\ast$$\ast$}]{T\+GP,  }\item[{double $\ast$}]{Jb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a3d72869352a2ff5eeb23972eca3b391e}{Stdel}.
+
+
+
+Definition at line 1744 of file Triangle.\+cpp.
+
+
+
+References aux1, aux2, D\+Psia(), D\+Psib(), Dtemp, Gauss\+\_\+\+Jacobi\+\_\+parameters(), m, M\+A\+XQ, Stdel\+::mode\+\_\+, Stdel\+::nn, Stdel\+::P, Mode\+::p\+\_\+val(), Psia(), Psib(), Mode\+::q\+\_\+val(), Stdel\+::qborder, Vertice\+::x, and Vertice\+::y.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_ad27047d488aa9454fb5dbce44493bc52_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_a123dce9963455a2c5d932f677f3405f7}\label{classTriangle_a123dce9963455a2c5d932f677f3405f7}} 
+\index{Triangle@{Triangle}!eval\+\_\+\+Grad\+Phi@{eval\+\_\+\+Grad\+Phi}}
+\index{eval\+\_\+\+Grad\+Phi@{eval\+\_\+\+Grad\+Phi}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{eval\+\_\+\+Grad\+Phi()}{eval\_GradPhi()}}
+{\footnotesize\ttfamily void Triangle\+::eval\+\_\+\+Grad\+Phi (\begin{DoxyParamCaption}\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]},  }\item[{const int}]{m,  }\item[{double $\ast$$\ast$}]{der }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a83a7a53e4be6da7c3a615967e4504b07}{Stdel}.
+
+
+
+Definition at line 979 of file Triangle.\+cpp.
+
+\mbox{\Hypertarget{classTriangle_a871ac2a2f38f1c9f8f36a6cc4bd1eef5}\label{classTriangle_a871ac2a2f38f1c9f8f36a6cc4bd1eef5}} 
+\index{Triangle@{Triangle}!eval\+\_\+\+Phi@{eval\+\_\+\+Phi}}
+\index{eval\+\_\+\+Phi@{eval\+\_\+\+Phi}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{eval\+\_\+\+Phi()}{eval\_Phi()}}
+{\footnotesize\ttfamily void Triangle\+::eval\+\_\+\+Phi (\begin{DoxyParamCaption}\item[{const int}]{m,  }\item[{double}]{Phi\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a2aa6ea12ceaa1fa4a7f63909ce41bc0b}{Stdel}.
+
+
+
+Definition at line 974 of file Triangle.\+cpp.
+
+
+
+References Stdel\+::\+Phi\+\_\+val, and Stdel\+::Q.
+
+\mbox{\Hypertarget{classTriangle_acb912416d2fe57c6c4a501fdc123e6d3}\label{classTriangle_acb912416d2fe57c6c4a501fdc123e6d3}} 
+\index{Triangle@{Triangle}!eval\+GQ@{eval\+GQ}}
+\index{eval\+GQ@{eval\+GQ}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{eval\+G\+Q()}{evalGQ()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Triangle\+::eval\+GQ (\begin{DoxyParamCaption}\item[{double}]{f0\mbox{[}$\,$\mbox{]},  }\item[{double}]{f1\mbox{[}$\,$\mbox{]},  }\item[{const double}]{u0\mbox{[}$\,$\mbox{]},  }\item[{const double}]{u1\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_aac725224c4c3433228ca6841fe7aba49}{Stdel}.
+
+
+
+Definition at line 709 of file Triangle.\+cpp.
+
+
+
+References a, aux1, Stdel\+::P, Psia(), Psib(), Stdel\+::Q, and Stdel\+::x\+GQ.
+
+
+
+Referenced by printtoarray(), and printtofile().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_acb912416d2fe57c6c4a501fdc123e6d3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{classTriangle_acb912416d2fe57c6c4a501fdc123e6d3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_aac6e3645b886cfd2f4f406157b696d5a}\label{classTriangle_aac6e3645b886cfd2f4f406157b696d5a}} 
+\index{Triangle@{Triangle}!eval\+GQ@{eval\+GQ}}
+\index{eval\+GQ@{eval\+GQ}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{eval\+G\+Q()}{evalGQ()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Triangle\+::eval\+GQ (\begin{DoxyParamCaption}\item[{double}]{f0\mbox{[}$\,$\mbox{]},  }\item[{const double}]{u0\mbox{[}$\,$\mbox{]},  }\item[{const int}]{NF = {\ttfamily 1},  }\item[{const int}]{nvar = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_ae144597c3199b1757a5fbbc255e17baa}{Stdel}.
+
+
+
+Definition at line 797 of file Triangle.\+cpp.
+
+
+
+References a, Stdel\+::P, Psia(), Psib(), Stdel\+::Q, and Stdel\+::x\+GQ.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_aac6e3645b886cfd2f4f406157b696d5a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_a54ef3345b002746852e4f2eb2f698ae2}\label{classTriangle_a54ef3345b002746852e4f2eb2f698ae2}} 
+\index{Triangle@{Triangle}!face\+\_\+lvert@{face\+\_\+lvert}}
+\index{face\+\_\+lvert@{face\+\_\+lvert}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{face\+\_\+lvert()}{face\_lvert()}}
+{\footnotesize\ttfamily const int Triangle\+::face\+\_\+lvert (\begin{DoxyParamCaption}\item[{const int \&}]{i,  }\item[{const int \&}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a0df3b2fe6d87c6d0067d07ac2a2d3a32}{Stdel}.
+
+
+
+Definition at line 1945 of file Triangle.\+cpp.
+
+
+
+References face.
+
+\mbox{\Hypertarget{classTriangle_a37e1fe2af0b509986126c978e9dbbe76}\label{classTriangle_a37e1fe2af0b509986126c978e9dbbe76}} 
+\index{Triangle@{Triangle}!gauss\+\_\+parameters\+\_\+default@{gauss\+\_\+parameters\+\_\+default}}
+\index{gauss\+\_\+parameters\+\_\+default@{gauss\+\_\+parameters\+\_\+default}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{gauss\+\_\+parameters\+\_\+default()}{gauss\_parameters\_default()}}
+{\footnotesize\ttfamily void Triangle\+::gauss\+\_\+parameters\+\_\+default (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 337 of file Triangle.\+cpp.
+
+
+
+References Stdel\+::D, Dtemp, Gauss\+\_\+\+Jacobi\+\_\+parameters(), Gauss\+\_\+\+Lobatto\+\_\+\+Jacobi\+\_\+parameters(), Gauss\+\_\+\+Radau\+\_\+\+Jacobi\+\_\+parameters(), Stdel\+::gqt, M\+A\+XQ, Stdel\+::ndim, Stdel\+::Q, Stdel\+::w\+GQ, and Stdel\+::x\+GQ.
+
+
+
+Referenced by set().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_a37e1fe2af0b509986126c978e9dbbe76_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{classTriangle_a37e1fe2af0b509986126c978e9dbbe76_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a0775d0c4f7f15ae26bd45fc949e6f6b9}\label{classStdel_a0775d0c4f7f15ae26bd45fc949e6f6b9}} 
+\index{Triangle@{Triangle}!gqt\+\_\+val@{gqt\+\_\+val}}
+\index{gqt\+\_\+val@{gqt\+\_\+val}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{gqt\+\_\+val()}{gqt\_val()}}
+{\footnotesize\ttfamily int Stdel\+::gqt\+\_\+val (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 25 of file Stdel.\+h.
+
+
+
+References Stdel\+::gqt.
+
+\mbox{\Hypertarget{classTriangle_ac9b7a18bce51206aa978ec408fa9729c}\label{classTriangle_ac9b7a18bce51206aa978ec408fa9729c}} 
+\index{Triangle@{Triangle}!Gradiente@{Gradiente}}
+\index{Gradiente@{Gradiente}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{Gradiente()}{Gradiente()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void Triangle\+::\+Gradiente (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{double $\ast$}]{grad\mbox{[}$\,$\mbox{]},  }\item[{double($\ast$)(double, double, double)}]{func,  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 1354 of file Triangle.\+cpp.
+
+
+
+References m, M\+A\+XQ, Stdel\+::Q, Vertice\+::x, Stdel\+::x\+GQ, and Vertice\+::y.
+
+\mbox{\Hypertarget{classTriangle_af55fef533efd5d2a7b8f3954d5ad7dda}\label{classTriangle_af55fef533efd5d2a7b8f3954d5ad7dda}} 
+\index{Triangle@{Triangle}!Gradiente@{Gradiente}}
+\index{Gradiente@{Gradiente}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{Gradiente()}{Gradiente()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void Triangle\+::\+Gradiente (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{double $\ast$}]{grad\mbox{[}$\,$\mbox{]},  }\item[{const double}]{fvec\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 1251 of file Triangle.\+cpp.
+
+
+
+References aux, aux1, Stdel\+::D, g(), m, M\+A\+XQ, Stdel\+::Q, Vertice\+::x, Stdel\+::x\+GQ, and Vertice\+::y.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classTriangle_af55fef533efd5d2a7b8f3954d5ad7dda_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_a2c5934a28512e5adb9dee4d71fc4bf26}\label{classTriangle_a2c5934a28512e5adb9dee4d71fc4bf26}} 
+\index{Triangle@{Triangle}!Gradiente@{Gradiente}}
+\index{Gradiente@{Gradiente}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{Gradiente()}{Gradiente()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void Triangle\+::\+Gradiente (\begin{DoxyParamCaption}\item[{double $\ast$}]{grad\mbox{[}$\,$\mbox{]},  }\item[{const double}]{fvec\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 1166 of file Triangle.\+cpp.
+
+
+
+References aux, aux1, Stdel\+::D, m, M\+A\+XQ, Stdel\+::Q, Vertice\+::x, Stdel\+::x\+GQ, and Vertice\+::y.
+
+\mbox{\Hypertarget{classStdel_af3e65d1ad0d59ded925a3f5a9d0fb100}\label{classStdel_af3e65d1ad0d59ded925a3f5a9d0fb100}} 
+\index{Triangle@{Triangle}!Gradiente@{Gradiente}}
+\index{Gradiente@{Gradiente}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{Gradiente()}{Gradiente()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily virtual void Stdel\+::\+Gradiente (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{double $\ast$$\ast$}]{grad,  }\item[{double($\ast$)(double, double, double)}]{func,  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+
+
+Referenced by Ph\+Elem$<$ 2 $>$\+::check\+\_\+gradiente(), D\+G\+\_\+\+Elem\+::inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), D\+G\+\_\+\+Elem\+::inicia\+\_\+tracos(), Stdel\+::print\+\_\+border\+\_\+map(), Ph\+Elem$<$ 2 $>$\+::teste\+\_\+gradiente(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_af3e65d1ad0d59ded925a3f5a9d0fb100_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_abf44e457d99e8c559c14cb1f7423da12}\label{classStdel_abf44e457d99e8c559c14cb1f7423da12}} 
+\index{Triangle@{Triangle}!Gradiente@{Gradiente}}
+\index{Gradiente@{Gradiente}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{Gradiente()}{Gradiente()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily virtual void Stdel\+::\+Gradiente (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{double $\ast$$\ast$}]{grad,  }\item[{const double}]{fvec\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classStdel_aec200dfb0b00bebf70a1d845675eeafd}\label{classStdel_aec200dfb0b00bebf70a1d845675eeafd}} 
+\index{Triangle@{Triangle}!Gradiente@{Gradiente}}
+\index{Gradiente@{Gradiente}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{Gradiente()}{Gradiente()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily virtual void Stdel\+::\+Gradiente (\begin{DoxyParamCaption}\item[{double $\ast$$\ast$}]{grad,  }\item[{const double}]{fvec\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classStdel_abb022f0ad81707e11e3a3091d2d87c46}\label{classStdel_abb022f0ad81707e11e3a3091d2d87c46}} 
+\index{Triangle@{Triangle}!is\+\_\+on\+\_\+border@{is\+\_\+on\+\_\+border}}
+\index{is\+\_\+on\+\_\+border@{is\+\_\+on\+\_\+border}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{is\+\_\+on\+\_\+border()}{is\_on\_border()}}
+{\footnotesize\ttfamily const int Stdel\+::is\+\_\+on\+\_\+border (\begin{DoxyParamCaption}\item[{int}]{m,  }\item[{int}]{e,  }\item[{int \&}]{pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 42 of file Stdel.\+h.
+
+
+
+References aux, Stdel\+::emapi, and Stdel\+::emapv.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), and D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_abb022f0ad81707e11e3a3091d2d87c46_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_a723405bf07d4123a417623114409b74e}\label{classTriangle_a723405bf07d4123a417623114409b74e}} 
+\index{Triangle@{Triangle}!Jacobian@{Jacobian}}
+\index{Jacobian@{Jacobian}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{Jacobian()}{Jacobian()}}
+{\footnotesize\ttfamily void Triangle\+::\+Jacobian (\begin{DoxyParamCaption}\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]},  }\item[{double $\ast$}]{JV }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a953ff994c1bb423245aff079932c648f}{Stdel}.
+
+
+
+Definition at line 984 of file Triangle.\+cpp.
+
+
+
+References Stdel\+::Q, Vertice\+::x, Vertice\+::y, and Vertice\+::z.
+
+\mbox{\Hypertarget{classTriangle_a87bdc01aefd328ef819f0b2f8c6448dc}\label{classTriangle_a87bdc01aefd328ef819f0b2f8c6448dc}} 
+\index{Triangle@{Triangle}!make\+\_\+gbnmap@{make\+\_\+gbnmap}}
+\index{make\+\_\+gbnmap@{make\+\_\+gbnmap}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{make\+\_\+gbnmap()}{make\_gbnmap()}}
+{\footnotesize\ttfamily void Triangle\+::make\+\_\+gbnmap (\begin{DoxyParamCaption}\item[{int}]{n0,  }\item[{int}]{n1,  }\item[{int}]{n2,  }\item[{int}]{ng0,  }\item[{int}]{ng1,  }\item[{int}]{ng2,  }\item[{int}]{sign0,  }\item[{int}]{sign1,  }\item[{int}]{sign2,  }\item[{int}]{map\mbox{[}$\,$\mbox{]},  }\item[{int}]{sgn\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTriangle_a0266527176e45c12a896110a8e5e20f8}\label{classTriangle_a0266527176e45c12a896110a8e5e20f8}} 
+\index{Triangle@{Triangle}!make\+\_\+local\+\_\+matrices@{make\+\_\+local\+\_\+matrices}}
+\index{make\+\_\+local\+\_\+matrices@{make\+\_\+local\+\_\+matrices}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{make\+\_\+local\+\_\+matrices()}{make\_local\_matrices()}}
+{\footnotesize\ttfamily void Triangle\+::make\+\_\+local\+\_\+matrices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 213 of file Triangle.\+cpp.
+
+
+
+References aaux, aux, Stdel\+::\+Mb\+\_\+comp, Stdel\+::\+Mc\+Mi\+\_\+inv, Stdel\+::\+Mi\+\_\+inv, Stdel\+::mode\+\_\+, Stdel\+::nb, Stdel\+::nn, Stdel\+::P, Mode\+::p\+\_\+val(), Psia(), Psib(), Stdel\+::Q, Mode\+::q\+\_\+val(), Stdel\+::w\+GQ, and Stdel\+::x\+GQ.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_a0266527176e45c12a896110a8e5e20f8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_ac6e4b288627df0b459fdd5f503952f6c}\label{classTriangle_ac6e4b288627df0b459fdd5f503952f6c}} 
+\index{Triangle@{Triangle}!make\+\_\+mass\+\_\+matrices@{make\+\_\+mass\+\_\+matrices}}
+\index{make\+\_\+mass\+\_\+matrices@{make\+\_\+mass\+\_\+matrices}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{make\+\_\+mass\+\_\+matrices()}{make\_mass\_matrices()}}
+{\footnotesize\ttfamily void Triangle\+::make\+\_\+mass\+\_\+matrices (\begin{DoxyParamCaption}\item[{int}]{nfields }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 318 of file Triangle.\+cpp.
+
+\mbox{\Hypertarget{classTriangle_a6728c6239f7edbf04da7246cf0ee0c8c}\label{classTriangle_a6728c6239f7edbf04da7246cf0ee0c8c}} 
+\index{Triangle@{Triangle}!mass@{mass}}
+\index{mass@{mass}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{mass()}{mass()}}
+{\footnotesize\ttfamily double Triangle\+::mass (\begin{DoxyParamCaption}\item[{int}]{m1,  }\item[{int}]{m2,  }\item[{const double}]{JV\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_ab475cc8bc82a3b8a5200d4d841ef0a51}{Stdel}.
+
+
+
+Definition at line 181 of file Triangle.\+cpp.
+
+
+
+References aaux, aux, Stdel\+::mode\+\_\+, Stdel\+::P, Mode\+::p\+\_\+val(), Psia(), Psib(), Stdel\+::Q, Mode\+::q\+\_\+val(), Stdel\+::w\+GQ, and Stdel\+::x\+GQ.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_a6728c6239f7edbf04da7246cf0ee0c8c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a4fb0a049dc27d8e67665a56d1b5a18ba}\label{classStdel_a4fb0a049dc27d8e67665a56d1b5a18ba}} 
+\index{Triangle@{Triangle}!nb\+\_\+val@{nb\+\_\+val}}
+\index{nb\+\_\+val@{nb\+\_\+val}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{nb\+\_\+val()}{nb\_val()}}
+{\footnotesize\ttfamily int Stdel\+::nb\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 22 of file Stdel.\+h.
+
+
+
+References Stdel\+::nb.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+eco(), Ph\+Elem$<$ 2 $>$\+::set\+\_\+ptr\+\_\+stdel(), Ph\+Elem$<$ 2 $>$\+::set\+\_\+ptr\+\_\+stdel\+\_\+var(), and E\+D\+\_\+\+Prob\+::\+Solve\+Elast2\+D\+\_\+dyn().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a4fb0a049dc27d8e67665a56d1b5a18ba_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_aac8e97661e46c48fafa91f13caa03a9f}\label{classStdel_aac8e97661e46c48fafa91f13caa03a9f}} 
+\index{Triangle@{Triangle}!nborder\+\_\+val@{nborder\+\_\+val}}
+\index{nborder\+\_\+val@{nborder\+\_\+val}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{nborder\+\_\+val()}{nborder\_val()}}
+{\footnotesize\ttfamily int Stdel\+::nborder\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 16 of file Stdel.\+h.
+
+
+
+References Stdel\+::nborder.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+eco(), E\+D\+\_\+\+Prob\+::preamble(), D\+G\+\_\+\+Prob\+::preamble(), and Ph\+Elem$<$ 2 $>$\+::\+Processar\+\_\+dados().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_aac8e97661e46c48fafa91f13caa03a9f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a383df930bee8dc298d7d412b3b632ebb}\label{classStdel_a383df930bee8dc298d7d412b3b632ebb}} 
+\index{Triangle@{Triangle}!ndim\+\_\+val@{ndim\+\_\+val}}
+\index{ndim\+\_\+val@{ndim\+\_\+val}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{ndim\+\_\+val()}{ndim\_val()}}
+{\footnotesize\ttfamily int Stdel\+::ndim\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 14 of file Stdel.\+h.
+
+
+
+References Stdel\+::ndim.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions(), and Ph\+Elem$<$ 2 $>$\+::\+Processar\+\_\+dados().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a383df930bee8dc298d7d412b3b632ebb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_aa45f211663f5e8e47fdea32232ff23ea}\label{classStdel_aa45f211663f5e8e47fdea32232ff23ea}} 
+\index{Triangle@{Triangle}!ne\+\_\+val@{ne\+\_\+val}}
+\index{ne\+\_\+val@{ne\+\_\+val}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{ne\+\_\+val()}{ne\_val()}}
+{\footnotesize\ttfamily int Stdel\+::ne\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 19 of file Stdel.\+h.
+
+
+
+References Stdel\+::ne.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+eco(), and Ph\+Elem$<$ 2 $>$\+::\+Processar\+\_\+dados().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_aa45f211663f5e8e47fdea32232ff23ea_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a2eed3ce0b73050e868989be78d918e5c}\label{classStdel_a2eed3ce0b73050e868989be78d918e5c}} 
+\index{Triangle@{Triangle}!nf\+\_\+val@{nf\+\_\+val}}
+\index{nf\+\_\+val@{nf\+\_\+val}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{nf\+\_\+val()}{nf\_val()}}
+{\footnotesize\ttfamily int Stdel\+::nf\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 20 of file Stdel.\+h.
+
+
+
+References Stdel\+::nf.
+
+
+
+Referenced by Ph\+Elem$<$ 2 $>$\+::\+Processar\+\_\+dados().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classStdel_a2eed3ce0b73050e868989be78d918e5c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a2f964819235e0a55fd60733518b592f2}\label{classStdel_a2f964819235e0a55fd60733518b592f2}} 
+\index{Triangle@{Triangle}!N\+G\+Q\+P\+\_\+val@{N\+G\+Q\+P\+\_\+val}}
+\index{N\+G\+Q\+P\+\_\+val@{N\+G\+Q\+P\+\_\+val}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{N\+G\+Q\+P\+\_\+val()}{NGQP\_val()}}
+{\footnotesize\ttfamily int Stdel\+::\+N\+G\+Q\+P\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 17 of file Stdel.\+h.
+
+
+
+References Stdel\+::\+N\+G\+QP.
+
+
+
+Referenced by Ph\+Elem$<$ 2 $>$\+::check\+\_\+gradiente(), Ph\+Elem$<$ 2 $>$\+::compute\+\_\+\+J\+V(), D\+G\+\_\+\+Elem\+::echo\+\_\+traco(), D\+G\+\_\+\+Elem\+::inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), D\+G\+\_\+\+Elem\+::inicia\+\_\+tracos(), D\+G\+\_\+\+Elem\+::inicia\+\_\+vetores(), Hexahedral\+::print(), Ph\+Elem$<$ 2 $>$\+::projetar\+\_\+\+C0(), Ph\+Elem$<$ 2 $>$\+::teste\+\_\+gradiente(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+T(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a2f964819235e0a55fd60733518b592f2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a6086dceed8fe3dd410da0d6b84f02377}\label{classStdel_a6086dceed8fe3dd410da0d6b84f02377}} 
+\index{Triangle@{Triangle}!nn\+\_\+val@{nn\+\_\+val}}
+\index{nn\+\_\+val@{nn\+\_\+val}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{nn\+\_\+val()}{nn\_val()}}
+{\footnotesize\ttfamily int Stdel\+::nn\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 21 of file Stdel.\+h.
+
+
+
+References Stdel\+::nn.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+eco(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Epetra\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Epetra\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Epetra\+\_\+\+Outflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions(), Tetrahedral\+::\+Dirichlet(), Hexahedral\+::\+Dirichlet(), Linear\+::print(), Quadrilateral\+::print(), print(), D\+G\+\_\+\+Prob\+::projetar\+\_\+\+C0(), Ph\+Elem$<$ 2 $>$\+::set\+\_\+ptr\+\_\+stdel(), Ph\+Elem$<$ 2 $>$\+::set\+\_\+ptr\+\_\+stdel\+\_\+var(), E\+D\+\_\+\+Prob\+::\+Solve\+Elast2\+D\+\_\+dyn(), and D\+G\+\_\+\+Prob\+::$\sim$\+D\+G\+\_\+\+Prob().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a6086dceed8fe3dd410da0d6b84f02377_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_ae2ab461d1bc8d9f6006665fe03684845}\label{classStdel_ae2ab461d1bc8d9f6006665fe03684845}} 
+\index{Triangle@{Triangle}!nv\+\_\+val@{nv\+\_\+val}}
+\index{nv\+\_\+val@{nv\+\_\+val}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{nv\+\_\+val()}{nv\_val()}}
+{\footnotesize\ttfamily int Stdel\+::nv\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 18 of file Stdel.\+h.
+
+
+
+References Stdel\+::nv.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+eco(), Ph\+Elem$<$ 2 $>$\+::print\+\_\+modes(), and Ph\+Elem$<$ 2 $>$\+::\+Processar\+\_\+dados().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_ae2ab461d1bc8d9f6006665fe03684845_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a701c7d5595d4f6632333c4202898983b}\label{classStdel_a701c7d5595d4f6632333c4202898983b}} 
+\index{Triangle@{Triangle}!P\+\_\+val@{P\+\_\+val}}
+\index{P\+\_\+val@{P\+\_\+val}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{P\+\_\+val()}{P\_val()}}
+{\footnotesize\ttfamily int Stdel\+::\+P\+\_\+val (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 23 of file Stdel.\+h.
+
+
+
+References Stdel\+::P.
+
+
+
+Referenced by D\+G\+\_\+\+Elem\+::finaliza\+\_\+vetores(), and Ph\+Elem$<$ 2 $>$\+::gbnmap\+\_\+faces().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a701c7d5595d4f6632333c4202898983b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_ad9159142cf526db5cf44035c62a1f927}\label{classTriangle_ad9159142cf526db5cf44035c62a1f927}} 
+\index{Triangle@{Triangle}!print@{print}}
+\index{print@{print}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Triangle\+::print (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout }\end{DoxyParamCaption})}
+
+
+
+Definition at line 165 of file Triangle.\+cpp.
+
+
+
+References Stdel\+::mode\+\_\+, Stdel\+::nn\+\_\+val(), Mode\+::print(), and Stdel\+::print\+Stdel().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{classTriangle_ad9159142cf526db5cf44035c62a1f927_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a9a0c69dca7564f6ca4aa4f3c9864ea01}\label{classStdel_a9a0c69dca7564f6ca4aa4f3c9864ea01}} 
+\index{Triangle@{Triangle}!print\+\_\+border\+\_\+map@{print\+\_\+border\+\_\+map}}
+\index{print\+\_\+border\+\_\+map@{print\+\_\+border\+\_\+map}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{print\+\_\+border\+\_\+map()}{print\_border\_map()}}
+{\footnotesize\ttfamily void Stdel\+::print\+\_\+border\+\_\+map (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 57 of file Stdel.\+h.
+
+
+
+References Stdel\+::aresta\+\_\+lvert(), Stdel\+::compute\+At\+Points(), Stdel\+::compute\+Func\+G\+Q(), Stdel\+::compute\+Vertice(), Stdel\+::\+Dirichlet(), Stdel\+::elem\+\_\+traces(), Stdel\+::emapi, Stdel\+::emapv, Stdel\+::eval\+\_\+\+Grad\+Phi(), Stdel\+::eval\+\_\+\+Phi(), Stdel\+::eval\+G\+Q(), Stdel\+::face\+\_\+lvert(), Stdel\+::\+Gradiente(), Stdel\+::\+Jacobian(), m, Stdel\+::mass(), Stdel\+::ne, Stdel\+::P, Stdel\+::print\+\_\+nome(), Stdel\+::print\+G\+Qtofile(), Stdel\+::printtofile(), Stdel\+::printw\+G\+Qtofile(), Stdel\+::Q, Stdel\+::show\+\_\+face\+\_\+tipo(), Stdel\+::show\+\_\+fd0(), Stdel\+::show\+\_\+fd1(), Stdel\+::show\+\_\+fv2(), Stdel\+::show\+\_\+ind\+\_\+mode(), Stdel\+::show\+\_\+nvf(), Stdel\+::superficie\+\_\+externa(), Stdel\+::teste(), Stdel\+::trace(), and Stdel\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classStdel_a9a0c69dca7564f6ca4aa4f3c9864ea01_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a319e6a16011b22e12028a841b7686f03}\label{classStdel_a319e6a16011b22e12028a841b7686f03}} 
+\index{Triangle@{Triangle}!print\+\_\+matrices@{print\+\_\+matrices}}
+\index{print\+\_\+matrices@{print\+\_\+matrices}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{print\+\_\+matrices()}{print\_matrices()}}
+{\footnotesize\ttfamily void Stdel\+::print\+\_\+matrices (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 87 of file Stdel.\+cpp.
+
+
+
+References Stdel\+::\+Mb\+\_\+comp, Stdel\+::\+Mc\+Mi\+\_\+inv, Stdel\+::\+Mi\+\_\+inv, Stdel\+::nb, and Stdel\+::nn.
+
+
+
+Referenced by Stdel\+::show\+\_\+\+Phi\+\_\+val().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a319e6a16011b22e12028a841b7686f03_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_a9943e9f4febaa9025ea324986726fdf6}\label{classTriangle_a9943e9f4febaa9025ea324986726fdf6}} 
+\index{Triangle@{Triangle}!print\+\_\+nome@{print\+\_\+nome}}
+\index{print\+\_\+nome@{print\+\_\+nome}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{print\+\_\+nome()}{print\_nome()}}
+{\footnotesize\ttfamily void Triangle\+::print\+\_\+nome (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_ac654f45f744ec4cfeab74ed4ded99ef5}{Stdel}.
+
+
+
+Definition at line 1397 of file Triangle.\+cpp.
+
+\mbox{\Hypertarget{classTriangle_a0ab3ad47c3e5432601110f246dec7652}\label{classTriangle_a0ab3ad47c3e5432601110f246dec7652}} 
+\index{Triangle@{Triangle}!print\+G\+Qtofile@{print\+G\+Qtofile}}
+\index{print\+G\+Qtofile@{print\+G\+Qtofile}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{print\+G\+Qtofile()}{printGQtofile()}}
+{\footnotesize\ttfamily void Triangle\+::print\+G\+Qtofile (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{const double}]{ftemp\mbox{[}$\,$\mbox{]},  }\item[{const double}]{ftemp1\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a8196ddf2ec3c88627e33d19f93fdb354}{Stdel}.
+
+
+
+Definition at line 585 of file Triangle.\+cpp.
+
+
+
+References aux, aux1, Stdel\+::Q, Vertice\+::x, Stdel\+::x\+GQ, Vertice\+::y, and Vertice\+::z.
+
+\mbox{\Hypertarget{classStdel_a54b5768d09f500cb949e66fc234eac70}\label{classStdel_a54b5768d09f500cb949e66fc234eac70}} 
+\index{Triangle@{Triangle}!print\+Stdel@{print\+Stdel}}
+\index{print\+Stdel@{print\+Stdel}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{print\+Stdel()}{printStdel()}}
+{\footnotesize\ttfamily void Stdel\+::print\+Stdel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 80 of file Stdel.\+cpp.
+
+
+
+References Stdel\+::gqt, Stdel\+::ndim, Stdel\+::P, and Stdel\+::Q.
+
+
+
+Referenced by Linear\+::print(), Quadrilateral\+::print(), Hexahedral\+::print(), print(), and Stdel\+::show\+\_\+vtk\+\_\+type().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a54b5768d09f500cb949e66fc234eac70_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_a1a32c77e254ebee6c225720d99e8ef12}\label{classTriangle_a1a32c77e254ebee6c225720d99e8ef12}} 
+\index{Triangle@{Triangle}!printtoarray@{printtoarray}}
+\index{printtoarray@{printtoarray}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{printtoarray()}{printtoarray()}}
+{\footnotesize\ttfamily void Triangle\+::printtoarray (\begin{DoxyParamCaption}\item[{const double}]{u\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]},  }\item[{double}]{x\mbox{[}$\,$\mbox{]},  }\item[{double}]{y\mbox{[}$\,$\mbox{]},  }\item[{double}]{z\mbox{[}$\,$\mbox{]},  }\item[{double}]{ftemp\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 666 of file Triangle.\+cpp.
+
+
+
+References eval\+G\+Q(), Stdel\+::Q, Vertice\+::x, Stdel\+::x\+GQ, Vertice\+::y, and Vertice\+::z.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_a1a32c77e254ebee6c225720d99e8ef12_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_a404774b49104b12d072c9c103f9c357c}\label{classTriangle_a404774b49104b12d072c9c103f9c357c}} 
+\index{Triangle@{Triangle}!printtofile@{printtofile}}
+\index{printtofile@{printtofile}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{printtofile()}{printtofile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Triangle\+::printtofile (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{const double}]{u\mbox{[}$\,$\mbox{]},  }\item[{double($\ast$)(double, double, double)}]{func,  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a315869f4c1fe1fdf4911c0d4ab092176}{Stdel}.
+
+
+
+Definition at line 503 of file Triangle.\+cpp.
+
+
+
+References aux, eval\+G\+Q(), Stdel\+::Q, Vertice\+::x, Stdel\+::x\+GQ, Vertice\+::y, and Vertice\+::z.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_a404774b49104b12d072c9c103f9c357c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_ab95679ba1b3e20ac9e585ffe409f7972}\label{classTriangle_ab95679ba1b3e20ac9e585ffe409f7972}} 
+\index{Triangle@{Triangle}!printtofile@{printtofile}}
+\index{printtofile@{printtofile}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{printtofile()}{printtofile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Triangle\+::printtofile (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{const double}]{u\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a6863f8aeb8e4fb01299b109b0dd3fe13}{Stdel}.
+
+
+
+Definition at line 544 of file Triangle.\+cpp.
+
+
+
+References aux, eval\+G\+Q(), Stdel\+::Q, Vertice\+::x, Stdel\+::x\+GQ, Vertice\+::y, and Vertice\+::z.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_ab95679ba1b3e20ac9e585ffe409f7972_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_aaedabb652f02c2324f9503816b538d9a}\label{classTriangle_aaedabb652f02c2324f9503816b538d9a}} 
+\index{Triangle@{Triangle}!printw\+G\+Qtofile@{printw\+G\+Qtofile}}
+\index{printw\+G\+Qtofile@{printw\+G\+Qtofile}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{printw\+G\+Qtofile()}{printwGQtofile()}}
+{\footnotesize\ttfamily void Triangle\+::printw\+G\+Qtofile (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]},  }\item[{const double}]{JV\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_aec7751f7873772d930c91cf93ec6b07b}{Stdel}.
+
+
+
+Definition at line 626 of file Triangle.\+cpp.
+
+
+
+References aux, Stdel\+::Q, Stdel\+::w\+GQ, Vertice\+::x, Stdel\+::x\+GQ, Vertice\+::y, and Vertice\+::z.
+
+\mbox{\Hypertarget{classStdel_aeea4659f5bcabbf1acb374180c43a293}\label{classStdel_aeea4659f5bcabbf1acb374180c43a293}} 
+\index{Triangle@{Triangle}!Q\+\_\+val@{Q\+\_\+val}}
+\index{Q\+\_\+val@{Q\+\_\+val}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{Q\+\_\+val()}{Q\_val()}}
+{\footnotesize\ttfamily int Stdel\+::\+Q\+\_\+val (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 24 of file Stdel.\+h.
+
+
+
+References Stdel\+::Q.
+
+\mbox{\Hypertarget{classStdel_a457d20e34fb7a32eb1e4aca6c19f53a2}\label{classStdel_a457d20e34fb7a32eb1e4aca6c19f53a2}} 
+\index{Triangle@{Triangle}!qborder\+\_\+val@{qborder\+\_\+val}}
+\index{qborder\+\_\+val@{qborder\+\_\+val}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{qborder\+\_\+val()}{qborder\_val()}}
+{\footnotesize\ttfamily int Stdel\+::qborder\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 15 of file Stdel.\+h.
+
+
+
+References Stdel\+::qborder.
+
+
+
+Referenced by D\+G\+\_\+\+Elem\+::calcula\+\_\+tracos(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions(), D\+G\+\_\+\+Elem\+::echo\+\_\+traco(), Ph\+Elem$<$ 2 $>$\+::get\+\_\+trace\+\_\+border\+\_\+map(), D\+G\+\_\+\+Elem\+::inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), Ph\+Elem$<$ 2 $>$\+::inicia\+\_\+gbtrbmap(), D\+G\+\_\+\+Elem\+::inicia\+\_\+tracos(), D\+G\+\_\+\+Elem\+::inicia\+\_\+vetores(), D\+G\+\_\+\+Prob\+::projetar\+\_\+\+C0(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+grad\+\_\+phi(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+\+Kgrad\+\_\+pc(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+\+Kgrad\+\_\+phi\+\_\+n(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+\+Kgrad\+\_\+pw(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+\+Kgrad\+\_\+sn(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+phi(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+phi\+\_\+1(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+pw(), D\+G\+\_\+\+Elem\+::\+Traco\+\_\+sn(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a457d20e34fb7a32eb1e4aca6c19f53a2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_a51d0da1119ccde5c695ea4da980bda8d}\label{classTriangle_a51d0da1119ccde5c695ea4da980bda8d}} 
+\index{Triangle@{Triangle}!set@{set}}
+\index{set@{set}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void Triangle\+::set (\begin{DoxyParamCaption}\item[{int}]{P,  }\item[{int}]{Q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_ab42c46493ab17be6f2642a558fea8a05}{Stdel}.
+
+
+
+Definition at line 43 of file Triangle.\+cpp.
+
+
+
+References a, Stdel\+::emapi, Stdel\+::emapv, gauss\+\_\+parameters\+\_\+default(), Stdel\+::gqt, ind\+\_\+mode\+\_\+, m, M\+A\+X\+M\+O\+D\+ES, M\+A\+X\+NB, M\+A\+X\+NI, Stdel\+::mode\+\_\+, Stdel\+::nb, Stdel\+::\+N\+G\+QP, Stdel\+::nn, Stdel\+::nv, Stdel\+::P, Mode\+::p\+\_\+val(), Stdel\+::\+Phi\+\_\+val, Psia(), Psib(), Stdel\+::Q, Mode\+::q\+\_\+val(), Stdel\+::qborder, Mode\+::set\+\_\+mode(), and Stdel\+::x\+GQ.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_a51d0da1119ccde5c695ea4da980bda8d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_ad3a0646ad7ec2567e46da36285dee331}\label{classStdel_ad3a0646ad7ec2567e46da36285dee331}} 
+\index{Triangle@{Triangle}!show\+\_\+bmapi@{show\+\_\+bmapi}}
+\index{show\+\_\+bmapi@{show\+\_\+bmapi}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{show\+\_\+bmapi()}{show\_bmapi()}}
+{\footnotesize\ttfamily int Stdel\+::show\+\_\+bmapi (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 40 of file Stdel.\+h.
+
+
+
+References Stdel\+::bmapi.
+
+\mbox{\Hypertarget{classStdel_ac8787dabfb1d767b89e39806522c1161}\label{classStdel_ac8787dabfb1d767b89e39806522c1161}} 
+\index{Triangle@{Triangle}!show\+\_\+bmapv@{show\+\_\+bmapv}}
+\index{show\+\_\+bmapv@{show\+\_\+bmapv}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{show\+\_\+bmapv()}{show\_bmapv()}}
+{\footnotesize\ttfamily int Stdel\+::show\+\_\+bmapv (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 39 of file Stdel.\+h.
+
+
+
+References Stdel\+::bmapv.
+
+\mbox{\Hypertarget{classStdel_aca7fb885191a952c013e930521a42213}\label{classStdel_aca7fb885191a952c013e930521a42213}} 
+\index{Triangle@{Triangle}!show\+\_\+emapi@{show\+\_\+emapi}}
+\index{show\+\_\+emapi@{show\+\_\+emapi}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{show\+\_\+emapi()}{show\_emapi()}}
+{\footnotesize\ttfamily int Stdel\+::show\+\_\+emapi (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 38 of file Stdel.\+h.
+
+
+
+References Stdel\+::emapi.
+
+
+
+Referenced by Ph\+Elem$<$ 2 $>$\+::gbnmap\+\_\+aresta(), and Ph\+Elem$<$ 2 $>$\+::gbnmap\+\_\+arestas().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{classStdel_aca7fb885191a952c013e930521a42213_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_ad474ffc52b051ae8317b3fdb583c4c98}\label{classStdel_ad474ffc52b051ae8317b3fdb583c4c98}} 
+\index{Triangle@{Triangle}!show\+\_\+emapv@{show\+\_\+emapv}}
+\index{show\+\_\+emapv@{show\+\_\+emapv}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{show\+\_\+emapv()}{show\_emapv()}}
+{\footnotesize\ttfamily int Stdel\+::show\+\_\+emapv (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 37 of file Stdel.\+h.
+
+
+
+References Stdel\+::emapv.
+
+
+
+Referenced by Ph\+Elem$<$ 2 $>$\+::gbnmap\+\_\+aresta(), and Ph\+Elem$<$ 2 $>$\+::gbnmap\+\_\+arestas().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{classStdel_ad474ffc52b051ae8317b3fdb583c4c98_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_a7f711afd182aa8bae52c8acfa4ce3690}\label{classTriangle_a7f711afd182aa8bae52c8acfa4ce3690}} 
+\index{Triangle@{Triangle}!show\+\_\+face\+\_\+tipo@{show\+\_\+face\+\_\+tipo}}
+\index{show\+\_\+face\+\_\+tipo@{show\+\_\+face\+\_\+tipo}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{show\+\_\+face\+\_\+tipo()}{show\_face\_tipo()}}
+{\footnotesize\ttfamily const int Triangle\+::show\+\_\+face\+\_\+tipo (\begin{DoxyParamCaption}\item[{const int \&}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_ae76b0893dabd93ae9f86a9ed445852ba}{Stdel}.
+
+
+
+Definition at line 1947 of file Triangle.\+cpp.
+
+\mbox{\Hypertarget{classTriangle_a715ce8022208f6b23e980acced093e99}\label{classTriangle_a715ce8022208f6b23e980acced093e99}} 
+\index{Triangle@{Triangle}!show\+\_\+fd0@{show\+\_\+fd0}}
+\index{show\+\_\+fd0@{show\+\_\+fd0}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{show\+\_\+fd0()}{show\_fd0()}}
+{\footnotesize\ttfamily const int Triangle\+::show\+\_\+fd0 (\begin{DoxyParamCaption}\item[{const int \&}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a0e05ccae64925915af5f07c91d61c7bc}{Stdel}.
+
+
+
+Definition at line 1948 of file Triangle.\+cpp.
+
+\mbox{\Hypertarget{classTriangle_a3635411b31e3fe7dbe226efe5de45094}\label{classTriangle_a3635411b31e3fe7dbe226efe5de45094}} 
+\index{Triangle@{Triangle}!show\+\_\+fd1@{show\+\_\+fd1}}
+\index{show\+\_\+fd1@{show\+\_\+fd1}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{show\+\_\+fd1()}{show\_fd1()}}
+{\footnotesize\ttfamily const int Triangle\+::show\+\_\+fd1 (\begin{DoxyParamCaption}\item[{const int \&}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_af4a394fae421489159f40ddcb736353b}{Stdel}.
+
+
+
+Definition at line 1949 of file Triangle.\+cpp.
+
+\mbox{\Hypertarget{classTriangle_a89169103df31e2cbe4383617363e48de}\label{classTriangle_a89169103df31e2cbe4383617363e48de}} 
+\index{Triangle@{Triangle}!show\+\_\+fv2@{show\+\_\+fv2}}
+\index{show\+\_\+fv2@{show\+\_\+fv2}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{show\+\_\+fv2()}{show\_fv2()}}
+{\footnotesize\ttfamily const int Triangle\+::show\+\_\+fv2 (\begin{DoxyParamCaption}\item[{const int \&}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a67f16a65f02fc8a5aa10274539bd1ad8}{Stdel}.
+
+
+
+Definition at line 1950 of file Triangle.\+cpp.
+
+\mbox{\Hypertarget{classStdel_a20afd536025caf1aad1c4e3f41fcb866}\label{classStdel_a20afd536025caf1aad1c4e3f41fcb866}} 
+\index{Triangle@{Triangle}!show\+\_\+ind@{show\+\_\+ind}}
+\index{show\+\_\+ind@{show\+\_\+ind}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{show\+\_\+ind()}{show\_ind()}}
+{\footnotesize\ttfamily void Stdel\+::show\+\_\+ind (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int \&}]{p,  }\item[{int \&}]{q,  }\item[{int \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 73 of file Stdel.\+cpp.
+
+
+
+References Stdel\+::mode\+\_\+, Mode\+::p\+\_\+val(), Mode\+::q\+\_\+val(), and Mode\+::r\+\_\+val().
+
+
+
+Referenced by Ph\+Elem$<$ 2 $>$\+::check\+\_\+connectivity(), and Stdel\+::show\+\_\+\+Phi\+\_\+val().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classStdel_a20afd536025caf1aad1c4e3f41fcb866_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a20afd536025caf1aad1c4e3f41fcb866_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_ac61acf91a02fd588a70bf75d3e246129}\label{classTriangle_ac61acf91a02fd588a70bf75d3e246129}} 
+\index{Triangle@{Triangle}!show\+\_\+ind\+\_\+mode@{show\+\_\+ind\+\_\+mode}}
+\index{show\+\_\+ind\+\_\+mode@{show\+\_\+ind\+\_\+mode}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{show\+\_\+ind\+\_\+mode()}{show\_ind\_mode()}}
+{\footnotesize\ttfamily const int Triangle\+::show\+\_\+ind\+\_\+mode (\begin{DoxyParamCaption}\item[{const int \&}]{i,  }\item[{const int \&}]{j = {\ttfamily 0},  }\item[{const int \&}]{k = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_aa97cf7534697be1f2e02ff540ed7433b}{Stdel}.
+
+
+
+Definition at line 1951 of file Triangle.\+cpp.
+
+
+
+References ind\+\_\+mode\+\_\+.
+
+\mbox{\Hypertarget{classStdel_a4860f0f650640f859c5f75c206ee1f60}\label{classStdel_a4860f0f650640f859c5f75c206ee1f60}} 
+\index{Triangle@{Triangle}!show\+\_\+\+Mb\+\_\+comp@{show\+\_\+\+Mb\+\_\+comp}}
+\index{show\+\_\+\+Mb\+\_\+comp@{show\+\_\+\+Mb\+\_\+comp}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{show\+\_\+\+Mb\+\_\+comp()}{show\_Mb\_comp()}}
+{\footnotesize\ttfamily double Stdel\+::show\+\_\+\+Mb\+\_\+comp (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 58 of file Stdel.\+cpp.
+
+
+
+References Stdel\+::\+Mb\+\_\+comp.
+
+
+
+Referenced by Stdel\+::duplicar\+\_\+mass\+\_\+matrix(), and Stdel\+::show\+\_\+\+Phi\+\_\+val().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a4860f0f650640f859c5f75c206ee1f60_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a44d5aa234e02fb41afd5a4e5e45fadc4}\label{classStdel_a44d5aa234e02fb41afd5a4e5e45fadc4}} 
+\index{Triangle@{Triangle}!show\+\_\+\+Mc\+Mi\+\_\+inv@{show\+\_\+\+Mc\+Mi\+\_\+inv}}
+\index{show\+\_\+\+Mc\+Mi\+\_\+inv@{show\+\_\+\+Mc\+Mi\+\_\+inv}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{show\+\_\+\+Mc\+Mi\+\_\+inv()}{show\_McMi\_inv()}}
+{\footnotesize\ttfamily double Stdel\+::show\+\_\+\+Mc\+Mi\+\_\+inv (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 68 of file Stdel.\+cpp.
+
+
+
+References Stdel\+::\+Mc\+Mi\+\_\+inv.
+
+
+
+Referenced by Stdel\+::duplicar\+\_\+mass\+\_\+matrix(), and Stdel\+::show\+\_\+\+Phi\+\_\+val().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a44d5aa234e02fb41afd5a4e5e45fadc4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a11bf2897170ada9a9dd8f641a39585e5}\label{classStdel_a11bf2897170ada9a9dd8f641a39585e5}} 
+\index{Triangle@{Triangle}!show\+\_\+\+Mi\+\_\+inv@{show\+\_\+\+Mi\+\_\+inv}}
+\index{show\+\_\+\+Mi\+\_\+inv@{show\+\_\+\+Mi\+\_\+inv}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{show\+\_\+\+Mi\+\_\+inv()}{show\_Mi\_inv()}}
+{\footnotesize\ttfamily double Stdel\+::show\+\_\+\+Mi\+\_\+inv (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 63 of file Stdel.\+cpp.
+
+
+
+References Stdel\+::\+Mi\+\_\+inv.
+
+
+
+Referenced by Stdel\+::duplicar\+\_\+mass\+\_\+matrix(), and Stdel\+::show\+\_\+\+Phi\+\_\+val().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a11bf2897170ada9a9dd8f641a39585e5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_ad028de34010b57e995d0206f9257b37b}\label{classTriangle_ad028de34010b57e995d0206f9257b37b}} 
+\index{Triangle@{Triangle}!show\+\_\+nvf@{show\+\_\+nvf}}
+\index{show\+\_\+nvf@{show\+\_\+nvf}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{show\+\_\+nvf()}{show\_nvf()}}
+{\footnotesize\ttfamily const int Triangle\+::show\+\_\+nvf (\begin{DoxyParamCaption}\item[{const int \&}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a2a504322269a749dd3c443d0e86c4a6c}{Stdel}.
+
+
+
+Definition at line 1946 of file Triangle.\+cpp.
+
+\mbox{\Hypertarget{classStdel_a6565c36150823a1f52a2daf05806f7a4}\label{classStdel_a6565c36150823a1f52a2daf05806f7a4}} 
+\index{Triangle@{Triangle}!show\+\_\+\+Phi\+\_\+val@{show\+\_\+\+Phi\+\_\+val}}
+\index{show\+\_\+\+Phi\+\_\+val@{show\+\_\+\+Phi\+\_\+val}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{show\+\_\+\+Phi\+\_\+val()}{show\_Phi\_val()}}
+{\footnotesize\ttfamily double Stdel\+::show\+\_\+\+Phi\+\_\+val (\begin{DoxyParamCaption}\item[{const int}]{i,  }\item[{const int}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 28 of file Stdel.\+h.
+
+
+
+References Stdel\+::duplicar\+\_\+mass\+\_\+matrix(), Stdel\+::\+Phi\+\_\+val, Stdel\+::print\+\_\+matrices(), Stdel\+::show\+\_\+ind(), Stdel\+::show\+\_\+\+Mb\+\_\+comp(), Stdel\+::show\+\_\+\+Mc\+Mi\+\_\+inv(), Stdel\+::show\+\_\+\+Mi\+\_\+inv(), and Stdel\+::w\+\_\+vec().
+
+
+
+Referenced by Ph\+Elem$<$ 2 $>$\+::\+Phi\+\_\+val().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a6565c36150823a1f52a2daf05806f7a4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{classStdel_a6565c36150823a1f52a2daf05806f7a4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a56288a857b95a55c8b7eb5b473e836d9}\label{classStdel_a56288a857b95a55c8b7eb5b473e836d9}} 
+\index{Triangle@{Triangle}!show\+\_\+vtk\+\_\+type@{show\+\_\+vtk\+\_\+type}}
+\index{show\+\_\+vtk\+\_\+type@{show\+\_\+vtk\+\_\+type}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{show\+\_\+vtk\+\_\+type()}{show\_vtk\_type()}}
+{\footnotesize\ttfamily int Stdel\+::show\+\_\+vtk\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 11 of file Stdel.\+h.
+
+
+
+References Stdel\+::print\+Stdel(), and Stdel\+::vtk\+\_\+type.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classStdel_a56288a857b95a55c8b7eb5b473e836d9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_a1067d23aa0cc1580d0deed90f4cf3d37}\label{classTriangle_a1067d23aa0cc1580d0deed90f4cf3d37}} 
+\index{Triangle@{Triangle}!superficie\+\_\+externa@{superficie\+\_\+externa}}
+\index{superficie\+\_\+externa@{superficie\+\_\+externa}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{superficie\+\_\+externa()}{superficie\_externa()}}
+{\footnotesize\ttfamily void Triangle\+::superficie\+\_\+externa (\begin{DoxyParamCaption}\item[{const int}]{Vert\+\_\+map\mbox{[}$\,$\mbox{]},  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int \&}]{num\+\_\+local,  }\item[{double \&}]{area,  }\item[{double}]{normal\mbox{[}3\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a4e4aa3bbd0299054ec5447bd73efc6a0}{Stdel}.
+
+
+
+Definition at line 1952 of file Triangle.\+cpp.
+
+
+
+References sinal\+\_\+normal, Vertice\+::x, Vertice\+::y, and Vertice\+::z.
+
+\mbox{\Hypertarget{classTriangle_ab4de79168cc2bf7bf04634681f434610}\label{classTriangle_ab4de79168cc2bf7bf04634681f434610}} 
+\index{Triangle@{Triangle}!teste@{teste}}
+\index{teste@{teste}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{teste()}{teste()}}
+{\footnotesize\ttfamily void Triangle\+::teste (\begin{DoxyParamCaption}\item[{int \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_ae62bc70bb31e48d165593ed1ecd482f8}{Stdel}.
+
+
+
+Definition at line 1583 of file Triangle.\+cpp.
+
+\mbox{\Hypertarget{classStdel_a75023fc369db2752845a9ce278f10929}\label{classStdel_a75023fc369db2752845a9ce278f10929}} 
+\index{Triangle@{Triangle}!tipo\+\_\+val@{tipo\+\_\+val}}
+\index{tipo\+\_\+val@{tipo\+\_\+val}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{tipo\+\_\+val()}{tipo\_val()}}
+{\footnotesize\ttfamily int Stdel\+::tipo\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 13 of file Stdel.\+h.
+
+
+
+References Stdel\+::tipo.
+
+\mbox{\Hypertarget{classTriangle_a1361a3e5ff11ed02786bf62325a2614f}\label{classTriangle_a1361a3e5ff11ed02786bf62325a2614f}} 
+\index{Triangle@{Triangle}!trace@{trace}}
+\index{trace@{trace}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{trace()}{trace()}}
+{\footnotesize\ttfamily void Triangle\+::trace (\begin{DoxyParamCaption}\item[{const int}]{lado,  }\item[{const int}]{Q,  }\item[{const int}]{sinal,  }\item[{const double $\ast$}]{valores,  }\item[{double $\ast$}]{saida }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_aeb2fe03bbd8af61e503e29d3dd5ae4f0}{Stdel}.
+
+
+
+Definition at line 1865 of file Triangle.\+cpp.
+
+
+
+References Dtemp, Gauss\+\_\+\+Jacobi\+\_\+parameters(), Jac, M\+A\+XQ, Stdel\+::Q, qmax, and Stdel\+::x\+GQ.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_a1361a3e5ff11ed02786bf62325a2614f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_afc023a739048c1294b8417bfec3afb7a}\label{classTriangle_afc023a739048c1294b8417bfec3afb7a}} 
+\index{Triangle@{Triangle}!vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv@{vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv}}
+\index{vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv@{vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv()}{vector\_of\_integral\_of\_f\_Phi\_dv()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Triangle\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv (\begin{DoxyParamCaption}\item[{double}]{vec\mbox{[}$\,$\mbox{]},  }\item[{const double}]{func\mbox{[}$\,$\mbox{]},  }\item[{const double}]{JV\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_aa5ef347c02106753c2d3961b59a7309e}{Stdel}.
+
+
+
+Definition at line 451 of file Triangle.\+cpp.
+
+
+
+References aux, Stdel\+::mode\+\_\+, Stdel\+::nn, Stdel\+::P, Mode\+::p\+\_\+val(), Psia(), Psib(), Stdel\+::Q, Mode\+::q\+\_\+val(), Stdel\+::w\+GQ, and Stdel\+::x\+GQ.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_afc023a739048c1294b8417bfec3afb7a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classTriangle_acc741aa9440446498e212d00cff284e8}\label{classTriangle_acc741aa9440446498e212d00cff284e8}} 
+\index{Triangle@{Triangle}!vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv@{vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv}}
+\index{vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv@{vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv()}{vector\_of\_integral\_of\_f\_Phi\_dv()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Triangle\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv (\begin{DoxyParamCaption}\item[{double}]{vec\mbox{[}$\,$\mbox{]},  }\item[{double($\ast$)(double, double, double)}]{func,  }\item[{const \hyperlink{structVertice}{Vertice}}]{vert\mbox{[}$\,$\mbox{]},  }\item[{const int}]{map\mbox{[}$\,$\mbox{]},  }\item[{const double}]{JV\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classStdel_a3a22725f255ab04520ce1744eef8e2c0}{Stdel}.
+
+
+
+Definition at line 382 of file Triangle.\+cpp.
+
+
+
+References aux, Stdel\+::mode\+\_\+, Stdel\+::nn, Stdel\+::P, Mode\+::p\+\_\+val(), Psia(), Psib(), Stdel\+::Q, Mode\+::q\+\_\+val(), Stdel\+::w\+GQ, Vertice\+::x, Stdel\+::x\+GQ, Vertice\+::y, and Vertice\+::z.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_acc741aa9440446498e212d00cff284e8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStdel_a395c8d7d7890a9efdea23932fa22b420}\label{classStdel_a395c8d7d7890a9efdea23932fa22b420}} 
+\index{Triangle@{Triangle}!w\+\_\+vec@{w\+\_\+vec}}
+\index{w\+\_\+vec@{w\+\_\+vec}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{w\+\_\+vec()}{w\_vec()}}
+{\footnotesize\ttfamily int Stdel\+::w\+\_\+vec (\begin{DoxyParamCaption}\item[{double}]{saida\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 169 of file Stdel.\+cpp.
+
+
+
+References aux1, aux2, Stdel\+::Q, and Stdel\+::w\+GQ.
+
+
+
+Referenced by Stdel\+::show\+\_\+\+Phi\+\_\+val().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStdel_a395c8d7d7890a9efdea23932fa22b420_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classTriangle_a4f19e62f5f4ca0e2a8f3747401eb2a44}\label{classTriangle_a4f19e62f5f4ca0e2a8f3747401eb2a44}} 
+\index{Triangle@{Triangle}!aresta@{aresta}}
+\index{aresta@{aresta}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{aresta}{aresta}}
+{\footnotesize\ttfamily const int Triangle\+::aresta\mbox{[}3\mbox{]}\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+  \{ \{0,1\},
+    \{1,2\},
+    \{0,2\}
+  \}
+\end{DoxyCode}
+
+
+Definition at line 29 of file Triangle.\+h.
+
+\mbox{\Hypertarget{classStdel_a8b082d27e5c3cab7ad2045b464af0fd9}\label{classStdel_a8b082d27e5c3cab7ad2045b464af0fd9}} 
+\index{Triangle@{Triangle}!bmapi@{bmapi}}
+\index{bmapi@{bmapi}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{bmapi}{bmapi}}
+{\footnotesize\ttfamily int$\ast$ Stdel\+::bmapi = nullptr\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+border\+\_\+map\+\_\+inicio 
+
+
+
+Definition at line 191 of file Stdel.\+h.
+
+
+
+Referenced by Quadrilateral\+::\+Quadrilateral(), Stdel\+::show\+\_\+bmapi(), Triangle(), Quadrilateral\+::$\sim$\+Quadrilateral(), and $\sim$\+Triangle().
+
+\mbox{\Hypertarget{classStdel_ac3cd818c98aa400279f28c22c8e0abaa}\label{classStdel_ac3cd818c98aa400279f28c22c8e0abaa}} 
+\index{Triangle@{Triangle}!bmapv@{bmapv}}
+\index{bmapv@{bmapv}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{bmapv}{bmapv}}
+{\footnotesize\ttfamily int$\ast$ Stdel\+::bmapv = nullptr\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+border\+\_\+map\+\_\+valores 
+
+
+
+Definition at line 190 of file Stdel.\+h.
+
+
+
+Referenced by Quadrilateral\+::\+Quadrilateral(), Stdel\+::show\+\_\+bmapv(), Triangle(), Quadrilateral\+::$\sim$\+Quadrilateral(), and $\sim$\+Triangle().
+
+\mbox{\Hypertarget{classStdel_a61f02fa483b00cb98ff5c8d951068211}\label{classStdel_a61f02fa483b00cb98ff5c8d951068211}} 
+\index{Triangle@{Triangle}!D@{D}}
+\index{D@{D}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{D}{D}}
+{\footnotesize\ttfamily double Stdel\+::D\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+Coeficientes para a derivacao por colocacao Matrizes locais 
+
+Definition at line 182 of file Stdel.\+h.
+
+
+
+Referenced by Quadrilateral\+::gauss\+\_\+parameters\+\_\+default(), Linear\+::gauss\+\_\+parameters\+\_\+default(), Hexahedral\+::gauss\+\_\+parameters\+\_\+default(), gauss\+\_\+parameters\+\_\+default(), Tetrahedral\+::gauss\+\_\+parameters\+\_\+default(), Quadrilateral\+::\+Gradiente(), Hexahedral\+::\+Gradiente(), Gradiente(), Linear\+::\+Gradiente(), and Tetrahedral\+::map\+\_\+face().
+
+\mbox{\Hypertarget{classStdel_a80a6c89c61bfef1160257e97b3ffb0a2}\label{classStdel_a80a6c89c61bfef1160257e97b3ffb0a2}} 
+\index{Triangle@{Triangle}!D\+\_\+\+Phi\+\_\+val@{D\+\_\+\+Phi\+\_\+val}}
+\index{D\+\_\+\+Phi\+\_\+val@{D\+\_\+\+Phi\+\_\+val}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{D\+\_\+\+Phi\+\_\+val}{D\_Phi\_val}}
+{\footnotesize\ttfamily double$\ast$ Stdel\+::\+D\+\_\+\+Phi\+\_\+val = nullptr\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 192 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral\+::$\sim$\+Hexahedral(), Linear\+::$\sim$\+Linear(), Quadrilateral\+::$\sim$\+Quadrilateral(), Tetrahedral\+::$\sim$\+Tetrahedral(), and $\sim$\+Triangle().
+
+\mbox{\Hypertarget{classStdel_a9ba8eb743aeb36984b7c4ececa837e16}\label{classStdel_a9ba8eb743aeb36984b7c4ececa837e16}} 
+\index{Triangle@{Triangle}!emapi@{emapi}}
+\index{emapi@{emapi}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{emapi}{emapi}}
+{\footnotesize\ttfamily int$\ast$ Stdel\+::emapi = nullptr\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+edge\+\_\+map\+\_\+inicio 
+
+
+
+Definition at line 189 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral\+::\+Hexahedral(), Stdel\+::is\+\_\+on\+\_\+border(), Linear\+::\+Linear(), Stdel\+::print\+\_\+border\+\_\+map(), Quadrilateral\+::\+Quadrilateral(), Quadrilateral\+::set(), set(), Tetrahedral\+::set(), Linear\+::set(), Hexahedral\+::set(), Stdel\+::show\+\_\+emapi(), Tetrahedral\+::\+Tetrahedral(), Triangle(), Hexahedral\+::$\sim$\+Hexahedral(), Linear\+::$\sim$\+Linear(), Quadrilateral\+::$\sim$\+Quadrilateral(), Tetrahedral\+::$\sim$\+Tetrahedral(), and $\sim$\+Triangle().
+
+\mbox{\Hypertarget{classStdel_a39326d0ef108403223402c79b424a41b}\label{classStdel_a39326d0ef108403223402c79b424a41b}} 
+\index{Triangle@{Triangle}!emapv@{emapv}}
+\index{emapv@{emapv}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{emapv}{emapv}}
+{\footnotesize\ttfamily int$\ast$ Stdel\+::emapv = nullptr\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+edge\+\_\+map\+\_\+valores 
+
+
+
+Definition at line 188 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral\+::\+Hexahedral(), Stdel\+::is\+\_\+on\+\_\+border(), Linear\+::\+Linear(), Stdel\+::print\+\_\+border\+\_\+map(), Quadrilateral\+::\+Quadrilateral(), Quadrilateral\+::set(), set(), Tetrahedral\+::set(), Linear\+::set(), Hexahedral\+::set(), Stdel\+::show\+\_\+emapv(), Tetrahedral\+::\+Tetrahedral(), Triangle(), Hexahedral\+::$\sim$\+Hexahedral(), Linear\+::$\sim$\+Linear(), Quadrilateral\+::$\sim$\+Quadrilateral(), Tetrahedral\+::$\sim$\+Tetrahedral(), and $\sim$\+Triangle().
+
+\mbox{\Hypertarget{classTriangle_a693659752f394140a7ad5010208b3ab0}\label{classTriangle_a693659752f394140a7ad5010208b3ab0}} 
+\index{Triangle@{Triangle}!face@{face}}
+\index{face@{face}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{face}{face}}
+{\footnotesize\ttfamily const int Triangle\+::face\mbox{[}1\mbox{]}\mbox{[}3\mbox{]} =\{\{0,1,2\}\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 38 of file Triangle.\+h.
+
+
+
+Referenced by face\+\_\+lvert().
+
+\mbox{\Hypertarget{classStdel_afc321b60cb9b577b71794e346196c07a}\label{classStdel_afc321b60cb9b577b71794e346196c07a}} 
+\index{Triangle@{Triangle}!gqt@{gqt}}
+\index{gqt@{gqt}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{gqt}{gqt}}
+{\footnotesize\ttfamily int Stdel\+::gqt\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+gqt Gauss Quadrature Type\+: 
+\begin{DoxyParams}{Parameters}
+{\em 1=} & Gauss-\/\+Jacobi \\
+\hline
+{\em 2=} & Gauss-\/\+Radau-\/\+Jacobi \\
+\hline
+{\em 3=} & Gauss-\/\+Lobatto-\/\+Jacobi \\
+\hline
+{\em Index} & of the row refers to the direction\+: \\
+\hline
+{\em 0=x;} & \\
+\hline
+{\em 1=y;} & \\
+\hline
+{\em 2=z.} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 164 of file Stdel.\+h.
+
+
+
+Referenced by Quadrilateral\+::gauss\+\_\+parameters\+\_\+default(), Linear\+::gauss\+\_\+parameters\+\_\+default(), Hexahedral\+::gauss\+\_\+parameters\+\_\+default(), gauss\+\_\+parameters\+\_\+default(), Stdel\+::gqt\+\_\+val(), Stdel\+::print\+Stdel(), Quadrilateral\+::set(), Hexahedral\+::set(), set(), Linear\+::set(), and Tetrahedral\+::set().
+
+\mbox{\Hypertarget{classTriangle_acafeae167367cb8c0def01e37ba0a908}\label{classTriangle_acafeae167367cb8c0def01e37ba0a908}} 
+\index{Triangle@{Triangle}!ind\+\_\+mode\+\_\+@{ind\+\_\+mode\+\_\+}}
+\index{ind\+\_\+mode\+\_\+@{ind\+\_\+mode\+\_\+}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{ind\+\_\+mode\+\_\+}{ind\_mode\_}}
+{\footnotesize\ttfamily int$\ast$$\ast$ Triangle\+::ind\+\_\+mode\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 41 of file Triangle.\+h.
+
+
+
+Referenced by set(), show\+\_\+ind\+\_\+mode(), and $\sim$\+Triangle().
+
+\mbox{\Hypertarget{classStdel_aa1627cb39fa5da75764809412159c825}\label{classStdel_aa1627cb39fa5da75764809412159c825}} 
+\index{Triangle@{Triangle}!Mb\+\_\+comp@{Mb\+\_\+comp}}
+\index{Mb\+\_\+comp@{Mb\+\_\+comp}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{Mb\+\_\+comp}{Mb\_comp}}
+{\footnotesize\ttfamily double Stdel\+::\+Mb\+\_\+comp\mbox{[}\hyperlink{MyOptions_8h_aed8828a63ec0a2a0461b7c9ed39dd648}{M\+A\+X\+N\+BL}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_aed8828a63ec0a2a0461b7c9ed39dd648}{M\+A\+X\+N\+BL}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Matriz de massa compacta de Schur. 
+
+
+
+Definition at line 185 of file Stdel.\+h.
+
+
+
+Referenced by Stdel\+::duplicar\+\_\+mass\+\_\+matrix(), Linear\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), Hexahedral\+::make\+\_\+local\+\_\+matrices(), make\+\_\+local\+\_\+matrices(), Stdel\+::print\+\_\+matrices(), and Stdel\+::show\+\_\+\+Mb\+\_\+comp().
+
+\mbox{\Hypertarget{classStdel_acc685141e80bcce9703e37f32cc5c42c}\label{classStdel_acc685141e80bcce9703e37f32cc5c42c}} 
+\index{Triangle@{Triangle}!Mc\+Mi\+\_\+inv@{Mc\+Mi\+\_\+inv}}
+\index{Mc\+Mi\+\_\+inv@{Mc\+Mi\+\_\+inv}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{Mc\+Mi\+\_\+inv}{McMi\_inv}}
+{\footnotesize\ttfamily double Stdel\+::\+Mc\+Mi\+\_\+inv\mbox{[}\hyperlink{MyOptions_8h_aed8828a63ec0a2a0461b7c9ed39dd648}{M\+A\+X\+N\+BL}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_a463cdf068fb6289d1f81dac7e0f76ab5}{M\+A\+X\+N\+IL}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Matriz de massa inversa dos modos compacta de Schur. 
+
+
+
+Definition at line 187 of file Stdel.\+h.
+
+
+
+Referenced by Stdel\+::duplicar\+\_\+mass\+\_\+matrix(), Linear\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), Hexahedral\+::make\+\_\+local\+\_\+matrices(), make\+\_\+local\+\_\+matrices(), Stdel\+::print\+\_\+matrices(), and Stdel\+::show\+\_\+\+Mc\+Mi\+\_\+inv().
+
+\mbox{\Hypertarget{classStdel_a53a9490d5a02a96473d96848bac3711a}\label{classStdel_a53a9490d5a02a96473d96848bac3711a}} 
+\index{Triangle@{Triangle}!Mi\+\_\+inv@{Mi\+\_\+inv}}
+\index{Mi\+\_\+inv@{Mi\+\_\+inv}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{Mi\+\_\+inv}{Mi\_inv}}
+{\footnotesize\ttfamily double Stdel\+::\+Mi\+\_\+inv\mbox{[}\hyperlink{MyOptions_8h_a463cdf068fb6289d1f81dac7e0f76ab5}{M\+A\+X\+N\+IL}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_a463cdf068fb6289d1f81dac7e0f76ab5}{M\+A\+X\+N\+IL}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Matriz de massa inversa dos modos internos de Schur. 
+
+
+
+Definition at line 186 of file Stdel.\+h.
+
+
+
+Referenced by Stdel\+::duplicar\+\_\+mass\+\_\+matrix(), Linear\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), Hexahedral\+::make\+\_\+local\+\_\+matrices(), make\+\_\+local\+\_\+matrices(), Stdel\+::print\+\_\+matrices(), and Stdel\+::show\+\_\+\+Mi\+\_\+inv().
+
+\mbox{\Hypertarget{classStdel_a7a09cf048f14496813a914ca6afe7366}\label{classStdel_a7a09cf048f14496813a914ca6afe7366}} 
+\index{Triangle@{Triangle}!mode\+\_\+@{mode\+\_\+}}
+\index{mode\+\_\+@{mode\+\_\+}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{mode\+\_\+}{mode\_}}
+{\footnotesize\ttfamily \hyperlink{classMode}{Mode} Stdel\+::mode\+\_\+\mbox{[}\hyperlink{MyOptions_8h_aa75ccd382acf88cec3e9c8025c1f88b7}{M\+A\+X\+M\+O\+D\+ES}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+mode\+\_\+\mbox{[}m(ijk)\mbox{]}= number of the expansion function into the local 
+
+
+
+Definition at line 180 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral\+::compute\+At\+Points(), Linear\+::compute\+At\+Points(), Quadrilateral\+::compute\+At\+Points(), Tetrahedral\+::compute\+At\+Points(), compute\+At\+Points(), Linear\+::compute\+Vertice(), Tetrahedral\+::compute\+Vertice(), compute\+Vertice(), Hexahedral\+::compute\+Vertice(), Quadrilateral\+::compute\+Vertice(), Hexahedral\+::elem\+\_\+traces(), Linear\+::elem\+\_\+traces(), elem\+\_\+traces(), Quadrilateral\+::elem\+\_\+traces(), Quadrilateral\+::eval\+\_\+\+Grad\+Phi(), Hexahedral\+::eval\+\_\+\+Grad\+Phi(), Tetrahedral\+::eval\+G\+Q(), Hexahedral\+::local\+Face\+Mode\+Map(), Tetrahedral\+::local\+Face\+Mode\+Map(), Linear\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), Hexahedral\+::make\+\_\+local\+\_\+matrices(), make\+\_\+local\+\_\+matrices(), mass(), Quadrilateral\+::mass(), Hexahedral\+::mass(), Linear\+::mass(), Tetrahedral\+::mass(), Linear\+::print(), Quadrilateral\+::print(), Hexahedral\+::print(), print(), Tetrahedral\+::printtoarray(), Tetrahedral\+::printtofile(), Quadrilateral\+::set(), set(), Linear\+::set(), Hexahedral\+::set(), Tetrahedral\+::set(), Stdel\+::show\+\_\+ind(), Quadrilateral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Tetrahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Hexahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), and Linear\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv().
+
+\mbox{\Hypertarget{classStdel_ad1d9acc38335d3fd779ba5c14f1507f8}\label{classStdel_ad1d9acc38335d3fd779ba5c14f1507f8}} 
+\index{Triangle@{Triangle}!nb@{nb}}
+\index{nb@{nb}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{nb}{nb}}
+{\footnotesize\ttfamily int Stdel\+::nb\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+number of boundary (shared) modes (or modes) 
+
+
+
+Definition at line 160 of file Stdel.\+h.
+
+
+
+Referenced by Stdel\+::duplicar\+\_\+mass\+\_\+matrix(), Linear\+::\+Linear(), Tetrahedral\+::local\+Face\+Mode\+Map(), Linear\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), Hexahedral\+::make\+\_\+local\+\_\+matrices(), make\+\_\+local\+\_\+matrices(), Stdel\+::nb\+\_\+val(), Stdel\+::print\+\_\+matrices(), Quadrilateral\+::set(), set(), Linear\+::set(), Hexahedral\+::set(), and Tetrahedral\+::set().
+
+\mbox{\Hypertarget{classStdel_ad0f111a2ba3d9415618c8408da3fc100}\label{classStdel_ad0f111a2ba3d9415618c8408da3fc100}} 
+\index{Triangle@{Triangle}!nborder@{nborder}}
+\index{nborder@{nborder}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{nborder}{nborder}}
+{\footnotesize\ttfamily int Stdel\+::nborder\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+number of borders 
+
+
+
+Definition at line 156 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral\+::elem\+\_\+traces(), Linear\+::elem\+\_\+traces(), Quadrilateral\+::elem\+\_\+traces(), Hexahedral\+::\+Hexahedral(), Linear\+::\+Linear(), Stdel\+::nborder\+\_\+val(), Quadrilateral\+::\+Quadrilateral(), Tetrahedral\+::\+Tetrahedral(), and Triangle().
+
+\mbox{\Hypertarget{classStdel_a912f36b591d847eed2531a3b3a51a520}\label{classStdel_a912f36b591d847eed2531a3b3a51a520}} 
+\index{Triangle@{Triangle}!ndim@{ndim}}
+\index{ndim@{ndim}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{ndim}{ndim}}
+{\footnotesize\ttfamily int Stdel\+::ndim\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+number of geometrical dimension 
+
+
+
+Definition at line 152 of file Stdel.\+h.
+
+
+
+Referenced by Quadrilateral\+::gauss\+\_\+parameters\+\_\+default(), Hexahedral\+::gauss\+\_\+parameters\+\_\+default(), gauss\+\_\+parameters\+\_\+default(), Hexahedral\+::\+Hexahedral(), Linear\+::\+Linear(), Stdel\+::ndim\+\_\+val(), Stdel\+::print\+Stdel(), Quadrilateral\+::\+Quadrilateral(), Tetrahedral\+::\+Tetrahedral(), and Triangle().
+
+\mbox{\Hypertarget{classStdel_aef3d1b34184b9fd03c0b655640c243b6}\label{classStdel_aef3d1b34184b9fd03c0b655640c243b6}} 
+\index{Triangle@{Triangle}!ne@{ne}}
+\index{ne@{ne}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{ne}{ne}}
+{\footnotesize\ttfamily int Stdel\+::ne\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+number of edges 
+
+
+
+Definition at line 154 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral\+::\+Hexahedral(), Linear\+::\+Linear(), Stdel\+::ne\+\_\+val(), Stdel\+::print\+\_\+border\+\_\+map(), Quadrilateral\+::\+Quadrilateral(), Tetrahedral\+::\+Tetrahedral(), and Triangle().
+
+\mbox{\Hypertarget{classStdel_a61987080026986a40412a8937aad4b24}\label{classStdel_a61987080026986a40412a8937aad4b24}} 
+\index{Triangle@{Triangle}!nf@{nf}}
+\index{nf@{nf}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{nf}{nf}}
+{\footnotesize\ttfamily int Stdel\+::nf\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+number of faces 
+
+
+
+Definition at line 155 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral\+::\+Hexahedral(), Linear\+::\+Linear(), Stdel\+::nf\+\_\+val(), Quadrilateral\+::\+Quadrilateral(), Hexahedral\+::set(), Tetrahedral\+::\+Tetrahedral(), and Triangle().
+
+\mbox{\Hypertarget{classStdel_aa3cff31280606cd3eb95af770dd6f5b4}\label{classStdel_aa3cff31280606cd3eb95af770dd6f5b4}} 
+\index{Triangle@{Triangle}!N\+G\+QP@{N\+G\+QP}}
+\index{N\+G\+QP@{N\+G\+QP}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{N\+G\+QP}{NGQP}}
+{\footnotesize\ttfamily int Stdel\+::\+N\+G\+QP\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+total number of Gauss Quadrature points 
+
+
+
+Definition at line 163 of file Stdel.\+h.
+
+
+
+Referenced by Linear\+::eval\+\_\+\+Phi(), Stdel\+::\+N\+G\+Q\+P\+\_\+val(), Hexahedral\+::set(), Quadrilateral\+::set(), Linear\+::set(), Tetrahedral\+::set(), and set().
+
+\mbox{\Hypertarget{classStdel_af4d02765d362e2f0469633ff78734f89}\label{classStdel_af4d02765d362e2f0469633ff78734f89}} 
+\index{Triangle@{Triangle}!nn@{nn}}
+\index{nn@{nn}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{nn}{nn}}
+{\footnotesize\ttfamily int Stdel\+::nn\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+number of modes (and/or modes) 
+
+
+
+Definition at line 159 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral\+::compute\+At\+Points(), Quadrilateral\+::compute\+At\+Points(), Tetrahedral\+::compute\+At\+Points(), compute\+At\+Points(), Linear\+::compute\+At\+Points(), compute\+Vertice(), Linear\+::compute\+Vertice(), Quadrilateral\+::compute\+Vertice(), Hexahedral\+::compute\+Vertice(), Tetrahedral\+::compute\+Vertice(), Stdel\+::duplicar\+\_\+mass\+\_\+matrix(), elem\+\_\+traces(), Quadrilateral\+::elem\+\_\+traces(), Linear\+::elem\+\_\+traces(), Hexahedral\+::elem\+\_\+traces(), Tetrahedral\+::eval\+G\+Q(), Tetrahedral\+::local\+Face\+Mode\+Map(), Linear\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), Hexahedral\+::make\+\_\+local\+\_\+matrices(), make\+\_\+local\+\_\+matrices(), Stdel\+::nn\+\_\+val(), Hexahedral\+::print(), Stdel\+::print\+\_\+matrices(), Tetrahedral\+::printtoarray(), Tetrahedral\+::printtofile(), Linear\+::set(), set(), Hexahedral\+::set(), Tetrahedral\+::set(), Quadrilateral\+::set(), Quadrilateral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Hexahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Linear\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), and Tetrahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv().
+
+\mbox{\Hypertarget{classStdel_a20c0e35541cab4a1f07974659ae7a9ad}\label{classStdel_a20c0e35541cab4a1f07974659ae7a9ad}} 
+\index{Triangle@{Triangle}!nv@{nv}}
+\index{nv@{nv}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{nv}{nv}}
+{\footnotesize\ttfamily int Stdel\+::nv\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+number of vertices 
+
+
+
+Definition at line 153 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral\+::\+Hexahedral(), Linear\+::\+Linear(), Tetrahedral\+::local\+Face\+Mode\+Map(), Stdel\+::nv\+\_\+val(), Hexahedral\+::print\+G\+Qtofile(), Hexahedral\+::printtoarray(), Hexahedral\+::printtofile(), Hexahedral\+::printw\+G\+Qtofile(), Quadrilateral\+::\+Quadrilateral(), Linear\+::set(), set(), Hexahedral\+::set(), Tetrahedral\+::set(), Quadrilateral\+::set(), Tetrahedral\+::\+Tetrahedral(), Triangle(), and Hexahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv().
+
+\mbox{\Hypertarget{classStdel_a05cbb3f2a3fa0bc04a74e347dc6574cf}\label{classStdel_a05cbb3f2a3fa0bc04a74e347dc6574cf}} 
+\index{Triangle@{Triangle}!P@{P}}
+\index{P@{P}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{P}{P}}
+{\footnotesize\ttfamily int Stdel\+::P\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+(number of modes -\/ 1) in each direction 
+
+
+
+Definition at line 161 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral\+::compute\+At\+Points(), Linear\+::compute\+At\+Points(), compute\+At\+Points(), Tetrahedral\+::compute\+At\+Points(), Quadrilateral\+::compute\+At\+Points(), Hexahedral\+::compute\+Vertice(), Linear\+::compute\+Vertice(), Tetrahedral\+::compute\+Vertice(), compute\+Vertice(), Quadrilateral\+::compute\+Vertice(), Hexahedral\+::\+Dirichlet(), Tetrahedral\+::\+Dirichlet(), Dirichlet(), Quadrilateral\+::\+Dirichlet(), Hexahedral\+::elem\+\_\+traces(), elem\+\_\+traces(), Quadrilateral\+::elem\+\_\+traces(), Linear\+::elem\+\_\+traces(), Quadrilateral\+::eval\+\_\+\+Grad\+Phi(), Hexahedral\+::eval\+\_\+\+Grad\+Phi(), Linear\+::eval\+G\+Q(), Tetrahedral\+::eval\+G\+Q(), Quadrilateral\+::eval\+G\+Q(), eval\+G\+Q(), Hexahedral\+::eval\+G\+Q(), Hexahedral\+::local\+Face\+Mode\+Map(), Tetrahedral\+::local\+Face\+Mode\+Map(), Linear\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), Hexahedral\+::make\+\_\+local\+\_\+matrices(), make\+\_\+local\+\_\+matrices(), Hexahedral\+::mass(), Tetrahedral\+::mass(), Quadrilateral\+::mass(), mass(), Linear\+::mass(), Stdel\+::\+P\+\_\+val(), Stdel\+::print\+\_\+border\+\_\+map(), Stdel\+::print\+Stdel(), Tetrahedral\+::printtoarray(), Tetrahedral\+::printtofile(), Tetrahedral\+::set(), Quadrilateral\+::set(), Linear\+::set(), Hexahedral\+::set(), set(), Tetrahedral\+::teste\+\_\+face(), Tetrahedral\+::\+Tetrahedral(), Quadrilateral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Hexahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Linear\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Tetrahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Hexahedral\+::$\sim$\+Hexahedral(), Quadrilateral\+::$\sim$\+Quadrilateral(), Tetrahedral\+::$\sim$\+Tetrahedral(), and $\sim$\+Triangle().
+
+\mbox{\Hypertarget{classStdel_ab7849f154bd766857aac9557c19f7f84}\label{classStdel_ab7849f154bd766857aac9557c19f7f84}} 
+\index{Triangle@{Triangle}!Phi\+\_\+val@{Phi\+\_\+val}}
+\index{Phi\+\_\+val@{Phi\+\_\+val}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{Phi\+\_\+val}{Phi\_val}}
+{\footnotesize\ttfamily double Stdel\+::\+Phi\+\_\+val\mbox{[}\hyperlink{MyOptions_8h_aa75ccd382acf88cec3e9c8025c1f88b7}{M\+A\+X\+M\+O\+D\+ES}\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ} $\ast$\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Contem os vetores Phi nos pontos de quadratura. 
+
+
+
+Definition at line 184 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral\+::eval\+\_\+\+Phi(), Linear\+::eval\+\_\+\+Phi(), Tetrahedral\+::eval\+\_\+\+Phi(), eval\+\_\+\+Phi(), Quadrilateral\+::eval\+\_\+\+Phi(), Hexahedral\+::print(), Hexahedral\+::print\+G\+Qtofile(), Hexahedral\+::printtoarray(), Hexahedral\+::printtofile(), Hexahedral\+::printw\+G\+Qtofile(), Hexahedral\+::set(), Quadrilateral\+::set(), set(), Linear\+::set(), Stdel\+::show\+\_\+\+Phi\+\_\+val(), and Hexahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv().
+
+\mbox{\Hypertarget{classStdel_a82074e598ad5af5ec45a3257a3c2b684}\label{classStdel_a82074e598ad5af5ec45a3257a3c2b684}} 
+\index{Triangle@{Triangle}!Q@{Q}}
+\index{Q@{Q}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{Q}{Q}}
+{\footnotesize\ttfamily int Stdel\+::Q\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+number of Gauss Quadrature points in direction i 
+
+
+
+Definition at line 162 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral\+::compute\+Func\+G\+Q(), Quadrilateral\+::compute\+Func\+G\+Q(), Linear\+::compute\+Func\+G\+Q(), Tetrahedral\+::compute\+Func\+G\+Q(), compute\+Func\+G\+Q(), Dirichlet(), Quadrilateral\+::\+Dirichlet(), Tetrahedral\+::\+Dirichlet(), Hexahedral\+::\+Dirichlet(), Quadrilateral\+::eval\+\_\+\+Grad\+Phi(), Hexahedral\+::eval\+\_\+\+Grad\+Phi(), Tetrahedral\+::eval\+\_\+\+Phi(), eval\+\_\+\+Phi(), Quadrilateral\+::eval\+\_\+\+Phi(), Hexahedral\+::eval\+\_\+\+Phi(), eval\+G\+Q(), Quadrilateral\+::eval\+G\+Q(), Linear\+::eval\+G\+Q(), Tetrahedral\+::eval\+G\+Q(), Hexahedral\+::eval\+G\+Q(), Quadrilateral\+::gauss\+\_\+parameters\+\_\+default(), Linear\+::gauss\+\_\+parameters\+\_\+default(), Hexahedral\+::gauss\+\_\+parameters\+\_\+default(), gauss\+\_\+parameters\+\_\+default(), Tetrahedral\+::gauss\+\_\+parameters\+\_\+default(), Linear\+::\+Gradiente(), Gradiente(), Quadrilateral\+::\+Gradiente(), Hexahedral\+::\+Gradiente(), Tetrahedral\+::\+Jacobian(), Quadrilateral\+::\+Jacobian(), Linear\+::\+Jacobian(), Jacobian(), Hexahedral\+::\+Jacobian(), Linear\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), Hexahedral\+::make\+\_\+local\+\_\+matrices(), make\+\_\+local\+\_\+matrices(), Tetrahedral\+::map\+\_\+face(), Quadrilateral\+::mass(), Linear\+::mass(), mass(), Hexahedral\+::mass(), Tetrahedral\+::mass(), Stdel\+::print\+\_\+border\+\_\+map(), print\+G\+Qtofile(), Hexahedral\+::print\+G\+Qtofile(), Quadrilateral\+::print\+G\+Qtofile(), Linear\+::print\+G\+Qtofile(), Stdel\+::print\+Stdel(), Hexahedral\+::printtoarray(), printtoarray(), Quadrilateral\+::printtoarray(), Tetrahedral\+::printtoarray(), Linear\+::printtoarray(), Linear\+::printtofile(), Hexahedral\+::printtofile(), Quadrilateral\+::printtofile(), printtofile(), Tetrahedral\+::printtofile(), Linear\+::printw\+G\+Qtofile(), Hexahedral\+::printw\+G\+Qtofile(), Quadrilateral\+::printw\+G\+Qtofile(), printw\+G\+Qtofile(), Stdel\+::\+Q\+\_\+val(), Linear\+::set(), set(), Quadrilateral\+::set(), Tetrahedral\+::set(), Hexahedral\+::set(), Tetrahedral\+::\+Tetrahedral(), Quadrilateral\+::trace(), trace(), Hexahedral\+::trace(), Linear\+::trace(), Tetrahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Quadrilateral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Linear\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Hexahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), and Stdel\+::w\+\_\+vec().
+
+\mbox{\Hypertarget{classStdel_a63a106b928d211c71d5fec6449ef4d51}\label{classStdel_a63a106b928d211c71d5fec6449ef4d51}} 
+\index{Triangle@{Triangle}!qborder@{qborder}}
+\index{qborder@{qborder}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{qborder}{qborder}}
+{\footnotesize\ttfamily int Stdel\+::qborder\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+number of Gauss quadrature points on the faces (borders) 
+
+
+
+Definition at line 157 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral\+::elem\+\_\+traces(), Quadrilateral\+::elem\+\_\+traces(), elem\+\_\+traces(), Linear\+::\+Linear(), Stdel\+::qborder\+\_\+val(), set(), Hexahedral\+::set(), Tetrahedral\+::set(), and Quadrilateral\+::set().
+
+\mbox{\Hypertarget{classTriangle_a8cd0ca9207ef546b87d71b3d2d1d69c9}\label{classTriangle_a8cd0ca9207ef546b87d71b3d2d1d69c9}} 
+\index{Triangle@{Triangle}!sinal\+\_\+normal@{sinal\+\_\+normal}}
+\index{sinal\+\_\+normal@{sinal\+\_\+normal}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{sinal\+\_\+normal}{sinal\_normal}}
+{\footnotesize\ttfamily const int Triangle\+::sinal\+\_\+normal\mbox{[}3\mbox{]} = \{-\/1,-\/1,1\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 36 of file Triangle.\+h.
+
+
+
+Referenced by superficie\+\_\+externa().
+
+\mbox{\Hypertarget{classStdel_a68f8781a42728758ccde39e15cd319ed}\label{classStdel_a68f8781a42728758ccde39e15cd319ed}} 
+\index{Triangle@{Triangle}!tipo@{tipo}}
+\index{tipo@{tipo}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{tipo}{tipo}}
+{\footnotesize\ttfamily int Stdel\+::tipo\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+type of the element 
+
+
+
+Definition at line 151 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral\+::\+Hexahedral(), Linear\+::\+Linear(), Quadrilateral\+::\+Quadrilateral(), Tetrahedral\+::\+Tetrahedral(), Stdel\+::tipo\+\_\+val(), and Triangle().
+
+\mbox{\Hypertarget{classStdel_a55624584790a08437c03540489d04898}\label{classStdel_a55624584790a08437c03540489d04898}} 
+\index{Triangle@{Triangle}!vtk\+\_\+type@{vtk\+\_\+type}}
+\index{vtk\+\_\+type@{vtk\+\_\+type}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{vtk\+\_\+type}{vtk\_type}}
+{\footnotesize\ttfamily int Stdel\+::vtk\+\_\+type\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+number of element for vtk file 
+
+
+
+Definition at line 158 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral\+::\+Hexahedral(), Linear\+::\+Linear(), Quadrilateral\+::\+Quadrilateral(), Stdel\+::show\+\_\+vtk\+\_\+type(), Tetrahedral\+::\+Tetrahedral(), and Triangle().
+
+\mbox{\Hypertarget{classStdel_af99d72cbda49c30e23e83705c95a1c5b}\label{classStdel_af99d72cbda49c30e23e83705c95a1c5b}} 
+\index{Triangle@{Triangle}!w\+GQ@{w\+GQ}}
+\index{w\+GQ@{w\+GQ}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{w\+GQ}{wGQ}}
+{\footnotesize\ttfamily double Stdel\+::w\+GQ\mbox{[}3\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+weights of the Gauss quadrature points 
+\begin{DoxyParams}{Parameters}
+{\em Index} & of the row refers to the direction\+: 0=x; 1=y; 2=z. \\
+\hline
+{\em Index} & of the column refers to the quadrature point \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 177 of file Stdel.\+h.
+
+
+
+Referenced by Quadrilateral\+::gauss\+\_\+parameters\+\_\+default(), Linear\+::gauss\+\_\+parameters\+\_\+default(), Hexahedral\+::gauss\+\_\+parameters\+\_\+default(), Tetrahedral\+::gauss\+\_\+parameters\+\_\+default(), gauss\+\_\+parameters\+\_\+default(), Linear\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), Hexahedral\+::make\+\_\+local\+\_\+matrices(), make\+\_\+local\+\_\+matrices(), Hexahedral\+::mass(), Linear\+::mass(), Tetrahedral\+::mass(), Quadrilateral\+::mass(), mass(), Linear\+::printw\+G\+Qtofile(), Hexahedral\+::printw\+G\+Qtofile(), printw\+G\+Qtofile(), Quadrilateral\+::printw\+G\+Qtofile(), Quadrilateral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Hexahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Linear\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Tetrahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), and Stdel\+::w\+\_\+vec().
+
+\mbox{\Hypertarget{classStdel_adedcb4d4faa12adf348054780a3b2c1a}\label{classStdel_adedcb4d4faa12adf348054780a3b2c1a}} 
+\index{Triangle@{Triangle}!x\+GQ@{x\+GQ}}
+\index{x\+GQ@{x\+GQ}!Triangle@{Triangle}}
+\subsubsection{\texorpdfstring{x\+GQ}{xGQ}}
+{\footnotesize\ttfamily double Stdel\+::x\+GQ\mbox{[}3\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_af708e94d886ba3f59582612949cac702}{M\+A\+XQ}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+coordinates of the Gauss quadrature points 
+\begin{DoxyParams}{Parameters}
+{\em Index} & of the row refers to the direction\+: 0=x; 1=y; 2=z. \\
+\hline
+{\em Index} & of the column refers to the quadrature point \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 174 of file Stdel.\+h.
+
+
+
+Referenced by Hexahedral\+::compute\+Func\+G\+Q(), Linear\+::compute\+Func\+G\+Q(), compute\+Func\+G\+Q(), Quadrilateral\+::compute\+Func\+G\+Q(), Tetrahedral\+::compute\+Func\+G\+Q(), Quadrilateral\+::eval\+\_\+\+Grad\+Phi(), Hexahedral\+::eval\+\_\+\+Grad\+Phi(), Quadrilateral\+::eval\+G\+Q(), Tetrahedral\+::eval\+G\+Q(), Linear\+::eval\+G\+Q(), eval\+G\+Q(), Hexahedral\+::eval\+G\+Q(), Quadrilateral\+::gauss\+\_\+parameters\+\_\+default(), Linear\+::gauss\+\_\+parameters\+\_\+default(), Hexahedral\+::gauss\+\_\+parameters\+\_\+default(), Tetrahedral\+::gauss\+\_\+parameters\+\_\+default(), gauss\+\_\+parameters\+\_\+default(), Linear\+::\+Gradiente(), Quadrilateral\+::\+Gradiente(), Hexahedral\+::\+Gradiente(), Gradiente(), Hexahedral\+::\+Jacobian(), Quadrilateral\+::\+Jacobian(), Linear\+::make\+\_\+local\+\_\+matrices(), Tetrahedral\+::make\+\_\+local\+\_\+matrices(), Quadrilateral\+::make\+\_\+local\+\_\+matrices(), Hexahedral\+::make\+\_\+local\+\_\+matrices(), make\+\_\+local\+\_\+matrices(), Tetrahedral\+::map\+\_\+face(), Tetrahedral\+::mass(), mass(), Linear\+::mass(), Hexahedral\+::mass(), Quadrilateral\+::mass(), Linear\+::print\+G\+Qtofile(), print\+G\+Qtofile(), Quadrilateral\+::print\+G\+Qtofile(), Quadrilateral\+::printtoarray(), printtoarray(), Linear\+::printtoarray(), Tetrahedral\+::printtoarray(), Quadrilateral\+::printtofile(), Tetrahedral\+::printtofile(), Linear\+::printtofile(), printtofile(), Quadrilateral\+::printw\+G\+Qtofile(), Linear\+::printw\+G\+Qtofile(), printw\+G\+Qtofile(), Linear\+::set(), Quadrilateral\+::set(), set(), Hexahedral\+::set(), trace(), Hexahedral\+::trace(), Quadrilateral\+::trace(), Quadrilateral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Hexahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Tetrahedral\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), Linear\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), and vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Triangle_8h}{Triangle.\+h}\item 
+\hyperlink{Triangle_8cpp}{Triangle.\+cpp}\end{DoxyCompactItemize}

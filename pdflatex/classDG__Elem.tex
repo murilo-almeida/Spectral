@@ -1,0 +1,3345 @@
+\hypertarget{classDG__Elem}{}\section{D\+G\+\_\+\+Elem Class Reference}
+\label{classDG__Elem}\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+
+
+{\ttfamily \#include $<$D\+G\+\_\+\+Elem.\+hpp$>$}
+
+
+
+Inheritance diagram for D\+G\+\_\+\+Elem\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{classDG__Elem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for D\+G\+\_\+\+Elem\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classDG__Elem__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDG__Elem_a9f40328ca740050c165ccffe11007d35}{D\+G\+\_\+\+Elem} ()
+\item 
+\hyperlink{classDG__Elem_af37ff3dd87674abfdd621f8cdba43975}{$\sim$\+D\+G\+\_\+\+Elem} ()
+\item 
+void \hyperlink{classDG__Elem_ac1ec1f962d6e1852f0adb01048c4c1f9}{inicia\+\_\+vetores} ()
+\item 
+void \hyperlink{classDG__Elem_a9f7165dbb388e11f16b4249383f71d0e}{set\+\_\+fontes} (double sw, double \hyperlink{DG__EI__Header_8h_a52e510ecdc11d9091099d94c3ba63e74}{sn})
+\item 
+double \hyperlink{classDG__Elem_acc7285f0df1d6a4544405169daf2853c}{show\+\_\+rho} ()
+\item 
+double \hyperlink{classDG__Elem_a01a49e07fd18a74e12eedf15cff7b8c7}{show\+\_\+\+Volume} ()
+\item 
+void \hyperlink{classDG__Elem_af61130ab38851fa2ade53f9e3f2418bc}{inicia\+\_\+funcoes\+\_\+na\+\_\+borda} (\hyperlink{structEDGE}{E\+D\+GE} $\ast$border)
+\item 
+void \hyperlink{classDG__Elem_af91d2d61c97fae30b8dfc6db67433094}{finaliza\+\_\+vetores} ()
+\item 
+void \hyperlink{classDG__Elem_a33d01f96cc0d00b6a1a1d4a817724b4c}{inicia\+\_\+tracos} (\hyperlink{structEDGE}{E\+D\+GE} $\ast$border)
+\item 
+void \hyperlink{classDG__Elem_ab5d89b8f7625699239440bfd0e8ec6e6}{echo\+\_\+traco} (F\+I\+LE $\ast$f\+\_\+eco=nullptr)
+\item 
+void \hyperlink{classDG__Elem_a70dbc366e1cdfb0b96fa9d640dcff689}{Atualizar\+\_\+valores} (F\+I\+LE $\ast$fout=N\+U\+LL)
+\item 
+void \hyperlink{classDG__Elem_a51393e54786059782e6a0502f00cdd50}{set\+\_\+permeabilidade} (const double, const double, const double)
+\item 
+void \hyperlink{classDG__Elem_a132e9ad800e701395b1e21d291040ff2}{set\+\_\+mass\+\_\+density} (double)
+\item 
+void \hyperlink{classDG__Elem_a5d8512886cb22395c92265f5eee6a940}{set\+\_\+porosidade} (double)
+\item 
+void \hyperlink{classDG__Elem_ab3de164caf40da7cc0b123928ad83cc9}{Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+CK} (const double Dt, \hyperlink{classFluids}{Fluids} fls, int \&count, int $\ast$Ti, int $\ast$Tj, double $\ast$Tx, double $\ast$\hyperlink{ASPFunctions_8cpp_a57d673f8d6833fb7a7aced326df10ca9}{B}, double $\ast$=N\+U\+LL, double $\ast$=N\+U\+LL)
+\item 
+void \hyperlink{classDG__Elem_a166b7ad0ea852f703f65661c14b5c713}{Volume\+Integrals} (const double Dt, \hyperlink{classFluids}{Fluids} fls, Teuchos\+::\+R\+CP$<$ Epetra\+\_\+\+F\+E\+Crs\+Matrix $>$ A, Teuchos\+::\+R\+CP$<$ Epetra\+\_\+\+F\+E\+Vector $>$ R\+HS, double $\ast$=N\+U\+LL, double $\ast$=N\+U\+LL)
+\item 
+void \hyperlink{classDG__Elem_a84fab76e27b414367eb553f9d4841889}{Volume\+Tracos} (const double Dt, \hyperlink{classFluids}{Fluids} fls, double $\ast$=N\+U\+LL, double $\ast$=N\+U\+LL)
+\item 
+void \hyperlink{classDG__Elem_a2a2a90dfc3c456b66f7e1890d0f236f2}{Volume\+IntegralsT} (const double Dt\+\_\+new, const double Dt\+\_\+old, int \&count, int $\ast$Ti, int $\ast$Tj, double $\ast$Tx, double $\ast$\hyperlink{ASPFunctions_8cpp_a57d673f8d6833fb7a7aced326df10ca9}{B})
+\item 
+void \hyperlink{classDG__Elem_a64d352e6b9eeeeca73368a9ef92a94c2}{calcula\+\_\+tracos} (\hyperlink{classFluids}{Fluids} fls)
+\item 
+void \hyperlink{classDG__Elem_a3fc71dbfe141c0d42dc8ceff8f0ef8ce}{Volume\+Integrals\+\_\+\+IG} (\hyperlink{classFluids}{Fluids} fls, int \&count, int $\ast$Ti, int $\ast$Tj, double $\ast$Tx, double $\ast$\hyperlink{ASPFunctions_8cpp_a57d673f8d6833fb7a7aced326df10ca9}{B})
+\item 
+void \hyperlink{classDG__Elem_a699a198b44d02b1394229e623cd6632d}{perm\+\_\+val} (double K\mbox{[}3\mbox{]})
+\item 
+void \hyperlink{classDG__Elem_a4b5b26372a103e9f10c9d518419d4fd1}{Traco\+\_\+sn} (const int \&h, double $\ast$saida)
+\item 
+void \hyperlink{classDG__Elem_ab57a34a01c448785d8a887e51e7ab331}{Traco\+\_\+pw} (const int \&h, double $\ast$saida)
+\item 
+void \hyperlink{classDG__Elem_ae98efe920078bc5fd18eceee997d44a2}{Traco\+\_\+\+Kgrad\+\_\+pw} (const int \&h, double $\ast$$\ast$saida)
+\item 
+void \hyperlink{classDG__Elem_ad288d45acae59787b21a35b38fe47b10}{Traco\+\_\+\+Kgrad\+\_\+pc} (const int \&h, double $\ast$$\ast$saida)
+\item 
+void \hyperlink{classDG__Elem_ae64a1118040aad9dd3c18ac68b2d5d4f}{Traco\+\_\+\+Kgrad\+\_\+sn} (const int \&h, double $\ast$$\ast$saida)
+\item 
+void \hyperlink{classDG__Elem_aa97824992d60c2a7b5506e5d660dc7a1}{Traco\+\_\+phi} (const int \&lado, const int \&ivar, const int \&ind, double $\ast$saida)
+\item 
+void \hyperlink{classDG__Elem_a99f9e69fc0d6eacd683712bc456af5f7}{Traco\+\_\+phi\+\_\+1} (const int \&lado, const int \&ivar, const int \&\hyperlink{DG__EI__Header_8h_a1910d262855b71da353ed0d07a6c7823}{pos}, double $\ast$saida)
+\item 
+void \hyperlink{classDG__Elem_a8d090e18204cd99ed11ef8115a95c2e7}{Traco\+\_\+grad\+\_\+phi} (const int \&lado, const int \&ivar, const int \&ind, double $\ast$$\ast$saida)
+\item 
+void \hyperlink{classDG__Elem_a0109cc28854e31b5df555513e9fccfed}{Traco\+\_\+\+Kgrad\+\_\+phi\+\_\+n} (const int \&lado, const int \&ivar, const int \&ind, double $\ast$saida)
+\item 
+int \hyperlink{classPhElem_a5288b2eba55ffa37f1a9866a516f6886}{show\+\_\+\+Num\+Local\+Vars} ()
+\item 
+void \hyperlink{classPhElem_a9742fa2313cf25a24ae9c5602bd75ac0}{teste} ()
+\item 
+void \hyperlink{classPhElem_af2796c868709214bb9b151b47d7d471f}{set\+\_\+ptr\+\_\+stdel} (\hyperlink{classStdel}{Stdel} $\ast$pointer, \hyperlink{classStdel}{Stdel} $\ast$pointer1)
+\item 
+void \hyperlink{classPhElem_aaf841c14455a54e0f33e2c74bef979fd}{set\+\_\+ptr\+\_\+stdel} (\hyperlink{classStdel}{Stdel} $\ast$pointers\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classPhElem_a78130ee8d7d6ecf59f231dbd436e9081}{set\+\_\+ptr\+\_\+stdel} (\hyperlink{classStdel}{Stdel} $\ast$pointer)
+\item 
+void \hyperlink{classPhElem_a52fdbcf2283aacd8fdf9672018d74e4a}{set\+\_\+ptr\+\_\+stdel\+\_\+var} (const int ind, \hyperlink{classStdel}{Stdel} $\ast$pointer)
+\item 
+void \hyperlink{classPhElem_a134cbfd28fc238a24156ab1c24fc31c0}{set\+\_\+\+Vert\+\_\+map} (const int \&n\+\_\+in, int ver\+\_\+temp\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classPhElem_a8ed472a9e135b1e16b962c14df8f2225}{set\+\_\+ptvert} (const \hyperlink{structVertice}{Vertice} $\ast$pointer)
+\item 
+void \hyperlink{classPhElem_a8abc7be8120f4192de31e0cfb32ac968}{read\+\_\+vertices} (F\+I\+LE $\ast$, const int \&)
+\item 
+void \hyperlink{classPhElem_a03505c861fbcdb7cf8faec9fe5eea088}{set\+\_\+sgn} ()
+\item 
+int \hyperlink{classPhElem_ab271550e1373e11cb0b1f62d3e1ea428}{show\+\_\+sgn} (const int \&ia, const int \&i)
+\item 
+const int \hyperlink{classPhElem_a878851914f553298700437c5c8aef4dd}{show\+\_\+gbnmap} (int ivar, int modo) const
+\item 
+int \hyperlink{classPhElem_a69a5cfc5b3b7faa4ad5f584311406ce1}{show\+\_\+numv} ()
+\item 
+int \hyperlink{classPhElem_aca4ef303cd316714d116062e8f4d8ca5}{show\+\_\+nume} ()
+\item 
+int \hyperlink{classPhElem_afbe63a88e47733c8daec89a4c72b7da0}{show\+\_\+numf} ()
+\item 
+void \hyperlink{classPhElem_ae226a41912e8e7c76be365518b2a38e2}{set\+\_\+type} (const int \&num)
+\item 
+int \hyperlink{classPhElem_a4ea6c54e35eb46d331db770f992c4c4b}{type\+\_\+val} ()
+\item 
+void \hyperlink{classPhElem_a8d2c46990cba5a5459198d883b763eab}{print\+\_\+numeracao} (F\+I\+LE $\ast$fout, const int \&k)
+\item 
+void \hyperlink{classPhElem_ae7659320b2118608e38d192443bb2b8f}{print\+\_\+modes} (F\+I\+LE $\ast$fout, const int \&k) const
+\item 
+void \hyperlink{classPhElem_a46f2be4d83b5c7c2cc9c6699f1fe977c}{zera\+\_\+vetores} (const int \&k)
+\item 
+void \hyperlink{classPhElem_a55ef84501df0d4e8aec6d49846e21237}{zera\+\_\+bs} (const int \&k)
+\item 
+void \hyperlink{classPhElem_a5051606f1d1e914d52d3de8655195c9f}{make\+\_\+vector} (const int \&ia, double($\ast$f)(double, double, double))
+\item 
+void \hyperlink{classPhElem_ad5732b2fb83ab0d9a2de7678391f87c4}{make\+\_\+vector\+\_\+\+Elast2\+D\+\_\+dyn} (const double \hyperlink{DG__EI__Header_8h_a491bc358fce276972681cc0be8844bd7}{a}\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classPhElem_a1223b3e50580a1a7959e5f3b665d0761}{make\+\_\+\+Kcomp\+\_\+\+Elast2D} (const double lambda, const double mu)
+\item 
+void \hyperlink{classPhElem_a1ce74128a48a212028f644a68ce8edc0}{make\+\_\+\+Kcomp\+\_\+\+Elast2\+D\+\_\+dyn} (const double lambda, const double mu, const double \hyperlink{DG__EI__Header_8h_a491bc358fce276972681cc0be8844bd7}{a}\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classPhElem_ac59f1cbe0962524e3aa5eced9a4393f6}{make\+\_\+\+K\+\_\+\+Elast2D} (const double lambda, const double mu, double $\ast$$\ast$K)
+\item 
+void \hyperlink{classPhElem_a38499c9f62a291a880d72db646171cb5}{Vector\+Elast2D} (const int \&i, double sum\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classPhElem_a4b130cb327652894d81b2c4e26b96f41}{Vector\+Elast2D} (double vector\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classPhElem_ac3bc9b0559e940faa2404b1541d0c403}{P\+\_\+eval\+\_\+print\+\_\+\+Elast2D} (F\+I\+LE $\ast$fout, const double X\mbox{[}$\,$\mbox{]}, double lambda, double mu)
+\item 
+void \hyperlink{classPhElem_a467c1ae6065913d0ec9828c9d055539a}{P\+\_\+eval\+\_\+print\+\_\+\+Elast2\+D\+\_\+dyn} (F\+I\+LE $\ast$fout, const int \&prnflag, const double X\mbox{[}$\,$\mbox{]}, double lambda, double mu, const double \hyperlink{DG__EI__Header_8h_a491bc358fce276972681cc0be8844bd7}{a}\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classPhElem_ae0418a5de14872e80fe4f9ffd9dd4fdd}{make\+\_\+\+K\+\_\+\+Imiscivel2F} (const double, const double, const double, const double, const double \mbox{[}$\,$\mbox{]}, double($\ast$)(double), double($\ast$)(double), double($\ast$)(double))
+\item 
+double \hyperlink{classPhElem_afdbe06fb407dc4c474b886ed219de195}{Kcomp} (const int \&i, const int \&j)
+\item 
+double \hyperlink{classPhElem_a3064c3377eb3f81d63f43969a3c958ee}{K\+\_\+\+Imisc2F} (const int \&i, const int \&j)
+\item 
+void \hyperlink{classPhElem_a5f08c96b39a608ac8500897535998d52}{make\+\_\+\+Vector\+\_\+\+Eq\+\_\+\+S1} (const double, const double, const double, const double, const double \mbox{[}3\mbox{]}, double($\ast$)(double))
+\item 
+int \hyperlink{classPhElem_a6b7f26c842b4f6b54782c6ddaa4fd6d6}{map} (const int \&var, const int \&no\+\_\+local)
+\item 
+void \hyperlink{classPhElem_aa53cc9dad058e9dbebfb971bdabe80fc}{mapa\+\_\+inverso} (const int \&ivar, const double X\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classPhElem_acd85a3728b9566c086c1450a35e6231f}{P\+\_\+eval\+\_\+u} (const double X\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classPhElem_aa648874799b8fa49fdccbcbc9b8de504}{P\+\_\+eval\+\_\+u} (const double X\mbox{[}$\,$\mbox{]}, const int \&ia)
+\item 
+void \hyperlink{classPhElem_a69032d622789084c4416981e2fceb80c}{P\+\_\+eval\+\_\+u\+\_\+p1} (const double X\mbox{[}$\,$\mbox{]}, const int \&ia)
+\item 
+void \hyperlink{classPhElem_ac5436d432516c731328134ac91b9a70b}{P\+\_\+eval\+\_\+print} (const double X\mbox{[}$\,$\mbox{]}, const int \&\hyperlink{classPhElem_a85d9a8342adf9e155a533edf165a6fe3}{numf}, F\+I\+LE $\ast$fout, double($\ast$)(double, double, double))
+\item 
+void \hyperlink{classPhElem_a1ae41c2b94f8faca55505d25e899f724}{P\+\_\+print} (const int \&\hyperlink{classPhElem_a85d9a8342adf9e155a533edf165a6fe3}{numf}, F\+I\+LE $\ast$file)
+\item 
+void \hyperlink{classPhElem_a115839e26aca8569ede2966db01926f1}{P\+\_\+eval\+\_\+vert} (const double X\mbox{[}$\,$\mbox{]}, double f\+\_\+vert\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classPhElem_a638d823f66d1600cb948df872eb753c1}{P\+\_\+eval\+\_\+phys} (const int \&\hyperlink{classPhElem_a85d9a8342adf9e155a533edf165a6fe3}{numf}, double f0\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classPhElem_afac13525ce0e8907ca74a7213aa72504}{Increment\+\_\+field} (const double X\mbox{[}$\,$\mbox{]}, const int \&\hyperlink{classPhElem_a85d9a8342adf9e155a533edf165a6fe3}{numf}, const double dt)
+\item 
+void \hyperlink{classPhElem_abc4450898733d818edaa51a7f0d2bb58}{compute\+\_\+\+JV} (const int \&ia)
+\item 
+void \hyperlink{classPhElem_a233fb1bc0c15cae815fef5d1dc8d9265}{print\+\_\+matrices} (F\+I\+LE $\ast$fout)
+\item 
+void \hyperlink{classPhElem_a6e4284fcb95240394293c1a576deb738}{Processar\+\_\+dados} (int \&NL, std\+::vector$<$ \hyperlink{structARESTA}{A\+R\+E\+S\+TA} $>$ \&aresta, int \&NF, std\+::vector$<$ \hyperlink{structFACE}{F\+A\+CE} $>$ \&face\+\_\+vec)
+\item 
+void \hyperlink{classPhElem_a76ba4a82c7f21f9a83808315903692fe}{check\+\_\+connectivity} (F\+I\+LE $\ast$fout, const int \&ia)
+\item 
+void \hyperlink{classPhElem_ac6ea940519c924130a4cb44bbab2a31d}{assign\+\_\+gbnmap} (const int \&ia, const int \&i, const int \&val)
+\item 
+void \hyperlink{classPhElem_a98449dc77f691781f54fc8798bea03a3}{inicia\+\_\+gbnmap} (int \&count)
+\item 
+void \hyperlink{classPhElem_a3ed7c7027c6fadd45f29eb7de33ee7fb}{inicia\+\_\+gbnmap} (const int \&ivar, int \&count)
+\item 
+void \hyperlink{classPhElem_a9b5610a7a12eddbc4a9f07429500a6da}{inicia\+\_\+gbtrbmap} (int \&count)
+\item 
+void \hyperlink{classPhElem_afba886f63bf7b67bd0a4164eae4dde5b}{set\+\_\+gbnmap} (const int \&ia, const int gbnmap\+\_\+temp\mbox{[}$\,$\mbox{]}, const int sgn\+\_\+temp\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classPhElem_ae63196241e8f39617acb1984cb06910e}{set\+\_\+stgbtrbmap} (const int \&b, const int \&vmapM, const int \&vmapP)
+\item 
+int \hyperlink{classPhElem_a2addc4d79151aeac865e2255be3b417d}{show\+\_\+gbtrbmap} ()
+\item 
+int \hyperlink{classPhElem_a5f0e8811ea30343e51e4be9ff40d2b74}{show\+\_\+stgbtrbmapM} (const int \&\hyperlink{DG__EI__Header_8h_a491bc358fce276972681cc0be8844bd7}{a})
+\item 
+int \hyperlink{classPhElem_a3d9e8990f4442e3b17e1cce3c9af19e9}{show\+\_\+stgbtrbmapP} (const int \&\hyperlink{DG__EI__Header_8h_a491bc358fce276972681cc0be8844bd7}{a})
+\item 
+void \hyperlink{classPhElem_a298b653fae7c86dea6ad0eea09b7e621}{check\+\_\+gradiente} (F\+I\+LE $\ast$fout, const int \&ia)
+\item 
+\hyperlink{classStdel}{Stdel} $\ast$ \hyperlink{classPhElem_a227c31195c6832f8e36f8d507806bd54}{show\+\_\+ptr\+\_\+stdel} (const int \&n) const
+\item 
+void \hyperlink{classPhElem_a61311993fa273240a94044c599d52857}{Bound\+Cond} (const int \&face, int bflag\mbox{[}$\,$\mbox{]}, double bc\mbox{[}$\,$\mbox{]}, double($\ast$func)(double, double, double), const int \&nf, const int \&bndtype)
+\item 
+void \hyperlink{classPhElem_a857f4ffbef27f0ef054f59eceffbad27}{Neumann} (const int \&aresta, const int \&varn, const double rho1, const double mu1, const double rho2, const double mu2, const double gravidade\mbox{[}$\,$\mbox{]})
+\item 
+double \hyperlink{classPhElem_a27e7bc9ed0ea64d609d4d0b29baba468}{show\+\_\+u} (const int \&i)
+\item 
+double \hyperlink{classPhElem_a9d2b7b826289ccd180fdd4b45d0d7333}{show\+\_\+u} (const int \&, const int \&)
+\item 
+double \hyperlink{classPhElem_a0caf55d9fac7477102ee34373c67a024}{show\+\_\+b0} (const int \&i)
+\item 
+double \hyperlink{classPhElem_afb4171c67795f5614d9628d59f3bfaf7}{show\+\_\+b0} (const int \&, const int \&)
+\item 
+double \hyperlink{classPhElem_a0846ec2cbd31a24aea440c29a71d50ec}{show\+\_\+bs} (const int \&, const int \&)
+\item 
+double \hyperlink{classPhElem_a63b2f67b4f782432909cd7d32d188996}{show\+\_\+J} ()
+\item 
+void \hyperlink{classPhElem_ae538fb941f4cedc88e27dd28f2460bb5}{make\+\_\+\+Mass\+Matrices} ()
+\item 
+int \hyperlink{classPhElem_ace7e4ec0fa3ca3e829cd790375ab981e}{show\+\_\+\+Vert\+\_\+map} (int i)
+\item 
+int \hyperlink{classPhElem_ac6f5e03dd6e155037363dbd0ea2f401b}{show\+\_\+\+Aresta} (int i)
+\item 
+int \hyperlink{classPhElem_a916c6927d0964574d815a13dd80f1e30}{show\+\_\+\+Face} (int i)
+\item 
+int \hyperlink{classPhElem_a47dc705efd50a4484bf407bce4a5e010}{show\+\_\+sinal} (int i)
+\item 
+int \hyperlink{classPhElem_a13564919b6d9747f0e6b33f3e8aae31b}{show\+\_\+border\+\_\+num} (int i)
+\item 
+int \hyperlink{classPhElem_a7a476e9682accd03064f3e8bec39fb50}{show\+\_\+part\+\_\+num} ()
+\item 
+void \hyperlink{classPhElem_a24a705e62f179fa36c6886f8f0a3ef25}{set\+\_\+part\+\_\+num} (const int \&num=-\/1)
+\item 
+double \hyperlink{classPhElem_aa67e9fd1399ee905803999ef50581677}{Phi\+\_\+val} (const int \&var, const int \&ind, const int \&\hyperlink{DG__EI__Header_8h_a1910d262855b71da353ed0d07a6c7823}{pos})
+\item 
+void \hyperlink{classPhElem_aa5f168531640b2fb9ac82f85e5f8b11a}{projetar\+\_\+\+C0} (F\+I\+LE $\ast$file, double($\ast$func)(double, double, double), const int \&ivar)
+\item 
+void \hyperlink{classPhElem_a09b6787e5e42496ece86754bbb2ae59c}{transformacao\+\_\+direta} (double f\mbox{[}$\,$\mbox{]}, const int \&ivar)
+\item 
+void \hyperlink{classPhElem_a68e2ff863aa38d90933fc033e1fcec0e}{teste\+\_\+transformacao\+\_\+direta} (F\+I\+LE $\ast$fin, F\+I\+LE $\ast$fout, const int \&npoints, const double coord\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classPhElem_aafd112d676dc3e16309e8ec8980f1c97}{set\+\_\+border\+\_\+tipo} (\hyperlink{structEDGE}{E\+D\+GE} $\ast$border, const int \&aresta, const int \&t)
+\item 
+void \hyperlink{classPhElem_a05b05802884ecd42ed42e46108a0d5b1}{set\+\_\+border\+\_\+num} (const int \&aresta, const int \&num)
+\item 
+void \hyperlink{classPhElem_a6f8258d7b66de04cd4d88f2c8af41541}{Imprimir\+\_\+valores} (F\+I\+LE $\ast$fileout, const int \&npoints, const double coord\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classPhElem_a53eb1654e889d3fc893f50dcea12adcb}{printw\+G\+QJ} (F\+I\+LE $\ast$fileout)
+\item 
+void \hyperlink{classPhElem_a7dc16c86382b340e9d1c5983eb478cee}{Avancar\+\_\+u0} (const double X\mbox{[}$\,$\mbox{]}, const double relax=1.\+0)
+\item 
+void \hyperlink{classPhElem_aa3697427ea1b5024f52b98bcbcbb55f1}{Atualizar\+\_\+u0} (const double X\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classPhElem_ac395c07742ced41887c4c12019454618}{Copia\+\_\+u0\+\_\+em\+\_\+} (double X\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classPhElem_a3bc714a5f0ca21e0090e2d1747c0ec5a}{Copia\+\_\+u0\+\_\+em\+\_\+} (Teuchos\+::\+R\+CP$<$ Epetra\+\_\+\+Vector $>$ X)
+\item 
+void \hyperlink{classPhElem_a9ea744b94e057733c1d396d9f46ddcce}{Comparar\+\_\+u0} (const double X\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classPhElem_ab6765ea1fa41b3a2d565d86872d6e7e6}{Salvar\+\_\+u0} ()
+\item 
+void \hyperlink{classPhElem_a7094a0e8767868c583cc948e56214a9d}{Restaurar\+\_\+u0} ()
+\item 
+void \hyperlink{classPhElem_a11a736e86c5b40e5b0a4c84754f2b066}{escrever\+\_\+restart} (F\+I\+LE $\ast$fout)
+\item 
+void \hyperlink{classPhElem_a0209eb7e6db7b0b541b51c46269ee9b6}{ler\+\_\+restart} (F\+I\+LE $\ast$fin)
+\item 
+void \hyperlink{classPhElem_ad0a2992e6d206b6a351da8847a9dd69a}{ler\+\_\+restart\+\_\+buffer} (F\+I\+LE $\ast$fin, double $\ast$buff, int \&count)
+\item 
+void \hyperlink{classPhElem_abe273d496e748985021a8f67ef598c0d}{restart\+\_\+element} (double $\ast$buff, int \&count)
+\item 
+void \hyperlink{classPhElem_adc3411d8b3a88f04004b6d48e64e9334}{teste\+\_\+gradiente} ()
+\item 
+int \hyperlink{classPhElem_a35508e257e1675a912954f83cb4b6a3e}{get\+\_\+trace\+\_\+border\+\_\+map} (const int \&aresta)
+\item 
+void \hyperlink{classPhElem_ad8d5bac3d1866cfe20daec73fc405b05}{gbnmap\+\_\+vertices} (std\+::vector$<$ std\+::vector$<$ int $>$$>$ gbn)
+\item 
+void \hyperlink{classPhElem_a75f80b321d33ea208ae2d35af1b8c4df}{gbnmap\+\_\+vertices} (int $\ast$gbn, const int \&ivar)
+\item 
+void \hyperlink{classPhElem_ad355231f4e2807541c62212647c44b3e}{gbnmap\+\_\+faces} (const int face\+\_\+vec\mbox{[}$\,$\mbox{]}, const int \&ivar)
+\item 
+void \hyperlink{classPhElem_a19299ae55f9faef322a1d21d7e9b2a88}{gbnmap\+\_\+aresta} (const int \&aresta, const int \&\hyperlink{classPhElem_a4034b9b2a458d1277ca74e4e8a49627e}{sinal}, const int \&ivar, const int \&count, int \&inc)
+\item 
+void \hyperlink{classPhElem_af545eccd164b2fc7ca104afff13a50c6}{gbnmap\+\_\+arestas} (const int aresta\+\_\+vec\mbox{[}$\,$\mbox{]}, const int \&ivar)
+\item 
+void \hyperlink{classPhElem_ae6f35113c182e2678646552e6c4a752c}{gbnmap\+\_\+interior} (const int \&ivar, int \&count)
+\item 
+void \hyperlink{classPhElem_a4da3f8bc24014789f4685c9a611a11dc}{anexa\+\_\+gbnmap} (const int \&ivar, vector$<$ int $>$ \&)
+\item 
+void \hyperlink{classPhElem_a993d5f1b66f6d99ffb95adc9ff882e80}{vetor\+\_\+superficie} (const int \&num\+\_\+local, double \&area, double normal\mbox{[}3\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStdel}{Stdel} $\ast$ \hyperlink{classPhElem_a7b4509b90bcf92be76cd8fdb76d7385b}{ptr\+\_\+stdel} \mbox{[}Num\+Variaveis\mbox{]}
+\item 
+int \hyperlink{classPhElem_a1ed1b45136a718afef64c846fb905546}{type}
+\item 
+const \hyperlink{structVertice}{Vertice} $\ast$ \hyperlink{classPhElem_a92acc9f8f36991ce851df5e462425d3c}{ptvert}
+\item 
+int \hyperlink{classPhElem_a2ec71d768628a94d7fbe74be08a08ea9}{Num\+Local\+Vars}
+\item 
+int \hyperlink{classPhElem_af3ea3f4193f7d65855c3fabead6f2545}{ndim}
+\begin{DoxyCompactList}\small\item\em Spatial dimension. \end{DoxyCompactList}\item 
+int \hyperlink{classPhElem_a67ed36925b04bf0f2d177c8d31737526}{numv}
+\begin{DoxyCompactList}\small\item\em Number of vertices. \end{DoxyCompactList}\item 
+int \hyperlink{classPhElem_a1c0c7833feba84d4ed83d172244ca3e1}{nume}
+\begin{DoxyCompactList}\small\item\em Number of edges. \end{DoxyCompactList}\item 
+int \hyperlink{classPhElem_a85d9a8342adf9e155a533edf165a6fe3}{numf}
+\begin{DoxyCompactList}\small\item\em Number of faces. \end{DoxyCompactList}\item 
+int \hyperlink{classPhElem_ad24d6fbe02539875405dd4a6cf094284}{numborders}
+\begin{DoxyCompactList}\small\item\em Number of borders in the element. \end{DoxyCompactList}\item 
+int \hyperlink{classPhElem_a8e65fa4998d28b9b8db9b6fcf8999d20}{numn} \mbox{[}Num\+Variaveis\mbox{]}
+\item 
+int \hyperlink{classPhElem_ad95c9f8ee7a993ccc7f9cdd08dddf5f6}{numb} \mbox{[}Num\+Variaveis\mbox{]}
+\item 
+int \hyperlink{classPhElem_a07f19f862b13cc9c5f80271b03a5a023}{Vert\+\_\+map} \mbox{[}8\mbox{]}
+\item 
+int \hyperlink{classPhElem_a27a4f856d62b68758e4c03c09b4c37f8}{aresta\+\_\+map} \mbox{[}12\mbox{]}
+\item 
+int \hyperlink{classPhElem_a300b484c07390b9016d9ed97980d76b3}{face\+\_\+map} \mbox{[}6\mbox{]}
+\item 
+int \hyperlink{classPhElem_ad153ce0aef191aac0f28f2addd213c71}{border\+\_\+num} \mbox{[}12\mbox{]}
+\item 
+int \hyperlink{classPhElem_a4034b9b2a458d1277ca74e4e8a49627e}{sinal} \mbox{[}12\mbox{]}
+\begin{DoxyCompactList}\small\item\em sinal refers to the borders \end{DoxyCompactList}\item 
+int \hyperlink{classPhElem_a141616ccadb4a17328626befc4330932}{part\+\_\+num}
+\begin{DoxyCompactList}\small\item\em numero da particao a qual pertence \end{DoxyCompactList}\item 
+int \hyperlink{classPhElem_ab27e9040a72ec923a90cffb25f5b0c15}{gbnmap} \mbox{[}Num\+Variaveis\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_a2f91e7a0b4bf68a62a0f3d38904dea2c}{M\+A\+X\+NN}\mbox{]}
+\begin{DoxyCompactList}\small\item\em mapping from local to global nodes (or modes) \end{DoxyCompactList}\item 
+int \hyperlink{classPhElem_a5bb9ccd4ccebf12ff0937d807c443caf}{sgn} \mbox{[}Num\+Variaveis\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_a2f91e7a0b4bf68a62a0f3d38904dea2c}{M\+A\+X\+NN}\mbox{]}
+\begin{DoxyCompactList}\small\item\em sign of the local mode (or mode) \end{DoxyCompactList}\item 
+double \hyperlink{classPhElem_a27acf6bc6ac9eaf94a7cce52522b3b92}{J}
+\begin{DoxyCompactList}\small\item\em Jacobian from the physical to the standard element. \end{DoxyCompactList}\item 
+double $\ast$ \hyperlink{classPhElem_a569278e8b30ca90d0e6f920b5bba7dd5}{JV}
+\begin{DoxyCompactList}\small\item\em Ponteiro para matriz do Jacobiano nos pontos gaussianos;. \end{DoxyCompactList}\item 
+double $\ast$ \hyperlink{classPhElem_aeaebffae27dd713bbc06ad07b7b727a3}{b0} \mbox{[}Num\+Variaveis\mbox{]}
+\begin{DoxyCompactList}\small\item\em \mbox{[}M\+A\+X\+M\+O\+D\+E\+S$\ast$\+M\+A\+X\+N\+F\+I\+E\+L\+DS\mbox{]}; vector of body forces \end{DoxyCompactList}\item 
+double $\ast$ \hyperlink{classPhElem_a42b747116ec9223cdebbc424e27f4089}{bs} \mbox{[}Num\+Variaveis\mbox{]}
+\begin{DoxyCompactList}\small\item\em vector of force boundary conditions \end{DoxyCompactList}\item 
+double $\ast$ \hyperlink{classPhElem_a560dc47ac8a684d84b05851ce52e044b}{u0} \mbox{[}Num\+Variaveis\mbox{]}
+\begin{DoxyCompactList}\small\item\em vector with the coefficients of each mode \end{DoxyCompactList}\item 
+double $\ast$ \hyperlink{classPhElem_a98781f3744597bad01eff75b31734d4b}{usave} \mbox{[}Num\+Variaveis\mbox{]}
+\item 
+int \hyperlink{classPhElem_a8188f64662092eb065a85d49f3ae6649}{gbtrbmap}
+\begin{DoxyCompactList}\small\item\em Beginning index on the global array where the local border Gauss quadrature points (traces) are mapped; this map facilitates the use of mpi for paralell calculations over element borders. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{classPhElem_aebcf76eedfef93aef801fa3cab9c2708}{stgbtrbmapM}
+\begin{DoxyCompactList}\small\item\em Array containing the start point in the global trace array of the internal trace of the border. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{classPhElem_a6b38afded290e7a4cfb4a215a7ebec4e}{stgbtrbmapP}
+\begin{DoxyCompactList}\small\item\em Array containing the start point in the global trace array of the external trace of the border. \end{DoxyCompactList}\item 
+int \hyperlink{classPhElem_a65f545dc1bf0d90240419934eb711a9d}{vetores\+\_\+iniciados}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double $\ast$ \hyperlink{classDG__Elem_ac036921322e2a7d3648723ae77592af5}{sna}
+\item 
+double $\ast$ \hyperlink{classDG__Elem_afc53954789d7ec74b2cf2eb2be590d16}{pwa}
+\begin{DoxyCompactList}\small\item\em ponteiros para os valores nos pontos de Gauss da saturacao e pressao atuais \end{DoxyCompactList}\item 
+double \hyperlink{classDG__Elem_a56be853c8e67f9ee71f6b07aa99b3a58}{rho}
+\begin{DoxyCompactList}\small\item\em densidade de massa ou porosidade \end{DoxyCompactList}\item 
+double \hyperlink{classDG__Elem_a0bb64698c7f238bf48da2d584965fcd0}{porosidade}
+\item 
+double \hyperlink{classDG__Elem_a4b1a31424c3c115bc5bb964c3b72be66}{perm} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em permeabilidades nas 3 direcoes \end{DoxyCompactList}\item 
+double \hyperlink{classDG__Elem_a769560386db7e7c3b64d440ed84156be}{qn}
+\item 
+double \hyperlink{classDG__Elem_a89d2130d5e677207cb6c962dc90f79b3}{qw}
+\item 
+double \hyperlink{classDG__Elem_aeb8874934ea534afbee1017456e54051}{Volume}
+\begin{DoxyCompactList}\small\item\em Volume do elemento ( = area do elemento para elementos bidimensionais e comprimento para elem. 1D. \end{DoxyCompactList}\item 
+double $\ast$ \hyperlink{classDG__Elem_a21966ef258f170053e616e17082516c8}{Jb}
+\begin{DoxyCompactList}\small\item\em Jacobiano nos pontos de Gauss sobre as bordas; usado na integração sobre bordas. \end{DoxyCompactList}\item 
+double $\ast$$\ast$ \hyperlink{classDG__Elem_a53a6e2f1c4d46714b67f131f44902fc3}{Mass\+\_\+sn}
+\item 
+double $\ast$$\ast$ \hyperlink{classDG__Elem_a57d06772c710267516e58be078a6635b}{Trsn}
+\item 
+double $\ast$$\ast$ \hyperlink{classDG__Elem_a77316e95196e96ce7b612334075c8307}{Trpw}
+\item 
+double $\ast$$\ast$$\ast$ \hyperlink{classDG__Elem_a32939229d5c3e35ef503c432975949cc}{Laplaciano\+Phi}
+\item 
+double $\ast$$\ast$$\ast$ \hyperlink{classDG__Elem_aa71a1b860606c8560d0ef2a981580340}{Tr\+Kgrad\+\_\+sn}
+\item 
+double $\ast$$\ast$$\ast$ \hyperlink{classDG__Elem_a9c510976b9964cc09f695b5c1becbc2e}{Tr\+Kgrad\+\_\+pw}
+\item 
+double $\ast$$\ast$$\ast$ \hyperlink{classDG__Elem_a57dac9aed0b175230089be51335e2dfa}{Tr\+Kgrad\+\_\+pc}
+\item 
+double $\ast$$\ast$$\ast$$\ast$ \hyperlink{classDG__Elem_ae1432d30cbd7b063fc859a65362ee8bf}{Tr\+Phi}
+\item 
+double $\ast$$\ast$$\ast$$\ast$ \hyperlink{classDG__Elem_a89a6e65d3cca9d70aff0af308e1c4828}{Grad\+Phi}
+\item 
+double $\ast$$\ast$$\ast$$\ast$ \hyperlink{classDG__Elem_a2703c18a4eb102761f135b01958110c6}{Tr\+Kgrad\+Phi\+\_\+n}
+\item 
+double $\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{classDG__Elem_acb3ed0d11e27ceae8f0f7c33496aa7e8}{Tr\+Grad\+Phi}
+\item 
+double $\ast$ \hyperlink{classDG__Elem_a79caff690ab51cd79dabbb5fd110d111}{Phi\+Array}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 19 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDG__Elem_a9f40328ca740050c165ccffe11007d35}\label{classDG__Elem_a9f40328ca740050c165ccffe11007d35}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{D\+G\+\_\+\+Elem()}{DG\_Elem()}}
+{\footnotesize\ttfamily D\+G\+\_\+\+Elem\+::\+D\+G\+\_\+\+Elem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 23 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+References rho, and Ph\+Elem$<$ 2 $>$\+::vetores\+\_\+iniciados.
+
+\mbox{\Hypertarget{classDG__Elem_af37ff3dd87674abfdd621f8cdba43975}\label{classDG__Elem_af37ff3dd87674abfdd621f8cdba43975}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!````~D\+G\+\_\+\+Elem@{$\sim$\+D\+G\+\_\+\+Elem}}
+\index{````~D\+G\+\_\+\+Elem@{$\sim$\+D\+G\+\_\+\+Elem}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{$\sim$\+D\+G\+\_\+\+Elem()}{~DG\_Elem()}}
+{\footnotesize\ttfamily D\+G\+\_\+\+Elem\+::$\sim$\+D\+G\+\_\+\+Elem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 24 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+References inicia\+\_\+vetores().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_af37ff3dd87674abfdd621f8cdba43975_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPhElem_a4da3f8bc24014789f4685c9a611a11dc}\label{classPhElem_a4da3f8bc24014789f4685c9a611a11dc}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!anexa\+\_\+gbnmap@{anexa\+\_\+gbnmap}}
+\index{anexa\+\_\+gbnmap@{anexa\+\_\+gbnmap}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{anexa\+\_\+gbnmap()}{anexa\_gbnmap()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::anexa\+\_\+gbnmap (\begin{DoxyParamCaption}\item[{const int \&}]{ivar,  }\item[{vector$<$ int $>$ \&}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 308 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap, and Ph\+Elem$<$ Num\+Variaveis $>$\+::numn.
+
+\mbox{\Hypertarget{classPhElem_ac6ea940519c924130a4cb44bbab2a31d}\label{classPhElem_ac6ea940519c924130a4cb44bbab2a31d}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!assign\+\_\+gbnmap@{assign\+\_\+gbnmap}}
+\index{assign\+\_\+gbnmap@{assign\+\_\+gbnmap}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{assign\+\_\+gbnmap()}{assign\_gbnmap()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::assign\+\_\+gbnmap (\begin{DoxyParamCaption}\item[{const int \&}]{ia,  }\item[{const int \&}]{i,  }\item[{const int \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 830 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap.
+
+\mbox{\Hypertarget{classPhElem_aa3697427ea1b5024f52b98bcbcbb55f1}\label{classPhElem_aa3697427ea1b5024f52b98bcbcbb55f1}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Atualizar\+\_\+u0@{Atualizar\+\_\+u0}}
+\index{Atualizar\+\_\+u0@{Atualizar\+\_\+u0}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Atualizar\+\_\+u0()}{Atualizar\_u0()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::Atualizar\+\_\+u0 (\begin{DoxyParamCaption}\item[{const double}]{X\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 377 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap, Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, and Ph\+Elem$<$ Num\+Variaveis $>$\+::u0.
+
+\mbox{\Hypertarget{classDG__Elem_a70dbc366e1cdfb0b96fa9d640dcff689}\label{classDG__Elem_a70dbc366e1cdfb0b96fa9d640dcff689}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Atualizar\+\_\+valores@{Atualizar\+\_\+valores}}
+\index{Atualizar\+\_\+valores@{Atualizar\+\_\+valores}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Atualizar\+\_\+valores()}{Atualizar\_valores()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::\+Atualizar\+\_\+valores (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 15 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References Stdel\+::eval\+G\+Q(), pres, Stdel\+::print\+G\+Qtofile(), Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, Ph\+Elem$<$ 2 $>$\+::ptvert, pwa, sat, sna, Ph\+Elem$<$ 2 $>$\+::u0, and Ph\+Elem$<$ 2 $>$\+::\+Vert\+\_\+map.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions(), and show\+\_\+\+Volume().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{classDG__Elem_a70dbc366e1cdfb0b96fa9d640dcff689_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_a70dbc366e1cdfb0b96fa9d640dcff689_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhElem_a7dc16c86382b340e9d1c5983eb478cee}\label{classPhElem_a7dc16c86382b340e9d1c5983eb478cee}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Avancar\+\_\+u0@{Avancar\+\_\+u0}}
+\index{Avancar\+\_\+u0@{Avancar\+\_\+u0}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Avancar\+\_\+u0()}{Avancar\_u0()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::Avancar\+\_\+u0 (\begin{DoxyParamCaption}\item[{const double}]{X\mbox{[}$\,$\mbox{]},  }\item[{const double}]{relax = {\ttfamily 1.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 342 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap, Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, and Ph\+Elem$<$ Num\+Variaveis $>$\+::u0.
+
+\mbox{\Hypertarget{classPhElem_a61311993fa273240a94044c599d52857}\label{classPhElem_a61311993fa273240a94044c599d52857}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Bound\+Cond@{Bound\+Cond}}
+\index{Bound\+Cond@{Bound\+Cond}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Bound\+Cond()}{BoundCond()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::Bound\+Cond (\begin{DoxyParamCaption}\item[{const int \&}]{face,  }\item[{int}]{bflag\mbox{[}$\,$\mbox{]},  }\item[{double}]{bc\mbox{[}$\,$\mbox{]},  }\item[{double($\ast$)(double, double, double)}]{func,  }\item[{const int \&}]{nf,  }\item[{const int \&}]{bndtype }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classDG__Elem_a64d352e6b9eeeeca73368a9ef92a94c2}\label{classDG__Elem_a64d352e6b9eeeeca73368a9ef92a94c2}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!calcula\+\_\+tracos@{calcula\+\_\+tracos}}
+\index{calcula\+\_\+tracos@{calcula\+\_\+tracos}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{calcula\+\_\+tracos()}{calcula\_tracos()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::calcula\+\_\+tracos (\begin{DoxyParamCaption}\item[{\hyperlink{classFluids}{Fluids}}]{fls }\end{DoxyParamCaption})}
+
+
+
+Definition at line 222 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References aux, aux1, Fluids\+::dpc(), Ph\+Elem$<$ 2 $>$\+::ndim, Ph\+Elem$<$ 2 $>$\+::numborders, Ph\+Elem$<$ 2 $>$\+::numn, perm, pos, pres, Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, Stdel\+::qborder\+\_\+val(), sat, Tr\+Grad\+Phi, Tr\+Kgrad\+\_\+pc, Tr\+Kgrad\+\_\+pw, Tr\+Kgrad\+\_\+sn, Tr\+Phi, Trpw, Trsn, and Ph\+Elem$<$ 2 $>$\+::u0.
+
+
+
+Referenced by show\+\_\+\+Volume().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{classDG__Elem_a64d352e6b9eeeeca73368a9ef92a94c2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{classDG__Elem_a64d352e6b9eeeeca73368a9ef92a94c2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhElem_a76ba4a82c7f21f9a83808315903692fe}\label{classPhElem_a76ba4a82c7f21f9a83808315903692fe}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!check\+\_\+connectivity@{check\+\_\+connectivity}}
+\index{check\+\_\+connectivity@{check\+\_\+connectivity}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{check\+\_\+connectivity()}{check\_connectivity()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::check\+\_\+connectivity (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{const int \&}]{ia }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 800 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap, Ph\+Elem$<$ Num\+Variaveis $>$\+::numb, Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel, and Stdel\+::show\+\_\+ind().
+
+\mbox{\Hypertarget{classPhElem_a298b653fae7c86dea6ad0eea09b7e621}\label{classPhElem_a298b653fae7c86dea6ad0eea09b7e621}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!check\+\_\+gradiente@{check\+\_\+gradiente}}
+\index{check\+\_\+gradiente@{check\+\_\+gradiente}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{check\+\_\+gradiente()}{check\_gradiente()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::check\+\_\+gradiente (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{const int \&}]{ia }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 811 of file Ph\+Elem.\+hpp.
+
+
+
+References Stdel\+::eval\+G\+Q(), Stdel\+::\+Gradiente(), Ph\+Elem$<$ Num\+Variaveis $>$\+::ndim, Stdel\+::\+N\+G\+Q\+P\+\_\+val(), Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel, Ph\+Elem$<$ Num\+Variaveis $>$\+::ptvert, sn, Ph\+Elem$<$ Num\+Variaveis $>$\+::u0, and Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Vert\+\_\+map.
+
+\mbox{\Hypertarget{classPhElem_a9ea744b94e057733c1d396d9f46ddcce}\label{classPhElem_a9ea744b94e057733c1d396d9f46ddcce}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Comparar\+\_\+u0@{Comparar\+\_\+u0}}
+\index{Comparar\+\_\+u0@{Comparar\+\_\+u0}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Comparar\+\_\+u0()}{Comparar\_u0()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::Comparar\+\_\+u0 (\begin{DoxyParamCaption}\item[{const double}]{X\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 358 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap, Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, and Ph\+Elem$<$ Num\+Variaveis $>$\+::u0.
+
+\mbox{\Hypertarget{classPhElem_abc4450898733d818edaa51a7f0d2bb58}\label{classPhElem_abc4450898733d818edaa51a7f0d2bb58}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!compute\+\_\+\+JV@{compute\+\_\+\+JV}}
+\index{compute\+\_\+\+JV@{compute\+\_\+\+JV}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{compute\+\_\+\+J\+V()}{compute\_JV()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::compute\+\_\+\+JV (\begin{DoxyParamCaption}\item[{const int \&}]{ia }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 1376 of file Ph\+Elem.\+hpp.
+
+
+
+References Stdel\+::\+Jacobian(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+JV, Stdel\+::\+N\+G\+Q\+P\+\_\+val(), Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel, Ph\+Elem$<$ Num\+Variaveis $>$\+::ptvert, and Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Vert\+\_\+map.
+
+
+
+Referenced by inicia\+\_\+vetores().
+
+\mbox{\Hypertarget{classPhElem_ac395c07742ced41887c4c12019454618}\label{classPhElem_ac395c07742ced41887c4c12019454618}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Copia\+\_\+u0\+\_\+em\+\_\+@{Copia\+\_\+u0\+\_\+em\+\_\+}}
+\index{Copia\+\_\+u0\+\_\+em\+\_\+@{Copia\+\_\+u0\+\_\+em\+\_\+}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Copia\+\_\+u0\+\_\+em\+\_\+()}{Copia\_u0\_em\_()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::Copia\+\_\+u0\+\_\+em\+\_\+ (\begin{DoxyParamCaption}\item[{double}]{X\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 293 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap, Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, and Ph\+Elem$<$ Num\+Variaveis $>$\+::u0.
+
+\mbox{\Hypertarget{classPhElem_a3bc714a5f0ca21e0090e2d1747c0ec5a}\label{classPhElem_a3bc714a5f0ca21e0090e2d1747c0ec5a}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Copia\+\_\+u0\+\_\+em\+\_\+@{Copia\+\_\+u0\+\_\+em\+\_\+}}
+\index{Copia\+\_\+u0\+\_\+em\+\_\+@{Copia\+\_\+u0\+\_\+em\+\_\+}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Copia\+\_\+u0\+\_\+em\+\_\+()}{Copia\_u0\_em\_()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::Copia\+\_\+u0\+\_\+em\+\_\+ (\begin{DoxyParamCaption}\item[{Teuchos\+::\+R\+CP$<$ Epetra\+\_\+\+Vector $>$}]{X }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 300 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap, Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, and Ph\+Elem$<$ Num\+Variaveis $>$\+::u0.
+
+\mbox{\Hypertarget{classDG__Elem_ab5d89b8f7625699239440bfd0e8ec6e6}\label{classDG__Elem_ab5d89b8f7625699239440bfd0e8ec6e6}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!echo\+\_\+traco@{echo\+\_\+traco}}
+\index{echo\+\_\+traco@{echo\+\_\+traco}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{echo\+\_\+traco()}{echo\_traco()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::echo\+\_\+traco (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{f\+\_\+eco = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 309 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References Ph\+Elem$<$ 2 $>$\+::\+JV, Ph\+Elem$<$ 2 $>$\+::ndim, Stdel\+::\+N\+G\+Q\+P\+\_\+val(), Ph\+Elem$<$ 2 $>$\+::numborders, Ph\+Elem$<$ 2 $>$\+::\+Num\+Local\+Vars, Ph\+Elem$<$ 2 $>$\+::numn, pos, Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, Stdel\+::qborder\+\_\+val(), qmax, Ph\+Elem$<$ 2 $>$\+::sinal, Tr\+Grad\+Phi, Tr\+Kgrad\+Phi\+\_\+n, and Tr\+Phi.
+
+
+
+Referenced by show\+\_\+\+Volume().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{classDG__Elem_ab5d89b8f7625699239440bfd0e8ec6e6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{classDG__Elem_ab5d89b8f7625699239440bfd0e8ec6e6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhElem_a11a736e86c5b40e5b0a4c84754f2b066}\label{classPhElem_a11a736e86c5b40e5b0a4c84754f2b066}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!escrever\+\_\+restart@{escrever\+\_\+restart}}
+\index{escrever\+\_\+restart@{escrever\+\_\+restart}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{escrever\+\_\+restart()}{escrever\_restart()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::escrever\+\_\+restart (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 242 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, and Ph\+Elem$<$ Num\+Variaveis $>$\+::u0.
+
+\mbox{\Hypertarget{classDG__Elem_af91d2d61c97fae30b8dfc6db67433094}\label{classDG__Elem_af91d2d61c97fae30b8dfc6db67433094}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!finaliza\+\_\+vetores@{finaliza\+\_\+vetores}}
+\index{finaliza\+\_\+vetores@{finaliza\+\_\+vetores}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{finaliza\+\_\+vetores()}{finaliza\_vetores()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::finaliza\+\_\+vetores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1650 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References Grad\+Phi, Jb, Ph\+Elem$<$ 2 $>$\+::\+JV, Laplaciano\+Phi, Mass\+\_\+sn, Ph\+Elem$<$ 2 $>$\+::ndim, Ph\+Elem$<$ 2 $>$\+::numborders, Ph\+Elem$<$ 2 $>$\+::numn, Stdel\+::\+P\+\_\+val(), Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, pwa, sna, Ph\+Elem$<$ 2 $>$\+::stgbtrbmapM, Ph\+Elem$<$ 2 $>$\+::stgbtrbmapP, Tr\+Grad\+Phi, Tr\+Kgrad\+\_\+pc, Tr\+Kgrad\+\_\+pw, Tr\+Kgrad\+\_\+sn, Tr\+Kgrad\+Phi\+\_\+n, Tr\+Phi, Trpw, Trsn, Ph\+Elem$<$ 2 $>$\+::u0, Ph\+Elem$<$ 2 $>$\+::usave, and Ph\+Elem$<$ 2 $>$\+::vetores\+\_\+iniciados.
+
+
+
+Referenced by show\+\_\+\+Volume(), and D\+G\+\_\+\+Prob\+::$\sim$\+D\+G\+\_\+\+Prob().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{classDG__Elem_af91d2d61c97fae30b8dfc6db67433094_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{classDG__Elem_af91d2d61c97fae30b8dfc6db67433094_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhElem_a19299ae55f9faef322a1d21d7e9b2a88}\label{classPhElem_a19299ae55f9faef322a1d21d7e9b2a88}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!gbnmap\+\_\+aresta@{gbnmap\+\_\+aresta}}
+\index{gbnmap\+\_\+aresta@{gbnmap\+\_\+aresta}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{gbnmap\+\_\+aresta()}{gbnmap\_aresta()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::gbnmap\+\_\+aresta (\begin{DoxyParamCaption}\item[{const int \&}]{aresta,  }\item[{const int \&}]{sinal,  }\item[{const int \&}]{ivar,  }\item[{const int \&}]{count,  }\item[{int \&}]{inc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 1719 of file Ph\+Elem.\+hpp.
+
+
+
+References aux, Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap, Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel, Ph\+Elem$<$ Num\+Variaveis $>$\+::sgn, Stdel\+::show\+\_\+emapi(), Stdel\+::show\+\_\+emapv(), and Ph\+Elem$<$ Num\+Variaveis $>$\+::sinal.
+
+\mbox{\Hypertarget{classPhElem_af545eccd164b2fc7ca104afff13a50c6}\label{classPhElem_af545eccd164b2fc7ca104afff13a50c6}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!gbnmap\+\_\+arestas@{gbnmap\+\_\+arestas}}
+\index{gbnmap\+\_\+arestas@{gbnmap\+\_\+arestas}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{gbnmap\+\_\+arestas()}{gbnmap\_arestas()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::gbnmap\+\_\+arestas (\begin{DoxyParamCaption}\item[{const int}]{aresta\+\_\+vec\mbox{[}$\,$\mbox{]},  }\item[{const int \&}]{ivar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 1832 of file Ph\+Elem.\+hpp.
+
+
+
+References a, Stdel\+::aresta\+\_\+lvert(), Ph\+Elem$<$ Num\+Variaveis $>$\+::aresta\+\_\+map, aux, Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap, Ph\+Elem$<$ Num\+Variaveis $>$\+::nume, Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel, Ph\+Elem$<$ Num\+Variaveis $>$\+::sgn, Stdel\+::show\+\_\+emapi(), Stdel\+::show\+\_\+emapv(), Ph\+Elem$<$ Num\+Variaveis $>$\+::sinal, and Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Vert\+\_\+map.
+
+\mbox{\Hypertarget{classPhElem_ad355231f4e2807541c62212647c44b3e}\label{classPhElem_ad355231f4e2807541c62212647c44b3e}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!gbnmap\+\_\+faces@{gbnmap\+\_\+faces}}
+\index{gbnmap\+\_\+faces@{gbnmap\+\_\+faces}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{gbnmap\+\_\+faces()}{gbnmap\_faces()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::gbnmap\+\_\+faces (\begin{DoxyParamCaption}\item[{const int}]{face\+\_\+vec\mbox{[}$\,$\mbox{]},  }\item[{const int \&}]{ivar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 1754 of file Ph\+Elem.\+hpp.
+
+
+
+References aux1, Stdel\+::face\+\_\+lvert(), Ph\+Elem$<$ Num\+Variaveis $>$\+::face\+\_\+map, Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap, Ph\+Elem$<$ Num\+Variaveis $>$\+::numf, Stdel\+::\+P\+\_\+val(), Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel, quad\+\_\+ordem(), Ph\+Elem$<$ Num\+Variaveis $>$\+::sgn, Stdel\+::show\+\_\+fd0(), Stdel\+::show\+\_\+fd1(), Stdel\+::show\+\_\+fv2(), Stdel\+::show\+\_\+ind\+\_\+mode(), Stdel\+::show\+\_\+nvf(), Ph\+Elem$<$ Num\+Variaveis $>$\+::sinal, and Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Vert\+\_\+map.
+
+\mbox{\Hypertarget{classPhElem_ae6f35113c182e2678646552e6c4a752c}\label{classPhElem_ae6f35113c182e2678646552e6c4a752c}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!gbnmap\+\_\+interior@{gbnmap\+\_\+interior}}
+\index{gbnmap\+\_\+interior@{gbnmap\+\_\+interior}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{gbnmap\+\_\+interior()}{gbnmap\_interior()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::gbnmap\+\_\+interior (\begin{DoxyParamCaption}\item[{const int \&}]{ivar,  }\item[{int \&}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 1742 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap, Ph\+Elem$<$ Num\+Variaveis $>$\+::numb, Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, and Ph\+Elem$<$ Num\+Variaveis $>$\+::sgn.
+
+\mbox{\Hypertarget{classPhElem_ad8d5bac3d1866cfe20daec73fc405b05}\label{classPhElem_ad8d5bac3d1866cfe20daec73fc405b05}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!gbnmap\+\_\+vertices@{gbnmap\+\_\+vertices}}
+\index{gbnmap\+\_\+vertices@{gbnmap\+\_\+vertices}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{gbnmap\+\_\+vertices()}{gbnmap\_vertices()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::gbnmap\+\_\+vertices (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$}]{gbn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 1696 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap, Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap\+\_\+vertices(), Ph\+Elem$<$ Num\+Variaveis $>$\+::numv, Ph\+Elem$<$ Num\+Variaveis $>$\+::sgn, and Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Vert\+\_\+map.
+
+\mbox{\Hypertarget{classPhElem_a75f80b321d33ea208ae2d35af1b8c4df}\label{classPhElem_a75f80b321d33ea208ae2d35af1b8c4df}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!gbnmap\+\_\+vertices@{gbnmap\+\_\+vertices}}
+\index{gbnmap\+\_\+vertices@{gbnmap\+\_\+vertices}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{gbnmap\+\_\+vertices()}{gbnmap\_vertices()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::gbnmap\+\_\+vertices (\begin{DoxyParamCaption}\item[{int $\ast$}]{gbn,  }\item[{const int \&}]{ivar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classPhElem_a35508e257e1675a912954f83cb4b6a3e}\label{classPhElem_a35508e257e1675a912954f83cb4b6a3e}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!get\+\_\+trace\+\_\+border\+\_\+map@{get\+\_\+trace\+\_\+border\+\_\+map}}
+\index{get\+\_\+trace\+\_\+border\+\_\+map@{get\+\_\+trace\+\_\+border\+\_\+map}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{get\+\_\+trace\+\_\+border\+\_\+map()}{get\_trace\_border\_map()}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::get\+\_\+trace\+\_\+border\+\_\+map (\begin{DoxyParamCaption}\item[{const int \&}]{aresta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 520 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::gbtrbmap, Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel, Stdel\+::qborder\+\_\+val(), and qmax.
+
+\mbox{\Hypertarget{classPhElem_a6f8258d7b66de04cd4d88f2c8af41541}\label{classPhElem_a6f8258d7b66de04cd4d88f2c8af41541}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Imprimir\+\_\+valores@{Imprimir\+\_\+valores}}
+\index{Imprimir\+\_\+valores@{Imprimir\+\_\+valores}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Imprimir\+\_\+valores()}{Imprimir\_valores()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::Imprimir\+\_\+valores (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fileout,  }\item[{const int \&}]{npoints,  }\item[{const double}]{coord\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classPhElem_afac13525ce0e8907ca74a7213aa72504}\label{classPhElem_afac13525ce0e8907ca74a7213aa72504}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Increment\+\_\+field@{Increment\+\_\+field}}
+\index{Increment\+\_\+field@{Increment\+\_\+field}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Increment\+\_\+field()}{Increment\_field()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::Increment\+\_\+field (\begin{DoxyParamCaption}\item[{const double}]{X\mbox{[}$\,$\mbox{]},  }\item[{const int \&}]{numf,  }\item[{const double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classDG__Elem_af61130ab38851fa2ade53f9e3f2418bc}\label{classDG__Elem_af61130ab38851fa2ade53f9e3f2418bc}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!inicia\+\_\+funcoes\+\_\+na\+\_\+borda@{inicia\+\_\+funcoes\+\_\+na\+\_\+borda}}
+\index{inicia\+\_\+funcoes\+\_\+na\+\_\+borda@{inicia\+\_\+funcoes\+\_\+na\+\_\+borda}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{inicia\+\_\+funcoes\+\_\+na\+\_\+borda()}{inicia\_funcoes\_na\_borda()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::inicia\+\_\+funcoes\+\_\+na\+\_\+borda (\begin{DoxyParamCaption}\item[{\hyperlink{structEDGE}{E\+D\+GE} $\ast$}]{border }\end{DoxyParamCaption})}
+
+
+
+Definition at line 44 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References Ph\+Elem$<$ 2 $>$\+::border\+\_\+num, Stdel\+::elem\+\_\+traces(), Stdel\+::eval\+\_\+\+Phi(), Stdel\+::\+Gradiente(), Grad\+Phi, Jb, Laplaciano\+Phi, n\+\_\+e, Ph\+Elem$<$ 2 $>$\+::ndim, Stdel\+::\+N\+G\+Q\+P\+\_\+val(), E\+D\+G\+E\+::normal, Ph\+Elem$<$ 2 $>$\+::numborders, Ph\+Elem$<$ 2 $>$\+::\+Num\+Local\+Vars, Ph\+Elem$<$ 2 $>$\+::numn, perm, pos, Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, Ph\+Elem$<$ 2 $>$\+::ptvert, Stdel\+::qborder\+\_\+val(), qmax, Ph\+Elem$<$ 2 $>$\+::sinal, Tr\+Grad\+Phi, Tr\+Kgrad\+Phi\+\_\+n, Tr\+Phi, and Ph\+Elem$<$ 2 $>$\+::\+Vert\+\_\+map.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions(), and show\+\_\+\+Volume().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{classDG__Elem_af61130ab38851fa2ade53f9e3f2418bc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_af61130ab38851fa2ade53f9e3f2418bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhElem_a98449dc77f691781f54fc8798bea03a3}\label{classPhElem_a98449dc77f691781f54fc8798bea03a3}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!inicia\+\_\+gbnmap@{inicia\+\_\+gbnmap}}
+\index{inicia\+\_\+gbnmap@{inicia\+\_\+gbnmap}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{inicia\+\_\+gbnmap()}{inicia\_gbnmap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::inicia\+\_\+gbnmap (\begin{DoxyParamCaption}\item[{int \&}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 838 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::inicia\+\_\+gbnmap().
+
+\mbox{\Hypertarget{classPhElem_a3ed7c7027c6fadd45f29eb7de33ee7fb}\label{classPhElem_a3ed7c7027c6fadd45f29eb7de33ee7fb}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!inicia\+\_\+gbnmap@{inicia\+\_\+gbnmap}}
+\index{inicia\+\_\+gbnmap@{inicia\+\_\+gbnmap}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{inicia\+\_\+gbnmap()}{inicia\_gbnmap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::inicia\+\_\+gbnmap (\begin{DoxyParamCaption}\item[{const int \&}]{ivar,  }\item[{int \&}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 846 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap, Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, and Ph\+Elem$<$ Num\+Variaveis $>$\+::sgn.
+
+\mbox{\Hypertarget{classPhElem_a9b5610a7a12eddbc4a9f07429500a6da}\label{classPhElem_a9b5610a7a12eddbc4a9f07429500a6da}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!inicia\+\_\+gbtrbmap@{inicia\+\_\+gbtrbmap}}
+\index{inicia\+\_\+gbtrbmap@{inicia\+\_\+gbtrbmap}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{inicia\+\_\+gbtrbmap()}{inicia\_gbtrbmap()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::inicia\+\_\+gbtrbmap (\begin{DoxyParamCaption}\item[{int \&}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 856 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::gbtrbmap, Ph\+Elem$<$ Num\+Variaveis $>$\+::numborders, Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel, Stdel\+::qborder\+\_\+val(), qmax, Ph\+Elem$<$ Num\+Variaveis $>$\+::stgbtrbmapM, and Ph\+Elem$<$ Num\+Variaveis $>$\+::stgbtrbmapP.
+
+\mbox{\Hypertarget{classDG__Elem_a33d01f96cc0d00b6a1a1d4a817724b4c}\label{classDG__Elem_a33d01f96cc0d00b6a1a1d4a817724b4c}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!inicia\+\_\+tracos@{inicia\+\_\+tracos}}
+\index{inicia\+\_\+tracos@{inicia\+\_\+tracos}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{inicia\+\_\+tracos()}{inicia\_tracos()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::inicia\+\_\+tracos (\begin{DoxyParamCaption}\item[{\hyperlink{structEDGE}{E\+D\+GE} $\ast$}]{border }\end{DoxyParamCaption})}
+
+
+
+Definition at line 158 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References Ph\+Elem$<$ 2 $>$\+::border\+\_\+num, Stdel\+::eval\+\_\+\+Phi(), Stdel\+::\+Gradiente(), Grad\+Phi, n\+\_\+e, Ph\+Elem$<$ 2 $>$\+::ndim, Stdel\+::\+N\+G\+Q\+P\+\_\+val(), E\+D\+G\+E\+::normal, Ph\+Elem$<$ 2 $>$\+::numborders, Ph\+Elem$<$ 2 $>$\+::\+Num\+Local\+Vars, Ph\+Elem$<$ 2 $>$\+::numn, perm, pos, Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, Ph\+Elem$<$ 2 $>$\+::ptvert, Stdel\+::qborder\+\_\+val(), qmax, Ph\+Elem$<$ 2 $>$\+::sinal, Stdel\+::trace(), Tr\+Grad\+Phi, Tr\+Kgrad\+Phi\+\_\+n, Tr\+Phi, and Ph\+Elem$<$ 2 $>$\+::\+Vert\+\_\+map.
+
+
+
+Referenced by show\+\_\+\+Volume().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classDG__Elem_a33d01f96cc0d00b6a1a1d4a817724b4c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{classDG__Elem_a33d01f96cc0d00b6a1a1d4a817724b4c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDG__Elem_ac1ec1f962d6e1852f0adb01048c4c1f9}\label{classDG__Elem_ac1ec1f962d6e1852f0adb01048c4c1f9}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!inicia\+\_\+vetores@{inicia\+\_\+vetores}}
+\index{inicia\+\_\+vetores@{inicia\+\_\+vetores}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{inicia\+\_\+vetores()}{inicia\_vetores()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::inicia\+\_\+vetores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1463 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References Ph\+Elem$<$ 2 $>$\+::compute\+\_\+\+J\+V(), Grad\+Phi, Jb, Ph\+Elem$<$ 2 $>$\+::\+JV, Laplaciano\+Phi, Mass\+\_\+sn, Ph\+Elem$<$ 2 $>$\+::ndim, Stdel\+::\+N\+G\+Q\+P\+\_\+val(), Ph\+Elem$<$ 2 $>$\+::numborders, Ph\+Elem$<$ 2 $>$\+::\+Num\+Local\+Vars, Ph\+Elem$<$ 2 $>$\+::numn, Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, pwa, Stdel\+::qborder\+\_\+val(), qmax, sna, Tr\+Grad\+Phi, Tr\+Kgrad\+\_\+pc, Tr\+Kgrad\+\_\+pw, Tr\+Kgrad\+\_\+sn, Tr\+Kgrad\+Phi\+\_\+n, Tr\+Phi, Trpw, Trsn, Ph\+Elem$<$ 2 $>$\+::u0, Ph\+Elem$<$ 2 $>$\+::usave, and Ph\+Elem$<$ 2 $>$\+::vetores\+\_\+iniciados.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions(), D\+G\+\_\+\+Prob\+::projetar\+\_\+\+C0(), and $\sim$\+D\+G\+\_\+\+Elem().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_ac1ec1f962d6e1852f0adb01048c4c1f9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_ac1ec1f962d6e1852f0adb01048c4c1f9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhElem_a3064c3377eb3f81d63f43969a3c958ee}\label{classPhElem_a3064c3377eb3f81d63f43969a3c958ee}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!K\+\_\+\+Imisc2F@{K\+\_\+\+Imisc2F}}
+\index{K\+\_\+\+Imisc2F@{K\+\_\+\+Imisc2F}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{K\+\_\+\+Imisc2\+F()}{K\_Imisc2F()}}
+{\footnotesize\ttfamily double \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::K\+\_\+\+Imisc2F (\begin{DoxyParamCaption}\item[{const int \&}]{i,  }\item[{const int \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classPhElem_afdbe06fb407dc4c474b886ed219de195}\label{classPhElem_afdbe06fb407dc4c474b886ed219de195}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Kcomp@{Kcomp}}
+\index{Kcomp@{Kcomp}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Kcomp()}{Kcomp()}}
+{\footnotesize\ttfamily double \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::Kcomp (\begin{DoxyParamCaption}\item[{const int \&}]{i,  }\item[{const int \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 183 of file Elastostatica.\+cpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::sgn.
+
+\mbox{\Hypertarget{classPhElem_a0209eb7e6db7b0b541b51c46269ee9b6}\label{classPhElem_a0209eb7e6db7b0b541b51c46269ee9b6}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!ler\+\_\+restart@{ler\+\_\+restart}}
+\index{ler\+\_\+restart@{ler\+\_\+restart}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{ler\+\_\+restart()}{ler\_restart()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::ler\+\_\+restart (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 252 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, and Ph\+Elem$<$ Num\+Variaveis $>$\+::u0.
+
+\mbox{\Hypertarget{classPhElem_ad0a2992e6d206b6a351da8847a9dd69a}\label{classPhElem_ad0a2992e6d206b6a351da8847a9dd69a}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!ler\+\_\+restart\+\_\+buffer@{ler\+\_\+restart\+\_\+buffer}}
+\index{ler\+\_\+restart\+\_\+buffer@{ler\+\_\+restart\+\_\+buffer}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{ler\+\_\+restart\+\_\+buffer()}{ler\_restart\_buffer()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::ler\+\_\+restart\+\_\+buffer (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fin,  }\item[{double $\ast$}]{buff,  }\item[{int \&}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 261 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::numn.
+
+\mbox{\Hypertarget{classPhElem_ac59f1cbe0962524e3aa5eced9a4393f6}\label{classPhElem_ac59f1cbe0962524e3aa5eced9a4393f6}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!make\+\_\+\+K\+\_\+\+Elast2D@{make\+\_\+\+K\+\_\+\+Elast2D}}
+\index{make\+\_\+\+K\+\_\+\+Elast2D@{make\+\_\+\+K\+\_\+\+Elast2D}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{make\+\_\+\+K\+\_\+\+Elast2\+D()}{make\_K\_Elast2D()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::make\+\_\+\+K\+\_\+\+Elast2D (\begin{DoxyParamCaption}\item[{const double}]{lambda,  }\item[{const double}]{mu,  }\item[{double $\ast$$\ast$}]{K }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 7 of file Elastostatica.\+cpp.
+
+
+
+References aaux, aux, Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap, Ph\+Elem$<$ Num\+Variaveis $>$\+::\+JV, m, n0, and Ph\+Elem$<$ Num\+Variaveis $>$\+::ptvert.
+
+\mbox{\Hypertarget{classPhElem_ae0418a5de14872e80fe4f9ffd9dd4fdd}\label{classPhElem_ae0418a5de14872e80fe4f9ffd9dd4fdd}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!make\+\_\+\+K\+\_\+\+Imiscivel2F@{make\+\_\+\+K\+\_\+\+Imiscivel2F}}
+\index{make\+\_\+\+K\+\_\+\+Imiscivel2F@{make\+\_\+\+K\+\_\+\+Imiscivel2F}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{make\+\_\+\+K\+\_\+\+Imiscivel2\+F()}{make\_K\_Imiscivel2F()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::make\+\_\+\+K\+\_\+\+Imiscivel2F (\begin{DoxyParamCaption}\item[{const double}]{,  }\item[{const double}]{,  }\item[{const double}]{,  }\item[{const double}]{,  }\item[{const double}]{\mbox{[}$\,$\mbox{]},  }\item[{double($\ast$)(double)}]{,  }\item[{double($\ast$)(double)}]{,  }\item[{double($\ast$)(double)}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classPhElem_a1223b3e50580a1a7959e5f3b665d0761}\label{classPhElem_a1223b3e50580a1a7959e5f3b665d0761}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!make\+\_\+\+Kcomp\+\_\+\+Elast2D@{make\+\_\+\+Kcomp\+\_\+\+Elast2D}}
+\index{make\+\_\+\+Kcomp\+\_\+\+Elast2D@{make\+\_\+\+Kcomp\+\_\+\+Elast2D}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{make\+\_\+\+Kcomp\+\_\+\+Elast2\+D()}{make\_Kcomp\_Elast2D()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::make\+\_\+\+Kcomp\+\_\+\+Elast2D (\begin{DoxyParamCaption}\item[{const double}]{lambda,  }\item[{const double}]{mu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 197 of file Elastostatica.\+cpp.
+
+
+
+References aux, B(), C(), e, force0(), Ph\+Elem$<$ Num\+Variaveis $>$\+::make\+\_\+\+K\+\_\+\+Elast2\+D(), Ph\+Elem$<$ Num\+Variaveis $>$\+::make\+\_\+vector(), and n0.
+
+\mbox{\Hypertarget{classPhElem_a1ce74128a48a212028f644a68ce8edc0}\label{classPhElem_a1ce74128a48a212028f644a68ce8edc0}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!make\+\_\+\+Kcomp\+\_\+\+Elast2\+D\+\_\+dyn@{make\+\_\+\+Kcomp\+\_\+\+Elast2\+D\+\_\+dyn}}
+\index{make\+\_\+\+Kcomp\+\_\+\+Elast2\+D\+\_\+dyn@{make\+\_\+\+Kcomp\+\_\+\+Elast2\+D\+\_\+dyn}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{make\+\_\+\+Kcomp\+\_\+\+Elast2\+D\+\_\+dyn()}{make\_Kcomp\_Elast2D\_dyn()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::make\+\_\+\+Kcomp\+\_\+\+Elast2\+D\+\_\+dyn (\begin{DoxyParamCaption}\item[{const double}]{lambda,  }\item[{const double}]{mu,  }\item[{const double}]{a\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 386 of file Elastodinamica2\+D.\+cpp.
+
+
+
+References aux, and n0.
+
+\mbox{\Hypertarget{classPhElem_ae538fb941f4cedc88e27dd28f2460bb5}\label{classPhElem_ae538fb941f4cedc88e27dd28f2460bb5}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!make\+\_\+\+Mass\+Matrices@{make\+\_\+\+Mass\+Matrices}}
+\index{make\+\_\+\+Mass\+Matrices@{make\+\_\+\+Mass\+Matrices}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{make\+\_\+\+Mass\+Matrices()}{make\_MassMatrices()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::make\+\_\+\+Mass\+Matrices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classPhElem_a5051606f1d1e914d52d3de8655195c9f}\label{classPhElem_a5051606f1d1e914d52d3de8655195c9f}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!make\+\_\+vector@{make\+\_\+vector}}
+\index{make\+\_\+vector@{make\+\_\+vector}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{make\+\_\+vector()}{make\_vector()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::make\+\_\+vector (\begin{DoxyParamCaption}\item[{const int \&}]{ia,  }\item[{double($\ast$)(double, double, double)}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classPhElem_ad5732b2fb83ab0d9a2de7678391f87c4}\label{classPhElem_ad5732b2fb83ab0d9a2de7678391f87c4}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!make\+\_\+vector\+\_\+\+Elast2\+D\+\_\+dyn@{make\+\_\+vector\+\_\+\+Elast2\+D\+\_\+dyn}}
+\index{make\+\_\+vector\+\_\+\+Elast2\+D\+\_\+dyn@{make\+\_\+vector\+\_\+\+Elast2\+D\+\_\+dyn}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{make\+\_\+vector\+\_\+\+Elast2\+D\+\_\+dyn()}{make\_vector\_Elast2D\_dyn()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::make\+\_\+vector\+\_\+\+Elast2\+D\+\_\+dyn (\begin{DoxyParamCaption}\item[{const double}]{a\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 369 of file Elastodinamica2\+D.\+cpp.
+
+
+
+References aux.
+
+\mbox{\Hypertarget{classPhElem_a5f08c96b39a608ac8500897535998d52}\label{classPhElem_a5f08c96b39a608ac8500897535998d52}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!make\+\_\+\+Vector\+\_\+\+Eq\+\_\+\+S1@{make\+\_\+\+Vector\+\_\+\+Eq\+\_\+\+S1}}
+\index{make\+\_\+\+Vector\+\_\+\+Eq\+\_\+\+S1@{make\+\_\+\+Vector\+\_\+\+Eq\+\_\+\+S1}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{make\+\_\+\+Vector\+\_\+\+Eq\+\_\+\+S1()}{make\_Vector\_Eq\_S1()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::make\+\_\+\+Vector\+\_\+\+Eq\+\_\+\+S1 (\begin{DoxyParamCaption}\item[{const double}]{,  }\item[{const double}]{,  }\item[{const double}]{,  }\item[{const double}]{,  }\item[{const double}]{\mbox{[}3\mbox{]},  }\item[{double($\ast$)(double)}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classPhElem_a6b7f26c842b4f6b54782c6ddaa4fd6d6}\label{classPhElem_a6b7f26c842b4f6b54782c6ddaa4fd6d6}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!map@{map}}
+\index{map@{map}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{map()}{map()}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::map (\begin{DoxyParamCaption}\item[{const int \&}]{var,  }\item[{const int \&}]{no\+\_\+local }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 573 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap.
+
+\mbox{\Hypertarget{classPhElem_aa53cc9dad058e9dbebfb971bdabe80fc}\label{classPhElem_aa53cc9dad058e9dbebfb971bdabe80fc}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!mapa\+\_\+inverso@{mapa\+\_\+inverso}}
+\index{mapa\+\_\+inverso@{mapa\+\_\+inverso}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{mapa\+\_\+inverso()}{mapa\_inverso()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::mapa\+\_\+inverso (\begin{DoxyParamCaption}\item[{const int \&}]{ivar,  }\item[{const double}]{X\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 280 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap, Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, and Ph\+Elem$<$ Num\+Variaveis $>$\+::u0.
+
+\mbox{\Hypertarget{classPhElem_a857f4ffbef27f0ef054f59eceffbad27}\label{classPhElem_a857f4ffbef27f0ef054f59eceffbad27}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Neumann@{Neumann}}
+\index{Neumann@{Neumann}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Neumann()}{Neumann()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::Neumann (\begin{DoxyParamCaption}\item[{const int \&}]{aresta,  }\item[{const int \&}]{varn,  }\item[{const double}]{rho1,  }\item[{const double}]{mu1,  }\item[{const double}]{rho2,  }\item[{const double}]{mu2,  }\item[{const double}]{gravidade\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classPhElem_a638d823f66d1600cb948df872eb753c1}\label{classPhElem_a638d823f66d1600cb948df872eb753c1}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!P\+\_\+eval\+\_\+phys@{P\+\_\+eval\+\_\+phys}}
+\index{P\+\_\+eval\+\_\+phys@{P\+\_\+eval\+\_\+phys}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{P\+\_\+eval\+\_\+phys()}{P\_eval\_phys()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::P\+\_\+eval\+\_\+phys (\begin{DoxyParamCaption}\item[{const int \&}]{numf,  }\item[{double}]{f0\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 617 of file Ph\+Elem.\+hpp.
+
+
+
+References Stdel\+::eval\+G\+Q(), Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel, and Ph\+Elem$<$ Num\+Variaveis $>$\+::u0.
+
+\mbox{\Hypertarget{classPhElem_ac5436d432516c731328134ac91b9a70b}\label{classPhElem_ac5436d432516c731328134ac91b9a70b}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!P\+\_\+eval\+\_\+print@{P\+\_\+eval\+\_\+print}}
+\index{P\+\_\+eval\+\_\+print@{P\+\_\+eval\+\_\+print}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{P\+\_\+eval\+\_\+print()}{P\_eval\_print()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::P\+\_\+eval\+\_\+print (\begin{DoxyParamCaption}\item[{const double}]{X\mbox{[}$\,$\mbox{]},  }\item[{const int \&}]{numf,  }\item[{F\+I\+LE $\ast$}]{fout,  }\item[{double($\ast$)(double, double, double)}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classPhElem_ac3bc9b0559e940faa2404b1541d0c403}\label{classPhElem_ac3bc9b0559e940faa2404b1541d0c403}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!P\+\_\+eval\+\_\+print\+\_\+\+Elast2D@{P\+\_\+eval\+\_\+print\+\_\+\+Elast2D}}
+\index{P\+\_\+eval\+\_\+print\+\_\+\+Elast2D@{P\+\_\+eval\+\_\+print\+\_\+\+Elast2D}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{P\+\_\+eval\+\_\+print\+\_\+\+Elast2\+D()}{P\_eval\_print\_Elast2D()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::P\+\_\+eval\+\_\+print\+\_\+\+Elast2D (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{const double}]{X\mbox{[}$\,$\mbox{]},  }\item[{double}]{lambda,  }\item[{double}]{mu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 88 of file Elastostatica.\+cpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::b0, Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap, Ph\+Elem$<$ Num\+Variaveis $>$\+::map(), Ph\+Elem$<$ Num\+Variaveis $>$\+::numf, Ph\+Elem$<$ Num\+Variaveis $>$\+::ptvert, Ph\+Elem$<$ Num\+Variaveis $>$\+::sgn, Ph\+Elem$<$ Num\+Variaveis $>$\+::u0, and Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Vector\+Elast2\+D().
+
+\mbox{\Hypertarget{classPhElem_a467c1ae6065913d0ec9828c9d055539a}\label{classPhElem_a467c1ae6065913d0ec9828c9d055539a}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!P\+\_\+eval\+\_\+print\+\_\+\+Elast2\+D\+\_\+dyn@{P\+\_\+eval\+\_\+print\+\_\+\+Elast2\+D\+\_\+dyn}}
+\index{P\+\_\+eval\+\_\+print\+\_\+\+Elast2\+D\+\_\+dyn@{P\+\_\+eval\+\_\+print\+\_\+\+Elast2\+D\+\_\+dyn}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{P\+\_\+eval\+\_\+print\+\_\+\+Elast2\+D\+\_\+dyn()}{P\_eval\_print\_Elast2D\_dyn()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::P\+\_\+eval\+\_\+print\+\_\+\+Elast2\+D\+\_\+dyn (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{const int \&}]{prnflag,  }\item[{const double}]{X\mbox{[}$\,$\mbox{]},  }\item[{double}]{lambda,  }\item[{double}]{mu,  }\item[{const double}]{a\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 458 of file Elastodinamica2\+D.\+cpp.
+
+\mbox{\Hypertarget{classPhElem_acd85a3728b9566c086c1450a35e6231f}\label{classPhElem_acd85a3728b9566c086c1450a35e6231f}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!P\+\_\+eval\+\_\+u@{P\+\_\+eval\+\_\+u}}
+\index{P\+\_\+eval\+\_\+u@{P\+\_\+eval\+\_\+u}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{P\+\_\+eval\+\_\+u()}{P\_eval\_u()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::P\+\_\+eval\+\_\+u (\begin{DoxyParamCaption}\item[{const double}]{X\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classPhElem_aa648874799b8fa49fdccbcbc9b8de504}\label{classPhElem_aa648874799b8fa49fdccbcbc9b8de504}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!P\+\_\+eval\+\_\+u@{P\+\_\+eval\+\_\+u}}
+\index{P\+\_\+eval\+\_\+u@{P\+\_\+eval\+\_\+u}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{P\+\_\+eval\+\_\+u()}{P\_eval\_u()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::P\+\_\+eval\+\_\+u (\begin{DoxyParamCaption}\item[{const double}]{X\mbox{[}$\,$\mbox{]},  }\item[{const int \&}]{ia }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classPhElem_a69032d622789084c4416981e2fceb80c}\label{classPhElem_a69032d622789084c4416981e2fceb80c}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!P\+\_\+eval\+\_\+u\+\_\+p1@{P\+\_\+eval\+\_\+u\+\_\+p1}}
+\index{P\+\_\+eval\+\_\+u\+\_\+p1@{P\+\_\+eval\+\_\+u\+\_\+p1}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{P\+\_\+eval\+\_\+u\+\_\+p1()}{P\_eval\_u\_p1()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::P\+\_\+eval\+\_\+u\+\_\+p1 (\begin{DoxyParamCaption}\item[{const double}]{X\mbox{[}$\,$\mbox{]},  }\item[{const int \&}]{ia }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classPhElem_a115839e26aca8569ede2966db01926f1}\label{classPhElem_a115839e26aca8569ede2966db01926f1}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!P\+\_\+eval\+\_\+vert@{P\+\_\+eval\+\_\+vert}}
+\index{P\+\_\+eval\+\_\+vert@{P\+\_\+eval\+\_\+vert}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{P\+\_\+eval\+\_\+vert()}{P\_eval\_vert()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::P\+\_\+eval\+\_\+vert (\begin{DoxyParamCaption}\item[{const double}]{X\mbox{[}$\,$\mbox{]},  }\item[{double}]{f\+\_\+vert\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classPhElem_a1ae41c2b94f8faca55505d25e899f724}\label{classPhElem_a1ae41c2b94f8faca55505d25e899f724}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!P\+\_\+print@{P\+\_\+print}}
+\index{P\+\_\+print@{P\+\_\+print}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{P\+\_\+print()}{P\_print()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::P\+\_\+print (\begin{DoxyParamCaption}\item[{const int \&}]{numf,  }\item[{F\+I\+LE $\ast$}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 631 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, Stdel\+::printtofile(), Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel, Ph\+Elem$<$ Num\+Variaveis $>$\+::ptvert, Ph\+Elem$<$ Num\+Variaveis $>$\+::u0, and Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Vert\+\_\+map.
+
+\mbox{\Hypertarget{classDG__Elem_a699a198b44d02b1394229e623cd6632d}\label{classDG__Elem_a699a198b44d02b1394229e623cd6632d}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!perm\+\_\+val@{perm\+\_\+val}}
+\index{perm\+\_\+val@{perm\+\_\+val}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{perm\+\_\+val()}{perm\_val()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::perm\+\_\+val (\begin{DoxyParamCaption}\item[{double}]{K\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 401 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References perm.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), and show\+\_\+\+Volume().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_a699a198b44d02b1394229e623cd6632d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhElem_aa67e9fd1399ee905803999ef50581677}\label{classPhElem_aa67e9fd1399ee905803999ef50581677}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Phi\+\_\+val@{Phi\+\_\+val}}
+\index{Phi\+\_\+val@{Phi\+\_\+val}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Phi\+\_\+val()}{Phi\_val()}}
+{\footnotesize\ttfamily double \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::Phi\+\_\+val (\begin{DoxyParamCaption}\item[{const int \&}]{var,  }\item[{const int \&}]{ind,  }\item[{const int \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 140 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::anexa\+\_\+gbnmap(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Atualizar\+\_\+u0(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Avancar\+\_\+u0(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Comparar\+\_\+u0(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Copia\+\_\+u0\+\_\+em\+\_\+(), Ph\+Elem$<$ Num\+Variaveis $>$\+::escrever\+\_\+restart(), Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap\+\_\+aresta(), Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap\+\_\+arestas(), Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap\+\_\+faces(), Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap\+\_\+interior(), Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap\+\_\+vertices(), Ph\+Elem$<$ Num\+Variaveis $>$\+::get\+\_\+trace\+\_\+border\+\_\+map(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Imprimir\+\_\+valores(), Ph\+Elem$<$ Num\+Variaveis $>$\+::ler\+\_\+restart(), Ph\+Elem$<$ Num\+Variaveis $>$\+::ler\+\_\+restart\+\_\+buffer(), Ph\+Elem$<$ Num\+Variaveis $>$\+::printw\+G\+Q\+J(), Ph\+Elem$<$ Num\+Variaveis $>$\+::projetar\+\_\+\+C0(), Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel, Ph\+Elem$<$ Num\+Variaveis $>$\+::restart\+\_\+element(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Restaurar\+\_\+u0(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Salvar\+\_\+u0(), Ph\+Elem$<$ Num\+Variaveis $>$\+::set\+\_\+border\+\_\+num(), Ph\+Elem$<$ Num\+Variaveis $>$\+::set\+\_\+border\+\_\+tipo(), Stdel\+::show\+\_\+\+Phi\+\_\+val(), Ph\+Elem$<$ Num\+Variaveis $>$\+::sinal, Ph\+Elem$<$ Num\+Variaveis $>$\+::teste\+\_\+gradiente(), Ph\+Elem$<$ Num\+Variaveis $>$\+::teste\+\_\+transformacao\+\_\+direta(), Ph\+Elem$<$ Num\+Variaveis $>$\+::transformacao\+\_\+direta(), and Ph\+Elem$<$ Num\+Variaveis $>$\+::vetor\+\_\+superficie().
+
+\mbox{\Hypertarget{classPhElem_a233fb1bc0c15cae815fef5d1dc8d9265}\label{classPhElem_a233fb1bc0c15cae815fef5d1dc8d9265}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!print\+\_\+matrices@{print\+\_\+matrices}}
+\index{print\+\_\+matrices@{print\+\_\+matrices}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{print\+\_\+matrices()}{print\_matrices()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::print\+\_\+matrices (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classPhElem_ae7659320b2118608e38d192443bb2b8f}\label{classPhElem_ae7659320b2118608e38d192443bb2b8f}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!print\+\_\+modes@{print\+\_\+modes}}
+\index{print\+\_\+modes@{print\+\_\+modes}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{print\+\_\+modes()}{print\_modes()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::print\+\_\+modes (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{const int \&}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 551 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap, Stdel\+::nv\+\_\+val(), and Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel.
+
+\mbox{\Hypertarget{classPhElem_a8d2c46990cba5a5459198d883b763eab}\label{classPhElem_a8d2c46990cba5a5459198d883b763eab}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!print\+\_\+numeracao@{print\+\_\+numeracao}}
+\index{print\+\_\+numeracao@{print\+\_\+numeracao}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{print\+\_\+numeracao()}{print\_numeracao()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::print\+\_\+numeracao (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fout,  }\item[{const int \&}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 541 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap, and Ph\+Elem$<$ Num\+Variaveis $>$\+::numb.
+
+\mbox{\Hypertarget{classPhElem_a53eb1654e889d3fc893f50dcea12adcb}\label{classPhElem_a53eb1654e889d3fc893f50dcea12adcb}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!printw\+G\+QJ@{printw\+G\+QJ}}
+\index{printw\+G\+QJ@{printw\+G\+QJ}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{printw\+G\+Q\+J()}{printwGQJ()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::printw\+G\+QJ (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fileout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 316 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::\+JV, Stdel\+::printw\+G\+Qtofile(), Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel, Ph\+Elem$<$ Num\+Variaveis $>$\+::ptvert, and Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Vert\+\_\+map.
+
+\mbox{\Hypertarget{classPhElem_a6e4284fcb95240394293c1a576deb738}\label{classPhElem_a6e4284fcb95240394293c1a576deb738}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Processar\+\_\+dados@{Processar\+\_\+dados}}
+\index{Processar\+\_\+dados@{Processar\+\_\+dados}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Processar\+\_\+dados()}{Processar\_dados()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::Processar\+\_\+dados (\begin{DoxyParamCaption}\item[{int \&}]{NL,  }\item[{std\+::vector$<$ \hyperlink{structARESTA}{A\+R\+E\+S\+TA} $>$ \&}]{aresta,  }\item[{int \&}]{NF,  }\item[{std\+::vector$<$ \hyperlink{structFACE}{F\+A\+CE} $>$ \&}]{face\+\_\+vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 682 of file Ph\+Elem.\+hpp.
+
+
+
+References aresta\+\_\+gbnum(), Stdel\+::aresta\+\_\+lvert(), Ph\+Elem$<$ Num\+Variaveis $>$\+::aresta\+\_\+map, face\+\_\+gbnum(), Stdel\+::face\+\_\+lvert(), Ph\+Elem$<$ Num\+Variaveis $>$\+::face\+\_\+map, n0, Stdel\+::nborder\+\_\+val(), Ph\+Elem$<$ Num\+Variaveis $>$\+::ndim, Stdel\+::ndim\+\_\+val(), Stdel\+::ne\+\_\+val(), Stdel\+::nf\+\_\+val(), Ph\+Elem$<$ Num\+Variaveis $>$\+::numborders, Ph\+Elem$<$ Num\+Variaveis $>$\+::nume, Ph\+Elem$<$ Num\+Variaveis $>$\+::numf, Ph\+Elem$<$ Num\+Variaveis $>$\+::numv, Stdel\+::nv\+\_\+val(), Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel, Stdel\+::show\+\_\+face\+\_\+tipo(), Stdel\+::show\+\_\+nvf(), Ph\+Elem$<$ Num\+Variaveis $>$\+::sinal, and Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Vert\+\_\+map.
+
+\mbox{\Hypertarget{classPhElem_aa5f168531640b2fb9ac82f85e5f8b11a}\label{classPhElem_aa5f168531640b2fb9ac82f85e5f8b11a}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!projetar\+\_\+\+C0@{projetar\+\_\+\+C0}}
+\index{projetar\+\_\+\+C0@{projetar\+\_\+\+C0}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{projetar\+\_\+\+C0()}{projetar\_C0()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::projetar\+\_\+\+C0 (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{file,  }\item[{double($\ast$)(double, double, double)}]{func,  }\item[{const int \&}]{ivar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 880 of file Ph\+Elem.\+hpp.
+
+
+
+References aux, B(), Stdel\+::compute\+Func\+G\+Q(), Stdel\+::\+Dirichlet(), Stdel\+::eval\+\_\+\+Phi(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+JV, Stdel\+::mass(), Stdel\+::\+N\+G\+Q\+P\+\_\+val(), Ph\+Elem$<$ Num\+Variaveis $>$\+::numb, Ph\+Elem$<$ Num\+Variaveis $>$\+::numborders, Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, Stdel\+::printtofile(), Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel, Ph\+Elem$<$ Num\+Variaveis $>$\+::ptvert, Ph\+Elem$<$ Num\+Variaveis $>$\+::sgn, Ph\+Elem$<$ Num\+Variaveis $>$\+::u0, Stdel\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv(), and Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Vert\+\_\+map.
+
+\mbox{\Hypertarget{classPhElem_a8abc7be8120f4192de31e0cfb32ac968}\label{classPhElem_a8abc7be8120f4192de31e0cfb32ac968}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!read\+\_\+vertices@{read\+\_\+vertices}}
+\index{read\+\_\+vertices@{read\+\_\+vertices}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{read\+\_\+vertices()}{read\_vertices()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::read\+\_\+vertices (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{finput,  }\item[{const int \&}]{nv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 563 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Vert\+\_\+map.
+
+\mbox{\Hypertarget{classPhElem_abe273d496e748985021a8f67ef598c0d}\label{classPhElem_abe273d496e748985021a8f67ef598c0d}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!restart\+\_\+element@{restart\+\_\+element}}
+\index{restart\+\_\+element@{restart\+\_\+element}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{restart\+\_\+element()}{restart\_element()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::restart\+\_\+element (\begin{DoxyParamCaption}\item[{double $\ast$}]{buff,  }\item[{int \&}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 270 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, and Ph\+Elem$<$ Num\+Variaveis $>$\+::u0.
+
+\mbox{\Hypertarget{classPhElem_a7094a0e8767868c583cc948e56214a9d}\label{classPhElem_a7094a0e8767868c583cc948e56214a9d}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Restaurar\+\_\+u0@{Restaurar\+\_\+u0}}
+\index{Restaurar\+\_\+u0@{Restaurar\+\_\+u0}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Restaurar\+\_\+u0()}{Restaurar\_u0()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::Restaurar\+\_\+u0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 333 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, Ph\+Elem$<$ Num\+Variaveis $>$\+::u0, and Ph\+Elem$<$ Num\+Variaveis $>$\+::usave.
+
+\mbox{\Hypertarget{classPhElem_ab6765ea1fa41b3a2d565d86872d6e7e6}\label{classPhElem_ab6765ea1fa41b3a2d565d86872d6e7e6}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Salvar\+\_\+u0@{Salvar\+\_\+u0}}
+\index{Salvar\+\_\+u0@{Salvar\+\_\+u0}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Salvar\+\_\+u0()}{Salvar\_u0()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::Salvar\+\_\+u0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 325 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, Ph\+Elem$<$ Num\+Variaveis $>$\+::u0, and Ph\+Elem$<$ Num\+Variaveis $>$\+::usave.
+
+\mbox{\Hypertarget{classPhElem_a05b05802884ecd42ed42e46108a0d5b1}\label{classPhElem_a05b05802884ecd42ed42e46108a0d5b1}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!set\+\_\+border\+\_\+num@{set\+\_\+border\+\_\+num}}
+\index{set\+\_\+border\+\_\+num@{set\+\_\+border\+\_\+num}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{set\+\_\+border\+\_\+num()}{set\_border\_num()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::set\+\_\+border\+\_\+num (\begin{DoxyParamCaption}\item[{const int \&}]{aresta,  }\item[{const int \&}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 514 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::border\+\_\+num.
+
+\mbox{\Hypertarget{classPhElem_aafd112d676dc3e16309e8ec8980f1c97}\label{classPhElem_aafd112d676dc3e16309e8ec8980f1c97}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!set\+\_\+border\+\_\+tipo@{set\+\_\+border\+\_\+tipo}}
+\index{set\+\_\+border\+\_\+tipo@{set\+\_\+border\+\_\+tipo}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{set\+\_\+border\+\_\+tipo()}{set\_border\_tipo()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::set\+\_\+border\+\_\+tipo (\begin{DoxyParamCaption}\item[{\hyperlink{structEDGE}{E\+D\+GE} $\ast$}]{border,  }\item[{const int \&}]{aresta,  }\item[{const int \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 503 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::border\+\_\+num, and E\+D\+G\+E\+::tipo.
+
+\mbox{\Hypertarget{classDG__Elem_a9f7165dbb388e11f16b4249383f71d0e}\label{classDG__Elem_a9f7165dbb388e11f16b4249383f71d0e}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!set\+\_\+fontes@{set\+\_\+fontes}}
+\index{set\+\_\+fontes@{set\+\_\+fontes}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{set\+\_\+fontes()}{set\_fontes()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::set\+\_\+fontes (\begin{DoxyParamCaption}\item[{double}]{sw,  }\item[{double}]{sn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 27 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+References qn, qw, and sn.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions(), and D\+G\+\_\+\+Prob\+::projetar\+\_\+\+C0().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_a9f7165dbb388e11f16b4249383f71d0e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhElem_afba886f63bf7b67bd0a4164eae4dde5b}\label{classPhElem_afba886f63bf7b67bd0a4164eae4dde5b}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!set\+\_\+gbnmap@{set\+\_\+gbnmap}}
+\index{set\+\_\+gbnmap@{set\+\_\+gbnmap}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{set\+\_\+gbnmap()}{set\_gbnmap()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::set\+\_\+gbnmap (\begin{DoxyParamCaption}\item[{const int \&}]{ia,  }\item[{const int}]{gbnmap\+\_\+temp\mbox{[}$\,$\mbox{]},  }\item[{const int}]{sgn\+\_\+temp\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 789 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap, Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, and Ph\+Elem$<$ Num\+Variaveis $>$\+::sgn.
+
+\mbox{\Hypertarget{classDG__Elem_a132e9ad800e701395b1e21d291040ff2}\label{classDG__Elem_a132e9ad800e701395b1e21d291040ff2}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!set\+\_\+mass\+\_\+density@{set\+\_\+mass\+\_\+density}}
+\index{set\+\_\+mass\+\_\+density@{set\+\_\+mass\+\_\+density}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{set\+\_\+mass\+\_\+density()}{set\_mass\_density()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::set\+\_\+mass\+\_\+density (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 38 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References rho.
+
+
+
+Referenced by show\+\_\+\+Volume().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{classDG__Elem_a132e9ad800e701395b1e21d291040ff2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhElem_a24a705e62f179fa36c6886f8f0a3ef25}\label{classPhElem_a24a705e62f179fa36c6886f8f0a3ef25}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!set\+\_\+part\+\_\+num@{set\+\_\+part\+\_\+num}}
+\index{set\+\_\+part\+\_\+num@{set\+\_\+part\+\_\+num}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{set\+\_\+part\+\_\+num()}{set\_part\_num()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::set\+\_\+part\+\_\+num (\begin{DoxyParamCaption}\item[{const int \&}]{num = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 1406 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::numv, Vertice\+::part\+\_\+num, Ph\+Elem$<$ Num\+Variaveis $>$\+::part\+\_\+num, Ph\+Elem$<$ Num\+Variaveis $>$\+::ptvert, and Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Vert\+\_\+map.
+
+\mbox{\Hypertarget{classDG__Elem_a51393e54786059782e6a0502f00cdd50}\label{classDG__Elem_a51393e54786059782e6a0502f00cdd50}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!set\+\_\+permeabilidade@{set\+\_\+permeabilidade}}
+\index{set\+\_\+permeabilidade@{set\+\_\+permeabilidade}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{set\+\_\+permeabilidade()}{set\_permeabilidade()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::set\+\_\+permeabilidade (\begin{DoxyParamCaption}\item[{const double}]{x,  }\item[{const double}]{y,  }\item[{const double}]{z }\end{DoxyParamCaption})}
+
+
+
+Definition at line 30 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References perm.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions(), D\+G\+\_\+\+Prob\+::projetar\+\_\+\+C0(), and show\+\_\+\+Volume().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_a51393e54786059782e6a0502f00cdd50_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDG__Elem_a5d8512886cb22395c92265f5eee6a940}\label{classDG__Elem_a5d8512886cb22395c92265f5eee6a940}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!set\+\_\+porosidade@{set\+\_\+porosidade}}
+\index{set\+\_\+porosidade@{set\+\_\+porosidade}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{set\+\_\+porosidade()}{set\_porosidade()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::set\+\_\+porosidade (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 152 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References porosidade.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions(), D\+G\+\_\+\+Prob\+::projetar\+\_\+\+C0(), and show\+\_\+\+Volume().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_a5d8512886cb22395c92265f5eee6a940_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhElem_af2796c868709214bb9b151b47d7d471f}\label{classPhElem_af2796c868709214bb9b151b47d7d471f}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!set\+\_\+ptr\+\_\+stdel@{set\+\_\+ptr\+\_\+stdel}}
+\index{set\+\_\+ptr\+\_\+stdel@{set\+\_\+ptr\+\_\+stdel}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{set\+\_\+ptr\+\_\+stdel()}{set\_ptr\_stdel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::set\+\_\+ptr\+\_\+stdel (\begin{DoxyParamCaption}\item[{\hyperlink{classStdel}{Stdel} $\ast$}]{pointer,  }\item[{\hyperlink{classStdel}{Stdel} $\ast$}]{pointer1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 460 of file Ph\+Elem.\+hpp.
+
+
+
+References Stdel\+::nb\+\_\+val(), Stdel\+::nn\+\_\+val(), Ph\+Elem$<$ Num\+Variaveis $>$\+::numb, Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, and Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel.
+
+\mbox{\Hypertarget{classPhElem_aaf841c14455a54e0f33e2c74bef979fd}\label{classPhElem_aaf841c14455a54e0f33e2c74bef979fd}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!set\+\_\+ptr\+\_\+stdel@{set\+\_\+ptr\+\_\+stdel}}
+\index{set\+\_\+ptr\+\_\+stdel@{set\+\_\+ptr\+\_\+stdel}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{set\+\_\+ptr\+\_\+stdel()}{set\_ptr\_stdel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::set\+\_\+ptr\+\_\+stdel (\begin{DoxyParamCaption}\item[{\hyperlink{classStdel}{Stdel} $\ast$}]{pointers\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 482 of file Ph\+Elem.\+hpp.
+
+
+
+References Stdel\+::nb\+\_\+val(), Stdel\+::nn\+\_\+val(), Ph\+Elem$<$ Num\+Variaveis $>$\+::numb, Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, and Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel.
+
+\mbox{\Hypertarget{classPhElem_a78130ee8d7d6ecf59f231dbd436e9081}\label{classPhElem_a78130ee8d7d6ecf59f231dbd436e9081}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!set\+\_\+ptr\+\_\+stdel@{set\+\_\+ptr\+\_\+stdel}}
+\index{set\+\_\+ptr\+\_\+stdel@{set\+\_\+ptr\+\_\+stdel}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{set\+\_\+ptr\+\_\+stdel()}{set\_ptr\_stdel()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::set\+\_\+ptr\+\_\+stdel (\begin{DoxyParamCaption}\item[{\hyperlink{classStdel}{Stdel} $\ast$}]{pointer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 452 of file Ph\+Elem.\+hpp.
+
+
+
+References Stdel\+::nb\+\_\+val(), Stdel\+::nn\+\_\+val(), Ph\+Elem$<$ Num\+Variaveis $>$\+::numb, Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, and Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel.
+
+\mbox{\Hypertarget{classPhElem_a52fdbcf2283aacd8fdf9672018d74e4a}\label{classPhElem_a52fdbcf2283aacd8fdf9672018d74e4a}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!set\+\_\+ptr\+\_\+stdel\+\_\+var@{set\+\_\+ptr\+\_\+stdel\+\_\+var}}
+\index{set\+\_\+ptr\+\_\+stdel\+\_\+var@{set\+\_\+ptr\+\_\+stdel\+\_\+var}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{set\+\_\+ptr\+\_\+stdel\+\_\+var()}{set\_ptr\_stdel\_var()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::set\+\_\+ptr\+\_\+stdel\+\_\+var (\begin{DoxyParamCaption}\item[{const int}]{ind,  }\item[{\hyperlink{classStdel}{Stdel} $\ast$}]{pointer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 474 of file Ph\+Elem.\+hpp.
+
+
+
+References Stdel\+::nb\+\_\+val(), Stdel\+::nn\+\_\+val(), Ph\+Elem$<$ Num\+Variaveis $>$\+::numb, Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, and Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel.
+
+\mbox{\Hypertarget{classPhElem_a8ed472a9e135b1e16b962c14df8f2225}\label{classPhElem_a8ed472a9e135b1e16b962c14df8f2225}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!set\+\_\+ptvert@{set\+\_\+ptvert}}
+\index{set\+\_\+ptvert@{set\+\_\+ptvert}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{set\+\_\+ptvert()}{set\_ptvert()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::set\+\_\+ptvert (\begin{DoxyParamCaption}\item[{const \hyperlink{structVertice}{Vertice} $\ast$}]{pointer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 493 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::ptvert.
+
+\mbox{\Hypertarget{classPhElem_a03505c861fbcdb7cf8faec9fe5eea088}\label{classPhElem_a03505c861fbcdb7cf8faec9fe5eea088}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!set\+\_\+sgn@{set\+\_\+sgn}}
+\index{set\+\_\+sgn@{set\+\_\+sgn}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{set\+\_\+sgn()}{set\_sgn()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::set\+\_\+sgn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classPhElem_ae63196241e8f39617acb1984cb06910e}\label{classPhElem_ae63196241e8f39617acb1984cb06910e}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!set\+\_\+stgbtrbmap@{set\+\_\+stgbtrbmap}}
+\index{set\+\_\+stgbtrbmap@{set\+\_\+stgbtrbmap}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{set\+\_\+stgbtrbmap()}{set\_stgbtrbmap()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::set\+\_\+stgbtrbmap (\begin{DoxyParamCaption}\item[{const int \&}]{b,  }\item[{const int \&}]{vmapM,  }\item[{const int \&}]{vmapP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 870 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::stgbtrbmapM, and Ph\+Elem$<$ Num\+Variaveis $>$\+::stgbtrbmapP.
+
+\mbox{\Hypertarget{classPhElem_ae226a41912e8e7c76be365518b2a38e2}\label{classPhElem_ae226a41912e8e7c76be365518b2a38e2}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!set\+\_\+type@{set\+\_\+type}}
+\index{set\+\_\+type@{set\+\_\+type}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{set\+\_\+type()}{set\_type()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::set\+\_\+type (\begin{DoxyParamCaption}\item[{const int \&}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 529 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::type.
+
+\mbox{\Hypertarget{classPhElem_a134cbfd28fc238a24156ab1c24fc31c0}\label{classPhElem_a134cbfd28fc238a24156ab1c24fc31c0}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!set\+\_\+\+Vert\+\_\+map@{set\+\_\+\+Vert\+\_\+map}}
+\index{set\+\_\+\+Vert\+\_\+map@{set\+\_\+\+Vert\+\_\+map}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{set\+\_\+\+Vert\+\_\+map()}{set\_Vert\_map()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::set\+\_\+\+Vert\+\_\+map (\begin{DoxyParamCaption}\item[{const int \&}]{n\+\_\+in,  }\item[{int}]{ver\+\_\+temp\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 774 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::numv, Ph\+Elem$<$ Num\+Variaveis $>$\+::type, and Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Vert\+\_\+map.
+
+\mbox{\Hypertarget{classPhElem_ac6f5e03dd6e155037363dbd0ea2f401b}\label{classPhElem_ac6f5e03dd6e155037363dbd0ea2f401b}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+\+Aresta@{show\+\_\+\+Aresta}}
+\index{show\+\_\+\+Aresta@{show\+\_\+\+Aresta}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+\+Aresta()}{show\_Aresta()}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+\+Aresta (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 133 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::aresta\+\_\+map.
+
+\mbox{\Hypertarget{classPhElem_a0caf55d9fac7477102ee34373c67a024}\label{classPhElem_a0caf55d9fac7477102ee34373c67a024}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+b0@{show\+\_\+b0}}
+\index{show\+\_\+b0@{show\+\_\+b0}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+b0()}{show\_b0()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+b0 (\begin{DoxyParamCaption}\item[{const int \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classPhElem_afb4171c67795f5614d9628d59f3bfaf7}\label{classPhElem_afb4171c67795f5614d9628d59f3bfaf7}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+b0@{show\+\_\+b0}}
+\index{show\+\_\+b0@{show\+\_\+b0}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+b0()}{show\_b0()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+b0 (\begin{DoxyParamCaption}\item[{const int \&}]{var,  }\item[{const int \&}]{no }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 602 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::b0.
+
+\mbox{\Hypertarget{classPhElem_a13564919b6d9747f0e6b33f3e8aae31b}\label{classPhElem_a13564919b6d9747f0e6b33f3e8aae31b}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+border\+\_\+num@{show\+\_\+border\+\_\+num}}
+\index{show\+\_\+border\+\_\+num@{show\+\_\+border\+\_\+num}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+border\+\_\+num()}{show\_border\_num()}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+border\+\_\+num (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 136 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::border\+\_\+num.
+
+\mbox{\Hypertarget{classPhElem_a0846ec2cbd31a24aea440c29a71d50ec}\label{classPhElem_a0846ec2cbd31a24aea440c29a71d50ec}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+bs@{show\+\_\+bs}}
+\index{show\+\_\+bs@{show\+\_\+bs}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+bs()}{show\_bs()}}
+{\footnotesize\ttfamily double \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+bs (\begin{DoxyParamCaption}\item[{const int \&}]{var,  }\item[{const int \&}]{no }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 609 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::bs.
+
+\mbox{\Hypertarget{classPhElem_a916c6927d0964574d815a13dd80f1e30}\label{classPhElem_a916c6927d0964574d815a13dd80f1e30}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+\+Face@{show\+\_\+\+Face}}
+\index{show\+\_\+\+Face@{show\+\_\+\+Face}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+\+Face()}{show\_Face()}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+\+Face (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 134 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::face\+\_\+map.
+
+\mbox{\Hypertarget{classPhElem_a878851914f553298700437c5c8aef4dd}\label{classPhElem_a878851914f553298700437c5c8aef4dd}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+gbnmap@{show\+\_\+gbnmap}}
+\index{show\+\_\+gbnmap@{show\+\_\+gbnmap}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+gbnmap()}{show\_gbnmap()}}
+{\footnotesize\ttfamily const int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+gbnmap (\begin{DoxyParamCaption}\item[{int}]{ivar,  }\item[{int}]{modo }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 39 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::gbnmap.
+
+\mbox{\Hypertarget{classPhElem_a2addc4d79151aeac865e2255be3b417d}\label{classPhElem_a2addc4d79151aeac865e2255be3b417d}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+gbtrbmap@{show\+\_\+gbtrbmap}}
+\index{show\+\_\+gbtrbmap@{show\+\_\+gbtrbmap}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+gbtrbmap()}{show\_gbtrbmap()}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+gbtrbmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 105 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::gbtrbmap.
+
+\mbox{\Hypertarget{classPhElem_a63b2f67b4f782432909cd7d32d188996}\label{classPhElem_a63b2f67b4f782432909cd7d32d188996}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+J@{show\+\_\+J}}
+\index{show\+\_\+J@{show\+\_\+J}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+\+J()}{show\_J()}}
+{\footnotesize\ttfamily double \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+J (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 129 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::J, and Ph\+Elem$<$ Num\+Variaveis $>$\+::make\+\_\+\+Mass\+Matrices().
+
+\mbox{\Hypertarget{classPhElem_aca4ef303cd316714d116062e8f4d8ca5}\label{classPhElem_aca4ef303cd316714d116062e8f4d8ca5}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+nume@{show\+\_\+nume}}
+\index{show\+\_\+nume@{show\+\_\+nume}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+nume()}{show\_nume()}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+nume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 41 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::nume.
+
+\mbox{\Hypertarget{classPhElem_afbe63a88e47733c8daec89a4c72b7da0}\label{classPhElem_afbe63a88e47733c8daec89a4c72b7da0}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+numf@{show\+\_\+numf}}
+\index{show\+\_\+numf@{show\+\_\+numf}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+numf()}{show\_numf()}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+numf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 42 of file Ph\+Elem.\+hpp.
+
+
+
+References a, Ph\+Elem$<$ Num\+Variaveis $>$\+::assign\+\_\+gbnmap(), Ph\+Elem$<$ Num\+Variaveis $>$\+::check\+\_\+connectivity(), Ph\+Elem$<$ Num\+Variaveis $>$\+::compute\+\_\+\+J\+V(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Increment\+\_\+field(), Ph\+Elem$<$ Num\+Variaveis $>$\+::inicia\+\_\+gbnmap(), Ph\+Elem$<$ Num\+Variaveis $>$\+::inicia\+\_\+gbtrbmap(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+K\+\_\+\+Imisc2\+F(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Kcomp(), Ph\+Elem$<$ Num\+Variaveis $>$\+::make\+\_\+\+K\+\_\+\+Elast2\+D(), Ph\+Elem$<$ Num\+Variaveis $>$\+::make\+\_\+\+K\+\_\+\+Imiscivel2\+F(), Ph\+Elem$<$ Num\+Variaveis $>$\+::make\+\_\+\+Kcomp\+\_\+\+Elast2\+D(), Ph\+Elem$<$ Num\+Variaveis $>$\+::make\+\_\+\+Kcomp\+\_\+\+Elast2\+D\+\_\+dyn(), Ph\+Elem$<$ Num\+Variaveis $>$\+::make\+\_\+vector(), Ph\+Elem$<$ Num\+Variaveis $>$\+::make\+\_\+vector\+\_\+\+Elast2\+D\+\_\+dyn(), Ph\+Elem$<$ Num\+Variaveis $>$\+::make\+\_\+\+Vector\+\_\+\+Eq\+\_\+\+S1(), Ph\+Elem$<$ Num\+Variaveis $>$\+::map(), Ph\+Elem$<$ Num\+Variaveis $>$\+::mapa\+\_\+inverso(), Ph\+Elem$<$ Num\+Variaveis $>$\+::numf, Ph\+Elem$<$ Num\+Variaveis $>$\+::\+P\+\_\+eval\+\_\+phys(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+P\+\_\+eval\+\_\+print(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+P\+\_\+eval\+\_\+print\+\_\+\+Elast2\+D(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+P\+\_\+eval\+\_\+print\+\_\+\+Elast2\+D\+\_\+dyn(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+P\+\_\+eval\+\_\+u(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+P\+\_\+eval\+\_\+u\+\_\+p1(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+P\+\_\+eval\+\_\+vert(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+P\+\_\+print(), Ph\+Elem$<$ Num\+Variaveis $>$\+::print\+\_\+matrices(), Ph\+Elem$<$ Num\+Variaveis $>$\+::print\+\_\+modes(), Ph\+Elem$<$ Num\+Variaveis $>$\+::print\+\_\+numeracao(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Processar\+\_\+dados(), Ph\+Elem$<$ Num\+Variaveis $>$\+::set\+\_\+gbnmap(), Ph\+Elem$<$ Num\+Variaveis $>$\+::set\+\_\+stgbtrbmap(), Ph\+Elem$<$ Num\+Variaveis $>$\+::set\+\_\+type(), Ph\+Elem$<$ Num\+Variaveis $>$\+::type\+\_\+val(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Vector\+Elast2\+D(), Ph\+Elem$<$ Num\+Variaveis $>$\+::zera\+\_\+bs(), and Ph\+Elem$<$ Num\+Variaveis $>$\+::zera\+\_\+vetores().
+
+\mbox{\Hypertarget{classPhElem_a5288b2eba55ffa37f1a9866a516f6886}\label{classPhElem_a5288b2eba55ffa37f1a9866a516f6886}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+\+Num\+Local\+Vars@{show\+\_\+\+Num\+Local\+Vars}}
+\index{show\+\_\+\+Num\+Local\+Vars@{show\+\_\+\+Num\+Local\+Vars}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+\+Num\+Local\+Vars()}{show\_NumLocalVars()}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+\+Num\+Local\+Vars (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 28 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Num\+Local\+Vars, Ph\+Elem$<$ Num\+Variaveis $>$\+::read\+\_\+vertices(), Ph\+Elem$<$ Num\+Variaveis $>$\+::set\+\_\+ptr\+\_\+stdel(), Ph\+Elem$<$ Num\+Variaveis $>$\+::set\+\_\+ptr\+\_\+stdel\+\_\+var(), Ph\+Elem$<$ Num\+Variaveis $>$\+::set\+\_\+ptvert(), Ph\+Elem$<$ Num\+Variaveis $>$\+::set\+\_\+sgn(), Ph\+Elem$<$ Num\+Variaveis $>$\+::set\+\_\+\+Vert\+\_\+map(), and Ph\+Elem$<$ Num\+Variaveis $>$\+::teste().
+
+\mbox{\Hypertarget{classPhElem_a69a5cfc5b3b7faa4ad5f584311406ce1}\label{classPhElem_a69a5cfc5b3b7faa4ad5f584311406ce1}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+numv@{show\+\_\+numv}}
+\index{show\+\_\+numv@{show\+\_\+numv}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+numv()}{show\_numv()}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+numv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 40 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::numv.
+
+\mbox{\Hypertarget{classPhElem_a7a476e9682accd03064f3e8bec39fb50}\label{classPhElem_a7a476e9682accd03064f3e8bec39fb50}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+part\+\_\+num@{show\+\_\+part\+\_\+num}}
+\index{show\+\_\+part\+\_\+num@{show\+\_\+part\+\_\+num}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+part\+\_\+num()}{show\_part\_num()}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+part\+\_\+num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 137 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::part\+\_\+num, and Ph\+Elem$<$ Num\+Variaveis $>$\+::set\+\_\+part\+\_\+num().
+
+\mbox{\Hypertarget{classPhElem_a227c31195c6832f8e36f8d507806bd54}\label{classPhElem_a227c31195c6832f8e36f8d507806bd54}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+ptr\+\_\+stdel@{show\+\_\+ptr\+\_\+stdel}}
+\index{show\+\_\+ptr\+\_\+stdel@{show\+\_\+ptr\+\_\+stdel}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+ptr\+\_\+stdel()}{show\_ptr\_stdel()}}
+{\footnotesize\ttfamily \hyperlink{classStdel}{Stdel} $\ast$ \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+ptr\+\_\+stdel (\begin{DoxyParamCaption}\item[{const int \&}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 588 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel.
+
+\mbox{\Hypertarget{classDG__Elem_acc7285f0df1d6a4544405169daf2853c}\label{classDG__Elem_acc7285f0df1d6a4544405169daf2853c}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+rho@{show\+\_\+rho}}
+\index{show\+\_\+rho@{show\+\_\+rho}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+rho()}{show\_rho()}}
+{\footnotesize\ttfamily double D\+G\+\_\+\+Elem\+::show\+\_\+rho (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 28 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+References rho.
+
+\mbox{\Hypertarget{classPhElem_ab271550e1373e11cb0b1f62d3e1ea428}\label{classPhElem_ab271550e1373e11cb0b1f62d3e1ea428}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+sgn@{show\+\_\+sgn}}
+\index{show\+\_\+sgn@{show\+\_\+sgn}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+sgn()}{show\_sgn()}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+sgn (\begin{DoxyParamCaption}\item[{const int \&}]{ia,  }\item[{const int \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 38 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::sgn.
+
+\mbox{\Hypertarget{classPhElem_a47dc705efd50a4484bf407bce4a5e010}\label{classPhElem_a47dc705efd50a4484bf407bce4a5e010}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+sinal@{show\+\_\+sinal}}
+\index{show\+\_\+sinal@{show\+\_\+sinal}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+sinal()}{show\_sinal()}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+sinal (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 135 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::sinal.
+
+\mbox{\Hypertarget{classPhElem_a5f0e8811ea30343e51e4be9ff40d2b74}\label{classPhElem_a5f0e8811ea30343e51e4be9ff40d2b74}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+stgbtrbmapM@{show\+\_\+stgbtrbmapM}}
+\index{show\+\_\+stgbtrbmapM@{show\+\_\+stgbtrbmapM}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+stgbtrbmap\+M()}{show\_stgbtrbmapM()}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+stgbtrbmapM (\begin{DoxyParamCaption}\item[{const int \&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 106 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::stgbtrbmapM.
+
+\mbox{\Hypertarget{classPhElem_a3d9e8990f4442e3b17e1cce3c9af19e9}\label{classPhElem_a3d9e8990f4442e3b17e1cce3c9af19e9}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+stgbtrbmapP@{show\+\_\+stgbtrbmapP}}
+\index{show\+\_\+stgbtrbmapP@{show\+\_\+stgbtrbmapP}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+stgbtrbmap\+P()}{show\_stgbtrbmapP()}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+stgbtrbmapP (\begin{DoxyParamCaption}\item[{const int \&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 107 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Bound\+Cond(), Ph\+Elem$<$ Num\+Variaveis $>$\+::check\+\_\+gradiente(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Neumann(), Ph\+Elem$<$ Num\+Variaveis $>$\+::show\+\_\+b0(), Ph\+Elem$<$ Num\+Variaveis $>$\+::show\+\_\+bs(), Ph\+Elem$<$ Num\+Variaveis $>$\+::show\+\_\+ptr\+\_\+stdel(), Ph\+Elem$<$ Num\+Variaveis $>$\+::show\+\_\+u(), and Ph\+Elem$<$ Num\+Variaveis $>$\+::stgbtrbmapP.
+
+\mbox{\Hypertarget{classPhElem_a27e7bc9ed0ea64d609d4d0b29baba468}\label{classPhElem_a27e7bc9ed0ea64d609d4d0b29baba468}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+u@{show\+\_\+u}}
+\index{show\+\_\+u@{show\+\_\+u}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+u()}{show\_u()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+u (\begin{DoxyParamCaption}\item[{const int \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classPhElem_a9d2b7b826289ccd180fdd4b45d0d7333}\label{classPhElem_a9d2b7b826289ccd180fdd4b45d0d7333}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+u@{show\+\_\+u}}
+\index{show\+\_\+u@{show\+\_\+u}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+u()}{show\_u()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+u (\begin{DoxyParamCaption}\item[{const int \&}]{var,  }\item[{const int \&}]{no }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 595 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::u0.
+
+\mbox{\Hypertarget{classPhElem_ace7e4ec0fa3ca3e829cd790375ab981e}\label{classPhElem_ace7e4ec0fa3ca3e829cd790375ab981e}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+\+Vert\+\_\+map@{show\+\_\+\+Vert\+\_\+map}}
+\index{show\+\_\+\+Vert\+\_\+map@{show\+\_\+\+Vert\+\_\+map}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+\+Vert\+\_\+map()}{show\_Vert\_map()}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::show\+\_\+\+Vert\+\_\+map (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 132 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Vert\+\_\+map.
+
+\mbox{\Hypertarget{classDG__Elem_a01a49e07fd18a74e12eedf15cff7b8c7}\label{classDG__Elem_a01a49e07fd18a74e12eedf15cff7b8c7}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!show\+\_\+\+Volume@{show\+\_\+\+Volume}}
+\index{show\+\_\+\+Volume@{show\+\_\+\+Volume}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{show\+\_\+\+Volume()}{show\_Volume()}}
+{\footnotesize\ttfamily double D\+G\+\_\+\+Elem\+::show\+\_\+\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 29 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+References Atualizar\+\_\+valores(), B(), calcula\+\_\+tracos(), echo\+\_\+traco(), finaliza\+\_\+vetores(), inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), inicia\+\_\+tracos(), perm\+\_\+val(), set\+\_\+mass\+\_\+density(), set\+\_\+permeabilidade(), set\+\_\+porosidade(), Traco\+\_\+\+Kgrad\+\_\+pc(), Traco\+\_\+\+Kgrad\+\_\+pw(), Traco\+\_\+\+Kgrad\+\_\+sn(), Traco\+\_\+phi(), Traco\+\_\+pw(), Traco\+\_\+sn(), Volume, Volume\+Integrals(), Volume\+Integrals\+\_\+\+I\+G(), Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), Volume\+Integrals\+T(), and Volume\+Tracos().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classDG__Elem_a01a49e07fd18a74e12eedf15cff7b8c7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhElem_a9742fa2313cf25a24ae9c5602bd75ac0}\label{classPhElem_a9742fa2313cf25a24ae9c5602bd75ac0}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!teste@{teste}}
+\index{teste@{teste}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{teste()}{teste()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::teste (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 189 of file Elastostatica.\+cpp.
+
+\mbox{\Hypertarget{classPhElem_adc3411d8b3a88f04004b6d48e64e9334}\label{classPhElem_adc3411d8b3a88f04004b6d48e64e9334}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!teste\+\_\+gradiente@{teste\+\_\+gradiente}}
+\index{teste\+\_\+gradiente@{teste\+\_\+gradiente}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{teste\+\_\+gradiente()}{teste\_gradiente()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::teste\+\_\+gradiente (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 1426 of file Ph\+Elem.\+hpp.
+
+
+
+References aux, e, Stdel\+::eval\+\_\+\+Grad\+Phi(), Stdel\+::eval\+\_\+\+Phi(), Stdel\+::\+Gradiente(), Ph\+Elem$<$ Num\+Variaveis $>$\+::ndim, Stdel\+::\+N\+G\+Q\+P\+\_\+val(), Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel, Ph\+Elem$<$ Num\+Variaveis $>$\+::ptvert, and Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Vert\+\_\+map.
+
+\mbox{\Hypertarget{classPhElem_a68e2ff863aa38d90933fc033e1fcec0e}\label{classPhElem_a68e2ff863aa38d90933fc033e1fcec0e}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!teste\+\_\+transformacao\+\_\+direta@{teste\+\_\+transformacao\+\_\+direta}}
+\index{teste\+\_\+transformacao\+\_\+direta@{teste\+\_\+transformacao\+\_\+direta}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{teste\+\_\+transformacao\+\_\+direta()}{teste\_transformacao\_direta()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::teste\+\_\+transformacao\+\_\+direta (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fin,  }\item[{F\+I\+LE $\ast$}]{fout,  }\item[{const int \&}]{npoints,  }\item[{const double}]{coord\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classDG__Elem_a8d090e18204cd99ed11ef8115a95c2e7}\label{classDG__Elem_a8d090e18204cd99ed11ef8115a95c2e7}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Traco\+\_\+grad\+\_\+phi@{Traco\+\_\+grad\+\_\+phi}}
+\index{Traco\+\_\+grad\+\_\+phi@{Traco\+\_\+grad\+\_\+phi}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Traco\+\_\+grad\+\_\+phi()}{Traco\_grad\_phi()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::\+Traco\+\_\+grad\+\_\+phi (\begin{DoxyParamCaption}\item[{const int \&}]{lado,  }\item[{const int \&}]{ivar,  }\item[{const int \&}]{ind,  }\item[{double $\ast$$\ast$}]{saida }\end{DoxyParamCaption})}
+
+
+
+Definition at line 472 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References Ph\+Elem$<$ 2 $>$\+::ndim, Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, Stdel\+::qborder\+\_\+val(), qmax, and Tr\+Grad\+Phi.
+
+
+
+Referenced by Traco\+\_\+phi\+\_\+1().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{classDG__Elem_a8d090e18204cd99ed11ef8115a95c2e7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_a8d090e18204cd99ed11ef8115a95c2e7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDG__Elem_ad288d45acae59787b21a35b38fe47b10}\label{classDG__Elem_ad288d45acae59787b21a35b38fe47b10}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Traco\+\_\+\+Kgrad\+\_\+pc@{Traco\+\_\+\+Kgrad\+\_\+pc}}
+\index{Traco\+\_\+\+Kgrad\+\_\+pc@{Traco\+\_\+\+Kgrad\+\_\+pc}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Traco\+\_\+\+Kgrad\+\_\+pc()}{Traco\_Kgrad\_pc()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::\+Traco\+\_\+\+Kgrad\+\_\+pc (\begin{DoxyParamCaption}\item[{const int \&}]{h,  }\item[{double $\ast$$\ast$}]{saida }\end{DoxyParamCaption})}
+
+
+
+Definition at line 432 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References Ph\+Elem$<$ 2 $>$\+::ndim, Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, Stdel\+::qborder\+\_\+val(), qmax, and Tr\+Kgrad\+\_\+pc.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), for(), and show\+\_\+\+Volume().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{classDG__Elem_ad288d45acae59787b21a35b38fe47b10_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_ad288d45acae59787b21a35b38fe47b10_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDG__Elem_a0109cc28854e31b5df555513e9fccfed}\label{classDG__Elem_a0109cc28854e31b5df555513e9fccfed}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Traco\+\_\+\+Kgrad\+\_\+phi\+\_\+n@{Traco\+\_\+\+Kgrad\+\_\+phi\+\_\+n}}
+\index{Traco\+\_\+\+Kgrad\+\_\+phi\+\_\+n@{Traco\+\_\+\+Kgrad\+\_\+phi\+\_\+n}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Traco\+\_\+\+Kgrad\+\_\+phi\+\_\+n()}{Traco\_Kgrad\_phi\_n()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::\+Traco\+\_\+\+Kgrad\+\_\+phi\+\_\+n (\begin{DoxyParamCaption}\item[{const int \&}]{lado,  }\item[{const int \&}]{ivar,  }\item[{const int \&}]{ind,  }\item[{double $\ast$}]{saida }\end{DoxyParamCaption})}
+
+
+
+Definition at line 483 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, Stdel\+::qborder\+\_\+val(), qmax, and Tr\+Kgrad\+Phi\+\_\+n.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), for(), and Traco\+\_\+phi\+\_\+1().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{classDG__Elem_a0109cc28854e31b5df555513e9fccfed_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_a0109cc28854e31b5df555513e9fccfed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDG__Elem_ae98efe920078bc5fd18eceee997d44a2}\label{classDG__Elem_ae98efe920078bc5fd18eceee997d44a2}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Traco\+\_\+\+Kgrad\+\_\+pw@{Traco\+\_\+\+Kgrad\+\_\+pw}}
+\index{Traco\+\_\+\+Kgrad\+\_\+pw@{Traco\+\_\+\+Kgrad\+\_\+pw}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Traco\+\_\+\+Kgrad\+\_\+pw()}{Traco\_Kgrad\_pw()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::\+Traco\+\_\+\+Kgrad\+\_\+pw (\begin{DoxyParamCaption}\item[{const int \&}]{h,  }\item[{double $\ast$$\ast$}]{saida }\end{DoxyParamCaption})}
+
+
+
+Definition at line 422 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References Ph\+Elem$<$ 2 $>$\+::ndim, Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, Stdel\+::qborder\+\_\+val(), qmax, and Tr\+Kgrad\+\_\+pw.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), for(), and show\+\_\+\+Volume().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{classDG__Elem_ae98efe920078bc5fd18eceee997d44a2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_ae98efe920078bc5fd18eceee997d44a2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDG__Elem_ae64a1118040aad9dd3c18ac68b2d5d4f}\label{classDG__Elem_ae64a1118040aad9dd3c18ac68b2d5d4f}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Traco\+\_\+\+Kgrad\+\_\+sn@{Traco\+\_\+\+Kgrad\+\_\+sn}}
+\index{Traco\+\_\+\+Kgrad\+\_\+sn@{Traco\+\_\+\+Kgrad\+\_\+sn}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Traco\+\_\+\+Kgrad\+\_\+sn()}{Traco\_Kgrad\_sn()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::\+Traco\+\_\+\+Kgrad\+\_\+sn (\begin{DoxyParamCaption}\item[{const int \&}]{h,  }\item[{double $\ast$$\ast$}]{saida }\end{DoxyParamCaption})}
+
+
+
+Definition at line 442 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References Ph\+Elem$<$ 2 $>$\+::ndim, Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, Stdel\+::qborder\+\_\+val(), qmax, and Tr\+Kgrad\+\_\+sn.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), for(), and show\+\_\+\+Volume().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{classDG__Elem_ae64a1118040aad9dd3c18ac68b2d5d4f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_ae64a1118040aad9dd3c18ac68b2d5d4f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDG__Elem_aa97824992d60c2a7b5506e5d660dc7a1}\label{classDG__Elem_aa97824992d60c2a7b5506e5d660dc7a1}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Traco\+\_\+phi@{Traco\+\_\+phi}}
+\index{Traco\+\_\+phi@{Traco\+\_\+phi}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Traco\+\_\+phi()}{Traco\_phi()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::\+Traco\+\_\+phi (\begin{DoxyParamCaption}\item[{const int \&}]{lado,  }\item[{const int \&}]{ivar,  }\item[{const int \&}]{ind,  }\item[{double $\ast$}]{saida }\end{DoxyParamCaption})}
+
+
+
+Definition at line 454 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References pos, Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, Stdel\+::qborder\+\_\+val(), qmax, and Tr\+Phi.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), and show\+\_\+\+Volume().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{classDG__Elem_aa97824992d60c2a7b5506e5d660dc7a1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_aa97824992d60c2a7b5506e5d660dc7a1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDG__Elem_a99f9e69fc0d6eacd683712bc456af5f7}\label{classDG__Elem_a99f9e69fc0d6eacd683712bc456af5f7}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Traco\+\_\+phi\+\_\+1@{Traco\+\_\+phi\+\_\+1}}
+\index{Traco\+\_\+phi\+\_\+1@{Traco\+\_\+phi\+\_\+1}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Traco\+\_\+phi\+\_\+1()}{Traco\_phi\_1()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::\+Traco\+\_\+phi\+\_\+1 (\begin{DoxyParamCaption}\item[{const int \&}]{lado,  }\item[{const int \&}]{ivar,  }\item[{const int \&}]{pos,  }\item[{double $\ast$}]{saida }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 81 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, Stdel\+::qborder\+\_\+val(), qmax, Traco\+\_\+grad\+\_\+phi(), Traco\+\_\+\+Kgrad\+\_\+phi\+\_\+n(), and Tr\+Phi.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Interior(), and D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Outflow().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_a99f9e69fc0d6eacd683712bc456af5f7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_a99f9e69fc0d6eacd683712bc456af5f7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDG__Elem_ab57a34a01c448785d8a887e51e7ab331}\label{classDG__Elem_ab57a34a01c448785d8a887e51e7ab331}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Traco\+\_\+pw@{Traco\+\_\+pw}}
+\index{Traco\+\_\+pw@{Traco\+\_\+pw}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Traco\+\_\+pw()}{Traco\_pw()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::\+Traco\+\_\+pw (\begin{DoxyParamCaption}\item[{const int \&}]{h,  }\item[{double $\ast$}]{saida }\end{DoxyParamCaption})}
+
+
+
+Definition at line 415 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, Stdel\+::qborder\+\_\+val(), qmax, and Trpw.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), and show\+\_\+\+Volume().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{classDG__Elem_ab57a34a01c448785d8a887e51e7ab331_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_ab57a34a01c448785d8a887e51e7ab331_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDG__Elem_a4b5b26372a103e9f10c9d518419d4fd1}\label{classDG__Elem_a4b5b26372a103e9f10c9d518419d4fd1}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Traco\+\_\+sn@{Traco\+\_\+sn}}
+\index{Traco\+\_\+sn@{Traco\+\_\+sn}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Traco\+\_\+sn()}{Traco\_sn()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::\+Traco\+\_\+sn (\begin{DoxyParamCaption}\item[{const int \&}]{h,  }\item[{double $\ast$}]{saida }\end{DoxyParamCaption})}
+
+
+
+Definition at line 408 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, Stdel\+::qborder\+\_\+val(), qmax, and Trsn.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), and show\+\_\+\+Volume().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{classDG__Elem_a4b5b26372a103e9f10c9d518419d4fd1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_a4b5b26372a103e9f10c9d518419d4fd1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhElem_a09b6787e5e42496ece86754bbb2ae59c}\label{classPhElem_a09b6787e5e42496ece86754bbb2ae59c}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!transformacao\+\_\+direta@{transformacao\+\_\+direta}}
+\index{transformacao\+\_\+direta@{transformacao\+\_\+direta}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{transformacao\+\_\+direta()}{transformacao\_direta()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::transformacao\+\_\+direta (\begin{DoxyParamCaption}\item[{double}]{f\mbox{[}$\,$\mbox{]},  }\item[{const int \&}]{ivar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 980 of file Ph\+Elem.\+hpp.
+
+
+
+References aux, B(), Ph\+Elem$<$ Num\+Variaveis $>$\+::\+JV, Stdel\+::mass(), Ph\+Elem$<$ Num\+Variaveis $>$\+::numn, Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel, Ph\+Elem$<$ Num\+Variaveis $>$\+::u0, and Stdel\+::vector\+\_\+of\+\_\+integral\+\_\+of\+\_\+f\+\_\+\+Phi\+\_\+dv().
+
+\mbox{\Hypertarget{classPhElem_a4ea6c54e35eb46d331db770f992c4c4b}\label{classPhElem_a4ea6c54e35eb46d331db770f992c4c4b}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!type\+\_\+val@{type\+\_\+val}}
+\index{type\+\_\+val@{type\+\_\+val}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{type\+\_\+val()}{type\_val()}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::type\+\_\+val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 535 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::type.
+
+\mbox{\Hypertarget{classPhElem_a38499c9f62a291a880d72db646171cb5}\label{classPhElem_a38499c9f62a291a880d72db646171cb5}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Vector\+Elast2D@{Vector\+Elast2D}}
+\index{Vector\+Elast2D@{Vector\+Elast2D}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Vector\+Elast2\+D()}{VectorElast2D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::Vector\+Elast2D (\begin{DoxyParamCaption}\item[{const int \&}]{i,  }\item[{double}]{sum\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classPhElem_a4b130cb327652894d81b2c4e26b96f41}\label{classPhElem_a4b130cb327652894d81b2c4e26b96f41}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Vector\+Elast2D@{Vector\+Elast2D}}
+\index{Vector\+Elast2D@{Vector\+Elast2D}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Vector\+Elast2\+D()}{VectorElast2D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::Vector\+Elast2D (\begin{DoxyParamCaption}\item[{double}]{vector\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 161 of file Elastostatica.\+cpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::b0, and Ph\+Elem$<$ Num\+Variaveis $>$\+::sgn.
+
+\mbox{\Hypertarget{classPhElem_a993d5f1b66f6d99ffb95adc9ff882e80}\label{classPhElem_a993d5f1b66f6d99ffb95adc9ff882e80}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!vetor\+\_\+superficie@{vetor\+\_\+superficie}}
+\index{vetor\+\_\+superficie@{vetor\+\_\+superficie}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{vetor\+\_\+superficie()}{vetor\_superficie()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::vetor\+\_\+superficie (\begin{DoxyParamCaption}\item[{const int \&}]{num\+\_\+local,  }\item[{double \&}]{area,  }\item[{double}]{normal\mbox{[}3\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 1487 of file Ph\+Elem.\+hpp.
+
+
+
+References Ph\+Elem$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel, Ph\+Elem$<$ Num\+Variaveis $>$\+::ptvert, Stdel\+::superficie\+\_\+externa(), and Ph\+Elem$<$ Num\+Variaveis $>$\+::\+Vert\+\_\+map.
+
+\mbox{\Hypertarget{classDG__Elem_a166b7ad0ea852f703f65661c14b5c713}\label{classDG__Elem_a166b7ad0ea852f703f65661c14b5c713}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Volume\+Integrals@{Volume\+Integrals}}
+\index{Volume\+Integrals@{Volume\+Integrals}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Volume\+Integrals()}{VolumeIntegrals()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::\+Volume\+Integrals (\begin{DoxyParamCaption}\item[{const double}]{Dt,  }\item[{\hyperlink{classFluids}{Fluids}}]{fls,  }\item[{Teuchos\+::\+R\+CP$<$ Epetra\+\_\+\+F\+E\+Crs\+Matrix $>$}]{A,  }\item[{Teuchos\+::\+R\+CP$<$ Epetra\+\_\+\+F\+E\+Vector $>$}]{R\+HS,  }\item[{double $\ast$}]{gbtrsn = {\ttfamily NULL},  }\item[{double $\ast$}]{gbtrpw = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1124 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References aaux, aux, B(), d2\+\_\+pc, Fluids\+::d2pc(), d\+\_\+lambdan, d\+\_\+lambdat, d\+\_\+lambdaw, d\+\_\+pc, Fluids\+::dkrn(), Fluids\+::dkrw(), Fluids\+::dpc(), Stdel\+::eval\+\_\+\+Phi(), Stdel\+::eval\+G\+Q(), Ph\+Elem$<$ 2 $>$\+::gbnmap, Ph\+Elem$<$ 2 $>$\+::gbtrbmap, Stdel\+::\+Gradiente(), Grad\+Phi, indice(), integral(), Ph\+Elem$<$ 2 $>$\+::\+JV, Fluids\+::\+Krn(), Fluids\+::\+Krw(), lambdan, lambdat, lambdaw, m, mun, muw, n0, Ph\+Elem$<$ 2 $>$\+::ndim, Stdel\+::\+N\+G\+Q\+P\+\_\+val(), npos(), Ph\+Elem$<$ 2 $>$\+::numborders, Ph\+Elem$<$ 2 $>$\+::numn, pc, perm, phi\+\_\+l, phi\+\_\+r, porosidade, pres, Fluids\+::pressao\+\_\+capilar(), Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, Ph\+Elem$<$ 2 $>$\+::ptvert, pw, Stdel\+::qborder\+\_\+val(), qmax, qn, qw, sat, Fluids\+::show\+\_\+mun(), Fluids\+::show\+\_\+muw(), Ph\+Elem$<$ 2 $>$\+::sinal, sn, sna, Stdel\+::trace(), Tr\+Kgrad\+\_\+pc, Tr\+Kgrad\+\_\+pw, Tr\+Kgrad\+\_\+sn, Trpw, Trsn, Ph\+Elem$<$ 2 $>$\+::u0, and Ph\+Elem$<$ 2 $>$\+::\+Vert\+\_\+map.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+Matriz\+Vetor\+\_\+\+Epetra(), and show\+\_\+\+Volume().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_a166b7ad0ea852f703f65661c14b5c713_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_a166b7ad0ea852f703f65661c14b5c713_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDG__Elem_a3fc71dbfe141c0d42dc8ceff8f0ef8ce}\label{classDG__Elem_a3fc71dbfe141c0d42dc8ceff8f0ef8ce}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Volume\+Integrals\+\_\+\+IG@{Volume\+Integrals\+\_\+\+IG}}
+\index{Volume\+Integrals\+\_\+\+IG@{Volume\+Integrals\+\_\+\+IG}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Volume\+Integrals\+\_\+\+I\+G()}{VolumeIntegrals\_IG()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+IG (\begin{DoxyParamCaption}\item[{\hyperlink{classFluids}{Fluids}}]{fls,  }\item[{int \&}]{count,  }\item[{int $\ast$}]{Ti,  }\item[{int $\ast$}]{Tj,  }\item[{double $\ast$}]{Tx,  }\item[{double $\ast$}]{B }\end{DoxyParamCaption})}
+
+
+
+Definition at line 492 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References aux, d2\+\_\+pc, Fluids\+::d2pc(), d\+\_\+lambdan, d\+\_\+lambdat, d\+\_\+lambdaw, d\+\_\+pc, Fluids\+::dkrn(), Fluids\+::dkrw(), Fluids\+::dpc(), Stdel\+::eval\+G\+Q(), Ph\+Elem$<$ 2 $>$\+::gbnmap, Stdel\+::\+Gradiente(), Grad\+Phi, integral(), Ph\+Elem$<$ 2 $>$\+::\+JV, Fluids\+::\+Krn(), Fluids\+::\+Krw(), lambdan, lambdat, lambdaw, m, mun, muw, Ph\+Elem$<$ 2 $>$\+::ndim, Stdel\+::\+N\+G\+Q\+P\+\_\+val(), Ph\+Elem$<$ 2 $>$\+::numborders, Ph\+Elem$<$ 2 $>$\+::numn, pc, perm, pres, Fluids\+::pressao\+\_\+capilar(), prodev(), prodvv(), Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, Ph\+Elem$<$ 2 $>$\+::ptvert, pw, Stdel\+::qborder\+\_\+val(), qmax, sat, Fluids\+::show\+\_\+mun(), Fluids\+::show\+\_\+muw(), Ph\+Elem$<$ 2 $>$\+::sinal, sn, somavv(), Stdel\+::trace(), Tr\+Kgrad\+\_\+pc, Tr\+Kgrad\+\_\+pw, Tr\+Kgrad\+\_\+sn, Trpw, Trsn, Ph\+Elem$<$ 2 $>$\+::u0, and Ph\+Elem$<$ 2 $>$\+::\+Vert\+\_\+map.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions(), and show\+\_\+\+Volume().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classDG__Elem_a3fc71dbfe141c0d42dc8ceff8f0ef8ce_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_a3fc71dbfe141c0d42dc8ceff8f0ef8ce_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDG__Elem_ab3de164caf40da7cc0b123928ad83cc9}\label{classDG__Elem_ab3de164caf40da7cc0b123928ad83cc9}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+CK@{Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+CK}}
+\index{Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+CK@{Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+CK}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K()}{VolumeIntegrals\_UMFPACK()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+CK (\begin{DoxyParamCaption}\item[{const double}]{Dt,  }\item[{\hyperlink{classFluids}{Fluids}}]{fls,  }\item[{int \&}]{count,  }\item[{int $\ast$}]{Ti,  }\item[{int $\ast$}]{Tj,  }\item[{double $\ast$}]{Tx,  }\item[{double $\ast$}]{B,  }\item[{double $\ast$}]{gbtrsn = {\ttfamily NULL},  }\item[{double $\ast$}]{gbtrpw = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 635 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References aaux, aux, d2\+\_\+pc, Fluids\+::d2pc(), d\+\_\+lambdan, d\+\_\+lambdat, d\+\_\+lambdaw, d\+\_\+pc, Fluids\+::dkrn(), Fluids\+::dkrw(), Fluids\+::dpc(), Stdel\+::eval\+\_\+\+Phi(), Stdel\+::eval\+G\+Q(), Ph\+Elem$<$ 2 $>$\+::gbnmap, Ph\+Elem$<$ 2 $>$\+::gbtrbmap, Stdel\+::\+Gradiente(), Grad\+Phi, indice(), integral(), Ph\+Elem$<$ 2 $>$\+::\+JV, Fluids\+::\+Krn(), Fluids\+::\+Krw(), lambdan, lambdat, lambdaw, m, mun, muw, n0, Ph\+Elem$<$ 2 $>$\+::ndim, Stdel\+::\+N\+G\+Q\+P\+\_\+val(), npos(), Ph\+Elem$<$ 2 $>$\+::numborders, Ph\+Elem$<$ 2 $>$\+::numn, pc, perm, phi\+\_\+l, phi\+\_\+r, porosidade, pres, Fluids\+::pressao\+\_\+capilar(), Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, Ph\+Elem$<$ 2 $>$\+::ptvert, pw, Stdel\+::qborder\+\_\+val(), qmax, qn, qw, sat, Fluids\+::show\+\_\+mun(), Fluids\+::show\+\_\+muw(), Ph\+Elem$<$ 2 $>$\+::sinal, sn, sna, Stdel\+::trace(), Tr\+Kgrad\+\_\+pc, Tr\+Kgrad\+\_\+pw, Tr\+Kgrad\+\_\+sn, Trpw, Trsn, Ph\+Elem$<$ 2 $>$\+::u0, and Ph\+Elem$<$ 2 $>$\+::\+Vert\+\_\+map.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+Matriz\+Vetor\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and show\+\_\+\+Volume().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classDG__Elem_ab3de164caf40da7cc0b123928ad83cc9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{classDG__Elem_ab3de164caf40da7cc0b123928ad83cc9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDG__Elem_a2a2a90dfc3c456b66f7e1890d0f236f2}\label{classDG__Elem_a2a2a90dfc3c456b66f7e1890d0f236f2}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Volume\+IntegralsT@{Volume\+IntegralsT}}
+\index{Volume\+IntegralsT@{Volume\+IntegralsT}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Volume\+Integrals\+T()}{VolumeIntegralsT()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::\+Volume\+IntegralsT (\begin{DoxyParamCaption}\item[{const double}]{Dt\+\_\+new,  }\item[{const double}]{Dt\+\_\+old,  }\item[{int \&}]{count,  }\item[{int $\ast$}]{Ti,  }\item[{int $\ast$}]{Tj,  }\item[{double $\ast$}]{Tx,  }\item[{double $\ast$}]{B }\end{DoxyParamCaption})}
+
+
+
+Definition at line 960 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References aux, Stdel\+::eval\+\_\+\+Phi(), Stdel\+::eval\+G\+Q(), Ph\+Elem$<$ 2 $>$\+::gbnmap, Ph\+Elem$<$ 2 $>$\+::\+JV, m, Mass\+\_\+sn, Stdel\+::\+N\+G\+Q\+P\+\_\+val(), Ph\+Elem$<$ 2 $>$\+::numn, phi\+\_\+r, porosidade, Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, sat, sn, sna, and Ph\+Elem$<$ 2 $>$\+::u0.
+
+
+
+Referenced by show\+\_\+\+Volume().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{classDG__Elem_a2a2a90dfc3c456b66f7e1890d0f236f2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classDG__Elem_a2a2a90dfc3c456b66f7e1890d0f236f2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDG__Elem_a84fab76e27b414367eb553f9d4841889}\label{classDG__Elem_a84fab76e27b414367eb553f9d4841889}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Volume\+Tracos@{Volume\+Tracos}}
+\index{Volume\+Tracos@{Volume\+Tracos}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Volume\+Tracos()}{VolumeTracos()}}
+{\footnotesize\ttfamily void D\+G\+\_\+\+Elem\+::\+Volume\+Tracos (\begin{DoxyParamCaption}\item[{const double}]{Dt,  }\item[{\hyperlink{classFluids}{Fluids}}]{fls,  }\item[{double $\ast$}]{gbtrsn = {\ttfamily NULL},  }\item[{double $\ast$}]{gbtrpw = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1024 of file D\+G\+\_\+\+Elem.\+cpp.
+
+
+
+References aux, d2\+\_\+pc, Fluids\+::d2pc(), d\+\_\+lambdan, d\+\_\+lambdat, d\+\_\+lambdaw, d\+\_\+pc, Fluids\+::dkrn(), Fluids\+::dkrw(), Fluids\+::dpc(), Stdel\+::eval\+G\+Q(), Ph\+Elem$<$ 2 $>$\+::gbtrbmap, Stdel\+::\+Gradiente(), Ph\+Elem$<$ 2 $>$\+::\+JV, Fluids\+::\+Krn(), Fluids\+::\+Krw(), lambdan, lambdat, lambdaw, m, mun, muw, Ph\+Elem$<$ 2 $>$\+::ndim, Stdel\+::\+N\+G\+Q\+P\+\_\+val(), Ph\+Elem$<$ 2 $>$\+::numborders, pc, perm, pres, Fluids\+::pressao\+\_\+capilar(), Ph\+Elem$<$ 2 $>$\+::ptr\+\_\+stdel, Ph\+Elem$<$ 2 $>$\+::ptvert, pw, Stdel\+::qborder\+\_\+val(), qmax, sat, Fluids\+::show\+\_\+mun(), Fluids\+::show\+\_\+muw(), Ph\+Elem$<$ 2 $>$\+::sinal, sn, Stdel\+::trace(), Tr\+Kgrad\+\_\+pc, Tr\+Kgrad\+\_\+pw, Tr\+Kgrad\+\_\+sn, Trpw, Trsn, Ph\+Elem$<$ 2 $>$\+::u0, and Ph\+Elem$<$ 2 $>$\+::\+Vert\+\_\+map.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+imprimir\+\_\+taxas\+\_\+de\+\_\+producao(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+Matriz\+Vetor\+\_\+\+Epetra(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+Matriz\+Vetor\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and show\+\_\+\+Volume().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classDG__Elem_a84fab76e27b414367eb553f9d4841889_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDG__Elem_a84fab76e27b414367eb553f9d4841889_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPhElem_a55ef84501df0d4e8aec6d49846e21237}\label{classPhElem_a55ef84501df0d4e8aec6d49846e21237}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!zera\+\_\+bs@{zera\+\_\+bs}}
+\index{zera\+\_\+bs@{zera\+\_\+bs}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{zera\+\_\+bs()}{zera\_bs()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::zera\+\_\+bs (\begin{DoxyParamCaption}\item[{const int \&}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{classPhElem_a46f2be4d83b5c7c2cc9c6699f1fe977c}\label{classPhElem_a46f2be4d83b5c7c2cc9c6699f1fe977c}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!zera\+\_\+vetores@{zera\+\_\+vetores}}
+\index{zera\+\_\+vetores@{zera\+\_\+vetores}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{zera\+\_\+vetores()}{zera\_vetores()}}
+{\footnotesize\ttfamily void \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::zera\+\_\+vetores (\begin{DoxyParamCaption}\item[{const int \&}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classPhElem_a27a4f856d62b68758e4c03c09b4c37f8}\label{classPhElem_a27a4f856d62b68758e4c03c09b4c37f8}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!aresta\+\_\+map@{aresta\+\_\+map}}
+\index{aresta\+\_\+map@{aresta\+\_\+map}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{aresta\+\_\+map}{aresta\_map}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::aresta\+\_\+map\mbox{[}12\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 195 of file Ph\+Elem.\+hpp.
+
+\mbox{\Hypertarget{classPhElem_aeaebffae27dd713bbc06ad07b7b727a3}\label{classPhElem_aeaebffae27dd713bbc06ad07b7b727a3}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!b0@{b0}}
+\index{b0@{b0}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{b0}{b0}}
+{\footnotesize\ttfamily double$\ast$ \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::b0\mbox{[}Num\+Variaveis\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+\mbox{[}M\+A\+X\+M\+O\+D\+E\+S$\ast$\+M\+A\+X\+N\+F\+I\+E\+L\+DS\mbox{]}; vector of body forces 
+
+
+
+Definition at line 201 of file Ph\+Elem.\+hpp.
+
+\mbox{\Hypertarget{classPhElem_ad153ce0aef191aac0f28f2addd213c71}\label{classPhElem_ad153ce0aef191aac0f28f2addd213c71}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!border\+\_\+num@{border\+\_\+num}}
+\index{border\+\_\+num@{border\+\_\+num}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{border\+\_\+num}{border\_num}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::border\+\_\+num\mbox{[}12\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 195 of file Ph\+Elem.\+hpp.
+
+
+
+Referenced by inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), and inicia\+\_\+tracos().
+
+\mbox{\Hypertarget{classPhElem_a42b747116ec9223cdebbc424e27f4089}\label{classPhElem_a42b747116ec9223cdebbc424e27f4089}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!bs@{bs}}
+\index{bs@{bs}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{bs}{bs}}
+{\footnotesize\ttfamily double$\ast$ \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::bs\mbox{[}Num\+Variaveis\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+vector of force boundary conditions 
+
+
+
+Definition at line 202 of file Ph\+Elem.\+hpp.
+
+\mbox{\Hypertarget{classPhElem_a300b484c07390b9016d9ed97980d76b3}\label{classPhElem_a300b484c07390b9016d9ed97980d76b3}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!face\+\_\+map@{face\+\_\+map}}
+\index{face\+\_\+map@{face\+\_\+map}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{face\+\_\+map}{face\_map}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::face\+\_\+map\mbox{[}6\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 195 of file Ph\+Elem.\+hpp.
+
+\mbox{\Hypertarget{classPhElem_ab27e9040a72ec923a90cffb25f5b0c15}\label{classPhElem_ab27e9040a72ec923a90cffb25f5b0c15}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!gbnmap@{gbnmap}}
+\index{gbnmap@{gbnmap}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{gbnmap}{gbnmap}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::gbnmap\mbox{[}Num\+Variaveis\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_a2f91e7a0b4bf68a62a0f3d38904dea2c}{M\+A\+X\+NN}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+mapping from local to global nodes (or modes) 
+
+
+
+Definition at line 197 of file Ph\+Elem.\+hpp.
+
+
+
+Referenced by Volume\+Integrals(), Volume\+Integrals\+\_\+\+I\+G(), Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and Volume\+Integrals\+T().
+
+\mbox{\Hypertarget{classPhElem_a8188f64662092eb065a85d49f3ae6649}\label{classPhElem_a8188f64662092eb065a85d49f3ae6649}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!gbtrbmap@{gbtrbmap}}
+\index{gbtrbmap@{gbtrbmap}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{gbtrbmap}{gbtrbmap}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::gbtrbmap\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Beginning index on the global array where the local border Gauss quadrature points (traces) are mapped; this map facilitates the use of mpi for paralell calculations over element borders. 
+
+
+
+Definition at line 207 of file Ph\+Elem.\+hpp.
+
+
+
+Referenced by Volume\+Integrals(), Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and Volume\+Tracos().
+
+\mbox{\Hypertarget{classDG__Elem_a89a6e65d3cca9d70aff0af308e1c4828}\label{classDG__Elem_a89a6e65d3cca9d70aff0af308e1c4828}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Grad\+Phi@{Grad\+Phi}}
+\index{Grad\+Phi@{Grad\+Phi}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Grad\+Phi}{GradPhi}}
+{\footnotesize\ttfamily double$\ast$$\ast$$\ast$$\ast$ D\+G\+\_\+\+Elem\+::\+Grad\+Phi\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 124 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+Referenced by finaliza\+\_\+vetores(), inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), inicia\+\_\+tracos(), inicia\+\_\+vetores(), Volume\+Integrals(), Volume\+Integrals\+\_\+\+I\+G(), and Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K().
+
+\mbox{\Hypertarget{classPhElem_a27acf6bc6ac9eaf94a7cce52522b3b92}\label{classPhElem_a27acf6bc6ac9eaf94a7cce52522b3b92}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!J@{J}}
+\index{J@{J}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{J}{J}}
+{\footnotesize\ttfamily double \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::J\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Jacobian from the physical to the standard element. 
+
+
+
+Definition at line 199 of file Ph\+Elem.\+hpp.
+
+\mbox{\Hypertarget{classDG__Elem_a21966ef258f170053e616e17082516c8}\label{classDG__Elem_a21966ef258f170053e616e17082516c8}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Jb@{Jb}}
+\index{Jb@{Jb}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Jb}{Jb}}
+{\footnotesize\ttfamily double$\ast$ D\+G\+\_\+\+Elem\+::\+Jb\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Jacobiano nos pontos de Gauss sobre as bordas; usado na integração sobre bordas. 
+
+
+
+Definition at line 115 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+Referenced by finaliza\+\_\+vetores(), inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), and inicia\+\_\+vetores().
+
+\mbox{\Hypertarget{classPhElem_a569278e8b30ca90d0e6f920b5bba7dd5}\label{classPhElem_a569278e8b30ca90d0e6f920b5bba7dd5}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!JV@{JV}}
+\index{JV@{JV}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{JV}{JV}}
+{\footnotesize\ttfamily double$\ast$ \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::JV\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Ponteiro para matriz do Jacobiano nos pontos gaussianos;. 
+
+
+
+Definition at line 200 of file Ph\+Elem.\+hpp.
+
+
+
+Referenced by echo\+\_\+traco(), finaliza\+\_\+vetores(), inicia\+\_\+vetores(), Volume\+Integrals(), Volume\+Integrals\+\_\+\+I\+G(), Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), Volume\+Integrals\+T(), and Volume\+Tracos().
+
+\mbox{\Hypertarget{classDG__Elem_a32939229d5c3e35ef503c432975949cc}\label{classDG__Elem_a32939229d5c3e35ef503c432975949cc}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Laplaciano\+Phi@{Laplaciano\+Phi}}
+\index{Laplaciano\+Phi@{Laplaciano\+Phi}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Laplaciano\+Phi}{LaplacianoPhi}}
+{\footnotesize\ttfamily double$\ast$$\ast$$\ast$ D\+G\+\_\+\+Elem\+::\+Laplaciano\+Phi\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 119 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+Referenced by finaliza\+\_\+vetores(), inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), and inicia\+\_\+vetores().
+
+\mbox{\Hypertarget{classDG__Elem_a53a6e2f1c4d46714b67f131f44902fc3}\label{classDG__Elem_a53a6e2f1c4d46714b67f131f44902fc3}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Mass\+\_\+sn@{Mass\+\_\+sn}}
+\index{Mass\+\_\+sn@{Mass\+\_\+sn}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Mass\+\_\+sn}{Mass\_sn}}
+{\footnotesize\ttfamily double$\ast$$\ast$ D\+G\+\_\+\+Elem\+::\+Mass\+\_\+sn\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 116 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+Referenced by finaliza\+\_\+vetores(), inicia\+\_\+vetores(), and Volume\+Integrals\+T().
+
+\mbox{\Hypertarget{classPhElem_af3ea3f4193f7d65855c3fabead6f2545}\label{classPhElem_af3ea3f4193f7d65855c3fabead6f2545}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!ndim@{ndim}}
+\index{ndim@{ndim}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{ndim}{ndim}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::ndim\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Spatial dimension. 
+
+
+
+Definition at line 188 of file Ph\+Elem.\+hpp.
+
+
+
+Referenced by calcula\+\_\+tracos(), echo\+\_\+traco(), finaliza\+\_\+vetores(), inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), inicia\+\_\+tracos(), inicia\+\_\+vetores(), Traco\+\_\+grad\+\_\+phi(), Traco\+\_\+\+Kgrad\+\_\+pc(), Traco\+\_\+\+Kgrad\+\_\+pw(), Traco\+\_\+\+Kgrad\+\_\+sn(), Volume\+Integrals(), Volume\+Integrals\+\_\+\+I\+G(), Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and Volume\+Tracos().
+
+\mbox{\Hypertarget{classPhElem_ad95c9f8ee7a993ccc7f9cdd08dddf5f6}\label{classPhElem_ad95c9f8ee7a993ccc7f9cdd08dddf5f6}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!numb@{numb}}
+\index{numb@{numb}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{numb}{numb}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::numb\mbox{[}Num\+Variaveis\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 194 of file Ph\+Elem.\+hpp.
+
+\mbox{\Hypertarget{classPhElem_ad24d6fbe02539875405dd4a6cf094284}\label{classPhElem_ad24d6fbe02539875405dd4a6cf094284}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!numborders@{numborders}}
+\index{numborders@{numborders}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{numborders}{numborders}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::numborders\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Number of borders in the element. 
+
+
+
+Definition at line 192 of file Ph\+Elem.\+hpp.
+
+
+
+Referenced by calcula\+\_\+tracos(), echo\+\_\+traco(), finaliza\+\_\+vetores(), inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), inicia\+\_\+tracos(), inicia\+\_\+vetores(), Volume\+Integrals(), Volume\+Integrals\+\_\+\+I\+G(), Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and Volume\+Tracos().
+
+\mbox{\Hypertarget{classPhElem_a1c0c7833feba84d4ed83d172244ca3e1}\label{classPhElem_a1c0c7833feba84d4ed83d172244ca3e1}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!nume@{nume}}
+\index{nume@{nume}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{nume}{nume}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::nume\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Number of edges. 
+
+
+
+Definition at line 190 of file Ph\+Elem.\+hpp.
+
+\mbox{\Hypertarget{classPhElem_a85d9a8342adf9e155a533edf165a6fe3}\label{classPhElem_a85d9a8342adf9e155a533edf165a6fe3}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!numf@{numf}}
+\index{numf@{numf}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{numf}{numf}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::numf\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Number of faces. 
+
+
+
+Definition at line 191 of file Ph\+Elem.\+hpp.
+
+\mbox{\Hypertarget{classPhElem_a2ec71d768628a94d7fbe74be08a08ea9}\label{classPhElem_a2ec71d768628a94d7fbe74be08a08ea9}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Num\+Local\+Vars@{Num\+Local\+Vars}}
+\index{Num\+Local\+Vars@{Num\+Local\+Vars}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Num\+Local\+Vars}{NumLocalVars}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::Num\+Local\+Vars\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 187 of file Ph\+Elem.\+hpp.
+
+
+
+Referenced by echo\+\_\+traco(), inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), inicia\+\_\+tracos(), and inicia\+\_\+vetores().
+
+\mbox{\Hypertarget{classPhElem_a8e65fa4998d28b9b8db9b6fcf8999d20}\label{classPhElem_a8e65fa4998d28b9b8db9b6fcf8999d20}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!numn@{numn}}
+\index{numn@{numn}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{numn}{numn}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::numn\mbox{[}Num\+Variaveis\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 193 of file Ph\+Elem.\+hpp.
+
+
+
+Referenced by calcula\+\_\+tracos(), echo\+\_\+traco(), finaliza\+\_\+vetores(), inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), inicia\+\_\+tracos(), inicia\+\_\+vetores(), Volume\+Integrals(), Volume\+Integrals\+\_\+\+I\+G(), Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and Volume\+Integrals\+T().
+
+\mbox{\Hypertarget{classPhElem_a67ed36925b04bf0f2d177c8d31737526}\label{classPhElem_a67ed36925b04bf0f2d177c8d31737526}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!numv@{numv}}
+\index{numv@{numv}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{numv}{numv}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::numv\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Number of vertices. 
+
+
+
+Definition at line 189 of file Ph\+Elem.\+hpp.
+
+\mbox{\Hypertarget{classPhElem_a141616ccadb4a17328626befc4330932}\label{classPhElem_a141616ccadb4a17328626befc4330932}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!part\+\_\+num@{part\+\_\+num}}
+\index{part\+\_\+num@{part\+\_\+num}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{part\+\_\+num}{part\_num}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::part\+\_\+num\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+numero da particao a qual pertence 
+
+
+
+Definition at line 196 of file Ph\+Elem.\+hpp.
+
+\mbox{\Hypertarget{classDG__Elem_a4b1a31424c3c115bc5bb964c3b72be66}\label{classDG__Elem_a4b1a31424c3c115bc5bb964c3b72be66}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!perm@{perm}}
+\index{perm@{perm}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{perm}{perm}}
+{\footnotesize\ttfamily double D\+G\+\_\+\+Elem\+::perm\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+permeabilidades nas 3 direcoes 
+
+
+
+Definition at line 111 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+Referenced by calcula\+\_\+tracos(), inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), inicia\+\_\+tracos(), perm\+\_\+val(), set\+\_\+permeabilidade(), Volume\+Integrals(), Volume\+Integrals\+\_\+\+I\+G(), Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and Volume\+Tracos().
+
+\mbox{\Hypertarget{classDG__Elem_a79caff690ab51cd79dabbb5fd110d111}\label{classDG__Elem_a79caff690ab51cd79dabbb5fd110d111}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Phi\+Array@{Phi\+Array}}
+\index{Phi\+Array@{Phi\+Array}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Phi\+Array}{PhiArray}}
+{\footnotesize\ttfamily double$\ast$ D\+G\+\_\+\+Elem\+::\+Phi\+Array\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 127 of file D\+G\+\_\+\+Elem.\+hpp.
+
+\mbox{\Hypertarget{classDG__Elem_a0bb64698c7f238bf48da2d584965fcd0}\label{classDG__Elem_a0bb64698c7f238bf48da2d584965fcd0}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!porosidade@{porosidade}}
+\index{porosidade@{porosidade}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{porosidade}{porosidade}}
+{\footnotesize\ttfamily double D\+G\+\_\+\+Elem\+::porosidade\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 110 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+Referenced by set\+\_\+porosidade(), Volume\+Integrals(), Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and Volume\+Integrals\+T().
+
+\mbox{\Hypertarget{classPhElem_a7b4509b90bcf92be76cd8fdb76d7385b}\label{classPhElem_a7b4509b90bcf92be76cd8fdb76d7385b}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!ptr\+\_\+stdel@{ptr\+\_\+stdel}}
+\index{ptr\+\_\+stdel@{ptr\+\_\+stdel}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{ptr\+\_\+stdel}{ptr\_stdel}}
+{\footnotesize\ttfamily \hyperlink{classStdel}{Stdel}$\ast$ \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::ptr\+\_\+stdel\mbox{[}Num\+Variaveis\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 184 of file Ph\+Elem.\+hpp.
+
+
+
+Referenced by Atualizar\+\_\+valores(), calcula\+\_\+tracos(), echo\+\_\+traco(), finaliza\+\_\+vetores(), inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), inicia\+\_\+tracos(), inicia\+\_\+vetores(), Traco\+\_\+grad\+\_\+phi(), Traco\+\_\+\+Kgrad\+\_\+pc(), Traco\+\_\+\+Kgrad\+\_\+phi\+\_\+n(), Traco\+\_\+\+Kgrad\+\_\+pw(), Traco\+\_\+\+Kgrad\+\_\+sn(), Traco\+\_\+phi(), Traco\+\_\+phi\+\_\+1(), Traco\+\_\+pw(), Traco\+\_\+sn(), Volume\+Integrals(), Volume\+Integrals\+\_\+\+I\+G(), Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), Volume\+Integrals\+T(), and Volume\+Tracos().
+
+\mbox{\Hypertarget{classPhElem_a92acc9f8f36991ce851df5e462425d3c}\label{classPhElem_a92acc9f8f36991ce851df5e462425d3c}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!ptvert@{ptvert}}
+\index{ptvert@{ptvert}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{ptvert}{ptvert}}
+{\footnotesize\ttfamily const \hyperlink{structVertice}{Vertice}$\ast$ \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::ptvert\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 186 of file Ph\+Elem.\+hpp.
+
+
+
+Referenced by Atualizar\+\_\+valores(), inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), inicia\+\_\+tracos(), Volume\+Integrals(), Volume\+Integrals\+\_\+\+I\+G(), Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and Volume\+Tracos().
+
+\mbox{\Hypertarget{classDG__Elem_afc53954789d7ec74b2cf2eb2be590d16}\label{classDG__Elem_afc53954789d7ec74b2cf2eb2be590d16}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!pwa@{pwa}}
+\index{pwa@{pwa}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{pwa}{pwa}}
+{\footnotesize\ttfamily double $\ast$ D\+G\+\_\+\+Elem\+::pwa\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ponteiros para os valores nos pontos de Gauss da saturacao e pressao atuais 
+
+
+
+Definition at line 108 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+Referenced by Atualizar\+\_\+valores(), finaliza\+\_\+vetores(), and inicia\+\_\+vetores().
+
+\mbox{\Hypertarget{classDG__Elem_a769560386db7e7c3b64d440ed84156be}\label{classDG__Elem_a769560386db7e7c3b64d440ed84156be}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!qn@{qn}}
+\index{qn@{qn}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{qn}{qn}}
+{\footnotesize\ttfamily double D\+G\+\_\+\+Elem\+::qn\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 112 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+Referenced by set\+\_\+fontes(), Volume\+Integrals(), and Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K().
+
+\mbox{\Hypertarget{classDG__Elem_a89d2130d5e677207cb6c962dc90f79b3}\label{classDG__Elem_a89d2130d5e677207cb6c962dc90f79b3}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!qw@{qw}}
+\index{qw@{qw}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{qw}{qw}}
+{\footnotesize\ttfamily double D\+G\+\_\+\+Elem\+::qw\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 112 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+Referenced by set\+\_\+fontes(), Volume\+Integrals(), and Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K().
+
+\mbox{\Hypertarget{classDG__Elem_a56be853c8e67f9ee71f6b07aa99b3a58}\label{classDG__Elem_a56be853c8e67f9ee71f6b07aa99b3a58}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!rho@{rho}}
+\index{rho@{rho}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{rho}{rho}}
+{\footnotesize\ttfamily double D\+G\+\_\+\+Elem\+::rho\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+densidade de massa ou porosidade 
+
+
+
+Definition at line 109 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+Referenced by D\+G\+\_\+\+Elem(), set\+\_\+mass\+\_\+density(), and show\+\_\+rho().
+
+\mbox{\Hypertarget{classPhElem_a5bb9ccd4ccebf12ff0937d807c443caf}\label{classPhElem_a5bb9ccd4ccebf12ff0937d807c443caf}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!sgn@{sgn}}
+\index{sgn@{sgn}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{sgn}{sgn}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::sgn\mbox{[}Num\+Variaveis\mbox{]}\mbox{[}\hyperlink{MyOptions_8h_a2f91e7a0b4bf68a62a0f3d38904dea2c}{M\+A\+X\+NN}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+sign of the local mode (or mode) 
+
+
+
+Definition at line 198 of file Ph\+Elem.\+hpp.
+
+\mbox{\Hypertarget{classPhElem_a4034b9b2a458d1277ca74e4e8a49627e}\label{classPhElem_a4034b9b2a458d1277ca74e4e8a49627e}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!sinal@{sinal}}
+\index{sinal@{sinal}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{sinal}{sinal}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::sinal\mbox{[}12\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+sinal refers to the borders 
+
+
+
+Definition at line 195 of file Ph\+Elem.\+hpp.
+
+
+
+Referenced by echo\+\_\+traco(), inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), inicia\+\_\+tracos(), Volume\+Integrals(), Volume\+Integrals\+\_\+\+I\+G(), Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and Volume\+Tracos().
+
+\mbox{\Hypertarget{classDG__Elem_ac036921322e2a7d3648723ae77592af5}\label{classDG__Elem_ac036921322e2a7d3648723ae77592af5}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!sna@{sna}}
+\index{sna@{sna}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{sna}{sna}}
+{\footnotesize\ttfamily double$\ast$ D\+G\+\_\+\+Elem\+::sna\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 108 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+Referenced by Atualizar\+\_\+valores(), finaliza\+\_\+vetores(), inicia\+\_\+vetores(), Volume\+Integrals(), Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and Volume\+Integrals\+T().
+
+\mbox{\Hypertarget{classPhElem_aebcf76eedfef93aef801fa3cab9c2708}\label{classPhElem_aebcf76eedfef93aef801fa3cab9c2708}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!stgbtrbmapM@{stgbtrbmapM}}
+\index{stgbtrbmapM@{stgbtrbmapM}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{stgbtrbmapM}{stgbtrbmapM}}
+{\footnotesize\ttfamily int$\ast$ \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::stgbtrbmapM\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Array containing the start point in the global trace array of the internal trace of the border. 
+
+
+
+Definition at line 212 of file Ph\+Elem.\+hpp.
+
+
+
+Referenced by finaliza\+\_\+vetores().
+
+\mbox{\Hypertarget{classPhElem_a6b38afded290e7a4cfb4a215a7ebec4e}\label{classPhElem_a6b38afded290e7a4cfb4a215a7ebec4e}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!stgbtrbmapP@{stgbtrbmapP}}
+\index{stgbtrbmapP@{stgbtrbmapP}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{stgbtrbmapP}{stgbtrbmapP}}
+{\footnotesize\ttfamily int$\ast$ \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::stgbtrbmapP\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Array containing the start point in the global trace array of the external trace of the border. 
+
+
+
+Definition at line 214 of file Ph\+Elem.\+hpp.
+
+
+
+Referenced by finaliza\+\_\+vetores().
+
+\mbox{\Hypertarget{classDG__Elem_acb3ed0d11e27ceae8f0f7c33496aa7e8}\label{classDG__Elem_acb3ed0d11e27ceae8f0f7c33496aa7e8}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Tr\+Grad\+Phi@{Tr\+Grad\+Phi}}
+\index{Tr\+Grad\+Phi@{Tr\+Grad\+Phi}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Tr\+Grad\+Phi}{TrGradPhi}}
+{\footnotesize\ttfamily double$\ast$$\ast$$\ast$$\ast$$\ast$ D\+G\+\_\+\+Elem\+::\+Tr\+Grad\+Phi\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 126 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+Referenced by calcula\+\_\+tracos(), echo\+\_\+traco(), finaliza\+\_\+vetores(), inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), inicia\+\_\+tracos(), inicia\+\_\+vetores(), and Traco\+\_\+grad\+\_\+phi().
+
+\mbox{\Hypertarget{classDG__Elem_a57dac9aed0b175230089be51335e2dfa}\label{classDG__Elem_a57dac9aed0b175230089be51335e2dfa}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Tr\+Kgrad\+\_\+pc@{Tr\+Kgrad\+\_\+pc}}
+\index{Tr\+Kgrad\+\_\+pc@{Tr\+Kgrad\+\_\+pc}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Tr\+Kgrad\+\_\+pc}{TrKgrad\_pc}}
+{\footnotesize\ttfamily double$\ast$$\ast$$\ast$ D\+G\+\_\+\+Elem\+::\+Tr\+Kgrad\+\_\+pc\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 122 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+Referenced by calcula\+\_\+tracos(), finaliza\+\_\+vetores(), inicia\+\_\+vetores(), Traco\+\_\+\+Kgrad\+\_\+pc(), Volume\+Integrals(), Volume\+Integrals\+\_\+\+I\+G(), Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and Volume\+Tracos().
+
+\mbox{\Hypertarget{classDG__Elem_a9c510976b9964cc09f695b5c1becbc2e}\label{classDG__Elem_a9c510976b9964cc09f695b5c1becbc2e}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Tr\+Kgrad\+\_\+pw@{Tr\+Kgrad\+\_\+pw}}
+\index{Tr\+Kgrad\+\_\+pw@{Tr\+Kgrad\+\_\+pw}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Tr\+Kgrad\+\_\+pw}{TrKgrad\_pw}}
+{\footnotesize\ttfamily double$\ast$$\ast$$\ast$ D\+G\+\_\+\+Elem\+::\+Tr\+Kgrad\+\_\+pw\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 121 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+Referenced by calcula\+\_\+tracos(), finaliza\+\_\+vetores(), inicia\+\_\+vetores(), Traco\+\_\+\+Kgrad\+\_\+pw(), Volume\+Integrals(), Volume\+Integrals\+\_\+\+I\+G(), Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and Volume\+Tracos().
+
+\mbox{\Hypertarget{classDG__Elem_aa71a1b860606c8560d0ef2a981580340}\label{classDG__Elem_aa71a1b860606c8560d0ef2a981580340}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Tr\+Kgrad\+\_\+sn@{Tr\+Kgrad\+\_\+sn}}
+\index{Tr\+Kgrad\+\_\+sn@{Tr\+Kgrad\+\_\+sn}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Tr\+Kgrad\+\_\+sn}{TrKgrad\_sn}}
+{\footnotesize\ttfamily double$\ast$$\ast$$\ast$ D\+G\+\_\+\+Elem\+::\+Tr\+Kgrad\+\_\+sn\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 120 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+Referenced by calcula\+\_\+tracos(), finaliza\+\_\+vetores(), inicia\+\_\+vetores(), Traco\+\_\+\+Kgrad\+\_\+sn(), Volume\+Integrals(), Volume\+Integrals\+\_\+\+I\+G(), Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and Volume\+Tracos().
+
+\mbox{\Hypertarget{classDG__Elem_a2703c18a4eb102761f135b01958110c6}\label{classDG__Elem_a2703c18a4eb102761f135b01958110c6}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Tr\+Kgrad\+Phi\+\_\+n@{Tr\+Kgrad\+Phi\+\_\+n}}
+\index{Tr\+Kgrad\+Phi\+\_\+n@{Tr\+Kgrad\+Phi\+\_\+n}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Tr\+Kgrad\+Phi\+\_\+n}{TrKgradPhi\_n}}
+{\footnotesize\ttfamily double$\ast$$\ast$$\ast$$\ast$ D\+G\+\_\+\+Elem\+::\+Tr\+Kgrad\+Phi\+\_\+n\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 125 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+Referenced by echo\+\_\+traco(), finaliza\+\_\+vetores(), inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), inicia\+\_\+tracos(), inicia\+\_\+vetores(), and Traco\+\_\+\+Kgrad\+\_\+phi\+\_\+n().
+
+\mbox{\Hypertarget{classDG__Elem_ae1432d30cbd7b063fc859a65362ee8bf}\label{classDG__Elem_ae1432d30cbd7b063fc859a65362ee8bf}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Tr\+Phi@{Tr\+Phi}}
+\index{Tr\+Phi@{Tr\+Phi}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Tr\+Phi}{TrPhi}}
+{\footnotesize\ttfamily double$\ast$$\ast$$\ast$$\ast$ D\+G\+\_\+\+Elem\+::\+Tr\+Phi\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 123 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+Referenced by calcula\+\_\+tracos(), echo\+\_\+traco(), finaliza\+\_\+vetores(), inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), inicia\+\_\+tracos(), inicia\+\_\+vetores(), Traco\+\_\+phi(), and Traco\+\_\+phi\+\_\+1().
+
+\mbox{\Hypertarget{classDG__Elem_a77316e95196e96ce7b612334075c8307}\label{classDG__Elem_a77316e95196e96ce7b612334075c8307}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Trpw@{Trpw}}
+\index{Trpw@{Trpw}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Trpw}{Trpw}}
+{\footnotesize\ttfamily double$\ast$$\ast$ D\+G\+\_\+\+Elem\+::\+Trpw\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 118 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+Referenced by calcula\+\_\+tracos(), finaliza\+\_\+vetores(), inicia\+\_\+vetores(), Traco\+\_\+pw(), Volume\+Integrals(), Volume\+Integrals\+\_\+\+I\+G(), Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and Volume\+Tracos().
+
+\mbox{\Hypertarget{classDG__Elem_a57d06772c710267516e58be078a6635b}\label{classDG__Elem_a57d06772c710267516e58be078a6635b}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Trsn@{Trsn}}
+\index{Trsn@{Trsn}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Trsn}{Trsn}}
+{\footnotesize\ttfamily double$\ast$$\ast$ D\+G\+\_\+\+Elem\+::\+Trsn\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 117 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+Referenced by calcula\+\_\+tracos(), finaliza\+\_\+vetores(), inicia\+\_\+vetores(), Traco\+\_\+sn(), Volume\+Integrals(), Volume\+Integrals\+\_\+\+I\+G(), Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and Volume\+Tracos().
+
+\mbox{\Hypertarget{classPhElem_a1ed1b45136a718afef64c846fb905546}\label{classPhElem_a1ed1b45136a718afef64c846fb905546}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!type@{type}}
+\index{type@{type}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::type\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 185 of file Ph\+Elem.\+hpp.
+
+\mbox{\Hypertarget{classPhElem_a560dc47ac8a684d84b05851ce52e044b}\label{classPhElem_a560dc47ac8a684d84b05851ce52e044b}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!u0@{u0}}
+\index{u0@{u0}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{u0}{u0}}
+{\footnotesize\ttfamily double$\ast$ \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::u0\mbox{[}Num\+Variaveis\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+vector with the coefficients of each mode 
+
+
+
+Definition at line 203 of file Ph\+Elem.\+hpp.
+
+
+
+Referenced by Atualizar\+\_\+valores(), calcula\+\_\+tracos(), finaliza\+\_\+vetores(), inicia\+\_\+vetores(), Volume\+Integrals(), Volume\+Integrals\+\_\+\+I\+G(), Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), Volume\+Integrals\+T(), and Volume\+Tracos().
+
+\mbox{\Hypertarget{classPhElem_a98781f3744597bad01eff75b31734d4b}\label{classPhElem_a98781f3744597bad01eff75b31734d4b}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!usave@{usave}}
+\index{usave@{usave}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{usave}{usave}}
+{\footnotesize\ttfamily double$\ast$ \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::usave\mbox{[}Num\+Variaveis\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 204 of file Ph\+Elem.\+hpp.
+
+
+
+Referenced by finaliza\+\_\+vetores(), and inicia\+\_\+vetores().
+
+\mbox{\Hypertarget{classPhElem_a07f19f862b13cc9c5f80271b03a5a023}\label{classPhElem_a07f19f862b13cc9c5f80271b03a5a023}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Vert\+\_\+map@{Vert\+\_\+map}}
+\index{Vert\+\_\+map@{Vert\+\_\+map}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Vert\+\_\+map}{Vert\_map}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::Vert\+\_\+map\mbox{[}8\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 195 of file Ph\+Elem.\+hpp.
+
+
+
+Referenced by Atualizar\+\_\+valores(), inicia\+\_\+funcoes\+\_\+na\+\_\+borda(), inicia\+\_\+tracos(), Volume\+Integrals(), Volume\+Integrals\+\_\+\+I\+G(), Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and Volume\+Tracos().
+
+\mbox{\Hypertarget{classPhElem_a65f545dc1bf0d90240419934eb711a9d}\label{classPhElem_a65f545dc1bf0d90240419934eb711a9d}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!vetores\+\_\+iniciados@{vetores\+\_\+iniciados}}
+\index{vetores\+\_\+iniciados@{vetores\+\_\+iniciados}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{vetores\+\_\+iniciados}{vetores\_iniciados}}
+{\footnotesize\ttfamily int \hyperlink{classPhElem}{Ph\+Elem}$<$ Num\+Variaveis $>$\+::vetores\+\_\+iniciados\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 216 of file Ph\+Elem.\+hpp.
+
+
+
+Referenced by D\+G\+\_\+\+Elem(), finaliza\+\_\+vetores(), and inicia\+\_\+vetores().
+
+\mbox{\Hypertarget{classDG__Elem_aeb8874934ea534afbee1017456e54051}\label{classDG__Elem_aeb8874934ea534afbee1017456e54051}} 
+\index{D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}!Volume@{Volume}}
+\index{Volume@{Volume}!D\+G\+\_\+\+Elem@{D\+G\+\_\+\+Elem}}
+\subsubsection{\texorpdfstring{Volume}{Volume}}
+{\footnotesize\ttfamily double D\+G\+\_\+\+Elem\+::\+Volume\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Volume do elemento ( = area do elemento para elementos bidimensionais e comprimento para elem. 1D. 
+
+
+
+Definition at line 113 of file D\+G\+\_\+\+Elem.\+hpp.
+
+
+
+Referenced by show\+\_\+\+Volume().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{DG__Elem_8hpp}{D\+G\+\_\+\+Elem.\+hpp}\item 
+\hyperlink{DG__Elem_8cpp}{D\+G\+\_\+\+Elem.\+cpp}\end{DoxyCompactItemize}

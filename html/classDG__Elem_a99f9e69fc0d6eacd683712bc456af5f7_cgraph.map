@@ -1,0 +1,5 @@
+<map id="DG_Elem::Traco_phi_1" name="DG_Elem::Traco_phi_1">
+<area shape="rect" id="node2" href="$classStdel.html#a457d20e34fb7a32eb1e4aca6c19f53a2" title="Stdel::qborder_val" alt="" coords="369,23,472,50"/>
+<area shape="rect" id="node3" href="$classDG__Elem.html#a8d090e18204cd99ed11ef8115a95c2e7" title="DG_Elem::Traco_grad_phi" alt="" coords="180,23,321,50"/>
+<area shape="rect" id="node4" href="$classDG__Elem.html#a0109cc28854e31b5df555513e9fccfed" title="DG_Elem::Traco_Kgrad\l_phi_n" alt="" coords="186,74,315,116"/>
+</map>

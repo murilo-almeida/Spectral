@@ -1,0 +1,29 @@
+<map id="Stdel::nn_val" name="Stdel::nn_val">
+<area shape="rect" id="node2" href="$classDG__Prob.html#a88ea70f33384c520034fab83e7db8e7e" title="DG_Prob::DG_eco" alt="" coords="538,21,643,48"/>
+<area shape="rect" id="node4" href="$classDG__Prob.html#a0c085b8fc3c827c37aa8733a2842a97f" title="DG_Prob::DG_EI_Epetra\l_Inflow" alt="" coords="334,69,469,110"/>
+<area shape="rect" id="node11" href="$classDG__Prob.html#aa09b19ad56db0010779b0787d0edd2a5" title="DG_Prob::DG_EI_Epetra\l_Interior" alt="" coords="334,134,469,175"/>
+<area shape="rect" id="node12" href="$classDG__Prob.html#a7fa0c815d5707dbf3858feb3977f5ee5" title="DG_Prob::DG_EI_Epetra\l_Outflow" alt="" coords="334,265,469,306"/>
+<area shape="rect" id="node13" href="$classDG__Prob.html#a0096cd2affdd37f2f3d0e7bc807a7b4b" title="DG_Prob::DG_EI_IG" alt="" coords="150,424,266,451"/>
+<area shape="rect" id="node14" href="$classDG__Prob.html#a8241ca6884495f863179ea86129b055e" title="DG_Prob::DG_initial\l_conditions" alt="" coords="345,366,457,407"/>
+<area shape="rect" id="node15" href="$classDG__Prob.html#ae722c0b7a7d1bccc9dbc9d2333754b42" title="DG_Prob::DG_EI_Inflow" alt="" coords="143,323,273,349"/>
+<area shape="rect" id="node16" href="$classDG__Prob.html#a862dcc9991b9091de30323b1d2b1c5a5" title="DG_Prob::DG_EI_Interior" alt="" coords="140,171,276,197"/>
+<area shape="rect" id="node18" href="$classDG__Prob.html#a5aa1654fb60cabf97719e65ba9302cf4" title="DG_Prob::DG_EI_Outflow" alt="" coords="139,221,277,248"/>
+<area shape="rect" id="node19" href="$classTetrahedral.html#afa5ab92fac0ada8385fddf3ddec3a8fc" title="Tetrahedral::Dirichlet" alt="" coords="151,475,265,501"/>
+<area shape="rect" id="node20" href="$classHexahedral.html#a86088799f63b981f6a350397d10e2efa" title="Hexahedral::Dirichlet" alt="" coords="151,525,265,552"/>
+<area shape="rect" id="node21" href="$classLinear.html#aabc086149c2ed718efe5f7be6c22f8d4" title="Linear::print" alt="" coords="171,576,245,603"/>
+<area shape="rect" id="node22" href="$classQuadrilateral.html#a6d1ef249f5359f422028e0635ccf1da7" title="Quadrilateral::print" alt="" coords="156,627,260,653"/>
+<area shape="rect" id="node23" href="$classTriangle.html#ad9159142cf526db5cf44035c62a1f927" title="Triangle::print" alt="" coords="167,677,249,704"/>
+<area shape="rect" id="node24" href="$classDG__Prob.html#acbf4eefc45872a673a1491b776921d31" title="DG_Prob::projetar_C0" alt="" coords="147,728,269,755"/>
+<area shape="rect" id="node25" href="$classPhElem.html#a78130ee8d7d6ecf59f231dbd436e9081" title="PhElem\&lt; 2 \&gt;::set_ptr\l_stdel" alt="" coords="150,779,266,821"/>
+<area shape="rect" id="node26" href="$classPhElem.html#a52fdbcf2283aacd8fdf9672018d74e4a" title="PhElem\&lt; 2 \&gt;::set_ptr\l_stdel_var" alt="" coords="150,845,266,886"/>
+<area shape="rect" id="node27" href="$classED__Prob.html#a587cd05e1422af94fadd3eb73a8974b0" title="ED_Prob::SolveElast2D_dyn" alt="" coords="133,911,283,937"/>
+<area shape="rect" id="node28" href="$classDG__Prob.html#ac7d67077fa8154c22a52d63a24db7fba" title="DG_Prob::~DG_Prob" alt="" coords="149,961,267,988"/>
+<area shape="rect" id="node3" href="$classDG__Prob.html#a015d792341ee05b1b3eaef7990bf1e06" title="DG_Prob::Driver" alt="" coords="1089,113,1185,140"/>
+<area shape="rect" id="node5" href="$classDG__Prob.html#a68ffd2ab09f51c7b29b88b006fbc5c49" title="DG_Prob::DG_MatrizVetor\l_Epetra" alt="" coords="520,134,661,175"/>
+<area shape="rect" id="node6" href="$classDG__Prob.html#acb4b2ec3201e22d62bcf50b947b10dc5" title="DG_Prob::DG_conditionNumber" alt="" coords="709,189,875,216"/>
+<area shape="rect" id="node7" href="$classDG__Prob.html#a23d58d1583859acafd9a6d5888424374" title="DG_Prob::Eigenvectors" alt="" coords="729,240,855,267"/>
+<area shape="rect" id="node8" href="$classDG__Prob.html#af4fefe289d5d1beb69636817eb9f9703" title="DG_Prob::Ge_MVRA" alt="" coords="733,88,851,115"/>
+<area shape="rect" id="node10" href="$classDG__Prob.html#a4874e2992ccde1658a6ab46bc595779f" title="DG_Prob::Ge_MVRA0" alt="" coords="731,139,853,165"/>
+<area shape="rect" id="node9" href="$classDG__Prob.html#ac4dfaa4ea6466833ecb5cc5c3fcb3875" title="DG_Prob::DG_Iterate" alt="" coords="923,113,1041,140"/>
+<area shape="rect" id="node17" href="$classDG__Prob.html#a2e99df149cf01faccb484389f8627d33" title="DG_Prob::DG_MatrizVetor\l_UMFPACK" alt="" coords="331,199,472,241"/>
+</map>

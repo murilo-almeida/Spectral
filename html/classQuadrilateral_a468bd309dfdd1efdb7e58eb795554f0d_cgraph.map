@@ -1,0 +1,15 @@
+<map id="Quadrilateral::elem_traces" name="Quadrilateral::elem_traces">
+<area shape="rect" id="node2" href="$Funcoes__c_8h.html#aab78de0fba789fc3957beb326e23bccf" title="DPsia" alt="" coords="206,157,255,184"/>
+<area shape="rect" id="node4" href="$Funcoes__c_8h.html#ab7da11871b564326d332e2b2c6c14b03" title="Gauss_Jacobi_parameters" alt="" coords="160,107,301,133"/>
+<area shape="rect" id="node12" href="$classMode.html#adb05ad8eecd616f8d68de8bff4de78d1" title="Mode::p_val" alt="" coords="193,208,269,235"/>
+<area shape="rect" id="node13" href="$Funcoes__c_8h.html#a5b461cef274da05057a244282b32d382" title="Psia" alt="" coords="210,259,251,285"/>
+<area shape="rect" id="node14" href="$classMode.html#a5c50861f423cbfea476d37d1dfa4e1cb" title="Mode::q_val" alt="" coords="193,309,269,336"/>
+<area shape="rect" id="node3" href="$Funcoes__c_8h.html#ad2b054769d09e23f58c382461a33fda5" title="Jacobi_P" alt="" coords="357,233,420,260"/>
+<area shape="rect" id="node5" href="$ASPFunctions_8cpp.html#ad2b054769d09e23f58c382461a33fda5" title="Jacobi_P" alt="" coords="482,132,545,159"/>
+<area shape="rect" id="node6" href="$ASPFunctions_8cpp.html#a36e194a1b28057104e85e101e96dad23" title="Jacobi_roots" alt="" coords="349,157,428,184"/>
+<area shape="rect" id="node7" href="$ASPFunctions_8cpp.html#af2ec04a3aa3462cb36aa0a564d022914" title="my_gamma" alt="" coords="351,56,426,83"/>
+<area shape="rect" id="node8" href="$ASPFunctions_8cpp.html#ac3f705ccfdcb247014c373929aa4b358" title="gamma_log" alt="" coords="476,56,551,83"/>
+<area shape="rect" id="node9" href="$ASPFunctions_8cpp.html#adbb9227db329a95b79f56bc1bc599a36" title="d_epsilon" alt="" coords="599,5,664,32"/>
+<area shape="rect" id="node10" href="$Funcoes__c_8h.html#a06a315d5c541c5118010c5dd958cec0c" title="p1" alt="" coords="612,56,651,83"/>
+<area shape="rect" id="node11" href="$Funcoes__c_8h.html#a66ec9f5cd02b067ff05c1f11fe152748" title="p2" alt="" coords="612,107,651,133"/>
+</map>

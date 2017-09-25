@@ -1,0 +1,619 @@
+\hypertarget{classFluids}{}\section{Fluids Class Reference}
+\label{classFluids}\index{Fluids@{Fluids}}
+
+
+{\ttfamily \#include $<$Fluids.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classFluids_a7aa55e7d25e0bec0ffa926a9fdb19b22}{set\+\_\+theta} (double x)
+\item 
+void \hyperlink{classFluids_ac0bfd221bb7f40b21eeb4c20f4e68017}{set\+\_\+pd} (double x)
+\item 
+void \hyperlink{classFluids_a135ba7011914007d5cc82528d08595c4}{set\+\_\+mun} (double x)
+\item 
+void \hyperlink{classFluids_a55bdef7f5229ab62d2616d4617d5898c}{set\+\_\+muw} (double x)
+\item 
+void \hyperlink{classFluids_a5284e84fd9cc680c0cb17ccf72cdc722}{set\+\_\+rhon} (double x)
+\item 
+void \hyperlink{classFluids_a5e905062ca17feb08fa1afc89efe042d}{set\+\_\+rhow} (double x)
+\item 
+double const \hyperlink{classFluids_ad61d110a5ed2e811965c2f6c623fc249}{show\+\_\+theta} ()
+\item 
+double const \hyperlink{classFluids_ad1fe62c857d216c5e87501c772a680e5}{show\+\_\+pd} ()
+\item 
+double const \hyperlink{classFluids_a426336b6a2fe1d6eb97b2af958d0b5e6}{show\+\_\+mun} ()
+\item 
+double const \hyperlink{classFluids_ad465f29caf6e368ebaa7662156482c9b}{show\+\_\+muw} ()
+\item 
+double const \hyperlink{classFluids_a1cd1ff51be0e735425bb00e470ed3cbc}{show\+\_\+rhon} ()
+\item 
+double const \hyperlink{classFluids_abc729002dd8045a86a24727d1fa69a12}{show\+\_\+rhow} ()
+\item 
+double const \hyperlink{classFluids_abaa29b5611ffefe8f2171692ffd62d38}{Krw} (double s)
+\item 
+double const \hyperlink{classFluids_a01d25f71f5c00a566032c19bd63a473f}{Krn} (double s)
+\item 
+double const \hyperlink{classFluids_abd769e3a9081140ed4fc7d877c6672d4}{dkrw} (double s)
+\item 
+double const \hyperlink{classFluids_a66c100be378f015b8bbe47a0e0c176c1}{dkrn} (double s)
+\item 
+double const \hyperlink{classFluids_a26c1a1fba1aa34becddfbc4fb07692dd}{pressao\+\_\+capilar} (double s)
+\item 
+double const \hyperlink{classFluids_aa332e363bb05e9c5559386000241d66f}{dpc} (double s)
+\item 
+double const \hyperlink{classFluids_a860c3c2af6dae8c158a78770dfc76ce8}{d2pc} (double s)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classFluids_aff18bebcaee137af75b319822a9dd8a8}{theta}
+\item 
+double \hyperlink{classFluids_a4a6a5567a51aeb163014715a961f58d8}{pd}
+\item 
+double \hyperlink{classFluids_a72205d7f9a6550265327b181b00db124}{mun}
+\item 
+double \hyperlink{classFluids_acde1b9068adb4e1cceed3a273161059d}{muw}
+\item 
+double \hyperlink{classFluids_a0a06cdfa97511a3e2fd4e0cdb2cdaba5}{rhon}
+\item 
+double \hyperlink{classFluids_a1967a64f25be380857f24ac62b532693}{rhow}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 4 of file Fluids.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classFluids_a860c3c2af6dae8c158a78770dfc76ce8}\label{classFluids_a860c3c2af6dae8c158a78770dfc76ce8}} 
+\index{Fluids@{Fluids}!d2pc@{d2pc}}
+\index{d2pc@{d2pc}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{d2pc()}{d2pc()}}
+{\footnotesize\ttfamily double const Fluids\+::d2pc (\begin{DoxyParamCaption}\item[{double}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file Fluids.\+cpp.
+
+
+
+References aux, pd, and theta.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), show\+\_\+rhow(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFluids_a860c3c2af6dae8c158a78770dfc76ce8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFluids_a66c100be378f015b8bbe47a0e0c176c1}\label{classFluids_a66c100be378f015b8bbe47a0e0c176c1}} 
+\index{Fluids@{Fluids}!dkrn@{dkrn}}
+\index{dkrn@{dkrn}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{dkrn()}{dkrn()}}
+{\footnotesize\ttfamily double const Fluids\+::dkrn (\begin{DoxyParamCaption}\item[{double}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line 14 of file Fluids.\+cpp.
+
+
+
+References aux, and theta.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), show\+\_\+rhow(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFluids_a66c100be378f015b8bbe47a0e0c176c1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFluids_abd769e3a9081140ed4fc7d877c6672d4}\label{classFluids_abd769e3a9081140ed4fc7d877c6672d4}} 
+\index{Fluids@{Fluids}!dkrw@{dkrw}}
+\index{dkrw@{dkrw}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{dkrw()}{dkrw()}}
+{\footnotesize\ttfamily double const Fluids\+::dkrw (\begin{DoxyParamCaption}\item[{double}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line 26 of file Fluids.\+cpp.
+
+
+
+References aux, and theta.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), show\+\_\+rhow(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFluids_abd769e3a9081140ed4fc7d877c6672d4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFluids_aa332e363bb05e9c5559386000241d66f}\label{classFluids_aa332e363bb05e9c5559386000241d66f}} 
+\index{Fluids@{Fluids}!dpc@{dpc}}
+\index{dpc@{dpc}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{dpc()}{dpc()}}
+{\footnotesize\ttfamily double const Fluids\+::dpc (\begin{DoxyParamCaption}\item[{double}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line 36 of file Fluids.\+cpp.
+
+
+
+References aux, pd, and theta.
+
+
+
+Referenced by D\+G\+\_\+\+Elem\+::calcula\+\_\+tracos(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), show\+\_\+rhow(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFluids_aa332e363bb05e9c5559386000241d66f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFluids_a01d25f71f5c00a566032c19bd63a473f}\label{classFluids_a01d25f71f5c00a566032c19bd63a473f}} 
+\index{Fluids@{Fluids}!Krn@{Krn}}
+\index{Krn@{Krn}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{Krn()}{Krn()}}
+{\footnotesize\ttfamily double const Fluids\+::\+Krn (\begin{DoxyParamCaption}\item[{double}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line 46 of file Fluids.\+cpp.
+
+
+
+References aux, and theta.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), show\+\_\+rhow(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFluids_a01d25f71f5c00a566032c19bd63a473f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFluids_abaa29b5611ffefe8f2171692ffd62d38}\label{classFluids_abaa29b5611ffefe8f2171692ffd62d38}} 
+\index{Fluids@{Fluids}!Krw@{Krw}}
+\index{Krw@{Krw}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{Krw()}{Krw()}}
+{\footnotesize\ttfamily double const Fluids\+::\+Krw (\begin{DoxyParamCaption}\item[{double}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line 56 of file Fluids.\+cpp.
+
+
+
+References aux, and theta.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), show\+\_\+rhow(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFluids_abaa29b5611ffefe8f2171692ffd62d38_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFluids_a26c1a1fba1aa34becddfbc4fb07692dd}\label{classFluids_a26c1a1fba1aa34becddfbc4fb07692dd}} 
+\index{Fluids@{Fluids}!pressao\+\_\+capilar@{pressao\+\_\+capilar}}
+\index{pressao\+\_\+capilar@{pressao\+\_\+capilar}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{pressao\+\_\+capilar()}{pressao\_capilar()}}
+{\footnotesize\ttfamily double const Fluids\+::pressao\+\_\+capilar (\begin{DoxyParamCaption}\item[{double}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line 66 of file Fluids.\+cpp.
+
+
+
+References aux, p\+\_\+in, p\+\_\+out, pd, pw\+\_\+ini, sn\+\_\+in, sn\+\_\+ini, and theta.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+Inflow(), show\+\_\+rhow(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFluids_a26c1a1fba1aa34becddfbc4fb07692dd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFluids_a135ba7011914007d5cc82528d08595c4}\label{classFluids_a135ba7011914007d5cc82528d08595c4}} 
+\index{Fluids@{Fluids}!set\+\_\+mun@{set\+\_\+mun}}
+\index{set\+\_\+mun@{set\+\_\+mun}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{set\+\_\+mun()}{set\_mun()}}
+{\footnotesize\ttfamily void Fluids\+::set\+\_\+mun (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 11 of file Fluids.\+h.
+
+
+
+References mun.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFluids_a135ba7011914007d5cc82528d08595c4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFluids_a55bdef7f5229ab62d2616d4617d5898c}\label{classFluids_a55bdef7f5229ab62d2616d4617d5898c}} 
+\index{Fluids@{Fluids}!set\+\_\+muw@{set\+\_\+muw}}
+\index{set\+\_\+muw@{set\+\_\+muw}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{set\+\_\+muw()}{set\_muw()}}
+{\footnotesize\ttfamily void Fluids\+::set\+\_\+muw (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 12 of file Fluids.\+h.
+
+
+
+References muw.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFluids_a55bdef7f5229ab62d2616d4617d5898c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFluids_ac0bfd221bb7f40b21eeb4c20f4e68017}\label{classFluids_ac0bfd221bb7f40b21eeb4c20f4e68017}} 
+\index{Fluids@{Fluids}!set\+\_\+pd@{set\+\_\+pd}}
+\index{set\+\_\+pd@{set\+\_\+pd}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{set\+\_\+pd()}{set\_pd()}}
+{\footnotesize\ttfamily void Fluids\+::set\+\_\+pd (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 10 of file Fluids.\+h.
+
+
+
+References pd.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFluids_ac0bfd221bb7f40b21eeb4c20f4e68017_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFluids_a5284e84fd9cc680c0cb17ccf72cdc722}\label{classFluids_a5284e84fd9cc680c0cb17ccf72cdc722}} 
+\index{Fluids@{Fluids}!set\+\_\+rhon@{set\+\_\+rhon}}
+\index{set\+\_\+rhon@{set\+\_\+rhon}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{set\+\_\+rhon()}{set\_rhon()}}
+{\footnotesize\ttfamily void Fluids\+::set\+\_\+rhon (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 13 of file Fluids.\+h.
+
+
+
+References rhon.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFluids_a5284e84fd9cc680c0cb17ccf72cdc722_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFluids_a5e905062ca17feb08fa1afc89efe042d}\label{classFluids_a5e905062ca17feb08fa1afc89efe042d}} 
+\index{Fluids@{Fluids}!set\+\_\+rhow@{set\+\_\+rhow}}
+\index{set\+\_\+rhow@{set\+\_\+rhow}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{set\+\_\+rhow()}{set\_rhow()}}
+{\footnotesize\ttfamily void Fluids\+::set\+\_\+rhow (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 14 of file Fluids.\+h.
+
+
+
+References rhow.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFluids_a5e905062ca17feb08fa1afc89efe042d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFluids_a7aa55e7d25e0bec0ffa926a9fdb19b22}\label{classFluids_a7aa55e7d25e0bec0ffa926a9fdb19b22}} 
+\index{Fluids@{Fluids}!set\+\_\+theta@{set\+\_\+theta}}
+\index{set\+\_\+theta@{set\+\_\+theta}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{set\+\_\+theta()}{set\_theta()}}
+{\footnotesize\ttfamily void Fluids\+::set\+\_\+theta (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 9 of file Fluids.\+h.
+
+
+
+References theta.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+initial\+\_\+conditions().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFluids_a7aa55e7d25e0bec0ffa926a9fdb19b22_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFluids_a426336b6a2fe1d6eb97b2af958d0b5e6}\label{classFluids_a426336b6a2fe1d6eb97b2af958d0b5e6}} 
+\index{Fluids@{Fluids}!show\+\_\+mun@{show\+\_\+mun}}
+\index{show\+\_\+mun@{show\+\_\+mun}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{show\+\_\+mun()}{show\_mun()}}
+{\footnotesize\ttfamily double const Fluids\+::show\+\_\+mun (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 18 of file Fluids.\+h.
+
+
+
+References mun.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFluids_a426336b6a2fe1d6eb97b2af958d0b5e6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFluids_ad465f29caf6e368ebaa7662156482c9b}\label{classFluids_ad465f29caf6e368ebaa7662156482c9b}} 
+\index{Fluids@{Fluids}!show\+\_\+muw@{show\+\_\+muw}}
+\index{show\+\_\+muw@{show\+\_\+muw}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{show\+\_\+muw()}{show\_muw()}}
+{\footnotesize\ttfamily double const Fluids\+::show\+\_\+muw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19 of file Fluids.\+h.
+
+
+
+References muw.
+
+
+
+Referenced by D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+flux(), D\+G\+\_\+\+Prob\+::\+D\+G\+\_\+\+E\+I\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+I\+G(), D\+G\+\_\+\+Elem\+::\+Volume\+Integrals\+\_\+\+U\+M\+F\+P\+A\+C\+K(), and D\+G\+\_\+\+Elem\+::\+Volume\+Tracos().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFluids_ad465f29caf6e368ebaa7662156482c9b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFluids_ad1fe62c857d216c5e87501c772a680e5}\label{classFluids_ad1fe62c857d216c5e87501c772a680e5}} 
+\index{Fluids@{Fluids}!show\+\_\+pd@{show\+\_\+pd}}
+\index{show\+\_\+pd@{show\+\_\+pd}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{show\+\_\+pd()}{show\_pd()}}
+{\footnotesize\ttfamily double const Fluids\+::show\+\_\+pd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 17 of file Fluids.\+h.
+
+
+
+References pd.
+
+\mbox{\Hypertarget{classFluids_a1cd1ff51be0e735425bb00e470ed3cbc}\label{classFluids_a1cd1ff51be0e735425bb00e470ed3cbc}} 
+\index{Fluids@{Fluids}!show\+\_\+rhon@{show\+\_\+rhon}}
+\index{show\+\_\+rhon@{show\+\_\+rhon}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{show\+\_\+rhon()}{show\_rhon()}}
+{\footnotesize\ttfamily double const Fluids\+::show\+\_\+rhon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 20 of file Fluids.\+h.
+
+
+
+References rhon.
+
+\mbox{\Hypertarget{classFluids_abc729002dd8045a86a24727d1fa69a12}\label{classFluids_abc729002dd8045a86a24727d1fa69a12}} 
+\index{Fluids@{Fluids}!show\+\_\+rhow@{show\+\_\+rhow}}
+\index{show\+\_\+rhow@{show\+\_\+rhow}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{show\+\_\+rhow()}{show\_rhow()}}
+{\footnotesize\ttfamily double const Fluids\+::show\+\_\+rhow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 21 of file Fluids.\+h.
+
+
+
+References d2pc(), dkrn(), dkrw(), dpc(), Krn(), Krw(), pressao\+\_\+capilar(), and rhow.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{classFluids_abc729002dd8045a86a24727d1fa69a12_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFluids_ad61d110a5ed2e811965c2f6c623fc249}\label{classFluids_ad61d110a5ed2e811965c2f6c623fc249}} 
+\index{Fluids@{Fluids}!show\+\_\+theta@{show\+\_\+theta}}
+\index{show\+\_\+theta@{show\+\_\+theta}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{show\+\_\+theta()}{show\_theta()}}
+{\footnotesize\ttfamily double const Fluids\+::show\+\_\+theta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 16 of file Fluids.\+h.
+
+
+
+References theta.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classFluids_a72205d7f9a6550265327b181b00db124}\label{classFluids_a72205d7f9a6550265327b181b00db124}} 
+\index{Fluids@{Fluids}!mun@{mun}}
+\index{mun@{mun}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{mun}{mun}}
+{\footnotesize\ttfamily double Fluids\+::mun\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 34 of file Fluids.\+h.
+
+
+
+Referenced by set\+\_\+mun(), and show\+\_\+mun().
+
+\mbox{\Hypertarget{classFluids_acde1b9068adb4e1cceed3a273161059d}\label{classFluids_acde1b9068adb4e1cceed3a273161059d}} 
+\index{Fluids@{Fluids}!muw@{muw}}
+\index{muw@{muw}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{muw}{muw}}
+{\footnotesize\ttfamily double Fluids\+::muw\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 34 of file Fluids.\+h.
+
+
+
+Referenced by set\+\_\+muw(), and show\+\_\+muw().
+
+\mbox{\Hypertarget{classFluids_a4a6a5567a51aeb163014715a961f58d8}\label{classFluids_a4a6a5567a51aeb163014715a961f58d8}} 
+\index{Fluids@{Fluids}!pd@{pd}}
+\index{pd@{pd}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{pd}{pd}}
+{\footnotesize\ttfamily double Fluids\+::pd\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 34 of file Fluids.\+h.
+
+
+
+Referenced by d2pc(), dpc(), pressao\+\_\+capilar(), set\+\_\+pd(), and show\+\_\+pd().
+
+\mbox{\Hypertarget{classFluids_a0a06cdfa97511a3e2fd4e0cdb2cdaba5}\label{classFluids_a0a06cdfa97511a3e2fd4e0cdb2cdaba5}} 
+\index{Fluids@{Fluids}!rhon@{rhon}}
+\index{rhon@{rhon}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{rhon}{rhon}}
+{\footnotesize\ttfamily double Fluids\+::rhon\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 34 of file Fluids.\+h.
+
+
+
+Referenced by set\+\_\+rhon(), and show\+\_\+rhon().
+
+\mbox{\Hypertarget{classFluids_a1967a64f25be380857f24ac62b532693}\label{classFluids_a1967a64f25be380857f24ac62b532693}} 
+\index{Fluids@{Fluids}!rhow@{rhow}}
+\index{rhow@{rhow}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{rhow}{rhow}}
+{\footnotesize\ttfamily double Fluids\+::rhow\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 34 of file Fluids.\+h.
+
+
+
+Referenced by set\+\_\+rhow(), and show\+\_\+rhow().
+
+\mbox{\Hypertarget{classFluids_aff18bebcaee137af75b319822a9dd8a8}\label{classFluids_aff18bebcaee137af75b319822a9dd8a8}} 
+\index{Fluids@{Fluids}!theta@{theta}}
+\index{theta@{theta}!Fluids@{Fluids}}
+\subsubsection{\texorpdfstring{theta}{theta}}
+{\footnotesize\ttfamily double Fluids\+::theta\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 34 of file Fluids.\+h.
+
+
+
+Referenced by d2pc(), dkrn(), dkrw(), dpc(), Krn(), Krw(), pressao\+\_\+capilar(), set\+\_\+theta(), and show\+\_\+theta().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Fluids_8h}{Fluids.\+h}\item 
+\hyperlink{Fluids_8cpp}{Fluids.\+cpp}\end{DoxyCompactItemize}
