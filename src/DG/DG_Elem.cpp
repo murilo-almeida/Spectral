@@ -7,7 +7,7 @@
 //
 
 #include "spectral.h"
-#include "DG_Elem.hpp"
+#include "DG_Elem.h"
 
 // ***************************************
 

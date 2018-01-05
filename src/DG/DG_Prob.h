@@ -7,7 +7,7 @@
 
 #include "PhElem.hpp"
 #include "GeProb.hpp"
-#include "DG_Elem.hpp"
+#include "DG_Elem.h"
 #include "Fluids.h"
 
 // ************************************************************

@@ -247,6 +247,4 @@ struct FACE  /*! FACE = Borda do elemento tridimensional*/
 # include "Quadrilateral.h"
 # include "Tetrahedral.h"
 # include "Hexahedral.h"
-//# include "Fluids.h"
-//# include "DG_Prob.h"
 #endif

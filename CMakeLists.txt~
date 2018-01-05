@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.9)
 project(Spectral_test)
 set(CMAKE_BUILD_TYPE Release)
 
-set(CMAKE_INSTALL_PREFIX "/Users/murilo/temp/Spectral")
+set(CMAKE_INSTALL_PREFIX "/Users/murilo/MeusProjetos/Spectral")
 MESSAGE(" Cmake Instal Prefix = ${CMAKE_INSTALL_PREFIX}") 
 
 

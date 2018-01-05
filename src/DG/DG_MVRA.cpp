@@ -17,7 +17,8 @@ void DG_Prob::Ge_MVRA0(const double Dt,
   DG_MatrizVetor_Epetra(Dt,A,RHS);
 	
   double valor_temp;
-  RHS->Norm2( &valor_temp );//RHS.NormInf( &valor_temp );// ou Norm2(
+  RHS->Norm2( &valor_temp );valor_temp/= RHS->GlobalLength();
+  //RHS->NormInf( &valor_temp );
   valor = valor_temp;
   //cout << "Ge_MVRA0: valor_temp = "<< valor_temp << endl; 
   if(std::isnan(valor_temp)) cout << "Ge_MVRA0  Float was Not a Number: valor_temp " << valor_temp << endl;
@@ -46,7 +47,7 @@ void DG_Prob::Ge_MVRA(const double Dt,
   DG_MatrizVetor_Epetra(Dt,A,RHS);
  
   double valor_temp;
-  RHS->NormInf( &valor_temp );//RHS.NormInf( &valor_temp ); // ou Norm2(
+  RHS->NormInf( &valor_temp );// ou RHS->Norm2(&valor_temp); valor_temp/= RHS->GlobalLength();
   if(std::isnan(valor_temp)) cout << "Ge_MVRA  Float was Not a Number: valor_temp " << valor_temp << endl;
   //cout << "Ge_MVRA: valor_temp = "<< valor_temp << endl;  
   if ( token == 0 ) {

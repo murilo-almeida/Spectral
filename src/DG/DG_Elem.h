@@ -1,19 +1,20 @@
 //
-//  DG_Elem.hpp
+//  DG_Elem.h
 //  SDG
 //
 //  Created by Murilo Almeida on 30/10/16.
 //  Copyright © 2016 Murilo Almeida. All rights reserved.
 //
 
-#ifndef DG_Elem_hpp
-#define DG_Elem_hpp
+#ifndef DG_Elem_h
+#define DG_Elem_h
 
 #include <stdio.h>
 # include "spectral.h"
-
+# include "Fluids.h"
 # include "PhElem.hpp"
 
+enum var_nomes {sat,pres} ; // Esta ordem influencia na leitura dos parametros
 // *************************************************************************
 class DG_Elem : public PhElem<2>
 {
@@ -136,4 +137,4 @@ private:
 // Class DG_Elem ---  Para escoamentos de 2 fluidos imisciveis DG
 // ****************************************************************************
 
-#endif /* DG_Elem_hpp */
+#endif /* DG_Elem_h */
