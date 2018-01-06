@@ -19,8 +19,8 @@ class GeProb
 
   GeProb(Epetra_Comm& comm);
   ~GeProb();
-  Epetra_Comm* show_Comm(){return Comm;};
-
+  //Epetra_Comm* show_Comm(){return Comm;};
+  Teuchos::RCP<Epetra_Comm> show_Comm(){return Comm;};    
   Teuchos::RCP<Epetra_Vector> getSolution(){return solution;};
   // Return a reference to the Epetra_Vector with the Jacobian
   Teuchos::RCP<Epetra_CrsMatrix> getJacobian();

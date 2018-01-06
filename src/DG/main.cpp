@@ -3,11 +3,6 @@
 #include "spectral.h"
 #include "DG_Prob.h"
 
-//# include "Problem_Interface.HXX"
-//# include "My_Nox_Problem.HXX"
-
-//#include "TesteHeader.h"
-
 //---------------------------------------------------------
 int main(int argc, char* argv[])
 //---------------------------------------------------------
@@ -88,8 +83,10 @@ int main(int argc, char* argv[])
     // Terminando a simulacao;
     // Limpar a memoria usada;
     // ********************************************
+
     delete p; p=nullptr;       // delete simulator
-    
+
+    // ********************************************
     cout << "\nFinal da simulacao: myid = " << rank <<"\nLimpou memoria\n";
 	}
 	else {

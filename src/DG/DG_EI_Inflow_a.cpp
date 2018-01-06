@@ -25,7 +25,7 @@ void DG_Prob::DG_EI_Epetra_Inflow(const EDGE border,
 		exit(1);
 	}
 	
-	A->InsertGlobalValues(ntot1,&indx[0],&mx[0],Epetra_FECrsMatrix::ROW_MAJOR);
+  A->InsertGlobalValues(ntot1,&indx[0],&mx[0],Epetra_FECrsMatrix::ROW_MAJOR);
   RHS->SumIntoGlobalValues(ntot1,&indx[0],&B[0]);
   
   delete [] mx; mx = nullptr;

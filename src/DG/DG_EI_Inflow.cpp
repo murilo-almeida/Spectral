@@ -83,7 +83,7 @@ void DG_Prob::DG_EI_Inflow(const EDGE border,
   }
   
   // integrais 5 e 8 do caderno
-	aux2=klt*penalty;
+  aux2=klt*penalty;
   I0=(e[iEr].show_ptr_stdel(pres))->show_bmapi(a[iEr]);		       // PE V
   I1=(e[iEr].show_ptr_stdel(pres))->show_bmapi(a[iEr]+1);		       // PE V
   pos=0;
