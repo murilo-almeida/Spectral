@@ -198,14 +198,24 @@ GeProb<ElemType,N_VAR,N_FIELDS>::~GeProb()
   }
 
  for(int i=0;i<N_FIELDS;++i){
-     delete ptrLinear[i]; ptrLinear[i] = nullptr;
-    delete ptrTriang[i]; ptrTriang[i] = nullptr;
-    delete ptrQuadri[i]; ptrQuadri[i] = nullptr;
-    delete ptrTetrahedral[i]; ptrTetrahedral[i] = nullptr;
-    delete ptrHexahedral[i]; ptrHexahedral[i] = nullptr;
+    cout<< "deletando ponteiros dos elementos padroes; passada "<< i << endl;
+   // if (ptrLinear[i] != nullptr){delete ptrLinear[i]; ptrLinear[i] = nullptr;}
+    cout << "1" << endl;
+    if (ptrTriang[i] != nullptr){delete ptrTriang[i]; ptrTriang[i] = nullptr;}
+    cout << "2" << endl;
+    if (ptrQuadri[i] != nullptr){delete ptrQuadri[i]; ptrQuadri[i] = nullptr;}
+    cout << "3" << endl;
+    if (ptrTetrahedral[i] != nullptr){delete ptrTetrahedral[i]; ptrTetrahedral[i] = nullptr;}
+    cout << "4" << endl;
+    if (ptrHexahedral[i] != nullptr){delete ptrHexahedral[i]; ptrHexahedral[i] = nullptr;}
+    cout << "5" << endl;
   }
+  
+    cout << "liberou pointer dos elementos espectrais"<< endl;
+   
     delete StandardMap;
-   cout << "Saiu de GeProb destructor"<< endl;
+   
+    cout << "Saiu de GeProb destructor"<< endl;
 };
 // ****************************************************************************
 // ****************************************************************************
@@ -327,7 +337,7 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::Processar_elementos()
   for(int i=0; i < N_FIELDS; ++i) {
     //	cout << "DG_Prob::set_orders:  "<< i << '\n';
     // cout << "Aloca memoria dinamica\n ";
-    ptrLinear[i] = new Linear(Field[i].P,Field[i].Q);// type =1
+    //ptrLinear[i] = new Linear(Field[i].P,Field[i].Q);// type =1
     ptrTriang[i] = new Triangle(Field[i].P,Field[i].Q);// type =2
     ptrQuadri[i] = new  Quadrilateral(Field[i].P,Field[i].Q);// type =3
     ptrTetrahedral[i] = new  Tetrahedral(Field[i].P,Field[i].Q);// type =4

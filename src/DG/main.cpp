@@ -72,7 +72,7 @@ int main(int argc, char* argv[])
     // Driver deve ser especificado em cada problema
     // Driver contem as especificacoes dos algoritmos a serem usados
     // Deve ser usado para mudar os parâmetros como o tipo de solver
-    
+        
     p->Driver();
     
     // Criar o nox solver my_solver
@@ -84,6 +84,8 @@ int main(int argc, char* argv[])
     // Limpar a memoria usada;
     // ********************************************
 
+      
+        
     delete p; p=nullptr;       // delete simulator
 
     // ********************************************
