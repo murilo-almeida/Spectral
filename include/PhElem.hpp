@@ -213,7 +213,7 @@ protected:
                       *  trace array of the internal trace of the border */
   int * stgbtrbmapP; /*!< \brief Array containing the start point in the global
                       *  trace array of the external trace of the border */
-  int vetores_iniciados; // = 0; indica que os vetores locais foram iniciados e necessitam ser finalizados
+  int vetores_iniciados; // = 1; indica que os vetores locais foram iniciados e necessitam ser finalizados
   
 };
 /*! \class PhElem
@@ -1860,10 +1860,10 @@ void PhElem<NumVariaveis>::inicia_vetores()
   int nn;//nb,q0,q1;
   int i,k;//h, j
   
-  if(vetores_iniciados == 0) { cout<< "vetores locais de PhElem já iniciados\n"; }
+  if(vetores_iniciados == 1) { cout<< "vetores locais de PhElem já iniciados\n"; }
   
   else {
-    vetores_iniciados = 0;
+    vetores_iniciados = 1;
     //cout<< "PhElem<NumVariaveis>::inicia_vetores()\n";
     for (k=0;k<NumVariaveis;++k){
       nn=numn[k];
@@ -1896,8 +1896,8 @@ void PhElem<NumVariaveis>::inicia_vetores()
 template<int NumVariaveis>
 void PhElem<NumVariaveis>::finaliza_vetores()
 {
-  if(vetores_iniciados == 0) {
-    vetores_iniciados = 1;
+  if(vetores_iniciados == 1) {
+    vetores_iniciados = 0;
     //cout<< "PhElem<NumVariaveis>::finaliza_vetores()\n";
     delete [] JV; JV=nullptr;
     //delete [] Jb; Jb=nullptr;

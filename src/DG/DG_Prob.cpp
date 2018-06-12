@@ -288,8 +288,8 @@ void DG_Prob::DG_initial_conditions()
     if(myid==0) {
       frestart=fopen(arq_rst,"rb");
       fscanf(frestart,"%d %d",&b_in[0],&b_in[1]);
-      for(int nin=0;nin<10;nin++)
-        fscanf(frestart,"%lf",&b_do[nin]);
+      for(int nn=0;nn<10;nn++)
+        fscanf(frestart,"%lf",&b_do[nn]);
       for(int i=0;i<NELEM;i++)
         el[i].ler_restart_buffer(frestart,buff,count1);
       // for(int i=0;i<NELEM;i++)el[i].ler_restart(frestart);
@@ -656,12 +656,12 @@ void DG_Prob::projetar_C0(FILE *file,double (*func)(double,double,double),
 void DG_Prob::Processa_condicoes_contorno()
 // ****************************************************************************************
 {
-  cout << "Usando DG_Prob::Processa_condicoes_contorno"<<std::endl;
+  cout << "\nUsando DG_Prob::Processa_condicoes_contorno"<<std::endl;
   // Inicializar o bflag com valores 0
   for(int i=0;i<NG;i++) bflag.push_back(0); //bflag[i]=0;//bflag=0: conhecido
   
-  int nin = 0;
-  int nout = 0;
+  nin = 0;
+  nout = 0;
   double x,y,aux;
   
   // ***************************************************
@@ -683,6 +683,7 @@ void DG_Prob::Processa_condicoes_contorno()
    
     if(t == -1 || t == 1){
       // Alocar memoria para condicoes de contorno de Dirichlet
+        cout << "Condicoes de contorno de Dirichlet na borda "<< i << std::endl;
       int qmax=(el[border[i].elemento[0]].show_ptr_stdel(0))->qborder_val();
       double xq[qmax],w[qmax];
       double Dtemp[MAXQ][MAXQ];
@@ -724,6 +725,7 @@ void DG_Prob::Processa_condicoes_contorno()
       }
     }
   }
-  printf("Processou DNBC= %d condicoes de contorno\n",DNBC);
+    printf("Processou DNBC= %d condicoes de contorno: ",DNBC);
+    printf("nin = %d nout = %d \n\n",nin,nout);
 };
 

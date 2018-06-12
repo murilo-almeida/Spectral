@@ -13,8 +13,6 @@
 void DG_Prob::DG_Iterate()
 {
   
-  Epetra_Map Map(NumD,0,*Comm);
- 
   tnc=0;
   // *****************************************
   // Arquivos de saida
@@ -36,7 +34,7 @@ void DG_Prob::DG_Iterate()
   // Construcao alternativa do Mapa  
   // Programa distribui as variaveis automaticamente
   cout << "DG_Iterate: NumD = "<< NumD << endl;
-
+    
   printf("Iterate ponto 1\n"); 
   
   double tcount=0.0;
@@ -69,7 +67,7 @@ void DG_Prob::DG_Iterate()
   //       = 3 : Rejeita a Iteracao, reduz o Dt e recomeca a Iteracao
   //       = 4 : Termina Simulacao (atingiu tempo maximo)
 	int token;
- 
+    
   if(t < t_final)
     token=0;
   else 
@@ -83,9 +81,9 @@ void DG_Prob::DG_Iterate()
 			
 			case 0: // primeiro ponto
 				
-        Ge_MVRA0(Dt,Map,valor0,norm_delta_X);
+        Ge_MVRA0(Dt,valor0,norm_delta_X);
 				iter = 1;
-        Ge_MVRA(Dt,Map,valor,token,norm_delta_X);
+        Ge_MVRA(Dt, valor,token,norm_delta_X);
 				valor1 = valor;
         if(cut==0 && myid==0) {
           cout<< "Inicio do Passo de tempo = "<< passo << endl;;
@@ -97,7 +95,7 @@ void DG_Prob::DG_Iterate()
         break;
 			
 			case 1: // Iteracao de Newton
-        Ge_MVRA(Dt,Map,valor,token,norm_delta_X);
+        Ge_MVRA(Dt, valor,token,norm_delta_X);
 				++iter;
 #ifdef saida_detalhada
 				cout << "DG_Iterate: case 1: iteracao = "<< iter<< " valor (residual) = "<< valor << endl;
@@ -128,7 +126,8 @@ void DG_Prob::DG_Iterate()
 				}
 				for (int i = 0; i < NELEM; ++i)
 					el[i].Salvar_u0(); // usave <- u0
-				DG_imprimir_taxas_de_producao(fout3,valor,valor0,valor1,iter);
+                if(myid==0)
+                    DG_imprimir_taxas_de_producao(fout3,valor,valor0,valor1,iter);
         //std::cout << "cut = "<< cut << endl;
 				cut=0;
 				if( (tnc >= tncut) || (iter > 10) ) {
@@ -167,7 +166,7 @@ void DG_Prob::DG_Iterate()
   
   // ***************************************
   // encontrar os autovalores e autovetores
-  //Eigenvectors(Dt,Map);
+  //Eigenvectors(Dt,*StandardMap);
   
   // *****************************************************************
   // Atingiu tempo final. Escrever restart file e terminar.
@@ -187,8 +186,7 @@ void DG_Prob::DG_Iterate()
 		cout << "Final de DG_Prob::DG_Iterate\n";
   } //if(myid==0)
 
-  // DG_conditionNumber(Map);
-	
+  // DG_conditionNumber(*StandardMap);
 };
 
 

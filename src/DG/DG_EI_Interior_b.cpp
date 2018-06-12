@@ -37,6 +37,7 @@ int DG_Prob::DG_EI_Interior(const EDGE border,
 	ns[1]=e[1].show_ptr_stdel(sat)->nn_val();
 	np[1]=e[1].show_ptr_stdel(pres)->nn_val();
 	
+    
 	nnparc[0]=0;
   nnparc[1]=          e[0].show_ptr_stdel(0)->nn_val();
   nnparc[2]=nnparc[1]+e[0].show_ptr_stdel(1)->nn_val();
@@ -47,8 +48,9 @@ int DG_Prob::DG_EI_Interior(const EDGE border,
 	nnparc[1]=ns[0];
 	nnparc[2]=nnparc[1]+np[0];
 	nnparc[3]=nnparc[2]+ns[1];
-	ntot=nnparc[3]+np[1];
+	ntot     =nnparc[3]+np[1];
 	*/
+    
 	int mi,mj;
 	int iaux=ntot*ntot;
 	

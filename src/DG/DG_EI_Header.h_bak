@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Murilo Almeida. All rights reserved.
 //
 
-    #ifndef DG_EI_Header_h
-    #define DG_EI_Header_h
-    #include "DG_Prob.h"
+#ifndef DG_EI_Header_h
+#define DG_EI_Header_h
+#include "DG_Prob.h"
 //#define indice_interior(nnparc,iE,var,i) (nnparc[(2*iE + var)] + i)
 //#define npos(ntot,Ti,Tj) ((ntot*Ti) + Tj)
 
@@ -34,12 +34,12 @@ const int npres=e[0].show_ptr_stdel(pres)->nn_val();// Num de modos para pressao
 double length;
 double Jac[qmax],w[qmax],Dtemp[MAXQ][MAXQ];
 if(ndim==1){
-    w[0]=1.0;
-    length=1.0;
+	w[0]=1.0;
+	length=1.0;
 }
 else {
-    Gauss_Jacobi_parameters(qmax,0.0,0.0,Jac,w,Dtemp);
-    length=border.comprimento;
+	Gauss_Jacobi_parameters(qmax,0.0,0.0,Jac,w,Dtemp);
+	length=border.comprimento;
 }
 // ******************************************************
 for(int q=0;q<qmax;q++)w[q]*=length/2.0;// salva em w = w*length/2.0
@@ -50,7 +50,7 @@ const double penalty1=sigma1/pow(length,beta);// 07/08/08
 // componentes da normal ao border
 double n_e[ndim];
 for(int i=0;i<ndim;i++)
-    n_e[i]=border.normal[i]; // direcao i
+n_e[i]=border.normal[i]; // direcao i
 
 // Valores das permeabilidades nos elementos vizinhos 0 e 1
 double perm[2][3];
@@ -71,6 +71,7 @@ double phi_l[qmax];
 int iEr, iEl;
 double kn,kln,klw,klt;
 double aaux[2];
+double mean_ln[2],mean_lw[2],mean_lt[2];
 // *************************************************************************
 // Elemento vizinho iE
 // *************************************************************************
@@ -85,6 +86,10 @@ for(iE=0;iE<Num_elem;iE++) {
     sn[iE]=gbtrsn+offset;
     pw[iE]=gbtrpw+offset;
     
+    mean_ln[iE]=0.0;
+    mean_lw[iE]=0.0;
+    mean_lt[iE]=0.0;
+    
     for(m=0;m<qmax;m++) {
         // Calculo dos escalares
         double aux=sn[iE][m];
@@ -97,7 +102,16 @@ for(iE=0;iE<Num_elem;iE++) {
         pc[iE][m]=fluids.pressao_capilar(aux);
         d_pc[iE][m]=fluids.dpc(aux);
         d2_pc[iE][m]=fluids.d2pc(aux);
+        
+        mean_ln[iE] += lambdan[iE][m];
+        mean_lw[iE] += lambdaw[iE][m];
+        mean_lt[iE] += lambdat[iE][m];
     }
+    
+    mean_ln[iE] /= qmax;
+    mean_lw[iE] /= qmax;
+    mean_lt[iE] /= qmax;
+    
     e[iE].Traco_Kgrad_sn(a[iE],Kgsn[iE]);
     e[iE].Traco_Kgrad_pw(a[iE],Kgpw[iE]);
     e[iE].Traco_Kgrad_pc(a[iE],Kgpc[iE]);
@@ -131,16 +145,27 @@ for(iE=0;iE<Num_elem;iE++) {
         aux=perm[iE][i]*n_e[i];
         aaux[iE]+=aux*aux;
     }
+    
 }
 
 if(Num_elem==1)
-    aux=aaux[0];
+{
+    kn=sqrt(aaux[0]);
+    kln = kn * mean_ln[0];
+    klw = kn * mean_lw[0];
+    klt = kn * mean_lt[0];
+}
 else
+{
     aux = aaux[0] < aaux[1] ? aaux[0] : aaux[1];
+    kn=sqrt(aux);
+    kln = kn * (mean_ln[0]+mean_ln[1])/2.0; //1.0; //kn/mun;
+    klw = kn * (mean_lw[0]+mean_lw[1])/2.0; //1.0; //kn/muw;
+    klt = kn * (mean_lt[0]+mean_lt[1])/2.0; //1.0; //kln+klw;
+}
 
-kn=sqrt(aux);
 kln=1.0; //kn/mun;
 klw=1.0; //kn/muw;
 klt=1.0; //kln+klw;
 
-    #endif
+#endif

@@ -30,7 +30,7 @@
 # define MAXNIL MAXNI*MAXNFIELDS
 
 // Parametros para matrizes globais
-# define MAXNL 12000
-# define MAXNG 13000
+# define MAXNL 30
+# define MAXNG 30
 
 #endif

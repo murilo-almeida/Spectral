@@ -15,12 +15,18 @@
 # include "PhElem.hpp"
 
 enum var_nomes {sat,pres} ; // Esta ordem influencia na leitura dos parametros
-// *************************************************************************
+// ***************************************************************************
+inline  int indice(int ns,int var,int i) {return((ns*var)+i);};
+
+inline int npos(int ntot,int i, int j) {return((ntot*i)+j);};
+
+inline int indice_interior(int nnparc[],int iE,int var,int i) {return(nnparc[(2*iE + var)] + i);};
+// **********************************************************************************
 class DG_Elem : public PhElem<2>
 {
 public:
   
-  DG_Elem(){ rho=1.0;vetores_iniciados=1;}// 1 (=FALSE)}; //(const int n = 1);
+  DG_Elem(){ rho=1.0;vetores_iniciados=0;}// 0 (=FALSE)}; //(const int n = 0);
   ~DG_Elem(){/*cout << "destruir DG_Elem\n";*/ };
   
   void inicia_vetores();

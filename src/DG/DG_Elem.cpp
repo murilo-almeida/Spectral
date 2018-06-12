@@ -1171,8 +1171,8 @@ void DG_Elem::VolumeIntegrals(const double Dt,Fluids fls,
   // Calcula pc e seu gradiente nos pontos de Gauss
   for(m=0;m<NGQP;m++){
     pc[m]=fls.pressao_capilar(sn[m]);
-  }
-  ptr_stdel[sat]->Gradiente(ptr_gpc,pc,ptvert,Vert_map);// <-- derivada por colocacao; ptr_gpc esta no espaco aproximante
+    }
+    ptr_stdel[sat]->Gradiente(ptr_gpc,pc,ptvert,Vert_map);// <-- derivada por colocacao; ptr_gpc esta no espaco aproximante
   for(m=0;m<NGQP;m++) {
     // Calculo dos escalares
     aux=sn[m];
@@ -1195,8 +1195,8 @@ void DG_Elem::VolumeIntegrals(const double Dt,Fluids fls,
       // ---------------------------------------------------------------------------------------------------------
       // Essa opcao gera problemas de convergencia
       //Kgrad_pc[k][m]=d_pc[m]*Kgrad_sn[k][m]; // <----- 06/01/2014 \Nabla{pc} = dpc * \Nabla{sn}; nao esta no espaco aproximante
+        }
     }
-  }
   // *********************************************************************
   // salva os tracos de K * gradientes
   // Usar uma das duas alternativas abaixo
@@ -1447,9 +1447,7 @@ void DG_Elem::VolumeIntegrals(const double Dt,Fluids fls,
   //  for(int i = 0; i < ntot*ntot; i++) {
   //    printf("mx[%3d] = %12.5e\n",i,mx[i]);
   //  }
-  // delete [] indx;indx=nullptr;
-  // delete [] mx; mx=nullptr;
-  // delete [] B; B=nullptr;
+  
 };
 // alterado em 21/09/2011
 // alterado em 21/10/2011
@@ -1465,10 +1463,10 @@ void DG_Elem::inicia_vetores()
   int nn;//nb,q0,q1;
   int h,i,j,k;
   
-  if(vetores_iniciados == 0) { cout<< "vetores locais de PhElem já iniciados\n"; }
+  if(vetores_iniciados == 1) { cout<< "vetores locais de PhElem já iniciados\n"; }
   
   else {
-    vetores_iniciados = 0;
+    vetores_iniciados = 1;
     //cout<< "DG_Elem::inicia_vetores()\n";
     for (k=0;k<NumLocalVars;++k){
       nn=numn[k];
@@ -1649,8 +1647,8 @@ void DG_Elem::inicia_vetores()
 // ****************************************************************************
 void DG_Elem::finaliza_vetores()
 {
-  if(vetores_iniciados == 0) {
-    vetores_iniciados = 1;
+  if(vetores_iniciados == 1) {
+    vetores_iniciados = 0;
     //cout<< "DG_Elem::finaliza_vetores()\n";
     delete [] JV; JV=nullptr;
     delete [] Jb; Jb=nullptr;

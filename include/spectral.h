@@ -43,12 +43,6 @@ using namespace std;
 //# include "Mat2.h"
 //# include "Matn.h"
 
-inline  int indice(int ns,int var,int i) {return((ns*var)+i);};
-
-inline int npos(int ntot,int i, int j) {return((ntot*i)+j);};
-
-inline int indice_interior(int nnparc[],int iE,int var,int i) {return(nnparc[(2*iE + var)] + i);};
-
 struct Field_struct {
   int ordem,P,Q;
 };

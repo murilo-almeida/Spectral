@@ -62,8 +62,8 @@ void DG_Prob::DG_EI_flux(const EDGE border, double & flux_w, double & flux_n)
       K_g_pw_n[iE][q]=0.0;
       K_g_pc_n[iE][q]=0.0;
       for ( int k = 0; k < ndim; k++){ 
-				K_g_pw_n[iE][q]+=(n_e[k]*Kgpw[iE][k][q]);
-				K_g_pc_n[iE][q]+=(n_e[k]*Kgpc[iE][k][q]);
+        K_g_pw_n[iE][q]+=(n_e[k]*Kgpw[iE][k][q]);
+        K_g_pc_n[iE][q]+=(n_e[k]*Kgpc[iE][k][q]);
       }
   } 
   // ------------------------

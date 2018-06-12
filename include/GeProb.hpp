@@ -75,8 +75,15 @@ class GeProb
 
 
 protected:
-
-  Epetra_Comm* Comm;
+    
+    FillType flag;
+    Epetra_Map *StandardMap;
+    //Epetra_Map *OverlapMap;
+    //Epetra_Import *Importer;
+    //Epetra_Vector *RHS;
+    //Epetra_CrsGraph *AA;
+    //Teuchos::RCP<Epetra_CrsMatrix> A;
+    Epetra_Comm* Comm;
 
   Teuchos::RCP<Epetra_Vector> solution;
 
@@ -85,6 +92,8 @@ protected:
   int NumProc;            // Total number of processes
   int NumElemTypeents;    // Number of elements owned by this process
   int NumGlobalElements;  // Total Number of elements
+    
+    
 
   int myid = 0;
   int comm_size = 0;
@@ -194,6 +203,7 @@ GeProb<ElemType,N_VAR,N_FIELDS>::~GeProb()
     delete ptrTetrahedral[i];
     delete ptrHexahedral[i];
   }
+    delete StandardMap;
 };
 // ****************************************************************************
 // ****************************************************************************
@@ -796,7 +806,7 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::ResolverComTrilinos(const std::string Pack
   // Exemplo da difusao de X0 (=copia de X)
   // processador 0 recebe as partes dos demais processadores
   // monta X0 e faz Broadcast de seu conteudo completo
-  std::vector<double>  X0  (NumD);
+  std::vector<double>  X0  (NumD); //hoje
 #ifdef HAVE_MPI
   int NumMyVars_target;
   if(myid==0)
@@ -809,6 +819,7 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::ResolverComTrilinos(const std::string Pack
   Y.PutScalar(0.0);
   Y.Export(X,Exporter,Add);
   Y.ExtractCopy(&X0[0]);
+
   MPI::COMM_WORLD.Bcast(&X0[0],NumD,MPI::DOUBLE,0);
 #else
   for ( int i = 0; i < NumD; i++) {

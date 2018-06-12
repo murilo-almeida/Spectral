@@ -18,7 +18,7 @@ typedef DG_Elem  MyElem;
 
 // GeProb com elemento MyElem=PhElem<2> = e duas variaveis;
 // o segundo 2 abaixo equivale a dois espacos interpolantes
-
+//                                     |
 class DG_Prob : public GeProb<MyElem,2,2>
 {
  public:
@@ -36,12 +36,10 @@ class DG_Prob : public GeProb<MyElem,2,2>
   void DG_eco();
   void DG_Iterate();
   void DG_Iterate_NOX();
-  void Ge_MVRA0(const double Dt,
-                Epetra_Map Map,
+  void Ge_MVRA0(const double Dt,/* Epetra_Map Map,*/
                 double & valor0,
                 double_t & norm_delta_X);
-  void Ge_MVRA(const double Dt,
-               Epetra_Map Map,
+  void Ge_MVRA(const double Dt,/* Epetra_Map Map,*/
                double & valor,
                int & token,
                double_t & norm_delta_X);
@@ -101,7 +99,7 @@ class DG_Prob : public GeProb<MyElem,2,2>
   //void RowEI(const EDGE border, int * NumNz, int ** Map);
   //void ValoresInterpolados(char * str = 0);
   void DG_Escrever_rst(const int nprt=0);
-	void DG_imprimir_taxas_de_producao(FILE * fout3,
+    void DG_imprimir_taxas_de_producao(FILE * fout3,
                                            double valor, double valor0, double valor1,
                                            int iter);
 
@@ -146,7 +144,7 @@ class DG_Prob : public GeProb<MyElem,2,2>
   int tnc;
   int tncut;
   //double p_in, p_out, sn_in, sn_ini, pw_ini;
-	double injrate_w,injrate_n;
+  double injrate_w,injrate_n;
   double prodrate_w,prodrate_n;
   double Iw,In,Qw,Qn;
   double injrate_w0,injrate_n0;
@@ -157,7 +155,7 @@ class DG_Prob : public GeProb<MyElem,2,2>
   double beta  ;
 
   Fluids fluids;
-
+    
   // **********************
   // alocar memoria local *
   // **********************

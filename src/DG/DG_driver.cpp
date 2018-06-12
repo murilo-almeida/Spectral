@@ -30,7 +30,9 @@ void DG_Prob::Driver(char * str)
 
 
   DG_initial_conditions();
-
+    
+    NumGlobalElements = NumD;
+    StandardMap = new Epetra_Map(NumGlobalElements, 0, *Comm);
 
   if(myid==0) {
     DG_eco(); // Escreve arquivo de eco dos dados

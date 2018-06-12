@@ -19,8 +19,8 @@ void DG_Prob::DG_imprimir_taxas_de_producao(FILE * fout3,
                                             int iter)
 {
 	double auxw,auxn,pauxw,pauxn,iauxw,iauxn;
-	
-	if(myid==0) {
+    //cout << "nin = "<< nin << "nout = "<< nout<<std::endl;
+	//if(myid==0) {
 		injrate_w = 0.0;
 		injrate_n = 0.0;
 		for(int ii = 0;ii < nin; ++ii) {
@@ -77,5 +77,5 @@ void DG_Prob::DG_imprimir_taxas_de_producao(FILE * fout3,
 		fprintf(fout3,"%e ",pauxn);
 		fprintf(fout3,"%e ",Qw);
 		fprintf(fout3,"%e\n",Qn);
-	} //if(myid==0)
+	//} //if(myid==0)
 }

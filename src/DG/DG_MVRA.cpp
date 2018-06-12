@@ -3,15 +3,15 @@
 #include "DG_Prob.h"
 // *******************************************************************
 // *******************************************************************
-void DG_Prob::Ge_MVRA0(const double Dt,
-                       Epetra_Map Map,
+void DG_Prob::Ge_MVRA0(const double Dt,/* Epetra_Map Map,*/
                        double & valor,
-											 double_t & norm_delta_X
+                       double_t & norm_delta_X
                        )
 {
   Comm->Barrier();
-  Teuchos::RCP<Epetra_FECrsMatrix> A = Teuchos::rcp(new Epetra_FECrsMatrix(Copy,Map,5));
-  Teuchos::RCP<Epetra_FEVector> RHS = Teuchos::rcp(new Epetra_FEVector(Map,1));
+    
+  Teuchos::RCP<Epetra_FECrsMatrix> A = Teuchos::rcp (new Epetra_FECrsMatrix (Copy, *StandardMap, 5));
+  Teuchos::RCP<Epetra_FEVector>  RHS = Teuchos::rcp(new Epetra_FEVector(*StandardMap,1));
   A->PutScalar(0.0);
   RHS->PutScalar(0.0);
   DG_MatrizVetor_Epetra(Dt,A,RHS);
@@ -22,15 +22,14 @@ void DG_Prob::Ge_MVRA0(const double Dt,
   valor = valor_temp;
   //cout << "Ge_MVRA0: valor_temp = "<< valor_temp << endl; 
   if(std::isnan(valor_temp)) cout << "Ge_MVRA0  Float was Not a Number: valor_temp " << valor_temp << endl;
-  ResolverComTrilinos(TrilinosSolver,Map,A,RHS,norm_delta_X);
+  ResolverComTrilinos(TrilinosSolver,*StandardMap,A,RHS,norm_delta_X);
 }
 // *******************************************************************
 // *******************************************************************
-void DG_Prob::Ge_MVRA(const double Dt,
-                      Epetra_Map Map,
+void DG_Prob::Ge_MVRA(const double Dt,/*Epetra_Map Map,*/
                       double & valor,
                       int & token,
-											double_t & norm_delta_X
+                      double_t & norm_delta_X
                       )
 {
   Comm->Barrier();
@@ -39,9 +38,9 @@ void DG_Prob::Ge_MVRA(const double Dt,
   // A e RHS vao ser preeenchidos
   // e terminadas suas construcoes com RHS->GlobalAssemble(Add) e A->FillComplete()
   // *********************************************************************************************
-
-  Teuchos::RCP<Epetra_FECrsMatrix> A = Teuchos::rcp (new Epetra_FECrsMatrix (Copy, Map, 5));//(Copy,Map,0);//&NNz[0]);
-  Teuchos::RCP<Epetra_FEVector> RHS = Teuchos::rcp(new Epetra_FEVector(Map,1));
+  Teuchos::RCP<Epetra_FECrsMatrix> A = Teuchos::rcp (new Epetra_FECrsMatrix (Copy, *StandardMap, 5));
+  Teuchos::RCP<Epetra_FEVector>  RHS = Teuchos::rcp(new Epetra_FEVector(*StandardMap,1));
+    
   A->PutScalar(0.0);
   RHS->PutScalar(0.0);
   DG_MatrizVetor_Epetra(Dt,A,RHS);
@@ -56,7 +55,7 @@ void DG_Prob::Ge_MVRA(const double Dt,
       token = 2;
     }
     else {
-      ResolverComTrilinos(TrilinosSolver,Map,A,RHS,norm_delta_X);
+      ResolverComTrilinos(TrilinosSolver,*StandardMap,A,RHS,norm_delta_X);
       token = 1; // passa para a iteracao
     }
   }
@@ -68,11 +67,11 @@ void DG_Prob::Ge_MVRA(const double Dt,
 				valor = valor_temp;
     }
 		else if(valor_temp > valor) { // restaura
-		token = 3;
-		}
+            token = 3;
+        }
     else { // continua a simulacao
       valor = valor_temp;
-      ResolverComTrilinos(TrilinosSolver,Map,A,RHS,norm_delta_X);
+      ResolverComTrilinos(TrilinosSolver,*StandardMap,A,RHS,norm_delta_X);
     }
   }
 }
@@ -142,8 +141,8 @@ void DG_Prob::DG_MatrizVetor_Epetra(const double Dt,
   // Montagem da Matriz e do Vetor deve ser feito uma unica vez
   // -----------------------------------------------------------
   A->GlobalAssemble(true,Add);
-	RHS->GlobalAssemble(Add);
-	A->FillComplete();
+  RHS->GlobalAssemble(Add);
+  A->FillComplete();
 	//printf("Criou Matriz e Vetor\n");
 };
 
