@@ -81,9 +81,10 @@ protected:
     //Epetra_Map *OverlapMap;
     //Epetra_Import *Importer;
     //Epetra_Vector *RHS;
-    //Epetra_CrsGraph *AA;
-    //Teuchos::RCP<Epetra_CrsMatrix> A;
-    Epetra_Comm* Comm;
+    Teuchos::RCP<Epetra_FEVector>  RHS;
+    //Teuchos::RCP<Epetra_FECrsGraph> AA;
+    Teuchos::RCP<Epetra_FECrsMatrix> A;
+    Epetra_Comm *Comm;
 
   Teuchos::RCP<Epetra_Vector> solution;
 
@@ -197,13 +198,14 @@ GeProb<ElemType,N_VAR,N_FIELDS>::~GeProb()
   }
 
  for(int i=0;i<N_FIELDS;++i){
-    delete ptrLinear[i];
-    delete ptrTriang[i];
-    delete ptrQuadri[i];
-    delete ptrTetrahedral[i];
-    delete ptrHexahedral[i];
+     delete ptrLinear[i]; ptrLinear[i] = nullptr;
+    delete ptrTriang[i]; ptrTriang[i] = nullptr;
+    delete ptrQuadri[i]; ptrQuadri[i] = nullptr;
+    delete ptrTetrahedral[i]; ptrTetrahedral[i] = nullptr;
+    delete ptrHexahedral[i]; ptrHexahedral[i] = nullptr;
   }
     delete StandardMap;
+   cout << "Saiu de GeProb destructor"<< endl;
 };
 // ****************************************************************************
 // ****************************************************************************

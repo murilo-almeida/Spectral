@@ -43,7 +43,7 @@ class DG_Prob : public GeProb<MyElem,2,2>
                double & valor,
                int & token,
                double_t & norm_delta_X);
-
+    void DG_FECrsGraph_generate(Teuchos::RCP<Epetra_FECrsGraph> A /*,Teuchos::RCP<Epetra_FEVector> RHS*/);
   int Eigenvectors(const double Dt, const Epetra_Map & Map);
   void DG_conditionNumber(Epetra_Map Map);
   void Ler_Arquivo_Dados_DG(char *arq_par);
@@ -66,12 +66,22 @@ class DG_Prob : public GeProb<MyElem,2,2>
   void DG_EI_Epetra_Interior(const EDGE border,
                              Teuchos::RCP<Epetra_FECrsMatrix> A,
                              Teuchos::RCP<Epetra_FEVector> RHS);
+    void DG_EI_Epetra_Interior_map(const EDGE border,
+                               Teuchos::RCP<Epetra_FECrsGraph> A,
+                               Teuchos::RCP<Epetra_FEVector> RHS);
   void DG_EI_Epetra_Inflow(const EDGE border,
                            Teuchos::RCP<Epetra_FECrsMatrix> A,
                            Teuchos::RCP<Epetra_FEVector> RHS);
+    void DG_EI_Epetra_Inflow_map(const EDGE border,
+                                          Teuchos::RCP<Epetra_FECrsGraph> A,
+                                 Teuchos::RCP<Epetra_FEVector> RHS);
   void DG_EI_Epetra_Outflow(const EDGE border,
                       Teuchos::RCP<Epetra_FECrsMatrix> A,
                       Teuchos::RCP<Epetra_FEVector> RHS);
+    void DG_EI_Epetra_Outflow_map(const EDGE border,
+                              Teuchos::RCP<Epetra_FECrsGraph> A,
+                              Teuchos::RCP<Epetra_FEVector> RHS);
+    
   int DG_EI_Inflow(const EDGE border,
                    double * mx,
                    double * B,

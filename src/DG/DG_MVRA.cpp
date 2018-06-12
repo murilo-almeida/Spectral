@@ -9,9 +9,7 @@ void DG_Prob::Ge_MVRA0(const double Dt,/* Epetra_Map Map,*/
                        )
 {
   Comm->Barrier();
-    
-  Teuchos::RCP<Epetra_FECrsMatrix> A = Teuchos::rcp (new Epetra_FECrsMatrix (Copy, *StandardMap, 5));
-  Teuchos::RCP<Epetra_FEVector>  RHS = Teuchos::rcp(new Epetra_FEVector(*StandardMap,1));
+
   A->PutScalar(0.0);
   RHS->PutScalar(0.0);
   DG_MatrizVetor_Epetra(Dt,A,RHS);
@@ -38,13 +36,13 @@ void DG_Prob::Ge_MVRA(const double Dt,/*Epetra_Map Map,*/
   // A e RHS vao ser preeenchidos
   // e terminadas suas construcoes com RHS->GlobalAssemble(Add) e A->FillComplete()
   // *********************************************************************************************
-  Teuchos::RCP<Epetra_FECrsMatrix> A = Teuchos::rcp (new Epetra_FECrsMatrix (Copy, *StandardMap, 5));
-  Teuchos::RCP<Epetra_FEVector>  RHS = Teuchos::rcp(new Epetra_FEVector(*StandardMap,1));
-    
+  //Teuchos::RCP<Epetra_FECrsMatrix> A = Teuchos::rcp (new Epetra_FECrsMatrix (Copy, *AA));
+  //Teuchos::RCP<Epetra_FEVector>  RHS = Teuchos::rcp(new Epetra_FEVector(*StandardMap,1));
+
   A->PutScalar(0.0);
   RHS->PutScalar(0.0);
   DG_MatrizVetor_Epetra(Dt,A,RHS);
- 
+     
   double valor_temp;
   RHS->NormInf( &valor_temp );// ou RHS->Norm2(&valor_temp); valor_temp/= RHS->GlobalLength();
   if(std::isnan(valor_temp)) cout << "Ge_MVRA  Float was Not a Number: valor_temp " << valor_temp << endl;
@@ -144,6 +142,72 @@ void DG_Prob::DG_MatrizVetor_Epetra(const double Dt,
   RHS->GlobalAssemble(Add);
   A->FillComplete();
 	//printf("Criou Matriz e Vetor\n");
+};
+// ************************************************
+// ************************************************
+void DG_Prob::DG_FECrsGraph_generate(Teuchos::RCP<Epetra_FECrsGraph> A)
+{
+    // *******************************************************
+    //int p = myid;
+    Teuchos::RCP<Epetra_FEVector>  RHS = Teuchos::rcp(new Epetra_FEVector(*StandardMap,1));
+    // elementos da particao
+    for (int k=0;k<Particao[myid].nele;++k) {
+        int i=Particao[myid].ele[k];
+        // printf(" p =%d nele %d i = %d\n",p,Particao[myid].nele,i);
+        
+        el[i].VolumeIntegrals_map(A,RHS);
+        
+        // printf("Passou \n");
+        /* Usar se precisar atualizar so o termo de DT nas integrais de volume
+         da equacao de sn
+         el[i].VolumeIntegralsT(Dt,Ti,Tj,Tx,count,B);
+         */
+        
+        //printf("terminou VolumeIntegralsI %2d/%2d  count= %2d\n",i+1,Particao[myid].nele,count);
+    }
+    
+    // Elementos ghosts
+    /* for (int k=0;k<Particao[myid].ngho;++k) {
+        int i=Particao[myid].gho[k];
+        el[i].VolumeTracos(Dt,fluids,gbtrsn,gbtrpw);
+    } */
+    
+    //printf("Integrais de bordas\n");
+    //DG_EI(A,RHS);
+    
+    EDGE border1;
+    
+    for (int k=0;k<Particao[myid].nbor;++k) {
+        // bordas da particao
+        int i=Particao[myid].bor[k];
+        //printf(" EdgeIntegrals %3d/%d\n",i,Particao[myid].nbor);
+        border1=border[i];
+        int t=border1.tipo;
+        //printf("tipo %d\n",t);
+        switch(t) {
+            case -1:
+                DG_EI_Epetra_Inflow_map(border1,A,RHS);
+                break;
+                
+            case 1:
+                DG_EI_Epetra_Outflow_map(border1,A,RHS);
+                break;
+                
+            case 2:
+                DG_EI_Epetra_Interior_map(border1,A,RHS);
+                break;
+        }
+    }
+    
+    //MPI::COMM_WORLD.Barrier();
+    Comm->Barrier();
+    // -----------------------------------------------------------
+    // Montagem da Matriz e do Vetor deve ser feito uma unica vez
+    // -----------------------------------------------------------
+    A->GlobalAssemble(true);
+    //RHS->GlobalAssemble(Add);
+    //A->FillComplete();
+    //printf("Criou Matriz e Vetor\n");
 };
 
 // ************************************************

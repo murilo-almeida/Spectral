@@ -55,6 +55,8 @@ public:
                        Teuchos::RCP<Epetra_FEVector> RHS,
                        double * = NULL,
                        double * = NULL);
+    void VolumeIntegrals_map(Teuchos::RCP<Epetra_FECrsGraph>  A,
+                             Teuchos::RCP<Epetra_FEVector> RHS);
   void VolumeTracos(const double Dt,Fluids fls,
                     double * = NULL,
                     double * = NULL);

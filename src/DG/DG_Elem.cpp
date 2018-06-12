@@ -1442,7 +1442,7 @@ void DG_Elem::VolumeIntegrals(const double Dt,Fluids fls,
     mi=indice(n0,sat,rs);
     indx[mi] = gbnmap[sat][rs];
   }
-  A->InsertGlobalValues(ntot,indx,mx,Epetra_FECrsMatrix::ROW_MAJOR);
+  A->SumIntoGlobalValues(ntot,indx,mx,Epetra_FECrsMatrix::ROW_MAJOR);
   RHS->SumIntoGlobalValues(ntot,indx,B);
   //  for(int i = 0; i < ntot*ntot; i++) {
   //    printf("mx[%3d] = %12.5e\n",i,mx[i]);
@@ -1454,6 +1454,35 @@ void DG_Elem::VolumeIntegrals(const double Dt,Fluids fls,
 // alterado em 23/10/2011
 // alterado em 13/02/2013
 
+void DG_Elem::VolumeIntegrals_map(Teuchos::RCP<Epetra_FECrsGraph> AA,
+                              Teuchos::RCP<Epetra_FEVector> RHS)
+{
+    const int ns=numn[sat];
+    const int np=numn[pres];
+    const int ntot=ns+np;// Num total de modos no elemento
+    const int n0 = numn[0];// Num de modos para a variavel 0
+    
+    int mi,mj;
+    double mx /*= new double*/ [ntot*ntot];
+    double B  /*= new double*/ [ntot];
+    int  indx /*= new int*/ [ntot];
+    
+    // ***************************************************************************
+    // Colocar os indices no vetor Ti
+    // ***************************************************************************
+    for(int rp=0;rp<np;rp++) {
+        mi=indice(n0,pres,rp);
+        indx[mi] = gbnmap[pres][rp];
+    }
+    for(int rs=0;rs<ns;rs++) {
+        mi=indice(n0,sat,rs);
+        indx[mi] = gbnmap[sat][rs];
+    }
+    AA->InsertGlobalIndices(ntot,indx,ntot,indx);
+    //RHS->SumIntoGlobalValues(ntot,indx,B);
+    //  }
+    
+};
 // **************************************************************
 // Inicaliza os vetores locais: JV,b0,bs,Grad e traco
 // **************************************************************

@@ -66,7 +66,13 @@ void DG_Prob::DG_Iterate()
   //       = 2 : Termina a Iteracao Gaussiana e avanca o tempo
   //       = 3 : Rejeita a Iteracao, reduz o Dt e recomeca a Iteracao
   //       = 4 : Termina Simulacao (atingiu tempo maximo)
-	int token;
+   
+    Teuchos::RCP<Epetra_FECrsGraph> AA = Teuchos::rcp (new Epetra_FECrsGraph (Copy, *StandardMap, 5));
+    DG_FECrsGraph_generate(AA);
+    
+    A = Teuchos::rcp (new Epetra_FECrsMatrix (Copy, *AA));
+    RHS = Teuchos::rcp(new Epetra_FEVector(*StandardMap,1));
+    int token;
     
   if(t < t_final)
     token=0;

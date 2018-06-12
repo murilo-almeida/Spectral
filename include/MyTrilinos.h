@@ -13,6 +13,7 @@
 #include "Epetra_Vector.h"
 #include "Epetra_FECrsMatrix.h"
 #include "Epetra_FEVector.h"
+#include "Epetra_FECrsGraph.h"
 #include "Epetra_Time.h"
 //#include "Epetra_RowMatrix.h"
 #include "Epetra_CrsMatrix.h"
