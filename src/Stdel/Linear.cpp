@@ -30,7 +30,7 @@ Linear::~Linear()  // 10/02/2013
   
   //libera memoria de ind_mode_
   delete [] ind_mode_;  ind_mode_ = nullptr;
-  Stdel::~Stdel();
+  //Stdel::~Stdel();
 };
 // ****************************************************************************
 

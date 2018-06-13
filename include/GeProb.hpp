@@ -199,7 +199,7 @@ GeProb<ElemType,N_VAR,N_FIELDS>::~GeProb()
 
  for(int i=0;i<N_FIELDS;++i){
     cout<< "deletando ponteiros dos elementos padroes; passada "<< i << endl;
-   // if (ptrLinear[i] != nullptr){delete ptrLinear[i]; ptrLinear[i] = nullptr;}
+    if (ptrLinear[i] != nullptr){delete ptrLinear[i]; ptrLinear[i] = nullptr;}
     cout << "1" << endl;
     if (ptrTriang[i] != nullptr){delete ptrTriang[i]; ptrTriang[i] = nullptr;}
     cout << "2" << endl;
