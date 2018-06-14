@@ -36,8 +36,6 @@ Hexahedral::~Hexahedral()
     delete [] ind_mode_[i];  ind_mode_[i] = nullptr;
   }
   delete [] ind_mode_;  ind_mode_ = nullptr;
-
-  //Stdel::~Stdel();
 };
 // ************************************************************************
 
