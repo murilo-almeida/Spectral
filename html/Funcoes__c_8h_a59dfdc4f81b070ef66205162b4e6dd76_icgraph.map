@@ -1,9 +1,0 @@
-<map id="prodev" name="prodev">
-<area shape="rect" id="node2" href="$DG_8cpp.html#a143ca21804422100f83808ee5e1796ea" title="Kgradgrad" alt="" coords="150,5,219,32"/>
-<area shape="rect" id="node3" href="$DG_8cpp.html#ae406b1db83db564b5b1a8b761a8dadf8" title="Kgradn" alt="" coords="157,56,212,83"/>
-<area shape="rect" id="node4" href="$DG_8cpp.html#ae15da0a6f8a29802da1e4305a807d20f" title="prodgn" alt="" coords="158,107,211,133"/>
-<area shape="rect" id="node5" href="$classDG__Elem.html#a3fc71dbfe141c0d42dc8ceff8f0ef8ce" title="DG_Elem::VolumeIntegrals_IG" alt="" coords="105,157,264,184"/>
-<area shape="rect" id="node6" href="$classDG__Elem.html#a01a49e07fd18a74e12eedf15cff7b8c7" title="DG_Elem::show_Volume" alt="" coords="312,128,445,155"/>
-<area shape="rect" id="node7" href="$classDG__Prob.html#a8241ca6884495f863179ea86129b055e" title="DG_Prob::DG_initial\l_conditions" alt="" coords="323,179,435,221"/>
-<area shape="rect" id="node8" href="$classDG__Prob.html#a015d792341ee05b1b3eaef7990bf1e06" title="DG_Prob::Driver" alt="" coords="493,187,589,213"/>
-</map>

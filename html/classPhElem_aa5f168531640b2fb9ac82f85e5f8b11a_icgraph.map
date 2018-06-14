@@ -1,8 +1,0 @@
-<map id="PhElem::projetar_C0" name="PhElem::projetar_C0">
-<area shape="rect" id="node2" href="$classDG__Prob.html#a8241ca6884495f863179ea86129b055e" title="DG_Prob::DG_initial\l_conditions" alt="" coords="173,5,285,47"/>
-<area shape="rect" id="node4" href="$classTetrahedral.html#afa5ab92fac0ada8385fddf3ddec3a8fc" title="Tetrahedral::Dirichlet" alt="" coords="171,71,286,98"/>
-<area shape="rect" id="node5" href="$classHexahedral.html#a86088799f63b981f6a350397d10e2efa" title="Hexahedral::Dirichlet" alt="" coords="171,122,286,149"/>
-<area shape="rect" id="node6" href="$classPhElem.html#aa67e9fd1399ee905803999ef50581677" title="PhElem\&lt; 2 \&gt;::Phi_val" alt="" coords="169,173,288,199"/>
-<area shape="rect" id="node7" href="$classDG__Prob.html#acbf4eefc45872a673a1491b776921d31" title="DG_Prob::projetar_C0" alt="" coords="168,223,289,250"/>
-<area shape="rect" id="node3" href="$classDG__Prob.html#a015d792341ee05b1b3eaef7990bf1e06" title="DG_Prob::Driver" alt="" coords="337,13,433,39"/>
-</map>

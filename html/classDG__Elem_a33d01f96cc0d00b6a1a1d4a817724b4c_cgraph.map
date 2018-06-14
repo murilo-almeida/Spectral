@@ -1,7 +1,0 @@
-<map id="DG_Elem::inicia_tracos" name="DG_Elem::inicia_tracos">
-<area shape="rect" id="node2" href="$classStdel.html#a2aa6ea12ceaa1fa4a7f63909ce41bc0b" title="Stdel::eval_Phi" alt="" coords="187,5,276,32"/>
-<area shape="rect" id="node3" href="$classStdel.html#af3e65d1ad0d59ded925a3f5a9d0fb100" title="Stdel::Gradiente" alt="" coords="184,56,279,83"/>
-<area shape="rect" id="node4" href="$classStdel.html#a2f964819235e0a55fd60733518b592f2" title="Stdel::NGQP_val" alt="" coords="182,107,281,133"/>
-<area shape="rect" id="node5" href="$classStdel.html#a457d20e34fb7a32eb1e4aca6c19f53a2" title="Stdel::qborder_val" alt="" coords="180,157,283,184"/>
-<area shape="rect" id="node6" href="$classStdel.html#aeb2fe03bbd8af61e503e29d3dd5ae4f0" title="Stdel::trace" alt="" coords="195,208,267,235"/>
-</map>

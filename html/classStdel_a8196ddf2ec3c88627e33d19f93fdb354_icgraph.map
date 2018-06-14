@@ -1,7 +1,0 @@
-<map id="Stdel::printGQtofile" name="Stdel::printGQtofile">
-<area shape="rect" id="node2" href="$classDG__Elem.html#a70dbc366e1cdfb0b96fa9d640dcff689" title="DG_Elem::Atualizar\l_valores" alt="" coords="170,35,279,76"/>
-<area shape="rect" id="node6" href="$classStdel.html#a9a0c69dca7564f6ca4aa4f3c9864ea01" title="Stdel::print_border_map" alt="" coords="160,101,289,127"/>
-<area shape="rect" id="node3" href="$classDG__Prob.html#a8241ca6884495f863179ea86129b055e" title="DG_Prob::DG_initial\l_conditions" alt="" coords="348,5,460,47"/>
-<area shape="rect" id="node5" href="$classDG__Elem.html#a01a49e07fd18a74e12eedf15cff7b8c7" title="DG_Elem::show_Volume" alt="" coords="337,71,471,98"/>
-<area shape="rect" id="node4" href="$classDG__Prob.html#a015d792341ee05b1b3eaef7990bf1e06" title="DG_Prob::Driver" alt="" coords="519,13,615,39"/>
-</map>

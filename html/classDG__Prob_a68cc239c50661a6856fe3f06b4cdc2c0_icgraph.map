@@ -1,6 +1,0 @@
-<map id="DG_Prob::DG_EI_flux" name="DG_Prob::DG_EI_flux">
-<area shape="rect" id="node2" href="$classDG__Prob.html#afd8b8c1330587f232b2f1bd9f9cc8a38" title="DG_Prob::DG_imprimir\l_taxas_de_producao" alt="" coords="173,5,299,47"/>
-<area shape="rect" id="node5" href="$classDG__Prob.html#a8241ca6884495f863179ea86129b055e" title="DG_Prob::DG_initial\l_conditions" alt="" coords="350,64,462,105"/>
-<area shape="rect" id="node3" href="$classDG__Prob.html#ac4dfaa4ea6466833ecb5cc5c3fcb3875" title="DG_Prob::DG_Iterate" alt="" coords="347,13,465,39"/>
-<area shape="rect" id="node4" href="$classDG__Prob.html#a015d792341ee05b1b3eaef7990bf1e06" title="DG_Prob::Driver" alt="" coords="513,42,609,69"/>
-</map>

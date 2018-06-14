@@ -1,7 +1,0 @@
-<map id="Stdel::elem_traces" name="Stdel::elem_traces">
-<area shape="rect" id="node2" href="$classDG__Elem.html#af61130ab38851fa2ade53f9e3f2418bc" title="DG_Elem::inicia_funcoes\l_na_borda" alt="" coords="159,35,293,76"/>
-<area shape="rect" id="node6" href="$classStdel.html#a9a0c69dca7564f6ca4aa4f3c9864ea01" title="Stdel::print_border_map" alt="" coords="161,101,291,127"/>
-<area shape="rect" id="node3" href="$classDG__Prob.html#a8241ca6884495f863179ea86129b055e" title="DG_Prob::DG_initial\l_conditions" alt="" coords="352,5,464,47"/>
-<area shape="rect" id="node5" href="$classDG__Elem.html#a01a49e07fd18a74e12eedf15cff7b8c7" title="DG_Elem::show_Volume" alt="" coords="341,71,475,98"/>
-<area shape="rect" id="node4" href="$classDG__Prob.html#a015d792341ee05b1b3eaef7990bf1e06" title="DG_Prob::Driver" alt="" coords="523,13,619,39"/>
-</map>

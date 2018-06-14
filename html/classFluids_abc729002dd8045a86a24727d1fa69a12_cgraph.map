@@ -1,9 +1,0 @@
-<map id="Fluids::show_rhow" name="Fluids::show_rhow">
-<area shape="rect" id="node2" href="$classFluids.html#a860c3c2af6dae8c158a78770dfc76ce8" title="Fluids::d2pc" alt="" coords="183,5,259,32"/>
-<area shape="rect" id="node3" href="$classFluids.html#a66c100be378f015b8bbe47a0e0c176c1" title="Fluids::dkrn" alt="" coords="185,56,258,83"/>
-<area shape="rect" id="node4" href="$classFluids.html#abd769e3a9081140ed4fc7d877c6672d4" title="Fluids::dkrw" alt="" coords="183,107,259,133"/>
-<area shape="rect" id="node5" href="$classFluids.html#aa332e363bb05e9c5559386000241d66f" title="Fluids::dpc" alt="" coords="186,157,257,184"/>
-<area shape="rect" id="node6" href="$classFluids.html#a01d25f71f5c00a566032c19bd63a473f" title="Fluids::Krn" alt="" coords="187,208,256,235"/>
-<area shape="rect" id="node7" href="$classFluids.html#abaa29b5611ffefe8f2171692ffd62d38" title="Fluids::Krw" alt="" coords="185,259,257,285"/>
-<area shape="rect" id="node8" href="$classFluids.html#a26c1a1fba1aa34becddfbc4fb07692dd" title="Fluids::pressao_capilar" alt="" coords="159,309,284,336"/>
-</map>

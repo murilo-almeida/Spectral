@@ -1,7 +1,0 @@
-<map id="g" name="g">
-<area shape="rect" id="node2" href="$classHexahedral.html#a244f208541f6a22826ff5265445ff4d7" title="Hexahedral::Gradiente" alt="" coords="95,5,218,32"/>
-<area shape="rect" id="node3" href="$classTriangle.html#af55fef533efd5d2a7b8f3954d5ad7dda" title="Triangle::Gradiente" alt="" coords="103,56,211,83"/>
-<area shape="rect" id="node4" href="$classLinear.html#a44cf1ecaefc5ad9e72325aed57df10ff" title="Linear::Gradiente" alt="" coords="107,107,206,133"/>
-<area shape="rect" id="node5" href="$classQuadrilateral.html#a28d6d2bdfb318e828ab1a3471591e602" title="Quadrilateral::Gradiente" alt="" coords="92,157,221,184"/>
-<area shape="rect" id="node6" href="$classTetrahedral.html#a3db10cbcaa2306d1be9656c04c9e9366" title="Tetrahedral::map_face" alt="" coords="95,208,218,235"/>
-</map>

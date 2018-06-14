@@ -1,6 +1,0 @@
-<map id="Stdel::P_val" name="Stdel::P_val">
-<area shape="rect" id="node2" href="$classDG__Elem.html#af91d2d61c97fae30b8dfc6db67433094" title="DG_Elem::finaliza_vetores" alt="" coords="129,31,269,57"/>
-<area shape="rect" id="node5" href="$classPhElem.html#ad355231f4e2807541c62212647c44b3e" title="PhElem\&lt; 2 \&gt;::gbnmap\l_faces" alt="" coords="139,82,260,123"/>
-<area shape="rect" id="node3" href="$classDG__Elem.html#a01a49e07fd18a74e12eedf15cff7b8c7" title="DG_Elem::show_Volume" alt="" coords="317,5,451,32"/>
-<area shape="rect" id="node4" href="$classDG__Prob.html#ac7d67077fa8154c22a52d63a24db7fba" title="DG_Prob::~DG_Prob" alt="" coords="325,56,443,83"/>
-</map>

@@ -826,11 +826,15 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::ResolverComTrilinos(const std::string Pack
   else
     NumMyVars_target=0;
   Epetra_Map TargetMap(-1,NumMyVars_target,0,*Comm);
-  Epetra_Export Exporter(Map,TargetMap);
+    Epetra_Export Exporter(Map,TargetMap); //analogo a Montagem da matriz global; TargetMap eh 1-1, Map  pode nao ser
+     //Epetra_Import Importer(TargetMap,Map); //analogo a distribuicao da solucao para os elementos Map eh 1-1
+                                            // TargetMap pode nao ser
   Epetra_Vector Y(TargetMap);
-  Y.PutScalar(0.0);
+   
+    Y.PutScalar(0.0);
   Y.Export(X,Exporter,Add);
-  Y.ExtractCopy(&X0[0]);
+  //Y.Import(X,Importer,Insert);
+    Y.ExtractCopy(&X0[0]);
 
   MPI::COMM_WORLD.Bcast(&X0[0],NumD,MPI::DOUBLE,0);
 #else

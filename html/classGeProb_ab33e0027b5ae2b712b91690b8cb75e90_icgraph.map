@@ -1,6 +1,0 @@
-<map id="GeProb::mesh_suporte" name="GeProb::mesh_suporte">
-<area shape="rect" id="node2" href="$classGeProb.html#aa2d34febad6985ceacd95ba6e10536f8" title="GeProb\&lt; MyElem, 2,\l 2 \&gt;::gbnmap_continuous" alt="" coords="179,5,313,47"/>
-<area shape="rect" id="node5" href="$classGeProb.html#a95d6202865332fd522738383003d7b25" title="GeProb\&lt; MyElem, 2,\l 2 \&gt;::show_NumD" alt="" coords="189,71,303,112"/>
-<area shape="rect" id="node3" href="$classDG__Prob.html#a8241ca6884495f863179ea86129b055e" title="DG_Prob::DG_initial\l_conditions" alt="" coords="361,5,473,47"/>
-<area shape="rect" id="node4" href="$classDG__Prob.html#a015d792341ee05b1b3eaef7990bf1e06" title="DG_Prob::Driver" alt="" coords="521,13,617,39"/>
-</map>

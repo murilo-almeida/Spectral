@@ -1,9 +1,0 @@
-<map id="Gauss_Jacobi_parameters" name="Gauss_Jacobi_parameters">
-<area shape="rect" id="node2" href="$ASPFunctions_8cpp.html#ad2b054769d09e23f58c382461a33fda5" title="Jacobi_P" alt="" coords="327,5,390,32"/>
-<area shape="rect" id="node3" href="$ASPFunctions_8cpp.html#a36e194a1b28057104e85e101e96dad23" title="Jacobi_roots" alt="" coords="195,31,273,57"/>
-<area shape="rect" id="node4" href="$ASPFunctions_8cpp.html#af2ec04a3aa3462cb36aa0a564d022914" title="my_gamma" alt="" coords="197,81,271,108"/>
-<area shape="rect" id="node5" href="$ASPFunctions_8cpp.html#ac3f705ccfdcb247014c373929aa4b358" title="gamma_log" alt="" coords="321,81,396,108"/>
-<area shape="rect" id="node6" href="$ASPFunctions_8cpp.html#adbb9227db329a95b79f56bc1bc599a36" title="d_epsilon" alt="" coords="444,31,509,57"/>
-<area shape="rect" id="node7" href="$Funcoes__c_8h.html#a06a315d5c541c5118010c5dd958cec0c" title="p1" alt="" coords="457,81,496,108"/>
-<area shape="rect" id="node8" href="$Funcoes__c_8h.html#a66ec9f5cd02b067ff05c1f11fe152748" title="p2" alt="" coords="457,132,496,159"/>
-</map>

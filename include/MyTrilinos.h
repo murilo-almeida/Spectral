@@ -33,6 +33,6 @@
 #include "CrsMatrixTranspose.h"
 #include "Teuchos_RCP.hpp"
 #include "Epetra_Export.h"
+#include "Epetra_Import.h"
 
 #endif
-
