@@ -77,7 +77,8 @@ class GeProb
 protected:
     
     FillType flag;
-    Epetra_Map *StandardMap;
+    //Epetra_Map *StandardMap;
+    Teuchos::RCP<Epetra_Map> StandardMap;
     //Epetra_Map *OverlapMap;
     //Epetra_Import *Importer;
     //Epetra_Vector *RHS;
@@ -213,7 +214,7 @@ GeProb<ElemType,N_VAR,N_FIELDS>::~GeProb()
   
     cout << "liberou pointer dos elementos espectrais"<< endl;
    
-    delete StandardMap;
+    //delete StandardMap;
    
     cout << "Saiu de GeProb destructor"<< endl;
 };
@@ -929,7 +930,7 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::Ler_e_Processar_malha(char *arq_geo)
   // *************************************************************************
   int controle[4];
   controle[0]=3*NUMNP;
-  controle[1]=10*NELEM;
+  controle[1]=11*NELEM;
   controle[2]=122*DNBC;
   controle[3]=NumPart + NUMNP;
 
@@ -941,7 +942,7 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::Ler_e_Processar_malha(char *arq_geo)
   */
 
   double buffer_V [controle[0]];// maior que 3*NUMNP
-  int    buffer_E [controle[1]];// maior que 10*NELEM
+  int    buffer_E [controle[1]];// maior que 11*NELEM
   int    buffer_BC[controle[2]];// maior que 10*DNBC
   int    buffer_Pa[controle[3]];// Numero de dados da particao +1
   // ********************************************************
