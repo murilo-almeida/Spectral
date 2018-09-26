@@ -41,17 +41,17 @@ class Stdel
   
   const int is_on_border(int m, int e,int & pos) const
   {
-    int aux=0;
-    int ans=0; // NO 
-    for(int i=emapi[e]; (i < emapi[e+1] && ans == 0); i++) 
-      {
-	if(emapv[i] == m){
-	  ans=1; // YES
-	  pos=aux;
-	}
-	aux++;
-      }
-    return ans;
+      int aux=0;
+      int ans=0; // NO
+      for(int i=emapi[e]; (i < emapi[e+1] && ans == 0); i++)
+        {
+            if(emapv[i] == m){
+                ans=1; // YES
+                pos=aux;
+            }
+            aux++;
+        }
+      return ans;
   };
   
   void print_border_map(FILE * fout)
@@ -131,6 +131,8 @@ class Stdel
 				    const double JV[])=0; 
   virtual void elem_traces(const Vertice ptvert[],const int Vert_map[],
                            const int sinal[],double *** TP,double **** TGP, double * Jb)=0;
+  virtual void trace_Jb(const Vertice vert[],const int map[],const int sinal[],
+                        double * Jb)=0;
   virtual const int aresta_lvert(const int & i, const int & j) const = 0;
   virtual const int face_lvert(const int & i, const int & j) const = 0;
   virtual const int show_nvf(const int &i) const = 0;

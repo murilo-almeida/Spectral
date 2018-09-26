@@ -60,6 +60,8 @@ class Hexahedral : public Stdel
   const int fd0[6] = {0,0,1,1,0,0}; // direcao 0 = (ver[1] - ver[0])/2;
   const int fd1[6] = {1,2,2,2,2,1}; // direcao 1 = (ver[3] - ver[0])/2;  dir 2 = 3 - dir0 - dir1
   const int fv2[6] = {0,0,0,1,1,1}; // valor da coordenada na direcao normal ( 0 ou 1)
+ // incremento no indice dos pontos de Gauss
+    int inc[3];
   // sinal de multiplicacao do vetor (l0 X l1) para obter a normal externa;
  const int sinal_normal[6] = {-1,1,-1,1,-1,1};
  int *** ind_mode_;

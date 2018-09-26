@@ -1589,6 +1589,9 @@ void Tetrahedral::eval_Phi(const int n,double Phi[])
 void Tetrahedral::elem_traces(const Vertice vert[],const int map[],const int sinal[],
                            double *** TP,double **** TGP,double * Jb)
 {};
+void Tetrahedral::trace_Jb(const Vertice vert[],const int map[],const int sinal[],
+                           double * Jb)
+{};
 void Tetrahedral::eval_GradPhi(const Vertice vert[], const int map[],const int m,double ** der)
 {
   printf("Nao implementado\n");

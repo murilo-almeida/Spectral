@@ -79,6 +79,8 @@ virtual void vector_of_integral_of_f_Phi_dv(double vec[],
 				  const double JV[]);
 virtual void elem_traces(const Vertice ptvert[],const int Vert_map[],const int sinal[],
 			 double *** TP,double **** TGP, double * Jb);
+virtual void trace_Jb(const Vertice vert[],const int map[],const int sinal[],
+                      double * Jb);
 virtual const int aresta_lvert(const int & i, const int & j) const;
 virtual const int face_lvert(const int & i, const int & j) const;
 virtual const int show_nvf(const int &i) const;

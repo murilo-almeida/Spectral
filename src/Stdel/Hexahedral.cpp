@@ -55,6 +55,10 @@ void Hexahedral::set(int p0, int q0)
   P[2]=p0; Q[2]=q0; gqt[2]=3;// Gauss-Lobatto-Jacobi
   NGQP=Q[0]*Q[1]*Q[2];
   qborder = q0*q0;
+    // incremento no indice dos pontos de Gauss na direcao i
+    inc[0]=1;
+    inc[1]=Q[0];
+    inc[2]=Q[0]*Q[1];
 
   //aloca memoria para ind_mode_
   ind_mode_ = new int ** [P[0]+1];
@@ -171,9 +175,9 @@ void Hexahedral::set(int p0, int q0)
   for(int i=1; i<P[0]; ++i){
     for(int j=1; j<P[1]; ++j){
       for(int k=1; k<P[2]; ++k) {
-	mode_[a].set_mode(i,j,k);
-	ind_mode_[ i ][ j ][ k ] = a;
-	++a;
+          mode_[a].set_mode(i,j,k);
+          ind_mode_[ i ][ j ][ k ] = a;
+          ++a;
       }
     }
   }
@@ -1850,9 +1854,92 @@ void Hexahedral::elem_traces(const Vertice vert[],const int map[],const int sina
     
   } // loop sobre as bordas
 }
-// ************************************************************************
+// ******************************************************************************
+void Hexahedral::trace_Jb(const Vertice vert[],const int map[],const int sinal[],
+                          double * Jb)
+{
+    //printf("Hexahedral::elem_traces\n");
+    double xa,ya,xb,yb,xc,yc,xd,yd,eta1[qborder],eta2[qborder];
+    // double x3=0.0;
+    double x1,x2,x12,y1,y2,y12;
+    int h,i,l,m;
+    double a11,a12,a21,a22, J2D;
+    double b[2][2];
+    // coordenadas dos nos
+    xa=vert[map[0]].x;
+    xb=vert[map[1]].x;
+    xc=vert[map[2]].x;
+    xd=vert[map[3]].x;
+    ya=vert[map[0]].y;
+    yb=vert[map[1]].y;
+    yc=vert[map[2]].y;
+    yd=vert[map[3]].y;
+   // za=vert[map[0]].z;
+   // zb=vert[map[1]].z;
+   // zc=vert[map[2]].z;
+   // zd=vert[map[3]].z;
+    
+    x1 =(-xa+xb+xc-xd)/4.0;
+    x12=( xa-xb+xc-xd)/4.0;
+    x2 =(-xa-xb+xc+xd)/4.0;
+    
+    y1 =(-ya+yb+yc-yd)/4.0;
+    y12=( ya-yb+yc-yd)/4.0;
+    y2 =(-ya-yb+yc+yd)/4.0;
+    
+    //pontos de Gauss em uma dimensao
+    double x[qborder], wtemp[qborder], Dtemp[MAXQ][MAXQ];
+    Gauss_Jacobi_parameters(qborder, 0.0, 0.0, x, wtemp, Dtemp);
+    
+    double d1,d2,aux0,aux1,aux2,der1,der2;
+    // int s0=nn*ndim*qborder;
+    //int s1=   ndim*qborder;
+    
+    for(h=0;h<nborder;h++){ // loop sobre as bordas
+        switch(h) { // switch
+                
+            case 0:
+                aux0=sqrt( (xb-xa)*(xb-xa) + (yb-ya)*(yb-ya)) / 2.0;
+                for(i=0;i<qborder;i++){
+                    eta1[i]=x[i]*sinal[h];
+                    eta2[i]=-1.0;
+                }
+                break;
+                
+            case 1:
+                aux0=sqrt( (xb-xc)*(xb-xc) + (yb-yc)*(yb-yc)) / 2.0;
+                for(i=0;i<qborder;i++){
+                    eta1[i]=1.0;
+                    eta2[i]=x[i]*sinal[h];
+                }
+                break;
+                
+            case 2:
+                aux0=sqrt( (xc-xd)*(xc-xd) + (yc-yd)*(yc-yd)) / 2.0;
+                for(i=0;i<qborder;i++){
+                    eta1[i]=x[i]*sinal[h];
+                    eta2[i]=1.0;
+                }
+                break;
+                
+            case 3:
+                aux0=sqrt( (xd-xa)*(xd-xa) + (yd-ya)*(yd-ya)) / 2.0;
+                for(i=0;i<qborder;i++){
+                    eta1[i]=-1.0;
+                    eta2[i]=x[i]*sinal[h];
+                }
+                break;
+                
+        }// switch
+        
+        for(l=0;l<qborder;l++){ // loop sobre os pontos de Gauss
+            Jb[h*qborder+l]=aux0;
+        }
+    }
+}
+// ****************************************************************************
 // Calcula o traco e o coloca na ordem correta de acordo com o sinal da borda *
-// ************************************************************************
+// ****************************************************************************
 void Hexahedral::trace(const int lado,const int qmax,const int sinal,
 			  const double *valores,double *saida)
 {

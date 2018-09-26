@@ -56,6 +56,9 @@ void DG_Elem::inicia_funcoes_na_borda(EDGE * border)
   int h,i,j,pos;
   double n_e[ndim];
   
+  //  FILE *fsai;
+  //  fsai=fopen("saida","wb");
+    
   for(i=0;i<NumLocalVars;i++) {//i= variavel
     
     int nn     = numn[i];
@@ -66,10 +69,15 @@ void DG_Elem::inicia_funcoes_na_borda(EDGE * border)
     //	double TP[nborder][nn][qmax];
     
     double *** TP = new double ** [numborders];
+     // double **** TGP = new double *** [numborders];
     for(h=0;h<numborders; h++) {
-      TP[h] = new double * [nn];
+        TP[h] = new double * [nn];
+      // TGP[h] = new double ** [nn];
       for(j=0;j<nn;j++){
-        TP[h][j] = new double [qmax];
+          TP[h][j] = new double [qmax];
+        // TGP[h][j] = new double * [2];
+         // for(int ndir=0;ndir<2;++ndir)
+           //   TGP[h][j][ndir] = new double [qmax];
       }
     }
     
@@ -81,6 +89,16 @@ void DG_Elem::inicia_funcoes_na_borda(EDGE * border)
       ptr_stdel[i]->eval_Phi(j,phi);  // <-- No elemento
       // Calcular as derivadas de Phi_j
       ptr_stdel[i]->Gradiente(GradPhi[i][j],phi,ptvert,Vert_map);
+     /*
+        // ***** incluido em 25/09/2018
+        // Calculo dos tracos de Phi e GradPhi
+        for(h=0;h<numborders; h++) {
+            ptr_stdel[i]->trace(h,qmax,sinal[h],phi,TP[h][j]);
+            ptr_stdel[i]->trace(h,qmax,sinal[h],GradPhi[i][j][0],TrGradPhi[i][h][j][0]);
+            ptr_stdel[i]->trace(h,qmax,sinal[h],GradPhi[i][j][1],TrGradPhi[i][h][j][1]);
+        }
+      */
+        // ****************************************************************************
     }
     
     // *************************************************
@@ -109,7 +127,7 @@ void DG_Elem::inicia_funcoes_na_borda(EDGE * border)
     // no elemento padrao
     // *********************************************
     ptr_stdel[i]->elem_traces(ptvert,Vert_map,sinal,TP,TrGradPhi[i],Jb);
-    
+    //ptr_stdel[i]->trace_Jb(ptvert,Vert_map,sinal,Jb);
     // Implementar nos elementos padroes (Triangle, Linear, LinearLeg, Quadrilateral e Tetrahedral)
     
     for(h=0;h<numborders;h++){
@@ -130,23 +148,31 @@ void DG_Elem::inicia_funcoes_na_borda(EDGE * border)
           for(int ndir=0; ndir < ndim;ndir++){
             //	    TrGradPhi[i][h][j][ndir][q] = TGP[ini+ndir*qmax+q];
             temp+= (perm[ndir]*n_e[ndir])*TrGradPhi[i][h][j][ndir][q]; // gphi_[ndir][q]);
-            // printf("Concluido TrGradPhi[%d][%d][%d][%d][%d] = % g\n",i,h,j,ndir,q,TrGradPhi[i][h][j][ndir][q]);
+          
+              //fprintf(fsai,"Concluido TrGradPhi[%d][%d][%d][%d][%d] = %13.5g TGP = %13.5g %13.5g\n",i,h,j,ndir,q,TrGradPhi[i][h][j][ndir][q],TGP[h][j][ndir][q],TrGradPhi[i][h][j][ndir][q]-TGP[h][j][ndir][q]);
           }
           TrKgradPhi_n[i][h][j][q]=temp;
           //printf("\nTrKgradPhi_n[%d][%d][%d][%d] = % g\n\n",i,h,j,q,TrKgradPhi_n[i][h][j][q]);
         }
+          
       }
     }
-    
+   
     // Libera memoria dinamica de TP
     for(h=0;h<numborders; h++) {
       for(j=0;j<nn;j++){
         delete [] TP[h][j]; TP[h][j]=nullptr;
+        // delete [] TGP[h][j][0]; TGP[h][j][0]=nullptr;
+        //  delete [] TGP[h][j][1]; TGP[h][j][1]=nullptr;
+        //  delete [] TGP[h][j]; TGP[h][j]=nullptr;
       }
       delete [] TP[h]; TP[h] = nullptr;
+       // delete [] TGP[h]; TGP[h] = nullptr;
     }
     delete [] TP; TP =nullptr;
+      //delete [] TGP; TGP =nullptr;
   }
+    //fclose(fsai);
 };
 // ***************************************************************************
 void DG_Elem::set_porosidade(double value)

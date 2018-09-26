@@ -2,8 +2,17 @@
 # include "spectral.h"
 void quad_ordem(const int Av[4],const int Bi[4],int dir[3], int sgn[3], int & v2)
 {
+    // Entrada Av na ordem anti-horaria
+    //    2
+    //    D ----- C 3   Av = {A, B, C, D} nos globais
+    //    |       |     Bi = {0, 1, 3, 2} numeracao local da face 0 do Hexahedro usado como exemplo
+    //    |       |     Observe que a numeracao local do Hexahedro e peculiar de modo a determinar
+    //    A ----- B     a direcao da aresta pela diferenca dos numeros locais dos vertices
+    //    0       1
+    // Bi  contem os dados da face a ser padronizada.
+    //
   // Coloca os vertices do quadrilatero na sequencia padrao
-  // ordenar os indices de acordo com os numeros dos vertices
+  // ordena os indices de acordo com os numeros dos vertices
   // Encontra o valor minimo e seu indice
   int v[4];
   int i[4];

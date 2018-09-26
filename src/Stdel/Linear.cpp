@@ -962,6 +962,7 @@ void Linear::computeFuncGQ(double f_[],
 // Calcula os tracos de Phi, GradPhi e Jb nos pontos de Gauss sobre as arestas
 // ordenando-os de forma que haja coincidencia de pontos dos elementos vizinhos
 // *****************************************************************************
+// Precisa verificar
 void Linear::elem_traces(const Vertice vert[],const int map[],const int sinal[],
 												 double *** TP,double **** TGP,double * Jb)
 {
@@ -1003,6 +1004,25 @@ void Linear::elem_traces(const Vertice vert[],const int map[],const int sinal[],
       Jb[h+l]=aux0;
     } // loop sobre os modos
   } // loop sobre as bordas
+}
+// *******************************************
+// Precisa verificar
+void Linear::trace_Jb(const Vertice vert[],const int map[],const int sinal[],
+                      double * Jb)
+{
+    // Precisa ser corrigido !!!!!!!!!!!!!!!!!!!!!!!!
+    double xa,xb,eta1;
+    int h;
+    // coordenadas dos nos
+    xa=vert[map[0]].x;
+    xb=vert[map[1]].x;
+    
+    double d1,aux0,aux1,der1;
+    // int s0=nn*ndim;
+    // int s1=   ndim;
+    aux0=(xb-xa) / 2.0;
+    Jb[h]=aux0;
+    
 }
 const int Linear::aresta_lvert(const int & i, const int & j) const {return aresta[i][j];};
 const int Linear::face_lvert(const int & i, const int & j) const {return 0;};

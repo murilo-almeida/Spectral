@@ -154,7 +154,7 @@ void Triangle::set(int p0, int q0)
     int n=0;
     for(j=0;j<Q[1];j++){
       for(i=0;i<Q[0];i++){// i runs fastest
-				Phi_val[m][n++]=Fa[i]*Fb[j];
+          Phi_val[m][n++]=Fa[i]*Fb[j];
       }
     }
   }
@@ -1718,6 +1718,60 @@ void Triangle::elem_traces(const Vertice vert[],const int map[],const int sinal[
   } // loop sobre os modos
   //for(int i=0;i<nborder*nn*ndim*qborder;i++)printf("Triangle TGP[%d]= %g\n",i,TGP[i]);
 }
+// **********************************************************************************
+void Triangle::trace_Jb(const Vertice vert[],const int map[],const int sinal[],
+                        double * Jb)
+{
+    double xa,ya,xb,yb,xc,yc,eta1,eta2;
+    // double x3=0.0;
+    int h,l,m;
+    double a11,a12,a21,a22, J2D;
+    double b[2][2];
+    double d1,d2,aux0,aux1,aux2,der1,der2;
+    // coordenadas dos nos
+    xa=vert[map[0]].x;
+    xb=vert[map[1]].x;
+    xc=vert[map[2]].x;
+    ya=vert[map[0]].y;
+    yb=vert[map[1]].y;
+    yc=vert[map[2]].y;
+    // calculo dos coeficientes aij
+    a11=0.5*(xb-xa);
+    a12=0.5*(xc-xa);
+    a21=0.5*(yb-ya);
+    a22=0.5*(yc-ya);
+    // calculo de J2D
+    J2D=a11*a22 - a12*a21;
+    // calculo da matriz b[i][j]
+    b[0][0]=a22/J2D;
+    b[0][1]=-a12/J2D;
+    b[1][0]=-a21/J2D;
+    b[1][1]=a11/J2D;
+    
+    //pontos de Gauss em uma dimensao
+    double x[qborder], wtemp[qborder], Dtemp[MAXQ][MAXQ];
+    Gauss_Jacobi_parameters(qborder, 0.0, 0.0, x, wtemp, Dtemp);
+    // Gauss_Jacobi integra precisamente P_(2*q-1)
+    // Obs.: Gauss_Lobatto_Jacobi da problemas pois calcula o valor
+    // de Phi no ponto colapsado. Alem disso,
+    // Gauss_Lobatto_Jacobi integra precisamente P_(2*q-3):
+    // grau menor que Gauss_Jacobi
+    h=0;
+    aux0=sqrt( (xb-xa)*(xb-xa) + (yb-ya)*(yb-ya)) / 2.0;
+    for(int l=0;l<qborder;l++){
+        Jb[h*qborder+l]=aux0*wtemp[l];
+    }
+    h=1;
+    aux0=sqrt( (xc-xb)*(xc-xb) + (yc-yb)*(yc-yb)) / 2.0;
+    for(int l=0;l<qborder;l++){
+        Jb[h*qborder+l]=aux0*wtemp[l];
+    }
+    h=2;
+    aux0=sqrt( (xc-xa)*(xc-xa) + (yc-ya)*(yc-ya)) / 2.0;
+    for(int l=0;l<qborder;l++){
+        Jb[h*qborder+l]=aux0*wtemp[l];
+    }
+}
 
 //#undef PRINTF_ON
 // ****************************************************************************
@@ -1761,7 +1815,8 @@ void Triangle::trace(const int lado, const int qmax, const int sinal,
   // quando o numero de pontos de quadratura q for menor que o numero *
   // de elementos do vetor de traco. Exclusivo para Triangle !!!!     *
   // ******************************************************************
-
+    // Interpolar para conter os pontos extremos
+    // Executa quando os pontos de Gauss do elemento nao contem os extremos
     double Old[q];
 
     for(int i = 0; i < q; ++i) {
@@ -1780,7 +1835,7 @@ void Triangle::trace(const int lado, const int qmax, const int sinal,
 		// ****************************************************************
 		// Os pontos de Gauss onde estao os tracos sao do tipo
 		// Gauss-Jacobi (nao incluimos os pontos extremos),
-    // portanto diferentes dos pontos de Gauss
+        // portanto diferentes dos pontos de Gauss
 		// do elemento. Logo toda aresta necessita calcular o traco
 		// ****************************************************************
     double Jac[qmax],wtemp[qmax],Dtemp[MAXQ][MAXQ];

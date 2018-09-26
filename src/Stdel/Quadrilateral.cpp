@@ -795,11 +795,11 @@ void Quadrilateral::evalGQ(double f0[],double f1[],
     }
     // Interior modes : j runs fastest
     for(p=1;p<P[0];p++){
-      for(q=1;q<P[1];q++){
-	Fb=Psia(P[1],q,eta2);
-	ftemp0[p]+=Fb*uh0[a];
-	ftemp1[p]+=Fb*uh1[a];
-	a++;
+        for(q=1;q<P[1];q++){
+            Fb=Psia(P[1],q,eta2);
+            ftemp0[p]+=Fb*uh0[a];
+            ftemp1[p]+=Fb*uh1[a];
+            a++;
       }
     }
     // ************************************************************************
@@ -808,9 +808,9 @@ void Quadrilateral::evalGQ(double f0[],double f1[],
       aux0=0.0;
       aux1=0.0;
       for(p=0;p<Pdim;p++){
-	Fa=Psia(P[0],p,eta1);
+        Fa=Psia(P[0],p,eta1);
         aux0+=Fa*ftemp0[p];
-	aux1+=Fa*ftemp1[p];
+	    aux1+=Fa*ftemp1[p];
       }
       f0[n]=aux0;
       f1[n++]=aux1;
@@ -1778,78 +1778,176 @@ void Quadrilateral::elem_traces(const Vertice vert[],const int map[],const int s
   } // loop sobre as bordas
 }
 // ****************************************************************************
+void Quadrilateral::trace_Jb(const Vertice vert[],const int map[],const int sinal[],
+                             double * Jb)
+{
+    //printf("Quadrilateral::elem_traces\n");
+    double xa,ya,xb,yb,xc,yc,xd,yd,eta1[qborder],eta2[qborder];
+    // double x3=0.0;
+    double x1,x2,x12,y1,y2,y12;
+    int h,i,l,m;
+    double a11,a12,a21,a22, J2D;
+    double b[2][2];
+    // coordenadas dos nos
+    xa=vert[map[0]].x;
+    xb=vert[map[1]].x;
+    xc=vert[map[2]].x;
+    xd=vert[map[3]].x;
+    ya=vert[map[0]].y;
+    yb=vert[map[1]].y;
+    yc=vert[map[2]].y;
+    yd=vert[map[3]].y;
+    
+    x1 =(-xa+xb+xc-xd)/4.0;
+    x12=( xa-xb+xc-xd)/4.0;
+    x2 =(-xa-xb+xc+xd)/4.0;
+    
+    y1 =(-ya+yb+yc-yd)/4.0;
+    y12=( ya-yb+yc-yd)/4.0;
+    y2 =(-ya-yb+yc+yd)/4.0;
+    
+    //pontos de Gauss em uma dimensao
+    double x[qborder], wtemp[qborder], Dtemp[MAXQ][MAXQ];
+    Gauss_Jacobi_parameters(qborder, 0.0, 0.0, x, wtemp, Dtemp);
+    
+    double d1,d2,aux0,aux1,aux2,der1,der2;
+    // int s0=nn*ndim*qborder;
+    //int s1=   ndim*qborder;
+    
+    for(h=0;h<nborder;h++){ // loop sobre as bordas
+        switch(h) { // switch
+                
+            case 0:
+                aux0=sqrt( (xb-xa)*(xb-xa) + (yb-ya)*(yb-ya)) / 2.0;
+                for(i=0;i<qborder;i++){
+                    eta1[i]=x[i]*sinal[h];
+                    eta2[i]=-1.0;
+                }
+                break;
+                
+            case 1:
+                aux0=sqrt( (xb-xc)*(xb-xc) + (yb-yc)*(yb-yc)) / 2.0;
+                for(i=0;i<qborder;i++){
+                    eta1[i]=1.0;
+                    eta2[i]=x[i]*sinal[h];
+                }
+                break;
+                
+            case 2:
+                aux0=sqrt( (xc-xd)*(xc-xd) + (yc-yd)*(yc-yd)) / 2.0;
+                for(i=0;i<qborder;i++){
+                    eta1[i]=x[i]*sinal[h];
+                    eta2[i]=1.0;
+                }
+                break;
+                
+            case 3:
+                aux0=sqrt( (xd-xa)*(xd-xa) + (yd-ya)*(yd-ya)) / 2.0;
+                for(i=0;i<qborder;i++){
+                    eta1[i]=-1.0;
+                    eta2[i]=x[i]*sinal[h];
+                }
+                break;
+                
+        }// switch
+        
+        for(l=0;l<qborder;l++){ // loop sobre os pontos de Gauss
+            Jb[h*qborder+l]=aux0;
+        }
+    }
+}
+// ****************************************************************************
 // Calcula o traco e o coloca na ordem correta de acordo com o sinal da borda *
 // ****************************************************************************
 void Quadrilateral::trace(const int lado,const int qmax,const int sinal,
-			  const double *valores,double *saida)
+                          const double *valores,double *saida)
 {
-	//printf("Quadrilateral::trace\n");
-  int nd,ind,inc;
+    //printf("Quadrilateral::trace\n");
+    int nd,ind,inc;
 
-  if(lado==0 || lado==2){
-    nd=0;
-      }
-  else nd=1;
+    if(lado==0 || lado==2){
+        nd=0;
+        }
+    else nd=1;
   
-  int q=Q[nd];
-  double temp[q];
+    int q=Q[nd];
+    double temp[q];
   
-  if(lado==0){
-    ind=0;
-    inc=1;
-  }
-  else if (lado==1){
-    ind=q-1;
-    inc=q;
-  }
-  else if(lado==2){
-    ind=q*(q-1);
-    inc=1;
-  }
-  else{
-    ind=0;
-    inc=q;
-  }
-  
-  for(int i=0;i<q;++i){
-    saida[i]=valores[ind];
-    ind+=inc;
-  }
-  
-  double Old[q];
-  for(int i = 0; i < q; i++){
-    temp[i]=saida[i];
-    Old[i]=xGQ[nd][i];
-  }
-  for(int k=0;k<q;k++){
-    double prod=1.0;
-    double y=Old[k];
-    for(int j=0;j<q;j++){
-      if(j!=k)prod*=(y-Old[j]);
+    if(lado==0){
+        ind=0;
+        inc=1;
     }
-    temp[k]/=prod;
-  }
-  // ****************************************************************
-  // Os pontos de Gauss onde estao os tracos sao do tipo
-  // Gauss-Jacobi (nao inclui os pontos dos extremos),
-  // portanto sao diferentes dos pontos de Gauss
-  // do elemento. Logo toda aresta necessita calcular o traco
-  // ****************************************************************
-  double Jac[qmax],wtemp[qmax],Dtemp[MAXQ][MAXQ];
-  Gauss_Jacobi_parameters(qmax,0.0,0.0,Jac,wtemp,Dtemp);
+    else if (lado==1){
+        ind=q-1;
+        inc=q;
+    }
+    else if(lado==2){
+        ind=q*(q-1);
+        inc=1;
+    }
+    else{
+        ind=0;
+        inc=q;
+    }
+  
+    // *****************************************
+    // Para considerar o sinal de percurso das
+    // arestas usa-se a expressao seguinte
+    if(gqt[nd]==3){
+        
+       // if(sinal == -1){
+       //     ind = ind + (q-1) * inc;
+       //     inc = sinal * inc;
+        //}
+        ind = ind + (1 - sinal)/2 * (q-1) * inc;
+        inc = inc * sinal;
+    }
+    // ******************************************
+    // Transfere os dados de entrada para a saida
+    for(int i=0;i<q;++i){
+        saida[i]=valores[ind];
+        ind+=inc;
+    }
+    // **********************************************
+    // Se precisar fazer interpolação
+    if(gqt[nd] != 3){
+    // Interpolar para conter os pontos extremos
+    // Executa quando os pontos de Gauss do elemento nao contem os extremos
+        double Old[q];
+        for(int i = 0; i < q; i++){
+            temp[i]=saida[i];
+            Old[i]=xGQ[nd][i];
+        }
+        for(int k=0;k<q;k++){
+            double prod=1.0;
+            double y=Old[k];
+            for(int j=0;j<q;j++){
+                if(j!=k)prod*=(y-Old[j]);
+            }
+            temp[k]/=prod;
+        }
+        // ****************************************************************
+        // Os pontos de Gauss onde estao os tracos sao do tipo
+        // Gauss-Jacobi (nao inclui os pontos dos extremos),
+        // portanto sao diferentes dos pontos de Gauss
+        // do elemento. Logo toda aresta necessita calcular o traco
+        // ****************************************************************
+        double Jac[qmax],wtemp[qmax],Dtemp[MAXQ][MAXQ];
+        Gauss_Jacobi_parameters(qmax,0.0,0.0,Jac,wtemp,Dtemp);
     
-  for(int i=0;i<qmax;i++){
-    double sum=0.0;
-    double y=Jac[i] * sinal; // percorre os pontos de Gauss na ordem decrescente
-    for(int k=0;k<q;k++){    // se o sinal == -1
-      double prod=1.0;
-      for(int j=0;j<q;j++){
-        if(j!=k)prod*=(y-Old[j]);
-      }
-      sum+=(temp[k]*prod);
+        for(int i=0;i<qmax;i++){
+            double sum=0.0;
+            double y=Jac[i] * sinal; // percorre os pontos de Gauss na ordem decrescente se o sinal == -1
+            for(int k=0;k<q;k++){
+                double prod=1.0;
+                for(int j=0;j<q;j++){
+                    if(j!=k)prod*=(y-Old[j]);
+                }
+                sum+=(temp[k]*prod);
+            }
+            saida[i]=sum;
+        }
     }
-    saida[i]=sum;
-  }
 };
 // revisado em 25/10/2011
 const int Quadrilateral::aresta_lvert(const int & i, const int & j) const {return aresta[i][j];};
