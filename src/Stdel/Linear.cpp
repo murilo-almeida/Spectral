@@ -964,7 +964,7 @@ void Linear::computeFuncGQ(double f_[],
 // *****************************************************************************
 // Precisa verificar
 void Linear::elem_traces(const Vertice vert[],const int map[],const int sinal[],
-												 double *** TP,double **** TGP,double * Jb)
+                         double *** TP,double **** TGP,double * Jb)
 {
   // Precisa ser corrigido !!!!!!!!!!!!!!!!!!!!!!!!
   double xa,xb,eta1;

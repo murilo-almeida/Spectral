@@ -94,20 +94,21 @@ void DG_Elem::inicia_funcoes_na_borda(EDGE * border)
     //int s0 = nn*ndim*qmax;
     //int s1 =    ndim*qmax;
     
-    // No elemento
+    // Nos modos
     for(j=0;j<nn;j++){
-      ptr_stdel[i]->eval_Phi(j,phi);  // <-- No elemento
-      // Calcular as derivadas de Phi_j
-      ptr_stdel[i]->Gradiente(GradPhi[i][j],phi,ptvert,Vert_map);
-     /*
+        ptr_stdel[i]->eval_Phi(j,phi);  // <-- No elemento
+        // Calcular as derivadas de Phi_j
+        ptr_stdel[i]->Gradiente(GradPhi[i][j],phi,ptvert,Vert_map);
+     
         // ***** incluido em 25/09/2018
         // Calculo dos tracos de Phi e GradPhi
+        // *************************************
         for(h=0;h<numborders; h++) {
             fill_trace(i,h,qmax,sinal[h],phi,TP[h][j]);
             fill_trace(i,h,qmax,sinal[h],GradPhi[i][j][0],TrGradPhi[i][h][j][0]);
             fill_trace(i,h,qmax,sinal[h],GradPhi[i][j][1],TrGradPhi[i][h][j][1]);
         }
-      */
+
         // ****************************************************************************
     }
     
