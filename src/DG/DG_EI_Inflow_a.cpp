@@ -5,8 +5,8 @@
 /*****************************************************************************/
 // ****************************************************************************
 void DG_Prob::DG_EI_Epetra_Inflow(const EDGE border,
-																	Teuchos::RCP<Epetra_FECrsMatrix> A,
-																	Teuchos::RCP<Epetra_FEVector> RHS)
+                                  Teuchos::RCP<Epetra_FECrsMatrix> A,
+                                  Teuchos::RCP<Epetra_FEVector> RHS)
 {
 	MyElem e0;
 	e0=el[border.elemento[0]];

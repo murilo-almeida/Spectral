@@ -103,11 +103,10 @@ for(iE=0;iE<Num_elem;iE++) {
     e[iE].Traco_Kgrad_pc(a[iE],Kgpc[iE]);
     
     for(int q=0;q<qmax;q++){
-        for(int i=0;i<ndim;i++) {
-            K_g_sn_n[iE][q]=0.0;
-            K_g_pw_n[iE][q]=0.0;
-            K_g_pc_n[iE][q]=0.0;
-        }
+        K_g_sn_n[iE][q]=0.0;
+        K_g_pw_n[iE][q]=0.0;
+        K_g_pc_n[iE][q]=0.0;
+    
         for(int i=0;i<ndim;i++) {
             K_g_sn_n[iE][q]+=(n_e[i]*Kgsn[iE][i][q]);
             K_g_pw_n[iE][q]+=(n_e[i]*Kgpw[iE][i][q]);

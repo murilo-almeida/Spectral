@@ -1971,25 +1971,28 @@ void Hexahedral::trace(const int lado,const int qmax,const int sinal,
         qini1 = (1-sgn[1])/2 * (q1-1);
         ini = fv2*(q2-1)*inc[dir[2]];
         
-        printf("q0 = %d q1 = %d inc0 = %d inc1 = %d qini0 = %d qini1 = %d ini = %d\n",q0,q1,inc0,inc1,qini0,qini1,ini);
+        //printf("q0 = %d q1 = %d inc0 = %d inc1 = %d qini0 = %d qini1 = %d ini = %d\n\n\n",q0,q1,inc0,inc1,qini0,qini1,ini);
+       
         int count = 0;
-        printf("\n\n");
         for(int j=0; j<q1;++j){
-            int qj  = j*sgn[1] + qini1;
+            int qj  = j * sgn[1] + qini1;
             for(int i=0;i<q0;++i)
             {
                 int qi = i * sgn[0] + qini0;
                 int n = ini + qi * inc0 + qj * inc1;
-                printf("count = %d  n = %d\n",count++,n);
+          //      printf("count = %d  n = %d\n",count++,n);
+                saida[count++] = valores [n];
             }
         }
     }
-  //printf("Hexahedral::trace\n");
-  int nd,ind,inc;
+
+    else {
+        //printf("Hexahedral::trace\n");
+        int nd,ind,inc;
   
-  if(lado==0 || lado==2){
-    nd=0;
-  }
+        if(lado==0 || lado==2){
+            nd=0;
+        }
   else nd=1;
   
   int q=Q[nd];
@@ -2059,8 +2062,9 @@ void Hexahedral::trace(const int lado,const int qmax,const int sinal,
     if(sinal == -1) {// Inverter a ordem dos valores
     for ( int i = 0; i < qmax ; i++ ) temp[i] = saida [ (qmax-1-i) ];
     for ( int i = 0; i < qmax ; i++ ) saida[i] = temp[i];
-    }  
+    }
   */
+    }
 };
 // revisado em 25/10/2011
 const int Hexahedral::aresta_lvert(const int & i, const int & j) const {return aresta[i][j];};
