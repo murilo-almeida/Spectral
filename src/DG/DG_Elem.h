@@ -55,7 +55,7 @@ public:
                        Teuchos::RCP<Epetra_FEVector> RHS,
                        double * = NULL,
                        double * = NULL);
-    void VolumeIntegrals_map(Teuchos::RCP<Epetra_FECrsGraph>  A,
+  void VolumeIntegrals_map(Teuchos::RCP<Epetra_FECrsGraph>  A,
                              Teuchos::RCP<Epetra_FEVector> RHS);
   void VolumeTracos(const double Dt,Fluids fls,
                     double * = NULL,
@@ -100,7 +100,14 @@ public:
   void Traco_Kgrad_phi_n(const int & lado,const int & ivar,
                          const int & ind,double * saida);
   
-  // void Row(int * NumNz, int ** MapRow); // Nao esta em uso
+    void fill_trace(const int var,
+                    const int lado,
+                    const int qmax,
+                    const int sinal,
+                    const double * valores, // valores nos pontos de Gauss
+                    double * saida);
+    
+    // void Row(int * NumNz, int ** MapRow); // Nao esta em uso
   // ***********************************************
   // Versao paralela. Dados em vetor
   // ***********************************************

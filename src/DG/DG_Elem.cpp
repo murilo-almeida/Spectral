@@ -11,6 +11,16 @@
 
 // ***************************************
 
+
+ void DG_Elem::fill_trace(const int var,
+                          const int lado,
+                          const int qmax,
+                          const int sinal,
+                          const double * valores, // valores nos pontos de Gauss
+                          double * saida)
+{
+    ptr_stdel[var]->trace(lado,qmax,sinal,valores,saida,Vert_map);
+};
 // ****************************************************************************
 void DG_Elem::Atualizar_valores(FILE * fileout)
 {
@@ -93,9 +103,9 @@ void DG_Elem::inicia_funcoes_na_borda(EDGE * border)
         // ***** incluido em 25/09/2018
         // Calculo dos tracos de Phi e GradPhi
         for(h=0;h<numborders; h++) {
-            ptr_stdel[i]->trace(h,qmax,sinal[h],phi,TP[h][j]);
-            ptr_stdel[i]->trace(h,qmax,sinal[h],GradPhi[i][j][0],TrGradPhi[i][h][j][0]);
-            ptr_stdel[i]->trace(h,qmax,sinal[h],GradPhi[i][j][1],TrGradPhi[i][h][j][1]);
+            fill_trace(i,h,qmax,sinal[h],phi,TP[h][j]);
+            fill_trace(i,h,qmax,sinal[h],GradPhi[i][j][0],TrGradPhi[i][h][j][0]);
+            fill_trace(i,h,qmax,sinal[h],GradPhi[i][j][1],TrGradPhi[i][h][j][1]);
         }
       */
         // ****************************************************************************
@@ -127,7 +137,7 @@ void DG_Elem::inicia_funcoes_na_borda(EDGE * border)
     // no elemento padrao
     // *********************************************
     ptr_stdel[i]->elem_traces(ptvert,Vert_map,sinal,TP,TrGradPhi[i],Jb);
-    //ptr_stdel[i]->trace_Jb(ptvert,Vert_map,sinal,Jb);
+    //fill_trace_Jb(i,ptvert,Vert_map,sinal,Jb);
     // Implementar nos elementos padroes (Triangle, Linear, LinearLeg, Quadrilateral e Tetrahedral)
     
     for(h=0;h<numborders;h++){
@@ -211,7 +221,7 @@ void DG_Elem::inicia_tracos( EDGE * border)
         //printf("Ponto teste em inicia_tracos i=%d j=%d h=%d \n",i,j,h);
         for(int ndir=0; ndir<ndim;ndir++){
           // trace eh válido somente quando ha pontos de Gauss na borda
-          ptr_stdel[i]->trace(h,qmax,sinal[h],GradPhi[i][j][ndir],gphi_[ndir]);
+          fill_trace(i,h,qmax,sinal[h],GradPhi[i][j][ndir],gphi_[ndir]);
           n_e[ndir]=border[border_num[h]].normal[ndir];
         }
         for(int q=0; q < qmax; q++){
@@ -228,7 +238,7 @@ void DG_Elem::inicia_tracos( EDGE * border)
         if(ptr_stdel[i]->is_on_border(j,h,pos)){
           // printf("armazena traco de phi i=%d j= %d h=%d pos= %d ...\n",i,j,h,pos);
           // trace eh válido somente quando ha pontos de Gauss na borda
-          ptr_stdel[i]->trace(h,qmax,sinal[h],phi,TrPhi[i][h][pos]);
+          fill_trace(i,h,qmax,sinal[h],phi,TrPhi[i][h][pos]);
           
           //printf(" salvou\n ");
           
@@ -599,12 +609,12 @@ void DG_Elem::VolumeIntegrals_IG(Fluids fls,  int & count,
    */
   
   for(h=0;h<numborders;h++){
-    ptr_stdel[sat] ->trace(h,qmax,sinal[h],sn,Trsn[h]);
-    ptr_stdel[pres]->trace(h,qmax,sinal[h],pw,Trpw[h]);
+    fill_trace(sat,h,qmax,sinal[h],sn,Trsn[h]);
+    fill_trace(pres,h,qmax,sinal[h],pw,Trpw[h]);
     for(k=0;k<ndim;k++){
-      ptr_stdel[sat] ->trace(h,qmax,sinal[h],Kgrad_sn[k],TrKgrad_sn[h][k]);
-      ptr_stdel[sat] ->trace(h,qmax,sinal[h],Kgrad_pc[k],TrKgrad_pc[h][k]);
-      ptr_stdel[pres]->trace(h,qmax,sinal[h],Kgrad_pw[k],TrKgrad_pw[h][k]);
+      fill_trace(sat,h,qmax,sinal[h],Kgrad_sn[k],TrKgrad_sn[h][k]);
+      fill_trace(sat,h,qmax,sinal[h],Kgrad_pc[k],TrKgrad_pc[h][k]);
+      fill_trace(pres,h,qmax,sinal[h],Kgrad_pw[k],TrKgrad_pw[h][k]);
     }
   }
   
@@ -750,12 +760,12 @@ void DG_Elem::VolumeIntegrals_UMFPACK(const double Dt,Fluids fls, int & count,
    }
    */
   for(h=0;h<numborders;h++) {
-    ptr_stdel[sat]->trace(h,qmax,sinal[h],sn,Trsn[h]);
-    ptr_stdel[pres]->trace(h,qmax,sinal[h],pw,Trpw[h]);
+    fill_trace(sat,h,qmax,sinal[h],sn,Trsn[h]);
+    fill_trace(pres,h,qmax,sinal[h],pw,Trpw[h]);
     for(k=0;k<ndim;k++) {
-      ptr_stdel[sat ]->trace(h,qmax,sinal[h],Kgrad_sn[k],TrKgrad_sn[h][k]);
-      ptr_stdel[sat ]->trace(h,qmax,sinal[h],Kgrad_pc[k],TrKgrad_pc[h][k]);
-      ptr_stdel[pres]->trace(h,qmax,sinal[h],Kgrad_pw[k],TrKgrad_pw[h][k]);
+      fill_trace(sat,h,qmax,sinal[h],Kgrad_sn[k],TrKgrad_sn[h][k]);
+      fill_trace(sat,h,qmax,sinal[h],Kgrad_pc[k],TrKgrad_pc[h][k]);
+      fill_trace(pres,h,qmax,sinal[h],Kgrad_pw[k],TrKgrad_pw[h][k]);
     }
   }
   
@@ -1115,12 +1125,12 @@ void DG_Elem::VolumeTracos(const double Dt,Fluids fls, double * gbtrsn, double *
   //calcula_tracos(fls);// <--- tem problemas no calculo de TrKgrad_pc (usa grad_pc= dpc * grad_sn)
   
   for(h=0;h<numborders;h++) {
-    ptr_stdel[sat]->trace(h,qmax,sinal[h],sn,Trsn[h]);
-    ptr_stdel[pres]->trace(h,qmax,sinal[h],pw,Trpw[h]);
+    fill_trace(sat,h,qmax,sinal[h],sn,Trsn[h]);
+    fill_trace(pres,h,qmax,sinal[h],pw,Trpw[h]);
     for(k=0;k<ndim;k++) {
-      ptr_stdel[sat ]->trace(h,qmax,sinal[h],Kgrad_sn[k],TrKgrad_sn[h][k]);
-      ptr_stdel[sat ]->trace(h,qmax,sinal[h],Kgrad_pc[k],TrKgrad_pc[h][k]);
-      ptr_stdel[pres]->trace(h,qmax,sinal[h],Kgrad_pw[k],TrKgrad_pw[h][k]);
+      fill_trace(sat,h,qmax,sinal[h],Kgrad_sn[k],TrKgrad_sn[h][k]);
+      fill_trace(sat,h,qmax,sinal[h],Kgrad_pc[k],TrKgrad_pc[h][k]);
+      fill_trace(pres,h,qmax,sinal[h],Kgrad_pw[k],TrKgrad_pw[h][k]);
     }
   }
   
@@ -1254,12 +1264,12 @@ void DG_Elem::VolumeIntegrals(const double Dt,Fluids fls,
   // *******************************************************************
   
   for(h=0;h<numborders;h++) {
-    ptr_stdel[sat] ->trace(h,qmax,sinal[h],sn,Trsn[h]);
-    ptr_stdel[pres]->trace(h,qmax,sinal[h],pw,Trpw[h]);
+    fill_trace(sat,h,qmax,sinal[h],sn,Trsn[h]);
+    fill_trace(pres,h,qmax,sinal[h],pw,Trpw[h]);
     for(k=0;k<ndim;k++) {
-      ptr_stdel[sat ]->trace(h,qmax,sinal[h],Kgrad_sn[k],TrKgrad_sn[h][k]);
-      ptr_stdel[sat ]->trace(h,qmax,sinal[h],Kgrad_pc[k],TrKgrad_pc[h][k]);  // <-- tem que ser calculado assim
-      ptr_stdel[pres]->trace(h,qmax,sinal[h],Kgrad_pw[k],TrKgrad_pw[h][k]);
+      fill_trace(sat,h,qmax,sinal[h],Kgrad_sn[k],TrKgrad_sn[h][k]);
+      fill_trace(sat,h,qmax,sinal[h],Kgrad_pc[k],TrKgrad_pc[h][k]);  // <-- tem que ser calculado assim
+      fill_trace(pres,h,qmax,sinal[h],Kgrad_pw[k],TrKgrad_pw[h][k]);
     }
   }
   

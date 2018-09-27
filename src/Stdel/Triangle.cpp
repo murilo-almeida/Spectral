@@ -1779,7 +1779,8 @@ void Triangle::trace_Jb(const Vertice vert[],const int map[],const int sinal[],
 // ****************************************************************************
 void Triangle::trace(const int lado, const int qmax, const int sinal, 
 		     const double * valores, // valores nos pontos de Gauss
-		     double * saida)
+		     double * saida,
+                     const int map[])
 {
   //int qmax = qborder;
   int nd,ind,inc;

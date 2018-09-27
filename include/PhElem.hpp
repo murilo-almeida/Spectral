@@ -1566,12 +1566,12 @@ void PhElem<NumVariaveis>::vetor_superficie(const int & num_local,double & area,
 //    // salva os tracos de K * gradientes
 //    /*
 //    for(h=0;h<ne;h++){
-//      ptr_stdel[sat]->trace(h,qmax,sinal[h],sn,Trsn[h]);
-//      ptr_stdel[pres]->trace(h,qmax,sinal[h],pw,Trpw[h]);
+//      ptr_stdel[sat]fill_trace(h,qmax,sinal[h],sn,Trsn[h]);
+//      ptr_stdel[pres]fill_trace(h,qmax,sinal[h],pw,Trpw[h]);
 //      for(k=0;k<ndim;k++){
-//        ptr_stdel[sat]->trace(h,qmax,sinal[h],grad_sn[k],TrKgrad_sn[h][k]);
-//        ptr_stdel[sat]->trace(h,qmax,sinal[h],grad_pc[k],TrKgrad_pc[h][k]);
-//        ptr_stdel[pres]->trace(h,qmax,sinal[h],grad_pw[k],TrKgrad_pw[h][k]);
+//        ptr_stdel[sat]fill_trace(h,qmax,sinal[h],grad_sn[k],TrKgrad_sn[h][k]);
+//        ptr_stdel[sat]fill_trace(h,qmax,sinal[h],grad_pc[k],TrKgrad_pc[h][k]);
+//        ptr_stdel[pres]fill_trace(h,qmax,sinal[h],grad_pw[k],TrKgrad_pw[h][k]);
 //      }
 //    }
 //    */

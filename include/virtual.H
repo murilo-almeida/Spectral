@@ -65,7 +65,7 @@ virtual void Dirichlet(const int aresta,
 // 		     const int varn,const int NFields);
 virtual void teste(int& );
 virtual void trace(const int lado,const int Q,const int sinal,
-		   const double *valores,double *saida);
+		   const double *valores,double *saida, const int vert_map[] = 0);
 virtual void computeFuncGQ(double f_[], 
 			   const Vertice vert[], const int map[],
 			   double (*func)(double,double,double));

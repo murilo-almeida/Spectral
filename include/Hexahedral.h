@@ -17,7 +17,7 @@ class Hexahedral : public Stdel
 		  int sign0,int sign1,int sign2,int sgn3,int map[],int sgn[] );
   void superficie_externa(const int Vert_map[],const int & num_local,double & area,double normal[3]);
   void localFaceModeMap(const int fnum, int lmap[]);
-
+  
  // Virtual functions
 # include "virtual.H"
 

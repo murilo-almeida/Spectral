@@ -1860,7 +1860,8 @@ void Quadrilateral::trace_Jb(const Vertice vert[],const int map[],const int sina
 // Calcula o traco e o coloca na ordem correta de acordo com o sinal da borda *
 // ****************************************************************************
 void Quadrilateral::trace(const int lado,const int qmax,const int sinal,
-                          const double *valores,double *saida)
+                          const double *valores,double *saida,
+                          const int map[])
 {
     //printf("Quadrilateral::trace\n");
     int nd,ind,inc;

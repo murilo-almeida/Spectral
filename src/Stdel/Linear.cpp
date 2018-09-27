@@ -928,7 +928,7 @@ void Linear::teste(int & v)
 // ****************************************************************************
 void Linear::trace(const int lado, const int qmax, const int sinal, 
 									 const double * valores,
-									 double * saida)
+									 double * saida,const int map[])
 {
   if (lado ==1)saida[0] = valores[Q[0]];
   else saida[0] = valores[0];

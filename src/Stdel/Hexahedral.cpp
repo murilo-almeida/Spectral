@@ -1941,8 +1941,49 @@ void Hexahedral::trace_Jb(const Vertice vert[],const int map[],const int sinal[]
 // Calcula o traco e o coloca na ordem correta de acordo com o sinal da borda *
 // ****************************************************************************
 void Hexahedral::trace(const int lado,const int qmax,const int sinal,
-			  const double *valores,double *saida)
+                       const double *valores,double *saida,
+                       const int map[])
 {
+    if((gqt[0] == 3)  && (gqt[1] == 3) && (gqt[2] == 3)) {
+        int Av[4] = {3,4,1,2}; // numeracao dos vertices globais
+        int Bi[4]; // numercao local dos nos da face
+        int dir[3];
+        int sgn[3];
+        int fv2;
+    
+        int inc[3] = {1,Q[0],Q[0]*Q[1]};
+        int q0,q1,q2,inc0,inc1,qini0,qini1, ini;
+        
+        for(int i = 0; i < 4; ++i) {
+            Bi[i] = face[lado][i];
+            Av[i] = map[face[lado][i]];
+        }
+        
+        quad_ordem(Av,Bi,dir,sgn,fv2);
+        
+        dir[2] = 3 - dir[0] - dir[1];
+        q0=Q[dir[0]];
+        q1=Q[dir[1]];
+        q2=Q[dir[2]];
+        inc0=inc[dir[0]];
+        inc1=inc[dir[1]];
+        qini0 = (1-sgn[0])/2 * (q0-1);
+        qini1 = (1-sgn[1])/2 * (q1-1);
+        ini = fv2*(q2-1)*inc[dir[2]];
+        
+        printf("q0 = %d q1 = %d inc0 = %d inc1 = %d qini0 = %d qini1 = %d ini = %d\n",q0,q1,inc0,inc1,qini0,qini1,ini);
+        int count = 0;
+        printf("\n\n");
+        for(int j=0; j<q1;++j){
+            int qj  = j*sgn[1] + qini1;
+            for(int i=0;i<q0;++i)
+            {
+                int qi = i * sgn[0] + qini0;
+                int n = ini + qi * inc0 + qj * inc1;
+                printf("count = %d  n = %d\n",count++,n);
+            }
+        }
+    }
   //printf("Hexahedral::trace\n");
   int nd,ind,inc;
   

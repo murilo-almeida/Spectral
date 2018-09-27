@@ -117,7 +117,7 @@ class Stdel
   virtual void teste(int& )=0;
   // Calcular os tracos nos pontos de quadratura Gauss_Jacobi (nao incluir os pontos extremos
   virtual void trace(const int lado,const int Q,const int sinal,
-		     const double *valores,double *saida)=0;
+                     const double *valores,double *saida, const int vert_map[] = 0)=0;
   virtual void computeFuncGQ(double f_[], 
 			     const Vertice vert[], const int map[],
 			     double (*func)(double,double,double))=0;

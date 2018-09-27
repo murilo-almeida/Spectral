@@ -1737,7 +1737,8 @@ void Tetrahedral::teste(int & v)
 
 void Tetrahedral::trace(const int lado, const int qmax, const int sinal,
                      const double * valores, // valores nos pontos de Gauss
-                     double * saida)
+                     double * saida,
+                        const int map[])
 {};
 const int Tetrahedral::aresta_lvert(const int & i, const int & j) const {return aresta[i][j];};
 const int Tetrahedral::face_lvert(const int & i, const int & j) const {return face[i][j];};
