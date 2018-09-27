@@ -137,8 +137,8 @@ void DG_Elem::inicia_funcoes_na_borda(EDGE * border)
     // Calcula os tracos de Phi e de seu gradiente
     // no elemento padrao
     // *********************************************
-    ptr_stdel[i]->elem_traces(ptvert,Vert_map,sinal,TP,TrGradPhi[i],Jb);
-    //fill_trace_Jb(i,ptvert,Vert_map,sinal,Jb);
+    //ptr_stdel[i]->elem_traces(ptvert,Vert_map,sinal,TP,TrGradPhi[i],Jb);
+
     // Implementar nos elementos padroes (Triangle, Linear, LinearLeg, Quadrilateral e Tetrahedral)
     
     for(h=0;h<numborders;h++){
