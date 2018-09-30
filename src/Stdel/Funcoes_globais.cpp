@@ -1,6 +1,6 @@
 
 # include "spectral.h"
-void quad_ordem(const int Av[4],const int Bi[4],int dir[3], int sgn[3], int & v2)
+void quad_ordem(int Av[4],int Bi[4],int dir[3], int sgn[3], int & v2)
 {
     // Entrada Av na ordem anti-horaria
     //    2
@@ -41,9 +41,11 @@ void quad_ordem(const int Av[4],const int Bi[4],int dir[3], int sgn[3], int & v2
     v[3] = temp;
   }
   printf("\n");
-  for(int k=0; k < 4; ++k)
+    for(int k=0; k < 4; ++k){
+        Av[k] = v[k];
+        Bi[k] = i[k];
     printf("v[%d] = %d  i[%d] = %d\n", k, v[k], k, i[k]);
-
+    }
   // Usar este trecho no hexahedral.cc
   dir[0]=(i[1]-i[0]);
 

@@ -29,7 +29,7 @@ const int qmax =e[0].show_ptr_stdel(0)->qborder_val();// Pontos de gauss nas are
 const int n0   =e[0].show_ptr_stdel(0)->nn_val();// Num de modos para a variavel 0
 const int nsat =e[0].show_ptr_stdel(sat)->nn_val();// Num de modos para saturacao
 const int npres=e[0].show_ptr_stdel(pres)->nn_val();// Num de modos para pressao
-
+const int nvert=e[0].show_ptr_stdel(0)->nv_val();
 // substituir por uma funcao que retorne so os w's
 double length;
 double Jac[qmax],w[qmax],Dtemp[MAXQ][MAXQ];
@@ -41,9 +41,32 @@ else {
     Gauss_Jacobi_parameters(qmax,0.0,0.0,Jac,w,Dtemp);
     length=border.comprimento;
 }
-// ******************************************************
-for(int q=0;q<qmax;q++)w[q]*=length/2.0;// salva em w = w*length/2.0
-// *******************************************************
+// ********** Jacobiano nas faces *******************
+int j = border.num_local[0];
+int n_0 = e[0].show_ptr_stdel(0)->aresta_lvert(j,0);//aresta j vertice 0
+int n_1 = e[0].show_ptr_stdel(0)->aresta_lvert(j,1);//aresta j vertice 1
+int V0 = e[0].show_Vert_map(n_0); // numero global do vertice 0
+int V1 = e[0].show_Vert_map(n_1); // numero global do vertice 1
+
+int _sgn[3];
+int map_[nvert];
+for (int i=0;i<nvert;++i){
+    map_[i]=e[0].show_Vert_map(i);
+}
+
+// ******************************************************************
+// Construindo o Jacobiano de dim = ndim-1 sobre as faces
+e[0].show_ptr_stdel(0)->face_Jacobian(border.num_local[0],
+                                      e[0].show_ptvert(), // pointer to the Vertices array
+                                      map_, // numero global dos vertices dos nos
+                                      _sgn,
+                                      Jac);
+
+for(int q=0;q<qmax;q++){
+    w[q]*=Jac[q];//length/2.0;// salva em w = w*length/2.0
+    //printf("length/2 = %g  Jac  = %g \n",(length/2.0), Jac[q]);
+}
+// ******************************************************************
 const double penalty =sigma/pow(length,beta);
 const double penalty1=sigma1/pow(length,beta);// 07/08/08
 

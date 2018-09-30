@@ -1441,6 +1441,48 @@ void Triangle::Dirichlet(const int aresta,
   //cout << "Saindo de Triangle::Dirichlet" << endl;
 };
 
+void Triangle::face_Jacobian(const int face_num,
+                             const Vertice vert[],
+                             const int Vert_map[], // numero global dos vertices dos nos
+                             const int sgn[],
+                             double Jlocal[])
+{
+    int v0 = Vert_map[aresta[face_num][0]];
+    int v1 = Vert_map[aresta[face_num][1]];
+    double x = vert[v1].x-vert[v0].x;
+    double y = vert[v1].y-vert[v0].y;
+    double z = vert[v1].z-vert[v0].z;
+    double modulo = sqrt(x*x+y*y+z*z);
+    int qmax=Q[0];
+    for (int i=0;i<qmax;i++){
+        Jlocal[i] = modulo/2.0;
+    }
+};
+/*
+void Triangle::face_Jacobian(const int & num_local,
+                             const Vertice vert[],
+                             const int Vert_map[],
+                             double & area,double normal[3])
+{
+    int v0,v1;
+    v0=Vert_map[aresta[num_local][0]];
+    v1=Vert_map[aresta[num_local][1]];
+    double lx,ly,lz;
+    lx=vert[v1].x - vert[v0].x;
+    ly=vert[v1].y - vert[v0].y;
+    lz=vert[v1].z - vert[v0].z;
+    
+    normal[0] = -sinal_normal[num_local] * ly;
+    normal[1] =  sinal_normal[num_local] * lx;
+    normal[2] = 0.0;
+    
+    area = sqrt(normal[0]*normal[0] + normal[1]*normal[1]);
+    
+    normal[0]/=area;
+    normal[1]/=area;
+};
+*/
+
 void Triangle::teste(int & v)
 {
    v=100000;
@@ -1778,8 +1820,8 @@ void Triangle::trace_Jb(const Vertice vert[],const int map[],const int sinal[],
 // Calcula o traco e o coloca na ordem correta de acordo com o sinal da borda *
 // ****************************************************************************
 void Triangle::trace(const int lado, const int qmax, const int sinal, 
-		     const double * valores, // valores nos pontos de Gauss
-		     double * saida,
+                     const double * valores, // valores nos pontos de Gauss
+                     double * saida,
                      const int map[])
 {
   //int qmax = qborder;
@@ -1866,9 +1908,10 @@ const int Triangle::show_fd0(const int &i) const {return 0;};
 const int Triangle::show_fd1(const int &i) const {return 0;};
 const int Triangle::show_fv2(const int &i) const {return 0;};
 const int Triangle::show_ind_mode(const int & i, const int & j, const int & k) const {return ind_mode_[i][j];};// a ser implementado
-void Triangle::superficie_externa(const int Vert_map[], const Vertice vert[],
+void Triangle::superficie_externa(const Vertice vert[],const int Vert_map[], 
                                   const int & num_local,
-                                  double & area,double normal[3])
+                                  double & area,
+                                  double normal[3])
 {
   int v0,v1;
   v0=Vert_map[aresta[num_local][0]];

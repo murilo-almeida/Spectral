@@ -33,6 +33,7 @@ public:
   void set_ptr_stdel_var(const int ind, Stdel * pointer);
   void set_Vert_map(const int & n_in,int ver_temp[]);
   void set_ptvert(const Vertice * pointer);
+const Vertice * show_ptvert(){return ptvert;};
   void read_vertices(FILE *, const int & );
   void set_sgn();
   int show_sgn(const int & ia, const int & i){return (sgn[ia][i]);};
@@ -775,12 +776,7 @@ void PhElem<NumVariaveis>::set_Vert_map(const int & n_in,int ver_temp[])
 {
   numv=n_in;
   for(int i=0;i<n_in;++i)Vert_map[i]=ver_temp[i];
-  if(type==5) { // hexaedro requer ordenacao dos nos lidos de gmsh;
-    Vert_map[2]=ver_temp[3];
-    Vert_map[3]=ver_temp[2];
-    Vert_map[6]=ver_temp[7];
-    Vert_map[7]=ver_temp[6];
-  }
+
 }
 // ***************************************************************************
 // Salva os mapas (local para global) e os sinais
@@ -1486,7 +1482,7 @@ void PhElem<NumVariaveis>::teste_gradiente()
 template<int NumVariaveis>
 void PhElem<NumVariaveis>::vetor_superficie(const int & num_local,double & area, double normal[3])
 {
-  ptr_stdel[0]->superficie_externa(Vert_map,ptvert,num_local,area,normal);
+  ptr_stdel[0]->superficie_externa(ptvert,Vert_map,num_local,area,normal);
 };
 
 //   // ****************************************************************************

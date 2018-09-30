@@ -110,7 +110,7 @@ double pw_inicial(double x, double y,double z);
 double norma_max(int N,double V[]);
 double norma_l2(int N,double B[]);
 void ordenar(const int n,int base[],int seq[]);
-void quad_ordem(const int Av[4],const int Bi[4],int dir[3], int sgn[3], int & v2);
+void quad_ordem(int Av[4],int Bi[4],int dir[3], int sgn[3], int & v2);
 void tetrahedro_faz_face_mask(const int & n_in,int ver_temp[],std::vector<int> & face_mask);
 
 // ****************************************************************************

@@ -1570,6 +1570,12 @@ void Tetrahedral::Dirichlet(const int face_num,
   //printf("Saindo Tetrahedral::Dirichlet para face %d\n\n",face_num);
 };
 
+void Tetrahedral::face_Jacobian(const int face_num,
+                               const Vertice vert[],
+                               const int vert_map[], // numero global dos vertices dos nos
+                               const int sgn[],
+                               double * J)
+{};
 // *****************************************************************
 void Tetrahedral::eval_Phi(const int n,double Phi[])
 {
@@ -1748,7 +1754,7 @@ const int Tetrahedral::show_fd0(const int &i) const {return fd0[i];};
 const int Tetrahedral::show_fd1(const int &i) const {return fd1[i];};
 const int Tetrahedral::show_fv2(const int &i) const {return fv2[i];};
 const int Tetrahedral::show_ind_mode(const int & i, const int & j, const int & k ) const {return ind_mode_[i][j][k];};
-void Tetrahedral::superficie_externa(const int Vert_map[],const Vertice vert[],
+void Tetrahedral::superficie_externa(const Vertice vert[],const int Vert_map[],
                                      const int & num_local,
                                      double & area,double normal[3])
 {

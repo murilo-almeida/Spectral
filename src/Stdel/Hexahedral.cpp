@@ -1433,7 +1433,7 @@ void Hexahedral::Dirichlet(const int face_num,
   //cout << "Entrou em Hexahedral::Dirichlet para a face "<< face_num << "\n";
   const int varn = 0;
   //const int NFields = 1;
-  int lvert_map[4]={0,1,2,3};
+  int lvert_map[4];
   int quadmap[MAXMODES];// mapeia modos do quadrilatero sobre os do hexaedro
   int p0,q;
   //int p1;
@@ -1450,7 +1450,7 @@ void Hexahedral::Dirichlet(const int face_num,
   //dados do quadrilatero (stdel)
   Quadrilateral * quad = new Quadrilateral(p0,q);
   PhElem<1> * localphel = new PhElem<1>();
-  localphel->set_ptr_stdel(quad,quad);
+  localphel->set_ptr_stdel(quad);
   localphel->set_type(3);// quadrilatero
   localphel->set_ptvert(vert); // array de vertices recebido nos argumentos
   localphel->set_Vert_map(4,lvert_map);
@@ -1479,6 +1479,41 @@ void Hexahedral::Dirichlet(const int face_num,
   delete quad;
  
   //cout << "Saindo Hexahedral::Dirichlet para a face "<< face_num <<endl<<endl;
+};
+
+void Hexahedral::face_Jacobian(const int face_num,
+                               const Vertice vert[],
+                               const int vert_map[], // numero global dos vertices dos nos
+                               const int sgn[],
+                               double * J)
+{
+    //cout << "Entrou em Hexahedral::face_Jacobian para a face "<< face_num << "\n";
+    int Bi[4], Av[4];
+    int p0,q;
+    // construcao do mapa dos vertices locais em vertices globais
+    for(int i=0;i<4;++i) {
+        Av[i]=vert_map[face[face_num][i]];
+        Bi[i] = face[face_num][i];
+        //cout << "lvert_map["<< i << "] = "<< lvert_map[i] << endl;
+    }
+    int dir[3];
+    int sign[3]={1,1,1};
+    
+    int v2;
+    
+    quad_ordem(Av,Bi,dir,sign,v2);
+    
+    q =Q[fd0[face_num]];
+    p0=P[fd0[face_num]];
+    
+    //dados do quadrilatero (stdel)
+    Quadrilateral * quad = new Quadrilateral(p0,q);
+   
+    quad->Jacobian(vert,Av,J);
+    
+    delete quad;
+    
+    //cout << "Saindo Hexahedral::Dirichlet para a face "<< face_num <<endl<<endl;
 };
 
 /*
@@ -1993,77 +2028,77 @@ void Hexahedral::trace(const int lado,const int qmax,const int sinal,
         if(lado==0 || lado==2){
             nd=0;
         }
-  else nd=1;
+        else nd=1;
   
-  int q=Q[nd];
-  double temp[q];
+        int q=Q[nd];
+        double temp[q];
   
-  if(lado==0){
-    ind=0;
-    inc=1;
-  }
-  else if (lado==1){
-    ind=q-1;
-    inc=q;
-  }
-  else if(lado==2){
-    ind=q*(q-1);
-    inc=1;
-  }
-  else{
-    ind=0;
-    inc=q;
-  }
+        if(lado==0){
+            ind=0;
+            inc=1;
+        }
+        else if (lado==1){
+            ind=q-1;
+            inc=q;
+        }
+        else if(lado==2){
+            ind=q*(q-1);
+            inc=1;
+        }
+        else{
+            ind=0;
+            inc=q;
+        }
   
-  for(int i=0;i<q;++i){
-    saida[i]=valores[ind];
-    ind+=inc;
-  }
+        for(int i=0;i<q;++i){
+            saida[i]=valores[ind];
+            ind+=inc;
+        }
   
-  //if(qmax!=q){ //01/10/2013
-  double Old[q];
+        //if(qmax!=q){ //01/10/2013
+        double Old[q];
   
-  for(int i = 0; i < q; i++){
-    temp[i]=saida[i];
-    Old[i]=xGQ[nd][i];
-  }
+        for(int i = 0; i < q; i++){
+            temp[i]=saida[i];
+            Old[i]=xGQ[nd][i];
+        }
   
-  for(int k=0;k<q;k++){
-    double prod=1.0;
-    double y=Old[k];
-    for(int j=0;j<q;j++){
-      if(j!=k)prod*=(y-Old[j]);
-    }
-    temp[k]/=prod;
-  }
-  // ********************************************************
-  // Os pontos de Gauss onde estao os tracos sao do tipo
-  // Gauss-Jacobi, portanto diferentes dos pontos de Gauss
-  // do elemento. Logo toda aresta necessita calcular o traco
-  // ********************************************************
-  double Jac[qmax],wtemp[qmax],Dtemp[MAXQ][MAXQ];
-  Gauss_Jacobi_parameters(qmax,0.0,0.0,Jac,wtemp,Dtemp);
+        for(int k=0;k<q;k++){
+            double prod=1.0;
+            double y=Old[k];
+            for(int j=0;j<q;j++){
+                if(j!=k)prod*=(y-Old[j]);
+            }
+            temp[k]/=prod;
+        }
+        // ********************************************************
+        // Os pontos de Gauss onde estao os tracos sao do tipo
+        // Gauss-Jacobi, portanto diferentes dos pontos de Gauss
+        // do elemento. Logo toda aresta necessita calcular o traco
+        // ********************************************************
+        double Jac[qmax],wtemp[qmax],Dtemp[MAXQ][MAXQ];
+        Gauss_Jacobi_parameters(qmax,0.0,0.0,Jac,wtemp,Dtemp);
   
-  for(int i=0;i<qmax;i++){
-    double sum=0.0;
-    double y=Jac[i] * sinal;
-    for(int k=0;k<q;k++){
-      double prod=1.0;
-      for(int j=0;j<q;j++){
-	if(j!=k)prod*=(y-Old[j]);
-      }
-      sum+=(temp[k]*prod);
-    }
-    saida[i]=sum;
-  } 
-  // 01/10/2013
-  //}
-  /*
-    if(sinal == -1) {// Inverter a ordem dos valores
-    for ( int i = 0; i < qmax ; i++ ) temp[i] = saida [ (qmax-1-i) ];
-    for ( int i = 0; i < qmax ; i++ ) saida[i] = temp[i];
-    }
-  */
+        for(int i=0;i<qmax;i++){
+            double sum=0.0;
+            double y=Jac[i] * sinal;
+            for(int k=0;k<q;k++){
+                double prod=1.0;
+                for(int j=0;j<q;j++){
+                    if(j!=k)prod*=(y-Old[j]);
+                }
+                sum+=(temp[k]*prod);
+            }
+            saida[i]=sum;
+        }
+        // 01/10/2013
+        //}
+        /*
+         if(sinal == -1) {// Inverter a ordem dos valores
+         for ( int i = 0; i < qmax ; i++ ) temp[i] = saida [ (qmax-1-i) ];
+         for ( int i = 0; i < qmax ; i++ ) saida[i] = temp[i];
+         }
+         */
     }
 };
 // revisado em 25/10/2011
@@ -2075,7 +2110,7 @@ const int Hexahedral::show_fd0(const int &i) const {return fd0[i];};
 const int Hexahedral::show_fd1(const int &i) const {return fd1[i];};
 const int Hexahedral::show_fv2(const int &i) const {return fv2[i];};
 const int Hexahedral::show_ind_mode(const int & i, const int & j, const int & k ) const {return ind_mode_[i][j][k];};
-void Hexahedral::superficie_externa(const int Vert_map[],const Vertice vert[],
+void Hexahedral::superficie_externa(const Vertice vert[],const int Vert_map[],
                                     const int & num_local,
                                     double & area,double normal[3])
 {

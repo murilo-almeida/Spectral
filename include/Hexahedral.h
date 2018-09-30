@@ -15,7 +15,6 @@ class Hexahedral : public Stdel
   void make_local_matrices();
   void make_gbnmap(int n0,int n1,int n2,int n3,int ng0,int ng1,int ng2,int ng3,
 		  int sign0,int sign1,int sign2,int sgn3,int map[],int sgn[] );
-  void superficie_externa(const int Vert_map[],const int & num_local,double & area,double normal[3]);
   void localFaceModeMap(const int fnum, int lmap[]);
   
  // Virtual functions

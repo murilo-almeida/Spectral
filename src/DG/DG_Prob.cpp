@@ -683,7 +683,7 @@ void DG_Prob::Processa_condicoes_contorno()
    
     if(t == -1 || t == 1){
       // Alocar memoria para condicoes de contorno de Dirichlet
-        cout << "Condicoes de contorno de Dirichlet na borda "<< i << std::endl;
+       // cout << "Condicoes de contorno de Dirichlet na borda "<< i << std::endl;
       int qmax=(el[border[i].elemento[0]].show_ptr_stdel(0))->qborder_val();
       double xq[qmax],w[qmax];
       double Dtemp[MAXQ][MAXQ];

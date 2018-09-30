@@ -1959,7 +1959,7 @@ const int Quadrilateral::show_fd0(const int &i) const {return 0;};
 const int Quadrilateral::show_fd1(const int &i) const {return 0;};
 const int Quadrilateral::show_fv2(const int &i) const {return 0;};
 const int Quadrilateral::show_ind_mode(const int & i, const int & j, const int & k) const {return ind_mode_[i][j];};
-void Quadrilateral::superficie_externa(const int Vert_map[],const Vertice vert[],
+void Quadrilateral::superficie_externa(const Vertice vert[],const int Vert_map[],
                                        const int & num_local,
                                        double & area,double normal[3])
 {
@@ -1979,4 +1979,26 @@ void Quadrilateral::superficie_externa(const int Vert_map[],const Vertice vert[]
   
   normal[0]/=area;
   normal[1]/=area;
+};
+
+// *********************************************************************************************
+void Quadrilateral::face_Jacobian(const int num_local,
+                                  const Vertice vert[],
+                                  const int Vert_map[], // numero global dos vertices dos nos
+                                  const int sgn[],
+                                  double * J)
+{
+    int v0,v1;
+    v0=Vert_map[aresta[num_local][0]];
+    v1=Vert_map[aresta[num_local][1]];
+    double lx,ly,lz;
+    lx=vert[v1].x - vert[v0].x;
+    ly=vert[v1].y - vert[v0].y;
+    lz=vert[v1].z - vert[v0].z;
+    double modulo = sqrt(lx*lx+ly*ly+lz*lz);
+    int qmax=Q[0];
+    for (int i=0;i<qmax;i++){
+        J[i] = modulo/2.0;
+    }
+    
 };

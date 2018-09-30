@@ -54,6 +54,12 @@ virtual void Dirichlet(const int aresta,
 		       const int nmap[],const int sgn[],
 		       int bflag[],double Xbc[],
 		       double (*f)(double,double,double));
+
+virtual void face_Jacobian(const int face_num,
+                           const Vertice vert[],
+                           const int vert_map[], // numero global dos vertices dos nos
+                           const int sgn[],
+                           double * J);
 //   virtual void BoundForce(const int aresta,const Vertice vert[],
 // 			  const int gbnmap[],double bf[],
 // 			  double (*f)(double,double,double),
@@ -89,7 +95,7 @@ virtual const int show_fd0(const int &i) const;
 virtual const int show_fd1(const int &i) const;
 virtual const int show_fv2(const int &i) const;
 virtual const int show_ind_mode(const int & i, const int & j = 0, const int & k =0) const;
-virtual void superficie_externa(const int Vert_map[], const Vertice vert[],
+virtual void superficie_externa(const Vertice vert[],const int Vert_map[], 
                                 const int & num_local,double & area,double normal[3]);
 
 private:

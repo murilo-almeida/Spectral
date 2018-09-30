@@ -918,6 +918,12 @@ void Linear::Dirichlet(const int no,
   //cout << "Dirichlet: no " << no << " gbnmap " << temp << " valor " << X[temp]<< "\n";
 };
 
+void Linear::face_Jacobian(const int face_num,
+                               const Vertice vert[],
+                               const int vert_map[], // numero global dos vertices dos nos
+                               const int sgn[],
+                               double * J)
+{};
 void Linear::teste(int & v)
 {
    v=100000;
@@ -1033,7 +1039,7 @@ const int Linear::show_fd1(const int &i) const {return 0;};
 const int Linear::show_fv2(const int &i) const {return 0;};
 
 const int Linear::show_ind_mode(const int & i, const int & j, const int & k) const {return ind_mode_[i];};
-void Linear::superficie_externa(const int Vert_map[],const Vertice vert[],
+void Linear::superficie_externa(const Vertice vert[],const int Vert_map[],
                                 const int & num_local,
                                 double & area,double normal[3])
 {

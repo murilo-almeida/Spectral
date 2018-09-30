@@ -104,7 +104,12 @@ class Stdel
 			 const Vertice vert[],const int vert_map[],
 			 const int mmap[],const int sgn[],
 			 int bflag[],double Xbc[],
-			 double (*f)(double,double,double))=0; 
+			 double (*f)(double,double,double))=0;
+    virtual void face_Jacobian(const int face_num,
+                               const Vertice vert[],
+                               const int vert_map[], // numero global dos vertices dos nos
+                               const int sgn[],
+                               double * J)=0;
 //   virtual void BoundForce(const int aresta,const Vertice vert[],
 // 			  const int gbnmap[],double bf[],
 // 			  double (*f)(double,double,double),
@@ -142,7 +147,7 @@ class Stdel
   virtual const int show_fv2(const int &i) const = 0;
   virtual const int show_ind_mode(const int & i, const int & j = 0, const int & k =0)
                                   const = 0;
-  virtual void superficie_externa(const int Vert_map[], const Vertice vert[],
+  virtual void superficie_externa(const Vertice vert[],const int Vert_map[], 
                                   const int & num_local,double & area,double normal[3]) = 0;
   // virtual void set_b(Mat2<double> & b, const Vertice vert[], const int map[])=0;
  // virtual const int aresta_val(int i, int j) = 0;// const {return aresta[i][j];};

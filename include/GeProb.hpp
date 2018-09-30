@@ -181,17 +181,17 @@ GeProb<ElemType,N_VAR,N_FIELDS>::~GeProb()
   // Terminou de estabelecer as condicoes de contorno
 
   if(border != nullptr) {
-     cout << "liberando border"<< endl;
+    // cout << "liberando border"<< endl;
     for(int i=0;i<NBORDER;++i){
       if(border[i].pdir != nullptr) {
         delete [] border[i].pdir;
         border[i].pdir = nullptr;
-        cout << "liberando border.pdir"<< endl;
+       // cout << "liberando border.pdir"<< endl;
       }
       if(border[i].sdir != nullptr) {
         delete [] border[i].sdir;
         border[i].sdir = nullptr;
-        cout << "liberando border.sdir"<< endl;
+       // cout << "liberando border.sdir"<< endl;
       }
     }
     delete [] border; border = nullptr;
@@ -199,17 +199,17 @@ GeProb<ElemType,N_VAR,N_FIELDS>::~GeProb()
   }
 
  for(int i=0;i<N_FIELDS;++i){
-    cout<< "deletando ponteiros dos elementos padroes; passada "<< i << endl;
+   // cout<< "deletando ponteiros dos elementos padroes; passada "<< i << endl;
     if (ptrLinear[i] != nullptr){delete ptrLinear[i]; ptrLinear[i] = nullptr;}
-    cout << "1" << endl;
+   // cout << "1" << endl;
     if (ptrTriang[i] != nullptr){delete ptrTriang[i]; ptrTriang[i] = nullptr;}
-    cout << "2" << endl;
+   // cout << "2" << endl;
     if (ptrQuadri[i] != nullptr){delete ptrQuadri[i]; ptrQuadri[i] = nullptr;}
-    cout << "3" << endl;
+    //cout << "3" << endl;
     if (ptrTetrahedral[i] != nullptr){delete ptrTetrahedral[i]; ptrTetrahedral[i] = nullptr;}
-    cout << "4" << endl;
+    //cout << "4" << endl;
     if (ptrHexahedral[i] != nullptr){delete ptrHexahedral[i]; ptrHexahedral[i] = nullptr;}
-    cout << "5" << endl;
+    //cout << "5" << endl;
   }
   
     cout << "liberou pointer dos elementos espectrais"<< endl;
@@ -1024,6 +1024,14 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::Ler_e_Processar_malha(char *arq_geo)
       face_mask_local[4]=i; // numero do elemento a quem pertence
       face_mask_vec.push_back(face_mask_local);
     }
+    if(tipo==5) { // hexaedro requer ordenacao dos nos lidos de gmsh;
+        int temp = vert[2];
+        vert[2]=vert[3];
+        vert[3]=temp;
+        temp   = vert[6];
+        vert[6]= vert[7];
+        vert[7]= temp;
+      }
     el[i].set_Vert_map(numv,vert);
   }
 
