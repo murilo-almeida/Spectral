@@ -27,7 +27,7 @@ Linear::~Linear()  // 10/02/2013
   delete [] emapi; emapi=nullptr;
   delete [] emapv; emapv=nullptr;
   delete [] D_Phi_val; D_Phi_val=nullptr;
-  
+
   //libera memoria de ind_mode_
   delete [] ind_mode_;  ind_mode_ = nullptr;
 };
@@ -83,12 +83,12 @@ void Linear::set(int p0, int q0) // 10/02/2013
   printf("Saindo de Linear::set: nv = %d  nn = %d (< MAXMODES = %d) nb = %d (< MAXNB = %d)\n",nv,nn,MAXMODES,nb,MAXNB);
  printf("Linear::set nn = %d nb= %d\n",nn,nb);
 #endif
- 
+
   // Construcao da matriz Phi_val[nn][Q[0]]
   double eta1;
   for(int m=0;m<nn;m++){
     int p= mode_[m].p_val();
-  
+
     for(i=0;i<Q[0];i++){
       eta1=xGQ[0][i];
       Phi_val[m][i]=Psia(P[0],p,eta1);
@@ -127,7 +127,7 @@ double Linear::mass(int m1, int m2, const double JV[]) // 10/02/2013
   for(i=0;i<Q[0];i++){
     Fa=Psia(P[0],p1,xGQ[0][i]);//primeiro
     Ga=Psia(P[0],p2,xGQ[0][i]);
-    aux+=wGQ[0][i]*Fa*Ga;//*JV[i+Q[0]*j];// <==multiplica pelo Jacobiano-< 
+    aux+=wGQ[0][i]*Fa*Ga;//*JV[i+Q[0]*j];// <==multiplica pelo Jacobiano-<
   }
   //printf("Saiu Linear::mass(%d, %d) = %g\n",m1,m2,aux*JV[0]);
   return (aux*JV[0]);// <----------multiplica pelo Jacobiano----<
@@ -174,8 +174,8 @@ void Linear::make_local_matrices()  // 10/02/2013
   NEWMAT::Matrix mi_inv(ni,ni);
   NEWMAT::Matrix mcmi_inv(nb,ni);
 #endif
-  
-  // Matriz Mb  
+
+  // Matriz Mb
   for(i=0;i<nb;i++){
     for(j=0;j<nb;j++) mb.element(i,j)=M[i][j];
     // Matrix Mc
@@ -194,13 +194,13 @@ void Linear::make_local_matrices()  // 10/02/2013
       mi.element(jj,ii)=M[i][j];
     }
   }
-  
+
 #ifdef _NEWMAT
   mi_inv=mi.i(); // newmat
   mcmi_inv = mc * mi_inv;
   mb_c = mb - (mcmi_inv * mc.t()); // newmat
 #endif
-  
+
   for(int i=0;i<nb;i++){
     for(int j=0;j<nb;j++)
       Mb_comp[i][j]=mb_c.element(i,j);
@@ -248,35 +248,35 @@ void Linear::gauss_parameters_default()  // 10/02/2013
   double x[MAXQ];
   double wtemp[MAXQ];
   double Dtemp[MAXQ][MAXQ];
-  
+
   // Valores para a segunda e terceira dimensoes: 2 pontos (eta=-1.0) com w=1.0
   xGQ[1][0]= -1.0;
   wGQ[1][0]= 1.0;
   xGQ[2][0]= -1.0;
   wGQ[2][0]= 1.0;
-  
+
   switch (gqt[0]) {
-    
+
   case 1:
     Gauss_Jacobi_parameters(Q[0], 0.0, 0.0, x, wtemp, Dtemp);
     break;
-    
+
   case 2:
     Gauss_Radau_Jacobi_parameters(Q[0], 0.0, 0.0, x, wtemp, Dtemp);
     break;
-    
+
   case 3:
     Gauss_Lobatto_Jacobi_parameters(Q[0], 0.0, 0.0, x, wtemp, Dtemp);
     break;
   }
-  
+
   // printf("Linear: Gauss parameters defaults: tipo %d\n",gqt[0]);
   for(int j=0; j<Q[0]; j++){
     xGQ[0][j] = x[j];
     wGQ[0][j] = wtemp[j];
     // printf(" Linear wGQ[0][%d] = %g\n", j,wGQ[0][j]);
   }
-  
+
   for(int k=0;k<Q[0];k++) {
     for(int l=0;l<Q[0];l++){
       D[k][l][0]=Dtemp[k][l];
@@ -289,7 +289,7 @@ void Linear::gauss_parameters_default()  // 10/02/2013
 // OBSERVACAO: MULTIPLICAR POR JV
 // ****************************************************************************
 void Linear::vector_of_integral_of_f_Phi_dv(double vec[],
-				    double (*func)(double, double, double), 
+				    double (*func)(double, double, double),
 				    const Vertice vert[], const int map[],
 				    const double JV[])  // 10/02/2013
 {
@@ -354,7 +354,7 @@ void Linear::vector_of_integral_of_f_Phi_dv(double vec[],
 
 // ****************************************************************************
 void Linear::printtofile(FILE * fout,const double u[],
-			 double (*func)(double,double,double), 
+			 double (*func)(double,double,double),
 			 const Vertice vert[], const int map[])  // 10/02/2013
 {
   double aux,x1,x2,x3;
@@ -367,20 +367,20 @@ void Linear::printtofile(FILE * fout,const double u[],
   x3=0.0;
 
   aux1=xb-xa;
- 
+
   int m1=0;
   evalGQ(ftemp,u);
   for(int i=0;i<Q[0];i++){
     // coordenadas (conforme Karniadakis & Sherwin, pagina 108)
     eaux=(xGQ[0][i]+1.0)/2.0;
     x1=eaux*aux1+xa;
-    
+
     aux=ftemp[m1++];
     fprintf(fout,"%11.4e %11.4e %11.4e %11.4e %11.4e\n",x1,x2,x3,aux,func(x1,x2,x3));
   }
 };
 // ****************************************************************************
-void Linear::printtofile(FILE * fout,const double u[], 
+void Linear::printtofile(FILE * fout,const double u[],
 			 const Vertice vert[], const int map[])  // 10/02/2013
 {
   double aux,x1,x2,x3;
@@ -391,7 +391,7 @@ void Linear::printtofile(FILE * fout,const double u[],
   x3=0.0;
   xa=vert[map[0]].x;
   xb=vert[map[1]].x;
- 
+
   aux1=xb-xa;
 
   int m1=0;
@@ -400,7 +400,7 @@ void Linear::printtofile(FILE * fout,const double u[],
     // coordenadas (conforme Karniadakis & Sherwin, pagina 108)
     eaux=(xGQ[0][i]+1.0)/2.0;
     x1=eaux*aux1+xa;
-   
+
     aux=ftemp[m1++];
     fprintf(fout,"%11.4e %11.4e %11.4e %11.4e\n",x1,x2,x3,aux);
   }
@@ -458,7 +458,7 @@ void Linear::printwGQtofile(FILE * fout,
   }
 };
 // ****************************************************************************
-void Linear::printtoarray(const double u[], 
+void Linear::printtoarray(const double u[],
 			    const Vertice vert[], const int map[],
 			    double x[], double y[], double z[], double ftemp[])  // 10/02/2013
 {
@@ -471,7 +471,7 @@ void Linear::printtoarray(const double u[],
  // x2=0.0;
  // x3=0.0;
   aux1=xb-xa;
- 
+
   int m1=0;
   evalGQ(ftemp,u);
   for(int i=0;i<Q[0];i++){
@@ -499,7 +499,7 @@ void Linear::evalGQ(double f0[],double f1[],
     eta1=xGQ[0][i];
     aux0=0.0;
     aux1=0.0;
-   
+
     // A
     a=0; p=0;
     Fa=Psia(P[0],p,eta1);
@@ -539,7 +539,7 @@ void Linear::evalGQ(double f0[],const double u0[],const int NF,
   for(i=0;i<Q[0];i++){
     eta1=xGQ[0][i];
     aux0=0.0;
-   
+
     // A
     a=0; p=0;
     Fa=Psia(P[0],p,eta1);
@@ -559,20 +559,20 @@ void Linear::evalGQ(double f0[],const double u0[],const int NF,
       //cout << "Fa(p) = " << Fa << "\n";
     }
     f0[i]=aux0;
-   
+
     //cout << "i " << i << " eta1 "<< eta1 << " valor " << aux0 << "\n";
-   
+
   }
 };
 
 // ****************************************************************************
 // Evaluates the value of the field at the vertices of the element
 // ****************************************************************************
-void Linear::computeVertice(double f_vert[],const double u[], 
+void Linear::computeVertice(double f_vert[],const double u[],
 		    const Vertice vert[], const int map[])  // 10/02/2013
 {
   double aux, Fa,eta1;
- 
+
   int m1;
   int i,p;
   for(i=0;i<2;i++){
@@ -590,11 +590,11 @@ void Linear::computeVertice(double f_vert[],const double u[],
 // ****************************************************************************
 // Evaluates the value of the field at points
 // ****************************************************************************
-void Linear::computeAtPoints(const int npoints, const double LocCoord[],const double u[],  
+void Linear::computeAtPoints(const int npoints, const double LocCoord[],const double u[],
 			     const Vertice vert[], const int map[],double f[],double GloCoord[])
 {
   double aux, Fa,eta1;
- 
+
   int m1;
   int i,p;
   for(i=0;i<npoints;i++){
@@ -640,7 +640,7 @@ void Linear::Jacobian(const Vertice vert[],const int map[],double * JV)  // 10/0
   double xa,xb;
   double Jacobian;
   xa=vert[map[0]].x;
-  xb=vert[map[1]].x; 
+  xb=vert[map[1]].x;
 
   a1=xb-xa;
   Jacobian=a1/2.0;
@@ -651,12 +651,12 @@ void Linear::Jacobian(const Vertice vert[],const int map[],double * JV)  // 10/0
 //    printf("Linear::Jacobian=%lf\n",Jacobian);
 //  #endif
   for(int i=0;i<Q[0];i++)
-    JV[i]=Jacobian;     
+    JV[i]=Jacobian;
 };
 /*
 void Linear::Processar_geometria(int nel,
 				 const Vertice * vert,
-				 const int numv, 
+				 const int numv,
 				 const int * VN,
 				 int map[],
 				 int sgn[],
@@ -665,10 +665,10 @@ void Linear::Processar_geometria(int nel,
 				 int& NL,
 				 std::vector<EDGE>& border,
 				 int Ng[],
-				 int & NF, 
-				 int Face[], 
+				 int & NF,
+				 int Face[],
 				 int Fng[],
-				 int f_mask[], 
+				 int f_mask[],
 				 const int N_add)
 {
   int n0,n1;//ng0;
@@ -687,24 +687,24 @@ void Linear::Processar_geometria(int nel,
       border[i].num_local[1]=0;
       border[i].sinal[1]=1;
       border[i].tipo=2;// aresta interior
-    }    
+    }
   }
   if(flag0==0){// aresta nova
     EDGE temp_border;
- 
+
   //  border[NL].Na=n0;
   //  border[NL].Nb=n0;
   //  border[NL].elemento[0]=nel;
   //  border[NL].num_local[0]=0;
   //  border[NL].sinal[0]=1;
   //  border[NL].tipo=0;// aresta de contorno (inicialmente todas sao no-flow)
- 
+
     temp_border.Na=n0;
     temp_border.Nb=n0;
     temp_border.elemento[0]=nel;
     temp_border.num_local[0]=0;
     temp_border.sinal[0]=1;
-    temp_border.tipo=0;// aresta de contorno (inicialmente todas sao no-flow)    
+    temp_border.tipo=0;// aresta de contorno (inicialmente todas sao no-flow)
     border.push_back(temp_border);
     NL++;
     NG++;
@@ -723,14 +723,14 @@ void Linear::Processar_geometria(int nel,
   }
   if(flag1==0){// aresta nova
     EDGE temp_border;
-    
+
  //   border[NL].Na=n1;
 //    border[NL].Nb=n1;
 //    border[NL].elemento[0]=nel;
 //    border[NL].num_local[0]=1;
 //    border[NL].sinal[0]=1;
 //    border[NL].tipo=0;// aresta de contorno (inicialmente todas sao no-flow)
-    
+
     temp_border.Na=n1;
     temp_border.Nb=n1;
     temp_border.elemento[0]=nel;
@@ -742,8 +742,8 @@ void Linear::Processar_geometria(int nel,
     NG++;
   }
   if(flag0*flag1==0) {
-    // calculo da normal  
-  
+    // calculo da normal
+
     border[NL].comprimento=1.0;
     border[NL].normal[0] = 1.0;
     border[NL].normal[1] = 0.0;
@@ -768,12 +768,12 @@ void Linear::make_gbnmap(int n0,int n1,int ng0,int map[],int sgn[] )
   int temp;
 
   //printf("SINAIS: %d %d %d\n", sign0,sign1,sign2);
-  map[0]=n0; 
+  map[0]=n0;
   sgn[0]=1;
-  map[1]=n1; 
+  map[1]=n1;
   sgn[1]=1;
   //printf("SINAIS de 0 1 2: %d %d %d\n", sgn[0],sgn[1],sgn[2]);
-  
+
   imin=2;
   imax=p;
   // if(sign0==-1){
@@ -791,7 +791,7 @@ void Linear::make_gbnmap(int n0,int n1,int ng0,int map[],int sgn[] )
 // ****************************************************************************
 
 void Linear::Gradiente(FILE * fout, double * grad[],
-			 const  double fvec[], 
+			 const  double fvec[],
 			 const Vertice vert[], const int map[])
 {
   //cout << "Gradiente Linear "<< endl;
@@ -799,15 +799,15 @@ void Linear::Gradiente(FILE * fout, double * grad[],
   double x2=0.0;
   double x3=0.0;
 
-  //printf(" CALCULO DO GRADIENTE de um vetor. ELEMENTO LINEAR\n"); 
-  
+  //printf(" CALCULO DO GRADIENTE de um vetor. ELEMENTO LINEAR\n");
+
   Gradiente(grad,fvec,vert,map);
- 
+
   xa=vert[map[0]].x;
   xb=vert[map[1]].x;
   aux1=(xb-xa);
   // Cheque do gradiente
- 
+
   for(int i=0;i<Q[0];i++){
     eta1=xGQ[0][i];
     e1p=(1.0+eta1)/2.0;
@@ -823,7 +823,7 @@ void Linear::Gradiente(FILE * fout, double * grad[],
 // Necessita ser reescrito para considerar o caso do triangulo no espaco 3d
 
 void Linear::Gradiente(double * grad[],
-			 const  double fvec[], 
+			 const  double fvec[],
 			 const Vertice vert[], const int map[])
 {
   //cout << "Gradiente Linear Principal "<< endl;
@@ -837,17 +837,17 @@ void Linear::Gradiente(double * grad[],
 
   // calculo dos coeficientes aij
   a1=(xb-xa);
- 
+
   // calculo de J1D
   J1D=a1/2.0;
-  
+
   // calculo das derivadas com relacao a eta1
   for(int p=0;p<Q[0];p++){
     aux0=0.0;
     for(l=0;l<Q[0];l++){
       aux0+=D[p][l][0]*fvec[l];
     }
-    grad[0][p]=(aux0/J1D);  
+    grad[0][p]=(aux0/J1D);
   }
 };
 // ****************************************************************************
@@ -856,7 +856,7 @@ void Linear::Gradiente(double * grad[],
 // ****************************************************************************
 
 void Linear::Gradiente(FILE * fout, double * grad[],
-			 double (*func)(double, double, double), 
+			 double (*func)(double, double, double),
 			 const Vertice vert[], const int map[])
 {
   //cout << "Gradiente 1 "<< endl;
@@ -871,13 +871,13 @@ void Linear::Gradiente(FILE * fout, double * grad[],
   xb=vert[map[1]].x;
   double aux1= xb-xa;
   // calculo do vetor contendo a funcao nos pontos de integracao de Gauss
- 
+
   for(i=0;i<Q[0];i++){
     eta1=xGQ[0][i];
     e1p=(1.0+eta1)/2.0;
     // coordenadas x1, x2, x3
     x1=(xa+aux1*e1p);
-    //    x2=(ya+(yb-ya)*e1p);      
+    //    x2=(ya+(yb-ya)*e1p);
     fvec[i]=func(x1,x2,x3);
   }
   // fprintf(fout," CALCULO DO GRADIENTE de uma funcao. ELEMENTO LINEAR\n");
@@ -907,15 +907,15 @@ void Linear::Dirichlet(const int no,
   int flag=0;
   int temp;
   double xa,ya,za;
-  
-  xa=vert[vert_map[no]].x; 
+
+  xa=vert[vert_map[no]].x;
   ya=vert[vert_map[no]].y;
   za=vert[vert_map[no]].z;
-  
+
   temp=nmap[no];
   X[temp]=f(xa,ya,za);
   bflag[temp]=flag;
-  //cout << "Dirichlet: no " << no << " gbnmap " << temp << " valor " << X[temp]<< "\n";
+  cout << "Linear::Dirichlet: no " << no << " gbnmap " << temp << " valor " << X[temp]<< "\n";
 };
 
 void Linear::face_Jacobian(const int face_num,
@@ -932,9 +932,9 @@ void Linear::teste(int & v)
 // ****************************************************************************
 // Calcula o traco e o coloca na ordem correta de acordo com o sinal da borda *
 // ****************************************************************************
-void Linear::trace(const int lado, const int qmax, const int sinal, 
-									 const double * valores,
-									 double * saida,const int map[])
+void Linear::trace(const int lado, const int qmax, const int sinal,
+                   const double * valores,
+                   double * saida,const int map[])
 {
   if (lado ==1)saida[0] = valores[Q[0]];
   else saida[0] = valores[0];
@@ -944,7 +944,7 @@ void Linear::trace(const int lado, const int qmax, const int sinal,
 // ****************************************************************************
 // Evaluates the value of the field at the Gauss Quadrature points
 // ****************************************************************************
-void Linear::computeFuncGQ(double f_[], 
+void Linear::computeFuncGQ(double f_[],
 			   const Vertice vert[], const int map[],
 			   double (*func)(double,double,double))  // 10/02/2013
 {
@@ -979,34 +979,34 @@ void Linear::elem_traces(const Vertice vert[],const int map[],const int sinal[],
   // coordenadas dos nos
   xa=vert[map[0]].x;
   xb=vert[map[1]].x;
-  
+
   double d1,aux0,aux1,der1;
  // int s0=nn*ndim;
   // int s1=   ndim;
   aux0=(xb-xa) / 2.0;
   for(h=0;h<nborder;h++){ // loop sobre as bordas
     switch(h) { // switch
-      
+
     case 0:
       eta1=-1.0;
       break;
-      
+
     case 1:
       eta1=1.0;
       break;
-      
+
     }// switch
-    
-    
+
+
     for(m=0;m<nn;m++) { // loop sobre os modos
       int p= mode_[m].p_val();
     //  int i_m=h*nn+m;
       aux1=Psia(P[0],p,eta1);
       d1=DPsia(P[0],p,eta1);
       /*TP[i_m + l]*/TP[h][m][0]=aux1;
-      der1 = d1/aux0;	
+      der1 = d1/aux0;
       /*TGP[h*s0+m*s1+l]*/ TGP[h][nn][0][l] = der1;
-      
+
       Jb[h+l]=aux0;
     } // loop sobre os modos
   } // loop sobre as bordas
@@ -1022,13 +1022,13 @@ void Linear::trace_Jb(const Vertice vert[],const int map[],const int sinal[],
     // coordenadas dos nos
     xa=vert[map[0]].x;
     xb=vert[map[1]].x;
-    
+
     double d1,aux0,aux1,der1;
     // int s0=nn*ndim;
     // int s1=   ndim;
     aux0=(xb-xa) / 2.0;
     Jb[h]=aux0;
-    
+
 }
 const int Linear::aresta_lvert(const int & i, const int & j) const {return aresta[i][j];};
 const int Linear::face_lvert(const int & i, const int & j) const {return 0;};
@@ -1051,15 +1051,21 @@ void Linear::superficie_externa(const Vertice vert[],const int Vert_map[],
   lx=vert[v1].x - vert[v0].x;
   ly=vert[v1].y - vert[v0].y;
   lz=vert[v1].z - vert[v0].z;
-  
+
   normal[0] = sinal_local * lx;
   normal[1] = sinal_local * ly;
   normal[2] = sinal_local * lz;
-  
+
   area = sqrt(normal[0]*normal[0] + normal[1]*normal[1] + normal[2]*normal[2]);
-  
+
   normal[0]/=area;
   normal[1]/=area;
   normal[2]/=area;
 
+};
+//const int * Linear::show_face(const int &i){};
+void Linear::face_GQCoord(const Vertice vert[],const int map[],
+                          const int a0,const int qmax,
+                          double x[],double y[],double z[])
+{
 };

@@ -2,10 +2,10 @@ virtual void set(int P,int Q);
 virtual void Jacobian(const Vertice vert[],const int map[], double * JV );
 
 virtual double mass(int, int, const double []);
-virtual void printtofile(FILE * fout,const double u[], 
+virtual void printtofile(FILE * fout,const double u[],
 			 double (*)(double,double,double),
 			 const Vertice vert[], const int map[]);
-virtual void printtofile(FILE * fout,const double u[],  
+virtual void printtofile(FILE * fout,const double u[],
 			 const Vertice vert[], const int map[]);
 virtual void printGQtofile(FILE * fout,const double ftemp[],
 			   const double ftemp1[],
@@ -14,7 +14,7 @@ virtual void printwGQtofile(FILE * fout,
 			    const Vertice vert[],
 			    const int map[],
 			    const double JV[]) ;
-virtual void computeVertice(double f_vert[],const double u[], 
+virtual void computeVertice(double f_vert[],const double u[],
 			    const Vertice vert[], const int map[]);
 virtual void computeAtPoints(const int npoints, const double LocCoord[],const double u[],
 			     const Vertice vert[], const int map[],double f[],double GloCoord[]);
@@ -52,7 +52,7 @@ virtual void print_nome(FILE *);
 virtual void Dirichlet(const int aresta,
 		       const Vertice vert[],const int vert_map[],
 		       const int nmap[],const int sgn[],
-		       int bflag[],double Xbc[],
+		       int bflag[],double Xb[],
 		       double (*f)(double,double,double));
 
 virtual void face_Jacobian(const int face_num,
@@ -64,7 +64,7 @@ virtual void face_Jacobian(const int face_num,
 // 			  const int gbnmap[],double bf[],
 // 			  double (*f)(double,double,double),
 // 			  const int varn,const int NFields);
-//   
+//
 //   virtual void fluxo(const int aresta,const Vertice vert[],
 // 		     const int gbnmap[],const double f0[][3],
 // 		     double bs[],
@@ -72,7 +72,7 @@ virtual void face_Jacobian(const int face_num,
 virtual void teste(int& );
 virtual void trace(const int lado,const int Q,const int sinal,
 		   const double *valores,double *saida, const int vert_map[] = 0);
-virtual void computeFuncGQ(double f_[], 
+virtual void computeFuncGQ(double f_[],
 			   const Vertice vert[], const int map[],
 			   double (*func)(double,double,double));
 virtual void vector_of_integral_of_f_Phi_dv(double vec[],
@@ -91,24 +91,28 @@ virtual const int aresta_lvert(const int & i, const int & j) const;
 virtual const int face_lvert(const int & i, const int & j) const;
 virtual const int show_nvf(const int &i) const;
 virtual const int show_face_tipo(const int &i) const;
+
 virtual const int show_fd0(const int &i) const;
 virtual const int show_fd1(const int &i) const;
 virtual const int show_fv2(const int &i) const;
 virtual const int show_ind_mode(const int & i, const int & j = 0, const int & k =0) const;
-virtual void superficie_externa(const Vertice vert[],const int Vert_map[], 
+virtual void superficie_externa(const Vertice vert[],const int Vert_map[],
                                 const int & num_local,double & area,double normal[3]);
+virtual void face_GQCoord(const Vertice vert[],const int map[],
+                          const int num_local,const int qmax,
+                          double x[],double y[],double z[]);
 
 private:
 
 //virtual void make_mass(double M[], const double JV[]);
 virtual void make_mass_matrices(int nfields);
-virtual void printtoarray(const double u[], 
+virtual void printtoarray(const double u[],
 			  const Vertice vert[], const int map[],
 			  double x[], double y[], double z[],
 			  double ftemp[]);
 //  virtual void Ler_geometria(int nel,const Vertice * vert,FILE * finput,
 // 			     int map[],int sgn[],
-// 			     int& NG,int& NL,EDGE border[],int Ng[], 
+// 			     int& NG,int& NL,EDGE border[],int Ng[],
 // 			     int & NF, int Face[], int Fng[], int f_mask[]);
 
 //virtual void set_b(Mat2<double> & b, const Vertice vert[], const int map[]){};

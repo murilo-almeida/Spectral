@@ -25,10 +25,10 @@ class Hexahedral : public Stdel
  void gauss_parameters_default();
  // Ordem local
 
- //     C ---- D
- //   / |     /|
- // G ------H  |
- // |   A --|- B
+ //     C ------D
+ //   / |     / |
+ // G ------H   |
+ // |   A --|---B
  // | /     | /
  // E-------F
  const int aresta [12][2] = 
@@ -47,7 +47,7 @@ class Hexahedral : public Stdel
    };
  const int face_tipo[6] = {3,3,3,3,3,3}; // Quadrilateros
  const int nvf[6] = {4,4,4,4,4,4};
- const int face[6][4] = 
+    const int face[6][4] = // na seguindo as arestas; os numeros sao da numercao interna
    { {0,1,3,2},
      {0,1,5,4},
      {0,2,6,4},

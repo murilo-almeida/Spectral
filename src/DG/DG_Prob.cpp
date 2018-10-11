@@ -156,7 +156,7 @@ void DG_Prob::DG_initial_conditions()
     // Loop abaixo eh equivalente ao gbnmap_discontinuous() acima
     for(int i=0;i<NELEM;i++)
       el[i].inicia_gbnmap(sat,NumD);
-    printf("Numero de incognitas de saturacao: NumD = %d\n",NumD);
+    printf("\nNumero de incognitas de saturacao: NumD = %d\n",NumD);
 
 
     // refaz gbnmap para resolver soh pw
@@ -404,8 +404,8 @@ void DG_Prob::DG_MatrizVetor_UMFPACK(const double Dt,int & count, const int nz,
 // ****************************************************************************
 // ****************************************************************************
 void DG_Prob::DG_alocar_mem_local(const int qmax,
-																	const int nsat,
-																	const int npres)
+                                  const int nsat,
+                                  const int npres)
 {
 
   // **********************
@@ -565,7 +565,7 @@ void DG_Prob::projetar_C0(FILE *file,double (*func)(double,double,double),
 												 const int & ivar)
 {
   //FILE * frestart;
-  printf("\ncomeco de DG_Prob::projetar_C0\n");
+  printf("\n\ncomeco de DG_Prob::projetar_C0\n");
   /*
   fluids.set_mun(mun);
   fluids.set_muw(muw);
@@ -652,80 +652,131 @@ void DG_Prob::projetar_C0(FILE *file,double (*func)(double,double,double),
 // *****************************************************
 // Condicoes de contorno especializada de DG_Prob
 // *****************************************************
+// Obsoleta em 2/10/2018. Processamento é feito agora no Preamble
 // ****************************************************************************************
 void DG_Prob::Processa_condicoes_contorno()
 // ****************************************************************************************
 {
-  cout << "\nUsando DG_Prob::Processa_condicoes_contorno"<<std::endl;
-  // Inicializar o bflag com valores 0
-  for(int i=0;i<NG;i++) bflag.push_back(0); //bflag[i]=0;//bflag=0: conhecido
-  
-  nin = 0;
-  nout = 0;
-  double x,y,aux;
-  
-  // ***************************************************
-  // Cria os vetores com as bordas de entrada e saida *
-  // ***************************************************
-  for (int i=0;i<NBORDER;++i) {
-    
-    /*   double epsilon =1.0e-6;// incluido em 22/04/2014
-     // ************
-     // Similar ao que é feito no fenics
-     if( abs(V[border[i].Na].x) < epsilon && abs(V[border[i].Nb].x) < epsilon ) {border[i].tipo= -1;} // incluido em 22/04/2014
-     else // incluido em 22/04/2014
-     if( abs(V[border[i].Na].x - 1.0) < epsilon && abs(V[border[i].Nb].x - 1.0) < epsilon ) {border[i].tipo= 1;}// incluido em 22/04/2014
-     // incluido em 22/04/2014
-     */
-    
-    
-    int t=border[i].tipo;
-   
-    if(t == -1 || t == 1){
-      // Alocar memoria para condicoes de contorno de Dirichlet
-       // cout << "Condicoes de contorno de Dirichlet na borda "<< i << std::endl;
-      int qmax=(el[border[i].elemento[0]].show_ptr_stdel(0))->qborder_val();
-      double xq[qmax],w[qmax];
-      double Dtemp[MAXQ][MAXQ];
-      //Mat2<double> Dtemp(qmax,qmax);
-      Gauss_Jacobi_parameters(qmax,0.0,0.0,xq,w,Dtemp);
-      // *******************************************************
-      int na=border[i].Na;
-      int nb=border[i].Nb;
-      double xa=V[na].x;
-      double ya=V[na].y;
-      double xb=V[nb].x;
-      double yb=V[nb].y;
-      double xsum=(xb+xa)*0.5;
-      double xdif=(xb-xa)*0.5;
-      double ysum=(yb+ya)*0.5;
-      double ydif=(yb-ya)*0.5;
-      
-      border[i].pdir = new double [qmax];
-      for(int q=0;q<qmax;++q){
-        aux=xq[q];
-        x=xsum+xdif*aux;
-        y=ysum+ydif*aux;
-        border[i].pdir[q]=funcao_pdir(x,y,t);
-      }
-      if(t==-1){
-        nin++;
-        in_borders.push_back(i);
-        border[i].sdir = new double[qmax];
-        for(int q=0;q<qmax;++q){
-          aux=xq[q];
-          x=xsum+xdif*aux;
-          y=ysum+ydif*aux;
-          border[i].sdir[q]=funcao_sdir(x,y);
+    cout << "\nUsando DG_Prob::Processa_condicoes_contorno"<<std::endl;
+    // Inicializar o bflag com valores 1 (desconhecido)
+    for(int i=0;i<NG;i++) bflag.push_back(1); //bflag[i]=1;//bflag=1: desconhecido
+
+    nin = 0;
+    nout = 0;
+    double x,y,aux;
+    const int ndim = el[0].show_ptr_stdel(0)->ndim_val();
+
+    // ***************************************************
+    // Cria os vetores com as bordas de entrada e saida *
+    // ***************************************************
+    if(ndim==2) {
+        for (int i=0;i<NBORDER;++i) {
+
+            /*   double epsilon =1.0e-6;// incluido em 22/04/2014
+             // ************
+             // Similar ao que é feito no fenics
+             if( abs(V[border[i].Na].x) < epsilon && abs(V[border[i].Nb].x) < epsilon ) {border[i].tipo=    -1;} // incluido em 22/04/2014
+             else // incluido em 22/04/2014
+             if( abs(V[border[i].Na].x - 1.0) < epsilon && abs(V[border[i].Nb].x - 1.0) < epsilon ) {border[i].tipo= 1;}// incluido em 22/04/2014
+             // incluido em 22/04/2014
+             */
+
+
+            int t=border[i].tipo;
+
+            if(t == -1 || t == 1){
+              // Alocar memoria para condicoes de contorno de Dirichlet
+              // cout << "Condicoes de contorno de Dirichlet na borda "<< i << std::endl;
+              int qmax=(el[border[i].elemento[0]].show_ptr_stdel(0))->qborder_val();
+              double xq[qmax],w[qmax];
+              double Dtemp[MAXQ][MAXQ];
+              //Mat2<double> Dtemp(qmax,qmax);
+              Gauss_Jacobi_parameters(qmax,0.0,0.0,xq,w,Dtemp);
+              // *******************************************************
+              int na=border[i].Na;
+              int nb=border[i].Nb;
+              double xa=V[na].x;
+              double ya=V[na].y;
+              double xb=V[nb].x;
+              double yb=V[nb].y;
+              double xsum=(xb+xa)*0.5;
+              double xdif=(xb-xa)*0.5;
+              double ysum=(yb+ya)*0.5;
+              double ydif=(yb-ya)*0.5;
+
+              border[i].pdir = new double [qmax];
+              for(int q=0;q<qmax;++q){
+                  aux=xq[q];
+                  x=xsum+xdif*aux;
+                  y=ysum+ydif*aux;
+                  border[i].pdir[q]=funcao_pdir(x,y,t);
+              }
+              if(t==-1){
+                  nin++;
+                  in_borders.push_back(i);
+                  border[i].sdir = new double[qmax];
+                  for(int q=0;q<qmax;++q){
+                      aux=xq[q];
+                      x=xsum+xdif*aux;
+                      y=ysum+ydif*aux;
+                      border[i].sdir[q]=funcao_sdir(x,y);
+                  }
+              }
+              else {
+                  out_borders.push_back(i);
+                  nout++;
+              }
+
+            }
         }
-      }
-      else {
-        out_borders.push_back(i);
-        nout++;
-      }
     }
-  }
+    if(ndim==3) {
+
+        for (int i=0;i<NBORDER;++i) {
+            int t=border[i].tipo;
+            if(t == -1 || t == 1){
+
+                const int _face = border[i].num_local[0];
+                DG_Elem & _elem = el[border[i].elemento[0]];
+                const int _elem_type = _elem.type_val();
+                Stdel * _ptr_stdel = _elem.show_ptr_stdel(0);
+                const int qmax = _ptr_stdel->qborder_val();
+                const int _nvf = _ptr_stdel->show_nvf(_face);
+
+                int _Av[_nvf];
+                int _Bi[_nvf];
+
+                for(int k=0;k<_nvf;++k){
+                    _Bi[k] = _ptr_stdel->face_lvert(_face,k);
+                    _Av[k] = _elem.show_Vert_map(_Bi[k]);
+                }
+                if(_elem_type == 5){
+                   /*
+                    int dir[3];
+                    int sign[3]={1,1,1};
+
+                    int v2;
+
+                    quad_ordem(Av,Bi,dir,sign,v2);
+
+                    q =Q[fd0[face_num]];
+                    p0=P[fd0[face_num]];
+
+                    Quadrilateral * quad = new Quadrilateral(p0,q);
+                */
+                }
+
+                if(t==-1){
+                }
+                else {
+                    out_borders.push_back(i);
+                    nout++;
+                }
+
+            }
+        } // NBORDER
+
+    } // ndim=3
     printf("Processou DNBC= %d condicoes de contorno: ",DNBC);
     printf("nin = %d nout = %d \n\n",nin,nout);
 };
-

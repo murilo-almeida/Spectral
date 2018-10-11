@@ -4,7 +4,7 @@
 //  Classe base
 //  Elementos fisicos PhElem definido por template
 //  para poder especificar o numero de variaveis no momento
-//  da sua definicao. 
+//  da sua definicao.
 //
 //  Created by Murilo Almeida on 24/10/16.
 //  Copyright © 2016 Murilo Almeida. All rights reserved.
@@ -20,7 +20,7 @@ template <int NumVariaveis  >
 class PhElem
 {
 public:
-  
+
   PhElem(); //(const int n = 1);
   ~PhElem(){/*cout << "destruir PhElem\n";*/ };
   void inicia_vetores();
@@ -108,7 +108,7 @@ const Vertice * show_ptvert(){return ptvert;};
   int show_stgbtrbmapP(const int & a){ return(stgbtrbmapP[a]); };
   void check_gradiente(FILE * fout,const int & ia);
   Stdel * show_ptr_stdel(const int & n) const;
-  
+
   //void make_bflag(int bflag[], int facenum);
   void BoundCond(const int & face, int bflag[], double bc[],
                  double (*func)(double,double,double),
@@ -125,7 +125,7 @@ const Vertice * show_ptvert(){return ptvert;};
   //void set_mass_density(double);
   //void set_porosidade(double);
   //void set_fontes(double sw,double sn){qw=sw; qn=sn;};
-  
+
   //double show_rho(){return rho;};
   double show_J(){return J;};
   //void set_permeabilidade(const double,const double, const double);
@@ -144,7 +144,7 @@ const Vertice * show_ptvert(){return ptvert;};
                    const int & ivar);
   void transformacao_direta(double f[],const int & ivar);
   void teste_transformacao_direta(FILE * fin, FILE * fout, const int & npoints,const double coord[]);
-  
+
   void set_border_tipo( EDGE * border,const int & aresta,const int & t);
   void set_border_num(const int  & aresta, const int & num);
   //void Atualizar_valores(FILE * fout = NULL);// NULL eh o valor default
@@ -175,13 +175,13 @@ const Vertice * show_ptvert(){return ptvert;};
   void gbnmap_arestas(const int aresta_vec[],const int & ivar);// nova implementacao
   void gbnmap_interior(const int & ivar,int &count);
   void anexa_gbnmap(const int & ivar, vector <int> &);
-  
+
   void vetor_superficie(const int & num_local,double & area, double normal[3]);
-  
-  
+
+
   //private:
 protected:
-  
+
   Stdel * ptr_stdel[NumVariaveis];
   int type;
   const Vertice * ptvert;
@@ -204,7 +204,7 @@ protected:
   double * u0[NumVariaveis]; //!<vector with the coefficients of each mode
   double * usave[NumVariaveis];
   //double * ua[NumVariaveis];
-  
+
   int gbtrbmap ;/*!< \brief Beginning index on the global array where
                  * the local border Gauss quadrature points (traces)
                  * are mapped; this map facilitates
@@ -215,7 +215,7 @@ protected:
   int * stgbtrbmapP; /*!< \brief Array containing the start point in the global
                       *  trace array of the external trace of the border */
   int vetores_iniciados; // = 1; indica que os vetores locais foram iniciados e necessitam ser finalizados
-  
+
 };
 /*! \class PhElem
  * Physical Elements
@@ -230,7 +230,7 @@ template < int NumVariaveis >
 PhElem<NumVariaveis>::PhElem()
 {
   //set_ptr_stdel(NULL,NULL);
- 
+
   // qn=0.0;
   // qw=0.0;
   // default value
@@ -287,7 +287,7 @@ void PhElem<NumVariaveis>::mapa_inverso(const int & ivar, const double X[])
     u0[ivar][i]= temp;
     if(std::isnan(temp))cout << "Mapa inverso Float was Not a Number: ivar " << ivar << " modo "<< i << endl;
   }
-  
+
 };
 // ****************************************************************************
 template<int NumVariaveis>
@@ -343,9 +343,9 @@ template<int NumVariaveis>
 void PhElem<NumVariaveis>::Avancar_u0(const double X[],const double relax)
 {
   // default relax = 1.0
-  
+
   // atualizar os coeficientes: u0 -= X
-  
+
   for(int ivar=0;ivar<NumVariaveis;ivar++){
     // *****************************************************************
     for(int i=0;i<numn[ivar];i++){                                          // *
@@ -359,11 +359,11 @@ template<int NumVariaveis>
 void PhElem<NumVariaveis>::Comparar_u0(const double X[])
 {
   // default relax = 1.0
-  
-  
-  
+
+
+
   // comparar os coeficientes: u0 e X
-  
+
   for(int ivar=0;ivar<NumVariaveis;ivar++){
     // *****************************************************************
     for(int i=0;i<numn[ivar];i++){                                          // *
@@ -377,9 +377,9 @@ void PhElem<NumVariaveis>::Comparar_u0(const double X[])
 template<int NumVariaveis>
 void PhElem<NumVariaveis>::Atualizar_u0(const double X[])
 {
-  
+
   // atualizar os coeficientes: u0 = X
-  
+
   for(int ivar=0;ivar<NumVariaveis;ivar++){
     // *****************************************************************
     for(int i=0;i<numn[ivar];i++){                                          // *
@@ -404,7 +404,7 @@ void PhElem<NumVariaveis>::Atualizar_u0(const double X[])
  gphi_r[i]=A[i];
  gphi_l[i]=B[i];
  }
- 
+
  fprintf(f_eco,"Phi para o elemento\n");
  for(int i=0;i<2;i++){
  fprintf(f_eco,"\n variavel %d\n",i);
@@ -665,12 +665,12 @@ void PhElem<NumVariaveis>::P_print(const int & ivar, FILE *file)
  NF,Face,
  Fng,  // candidato a sair aguardar ver se necessario em Tetrahedral
  f_mask);
- 
+
  //  for(int i=0;i<ptr_stdel[0]->nn_val(); i++){
  //     gbnmap[0][i]=gbnmap_temp[i]; // gbnmap do modo
  //     sgn[0][i]=sgn_temp[i]; // sinal do modo
  //   }
- 
+
  for(int i=0;i<ptr_stdel[0]->ne_val();i++) sinal[i]=sinal_temp[i]; // sinal da aresta
  //printf("PhElem::Ler PONTO 1c\n");
  };
@@ -693,7 +693,7 @@ void PhElem<NumVariaveis>::Processar_dados(int& NL,
   nume=ptr_stdel[0]->ne_val();
   numf=ptr_stdel[0]->nf_val();
   numborders =ptr_stdel[0]->nborder_val();
-  
+
   // Processar as arestas
   if(ndim!=1) {
     for(int i = 0; i<nume;++i){
@@ -713,7 +713,7 @@ void PhElem<NumVariaveis>::Processar_dados(int& NL,
       // cout << "aresta "<< aresta_map[i] << " ("<< na<< ","<< nb<< ")"<< endl;
     }
   }
-  
+
   // Processar as faces
   if(ndim==3) {
     for(int i=0;i<numf;++i){
@@ -741,7 +741,7 @@ void PhElem<NumVariaveis>::Processar_dados(int& NL,
  void PhElem::set_Vert_map(const int & n_in,int ver_temp[])
  {
  numv=n_in;
- 
+
  if(type==4){ // tetrahedral
  int seq_orig[4] = {0,1,2,3};
  ordenar(4,ver_temp,seq_orig);
@@ -815,7 +815,7 @@ void PhElem<NumVariaveis>::check_gradiente(FILE * fileout,const int & ia)
   }
   ptr_stdel[ia]->evalGQ(sn,u0[ia]);
   ptr_stdel[ia]->Gradiente(fileout,ptr_grad,sn,ptvert,Vert_map);
-  
+
   //ptr_stdel[ia]->Gradiente(fileout,ptr_grad,funcao,ptvert,Vert_map);
   // for(int m=0;m<NGQP;m++)
   //fprintf(fileout,"check_gradiente %11.4e\n",grad[0][m]);
@@ -874,10 +874,10 @@ void PhElem<NumVariaveis>::set_stgbtrbmap(const int & b,const int & vmapM, const
 // ******************************************************************************/
 template<int NumVariaveis>
 void PhElem<NumVariaveis>::projetar_C0(FILE *file,
-                                             double (*func)(double,double,double),
-                                             const int & ivar)
+                                       double (*func)(double,double,double),
+                                       const int & ivar)
 {
-  //printf("\nComeco de PhElem::projetar_C0\n");
+  printf("\nComeco de PhElem::projetar_C0 varialve %d\n",ivar);
   int i,j,ii,jj,k;
   int nb=numb[ivar];//ptr_stdel[ivar]->nb_val();
   int nn=numn[ivar];//ptr_stdel[ivar]->nn_val();
@@ -894,30 +894,26 @@ void PhElem<NumVariaveis>::projetar_C0(FILE *file,
     bflag[i]=1;
     Xl[i]=0.0;
   }
-  
-  // for(int i=0;i<ptr_stdel[0]->nv_val();++i)
-  //   cout << "Vert_map["<< i<< "] = "<<Vert_map[i]<<endl;
+
   for(j=0;j<numborders;j++){
-    //j=3;
-    //cout << "Chamar Dirichlet (ptr_stdel) para border = "<< j << endl;
-    
+    cout << "Chamar Dirichlet (ptr_stdel) para border = "<< j << endl;
     ptr_stdel[ivar]->Dirichlet(j,ptvert,Vert_map,nmap,sgn,bflag,Xl,func);
-    
+
     // cout << "saindo de Dirichlet para a face "<< j << endl;
     //for(int k=0;k<nn;++k) cout << "Xl["<< k << "%d] = " <<Xl[k] << endl;
   }
   //cout << "Terminou loop sobre as bordas (ptr_stdel)\nRetornou a PhElem::projetar\n";
-  
+
   //ni=0;
   if(ni>0){
     //cout << "calcular o produto interno de f por phi dos "<< ni << " modos internos"<< endl;
-    
+
 #ifdef _NEWMAT
     // newmat
     NEWMAT::Matrix Mi(ni,ni);
     NEWMAT::ColumnVector B(ni);
 #endif
-    
+
     //fprintf(file,"\n\n%5d\n",ni*ni);
     //printf("Matriz Mi\n");
     for(i=nb;i<nn;++i){
@@ -932,7 +928,7 @@ void PhElem<NumVariaveis>::projetar_C0(FILE *file,
         //printf("%3d %3d %g\n%3d %3d %g\n",ii,jj,aux,jj,ii,aux);
       }
     }
-    
+
     int NGQP = ptr_stdel[ivar]->NGQP_val();
     double phi[NGQP];
     double f[NGQP];
@@ -951,22 +947,22 @@ void PhElem<NumVariaveis>::projetar_C0(FILE *file,
       //fprintf(file,"%g ",B[i]);
     }
     //fprintf(file,"\n");
-    
+
 #ifdef _NEWMAT
     NEWMAT::ColumnVector Y = Mi.i() * B;  B=Y ; // newmat
 #endif
-    
+
     for(i=nb;i<nn;++i)u0[ivar][i]=B.element(i-nb);
   }
   // fim de if(ni>0)
-  
+
   for(i=0;i<nb;++i) u0[ivar][i]=Xl[i]; // no contorno
-  
+
   if(file != NULL)
     ptr_stdel[ivar]->printtofile(file,u0[ivar],func,ptvert,Vert_map);
-  
+
   //cout << "Terminou  PhElem::projetar_C0\n\n";
-  
+
 };
 
 // ***********************************************************************
@@ -979,13 +975,13 @@ void PhElem<NumVariaveis>::transformacao_direta(double f[],const int & ivar)
   int nn=numn[ivar];//ptr_stdel[ivar]->nn_val();
   double aux;
   //cout << "\n Projetar C0\n";
-  
+
 #ifdef _NEWMAT
   // newmat
   NEWMAT::Matrix Mi(nn,nn);
   NEWMAT::ColumnVector B(nn);
 #endif
-  
+
   //fprintf(file,"\n\n%5d\n",ni*ni);
   for(i=0;i<nn;i++){
     Mi.element(i,i)=ptr_stdel[ivar]->mass(i,i,JV);
@@ -997,7 +993,7 @@ void PhElem<NumVariaveis>::transformacao_direta(double f[],const int & ivar)
       //fprintf(file,"%3d %3d %g\n%3d %3d %g\n",ii,jj,aux,jj,ii,aux);
     }
   }
-  
+
   double b[nn];
   ptr_stdel[ivar]->vector_of_integral_of_f_Phi_dv(b,f,JV);
   for(i=0;i<nn;i++){
@@ -1006,7 +1002,7 @@ void PhElem<NumVariaveis>::transformacao_direta(double f[],const int & ivar)
 #ifdef _NEWMAT
   NEWMAT::ColumnVector Y = Mi.i() * B;  B=Y ; // newmat
 #endif
-  
+
   for(i=0;i<nn;i++)u0[ivar][i]=B.element(i);
 };
 
@@ -1383,12 +1379,12 @@ void PhElem<NumVariaveis>::compute_JV(const int & ia)
     //       JV[i][j] = new double  [q2];
     //     }
     //   }
-    
+
     //JV[ia] = new double [q0*q1*q2]; // opcao 2: um unico vetor
     JV = new double [q0];
-    
+
     //printf("ANTES: Calculo do Jacobiano da var %d  dimensao=%d\n",ia,q0*q1*q2);
-    
+
     ptr_stdel[ia]->Jacobian(ptvert,Vert_map,JV);
   }
   else cout << " elemento nao contem a variavel " << ia << endl;
@@ -1460,10 +1456,10 @@ void PhElem<NumVariaveis>::teste_gradiente()
  {
  int NGQP = ptr_stdel[0]->NGQP_val();
  int nn =  ptr_stdel[0]->nn_val();
- 
+
  double phi[NGQP];
  PhiArray = new double [nn*NGQP];
- 
+
  int count = 0;
  for(int j=0; j < nn; j++) {// j=modo
  // calcular os valores de Phi_j nos pontos de quadratura
@@ -1655,7 +1651,7 @@ void PhElem<NumVariaveis>::vetor_superficie(const int & num_local,double & area,
  delete [] u0; u0 = nullptr;
  delete [] bs; bs = nullptr;
  };
- 
+
  // *************************************************************
  void PhElem::zera_vetores()
  {
@@ -1753,11 +1749,11 @@ void PhElem<NumVariaveis>::gbnmap_faces(const int face_vec[],const int & ivar)
   cout << "PhElem<NumVariaveis>::gbnmap_faces\n";
   // Loop sobre as faces
   for(int f=0;f<numf;++f){
-    
+
     int dir[3];
     int v2=0;
     int sinal[2];
-    
+
     // achar os vertices da face
     int nvf = ptr_stdel[ivar]->show_nvf(f);
     int Av[nvf], ind[nvf];
@@ -1765,19 +1761,19 @@ void PhElem<NumVariaveis>::gbnmap_faces(const int face_vec[],const int & ivar)
       ind[i]=ptr_stdel[ivar]->face_lvert(f,i);
       Av[i]=Vert_map[ind[i]];
     }
-    
+
     if(nvf == 4) {
       quad_ordem(Av,ind,dir,sinal,v2);
-      
+
       if(v2 == 0) i[dir[2]] = 0;
       else i[dir[2]] = ptr_stdel[ivar]->P_val(dir[2]);
       int P0 = ptr_stdel[ivar]->P_val(dir[0]);
       int P1 = ptr_stdel[ivar]->P_val(dir[1]);
-      
+
       int inicio = face_vec[face_map[f]];
       int inc = 0;
       int aux0 = 1;
-      
+
       for(int i0 = 1; i0 < P0; ++i0) {
         i[dir[0]] = i0;
         int aux1 = 1;
@@ -1797,16 +1793,16 @@ void PhElem<NumVariaveis>::gbnmap_faces(const int face_vec[],const int & ivar)
       dir[1]=ptr_stdel[ivar]->show_fd1(f);
       dir[2]=3-dir[0]-dir[1];
       v2=ptr_stdel[ivar]->show_fv2(f);
-      
+
       if(v2 == 0) i[dir[2]] = 0;
       else i[dir[2]] = ptr_stdel[ivar]->P_val(dir[2]);
       int P0 = ptr_stdel[ivar]->P_val(dir[0]);
       int P1 = ptr_stdel[ivar]->P_val(dir[1]);
-      
+
       int inicio = face_vec[face_map[f]];
       int inc = 0;
       //int aux0 = 1;
-      
+
       for(int i0 = 1; i0 < P0; ++i0) {
         i[dir[0]] = i0;
         //int aux1 = 1;
@@ -1834,7 +1830,7 @@ void PhElem<NumVariaveis>::gbnmap_arestas(const int aresta_vec[],const int & iva
     av[1]=ptr_stdel[ivar]->aresta_lvert(a,1);
     int sinal = 1;
     if(Vert_map[av[0]] > Vert_map[av[1]]) sinal = -1;
-    
+
     int ini = ptr_stdel[ivar]->show_emapi(a)+1;
     int fim = ptr_stdel[ivar]->show_emapi(a+1)-1;
     int inicio = aresta_vec[aresta_map[a]];
@@ -1855,9 +1851,9 @@ void PhElem<NumVariaveis>::inicia_vetores()
 {
   int nn;//nb,q0,q1;
   int i,k;//h, j
-  
+
   if(vetores_iniciados == 1) { cout<< "vetores locais de PhElem já iniciados\n"; }
-  
+
   else {
     vetores_iniciados = 1;
     //cout<< "PhElem<NumVariaveis>::inicia_vetores()\n";
@@ -1874,7 +1870,7 @@ void PhElem<NumVariaveis>::inicia_vetores()
     // **************************************
     // q0= ptr_stdel[0]->Q_val(0);
     // q1= ptr_stdel[0]->Q_val(1);
-    
+
     //int ndim =  ptr_stdel[0]->ndim_val();
     //int qmax = ptr_stdel[0]->qborder_val();
     //int nborder = ptr_stdel[0]->nborder_val();
@@ -1882,7 +1878,7 @@ void PhElem<NumVariaveis>::inicia_vetores()
     //printf("Calculo do Jacobiano: dimensao=%d\n",NGQP);
     //JV = new double [NGQP]; // opcao 2: um unico vetor
     //ptr_stdel[0]->Jacobian(ptvert,Vert_map,JV);
-   
+
     compute_JV(0);
   }
 };
@@ -1897,9 +1893,9 @@ void PhElem<NumVariaveis>::finaliza_vetores()
     //cout<< "PhElem<NumVariaveis>::finaliza_vetores()\n";
     delete [] JV; JV=nullptr;
     //delete [] Jb; Jb=nullptr;
-    
+
     int k;
-    for (k=0;k<2;k++){
+    for (k=0;k<NumVariaveis;k++){
       delete [] u0[k]; u0[k]=nullptr;
       //   delete [] ua[k];ua[k]=nullptr;
       delete [] usave[k];usave[k]=nullptr;

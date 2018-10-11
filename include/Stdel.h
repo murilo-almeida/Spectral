@@ -3,9 +3,9 @@
 // ****************************************************************************
 class Stdel
 // ****************************************************************************
-{ 
+{
  public:
-  
+
   Stdel() {};
   ~Stdel() {};
   int show_vtk_type() const {return vtk_type;};
@@ -27,7 +27,7 @@ class Stdel
  // Mode ind_val(int i) const {return mode_[i];};
   double show_Phi_val(const int i, const int j)const {return Phi_val[i][j];};
 
-  double show_Mb_comp(int, int) const; 
+  double show_Mb_comp(int, int) const;
   double show_Mi_inv(int,int) const;
   double show_McMi_inv(int,int) const;
   void print_matrices(FILE *);
@@ -38,7 +38,7 @@ class Stdel
   int show_emapi(int i)const { return emapi[i];};
   int show_bmapv(int i)const { return bmapv[i];};
   int show_bmapi(int i)const { return bmapi[i];};
-  
+
   const int is_on_border(int m, int e,int & pos) const
   {
       int aux=0;
@@ -53,7 +53,7 @@ class Stdel
         }
       return ans;
   };
-  
+
   void print_border_map(FILE * fout)
   {
     for(int i=0;i<ne; i++){
@@ -63,16 +63,16 @@ class Stdel
       fprintf(fout,"\n");
     }
   };
-  
+
   // Pure virtual functions
   virtual void set(int P,int Q)=0;
   virtual void Jacobian(const Vertice vert[],const int map[], double * JV )=0;
-  
+
   virtual double mass(int, int, const double [])=0;
-  virtual void printtofile(FILE * fout,const double u[], 
+  virtual void printtofile(FILE * fout,const double u[],
                            double (*)(double,double,double),
                            const Vertice vert[], const int map[])=0;
-  virtual void printtofile(FILE * fout,const double u[],  
+  virtual void printtofile(FILE * fout,const double u[],
                            const Vertice vert[], const int map[])=0;
   virtual void printGQtofile(FILE * fout,const double ftemp[],
                              const double ftemp1[],
@@ -81,7 +81,7 @@ class Stdel
                               const Vertice vert[],
                               const int map[],
                               const double JV[]) =0;
-  virtual void computeVertice(double f_vert[],const double u[], 
+  virtual void computeVertice(double f_vert[],const double u[],
 			      const Vertice vert[], const int map[])=0;
   virtual void computeAtPoints(const int npoints, const double LocCoord[],const double u[],
 			       const Vertice vert[], const int map[],double f[],double GloCoord[])=0;
@@ -89,14 +89,14 @@ class Stdel
   virtual void evalGQ(double f0[],const double u0[],const int NF=1,const int nvar=0)=0;
   virtual void eval_Phi(const int m,double Phi[])=0;
   virtual void eval_GradPhi(const Vertice vert[], const int map[],const int m,double ** der)=0;
-  virtual void Gradiente(FILE * fout, double ** grad,  
-			 double (*func)(double, double, double), 
+  virtual void Gradiente(FILE * fout, double ** grad,
+			 double (*func)(double, double, double),
 			 const Vertice vert[], const int map[])=0;
-  virtual void Gradiente(FILE * fout, double ** grad,  
-			 const double fvec[], 
+  virtual void Gradiente(FILE * fout, double ** grad,
+			 const double fvec[],
 			 const Vertice vert[], const int map[])=0;
-  virtual void Gradiente(double ** grad,  
-			 const double fvec[], 
+  virtual void Gradiente(double ** grad,
+			 const double fvec[],
 			 const Vertice vert[], const int map[])=0;
   virtual void print_nome(FILE *)=0;
 
@@ -114,7 +114,7 @@ class Stdel
 // 			  const int gbnmap[],double bf[],
 // 			  double (*f)(double,double,double),
 // 			  const int varn,const int NFields)=0;
-//   
+//
 //   virtual void fluxo(const int aresta,const Vertice vert[],
 // 		     const int gbnmap[],const double f0[][3],
 // 		     double bs[],
@@ -123,7 +123,7 @@ class Stdel
   // Calcular os tracos nos pontos de quadratura Gauss_Jacobi (nao incluir os pontos extremos
   virtual void trace(const int lado,const int Q,const int sinal,
                      const double *valores,double *saida, const int vert_map[] = 0)=0;
-  virtual void computeFuncGQ(double f_[], 
+  virtual void computeFuncGQ(double f_[],
 			     const Vertice vert[], const int map[],
 			     double (*func)(double,double,double))=0;
   virtual void vector_of_integral_of_f_Phi_dv(double vec[],
@@ -131,9 +131,9 @@ class Stdel
 				    //const Vertice vert[],const int map[],
 				    const double JV[])=0;
   virtual void vector_of_integral_of_f_Phi_dv(double vec[],
-				    double (*func)(double, double, double), 
+				    double (*func)(double, double, double),
 				    const Vertice vert[], const int map[],
-				    const double JV[])=0; 
+				    const double JV[])=0;
   virtual void elem_traces(const Vertice ptvert[],const int Vert_map[],
                            const int sinal[],double *** TP,double **** TGP, double * Jb)=0;
   virtual void trace_Jb(const Vertice vert[],const int map[],const int sinal[],
@@ -142,21 +142,24 @@ class Stdel
   virtual const int face_lvert(const int & i, const int & j) const = 0;
   virtual const int show_nvf(const int &i) const = 0;
   virtual const int show_face_tipo(const int &i) const = 0;
+
   virtual const int show_fd0(const int &i) const = 0;
   virtual const int show_fd1(const int &i) const = 0;
   virtual const int show_fv2(const int &i) const = 0;
   virtual const int show_ind_mode(const int & i, const int & j = 0, const int & k =0)
                                   const = 0;
-  virtual void superficie_externa(const Vertice vert[],const int Vert_map[], 
+  virtual void superficie_externa(const Vertice vert[],const int Vert_map[],
                                   const int & num_local,double & area,double normal[3]) = 0;
   // virtual void set_b(Mat2<double> & b, const Vertice vert[], const int map[])=0;
  // virtual const int aresta_val(int i, int j) = 0;// const {return aresta[i][j];};
+    virtual void face_GQCoord(const Vertice vert[],const int map[],
+                              const int num_local,const int qmax,
+                              double x[],double y[],double z[]) = 0;
 
-  
- protected:  
-  
+ protected:
+
   int tipo;    ///< type of the element
-  int ndim;    ///< number of geometrical dimension 
+  int ndim;    ///< number of geometrical dimension
   int nv;      ///< number of vertices
   int ne;      ///< number of edges
   int nf;      ///< number of faces
@@ -165,7 +168,7 @@ class Stdel
   int vtk_type;///< number of element for vtk file
   int nn;      ///< number of modes (and/or modes)
   int nb;      ///< number of boundary (shared) modes (or modes)
-  int P[3];    ///< (number of modes - 1) in each direction 
+  int P[3];    ///< (number of modes - 1) in each direction
   int Q[3];    ///< number of Gauss Quadrature points in direction i
   int NGQP;    ///< total number of Gauss Quadrature points
   int gqt[3];  /*!< gqt Gauss Quadrature Type:
@@ -177,7 +180,7 @@ class Stdel
                   \param 1=y;
                   \param 2=z.
                   */
-                
+
   double xGQ[3][MAXQ];/*!< coordinates of the Gauss quadrature points
 		\param Index of the row refers to the direction: 0=x; 1=y; 2=z.
                 \param Index of the column refers to the quadrature point */
@@ -185,8 +188,8 @@ class Stdel
 	\param Index of the row refers to the direction: 0=x; 1=y; 2=z.
                 \param Index of the column refers to the quadrature point */
   Mode mode_[MAXMODES];///< mode_[m(ijk)]= number of the expansion function into the local
-  
-  double D[MAXQ][MAXQ][3]; /*!< Coeficientes para a derivacao por colocacao 
+
+  double D[MAXQ][MAXQ][3]; /*!< Coeficientes para a derivacao por colocacao
 			     Matrizes locais */
   double Phi_val[MAXMODES][MAXQ*MAXQ]; ///< Contem os vetores Phi nos pontos de quadratura
   double Mb_comp[MAXNBL][MAXNBL]; //!< Matriz de massa compacta de Schur
@@ -197,11 +200,11 @@ class Stdel
   int * bmapv= nullptr; //!< border_map_valores
   int * bmapi= nullptr; //!< border_map_inicio
   double *  D_Phi_val = nullptr;
-  
+
   //virtual void make_mass_matrices(int NFIELDS)=0;
-// virtual void printtoarray(const double u[], 
+// virtual void printtoarray(const double u[],
 // 			    const Vertice vert[], const int map[],
-// 			    double x[], double y[], double z[], 
+// 			    double x[], double y[], double z[],
 // 			    double ftemp[])=0;
 
 };

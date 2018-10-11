@@ -40,11 +40,11 @@ void quad_ordem(int Av[4],int Bi[4],int dir[3], int sgn[3], int & v2)
     v[1] = v[3];
     v[3] = temp;
   }
-  printf("\n");
+//  printf("\n");
     for(int k=0; k < 4; ++k){
         Av[k] = v[k];
         Bi[k] = i[k];
-    printf("v[%d] = %d  i[%d] = %d\n", k, v[k], k, i[k]);
+  //  printf("v[%d] = %d  i[%d] = %d\n", k, v[k], k, i[k]);
     }
   // Usar este trecho no hexahedral.cc
   dir[0]=(i[1]-i[0]);
@@ -63,7 +63,7 @@ void quad_ordem(int Av[4],int Bi[4],int dir[3], int sgn[3], int & v2)
   dir[1] /=2;
   dir[2] /=2;
 
-  printf("quad_ordem\ndir[0] = %d sgn[0] = %d\ndir[1] = %d sgn[1] = %d\ndir[2] = %d v2 = %d\n",dir[0], sgn[0], dir[1],sgn[1],dir[2], v2);
+ // printf("quad_ordem\ndir[0] = %d sgn[0] = %d\ndir[1] = %d sgn[1] = %d\ndir[2] = %d v2 = %d\n",dir[0], sgn[0], dir[1],sgn[1],dir[2], v2);
 };
 
 

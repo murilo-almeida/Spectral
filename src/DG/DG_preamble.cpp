@@ -18,14 +18,14 @@ void DG_Prob::preamble(char * arq_entrada)
   //FILE *finput_geo,*finput_par;
   char arq_geo[256]; // arquivo de geometria
   char arq_par[256]; // arquivo de parametros
-  
+
   // Seq: 01  DG_Prob::preamble
-  
+
   if(myid==0) {
-    
+
     printf("Numero de processos = %d\n",comm_size);
     printf("PONTO 1: Comeco. clock acumulado =%u\n",(unsigned) clock());
-    
+
     // Alteracoes no preamble - parte trazida de Ler_arquivos
     cout << "\nArquivo de Entrada: "<<arq_entrada<< '\n';
     FILE *finput0; // arquivo de entrada
@@ -33,11 +33,11 @@ void DG_Prob::preamble(char * arq_entrada)
     // **********************
     // Arquivo de Entrada   *
     // **********************
-  
+
     // Ler o nome do arquivo de dados da geometria -- grade
     fscanf(finput0,"%s",arq_geo); strcat(arq_geo,"\0");// Linha 1
     cout << "Arquivo de Geometria: "<<arq_geo<< '\n';
-    
+
     // Ler o nome do arquivo de saida
     fscanf(finput0,"%s",arq_sai); strcat(arq_sai,"\0");// Linha 2
     strcpy(arq_rst,arq_sai);
@@ -47,11 +47,11 @@ void DG_Prob::preamble(char * arq_entrada)
     printf("Arquivo para re-inicio %s\n",arq_rst);
     strcat(arq_flu,".fluxes\0");
     cout << "Arquivo de Saida de fluxos: "<<arq_flu<< '\n';
-    
+
     // Ler o nome do arquivo de eco
     fscanf(finput0,"%s",arq_eco); strcat(arq_eco,"\0");  // Linha 3
     cout << "Arquivo de Eco: "<<arq_eco<< "\n\n";
-    
+
     // Ler o numero de espacos interpolantes (NumFIELDS)
     //fscanf(finput0,"%d %*s",&NumFIELDS);
     fscanf(finput0,"%*s"); // Ler e descarta a linha contendo "NumFIELDS"; NumFIELDS especificado em GeProb<N_VAR,NumFIELDS>
@@ -59,15 +59,15 @@ void DG_Prob::preamble(char * arq_entrada)
 			// Ler os dados de cada Field
       fscanf(finput0,"%d %d %d",&Field[i].ordem, &Field[i].P, &Field[i].Q);
     }
-    
+
     // Ler o numero de variaveis (NumVAR); N_VAR eh especificado em GeProb<N_VAR,NumFIELDS> e pode ser maior que NumFIELDS;
     fscanf(finput0,"%*s");// Ler string e descarta
-    
+
     for(int i =0; i<NumVAR;++i) {
       //Ler os dados de cada variavel
       fscanf(finput0,"%d",&FieldOfVar[i]);
     }
-    
+
     fscanf(finput0,"%s",arq_par); strcat(arq_par,"\0"); // nome do arquivo de parametros
     fclose(finput0); // fechou o arquivo de entrada
   } // terminou if(myid == 0)
@@ -80,25 +80,25 @@ void DG_Prob::preamble(char * arq_entrada)
       MPI::COMM_WORLD.Bcast(&Field[ii].P,1,MPI::INT,0);
       MPI::COMM_WORLD.Bcast(&Field[ii].Q,1,MPI::INT,0);
     }
-    
+
     for(int ii=0;ii<NumVAR;++ii) {
       MPI::COMM_WORLD.Bcast(&FieldOfVar[ii],1,MPI::INT,0);
     }
   }
 #endif
-  
+
   // *************************************************************************
   // Ler os parametros especificos do problema
   // *************************************************************************
-  
+
   Ler_Arquivo_Dados_DG(arq_par); // formato novo do arquivo de entrada
-  
+
   Ler_e_Processar_malha(arq_geo);
-  
+    cout << "Passou Ler_e_Processar_malha(arq_geo); "<< std::endl;
   // ****************************
   // Impor as Condicoes_contorno
   // ****************************
-  
+
   // *************************************************
   // Criar vetores globais para tracos de pw e sn    *
   // *************************************************
@@ -108,25 +108,59 @@ void DG_Prob::preamble(char * arq_entrada)
     ntr+=el[i].show_ptr_stdel(0)->nborder_val();
     el[i].inicia_gbtrbmap(count);
   }
-  
+
   gbtrpw = new double [count];//trpw;
   gbtrsn = new double [count];//trsn;
-  
+
   // ***************************************************
   // Iniciar os mapas nos elementos;                   *
   // Preencher os mapas de valores internos e externos *
   // nos contornos dos elementos;                      *
   // Impor as condicoes de contorno                    *
-  // ***************************************************  
+  // ***************************************************
   for ( int i = 0; i < NBORDER; ++i ) {
     int t  = border[i].tipo;
     int e0 = border[i].elemento[0];
     int a0 = border[i].num_local[0];
+
     //   int s0 = border[i].sinal[0];
     int bind0 = el[e0].get_trace_border_map(a0);
     border[i].gbtrbind[0]=bind0;
-    
-    if(t==2) {// interior border; two adjacent elements 
+
+      // *****************************************************
+      // Tentativa de 02/10/2018
+      int qlocal = el[e0].show_ptr_stdel(0)->qborder_val();
+      double x[qlocal], y[qlocal], z[qlocal];
+      const int nvert=el[e0].show_ptr_stdel(0)->nv_val();
+     // cout << "nvert em Preamble "<< nvert << std::endl;
+      int map[nvert];
+      for (int i=0;i<nvert;++i){
+          map[i]=el[e0].show_Vert_map(i);
+      }
+      el[e0].show_ptr_stdel(0)->face_GQCoord(V,map,a0,qlocal,x,y,z);
+
+      if(t == -1 || t == 1){
+          border[i].pdir = new double [qlocal];
+          for(int q=0;q<qlocal;++q){
+              border[i].pdir[q]=funcao_pdir(x[q],y[q],t);
+          }
+          if(t==-1){
+              nin++;
+              in_borders.push_back(i);
+              border[i].sdir = new double[qlocal];
+              for(int q=0;q<qlocal;++q){
+                  border[i].sdir[q]=funcao_sdir(x[q],y[q]);
+              }
+          }
+          else {
+              out_borders.push_back(i);
+              nout++;
+          }
+      }
+
+      // Fim de tentativa de 02/10/2018
+    // **************************************
+    if(t==2) {// interior border; two adjacent elements
       int e1 = border[i].elemento[1];
       int a1 = border[i].num_local[1];
       //   int s1 = border[i].sinal[1];
@@ -136,10 +170,12 @@ void DG_Prob::preamble(char * arq_entrada)
       el[e0].set_stgbtrbmap(a0,bind0,bind1);
       el[e1].set_stgbtrbmap(a1,bind1,bind0);
     }
-    else // boundary border; vmapM=vmapP 
+    else // boundary border; vmapM=vmapP
       el[e0].set_stgbtrbmap(a0,bind0,bind0);
   }
-  Processa_condicoes_contorno();
+    // Alterado em 2/10/2018
+  //Processa_condicoes_contorno();
+    cout << "Saindo de Preamble\n";
 }
 
 
@@ -220,4 +256,3 @@ void DG_Prob::MPI_Recebe_Dados_DG()
   MPI::COMM_WORLD.Bcast(&sn_ini,1,MPI::DOUBLE,0);
   MPI::COMM_WORLD.Bcast(&pw_ini,1,MPI::DOUBLE,0);
 };
-

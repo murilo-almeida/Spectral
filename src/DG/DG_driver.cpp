@@ -28,9 +28,9 @@ void DG_Prob::Driver(char * str)
   // Condicoes iniciais
   // *****************************************************
 
-
+cout << "Entrando em initial_conditions\n";
   DG_initial_conditions();
-    
+    cout << "Passou DG_initial_conditions();\n";
     NumGlobalElements = NumD;
     StandardMap = Teuchos::rcp(new Epetra_Map(NumGlobalElements, 0, *Comm));
 
@@ -50,7 +50,7 @@ void DG_Prob::Driver(char * str)
   TrilinosSolver="Amesos";
   //TrilinosSolver="AztecOO";
   cout << "\nUsando TrilinosSolver = "<< TrilinosSolver << "\n";
-  
+
   //"Amesos_Mumps; // nao existe
   //"Amesos_Superludist";  // nao funciona
   //"Amesos_Superlu; // nao funciona
@@ -58,7 +58,7 @@ void DG_Prob::Driver(char * str)
   //"Amesos_Umfpack" ;
   //"Amesos_Klu"; // lento
   //"Amesos_Lapack";
-  
+
   AmesosSolverType="Amesos_Umfpack";
   if(TrilinosSolver=="Amesos")
     cout << "Usando AmesosSolverType = "<< AmesosSolverType << "\n\n";

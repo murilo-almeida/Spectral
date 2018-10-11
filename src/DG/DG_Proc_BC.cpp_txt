@@ -1,0 +1,204 @@
+/*****************************************************************************/
+/*****************************************************************************/
+#undef __FUNCT__
+#define __FUNCT__ "DG_run"
+/*****************************************************************************/
+/*****************************************************************************/
+#include "DG_Prob.h"
+#include "PhElem.hpp"
+#include "GeProb.hpp"
+
+void DG_Prob::Proc_BC()
+// ****************************************************************************************
+{
+    cout << "\nUsando DG_Prob::Processa_condicoes_contorno"<<std::endl;
+    // Inicializar o bflag com valores 1 (desconhecido)
+    for(int i=0;i<NG;i++) bflag.push_back(1); //bflag[i]=1;//bflag=1: desconhecido
+    
+    nin = 0;
+    nout = 0;
+    double x,y,aux;
+    const int ndim = el[0].show_ptr_stdel(0)->ndim_val();
+    
+    for (int i=0;i<NBORDER;++i) {
+        int t=border[i].tipo;
+        
+        const int _face = border[i].num_local[0];
+        DG_Elem & _elem = el[border[i].elemento[0]];
+        const int _elem_type = _elem.type_val();
+        Stdel * _ptr_stdel = _elem.show_ptr_stdel(0);
+        const int qmax = _ptr_stdel->qborder_val();
+        const int _nvf = _ptr_stdel->show_nvf(_face);
+        
+        double x[qmax], y[qmax], z[qmax];
+        
+        _elem.face_GQCoord(_face,qmax,x,y,z);
+        
+        
+        
+        if(t == -1 || t == 1){
+            border[i].pdir = new double [qmax];
+            for(int q=0;q<qmax;++q){
+                border[i].pdir[q]=funcao_pdir(x,y,t);
+            }
+            if(t==-1){
+                nin++;
+                in_borders.push_back(i);
+                border[i].sdir = new double[qmax];
+                for(int q=0;q<qmax;++q){
+                    border[i].sdir[q]=funcao_sdir(x,y);
+                }
+            }
+            else {
+                out_borders.push_back(i);
+                nout++;
+            }
+            
+        }
+    }
+    
+    printf("Processou DNBC= %d condicoes de contorno: ",DNBC);
+    printf("nin = %d nout = %d \n\n",nin,nout);
+};
+// *********************************************************************
+
+void Triangle::face_GQCoord(const Vertice vert[],const int map[],const int a0,const int qmax,double x[],double y[],double z[])
+{
+    if(qmax = qborder)
+    {
+        cout << "Incompatibilidade de dados: qmax =! qborder\n"<< std::endl;
+        exit(0);
+    }
+    double xq[qmax],w[qmax];
+    double Dtemp[MAXQ][MAXQ];
+    // nao inclui os pontos extremos
+    Gauss_Jacobi_parameters(qmax,0.0,0.0,xq,w,Dtemp);
+    // *******************************************************
+    int na=map[aresta[a0][0]];
+    int nb=map[aresta[a0][1]];
+    if(nb<na){
+        int temp= na;
+        na=nb;
+        nb=temp;
+    }
+    double xa=vert[na].x;
+    double ya=vert[na].y;
+    double xb=vert[nb].x;
+    double yb=vert[nb].y;
+    double xsum=(xb+xa)*0.5;
+    double xdif=(xb-xa)*0.5;
+    double ysum=(yb+ya)*0.5;
+    double ydif=(yb-ya)*0.5;
+    for(int q=0;q<qmax;++q){
+        aux=xq[q];
+        x[q]=xsum+xdif*aux;
+        y[q]=ysum+ydif*aux;
+        z[q]=0.0;
+    }
+    
+}
+
+void Quadrilateral::face_GQCoord(Vertice vert,map,a0,qmax,x,y,z)
+{
+    if(qmax = qborder)
+    {
+        cout << "Incompatibilidade de dados: qmax =! qborder\n"<< std::endl;
+        exit(0);
+    }
+    double xq[qmax],w[qmax];
+    double Dtemp[MAXQ][MAXQ];
+    // nao inclui os pontos extremos
+    Gauss_Jacobi_parameters(qmax,0.0,0.0,xq,w,Dtemp);
+    // *******************************************************
+    int na=map[aresta[a0][0]];
+    int nb=map[aresta[a0][1]];
+    if(nb<na){
+        int temp= na;
+        na=nb;
+        nb=temp;
+    }
+    double xa=vert[na].x;
+    double ya=vert[na].y;
+    double xb=vert[nb].x;
+    double yb=vert[nb].y;
+    double xsum=(xb+xa)*0.5;
+    double xdif=(xb-xa)*0.5;
+    double ysum=(yb+ya)*0.5;
+    double ydif=(yb-ya)*0.5;
+    for(int q=0;q<qmax;++q){
+        aux=xq[q];
+        x[q]=xsum+xdif*aux;
+        y[q]=ysum+ydif*aux;
+        z[q]=0.0;
+    }
+    
+}
+
+// **************************************************************
+void Hexahedral::face_GQCoord(const Vertice vert,const int map[],const int a0,
+const int qmax,double xx[],double yy[],double zz[])
+{
+    if(qmax != qborder)
+    {
+        cout << "Incompatibilidade de dados: qmax != qborder\n"<< std::endl;
+        exit(0);
+    }
+
+    int _nvf = nvf[a0];
+    int Av[_nvf];
+    int Bi[_nvf];
+    for(int k=0;k<_nvf;++k){
+        Bi[k] = face[a0][k];
+        Av[k] = map[Bi[k]];
+    }
+    int dir[3];
+    int sign[3]={1,1,1};
+    
+    int v2;
+    
+    quad_ordem(Av,Bi,dir,sign,v2);
+
+    for(int i=0;i<4;++i)
+    {
+        x[0][i]=vert[Av[i]].x;
+        x[1][i]=vert[Av[i]].y;
+        x[2][i]=vert[Av[i]].z;
+    }
+
+    // Posicoes dos vertices em termos dos eta's 
+    int a[2][4] = { // Usar o Av do jeito que sai de qua_ordem; sequencia segue as arestas
+        {0,1,1,0}, // (eta0 + 1)/2
+        {0,0,1,1}  // (eta1 + 1)/2
+    }; 
+    int d0 = dir[0];
+    int d1 = dir[1];
+    int q0 = Q[d0];
+    int q1 = Q[d1];
+    int eta0,eta1;
+    double f[2][2];
+   
+    int n=0;
+    for(int j=0;j<q1;++j){
+        eta1 = xGQ[d1][j];
+        f[1][0] = 0.5*(1-eta1); // funcao inferior
+        f[1][1] = 0.5*(1+eta1); // funcao superior
+        for(int i=0;i<q0;++i){
+            eta0 = xGQ[d0][i];
+            f[0][0] = 0.5*(1-eta0); // funcao esquerda
+            f[0][1] = 0.5*(1+eta0); // funcao direita
+  
+            aux0=0.0;
+            aux1=0.0;
+            aux2=0.0;
+            for(int l=0;l<4;++l){
+                aux = f[0][a[0][l]] * f[1][a[1][l]];
+                aux0 += x[0][l] * aux;
+                aux1 += x[1][l] * aux;
+                aux2 += x[2][l] * aux;
+            }
+            xx[n] = aux0;
+            yy[n] = aux1;   
+            zz[n] = aux2;   
+            n++;
+    }
+}

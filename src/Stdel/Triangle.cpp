@@ -29,7 +29,7 @@ Triangle::~Triangle()
   bmapi=nullptr;
   bmapv=nullptr;
   delete [] D_Phi_val; D_Phi_val=nullptr;
-  
+
   //libera memoria de ind_mode_
   for (int i=0;i<=P[0]+1;++i){
     delete [] ind_mode_[i];  ind_mode_[i] = nullptr;
@@ -56,13 +56,13 @@ void Triangle::set(int p0, int q0)
   P[2]=0;  Q[2]=1;  gqt[2]=1;// Terceira dimensao
   NGQP=Q[0]*Q[1]*Q[2];
   qborder = q0;
-  
+
   //aloca memoria para ind_mode_
   ind_mode_ = new int * [P[0]+2];
   for (int i=0;i<=P[0]+1;++i){
     ind_mode_[i] = new int [P[1]+1];
   }
-  
+
 #ifdef PRINTF_ON
   printf("Em Triangle::set apos Sair de Triangle::setStdel\n");
   printf("P: %d %d\nQ: %d %d\ngqt : %d %d\n",P[0],P[1],Q[0],Q[1],gqt[0],gqt[1]);
@@ -132,20 +132,20 @@ void Triangle::set(int p0, int q0)
   printf("passou gauss_parameters\n");
   printf("Saindo de Triangle::set: nv = %d  nn = %d (< MAXMODES = %d) nb = %d (< MAXNB = %d)\n",nv,nn,MAXMODES,nb,MAXNB);
 	printf("Triangle::set nn = %d nb= %d\n",nn,nb);
-  
+
 #endif
- 
+
   // Construcao da matriz Phi_val[nn][Q[0]*Q[1]]
   double eta1,eta2;
   double Fa[Q[0]],Fb[Q[1]];
   for(int m=0;m<nn;m++){
-   
+
     int p= mode_[m].p_val();
     int q= mode_[m].q_val();
     for(j=0;j<Q[1];j++){
       eta2=xGQ[1][j];
       Fb[j]=Psib(P[0],P[1],p,q,eta2);
-    } 
+    }
     for(i=0;i<Q[0];i++){
       eta1=xGQ[0][i];
       Fa[i]=Psia(P[0],p,eta1);
@@ -196,7 +196,7 @@ double Triangle::mass(int m1, int m2, const double JV[])
     for(i=0;i<Q[0];i++){
       Fa=Psia(P[0], p,xGQ[0][i]);//primeiro
       Ga=Psia(P[0], r,xGQ[0][i]);
-      aaux+=wGQ[0][i]*Fa*Ga;//*JV[i+Q[0]*j];// <==multiplica pelo Jacobiano-< 
+      aaux+=wGQ[0][i]*Fa*Ga;//*JV[i+Q[0]*j];// <==multiplica pelo Jacobiano-<
     }
     Fb=Psib(P[0], P[1], p, q, xGQ[1][j]);
     Gb=Psib(P[0], P[1], r, s, xGQ[1][j]);
@@ -379,7 +379,7 @@ void Triangle::gauss_parameters_default()
 // OBSERVACAO: MULTIPLICAR POR JV
 // ****************************************************************************
 void Triangle::vector_of_integral_of_f_Phi_dv(double vec[],
-				    double (*func)(double, double, double), 
+				    double (*func)(double, double, double),
 				    const Vertice vert[], const int map[],
 				    const double JV[])
 {
@@ -390,7 +390,7 @@ void Triangle::vector_of_integral_of_f_Phi_dv(double vec[],
   double xa,ya,za,xb,yb,zb,xc,yc,zc;
   int Pdim=P[0]+2;// inclui ponto colapsado (caso especial)
   double fp_xi2[Pdim][Q[1]];
-  
+
   xa=vert[map[0]].x;
   xb=vert[map[1]].x;
   xc=vert[map[2]].x;
@@ -406,7 +406,7 @@ void Triangle::vector_of_integral_of_f_Phi_dv(double vec[],
   gaux1=xa-xb;
   gaux2=ya-yb;
   gaux3=za-zb;
-   
+
   // construir matriz temporaria fp_xi2
   for(p=0;p<Pdim;p++){
     // fazer loop sobre xi2
@@ -428,7 +428,7 @@ void Triangle::vector_of_integral_of_f_Phi_dv(double vec[],
       fp_xi2[p][j]=aux;
     }
   }
-  
+
   // Multiplicar o vetor pela matriz temporaria
   for(n=0;n<nn;n++){
     p= mode_[n].p_val();
@@ -442,7 +442,7 @@ void Triangle::vector_of_integral_of_f_Phi_dv(double vec[],
     }
     vec[n]=aux;
   }
-  
+
   // ------Multiplicar pelo Jacobiano----
   //for(n=0;n<nn;n++)vec[n]*=JV[0];// <------Multiplicar pelo Jacobiano----<
 };
@@ -458,20 +458,20 @@ void Triangle::vector_of_integral_of_f_Phi_dv(double vec[],
  // double xa,ya,za,xb,yb,zb;//xc,yc,zc;
   int Pdim=P[0]+2;// inclui ponto colapsado (caso especial)
   double fp_xi2[Pdim][Q[1]];
-  
-   
+
+
   // construir matriz temporaria fp_xi2
   for(p=0;p<Pdim;p++){
     // fazer loop sobre xi2
     int count=0;
     for(j=0;j<Q[1];j++){
-  
+
       //fazer soma em xi1
       aux=0.0;
       for(i=0;i<Q[0];i++){
 	// coordenadas
         eta1=xGQ[0][i];
-    
+
         Fa=Psia(P[0], p,eta1);
         aux+=(wGQ[0][i]*Fa*func[count])*JV[i+Q[0]*j];// <===Jacobiano==<
         count++;
@@ -479,7 +479,7 @@ void Triangle::vector_of_integral_of_f_Phi_dv(double vec[],
       fp_xi2[p][j]=aux;
     }
   }
-  
+
   for(n=0;n<nn;n++){
     p= mode_[n].p_val();
     q= mode_[n].q_val();
@@ -492,7 +492,7 @@ void Triangle::vector_of_integral_of_f_Phi_dv(double vec[],
     }
     vec[n]=aux;
   }
-  
+
   // ------Multiplicar pelo Jacobiano----
   //for(n=0;n<nn;n++)vec[n]*=JV[0];// <------Multiplicar pelo Jacobiano----<
 };
@@ -500,7 +500,7 @@ void Triangle::vector_of_integral_of_f_Phi_dv(double vec[],
 
 // ****************************************************************************
 void Triangle::printtofile(FILE * fout,const double u[],
-			   double (*func)(double,double,double), 
+			   double (*func)(double,double,double),
 			   const Vertice vert[], const int map[])
 {
   double aux,eta1,eta2,x1,x2,x3;
@@ -540,7 +540,7 @@ void Triangle::printtofile(FILE * fout,const double u[],
   }
 };
 // ****************************************************************************
-void Triangle::printtofile(FILE * fout,const double u[], 
+void Triangle::printtofile(FILE * fout,const double u[],
 			   const Vertice vert[], const int map[])
 {
   double aux,eta1,eta2,x1,x2,x3;
@@ -662,7 +662,7 @@ void Triangle::printwGQtofile(FILE * fout,
   }
 };
 // ****************************************************************************
-void Triangle::printtoarray(const double u[], 
+void Triangle::printtoarray(const double u[],
 			    const Vertice vert[], const int map[],
 			    double x[], double y[], double z[], double ftemp[])
 {
@@ -712,7 +712,7 @@ void Triangle::evalGQ(double f0[],double f1[],
   int a;
   int i,j,p,q,k;
   int n=0;
-  int Pdim=P[0]+2;	
+  int Pdim=P[0]+2;
   double ftemp0[Pdim],ftemp1[Pdim];
   for(j=0;j<Q[1];j++){
     eta2=xGQ[1][j];
@@ -738,7 +738,7 @@ void Triangle::evalGQ(double f0[],double f1[],
     p=P[0]+1;q=P[1]; // Ponto com p=P[0]+1
     Fb=Psib(P[0],P[1],p,q,eta2);
     ftemp0[p]+=Fb*uh0[a];
-    ftemp1[p]+=Fb*uh1[a];    
+    ftemp1[p]+=Fb*uh1[a];
     // AB
     a=3;
     q=0;
@@ -801,7 +801,7 @@ void Triangle::evalGQ(double f0[],const double u0[],const int NF,const int nvar)
   int n=0;
   int Pdim=P[0]+2;
   double ftemp0[Pdim];
-  //printf("Triangle::evalGQ    NF = %d    nvar= %d\n",NF,nvar); 
+  //printf("Triangle::evalGQ    NF = %d    nvar= %d\n",NF,nvar);
   for(j=0;j<Q[1];j++){
     eta2=xGQ[1][j];
     // ************************************************************************
@@ -821,7 +821,7 @@ void Triangle::evalGQ(double f0[],const double u0[],const int NF,const int nvar)
     // C Ponto colapsado
     a=2; p=P[0]+1; q=P[1];
     Fb=Psib(P[0],P[1],p,q,eta2);
-    ftemp0[p]+=Fb*u0[a*NF+nvar];   
+    ftemp0[p]+=Fb*u0[a*NF+nvar];
     // AB
     a=3; q=0;
     for(p=1;p<P[0];p++){
@@ -866,7 +866,7 @@ void Triangle::evalGQ(double f0[],const double u0[],const int NF,const int nvar)
 // ****************************************************************************
 // Evaluates the value of the field at the vertices of the element
 // ****************************************************************************
-void Triangle::computeVertice(double f_vert[],const double u[], 
+void Triangle::computeVertice(double f_vert[],const double u[],
 		    const Vertice vert[], const int map[])
 {
   double aux, Fa,Fb,eta1,eta2;//x1,x2,x3;
@@ -876,9 +876,9 @@ void Triangle::computeVertice(double f_vert[],const double u[],
   int i,p,q;
   i=0;
   for(eta2=-1.0;eta2<=1.0;eta2+=2.0){
-  
+
     for(eta1=eta2;eta1<=1.0;eta1+=2.0){
-    
+
       aux=0.0;
       for(m1=0;m1<nn;m1++){
         p= mode_[m1].p_val();
@@ -895,7 +895,7 @@ void Triangle::computeVertice(double f_vert[],const double u[],
 // ****************************************************************************
 // Evaluates the value of the field at points
 // ****************************************************************************
-void Triangle::computeAtPoints(const int npoints, const double LocCoord[],const double u[], 
+void Triangle::computeAtPoints(const int npoints, const double LocCoord[],const double u[],
 			       const Vertice vert[], const int map[],double f[],double GloCoord[])
 {
   double aux, Fa,Fb,eta1,eta2,x1,x2,x3;
@@ -921,7 +921,7 @@ void Triangle::computeAtPoints(const int npoints, const double LocCoord[],const 
   for(i=0;i<npoints;i++){
     eta1=LocCoord[2*i ];
     eta2=LocCoord[2*i+1];
- 
+
     eaux=(1.0-eta2)/4.0;
     haux=(1.0+eta2)/2.0;
     // coordenadas (conforme Karniadakis pagina 108)
@@ -950,14 +950,14 @@ void Triangle::make_Phi(const int m,double Phi[])
   int i,j;
   int p,q;
   int n;
-  int sizeQ=Q[0]*Q[1];	
+  int sizeQ=Q[0]*Q[1];
   double Fa[sizeQ],Fb[sizeQ];
   p= mode_[m].p_val();
   q= mode_[m].q_val();
   for(j=0;j<Q[1];j++){
     eta2=xGQ[1][j];
     Fb[j]=Psib(P[0],P[1],p,q,eta2);
-  } 
+  }
   for(i=0;i<Q[0];i++){
     eta1=xGQ[0][i];
     Fa[i]=Psia(P[0],p,eta1);
@@ -1014,7 +1014,7 @@ void Triangle::Jacobian(const Vertice vert[],const int map[],double * JV)
 //  #endif
     for(int j=0;j<Q[1];j++)
       for(int i=0;i<Q[0];i++)
-	JV[i+Q[0]*j]=Jacobian;     
+	JV[i+Q[0]*j]=Jacobian;
 };
 // ****************************************************************************
 
@@ -1058,7 +1058,7 @@ void Triangle::Gradiente(double * grad[],
   b[0][1]=-a12/J2D;
   b[1][0]=-a21/J2D;
   b[1][1]=a11/J2D;
-  
+
   // calculo das derivadas com relacao a eta1 e eta2
   for(int q=0;q<Q[1];q++){
     for(int p=0;p<Q[0];p++){
@@ -1073,7 +1073,7 @@ void Triangle::Gradiente(double * grad[],
       df[m][1]=aux1;
     }
   } // Q[1]*Q[0]*Q[0]  operacoes
-  
+
   // calculo das derivadas com relacao a xi1, xi2
   for(int q=0;q<Q[1];q++){
     eta2=xGQ[1][q];
@@ -1087,7 +1087,7 @@ void Triangle::Gradiente(double * grad[],
       df[m][1]=aux1;// d/dxi_2
     }
   } // Q[1]*Q[0]  operacoes
-  
+
   // calculo das derivadas com relacao a x1 e x2
   for(int q=0;q<Q[1];q++){
     for(int p=0;p<Q[0];p++){
@@ -1121,7 +1121,7 @@ void Triangle::Gradiente(FILE * fout, double * grad[],
   double a11,a12,a21,a22, J2D;
   double b[2][2];
   double aux,aux0,aux1;
- 
+
 	// coordenadas dos nos
   xa=vert[map[0]].x;
   xb=vert[map[1]].x;
@@ -1144,7 +1144,7 @@ void Triangle::Gradiente(FILE * fout, double * grad[],
   b[0][1]=-a12/J2D;
   b[1][0]=-a21/J2D;
   b[1][1]=a11/J2D;
-  
+
   // calculo das derivadas com relacao a eta1 e eta2
   for(int q=0;q<Q[1];++q){
     for(int p=0;p<Q[0];++p){
@@ -1159,7 +1159,7 @@ void Triangle::Gradiente(FILE * fout, double * grad[],
       df[m][1]=aux1;
     }
   }
-  
+
   // calculo das derivadas com relacao a xi1, xi2
   for(int q=0;q<Q[1];++q){
     eta2=xGQ[1][q];
@@ -1186,7 +1186,7 @@ void Triangle::Gradiente(FILE * fout, double * grad[],
       }
     }
   }
-  
+
   // Cheque do gradiente
   for(j=0;j<Q[1];++j){
     eta2=xGQ[1][j];
@@ -1199,12 +1199,12 @@ void Triangle::Gradiente(FILE * fout, double * grad[],
       // coordenadas x1, x2, x3
       x1=(xa*e1m+xb*e1p)*e2m+e2p*xc;
       x2=(ya*e1m+yb*e1p)*e2m+e2p*yc;
-      
+
       m=i+j*Q[0];
       fprintf(fout,"%11.4e %11.4e %11.4e %11.4e %11.4e\n",x1,x2,grad[0][m],grad[1][m],g(x1,x2,x3));
     }
   }
-  
+
 };
 
 // ****************************************************************************
@@ -1231,7 +1231,7 @@ void Triangle::Gradiente(FILE * fout, double * grad[],
  // za=vert[map[0]].z;
  // zb=vert[map[1]].z;
  // zc=vert[map[2]].z;
-  
+
   // calculo do vetor contendo a funcao nos pontos de integracao de Gauss
   for(j=0;j<Q[1];j++){
     eta2=xGQ[1][j];
@@ -1244,15 +1244,15 @@ void Triangle::Gradiente(FILE * fout, double * grad[],
       // coordenadas x1, x2, x3
       x1=(xa*e1m+xb*e1p)*e2m+e2p*xc;
       x2=(ya*e1m+yb*e1p)*e2m+e2p*yc;
-      
+
       m=i+j*Q[0];
-   
+
       fvec[m]=func(x1,x2,x3);
     }
   }
-  
+
   Gradiente(fout,grad,fvec,vert,map);
-  
+
 };
 // ****************************************************************************
 void Triangle::print_nome(FILE * fout)
@@ -1271,7 +1271,7 @@ void Triangle::Dirichlet(const int aresta,
                          double X[],
                          double (*f)(double,double,double))
 {
-  //cout << "Entrando em Triangle::Dirichlet" << endl;
+  cout << "Entrando em Triangle::Dirichlet" << endl;
   // **************************************************************************
   // flag = 0 : Dirichlet, valor conhecido, bflag=0
   //      = 1 : valor desconhecido, bflag=1
@@ -1281,12 +1281,12 @@ void Triangle::Dirichlet(const int aresta,
   double xa,ya,za,xb,yb,zb;
   double eta1,x1,x2,x3;
   double gaux1,gaux2,gaux3;
-  
+
   double aux,a0,ap;
-  double J=0.0;  
-  
+  double J=0.0;
+
   if(aresta==0)//aresta 0; nos 0 e 1
-    {	
+    {
       xa=vert[vert_map[0]].x;
       xb=vert[vert_map[1]].x;
       ya=vert[vert_map[0]].y;
@@ -1322,7 +1322,7 @@ void Triangle::Dirichlet(const int aresta,
   double func[q];
   double psi[p+1][q];
   int p1=p-1;
- 
+
 //  int Ti[p1*p1],Tj[p1*p1];
 //  double Tx[p1*p1];
 //  int count=0;
@@ -1330,7 +1330,7 @@ void Triangle::Dirichlet(const int aresta,
 #ifdef _NEWMAT
   NEWMAT::Matrix A(p1,p1);
   NEWMAT::ColumnVector B(p1), Y(p1);
-// #else 
+// #else
 //   double A[p1][p1];
 //   double B[p1],Y[p1];
 #endif
@@ -1343,7 +1343,7 @@ void Triangle::Dirichlet(const int aresta,
     gaux2=ya-yb;
     gaux3=za-zb;
     J=sqrt(gaux1*gaux1+gaux2*gaux2+gaux3*gaux3)/2.0;
-    
+
     for(k=0;k<q;k++)
       {
         eta1= x[k];
@@ -1378,10 +1378,10 @@ void Triangle::Dirichlet(const int aresta,
           aux+=psi[i][k]*(func[k]-a0*psi[0][k]-ap*psi[p][k])*wtemp[k];
           B.element(i-1)=aux*J;
       }
-    
+
 #ifdef _NEWMAT
     Y = A.i() * B; B=Y;
-// #else 
+// #else
 //     ResolveSistema(p1,count,Ti,Tj,Tx,B,Y);
 #endif
   }
@@ -1396,7 +1396,7 @@ void Triangle::Dirichlet(const int aresta,
     temp=nmap[1];
     X[temp]=sgn[1]*ap;
     bflag[temp]=flag;
-    for(i=1;i<p;i++){ 
+    for(i=1;i<p;i++){
       ii=i+2;
       //temp=gbnmap[ii]*NFields+varn;
       temp=nmap[ii];
@@ -1471,13 +1471,13 @@ void Triangle::face_Jacobian(const int & num_local,
     lx=vert[v1].x - vert[v0].x;
     ly=vert[v1].y - vert[v0].y;
     lz=vert[v1].z - vert[v0].z;
-    
+
     normal[0] = -sinal_normal[num_local] * ly;
     normal[1] =  sinal_normal[num_local] * lx;
     normal[2] = 0.0;
-    
+
     area = sqrt(normal[0]*normal[0] + normal[1]*normal[1]);
-    
+
     normal[0]/=area;
     normal[1]/=area;
 };
@@ -1492,7 +1492,7 @@ void Triangle::teste(int & v)
 // ****************************************************************************
 // Evaluates the value of the field at the Gauss Quadrature points
 // ****************************************************************************
-void Triangle::computeFuncGQ(double f_[], 
+void Triangle::computeFuncGQ(double f_[],
 			     const Vertice vert[], const int map[],
 			     double (*func)(double,double,double))
 {
@@ -1554,7 +1554,7 @@ void Triangle::computeFuncGQ(double f_[],
 //         a++;
 //       }
 //     }
-//     else if(fnum==1){ //BC 
+//     else if(fnum==1){ //BC
 //       bflag[gbnmap[1] * NFields+varn ]=flag;// B
 //       bflag[gbnmap[2] * NFields+varn ]=flag;// C
 //       a=P[0]+2;
@@ -1568,7 +1568,7 @@ void Triangle::computeFuncGQ(double f_[],
 //         a++;
 //       }
 //     }
-//     else if(fnum==2){ //AC 
+//     else if(fnum==2){ //AC
 //       bflag[gbnmap[0] * NFields+varn ]=flag;// A
 //       bflag[gbnmap[2] * NFields+varn ]=flag;// C
 //       a=2*P[0]+1;
@@ -1596,7 +1596,7 @@ void Triangle::printStdel() const
 /*
 void Triangle::make_mass(double ** MM, const double JV[])
 {
-  int Nb,ni; 
+  int Nb,ni;
   int i,ii,j,jj;
   ni=nn-nb;
 #ifdef PRINTF_ON
@@ -1652,7 +1652,7 @@ void Triangle::elem_traces(const Vertice vert[],const int map[],const int sinal[
   int h,l,m;
   double a11,a12,a21,a22, J2D;
   double b[2][2];
-  double d1,d2,aux0,aux1,aux2,der1,der2;  
+  double d1,d2,aux0,aux1,aux2,der1,der2;
 // coordenadas dos nos
   xa=vert[map[0]].x;
   xb=vert[map[1]].x;
@@ -1672,14 +1672,14 @@ void Triangle::elem_traces(const Vertice vert[],const int map[],const int sinal[
   b[0][1]=-a12/J2D;
   b[1][0]=-a21/J2D;
   b[1][1]=a11/J2D;
-  
+
   //pontos de Gauss em uma dimensao
   double x[qborder], wtemp[qborder], Dtemp[MAXQ][MAXQ];
   Gauss_Jacobi_parameters(qborder, 0.0, 0.0, x, wtemp, Dtemp);
   // Gauss_Jacobi integra precisamente P_(2*q-1)
   // Obs.: Gauss_Lobatto_Jacobi da problemas pois calcula o valor
   // de Phi no ponto colapsado. Alem disso,
-  // Gauss_Lobatto_Jacobi integra precisamente P_(2*q-3): 
+  // Gauss_Lobatto_Jacobi integra precisamente P_(2*q-3):
   // grau menor que Gauss_Jacobi
   h=0;
   aux0=sqrt( (xb-xa)*(xb-xa) + (yb-ya)*(yb-ya)) / 2.0;
@@ -1696,14 +1696,14 @@ void Triangle::elem_traces(const Vertice vert[],const int map[],const int sinal[
   for(int l=0;l<qborder;l++){
     Jb[h*qborder+l]=aux0*wtemp[l];
   }
- 
+
  // int s0=nn*ndim*qborder;
  // int s1=   ndim*qborder;
-  
+
   for(m=0;m<nn;m++) { // loop sobre os modos
     int p= mode_[m].p_val();
     int q= mode_[m].q_val();
-    
+
     // aresta  h = 0
     h=0;
    //int i_m = m*qborder;
@@ -1720,7 +1720,7 @@ void Triangle::elem_traces(const Vertice vert[],const int map[],const int sinal[
       /*TGP[h*s0+m*s1     +l]*/    TGP[h][m][0][l] = der1 * b[0][0] + der2 * b[1][0];
       /*TGP[h*s0+m*s1+qborder+l]*/ TGP[h][m][1][l] = der1 * b[0][1] + der2 * b[1][1];
     } // loop sobre os pontos de Gauss
-    
+
     // aresta  h = 1
     h=1;
   //  i_m = nn*qborder + m*qborder;
@@ -1738,7 +1738,7 @@ void Triangle::elem_traces(const Vertice vert[],const int map[],const int sinal[
       /*TGP[h*s0+m*s1     +l]*/    TGP[h][m][0][l] = der1 * b[0][0] + der2 * b[1][0];
       /*TGP[h*s0+m*s1+qborder+l]*/ TGP[h][m][1][l] = der1 * b[0][1] + der2 * b[1][1];
     } // loop sobre os pontos de Gauss
-    
+
     // aresta  h = 2
     h=2;
    // i_m = h*nn*qborder + m*qborder;
@@ -1756,7 +1756,7 @@ void Triangle::elem_traces(const Vertice vert[],const int map[],const int sinal[
       /*TGP[h*s0+m*s1     +l]*/    TGP[h][m][0][l] = der1 * b[0][0] + der2 * b[1][0];
       /*TGP[h*s0+m*s1+qborder+l]*/ TGP[h][m][1][l] = der1 * b[0][1] + der2 * b[1][1];
     } // loop sobre os pontos de Gauss
-    
+
   } // loop sobre os modos
   //for(int i=0;i<nborder*nn*ndim*qborder;i++)printf("Triangle TGP[%d]= %g\n",i,TGP[i]);
 }
@@ -1789,7 +1789,7 @@ void Triangle::trace_Jb(const Vertice vert[],const int map[],const int sinal[],
     b[0][1]=-a12/J2D;
     b[1][0]=-a21/J2D;
     b[1][1]=a11/J2D;
-    
+
     //pontos de Gauss em uma dimensao
     double x[qborder], wtemp[qborder], Dtemp[MAXQ][MAXQ];
     Gauss_Jacobi_parameters(qborder, 0.0, 0.0, x, wtemp, Dtemp);
@@ -1819,14 +1819,14 @@ void Triangle::trace_Jb(const Vertice vert[],const int map[],const int sinal[],
 // ****************************************************************************
 // Calcula o traco e o coloca na ordem correta de acordo com o sinal da borda *
 // ****************************************************************************
-void Triangle::trace(const int lado, const int qmax, const int sinal, 
+void Triangle::trace(const int lado, const int qmax, const int sinal,
                      const double * valores, // valores nos pontos de Gauss
                      double * saida,
                      const int map[])
 {
   //int qmax = qborder;
   int nd,ind,inc;
-  
+
   if(lado == 0){
 		nd=0;
     ind=0;
@@ -1843,10 +1843,10 @@ void Triangle::trace(const int lado, const int qmax, const int sinal,
       inc=Q[0];
     }
   }
-	
+
 	int q=Q[nd];
   double temp[q];
-	
+
   for(int i = 0; i < q; ++i) {
     saida[i] = valores[ind];
     ind += inc;
@@ -1896,7 +1896,7 @@ void Triangle::trace(const int lado, const int qmax, const int sinal,
       }
       saida[i]=sum;
     }
-  
+
 };
 // revisado em 25/10/2011
 
@@ -1908,7 +1908,7 @@ const int Triangle::show_fd0(const int &i) const {return 0;};
 const int Triangle::show_fd1(const int &i) const {return 0;};
 const int Triangle::show_fv2(const int &i) const {return 0;};
 const int Triangle::show_ind_mode(const int & i, const int & j, const int & k) const {return ind_mode_[i][j];};// a ser implementado
-void Triangle::superficie_externa(const Vertice vert[],const int Vert_map[], 
+void Triangle::superficie_externa(const Vertice vert[],const int Vert_map[],
                                   const int & num_local,
                                   double & area,
                                   double normal[3])
@@ -1920,13 +1920,52 @@ void Triangle::superficie_externa(const Vertice vert[],const int Vert_map[],
   lx=vert[v1].x - vert[v0].x;
   ly=vert[v1].y - vert[v0].y;
   lz=vert[v1].z - vert[v0].z;
-  
+
   normal[0] = -sinal_normal[num_local] * ly;
   normal[1] =  sinal_normal[num_local] * lx;
   normal[2] = 0.0;
-  
+
   area = sqrt(normal[0]*normal[0] + normal[1]*normal[1]);
-  
+
   normal[0]/=area;
   normal[1]/=area;
+};
+
+//const int * Triangle::show_face(const int &i){return aresta[i];};
+void Triangle::face_GQCoord(const Vertice vert[],const int map[],
+                            const int a0,const int qmax,
+                            double x[],double y[],double z[])
+{
+    if(qmax != qborder)
+    {
+        cout << "Incompatibilidade de dados: qmax ("<< qmax <<") != qborder ("<< qborder << ")\n"<< std::endl;
+        exit(0);
+    }
+    double xq[qmax],w[qmax];
+    double Dtemp[MAXQ][MAXQ];
+    // nao inclui os pontos extremos
+    Gauss_Jacobi_parameters(qmax,0.0,0.0,xq,w,Dtemp);
+    // *******************************************************
+    int na=map[aresta[a0][0]];
+    int nb=map[aresta[a0][1]];
+    if(nb<na){
+        int temp= na;
+        na=nb;
+        nb=temp;
+    }
+    double xa=vert[na].x;
+    double ya=vert[na].y;
+    double xb=vert[nb].x;
+    double yb=vert[nb].y;
+    double xsum=(xb+xa)*0.5;
+    double xdif=(xb-xa)*0.5;
+    double ysum=(yb+ya)*0.5;
+    double ydif=(yb-ya)*0.5;
+    for(int q=0;q<qmax;++q){
+        int aux=xq[q];
+        x[q]=xsum+xdif*aux;
+        y[q]=ysum+ydif*aux;
+        z[q]=0.0;
+    }
+
 };

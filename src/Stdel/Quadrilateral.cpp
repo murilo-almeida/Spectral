@@ -29,7 +29,7 @@ Quadrilateral::~Quadrilateral()
   bmapi=nullptr;
   bmapv=nullptr;
   delete [] D_Phi_val; D_Phi_val=nullptr;
-  
+
   //libera memoria de ind_mode_
   for (int i=0;i<=P[0];++i){
     delete [] ind_mode_[i];  ind_mode_[i] = nullptr;
@@ -56,7 +56,7 @@ void Quadrilateral::set(int p0, int q0)
   P[2]=1;  Q[2]=1;  gqt[2]=0;// Direcao nao usada
   NGQP=Q[0]*Q[1]*Q[2];
   qborder = q0;
-  
+
   //aloca memoria para ind_mode_
   ind_mode_ = new int * [P[0]+1];
   for (int i=0;i<=P[0];++i){
@@ -132,7 +132,7 @@ void Quadrilateral::set(int p0, int q0)
   emapv[k]=3;// Vertice D
 
   nb=a;
-  
+
   //Verificar
   // Interior modes : j runs fastest
   for(i=1; i<P[0]; i++){
@@ -142,12 +142,12 @@ void Quadrilateral::set(int p0, int q0)
       a++;
     }
   }
-  
+
   nn=a;
   // if(nn==nmode)printf("OK! Calculo do nmode correto: %d, nn=%d\n",nmode,nn);
   // Calcula os parametros de Gauss
   gauss_parameters_default(); //alpha=beta=0.0
- 
+
   if(nb>MAXNB ||nn>MAXMODES  ||nn-nb>MAXNI){
     printf("Ajuste parametros no spectral.h\n");
     printf("Numero de nos de fronteira do elemento (nb = %d)  (MAXNB = %d)\n",nb,MAXNB);
@@ -161,29 +161,30 @@ void Quadrilateral::set(int p0, int q0)
   printf("Saindo de Quadrilateral::set: nv = %d  nn = %d (< MAXMODES = %d) nb = %d (< MAXNB = %d)\n",nv,nn,MAXMODES,nb,MAXNB);
   printf("Quadrilateral::set nn = %d nb= %d\n",nn,nb);
 #endif
- 
+
   // Construcao da matriz Phi_val[nn][Q[0]*Q[1]]
   double eta1,eta2;
   double Fa[Q[0]],Fb[Q[1]];
   for(int m=0;m<nn;m++){
-    
+
     int p= mode_[m].p_val();
     int q= mode_[m].q_val();
     for(j=0;j<Q[1];j++){
       eta2=xGQ[1][j];
       Fb[j]=Psia(P[1],q,eta2);
-    } 
+    }
     for(i=0;i<Q[0];i++){
       eta1=xGQ[0][i];
       Fa[i]=Psia(P[0],p,eta1);
     }
-    
+
     int n=0;
     for(j=0;j<Q[1];j++){
       for(i=0;i<Q[0];i++){// i runs fastest
 	Phi_val[m][n++]=Fa[i]*Fb[j];
       }
     }
+
   }
 };
 // 06/02/2008
@@ -198,7 +199,7 @@ void Quadrilateral::print(FILE * fout)
     mode_[i].print(fout);
   }
   fprintf(fout,"\n");
-  
+
 };
 
 // ****************************************************************************
@@ -239,7 +240,7 @@ double Quadrilateral::mass(int m1,int m2,const double JV[])
 void Quadrilateral::make_local_matrices()
 {
 	printf("Quadrilateral::make_local_matrices\n");
-  int ni; 
+  int ni;
   int i,ii,j,jj;
   ni=nn-nb;
 #ifdef PRINTF_ON
@@ -290,8 +291,8 @@ void Quadrilateral::make_local_matrices()
   NEWMAT::Matrix mi_inv(ni,ni);
   NEWMAT::Matrix mcmi_inv(nb,ni);
 #endif
-  
-  // Matriz Mb  
+
+  // Matriz Mb
   for(i=0;i<nb;i++){
     for(j=0;j<nb;j++) mb.element(i,j)=M[i][j];
     // Matrix Mc
@@ -337,7 +338,7 @@ void Quadrilateral::make_local_matrices()
 #ifdef PRINTF_ON
   printf("Saindo Quadrilateral::make_local_matrices: nb = %d  Ni= %d\n", nb,ni);
 #endif
- 
+
 };
 
 // ****************************************************************************
@@ -375,26 +376,26 @@ void Quadrilateral::gauss_parameters_default()
   wGQ[2][0]=1.0;
   // Valores para as duas dimensoes
   for(int i=0;i<ndim;++i){
-   
+
     if(gqt[i]==1)
       {//gqt[i]=1 Gauss-Jacobi
         Gauss_Jacobi_parameters(Q[i],0.0,0.0,x,wtemp,Dtemp);
       }
-    
+
     else if(gqt[i]==2){
       // *******************************\/ \/\/\/\/****************************
       Gauss_Radau_Jacobi_parameters(Q[i],0.0,0.0,x,wtemp,Dtemp);
     }
-    
-    else{//gqt[i]=3 
+
+    else{//gqt[i]=3
       Gauss_Lobatto_Jacobi_parameters(Q[i],0.0,0.0,x,wtemp,Dtemp);
     }
-    
+
     for(int j=0; j<Q[i]; ++j){
       xGQ[i][j]=x[j];
       wGQ[i][j]=wtemp[j];
     }
-    
+
     for(int k=0;k<Q[i];++k){
       for(int l=0;l<Q[i];++l){
         D[k][l][i]=Dtemp[k][l];
@@ -420,7 +421,7 @@ void Quadrilateral::vector_of_integral_of_f_Phi_dv(double vec[],
   double xa,ya,za,xb,yb,zb,xc,yc,zc,xd,yd,zd;
   int Pdim=P[0]+1;
   double fp_xi2[Pdim][Q[1]];
-  
+
   xa=vert[map[0]].x;
   xb=vert[map[1]].x;
   xc=vert[map[2]].x;
@@ -433,7 +434,7 @@ void Quadrilateral::vector_of_integral_of_f_Phi_dv(double vec[],
   zb=vert[map[1]].z;
   zc=vert[map[2]].z;
   zd=vert[map[3]].z;
- 
+
   // construir matriz temporaria fp_xi2
   for(p=0;p<Pdim;p++){
     // fazer loop sobre xi2
@@ -483,7 +484,7 @@ void Quadrilateral::vector_of_integral_of_f_Phi_dv(double vec[],
   double aux,eta1,eta2;//x1,x2,x3;
   int Pdim=P[0]+1;
   double fp_xi2[Pdim][Q[1]];
-  
+
   // construir matriz temporaria fp_xi2
   for(p=0;p<Pdim;p++){
     // fazer loop sobre xi2
@@ -515,7 +516,7 @@ void Quadrilateral::vector_of_integral_of_f_Phi_dv(double vec[],
 //06/03/2008
 // ****************************************************************************
 void Quadrilateral::printtofile(FILE * fout,const double u[],
-				double (*func)(double,double,double), 
+				double (*func)(double,double,double),
 				const Vertice vert[], const int map[])
 {
 	printf("Quadrilateral::printtofile\n");
@@ -630,7 +631,7 @@ void Quadrilateral::printGQtofile(FILE * fout,const double ftemp[],
       x3=eaux*(za*faux+zb*gaux)+haux*(zd*faux+zc*gaux);
       aux=ftemp[m1];
       aux1=ftemp1[m1++];
-			
+
       fprintf(fout,"%11.4e %11.4e %11.4e %11.4e %11.4e\n",x1,x2,x3,aux,aux1);
     }
   }
@@ -677,7 +678,7 @@ void Quadrilateral::printwGQtofile(FILE * fout,
   }
 };
 // ****************************************************************************
-void Quadrilateral::printtoarray(const double u[], 
+void Quadrilateral::printtoarray(const double u[],
 			    const Vertice vert[], const int map[],
 			    double x[], double y[], double z[], double ftemp[])
 {
@@ -697,7 +698,7 @@ void Quadrilateral::printtoarray(const double u[],
   zb=vert[map[1]].z;
   zc=vert[map[2]].z;
   zd=vert[map[3]].z;
-  
+
   int m1=0;
   evalGQ(ftemp,u);
   for(int j=0;j<Q[1];j++){
@@ -729,7 +730,7 @@ void Quadrilateral::evalGQ(double f0[],double f1[],
   int a;
   int i,j,p,q,k;
   int n=0;
-  int Pdim=P[0]+1;	
+  int Pdim=P[0]+1;
   double ftemp0[Pdim],ftemp1[Pdim];
   for(j=0;j<Q[1];j++){
     eta2=xGQ[1][j];
@@ -750,16 +751,16 @@ void Quadrilateral::evalGQ(double f0[],double f1[],
     Fb=Psia(P[1],q,eta2);
     ftemp0[p]+=Fb*uh0[a];
     ftemp1[p]+=Fb*uh1[a];
-    // C 
-    a=2;p=P[0];q=P[1]; 
+    // C
+    a=2;p=P[0];q=P[1];
     Fb=Psia(P[1],q,eta2);
     ftemp0[p]+=Fb*uh0[a];
     ftemp1[p]+=Fb*uh1[a];
-    // D 
-    a=3; p=0; q=P[1]; 
+    // D
+    a=3; p=0; q=P[1];
     Fb=Psia(P[1],q,eta2);
     ftemp0[p]+=Fb*uh0[a];
-    ftemp1[p]+=Fb*uh1[a];    
+    ftemp1[p]+=Fb*uh1[a];
     // AB
     a=4;
     q=0;
@@ -835,7 +836,7 @@ void Quadrilateral::evalGQ(double f0[],const double u0[],const int NF,
   double ftemp0[Pdim];
   //printf("Quadrilateral::evalGQ    NF = %d    nvar= %d\n",NF,nvar);
   for(j=0;j<Q[1];j++){
-    eta2=xGQ[1][j]; 
+    eta2=xGQ[1][j];
     // ********************************************************************
     // Construcao dos vetores temporarios
     // ********************************************************************
@@ -857,12 +858,12 @@ void Quadrilateral::evalGQ(double f0[],const double u0[],const int NF,
   // D
     a=3;p=0;q=P[1];
     Fb=Psia(P[1],q,eta2);
-    ftemp0[p]+=Fb*u0[a*NF+nvar];   
+    ftemp0[p]+=Fb*u0[a*NF+nvar];
     // AB
     a=4;
-    q=0; 
+    q=0;
     Fb=Psia(P[1],q,eta2);
-    for(p=1;p<P[0];p++){ 
+    for(p=1;p<P[0];p++){
       ftemp0[p]+=Fb*u0[a*NF+nvar];
       a++;
     }
@@ -894,7 +895,7 @@ void Quadrilateral::evalGQ(double f0[],const double u0[],const int NF,
 	ftemp0[p]+=Fb*u0[a*NF+nvar];
 	a++;
       }
-    }  
+    }
     // ************************************************************************
     for(i=0;i<Q[0];i++){
       eta1=xGQ[0][i];
@@ -920,7 +921,7 @@ void Quadrilateral::computeVertice(double f_vert[],const double u[],
 //  double xa,ya,za,xb,yb,zb,xc,yc,zc,xd,yd,zd;
   int m1;
   int i,p,q;
- 
+
 //  xa=vert[map[0]].x;
 //  xb=vert[map[1]].x;
 //  xc=vert[map[2]].x;
@@ -933,7 +934,7 @@ void Quadrilateral::computeVertice(double f_vert[],const double u[],
 //  zb=vert[map[1]].z;
 //  zc=vert[map[2]].z;
 //  zd=vert[map[3]].z;
-  
+
   i=0;
   for(eta2=-1.0;eta2<=1.0;eta2+=2.0){
 //    eaux=(1.0-eta2)/2.0;
@@ -976,7 +977,7 @@ void Quadrilateral::computeAtPoints(const int npoints,
   double xa,ya,za,xb,yb,zb,xc,yc,zc,xd,yd,zd;
   int m1;
   int i,p,q;
- 
+
   xa=vert[map[0]].x;
   xb=vert[map[1]].x;
   xc=vert[map[2]].x;
@@ -989,7 +990,7 @@ void Quadrilateral::computeAtPoints(const int npoints,
   zb=vert[map[1]].z;
   zc=vert[map[2]].z;
   zd=vert[map[3]].z;
-  
+
   for(i=0;i<npoints;i++){
     eta1=LocCoord[2*i ];
     eta2=LocCoord[2*i+1];
@@ -1020,7 +1021,7 @@ void Quadrilateral::computeAtPoints(const int npoints,
 // ****************************************************************************
 // Evaluates the value of the field at the Gauss Quadrature points
 // ****************************************************************************
-void Quadrilateral::computeFuncGQ(double f_[], 
+void Quadrilateral::computeFuncGQ(double f_[],
 				  const Vertice vert[], const int map[],
 				  double (*func)(double,double,double))
 {
@@ -1029,7 +1030,7 @@ void Quadrilateral::computeFuncGQ(double f_[],
   double eaux,faux,gaux,haux;
   double xa,ya,za,xb,yb,zb,xc,yc,zc,xd,yd,zd;
   int i,j,count;
-  
+
   xa=vert[map[0]].x;
   xb=vert[map[1]].x;
   xc=vert[map[2]].x;
@@ -1042,7 +1043,7 @@ void Quadrilateral::computeFuncGQ(double f_[],
   zb=vert[map[1]].z;
   zc=vert[map[2]].z;
   zd=vert[map[3]].z;
-  
+
   count=0;
   for(j=0;j<Q[1];j++){
     eta2=xGQ[1][j];
@@ -1119,11 +1120,11 @@ void Quadrilateral::eval_GradPhi(const Vertice vert[], const int map[],const int
   yb=vert[map[1]].y;
   yc=vert[map[2]].y;
   yd=vert[map[3]].y;
-  
-  x1 =(-xa+xb+xc-xd)/4.0;    
+
+  x1 =(-xa+xb+xc-xd)/4.0;
   x12=( xa-xb+xc-xd)/4.0;
   x2 =(-xa-xb+xc+xd)/4.0;
-  
+
   y1 =(-ya+yb+yc-yd)/4.0;
   y12=( ya-yb+yc-yd)/4.0;
   y2 =(-ya-yb+yc+yd)/4.0;
@@ -1152,7 +1153,7 @@ void Quadrilateral::eval_GradPhi(const Vertice vert[], const int map[],const int
       b[0][1]=-a12/J2D;
       b[1][0]=-a21/J2D;
       b[1][1]=a11/J2D;
-      
+
       der[0][m] = der1 * b[0][0] + der2 * b[1][0];
       der[1][m] = der1 * b[0][1] + der2 * b[1][1];
     }
@@ -1175,15 +1176,15 @@ void Quadrilateral::Jacobian(const Vertice vert[],const int map[],double JV[])
     {0,1,1,0},
     {0,0,1,1}
   };
-  
+
   for(int i=0;i<4;++i)
   {
     x[0][i]=vert[map[i]].x;
     x[1][i]=vert[map[i]].y;
     x[2][i]=vert[map[i]].z;
   }
-  
-  int n=0;
+
+  int count=0;
   for(int j=0;j<Q[1];++j){
     eta[1]=xGQ[1][j];
     f[0][1] = 0.5*(1-eta[1]); // funcao inferior
@@ -1192,7 +1193,7 @@ void Quadrilateral::Jacobian(const Vertice vert[],const int map[],double JV[])
       eta[0]=xGQ[0][i];
       f[0][0] = 0.5*(1-eta[0]); // funcao esquerda
       f[1][0] = 0.5*(1+eta[0]); // funcao direita
-      
+
       for(int m=0;m<3;++m) {
         aux0=0.0;
         aux1=0.0;
@@ -1208,10 +1209,10 @@ void Quadrilateral::Jacobian(const Vertice vert[],const int map[],double JV[])
       double v1 = dr[0][2] * dr[1][0] - dr[1][2] * dr[0][0];
       double v2 = dr[0][0] * dr[1][1] - dr[1][0] * dr[0][1];
       aux=sqrt(v0*v0 + v1*v1 + v2*v2);
-      JV[n++] = aux;
+      JV[count++] = aux;
      // cout << "Jacobiano = " << aux << endl;
-      if(aux<=0.0)printf("Hexahedral::Jacobian Erro: Jacobiano nao-positivo = %g\n",aux);
-   
+      if(aux<=0.0)printf("Quadrilateral::Jacobian Erro: Jacobiano nao-positivo = %g\n",aux);
+
     }
   }
 };
@@ -1232,7 +1233,7 @@ void Quadrilateral::Gradiente(double * grad[],
  // double x3=0.0;
  // double a3p, a3m,a2p,a2m,a1p,a1m;
   double x1,x2,x12,y1,y2,y12;
-  int i,j,l,m;
+  //int i,j,l,m;
   double df[MAXQ*MAXQ][3];
   double a11,a12,a21,a22, J2D;
   double b[2][2];
@@ -1259,10 +1260,10 @@ void Quadrilateral::Gradiente(double * grad[],
   for(int q=0;q<Q[1];q++){
     for(int p=0;p<Q[0];p++){
 
-      m=p+q*Q[0];
+      int m=p+q*Q[0];
       aux0=0.0;
       aux1=0.0;
-      for(l=0;l<Q[0];l++){
+      for(int l=0;l<Q[0];l++){
         aux0+=D[p][l][0]*fvec[(l+q*Q[0])];
         aux1+=D[q][l][1]*fvec[(p+l*Q[0])];
       }
@@ -1270,7 +1271,7 @@ void Quadrilateral::Gradiente(double * grad[],
       df[m][1]=aux1;
     }
   }
- 
+
   // calculo das derivadas com relacao a x1 e x2
   for(int q=0;q<Q[1];q++){
     eta2=xGQ[1][q];
@@ -1281,16 +1282,16 @@ void Quadrilateral::Gradiente(double * grad[],
       a12=x2+x12*eta1;
       a22=y2+y12*eta1;
       J2D=a11*a22-a12*a21;
-      m=p+q*Q[0];
+      int m=p+q*Q[0];
       // calculo da matriz b[i][j]
       b[0][0]=a22/J2D;
       b[0][1]=-a12/J2D;
       b[1][0]=-a21/J2D;
       b[1][1]=a11/J2D;
-      
-      for(i=0;i<2;i++){
+
+      for(int i=0;i<2;i++){
         aux0=0;
-        for(j=0;j<2;j++){
+        for(int j=0;j<2;j++){
           aux0+=b[j][i]*df[m][j];
         }
         grad[i][m]=aux0;
@@ -1305,7 +1306,7 @@ void Quadrilateral::Gradiente(double * grad[],
 // ****************************************************************************
 
 void Quadrilateral::Gradiente(FILE * fout, double * grad[],
-			      const  double fvec[], 
+			      const  double fvec[],
 			      const Vertice vert[], const int map[])
 {
 	printf("Quadrilateral::Gradiente 2\n");
@@ -1314,10 +1315,10 @@ void Quadrilateral::Gradiente(FILE * fout, double * grad[],
   double a2p,a2m,a1p,a1m;
   double x1,x2;//x12,y1,y2,y12;
   int m;
-  
+
   // printf("Calculo do Gradiente de um vetor. Elemento Quadrilateral\n");
   Gradiente(grad,fvec,vert,map);
-  
+
   // coordenadas dos nos
   xa=vert[map[0]].x;
   xb=vert[map[1]].x;
@@ -1333,7 +1334,7 @@ void Quadrilateral::Gradiente(FILE * fout, double * grad[],
   zd=vert[map[3]].z;
 
   // Cheque do gradiente
-  
+
   for(int j=0;j<Q[1];j++){
     eta2=xGQ[1][j];
     a2m=(1.0-eta2)/2.0;
@@ -1346,7 +1347,7 @@ void Quadrilateral::Gradiente(FILE * fout, double * grad[],
       x1= (xa*a1m + xb*a1p)*a2m + (xc*a1p + xd*a1m)*a2p;
       x2= (ya*a1m + yb*a1p)*a2m + (yc*a1p + yd*a1m)*a2p;
       x3= (za*a1m + zb*a1p)*a2m + (zc*a1p + zd*a1m)*a2p;
-      
+
       m=i+j*Q[0];
       fprintf(fout,"%11.4e %11.4e %11.4e %11.4e %11.4e\n",x1,x2,grad[0][m],grad[1][m],g(x1,x2,x3));
     }
@@ -1354,7 +1355,7 @@ void Quadrilateral::Gradiente(FILE * fout, double * grad[],
 };
 
 void Quadrilateral::Gradiente(FILE * fout, double * grad[],
-			      double (*func)(double, double, double), 
+			      double (*func)(double, double, double),
 			      const Vertice vert[], const int map[])
 {
 	printf("Quadrilateral::Gradiente 3\n");
@@ -1387,7 +1388,7 @@ void Quadrilateral::Gradiente(FILE * fout, double * grad[],
       e1m=(1.0-eta1)/2.0;
       // coordenadas x1, x2, x3
       x1=(xa*e1m+xb*e1p)*e2m+e2p*(xc*e1p+xd*e1m);
-      x2=(ya*e1m+yb*e1p)*e2m+e2p*(yc*e1p+yd*e1m);    
+      x2=(ya*e1m+yb*e1p)*e2m+e2p*(yc*e1p+yd*e1m);
       m=i+j*Q[0];
       fvec[m]=func(x1,x2,x3);
     }
@@ -1414,8 +1415,8 @@ void Quadrilateral::Dirichlet(const int aresta,
                               double X[],
                               double (*f)(double,double,double))
 {
-	//printf("Quadrilateral::Dirichlet\n");
-  //cout << "Entrou em Quadrilateral::Dirichlet\n";
+  //printf("Quadrilateral::Dirichlet\n");
+  cout << "Entrou em Quadrilateral::Dirichlet\n";
   int flag=0;
   // **************************************************************************
   // flag = 0 : Dirichlet, valor conhecido, bflag=0
@@ -1425,12 +1426,12 @@ void Quadrilateral::Dirichlet(const int aresta,
   double xa,ya,za,xb,yb,zb;
   double eta1,x1,x2,x3;
   double gaux1,gaux2,gaux3;
-  
+
   double aux,a0,ap;
-  double J=0.0;  
+  double J=0.0;
 
   if(aresta==0)//aresta 0; nos 0 e 1
-    {	
+    {
       xa=vert[vert_map[0]].x;
       xb=vert[vert_map[1]].x;
       ya=vert[vert_map[0]].y;
@@ -1476,18 +1477,18 @@ void Quadrilateral::Dirichlet(const int aresta,
   double func[q];
   double psi[p+1][q];
   int p1=p-1;
-  
+
 //  int Ti[p1*p1],Tj[p1*p1];
 //  double Tx[p1*p1];
 //  int count=0;
-  
+
 #ifdef _NEWMAT
   NEWMAT::Matrix A(p1,p1);
   NEWMAT::ColumnVector B(p1), Y(p1);
-// #else 
+// #else
 //   double A[p1][p1];
 //   double B[p1],Y[p1];
-#endif 
+#endif
   // valores nos vertices
   a0=f(xa,ya,za);
   ap=f(xb,yb,zb);
@@ -1497,7 +1498,7 @@ void Quadrilateral::Dirichlet(const int aresta,
     gaux2=ya-yb;
     gaux3=za-zb;
     J=sqrt(gaux1*gaux1+gaux2*gaux2+gaux3*gaux3)/2.0;
-    
+
     for(k=0;k<q;k++)
       {
         eta1= x[k];//xGQ[0][k];
@@ -1516,12 +1517,12 @@ void Quadrilateral::Dirichlet(const int aresta,
           aux=0.0;
           for(k=0;k<q;k++) aux+=psi[i][k]*psi[j][k]*wtemp[k];//wGQ[0][k];
           aux*=J;
-	
+
 //	Ti[count]=i-1;
 //	Tj[count]=j-1;
 //	Tx[count++]=aux;
           A.element(i-1,j-1)=aux;
-	
+
           if(j!=i){
 //	  Ti[count]=j-1;
 //	  Tj[count]=i-1;
@@ -1529,19 +1530,19 @@ void Quadrilateral::Dirichlet(const int aresta,
             A.element(j-1,i-1)=aux;
           }
         }
-      
+
         aux=0.0;
         for(k=0;k<q;k++)
           aux+=psi[i][k]*(func[k]-a0*psi[0][k]-ap*psi[p][k])*wtemp[k];//wGQ[0][k];
         B.element(i-1)=aux*J;
       }
-    
+
 #ifdef _NEWMAT
       Y = A.i() * B; B=Y;
-//#else 
+//#else
 //    ResolveSistema(p1,count,Ti,Tj,Tx,B,Y);
 #endif
-  }  
+  }
   // mapeamento do resultado no vector global
   int temp;
   if(aresta==0){
@@ -1553,7 +1554,7 @@ void Quadrilateral::Dirichlet(const int aresta,
     temp=nmap[1];
     X[temp]=sgn[1]*ap;
     bflag[temp]=flag;
-    for(i=1;i<p;i++){ 
+    for(i=1;i<p;i++){
       ii=i+3;
       //temp=gbnmap[ii]*NFields+varn;
       temp=nmap[ii];
@@ -1594,7 +1595,7 @@ void Quadrilateral::Dirichlet(const int aresta,
       X[temp]=sgn[ii]*B.element(i-1);
       bflag[temp]=flag;
     }
-  } 
+  }
   else{
     //temp=gbnmap[0]*NFields+varn;
     temp=nmap[0];
@@ -1612,7 +1613,7 @@ void Quadrilateral::Dirichlet(const int aresta,
       bflag[temp]=flag;
     }
   }
-  //cout << "Terminou Quadrilateral::Dirichlet\n";
+  cout << "Terminou Quadrilateral::Dirichlet\n";
 };
 // 20/03/2008
 
@@ -1649,7 +1650,7 @@ double Quadrilateral::mass(int m1,int m2)
     for(i=0;i<Q[0];i++){
       Fa=Psia(P[0], p,xGQ[0][i]);//primeiro
       Ga=Psia(P[0], r,xGQ[0][i]);
-      aaux+=wGQ[0][i]*Fa*Ga;// *JV[i+Q[0]*j];// <==-multiplica pelo Jacobiano-< 
+      aaux+=wGQ[0][i]*Fa*Ga;// *JV[i+Q[0]*j];// <==-multiplica pelo Jacobiano-<
     }
     Fb=Psia(P[1], q, xGQ[1][j]);
     Gb=Psia(P[1], s, xGQ[1][j]);
@@ -1683,26 +1684,26 @@ void Quadrilateral::elem_traces(const Vertice vert[],const int map[],const int s
   yb=vert[map[1]].y;
   yc=vert[map[2]].y;
   yd=vert[map[3]].y;
-  
-  x1 =(-xa+xb+xc-xd)/4.0;    
+
+  x1 =(-xa+xb+xc-xd)/4.0;
   x12=( xa-xb+xc-xd)/4.0;
   x2 =(-xa-xb+xc+xd)/4.0;
-  
+
   y1 =(-ya+yb+yc-yd)/4.0;
   y12=( ya-yb+yc-yd)/4.0;
   y2 =(-ya-yb+yc+yd)/4.0;
-  
+
   //pontos de Gauss em uma dimensao
   double x[qborder], wtemp[qborder], Dtemp[MAXQ][MAXQ];
   Gauss_Jacobi_parameters(qborder, 0.0, 0.0, x, wtemp, Dtemp);
-  
+
   double d1,d2,aux0,aux1,aux2,der1,der2;
  // int s0=nn*ndim*qborder;
   //int s1=   ndim*qborder;
-  
+
   for(h=0;h<nborder;h++){ // loop sobre as bordas
     switch(h) { // switch
-    
+
     case 0:
       aux0=sqrt( (xb-xa)*(xb-xa) + (yb-ya)*(yb-ya)) / 2.0;
       for(i=0;i<qborder;i++){
@@ -1718,7 +1719,7 @@ void Quadrilateral::elem_traces(const Vertice vert[],const int map[],const int s
 				eta2[i]=x[i]*sinal[h];
       }
       break;
-    
+
     case 2:
       aux0=sqrt( (xc-xd)*(xc-xd) + (yc-yd)*(yc-yd)) / 2.0;
       for(i=0;i<qborder;i++){
@@ -1756,7 +1757,7 @@ void Quadrilateral::elem_traces(const Vertice vert[],const int map[],const int s
 				//TP[i_m + l]=aux1*aux2;
 				der1 = d1*aux2;
 				der2 = aux1*d2;
-	
+
 				a11=x1+x12*eta2[l];
 				a21=y1+y12*eta2[l];
 				a12=x2+x12*eta1[l];
@@ -1772,7 +1773,7 @@ void Quadrilateral::elem_traces(const Vertice vert[],const int map[],const int s
 	//TGP[h*s0+m*s1     +l] = der1 * b[0][0] + der2 * b[1][0];
 	//TGP[h*s0+m*s1+qborder+l] = der1 * b[0][1] + der2 * b[1][1];
       } // loop sobre os pontos de Gauss
-      
+
     } // loop sobre os modos
 
   } // loop sobre as bordas
@@ -1797,26 +1798,26 @@ void Quadrilateral::trace_Jb(const Vertice vert[],const int map[],const int sina
     yb=vert[map[1]].y;
     yc=vert[map[2]].y;
     yd=vert[map[3]].y;
-    
+
     x1 =(-xa+xb+xc-xd)/4.0;
     x12=( xa-xb+xc-xd)/4.0;
     x2 =(-xa-xb+xc+xd)/4.0;
-    
+
     y1 =(-ya+yb+yc-yd)/4.0;
     y12=( ya-yb+yc-yd)/4.0;
     y2 =(-ya-yb+yc+yd)/4.0;
-    
+
     //pontos de Gauss em uma dimensao
     double x[qborder], wtemp[qborder], Dtemp[MAXQ][MAXQ];
     Gauss_Jacobi_parameters(qborder, 0.0, 0.0, x, wtemp, Dtemp);
-    
+
     double d1,d2,aux0,aux1,aux2,der1,der2;
     // int s0=nn*ndim*qborder;
     //int s1=   ndim*qborder;
-    
+
     for(h=0;h<nborder;h++){ // loop sobre as bordas
         switch(h) { // switch
-                
+
             case 0:
                 aux0=sqrt( (xb-xa)*(xb-xa) + (yb-ya)*(yb-ya)) / 2.0;
                 for(i=0;i<qborder;i++){
@@ -1824,7 +1825,7 @@ void Quadrilateral::trace_Jb(const Vertice vert[],const int map[],const int sina
                     eta2[i]=-1.0;
                 }
                 break;
-                
+
             case 1:
                 aux0=sqrt( (xb-xc)*(xb-xc) + (yb-yc)*(yb-yc)) / 2.0;
                 for(i=0;i<qborder;i++){
@@ -1832,7 +1833,7 @@ void Quadrilateral::trace_Jb(const Vertice vert[],const int map[],const int sina
                     eta2[i]=x[i]*sinal[h];
                 }
                 break;
-                
+
             case 2:
                 aux0=sqrt( (xc-xd)*(xc-xd) + (yc-yd)*(yc-yd)) / 2.0;
                 for(i=0;i<qborder;i++){
@@ -1840,7 +1841,7 @@ void Quadrilateral::trace_Jb(const Vertice vert[],const int map[],const int sina
                     eta2[i]=1.0;
                 }
                 break;
-                
+
             case 3:
                 aux0=sqrt( (xd-xa)*(xd-xa) + (yd-ya)*(yd-ya)) / 2.0;
                 for(i=0;i<qborder;i++){
@@ -1848,9 +1849,9 @@ void Quadrilateral::trace_Jb(const Vertice vert[],const int map[],const int sina
                     eta2[i]=x[i]*sinal[h];
                 }
                 break;
-                
+
         }// switch
-        
+
         for(l=0;l<qborder;l++){ // loop sobre os pontos de Gauss
             Jb[h*qborder+l]=aux0;
         }
@@ -1870,10 +1871,10 @@ void Quadrilateral::trace(const int lado,const int qmax,const int sinal,
         nd=0;
         }
     else nd=1;
-  
+
     int q=Q[nd];
     double temp[q];
-  
+
     if(lado==0){
         ind=0;
         inc=1;
@@ -1890,12 +1891,12 @@ void Quadrilateral::trace(const int lado,const int qmax,const int sinal,
         ind=0;
         inc=q;
     }
-  
+
     // *****************************************
     // Para considerar o sinal de percurso das
     // arestas usa-se a expressao seguinte
     if(gqt[nd]==3){
-        
+
        // if(sinal == -1){
        //     ind = ind + (q-1) * inc;
        //     inc = sinal * inc;
@@ -1935,7 +1936,7 @@ void Quadrilateral::trace(const int lado,const int qmax,const int sinal,
         // ****************************************************************
         double Jac[qmax],wtemp[qmax],Dtemp[MAXQ][MAXQ];
         Gauss_Jacobi_parameters(qmax,0.0,0.0,Jac,wtemp,Dtemp);
-    
+
         for(int i=0;i<qmax;i++){
             double sum=0.0;
             double y=Jac[i] * sinal; // percorre os pontos de Gauss na ordem decrescente se o sinal == -1
@@ -1970,13 +1971,13 @@ void Quadrilateral::superficie_externa(const Vertice vert[],const int Vert_map[]
   lx=vert[v1].x - vert[v0].x;
   ly=vert[v1].y - vert[v0].y;
   lz=vert[v1].z - vert[v0].z;
-  
+
   normal[0] = -sinal_normal[num_local] * ly;
   normal[1] =  sinal_normal[num_local] * lx;
   normal[2] = 0.0;
-  
+
   area = sqrt(normal[0]*normal[0] + normal[1]*normal[1]);
-  
+
   normal[0]/=area;
   normal[1]/=area;
 };
@@ -2000,5 +2001,43 @@ void Quadrilateral::face_Jacobian(const int num_local,
     for (int i=0;i<qmax;i++){
         J[i] = modulo/2.0;
     }
-    
+
+};
+//const int * Quadrilateral::show_face(const int &i){return aresta[i];};
+void Quadrilateral::face_GQCoord(const Vertice vert[],const int map[],
+                                 const int a0,const int qmax,
+                                 double x[],double y[],double z[])
+{
+    if(qmax != qborder)
+    {
+        cout << "Incompatibilidade de dados: qmax != qborder\n"<< std::endl;
+        exit(0);
+    }
+    double xq[qmax],w[qmax];
+    double Dtemp[MAXQ][MAXQ];
+    // nao inclui os pontos extremos
+    Gauss_Jacobi_parameters(qmax,0.0,0.0,xq,w,Dtemp);
+    // *******************************************************
+    int na=map[aresta[a0][0]];
+    int nb=map[aresta[a0][1]];
+    if(nb<na){
+        int temp= na;
+        na=nb;
+        nb=temp;
+    }
+    double xa=vert[na].x;
+    double ya=vert[na].y;
+    double xb=vert[nb].x;
+    double yb=vert[nb].y;
+    double xsum=(xb+xa)*0.5;
+    double xdif=(xb-xa)*0.5;
+    double ysum=(yb+ya)*0.5;
+    double ydif=(yb-ya)*0.5;
+    for(int q=0;q<qmax;++q){
+        int aux=xq[q];
+        x[q]=xsum+xdif*aux;
+        y[q]=ysum+ydif*aux;
+        z[q]=0.0;
+    }
+
 };

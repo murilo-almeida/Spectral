@@ -1050,7 +1050,9 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::Ler_e_Processar_malha(char *arq_geo)
 
 
   Processar_elementos();
+    cout << "Passou Processar_elementos();\n";
   Construir_bordas();
+    cout << "Passou Construir_bordas();\n";
   Particionar_malha( buffer_Pa );
   Marcar_condicoes_contorno( buffer_BC,face_mask_vec );
  
@@ -1292,6 +1294,7 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::Construir_bordas()
           border[n_border].num_elem++;
           el[i].set_border_num(j,n_border);//19/07/2014
         }
+          
       }
 
       break;

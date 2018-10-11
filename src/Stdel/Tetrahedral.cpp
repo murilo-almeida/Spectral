@@ -24,7 +24,7 @@ Tetrahedral::~Tetrahedral()
   delete [] emapi; emapi=nullptr;
   delete [] emapv; emapv=nullptr;
   delete [] D_Phi_val; D_Phi_val=nullptr;
-  
+
   //libera memoria de ind_mode_
   for (int i=0;i<=(P[0]+1);++i){
     for(int j=0;j<=(P[1]+1);++j){
@@ -46,14 +46,14 @@ void Tetrahedral::set(int p, int q)
   emapi[4]=4*(p+1);
   emapi[5]=5*(p+1);
   emapi[6]=6*(p+1);
-  
+
   printf("Em Tetrahedral::set\n");
   P[0]=p; Q[0]=q; gqt[0]=3;//Gauss-Lobatto
   P[1]=p; Q[1]=q; gqt[1]=2;//Gauss-Radau
   P[2]=p; Q[2]=q; gqt[2]=2;//Gauss-Radau
   NGQP=q*q*q;
   qborder = q*q;
-  
+
  //aloca memoria para ind_mode_
   ind_mode_ = new int ** [P[0]+2];
   for (int i=0;i<=(P[0]+1);++i){
@@ -65,13 +65,13 @@ void Tetrahedral::set(int p, int q)
 #ifdef PRINTF_ON
   printf("Em Tetrahedral::set apos Sair de Tetrahedral::setStdel\n");
   printf("P: %d %d %d \nQ: %d %d %d\ngqt : %d %d %d\n",P[0],P[1],P[2],Q[0],Q[1],Q[2],gqt[0],gqt[1],gqt[2]);
-#endif  
+#endif
   mode_[0].set_mode(0,0,0); ind_mode_[0][0][0] = 0;// A
   mode_[1].set_mode(P[0],0,0); ind_mode_[P[0]][0][0]=1;// B
   mode_[2].set_mode(P[0]+1,P[1],0);ind_mode_[P[0]+1][P[1]][0]=2;// C ponto colapsado
   mode_[3].set_mode(P[0]+1,P[1]+1,P[2]);ind_mode_[P[0]+1][P[1]+1][P[2]]=3;// D   ponto colapsado
   int a=4;
-  
+
   // ****************************************************************************************
   // Sequencia de arestas especificado em Tetrahedral.h (aresta[][], ad0[], av1[], av2[] )
   // ****************************************************************************************
@@ -106,7 +106,7 @@ void Tetrahedral::set(int p, int q)
     a++;
   }
   emapv[k]=3; // Vertice D
-  
+
   // ***************************************************************************************
   /* // Sequencia fixa de arestas
    // **************************************************************************************
@@ -122,7 +122,7 @@ void Tetrahedral::set(int p, int q)
     a++;
   }
   emapv[k]=1; // Vertice B
-  
+
   // AC
   k=emapi[2]; // segunda aresta
   emapv[k]=0; // Vertice A
@@ -135,7 +135,7 @@ void Tetrahedral::set(int p, int q)
   }
    emapv[k]=2; // Vertice C
    //cout << "a3 = "<< a << endl;
-  
+
   // AD
   k=emapi[3]; // terceira aresta
   emapv[k]=0; // Vertice A
@@ -148,7 +148,7 @@ void Tetrahedral::set(int p, int q)
   }
   emapv[k]=3; // Vertice D
    //cout << "a4 = "<< a << endl;
-  
+
   //cout << "a1 = "<< a << endl;
   // BC
   k=emapi[1]; // quarta  aresta
@@ -162,7 +162,7 @@ void Tetrahedral::set(int p, int q)
   }
   emapv[k]=2; // Vertice C
   //cout << "a2 = "<< a << endl;
-  
+
   // BD
   k=emapi[4]; // quinta aresta
   emapv[k]=1; // Vertice B
@@ -175,7 +175,7 @@ void Tetrahedral::set(int p, int q)
   }
    emapv[k]=3; // Vertice D
    //cout << "a5 = "<< a << endl;
-  
+
   // CD; aresta colapsada
   a_CD=a;
   k=emapi[5]; // sexta aresta
@@ -189,9 +189,9 @@ void Tetrahedral::set(int p, int q)
   }
   emapv[k]=3; // Vertice D
   */
-  
+
   //cout << "terminou arestas a6 = "<< a << endl;
-  
+
   // Surface modes : r runs fastest
   //ABC Face 0
    for(int i=1; i<P[0]; i++){
@@ -224,7 +224,7 @@ void Tetrahedral::set(int p, int q)
       a++;
     }
   }
- 
+
  nb=a;
   //cout << "a10 = "<< a << endl;
   // Interior modes: r runs fastest
@@ -256,8 +256,8 @@ void Tetrahedral::set(int p, int q)
 // ************************************************************************
 // ************************************************************************
 // Sets Gauss parameters for the tetrahedral element
-// Ja em coordenadas eta1,eta2 e eta3, 
-// incluindo os termo (1-eta2)/2 e ((1-eta3)/2)^2 
+// Ja em coordenadas eta1,eta2 e eta3,
+// incluindo os termo (1-eta2)/2 e ((1-eta3)/2)^2
 // (Gauss-Jacobi quadratura) Ver Apendice B de Karniadakis & Sherwin
 // ************************************************************************
 void Tetrahedral::gauss_parameters_default()
@@ -275,7 +275,7 @@ void Tetrahedral::gauss_parameters_default()
    for(int k=0;k<Q[0];++k)
      for(int l=0;l<Q[0];++l){
        D[k][l][0]=Dtemp[k][l];
-     }   
+     }
    // Segunda coordenada
    // Ja em coordenadas eta2, incluindo o termo (1-eta2)/2
    // alpha=1.0, beta=0.0            \/ \/\/\/\/***************************
@@ -305,12 +305,12 @@ void Tetrahedral::gauss_parameters_default()
    for(int k=0;k<Q[2];++k)
      for(int l=0;l<Q[2];++l){
        D[k][l][2]=Dtemp[k][l];
-     } 
+     }
 };
 // ************************************************************************
 // ************************************************************************
 void Tetrahedral::vector_of_integral_of_f_Phi_dv(double vec[],
-				       double (*func)(double,double,double), 
+				       double (*func)(double,double,double),
 				       const Vertice vert[], const int map[],
 				       const double JV[])
 {
@@ -322,7 +322,7 @@ void Tetrahedral::vector_of_integral_of_f_Phi_dv(double vec[],
   double xa,ya,xb,yb,xc,yc,xd,yd,za,zb,zc,zd;
   int Pdim=P[0]+2;
   double fp[Pdim][Q[1]][Q[2]], fpq[Pdim][Pdim][Q[2]];
-  
+
   xa=vert[map[0]].x;
   xb=vert[map[1]].x;
   xc=vert[map[2]].x;
@@ -344,10 +344,10 @@ void Tetrahedral::vector_of_integral_of_f_Phi_dv(double vec[],
   z1=zd-za;
   z2=zb-za;
   z3=zc-za;
- 
+
   // primeira matriz fp(xi2,xi3)
   for(p=0;p<Pdim;p++){
-    // fazer loop sobre xi2 e xi3 
+    // fazer loop sobre xi2 e xi3
     for(k=0;k<Q[2];k++){
       eta3=xGQ[2][k];
       e3p=(1.0+eta3)/2.0;
@@ -363,13 +363,13 @@ void Tetrahedral::vector_of_integral_of_f_Phi_dv(double vec[],
 	  eta1=xGQ[0][i];
 	  e1p=(1.0+eta1)/2.0;
 	  e1m=(1.0-eta1)/2.0;
-	  
+
 	  x1=((xa*e1m+xb*e1p)*e2m+e2p*xc)*e3m+e3p*xd;
 	  x2=((ya*e1m+yb*e1p)*e2m+e2p*yc)*e3m+e3p*yd;
 	  x3=((za*e1m+zb*e1p)*e2m+e2p*zc)*e3m+e3p*zd;
-      
+
 	  Fa=Psia(P[0], p,eta1);
-	  
+
 	  aux+=(wGQ[0][i]*Fa*func(x1,x2,x3)*JV[i+Q[0]*(j+Q[1]*k)]);// <==== Jacobian JV
 	}
 	fp[p][j][k]=aux;
@@ -444,7 +444,7 @@ double Tetrahedral::mass(int m1,int m2,const double JV[])
     }
     Fc=Psic(P[0], P[1], P[2], p1, q1, r1, xGQ[2][k]);
     Gc=Psic(P[0], P[1], P[2], p2, q2, r2, xGQ[2][k]);
- 
+
     aux+=wGQ[2][k]*Fc*Gc*aux1;
   }
   return (aux);
@@ -456,7 +456,7 @@ double Tetrahedral::mass(int m1,int m2,const double JV[])
 // ************************************************************************
 void Tetrahedral::make_local_matrices()
 {
-  int ni; 
+  int ni;
   int i,ii,j,jj;
   ni=nn-nb;
   //printf("Making local matrices 1: Nb = %d  Ni= %d\n", Nb,Ni);
@@ -509,7 +509,7 @@ void Tetrahedral::make_local_matrices()
   NEWMAT::Matrix mcmi_inv(nb,ni);
 #endif
 
-  // Matriz Mb  
+  // Matriz Mb
   for(i=0;i<nb;i++){
     for(j=0;j<nb;j++) mb.element(i,j)=M[i][j];
   // Matrix Mc
@@ -555,11 +555,11 @@ void Tetrahedral::make_local_matrices()
 //  printf("Saindo Tetrahedral::make_local_matrices: nb = %d  Ni= %d\n", nb,Ni);
 #endif
 };
- 
+
 /*
 void Tetrahedral::make_mass(double ** MM, const double JV[])
 {
-  int ni; 
+  int ni;
   int i,ii,j,jj;
   ni=nn-nb;
   int m1,m2;
@@ -673,7 +673,7 @@ void Tetrahedral::ordenar4(int n[], int f_mask[])
   // Renumerar as faces
   // Numeracao segue esquema do Gambit
   // face_numero = f_mask[face_original(fornecida pelo Gambit)]
-  
+
   // Face 0 ABC recebe a face antiga
   if(n[3]==n_old[3])     f_mask[0]=0;
   else
@@ -681,7 +681,7 @@ void Tetrahedral::ordenar4(int n[], int f_mask[])
     else
       if(n[3]==n_old[1]) f_mask[2]=0;
       else               f_mask[3]=0;
-  
+
   // Face 1 ABD recebe a face antiga
   if(n[2]==n_old[3])     f_mask[0]=1;
   else
@@ -689,7 +689,7 @@ void Tetrahedral::ordenar4(int n[], int f_mask[])
     else
       if(n[2]==n_old[1]) f_mask[2]=1;
       else               f_mask[3]=1;
-  
+
   // Face 2 BCD recebe a face antiga
   if(n[1]==n_old[3])     f_mask[0]=2;
   else
@@ -697,7 +697,7 @@ void Tetrahedral::ordenar4(int n[], int f_mask[])
     else
       if(n[1]==n_old[1]) f_mask[2]=2;
       else               f_mask[3]=2;
-  
+
   // Face 3 ACD recebe a face antiga
   if(n[0]==n_old[3])     f_mask[0]=3;
   else
@@ -706,13 +706,13 @@ void Tetrahedral::ordenar4(int n[], int f_mask[])
       if(n[0]==n_old[1]) f_mask[2]=3;
       else               f_mask[3]=3;
 // **********************************
- 
+
 };
 */
 
 // ************************************************************************
 // ************************************************************************
-void Tetrahedral::printtofile(FILE * fout,const double u[], 
+void Tetrahedral::printtofile(FILE * fout,const double u[],
 			      double (*func)(double,double,double),
 			      const Vertice vert[], const int map[])
 {
@@ -736,7 +736,7 @@ void Tetrahedral::printtofile(FILE * fout,const double u[],
   zc=vert[map[2]].z;
   zd=vert[map[3]].z;
   aux=0.0;
-  
+
   for(k=0;k<Q[2];k++){
     eta3=xGQ[2][k];
     e3p=(1.0+eta3)/2.0;
@@ -750,7 +750,7 @@ void Tetrahedral::printtofile(FILE * fout,const double u[],
 	eta1=xGQ[0][i];
 	e1p=(1.0+eta1)/2.0;
 	e1m=(1.0-eta1)/2.0;
-	
+
 	x1=((xa*e1m+xb*e1p)*e2m+e2p*xc)*e3m+e3p*xd;
 	x2=((ya*e1m+yb*e1p)*e2m+e2p*yc)*e3m+e3p*yd;
 	x3=((za*e1m+zb*e1p)*e2m+e2p*zc)*e3m+e3p*zd;
@@ -770,7 +770,7 @@ void Tetrahedral::printtofile(FILE * fout,const double u[],
   }
 };
 // ************************************************************************
-void Tetrahedral::printtofile(FILE * fout,const double u[], 
+void Tetrahedral::printtofile(FILE * fout,const double u[],
 			      const Vertice vert[], const int map[])
 {
   double aux,Fa,Fb,Fc,eta1,eta2,eta3;
@@ -793,7 +793,7 @@ void Tetrahedral::printtofile(FILE * fout,const double u[],
   zc=vert[map[2]].z;
   zd=vert[map[3]].z;
   aux=0.0;
-  
+
   for(k=0;k<Q[2];k++){
     eta3=xGQ[2][k];
     e3p=(1.0+eta3)/2.0;
@@ -807,7 +807,7 @@ void Tetrahedral::printtofile(FILE * fout,const double u[],
 	eta1=xGQ[0][i];
 	e1p=(1.0+eta1)/2.0;
 	e1m=(1.0-eta1)/2.0;
-	
+
 	x1=((xa*e1m+xb*e1p)*e2m+e2p*xc)*e3m+e3p*xd;
 	x2=((ya*e1m+yb*e1p)*e2m+e2p*yc)*e3m+e3p*yd;
 	x3=((za*e1m+zb*e1p)*e2m+e2p*zc)*e3m+e3p*zd;
@@ -826,9 +826,9 @@ void Tetrahedral::printtofile(FILE * fout,const double u[],
     }
   }
 };
-void Tetrahedral::printtoarray(const double u[], 
+void Tetrahedral::printtoarray(const double u[],
 			       const Vertice vert[], const int map[],
-			       double x[], double y[], double z[], 
+			       double x[], double y[], double z[],
 			       double ftemp[])
 {
   double aux,Fa,Fb,Fc,eta1,eta2,eta3;
@@ -925,7 +925,7 @@ void Tetrahedral::evalGQ(double f0[],const double u0[],const int NF,const int nv
 // ************************************************************************
 // Evaluates the value of the field at the vertices of the element
 // ************************************************************************
-void Tetrahedral::computeVertice(double f_vert[],const double u[], 
+void Tetrahedral::computeVertice(double f_vert[],const double u[],
 				 const Vertice vert[], const int map[])
 {
   double aux,Fa,Fb,Fc,eta1,eta2,eta3;
@@ -960,7 +960,7 @@ void Tetrahedral::computeVertice(double f_vert[],const double u[],
 	// coordenadas
 	e1p=(1.0+eta1)/2.0;
 	e1m=(1.0-eta1)/2.0;
-	
+
 	x1=((xa*e1m+xb*e1p)*e2m+e2p*xc)*e3m+e3p*xd;
 	x2=((ya*e1m+yb*e1p)*e2m+e2p*yc)*e3m+e3p*yd;
 	x3=((za*e1m+zb*e1p)*e2m+e2p*zc)*e3m+e3p*zd;
@@ -983,7 +983,7 @@ void Tetrahedral::computeVertice(double f_vert[],const double u[],
 // ************************************************************************
 // Evaluates the value of the field at points
 // ************************************************************************
-void Tetrahedral::computeAtPoints(const int npoints, const double LocCoord[],const double u[], 
+void Tetrahedral::computeAtPoints(const int npoints, const double LocCoord[],const double u[],
 				  const Vertice vert[], const int map[],double f[],double GloCoord[])
 {
   double aux,Fa,Fb,Fc,eta1,eta2,eta3;
@@ -1016,7 +1016,7 @@ void Tetrahedral::computeAtPoints(const int npoints, const double LocCoord[],con
     // coordenadas
     e1p=(1.0+eta1)/2.0;
     e1m=(1.0-eta1)/2.0;
-    
+
     x1=((xa*e1m+xb*e1p)*e2m+e2p*xc)*e3m+e3p*xd;
     x2=((ya*e1m+yb*e1p)*e2m+e2p*yc)*e3m+e3p*yd;
     x3=((za*e1m+zb*e1p)*e2m+e2p*zc)*e3m+e3p*zd;
@@ -1084,16 +1084,16 @@ void Tetrahedral::Jacobian(const Vertice vert[],const int map[],double *JV)
 // ************************************************************************
 
  // ************************************************************************
- 
+
 void Tetrahedral::teste_face(int a,int b,int c, int& sign, int& ng,
 			     int& NG,int& NF,int Face[],int Fng[])
 {
   int p=P[0];
   int ii,NF3=0;
-  int flag; 
-  
+  int flag;
+
   sign=1;
-  
+
   // Verificar se a face ja foi numerada
   flag=0; // reset flag; flag = 0 equivale a face nao numerada
   for (int i=0; i<NF && flag==0; i++){
@@ -1137,7 +1137,7 @@ void Tetrahedral::map_aresta(int imin,int imax,int sign0,int ng0,int map[],int s
       ng0++;
     }
   }
-  else 
+  else
     for(i=imin; i<=imax;i++){
       map[i]=ng0;
       sgn[i]=1;
@@ -1148,7 +1148,7 @@ void Tetrahedral::map_aresta(int imin,int imax,int sign0,int ng0,int map[],int s
 void Tetrahedral::map_face(int & imin,int P0, int P1,
 			   int sign0,int ng0,int map[],int sgn[])
 {
-  int a=imin; 
+  int a=imin;
   int temp=1;
   for(int i=1; i<P0-1; i++){
     for(int j=1; j<P1-i;j++){
@@ -1169,9 +1169,9 @@ void Tetrahedral::map_face(int & imin,int P0, int P1,
 // ************************************************************************
 // Input function in vector form fvec
 // ************************************************************************
-void Tetrahedral::Gradiente(FILE * fout, double ** grad,  
+void Tetrahedral::Gradiente(FILE * fout, double ** grad,
 			    const double fvec[],
-			    const Vertice vert[], 
+			    const Vertice vert[],
 			    const int map[])
 {
   double xa,ya,za,xb,yb,zb,xc,yc,zc,xd,yd,zd,eta1,eta2,eta3,x1,x2,x3;
@@ -1286,7 +1286,7 @@ void Tetrahedral::Gradiente(FILE * fout, double ** grad,
  	x1=((xa*e1m+xb*e1p)*e2m+e2p*xc)*e3m+e3p*xd;
  	x2=((ya*e1m+yb*e1p)*e2m+e2p*yc)*e3m+e3p*yd;
  	x3=((za*e1m+zb*e1p)*e2m+e2p*zc)*e3m+e3p*zd;
- 	
+
  	m=i+j*Q[0]+k*Q[0]*Q[1];
  	fprintf(fout,"testex %11.4e %11.4e %11.4e %11.4e %11.4e\n",x1,x2,x3,g(x1,x2,x3),grad[0][m]);// Derivada com relacao a x no ponto de integracao m=m(i,j,k).
        }
@@ -1295,16 +1295,16 @@ void Tetrahedral::Gradiente(FILE * fout, double ** grad,
 
 };
 // ************************************************************************
-void Tetrahedral::Gradiente(double ** grad,  
-			    const double fvec[], 
-			    const Vertice vert[], 
+void Tetrahedral::Gradiente(double ** grad,
+			    const double fvec[],
+			    const Vertice vert[],
 			    const int map[])
 {
   double xa,ya,za,xb,yb,zb,xc,yc,zc,xd,yd,zd,eta1,eta2,eta3;
- 
+
   int i,j,l,m;
   double df[MAXQ*MAXQ*MAXQ][3];
-  
+
   double a11,a12,a13,a21,a22,a23,a31,a32,a33, J3D;
   double b[3][3];
   double aux,aux0,aux1,aux2;
@@ -1412,7 +1412,7 @@ void Tetrahedral::Gradiente(FILE * fout,
   double e3p, e3m,e2p,e2m,e1p,e1m;
   int i,j,k,m;
   double fvec[MAXQ*MAXQ*MAXQ];
-  
+
   // coordenadas dos nos
   xa=vert[map[0]].x;
   xb=vert[map[1]].x;
@@ -1443,15 +1443,15 @@ void Tetrahedral::Gradiente(FILE * fout,
 	x1=((xa*e1m+xb*e1p)*e2m+e2p*xc)*e3m+e3p*xd;
 	x2=((ya*e1m+yb*e1p)*e2m+e2p*yc)*e3m+e3p*yd;
 	x3=((za*e1m+zb*e1p)*e2m+e2p*zc)*e3m+e3p*zd;
-	
+
 	m=i+j*Q[0]+k*Q[0]*Q[1];
 	fvec[m]=func(x1,x2,x3);
       }
     }
   }
-  Gradiente(fout, grad, fvec, vert, map); 
+  Gradiente(fout, grad, fvec, vert, map);
 };
-      
+
 void Tetrahedral::print_nome(FILE * fout)
 {
   fprintf(fout,"ELEMENTO TETRAEDRICO\n");
@@ -1465,10 +1465,11 @@ void Tetrahedral::localFaceModeMap(const int fnum,
                                    const int P,
                                    int trimap[])
 {
+  cout << "Tetrahedral::localFaceModeMap\n";
   int mar[6][P-1];
   int mface[4][(P-1)*(P-2)/2];
   int ar[3]; // aresta que compoem a face
-  
+
   // criar numeracao local dos modos do tetraedro
   int a=4; // numero do proximo modo
   for(int i=0;i<6;++i) { // loop sobre as arestas
@@ -1481,9 +1482,9 @@ void Tetrahedral::localFaceModeMap(const int fnum,
       for(int j=1;j<P-i;++j)
         mface[k][count++] = a++;
   }
-  
+
   int l=0;
- 
+
   // Flag dos nos
   for(int i=0;i<3;++i) {
     trimap[l++] = face[fnum][i];
@@ -1518,9 +1519,9 @@ void Tetrahedral::Dirichlet(const int face_num,
                             double Xbc[],
                             double (*func)(double,double,double))
 {
-  
-   //cout << "Entrando em Tetrahedral::Dirichlet para a face "<< face_num << endl;
- 
+
+   cout << "Entrando em Tetrahedral::Dirichlet para a face "<< face_num << endl;
+
   const int varn = 0;
   //const int NFields = 1;
  // double xa,ya,za,xb,yb,zb,xc,yc,zc,xd,yd,zd;
@@ -1537,7 +1538,7 @@ void Tetrahedral::Dirichlet(const int face_num,
   }
   p0=P[fd0[face_num]];
   p1=P[fd1[face_num]];
-  
+
   int q=Q[0];
   //dados do triangulo (stdel)
   Triangle * triang = new Triangle(p0,q);
@@ -1551,13 +1552,13 @@ void Tetrahedral::Dirichlet(const int face_num,
   int count = 0;
   localphel->inicia_gbnmap(0,count);// inicia gbnmap[i]=i,sgn[i]=1, i=0,nn-1;
   // Encontrar os nos.
-  //Criar trimap[]; mapeamento dos nos do triangulo standard sobre 
-  // os nos globais 
+  //Criar trimap[]; mapeamento dos nos do triangulo standard sobre
+  // os nos globais
   localFaceModeMap(face_num,p0,trimap); // mapeia o triangulo local no tetraedro
- 
+
   //cout << "chamando projetar_C0 para triangulo (localphel)"<< endl;
   localphel->projetar_C0(nullptr, func, varn);
- 
+
    //mapeia os resultados sobre os modos globais
   for(i=0;i<triang->nn_val();++i){
     ii=trimap[i]; // indice do modo no tetraedro
@@ -1640,11 +1641,11 @@ void Tetrahedral::computeFuncGQ(double f_[],
         eta1=xGQ[0][i];
         e1p=(1.0+eta1)/2.0;
         e1m=(1.0-eta1)/2.0;
-              
+
         x1=((xa*e1m+xb*e1p)*e2m+e2p*xc)*e3m+e3p*xd;
         x2=((ya*e1m+yb*e1p)*e2m+e2p*yc)*e3m+e3p*yd;
         x3=((za*e1m+zb*e1p)*e2m+e2p*zc)*e3m+e3p*zd;
-        
+
         f_[count++]=func(x1,x2,x3);
       }
     }
@@ -1684,20 +1685,20 @@ void Tetrahedral::vector_of_integral_of_f_Phi_dv(double vec[],
   double aux,Fa,Fb,Fc,eta1,eta2,eta3;
   int Pdim=P[0]+2;
   double fp[Pdim][Q[1]][Q[2]], fpq[Pdim][Pdim][Q[2]];
-  
+
   // primeira matriz fp(xi2,xi3)
   for(p=0;p<Pdim;p++){
     // fazer loop sobre xi2 e xi3
     for(k=0;k<Q[2];k++){
-   
+
       for(j=0;j<Q[1];j++){
-     
+
         // somar sobre xi1 (i)
         aux=0.0;
         for(i=0;i<Q[0];i++){
           // coordenadas
           eta1=xGQ[0][i];
-          
+
           Fa=Psia(P[0], p,eta1);
           n = i + Q[0]*(j + Q[1]*k);
           aux+=(wGQ[0][i]*Fa*func[n]*JV[n]);// <==== Jacobian JV
@@ -1767,7 +1768,7 @@ void Tetrahedral::superficie_externa(const Vertice vert[],const int Vert_map[],
   l0x=vert[v1].x - vert[v0].x;
   l0y=vert[v1].y - vert[v0].y;
   l0z=vert[v1].z - vert[v0].z;
-  
+
   l1x=vert[v2].x - vert[v0].x;
   l1y=vert[v2].y - vert[v0].y;
   l1z=vert[v2].z - vert[v0].z;
@@ -1776,10 +1777,16 @@ void Tetrahedral::superficie_externa(const Vertice vert[],const int Vert_map[],
   normal[0] = sinal_normal[num_local] * (l0y*l1z - l1y*l0z);
   normal[1] = sinal_normal[num_local] * (l0z*l1x - l1z*l0x);
   normal[2] = sinal_normal[num_local] * (l0x*l1y - l1x*l0y);
-  
+
   area = sqrt(normal[0]*normal[0] + normal[1]*normal[1] + normal[2]*normal[2]);
-  
+
   normal[0]/=area;
   normal[1]/=area;
   normal[2]/=area;
+};
+//const int * Tetrahedral::show_face(const int &i){return face[i];};
+void Tetrahedral::face_GQCoord(const Vertice vert[],const int map[],
+                               const int a0,const int qmax,
+                               double x[],double y[],double z[])
+{
 };
