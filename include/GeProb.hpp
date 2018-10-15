@@ -20,7 +20,7 @@ class GeProb
   GeProb(Epetra_Comm& comm);
   ~GeProb();
   //Epetra_Comm* show_Comm(){return Comm;};
-  Teuchos::RCP<Epetra_Comm> show_Comm(){return Comm;};    
+  Teuchos::RCP<Epetra_Comm> show_Comm(){return Comm;};
   Teuchos::RCP<Epetra_Vector> getSolution(){return solution;};
   // Return a reference to the Epetra_Vector with the Jacobian
   Teuchos::RCP<Epetra_CrsMatrix> getJacobian();
@@ -75,7 +75,7 @@ class GeProb
 
 
 protected:
-    
+
     FillType flag;
     //Epetra_Map *StandardMap;
     Teuchos::RCP<Epetra_Map> StandardMap;
@@ -94,8 +94,8 @@ protected:
   int NumProc;            // Total number of processes
   int NumElemTypeents;    // Number of elements owned by this process
   int NumGlobalElements;  // Total Number of elements
-    
-    
+
+
 
   int myid = 0;
   int comm_size = 0;
@@ -107,7 +107,7 @@ protected:
   const int NumVAR = N_VAR; // Para ser usado nas classes derivadas
   const int NumFIELDS = N_FIELDS;// Para ser usado nas classes derivadas
   Field_struct Field[N_FIELDS];
-  
+
   int FieldOfVar[N_VAR];
 
   // ******************************************
@@ -152,7 +152,7 @@ protected:
   Quadrilateral * ptrQuadri[N_FIELDS];
   Tetrahedral * ptrTetrahedral[N_FIELDS];
   Hexahedral *  ptrHexahedral[N_FIELDS];
-  
+
   // ******************************************
   // Para usar Trilinos
 
@@ -211,11 +211,11 @@ GeProb<ElemType,N_VAR,N_FIELDS>::~GeProb()
     if (ptrHexahedral[i] != nullptr){delete ptrHexahedral[i]; ptrHexahedral[i] = nullptr;}
     //cout << "5" << endl;
   }
-  
+
     cout << "liberou pointer dos elementos espectrais"<< endl;
-   
+
     //delete StandardMap;
-   
+
     cout << "Saiu de GeProb destructor"<< endl;
 };
 // ****************************************************************************
@@ -334,7 +334,7 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::Processar_elementos()
 
   // inicializa os elementos padrões
   //int n = N_FIELDS;//Field.size();
-  
+
   for(int i=0; i < N_FIELDS; ++i) {
     //	cout << "DG_Prob::set_orders:  "<< i << '\n';
     // cout << "Aloca memoria dinamica\n ";
@@ -381,7 +381,7 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::Processar_elementos()
     }
 
     el[i].set_ptr_stdel(ptstdel);
-    
+
     // ***********************************************************
 
     // Processamento do elemento
@@ -831,7 +831,7 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::ResolverComTrilinos(const std::string Pack
      //Epetra_Import Importer(TargetMap,Map); //analogo a distribuicao da solucao para os elementos Map eh 1-1
                                             // TargetMap pode nao ser
   Epetra_Vector Y(TargetMap);
-   
+
     Y.PutScalar(0.0);
   Y.Export(X,Exporter,Add);
   //Y.Import(X,Importer,Insert);
@@ -871,8 +871,8 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::Ler_e_Processar_malha(char *arq_geo)
     finput_geo=fopen(arq_geo,"rb"); // Arquivo de geometria
 
     fscanf(finput_geo,"%d %d %d",&NUMNP,&NELEM,&DNBC);
-    
-    
+
+
     if((finput_part=fopen(arq_part,"rb"))!=NULL) {
       printf("Lendo arquivo de Particao\n");
 
@@ -882,7 +882,7 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::Ler_e_Processar_malha(char *arq_geo)
       printf("Nao existe arquivo de Particao %s!!!!\n",arq_part);
       NumPart=1;
     }
-    
+
     printf("myid %d Parametros NUMNP = %d NELEM = %d DNBC = %d NumPart = %d\n",myid,NUMNP,NELEM,DNBC,NumPart);
   } // myid == 0
 
@@ -1055,7 +1055,7 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::Ler_e_Processar_malha(char *arq_geo)
     cout << "Passou Construir_bordas();\n";
   Particionar_malha( buffer_Pa );
   Marcar_condicoes_contorno( buffer_BC,face_mask_vec );
- 
+
   cout << "dimensao em Ler_e_processar_malha "<< dim << endl;
 };
 
@@ -1209,7 +1209,7 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::Construir_bordas()
         }
       }
 
-      break;
+      break; // fim de dimensao 1
 
     case 2:
 
@@ -1244,20 +1244,21 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::Construir_bordas()
             int n1 = el[i].show_ptr_stdel(0)->aresta_lvert(j,1);//aresta j vertice 1
             int V0 = el[i].show_Vert_map(n0); // numero global do vertice 0
             int V1 = el[i].show_Vert_map(n1); // numero global do vertice 1
-            if (V0 > V1) { // borda e definida sempre do menor vertie para o maior
+            if (V0 > V1) { // borda e definida sempre do menor vertice para o maior
               int aux = V0;
               V0 = V1;
               V1 = aux;
             }
             border[n_border].Na=V0;
             border[n_border].Nb=V1;
+            // calcular comprimento, w e Jacobiano
           }
           border[n_border].num_elem++;
           el[i].set_border_num(j,n_border);//19/07/2014
-        }
+        } // for(j =0; j<nume)
       }
 
-      break;
+      break; // fim de dimensao 2
 
     case 3:
 
@@ -1276,14 +1277,7 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::Construir_bordas()
         //border.push_back(borda);
       }
 
-      /*
-        for(int i=0;i<NF;++i){
-        EDGE borda;
-        borda.tipo=0;
-        borda.num_elem=0;
-        border.push_back(borda);
-        }
-      */
+    
       for(int i=0; i<NELEM; ++i) {
         int numf = el[i].show_numf();
         for(int j=0;j<numf;++j){
@@ -1293,8 +1287,9 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::Construir_bordas()
           border[n_border].num_local[n]=j;
           border[n_border].num_elem++;
           el[i].set_border_num(j,n_border);//19/07/2014
+          // calcular area, w e Jacobiano
         }
-          
+
       }
 
       break;
@@ -1328,7 +1323,7 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::Construir_bordas()
 };
 
 // *****************************************************
-// Marcar as condicoes de contorno no GeProb 
+// Marcar as condicoes de contorno no GeProb
 // *****************************************************
 // ****************************************************************************************
 template <typename ElemType,int N_VAR,int N_FIELDS>
@@ -1338,22 +1333,22 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::Marcar_condicoes_contorno(int *BC,
 {
   // Inicializar o bflag com valores 0
   for(int i=0;i<NG;++i) bflag.push_back(0); //bflag[i]=0;//bflag=0: conhecido
-  
+
   int naux,tipo,n;
   int elnum,eltype,facenum;//newfacenum;
-  
+
   DNBC=BC[0];
   naux=1;
-  
+
   for(int k=0;k<DNBC;++k){// BOUNDARY CONDITIONS
     tipo=BC[naux++]; // tipo de condicao de contorno
     n=BC[naux++]; //< numero de elementos que tem essa condicao de contorno
-    
+
     for(int j=0;j<n;++j){
       elnum=BC[naux++]; //< numero do elemento
       eltype=BC[naux++]; //< tipo do elemento
       facenum=BC[naux++]; //< face do elemento onde vale a condicao de contorno
-      
+
       // caso especial para o tetraedro
       // Nao testado ainda. 01/11/2016
       if(eltype==4){
@@ -1365,11 +1360,11 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::Marcar_condicoes_contorno(int *BC,
           }
         }
       }
-      
+
       el[elnum].set_border_tipo(border,facenum,tipo); //incluido 01/nov/2016
     } // incluido 01/nov/2016
   } // for(int k=0; k< DNBC; ++k) incluido 01/nov/2016
 };
 // ******************************************************************************************
- 
+
 #endif /* _GeProb_headers */

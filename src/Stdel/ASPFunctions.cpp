@@ -80,7 +80,7 @@ void jacobi_poly ( int n, double alpha, double beta, double x, double cx[] )
   double c3;
   double c4;
   int i;
-  
+
   if ( alpha <= -1.0 )
     {
       cout << "\n";
@@ -89,7 +89,7 @@ void jacobi_poly ( int n, double alpha, double beta, double x, double cx[] )
       cout << "  But ALPHA must be greater than -1.\n";
       exit ( 1 );
     }
-  
+
   if ( beta <= -1.0 )
     {
       cout << "\n";
@@ -98,66 +98,66 @@ void jacobi_poly ( int n, double alpha, double beta, double x, double cx[] )
       cout << "  But BETA must be greater than -1.\n";
       exit ( 1 );
     }
-  
+
   if ( n < 0 )
     {
       return;
     }
-  
+
   cx[0] = 1.0;
-  
+
   if ( n == 0 )
     {
       return;
     }
-  
-  cx[1] = ( 1.0 + 0.5 * ( alpha + beta ) ) * x 
+
+  cx[1] = ( 1.0 + 0.5 * ( alpha + beta ) ) * x
     + 0.5 * ( alpha - beta );
-  
+
   for ( i = 2; i <= n; i++ )
     {
-      c1 = 2.0 * ( double ) ( i ) * ( ( double ) ( i ) + alpha + beta ) 
+      c1 = 2.0 * ( double ) ( i ) * ( ( double ) ( i ) + alpha + beta )
 	* ( ( double ) ( 2 * i - 2 ) + alpha + beta );
-      
-      c2 = ( ( double ) ( 2 * i - 1 ) + alpha + beta ) 
-	* ( ( double ) ( 2 * i ) + alpha + beta ) 
+
+      c2 = ( ( double ) ( 2 * i - 1 ) + alpha + beta )
+	* ( ( double ) ( 2 * i ) + alpha + beta )
 	* ( ( double ) ( 2 * i - 2 ) + alpha + beta );
-      
-      c3 = ( ( double ) ( 2 * i - 1 ) + alpha + beta ) 
+
+      c3 = ( ( double ) ( 2 * i - 1 ) + alpha + beta )
 	* ( alpha + beta ) * ( alpha - beta );
-      
-      c4 = - ( double ) ( 2 ) * ( ( double ) ( i - 1 ) + alpha ) 
-	* ( ( double ) ( i - 1 ) + beta )  
+
+      c4 = - ( double ) ( 2 ) * ( ( double ) ( i - 1 ) + alpha )
+	* ( ( double ) ( i - 1 ) + beta )
 	* ( ( double ) ( 2 * i ) + alpha + beta );
-      
+
       cx[i] = ( ( c3 + c2 * x ) * cx[i-1] + c4 * cx[i-2] ) / c1;
-      
+
     }
-  
+
   return;
 }
 // ******************************************************************
-void Jacobi_P (int n, double a, double b, double x, 
+void Jacobi_P (int n, double a, double b, double x,
 	       double &y, double &dy, double &d2y)
 // ******************************************************************
 {
   // check parameters
   if (n < 0 || a <= -1.0 || b <= -1.0 || fabs(x) > 1.0)
     printf("%s: %s n=%d a=%lf b=%lf x=%lf\n", "Jacobi_P",   "bad argument 1\n",n,a,b,x);
-  
+
   double c0, c1, c2, c3, c4, ab, di, ym, yp, dym, dyp, d2ym, d2yp;
-  
+
   y = 1.0;
   dy = 0.0;
   d2y = 0.0;
   if (n == 0) return;
-  
+
   ab = a + b;
   y = (ab + 2.0) * 0.5 * x + (a - b) * 0.5;
   dy = (ab + 2.0) * 0.5;
   d2y = 0.0;
   if (n == 1) return;
-  
+
   yp = 1.0;
   dyp = 0.0;
   d2yp = 0.0;
@@ -182,27 +182,27 @@ void Jacobi_P (int n, double a, double b, double x,
 // *****************************************************************
 // Polymorphic form
 // *****************************************************************
-void Jacobi_P (int n, double a, double b, double x, 
+void Jacobi_P (int n, double a, double b, double x,
               double &y)
 // *****************************************************************
 {
   // check parameters
   if (n < 0 || a <= -1.0 || b <= -1.0 || fabs(x) > 1.0)
     printf("%s: %s", "Jacobi_P",   "bad argument 2");
-  
+
   double c0, c1, c2, c3, c4, ab, di, ym, yp;
-  
+
   y = 1.0;
   // dy = 0.0;
   //d2y = 0.0;
   if (n == 0) return;
-  
+
   ab = a + b;
   y = (ab + 2.0) * 0.5 * x + (a - b) * 0.5;
   //dy = (ab + 2.0) * 0.5;
   //d2y = 0.0;
   if (n == 1) return;
-  
+
   yp = 1.0;
   //dyp = 0.0;
   //d2yp = 0.0;
@@ -227,27 +227,27 @@ void Jacobi_P (int n, double a, double b, double x,
 // *****************************************************************
 // Polymorphic form
 // *****************************************************************
-void Jacobi_P (int n, double a, double b, double x, 
+void Jacobi_P (int n, double a, double b, double x,
               double &y,double &dy)
 // *****************************************************************
 {
   // check parameters
   if (n < 0 || a <= -1.0 || b <= -1.0 || fabs(x) > 1.0)
     printf("%s: %s", "Jacobi_P",   "bad argument 3");
-  
+
   double c0, c1, c2, c3, c4, ab, di, ym, yp, dym, dyp;
-  
+
   y = 1.0;
   dy = 0.0;
   //d2y = 0.0;
   if (n == 0) return;
-  
+
   ab = a + b;
   y = (ab + 2.0) * 0.5 * x + (a - b) * 0.5;
   dy = (ab + 2.0) * 0.5;
   //d2y = 0.0;
   if (n == 1) return;
-  
+
   yp = 1.0;
   dyp = 0.0;
   //d2yp = 0.0;
@@ -301,7 +301,7 @@ void Jacobi_roots(int m, double alpha, double beta, double x[])
 // ****************************************************************************
 
 double my_gamma ( double x )
-  
+
 // ****************************************************************************
 //
 //  Purpose:
@@ -445,12 +445,12 @@ double gamma_log ( double x )
 //
 {
   double c[7] = {
-    -1.910444077728E-03, 
-    8.4171387781295E-04, 
-    -5.952379913043012E-04, 
-    7.93650793500350248E-04, 
-    -2.777777777777681622553E-03, 
-    8.333333333333333331554247E-02, 
+    -1.910444077728E-03,
+    8.4171387781295E-04,
+    -5.952379913043012E-04,
+    7.93650793500350248E-04,
+    -2.777777777777681622553E-03,
+    8.333333333333333331554247E-02,
     5.7083835261E-03 };
   double corr;
   double d1 = - 5.772156649015328605195174E-01;
@@ -459,59 +459,59 @@ double gamma_log ( double x )
   double frtbig = 1.42E+09;
   int i;
   double p1[8] = {
-    4.945235359296727046734888, 
-    2.018112620856775083915565E+02, 
-    2.290838373831346393026739E+03, 
-    1.131967205903380828685045E+04, 
-    2.855724635671635335736389E+04, 
-    3.848496228443793359990269E+04, 
-    2.637748787624195437963534E+04, 
+    4.945235359296727046734888,
+    2.018112620856775083915565E+02,
+    2.290838373831346393026739E+03,
+    1.131967205903380828685045E+04,
+    2.855724635671635335736389E+04,
+    3.848496228443793359990269E+04,
+    2.637748787624195437963534E+04,
     7.225813979700288197698961E+03 };
   double p2[8] = {
-    4.974607845568932035012064, 
-    5.424138599891070494101986E+02, 
-    1.550693864978364947665077E+04, 
-    1.847932904445632425417223E+05, 
-    1.088204769468828767498470E+06, 
-    3.338152967987029735917223E+06, 
-    5.106661678927352456275255E+06, 
+    4.974607845568932035012064,
+    5.424138599891070494101986E+02,
+    1.550693864978364947665077E+04,
+    1.847932904445632425417223E+05,
+    1.088204769468828767498470E+06,
+    3.338152967987029735917223E+06,
+    5.106661678927352456275255E+06,
     3.074109054850539556250927E+06 };
   double p4[8] = {
-    1.474502166059939948905062E+04, 
-    2.426813369486704502836312E+06, 
-    1.214755574045093227939592E+08, 
-    2.663432449630976949898078E+09, 
+    1.474502166059939948905062E+04,
+    2.426813369486704502836312E+06,
+    1.214755574045093227939592E+08,
+    2.663432449630976949898078E+09,
     2.940378956634553899906876E+010,
     1.702665737765398868392998E+011,
-    4.926125793377430887588120E+011, 
+    4.926125793377430887588120E+011,
     5.606251856223951465078242E+011 };
   double pnt68 = 0.6796875;
   double q1[8] = {
-    6.748212550303777196073036E+01, 
-    1.113332393857199323513008E+03, 
-    7.738757056935398733233834E+03, 
-    2.763987074403340708898585E+04, 
-    5.499310206226157329794414E+04, 
-    6.161122180066002127833352E+04, 
-    3.635127591501940507276287E+04, 
+    6.748212550303777196073036E+01,
+    1.113332393857199323513008E+03,
+    7.738757056935398733233834E+03,
+    2.763987074403340708898585E+04,
+    5.499310206226157329794414E+04,
+    6.161122180066002127833352E+04,
+    3.635127591501940507276287E+04,
     8.785536302431013170870835E+03 };
   double q2[8] = {
-    1.830328399370592604055942E+02, 
-    7.765049321445005871323047E+03, 
-    1.331903827966074194402448E+05, 
-    1.136705821321969608938755E+06, 
-    5.267964117437946917577538E+06, 
-    1.346701454311101692290052E+07, 
-    1.782736530353274213975932E+07, 
+    1.830328399370592604055942E+02,
+    7.765049321445005871323047E+03,
+    1.331903827966074194402448E+05,
+    1.136705821321969608938755E+06,
+    5.267964117437946917577538E+06,
+    1.346701454311101692290052E+07,
+    1.782736530353274213975932E+07,
     9.533095591844353613395747E+06 };
   double q4[8] = {
-    2.690530175870899333379843E+03, 
-    6.393885654300092398984238E+05, 
-    4.135599930241388052042842E+07, 
-    1.120872109616147941376570E+09, 
-    1.488613728678813811542398E+010, 
-    1.016803586272438228077304E+011, 
-    3.417476345507377132798597E+011, 
+    2.690530175870899333379843E+03,
+    6.393885654300092398984238E+05,
+    4.135599930241388052042842E+07,
+    1.120872109616147941376570E+09,
+    1.488613728678813811542398E+010,
+    1.016803586272438228077304E+011,
+    3.417476345507377132798597E+011,
     4.463158187419713286462081E+011 };
   double res;
   double sqrtpi = 0.9189385332046727417803297;
@@ -529,7 +529,7 @@ double gamma_log ( double x )
     {
       return xbig ;//d_huge ( );
     }
-  
+
   if ( x <= d_epsilon ( ) )
     {
       res = - log ( x );
@@ -546,18 +546,18 @@ double gamma_log ( double x )
 	  corr = 0.0;
 	  xm1 = ( x - 0.5 ) - 0.5;
 	}
-      
+
       if ( x <= 0.5 || pnt68 <= x )
 	{
 	  xden = 1.0;
 	  xnum = 0.0;
-	  
+
 	  for ( i = 0; i < 8; i++ )
 	    {
 	      xnum = xnum * xm1 + p1[i];
 	      xden = xden * xm1 + q1[i];
 	    }
-	  
+
 	  res = corr + ( xm1 * ( d1 + xm1 * ( xnum / xden ) ) );
 	}
       else
@@ -570,9 +570,9 @@ double gamma_log ( double x )
 	      xnum = xnum * xm2 + p2[i];
 	      xden = xden * xm2 + q2[i];
 	    }
-	  
+
 	  res = corr + xm2 * ( d2 + xm2 * ( xnum / xden ) );
-	  
+
 	}
     }
   else if ( x <= 4.0 )
@@ -585,7 +585,7 @@ double gamma_log ( double x )
 	  xnum = xnum * xm2 + p2[i];
 	  xden = xden * xm2 + q2[i];
 	}
-      
+
       res = xm2 * ( d2 + xm2 * ( xnum / xden ) );
     }
   else if ( x <= 12.0 )
@@ -598,33 +598,33 @@ double gamma_log ( double x )
 	  xnum = xnum * xm4 + p4[i];
 	  xden = xden * xm4 + q4[i];
 	}
-      
+
       res = d4 + xm4 * ( xnum / xden );
     }
   else
     {
       res = 0.0;
-      
+
       if ( x <= frtbig )
 	{
-	  
+
 	  res = c[6];
 	  xsq = x * x;
-	  
+
 	  for ( i = 0; i < 6; i++ )
 	    {
 	      res = res / xsq + c[i];
 	    }
-	  
+
 	}
-      
+
       res = res / x;
       corr = log ( x );
       res = res + sqrtpi - 0.5 * corr;
       res = res + x * ( corr - 1.0 );
-      
+
     }
-  
+
   return res;
 }
 
@@ -639,26 +639,26 @@ double C(int Q, double alpha, double beta, double xi)
   double res;
   double aux=1.0;
   double y;
-  
+
   for(int i=1 ; i<(Q+2); i++) aux*= (double) i;
   aux*=(Q+1);
   Jacobi_P (Q+1, alpha,beta, xi, y);
-  res= pow(2.0, alpha+beta+1.0) * my_gamma(alpha+Q+2.0) 
+  res= pow(2.0, alpha+beta+1.0) * my_gamma(alpha+Q+2.0)
     * my_gamma(beta+Q+2.0)/aux/
     my_gamma(alpha+beta+Q+3.0)/y/y;
-  
+
   return res;
 }
 
 // ****************************************************************************
 //
-// Calcula os pontos e os pesos para o metodo de 
+// Calcula os pontos e os pesos para o metodo de
 //    integracao de Gauss-Lobatto-Jacobi
 //    e os pesos da derivada por colocacao
 //
 // ****************************************************************************
-void Gauss_Lobatto_Jacobi_parameters(int Q, double alpha, double beta, 
-				     double x[], double w[], 
+void Gauss_Lobatto_Jacobi_parameters(int Q, double alpha, double beta,
+				     double x[], double w[],
 				     double D[MAXQ][MAXQ])
 {
   int Qm1 = Q-1;
@@ -667,7 +667,7 @@ void Gauss_Lobatto_Jacobi_parameters(int Q, double alpha, double beta,
   double dp1[MAXQ], dp2[MAXQ];
  // double sgn=1.0;
   double y, dy, d2y, aux, aaux;
-  
+
   // Calcula os pontos de quadratura
   if(Qm2>0) {
     Jacobi_roots(Qm2,alpha+1.0, beta+1.0, x);
@@ -675,16 +675,16 @@ void Gauss_Lobatto_Jacobi_parameters(int Q, double alpha, double beta,
   }
   x[0]   = -1.0;
   x[Qm1] =  1.0;
-  
+
   // Calcula os pesos
   w[0]   =  (beta+1.0) * C(Qm2,alpha,beta,x[0]);
-  
+
   if(Qm2>0)
     for( i=1; i<Qm1; i++)
       w[i]= C (Qm2, alpha, beta,x[i]);
-  
+
   w[Qm1] = (alpha+1.0) * C(Qm2,alpha,beta,x[Qm1]);
-  
+
   // Collocation Differentiation
   for(i=0; i<Q;i++){
     aux=x[i];
@@ -693,7 +693,7 @@ void Gauss_Lobatto_Jacobi_parameters(int Q, double alpha, double beta,
     dp1[i]=aaux*dy-2.0*aux*y;
     dp2[i]=aaux*d2y-4.0*aux*dy-2.0*y;
   }
-  
+
   for(i=0; i<Q; i++)
     for(int j=0; j<Q; j++){
       if(i==j) D[i][j] = dp2[i]/2.0/dp1[i];
@@ -704,32 +704,32 @@ void Gauss_Lobatto_Jacobi_parameters(int Q, double alpha, double beta,
 
 // ****************************************************************************
 //
-// Calcula os pontos e os pesos para o metodo de 
+// Calcula os pontos e os pesos para o metodo de
 //    integracao de Gauss-Radau-Jacobi
 //    e os pesos da derivada por colocacao
 //
 // ****************************************************************************
-void Gauss_Radau_Jacobi_parameters(int Q, double alpha, double beta, 
-				   double x[], double w[], 
+void Gauss_Radau_Jacobi_parameters(int Q, double alpha, double beta,
+				   double x[], double w[],
 				   double D[MAXQ][MAXQ])
 {
   int Qm1 = Q-1;
   int i;
   double dp1[MAXQ], dp2[MAXQ];
   double y, dy, d2y, aux, aaux;
-  
+
   // Calcula os pontos de quadratura
   if(Qm1>0){
     Jacobi_roots(Qm1,alpha, beta+1.0, x);
     for ( i=Qm1; i>0; i--) x[i]=x[i-1];
   }
   x[0]   = -1.0;
-  
+
   // Calcula os pesos
   w[0]   = (beta+1.0) * B(Qm1,alpha,beta,x[0]);
   for( i=1; i<Q; i++)
     w[i]= B (Qm1, alpha, beta,x[i]);
-  
+
   //Collocation differentiation
   for(i=0; i<Q;i++){
     aux=x[i];
@@ -738,7 +738,7 @@ void Gauss_Radau_Jacobi_parameters(int Q, double alpha, double beta,
     dp1[i]=aaux*dy+y;
     dp2[i]=aaux*d2y+2.0*dy;
   }
-  
+
   for(i=0; i<Q; i++)
     for(int j=0; j<Q; j++){
       if(i==j) D[i][j] = dp2[i]/2.0/dp1[i];
@@ -748,15 +748,16 @@ void Gauss_Radau_Jacobi_parameters(int Q, double alpha, double beta,
 }
 // ****************************************************************************
 //
-// Calcula os pontos e os pesos para o metodo de 
+// Calcula os pontos e os pesos para o metodo de
 //    integracao de Gauss-Jacobi
 //    e os pesos da derivada por colocacao
 //
 // ****************************************************************************
-void Gauss_Jacobi_parameters(int Q, double alpha, double beta, 
-				   double x[], double w[], 
+void Gauss_Jacobi_parameters(int Q, double alpha, double beta,
+				   double x[], double w[],
 				   double D[MAXQ][MAXQ])
 {
+  //printf("Gauss_Jacobi_parameters\n");
   int i;
   double dp1[MAXQ], dp2[MAXQ];
   double y, dy, d2y, aux, aaux;
@@ -768,12 +769,12 @@ void Gauss_Jacobi_parameters(int Q, double alpha, double beta,
   // Calcula os pontos de quadratura
   Jacobi_roots(Q,alpha, beta, x);
 
-  H = pow(2.0, alpha+beta+1.0) 
-    * my_gamma(alpha+Q+1.0) 
-    * my_gamma(beta+Q+1.0) 
-    / Qfat 
+  H = pow(2.0, alpha+beta+1.0)
+    * my_gamma(alpha+Q+1.0)
+    * my_gamma(beta+Q+1.0)
+    / Qfat
     / my_gamma(alpha+beta+Q+1.0);
-  
+
   // Calcula os pesos
   //Collocation differentiation
   for(i=0; i<Q;i++){
@@ -784,7 +785,7 @@ void Gauss_Jacobi_parameters(int Q, double alpha, double beta,
     dp1[i]=dy;
     dp2[i]=d2y;
   }
-  
+
   for(i=0; i<Q; i++)
     for(int j=0; j<Q; j++){
       if(i==j) D[i][j] = dp2[i]/2.0/dp1[i];
@@ -803,10 +804,10 @@ double B(int q, double alpha, double beta, double xi)
   double res;
   double aux=1.0;
   double y;
-  
+
   for(int i=1 ; i<(q+1); i++) aux*= (double) i;
   Jacobi_P (q, alpha,beta, xi, y);
-  res= pow(2.0, alpha+beta) * my_gamma(alpha+(double)q+1.0) 
+  res= pow(2.0, alpha+beta) * my_gamma(alpha+(double)q+1.0)
     * my_gamma(beta+(double)q+1.0)
     * (1.0-xi)/aux/(beta+(double)q+1.0)/my_gamma(alpha+beta+q+2.0)/y/y;
   return res;
@@ -826,7 +827,7 @@ double d_epsilon ( void )
 //    D_EPSILON is a number R which is a power of 2 with the property that,
 //    to the precision of the computer's arithmetic,
 //      1 < 1 + R
-//    but 
+//    but
 //      1 = ( 1 + R / 2 )
 //
 //  Modified:
@@ -843,13 +844,13 @@ double d_epsilon ( void )
 //
 {
   double r;
-  
+
   r = 1.0;
-  
+
   while ( 1.0 < ( double ) ( 1.0 + r )  )
     {
       r = r / 2.0;
     }
-  
+
   return ( 2.0 * r );
 }

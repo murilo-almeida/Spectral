@@ -725,7 +725,7 @@ void Quadrilateral::printtoarray(const double u[],
 void Quadrilateral::evalGQ(double f0[],double f1[],
 			const double uh0[],const double uh1[])
 {
-	printf("Quadrilateral::evalGQ0\n");
+	//printf("Quadrilateral::evalGQ 0\n");
   double aux0,aux1, Fa,Fb,eta1,eta2;
   int a;
   int i,j,p,q,k;
@@ -827,7 +827,7 @@ void Quadrilateral::evalGQ(double f0[],double f1[],
 void Quadrilateral::evalGQ(double f0[],const double u0[],const int NF,
 			   const int nvar)
 {
-	//printf("Quadrilateral::evalGQ1\n");
+	//printf("Quadrilateral::evalGQ 1\n");
   double aux0, Fa,Fb,eta1,eta2;
   int a;
   int i,j,p,q,k;

@@ -69,7 +69,7 @@ const int ElemType[6][3]={
   * \param ElemType[4][] Tetraedrico tipo=4;
   * \param ElemType[5][] Hexaedrico tipo=5; */
 
-# include "Geo.h" 
+# include "Geo.h"
 /*****************************************************************************/
 class Mode  /*! mode  */
 /*****************************************************************************/
@@ -161,6 +161,7 @@ struct EDGE  /*! EDGE = Borda do elemento */
   double normal[3],comprimento;
   double * pdir;
   double * sdir;
+  double * Jw;
   //  double flux_w, flux_n;
   int gbtrbind[2];
   int part_num;

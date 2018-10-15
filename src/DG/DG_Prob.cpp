@@ -186,22 +186,10 @@ void DG_Prob::DG_initial_conditions()
     // Integral sobre os borders
     double sigma0=1.0e10;
 
-    // alteracao em 12/02/2013
-    double Jac[qmax],w0[qmax],Dtemp[MAXQ][MAXQ];
-    int nq = qmax;
-    if(ndim==1){
-      w0[0]=1.0;
-      nq=1;
-    }
-    else Gauss_Jacobi_parameters(qmax,0.0,0.0,Jac,w0,Dtemp);
-    // fim da alteracao
-    //printf ("qmax = %d\n",qmax);
+		printf ("qmax = %d\n",qmax);
 
-    for(int i=0;i<NL;i++) {
-      // printf("Integral sobre o border : %d / %d \n",i,NL);
-      //    PROBLEMA PODE SER DETECTADO AQUI !!!!!!!!!! 17/02/2013
-      DG_EI_IG(border[i],sigma0,sigma0,beta,count,T.i,T.j,T.x,B.v,nq,w0);
-    }
+    DG_EI_IG(sigma0,sigma0,beta,count,T.i,T.j,T.x,B.v);
+
     if(nz<count) exit(0);
     //fprintf(fout1,"apos integrais: count = %d  nz = %d\n",count,nz);
     printf("myid = %d apos integrais: count = %d  nz = %d\n",myid,count,nz);
@@ -433,41 +421,6 @@ void DG_Prob::DG_alocar_mem_local(const int qmax,
     }
   }
 
-  //gphi_r = new double * [2];
-  //gphi_l = new double * [2];
-  //gphi_ = new double * [2];
-
- // for(int i=0; i<2; i++) {
- //   gphi_r[i]= new double [qmax];
- //   gphi_l[i]= new double [qmax];
- //   gphi_[i]= new double [qmax];
- // }
-
-  /*
-  // Armazenar trphi para [elemento][variavel][modo][iq]
-
-  trphi = new double *** [2];
-  for(int iE=0;iE<2;iE++) {
-    trphi[iE]= new double ** [2];
-
-    trphi[iE][sat]=new double * [nsat];
-    trphi[iE][pres]=new double * [npres];
-    for(int iM=0;iM<nsat;iM++) {
-      trphi[iE][sat][iM] = new double [qmax];
-    }
-    for(int iM=0;iM<npres;iM++) {
-      trphi[iE][pres][iM] = new double [qmax];
-    }
-  }
-  */
-
-  // K_g_phi_n [elemento][variavel][modo][iq]
-  /* Elemento = 0 ou 1
-     Variavel = sat (=0) ou pres (=1)
-     Modo = numero do modo local
-     iq = indice do ponto de quadratura de Gauss
-  */
-
   K_g_phi_n = new double *** [2];
   for(int iE=0;iE<2;iE++) {
     K_g_phi_n[iE]= new double ** [2];
@@ -560,7 +513,7 @@ void DG_Prob::DG_Escrever_rst(const int nprt)
     el[i].escrever_restart(frestart);
   fclose(frestart);
 };
-
+// ************************************************************************
 void DG_Prob::projetar_C0(FILE *file,double (*func)(double,double,double),
 												 const int & ivar)
 {
@@ -648,135 +601,3 @@ void DG_Prob::projetar_C0(FILE *file,double (*func)(double,double,double),
 
 };
 // ******************************************************************************************
-
-// *****************************************************
-// Condicoes de contorno especializada de DG_Prob
-// *****************************************************
-// Obsoleta em 2/10/2018. Processamento é feito agora no Preamble
-// ****************************************************************************************
-void DG_Prob::Processa_condicoes_contorno()
-// ****************************************************************************************
-{
-    cout << "\nUsando DG_Prob::Processa_condicoes_contorno"<<std::endl;
-    // Inicializar o bflag com valores 1 (desconhecido)
-    for(int i=0;i<NG;i++) bflag.push_back(1); //bflag[i]=1;//bflag=1: desconhecido
-
-    nin = 0;
-    nout = 0;
-    double x,y,aux;
-    const int ndim = el[0].show_ptr_stdel(0)->ndim_val();
-
-    // ***************************************************
-    // Cria os vetores com as bordas de entrada e saida *
-    // ***************************************************
-    if(ndim==2) {
-        for (int i=0;i<NBORDER;++i) {
-
-            /*   double epsilon =1.0e-6;// incluido em 22/04/2014
-             // ************
-             // Similar ao que é feito no fenics
-             if( abs(V[border[i].Na].x) < epsilon && abs(V[border[i].Nb].x) < epsilon ) {border[i].tipo=    -1;} // incluido em 22/04/2014
-             else // incluido em 22/04/2014
-             if( abs(V[border[i].Na].x - 1.0) < epsilon && abs(V[border[i].Nb].x - 1.0) < epsilon ) {border[i].tipo= 1;}// incluido em 22/04/2014
-             // incluido em 22/04/2014
-             */
-
-
-            int t=border[i].tipo;
-
-            if(t == -1 || t == 1){
-              // Alocar memoria para condicoes de contorno de Dirichlet
-              // cout << "Condicoes de contorno de Dirichlet na borda "<< i << std::endl;
-              int qmax=(el[border[i].elemento[0]].show_ptr_stdel(0))->qborder_val();
-              double xq[qmax],w[qmax];
-              double Dtemp[MAXQ][MAXQ];
-              //Mat2<double> Dtemp(qmax,qmax);
-              Gauss_Jacobi_parameters(qmax,0.0,0.0,xq,w,Dtemp);
-              // *******************************************************
-              int na=border[i].Na;
-              int nb=border[i].Nb;
-              double xa=V[na].x;
-              double ya=V[na].y;
-              double xb=V[nb].x;
-              double yb=V[nb].y;
-              double xsum=(xb+xa)*0.5;
-              double xdif=(xb-xa)*0.5;
-              double ysum=(yb+ya)*0.5;
-              double ydif=(yb-ya)*0.5;
-
-              border[i].pdir = new double [qmax];
-              for(int q=0;q<qmax;++q){
-                  aux=xq[q];
-                  x=xsum+xdif*aux;
-                  y=ysum+ydif*aux;
-                  border[i].pdir[q]=funcao_pdir(x,y,t);
-              }
-              if(t==-1){
-                  nin++;
-                  in_borders.push_back(i);
-                  border[i].sdir = new double[qmax];
-                  for(int q=0;q<qmax;++q){
-                      aux=xq[q];
-                      x=xsum+xdif*aux;
-                      y=ysum+ydif*aux;
-                      border[i].sdir[q]=funcao_sdir(x,y);
-                  }
-              }
-              else {
-                  out_borders.push_back(i);
-                  nout++;
-              }
-
-            }
-        }
-    }
-    if(ndim==3) {
-
-        for (int i=0;i<NBORDER;++i) {
-            int t=border[i].tipo;
-            if(t == -1 || t == 1){
-
-                const int _face = border[i].num_local[0];
-                DG_Elem & _elem = el[border[i].elemento[0]];
-                const int _elem_type = _elem.type_val();
-                Stdel * _ptr_stdel = _elem.show_ptr_stdel(0);
-                const int qmax = _ptr_stdel->qborder_val();
-                const int _nvf = _ptr_stdel->show_nvf(_face);
-
-                int _Av[_nvf];
-                int _Bi[_nvf];
-
-                for(int k=0;k<_nvf;++k){
-                    _Bi[k] = _ptr_stdel->face_lvert(_face,k);
-                    _Av[k] = _elem.show_Vert_map(_Bi[k]);
-                }
-                if(_elem_type == 5){
-                   /*
-                    int dir[3];
-                    int sign[3]={1,1,1};
-
-                    int v2;
-
-                    quad_ordem(Av,Bi,dir,sign,v2);
-
-                    q =Q[fd0[face_num]];
-                    p0=P[fd0[face_num]];
-
-                    Quadrilateral * quad = new Quadrilateral(p0,q);
-                */
-                }
-
-                if(t==-1){
-                }
-                else {
-                    out_borders.push_back(i);
-                    nout++;
-                }
-
-            }
-        } // NBORDER
-
-    } // ndim=3
-    printf("Processou DNBC= %d condicoes de contorno: ",DNBC);
-    printf("nin = %d nout = %d \n\n",nin,nout);
-};

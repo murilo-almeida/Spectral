@@ -81,7 +81,7 @@ class DG_Prob : public GeProb<MyElem,2,2>
     void DG_EI_Epetra_Outflow_map(const EDGE border,
                               Teuchos::RCP<Epetra_FECrsGraph> A,
                               Teuchos::RCP<Epetra_FEVector> RHS);
-    
+
   int DG_EI_Inflow(const EDGE border,
                    double * mx,
                    double * B,
@@ -97,14 +97,15 @@ class DG_Prob : public GeProb<MyElem,2,2>
   /*void DG_EI(Epetra_FECrsMatrix & A, Epetra_FEVector & RHS); */
   void DG_EI_flux(const EDGE border, double & flux_w, double & flux_n);
   // Initial Guess Edge Integrals
-  void DG_EI_IG(const EDGE border,
+  void DG_EI_IG(/*const EDGE border,*/
                 const double sigma,
                 const double sigma1,
                 const double beta,int & count,
                 int * Ti,int * Tj, double * Tx,
-                double * B,
-                const int qmax,
-                const double w0[]);
+                double * B);
+                // ,
+                // const int qmax,
+                // const double w0[]);
   // ****************************
   //void RowEI(const EDGE border, int * NumNz, int ** Map);
   //void ValoresInterpolados(char * str = 0);
@@ -120,8 +121,8 @@ class DG_Prob : public GeProb<MyElem,2,2>
                 const Epetra_Vector* X,
                 Epetra_Vector* FVec,
                 Epetra_RowMatrix* Jacobian);
-  
-  void Processa_condicoes_contorno(/*int *BC, std::vector< std::vector<int> > face_mask*/);
+
+ void Processa_condicoes_contornos();
   // ***************************************************************************
 
  private:
@@ -165,7 +166,7 @@ class DG_Prob : public GeProb<MyElem,2,2>
   double beta  ;
 
   Fluids fluids;
-    
+
   // **********************
   // alocar memoria local *
   // **********************

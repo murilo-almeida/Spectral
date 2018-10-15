@@ -94,11 +94,17 @@ void DG_Prob::preamble(char * arq_entrada)
   Ler_Arquivo_Dados_DG(arq_par); // formato novo do arquivo de entrada
 
   Ler_e_Processar_malha(arq_geo);
-    cout << "Passou Ler_e_Processar_malha(arq_geo); "<< std::endl;
+  cout << "Passou Ler_e_Processar_malha(arq_geo); "<< std::endl;
+  Processa_condicoes_contornos();
+  cout << "Saindo de Preamble\n";
+};
+// ***************************************************************************
+void DG_Prob::Processa_condicoes_contornos()
+{
   // ****************************
   // Impor as Condicoes_contorno
   // ****************************
-
+  const int ndim = el[0].show_ptr_stdel(0)->ndim_val();
   // *************************************************
   // Criar vetores globais para tracos de pw e sn    *
   // *************************************************
@@ -126,39 +132,39 @@ void DG_Prob::preamble(char * arq_entrada)
     //   int s0 = border[i].sinal[0];
     int bind0 = el[e0].get_trace_border_map(a0);
     border[i].gbtrbind[0]=bind0;
+    // *****************************************************
+    // Tentativa de 02/10/2018
+    // *****************************************************
+    int qlocal = el[e0].show_ptr_stdel(0)->qborder_val();
+    double x[qlocal], y[qlocal], z[qlocal];
+    const int nvert=el[e0].show_ptr_stdel(0)->nv_val();
+    // cout << "nvert em Preamble "<< nvert << std::endl;
+    int map[nvert];
+    for (int i=0;i<nvert;++i){
+        map[i]=el[e0].show_Vert_map(i);
+    }
+    el[e0].show_ptr_stdel(0)->face_GQCoord(V,map,a0,qlocal,x,y,z);
 
-      // *****************************************************
-      // Tentativa de 02/10/2018
-      int qlocal = el[e0].show_ptr_stdel(0)->qborder_val();
-      double x[qlocal], y[qlocal], z[qlocal];
-      const int nvert=el[e0].show_ptr_stdel(0)->nv_val();
-     // cout << "nvert em Preamble "<< nvert << std::endl;
-      int map[nvert];
-      for (int i=0;i<nvert;++i){
-          map[i]=el[e0].show_Vert_map(i);
-      }
-      el[e0].show_ptr_stdel(0)->face_GQCoord(V,map,a0,qlocal,x,y,z);
+    if(t == -1 || t == 1){
+        border[i].pdir = new double [qlocal];
+        for(int q=0;q<qlocal;++q){
+            border[i].pdir[q]=funcao_pdir(x[q],y[q],t);
+        }
+        if(t==-1){
+            nin++;
+            in_borders.push_back(i);
+            border[i].sdir = new double[qlocal];
+            for(int q=0;q<qlocal;++q){
+              border[i].sdir[q]=funcao_sdir(x[q],y[q]);
+            }
+        }
+        else {
+            out_borders.push_back(i);
+            nout++;
+        }
+    }
 
-      if(t == -1 || t == 1){
-          border[i].pdir = new double [qlocal];
-          for(int q=0;q<qlocal;++q){
-              border[i].pdir[q]=funcao_pdir(x[q],y[q],t);
-          }
-          if(t==-1){
-              nin++;
-              in_borders.push_back(i);
-              border[i].sdir = new double[qlocal];
-              for(int q=0;q<qlocal;++q){
-                  border[i].sdir[q]=funcao_sdir(x[q],y[q]);
-              }
-          }
-          else {
-              out_borders.push_back(i);
-              nout++;
-          }
-      }
-
-      // Fim de tentativa de 02/10/2018
+    // Fim de tentativa de 02/10/2018
     // **************************************
     if(t==2) {// interior border; two adjacent elements
       int e1 = border[i].elemento[1];
@@ -173,11 +179,9 @@ void DG_Prob::preamble(char * arq_entrada)
     else // boundary border; vmapM=vmapP
       el[e0].set_stgbtrbmap(a0,bind0,bind0);
   }
-    // Alterado em 2/10/2018
-  //Processa_condicoes_contorno();
-    cout << "Saindo de Preamble\n";
-}
-
+  // Alterado em 2/10/2018
+  //Processa_condicoes_contornos();
+};
 
 // ****************************************************************************
 void DG_Prob::Ler_Arquivo_Dados_DG(char *arq_par)

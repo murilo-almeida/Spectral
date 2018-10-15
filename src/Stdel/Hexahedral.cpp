@@ -749,7 +749,7 @@ void Hexahedral::printtoarray(const double u[],
 void Hexahedral::evalGQ(double f0[],const double u0[],
 			const int NF,const int nvar)
 {
-  //printf("Hexahedral::evalGQ1\n");
+  //printf("Hexahedral::evalGQ 1\n");
   double aux,eta1,eta2,eta3;
   int i,j,k,p,q,r;
   //int Pdim=P[0]+1;
@@ -804,98 +804,98 @@ void Hexahedral::evalGQ(double f0[],const double u0[],
 void Hexahedral::evalGQ(double f0[],double f1[],
 			const double uh0[],const double uh1[])
 {
-  //printf("Hexahedral::evalGQ\n");
-  double aux0,aux1, Fa,Fb,eta1,eta2;
-  int a;
-  int i,j,p,q,k;
-  int n=0;
-  int Pdim=P[0]+1;
-  double ftemp0[Pdim],ftemp1[Pdim];
-  for(j=0;j<Q[1];j++){
-    eta2=xGQ[1][j];
-    // ********************************************************************
-    // Construcao dos vetores temporarios
-    // ********************************************************************
-    for(k=0;k<Pdim;k++){
-      ftemp0[k]=0.0;
-      ftemp1[k]=0.0;
-    }
-    // A
-    a=0;p=0;q=0;
-    Fb=Psia(P[1],q,eta2);
-    ftemp0[p]+=Fb*uh0[a];
-    ftemp1[p]+=Fb*uh1[a];
-    // B
-    a=1;p=P[0];q=0;
-    Fb=Psia(P[1],q,eta2);
-    ftemp0[p]+=Fb*uh0[a];
-    ftemp1[p]+=Fb*uh1[a];
-    // C
-    a=2;p=P[0];q=P[1];
-    Fb=Psia(P[1],q,eta2);
-    ftemp0[p]+=Fb*uh0[a];
-    ftemp1[p]+=Fb*uh1[a];
-    // D
-    a=3; p=0; q=P[1];
-    Fb=Psia(P[1],q,eta2);
-    ftemp0[p]+=Fb*uh0[a];
-    ftemp1[p]+=Fb*uh1[a];
-    // AB
-    a=4;
-    q=0;
-    Fb=Psia(P[1],q,eta2);
-    for(p=1;p<P[0];p++){
-      ftemp0[p]+=Fb*uh0[a];
-      ftemp1[p]+=Fb*uh1[a];
-      a++;
-    }
-    // BC
-    p=P[0];
-    for(q=1;q<P[1];q++){
-      Fb=Psia(P[1],q,eta2);
-      ftemp0[p]+=Fb*uh0[a];
-      ftemp1[p]+=Fb*uh1[a];
-      a++;
-    }
-    // DC
-    q=P[1];
-    Fb=Psia(P[1],q,eta2);
-    for(p=1;p<P[0];p++){
-      ftemp0[p]+=Fb*uh0[a];
-      ftemp1[p]+=Fb*uh1[a];
-      a++;
-    }
-    // AD
-    p=0;
-    for(q=1;q<P[1];q++){
-      Fb=Psia(P[1],q,eta2);
-      ftemp0[p]+=Fb*uh0[a];
-      ftemp1[p]+=Fb*uh1[a];
-      a++;
-    }
-    // Interior modes : j runs fastest
-    for(p=1;p<P[0];p++){
-      for(q=1;q<P[1];q++){
-	Fb=Psia(P[1],q,eta2);
-	ftemp0[p]+=Fb*uh0[a];
-	ftemp1[p]+=Fb*uh1[a];
-	a++;
-      }
-    }
-    // ********************************************************************
-    for(i=0;i<Q[0];i++){
-      eta1=xGQ[0][i];
-      aux0=0.0;
-      aux1=0.0;
-      for(p=0;p<Pdim;p++){
-	Fa=Psia(P[0],p,eta1);
-        aux0+=Fa*ftemp0[p];
-	aux1+=Fa*ftemp1[p];
-      }
-      f0[n]=aux0;
-      f1[n++]=aux1;
-    }
-  }
+  //printf("Hexahedral::evalGQ 0\n");
+  // double aux0,aux1, Fa,Fb,eta1,eta2;
+  // int a;
+  // int i,j,p,q,k;
+  // int n=0;
+  // int Pdim=P[0]+1;
+  // double ftemp0[Pdim],ftemp1[Pdim];
+  // for(j=0;j<Q[1];j++){
+  //   eta2=xGQ[1][j];
+  //   // ********************************************************************
+  //   // Construcao dos vetores temporarios
+  //   // ********************************************************************
+  //   for(k=0;k<Pdim;k++){
+  //     ftemp0[k]=0.0;
+  //     ftemp1[k]=0.0;
+  //   }
+  //   // A
+  //   a=0;p=0;q=0;
+  //   Fb=Psia(P[1],q,eta2);
+  //   ftemp0[p]+=Fb*uh0[a];
+  //   ftemp1[p]+=Fb*uh1[a];
+  //   // B
+  //   a=1;p=P[0];q=0;
+  //   Fb=Psia(P[1],q,eta2);
+  //   ftemp0[p]+=Fb*uh0[a];
+  //   ftemp1[p]+=Fb*uh1[a];
+  //   // C
+  //   a=2;p=P[0];q=P[1];
+  //   Fb=Psia(P[1],q,eta2);
+  //   ftemp0[p]+=Fb*uh0[a];
+  //   ftemp1[p]+=Fb*uh1[a];
+  //   // D
+  //   a=3; p=0; q=P[1];
+  //   Fb=Psia(P[1],q,eta2);
+  //   ftemp0[p]+=Fb*uh0[a];
+  //   ftemp1[p]+=Fb*uh1[a];
+  //   // AB
+  //   a=4;
+  //   q=0;
+  //   Fb=Psia(P[1],q,eta2);
+  //   for(p=1;p<P[0];p++){
+  //     ftemp0[p]+=Fb*uh0[a];
+  //     ftemp1[p]+=Fb*uh1[a];
+  //     a++;
+  //   }
+  //   // BC
+  //   p=P[0];
+  //   for(q=1;q<P[1];q++){
+  //     Fb=Psia(P[1],q,eta2);
+  //     ftemp0[p]+=Fb*uh0[a];
+  //     ftemp1[p]+=Fb*uh1[a];
+  //     a++;
+  //   }
+  //   // DC
+  //   q=P[1];
+  //   Fb=Psia(P[1],q,eta2);
+  //   for(p=1;p<P[0];p++){
+  //     ftemp0[p]+=Fb*uh0[a];
+  //     ftemp1[p]+=Fb*uh1[a];
+  //     a++;
+  //   }
+  //   // AD
+  //   p=0;
+  //   for(q=1;q<P[1];q++){
+  //     Fb=Psia(P[1],q,eta2);
+  //     ftemp0[p]+=Fb*uh0[a];
+  //     ftemp1[p]+=Fb*uh1[a];
+  //     a++;
+  //   }
+  //   // Interior modes : j runs fastest
+  //   for(p=1;p<P[0];p++){
+  //     for(q=1;q<P[1];q++){
+	// Fb=Psia(P[1],q,eta2);
+	// ftemp0[p]+=Fb*uh0[a];
+	// ftemp1[p]+=Fb*uh1[a];
+	// a++;
+  //     }
+  //   }
+  //   // ********************************************************************
+  //   for(i=0;i<Q[0];i++){
+  //     eta1=xGQ[0][i];
+  //     aux0=0.0;
+  //     aux1=0.0;
+  //     for(p=0;p<Pdim;p++){
+	// Fa=Psia(P[0],p,eta1);
+  //       aux0+=Fa*ftemp0[p];
+  //       aux1+=Fa*ftemp1[p];
+  //     }
+  //     f0[n]=aux0;
+  //     f1[n++]=aux1;
+  //   }
+  //  }
 };
 //06/03/2008
 
@@ -1070,60 +1070,13 @@ void Hexahedral::eval_Phi(const int n,double Phi[])
 // ************************************************************************
 void Hexahedral::eval_GradPhi(const Vertice vert[], const int map[],const int n,double ** der)
 {
-	//printf("Hexahedral::eval_GradPhi\n");
-  double xa,ya,xb,yb,xc,yc,xd,yd,eta1,eta2;
- // double x3=0.0;
-  double x1,x2,x12,y1,y2,y12;
-  int m;
-  double a11,a12,a21,a22, J2D;
-  double b[2][2];
-  // coordenadas dos nos
-  xa=vert[map[0]].x;
-  xb=vert[map[1]].x;
-  xc=vert[map[2]].x;
-  xd=vert[map[3]].x;
-  ya=vert[map[0]].y;
-  yb=vert[map[1]].y;
-  yc=vert[map[2]].y;
-  yd=vert[map[3]].y;
+	printf("Hexahedral::eval_GradPhi\n");
+  int q2=Q[0]*Q[1]*Q[2];
+  double fvec[q2];
+  for(int i=0;i<q2;++i)fvec[i]=Phi_val[n][i];
+  Gradiente(der,fvec,vert,map);
 
-  x1 =(-xa+xb+xc-xd)/4.0;
-  x12=( xa-xb+xc-xd)/4.0;
-  x2 =(-xa-xb+xc+xd)/4.0;
 
-  y1 =(-ya+yb+yc-yd)/4.0;
-  y12=( ya-yb+yc-yd)/4.0;
-  y2 =(-ya-yb+yc+yd)/4.0;
-
-  int p = mode_[n].p_val();
-  int q = mode_[n].q_val();
-  double der1,der2,aux1,aux2,d1,d2;
-  for(int j=0;j<Q[1];j++){
-    eta2=xGQ[1][j];
-    a11=x1+x12*eta2;
-    a21=y1+y12*eta2;
-    aux2=Psia(P[1],q,eta2);
-    d2= DPsia(P[1],q,eta2);
-    for(int i=0;i<Q[0];i++){
-      eta1=xGQ[0][i];
-      aux1=Psia(P[0],p,eta1);
-      d1= DPsia(P[0],p,eta1);
-      der1 = d1*aux2;
-      der2 = aux1*d2;
-      a12=x2+x12*eta1;
-      a22=y2+y12*eta1;
-      J2D=a11*a22-a12*a21;
-      m=i+j*Q[0];
-      // calculo da matriz b[i][j]
-      b[0][0]=a22/J2D;
-      b[0][1]=-a12/J2D;
-      b[1][0]=-a21/J2D;
-      b[1][1]=a11/J2D;
-
-      der[0][m] = der1 * b[0][0] + der2 * b[1][0];
-      der[1][m] = der1 * b[0][1] + der2 * b[1][1];
-    }
-  } // loop sobre os pontos de Gauss
 };
 
 // ****************************************************************************
@@ -1200,10 +1153,10 @@ void Hexahedral::Jacobian(const Vertice vert[],const int map[],double JV[])
 // ************************************************************************
 
 void Hexahedral::Gradiente(double * grad[],
-                              const  double fvec[],
-                              const Vertice vert[], const int map[])
+                            const  double fvec[],
+                            const Vertice vert[], const int map[])
 {
-	//printf("Hexahedral::Gradiente 1\n");
+	printf("Hexahedral::Gradiente 1\n");
 
   double df[MAXQ*MAXQ][3];
   double x[3][8];
@@ -1310,7 +1263,7 @@ void Hexahedral::Gradiente(FILE * fout, double * grad[],
 			      const Vertice vert[], const int map[])
 {
 	//printf("Hexahedral::Gradiente 2\n");
-    
+
     double x[3][8];
     double eta[3];
     double f[2][3]; // funcoes interpolantes
@@ -1351,7 +1304,7 @@ void Hexahedral::Gradiente(FILE * fout, double * grad[],
     for(int r=0;r<Q[2];++r){
         for(int q=0;q<Q[1];++q){
             for(int p=0;p<Q[0];++p){
-                
+
                 int m=p+q*Q[0]+r*Q[0]*Q[0];
                 double x0=0.0;
                 double x1=0.0;
@@ -1365,7 +1318,7 @@ void Hexahedral::Gradiente(FILE * fout, double * grad[],
                     x1 += aux * x[1][l];
                     x2 += aux * x[2][l];
                 }
-               
+
       fprintf(fout,"%11.4e %11.4e %11.4e %11.4e %11.4e %11.4e %11.4e\n",x0,x1,x2,grad[0][m],grad[1][m],grad[m][2],g(x0,x1,x2));
             }
         }
@@ -1377,18 +1330,18 @@ void Hexahedral::Gradiente(FILE * fout, double * grad[],
 			      const Vertice vert[], const int map[])
 {
 	//printf("Hexahedral::Gradiente 3\n");
- 
+
     // (((((((((((((((((((((((((
     double x[3][8];
     double eta[3];
     double f[2][3]; // funcoes interpolantes
-    
+
     int a[3][8] = { // conforme sequencia de numeracao (sequencia) interna
         {0,1,0,1,0,1,0,1}, // (eta0 + 1)/2 // sinal de eta1 0 = negativo 1 = positivo
         {0,0,1,1,0,0,1,1}, // (eta1 + 1)/2 // sinal de eta2
         {0,0,0,0,1,1,1,1}  // (eta2 + 1)/2 // sinal de eta3
     };
-    
+
     // Cheque do gradiente
     // coordenadas dos nos
     for(int i=0;i<8;++i){
@@ -1412,13 +1365,13 @@ void Hexahedral::Gradiente(FILE * fout, double * grad[],
             }
         }
     }
-    
+
     // calculo das coordenadas dos ponto de Gauss
     double fvec[Q[0]*Q[1]*Q[2]];
     for(int r=0;r<Q[2];++r){
         for(int q=0;q<Q[1];++q){
             for(int p=0;p<Q[0];++p){
-                
+
                 int m=p+q*Q[0]+r*Q[0]*Q[1];
                 double x0=0.0;
                 double x1=0.0;
@@ -1557,7 +1510,7 @@ void Hexahedral::Dirichlet(const int face_num,
   }
   // fim de if(ni>0)
   for(int i=0;i<nb;++i) /*u0[ivar]*/ Xbc[nmap[i]]=sgn[nmap[i]]*Xl[i]; // no contorno
-  
+
   delete quad;  quad=nullptr;
 
   //cout << "Saindo Hexahedral::Dirichlet para a face "<< face_num <<endl<<endl;
@@ -1909,10 +1862,12 @@ void Hexahedral::superficie_externa(const Vertice vert[],const int Vert_map[],
                                     const int & num_local,
                                     double & area,double normal[3])
 {
-  int v0,v1,v2;
+  // Necessita ser corrigido; foi copiado de tetrahedral
+  int v0,v1,v2,v3;
   v0=Vert_map[face[num_local][0]];
   v1=Vert_map[face[num_local][1]];
-  v2=Vert_map[face[num_local][3]]; // Atencao: ultimo indice da sequencia
+  v2=Vert_map[face[num_local][2]];
+  v3=Vert_map[face[num_local][3]]; // Atencao: ultimo indice da sequencia
   double l0x,l0y,l0z;
   double l1x,l1y,l1z;
   l0x=vert[v1].x - vert[v0].x;
