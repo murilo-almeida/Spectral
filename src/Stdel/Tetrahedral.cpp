@@ -1540,23 +1540,26 @@ void Tetrahedral::Dirichlet(const int face_num,
   p1=P[fd1[face_num]];
 
   int q=Q[0];
-  //dados do triangulo (stdel)
+  //"dados do triangulo (stdel)\n";
   Triangle * triang = new Triangle(p0,q);
   PhElem<1> * localphel = new PhElem<1>();// So um campo
   localphel->set_ptr_stdel(triang,triang);
   localphel->set_type(2); // triangulo
   localphel->set_ptvert(vert); // array de vertices recebido nos argumentos
   localphel->set_Vert_map(3,lvert_map);
-  //localphel->compute_JV(0);// Jacobiano J deve ser calculado antes do vetor
-  localphel->inicia_vetores();// zera o vetor b de localphel
+  localphel->compute_JV(0);// Jacobiano J deve ser calculado antes do vetor
+    cout << "Tetrahedral  dados do triangulo (stdel) 0\n";
+  //inicia_vetores();// zera o vetor b de localphel
   int count = 0;
   localphel->inicia_gbnmap(0,count);// inicia gbnmap[i]=i,sgn[i]=1, i=0,nn-1;
+     cout << "Tetrahedral  dados do triangulo (stdel) 1\n";
   // Encontrar os nos.
   //Criar trimap[]; mapeamento dos nos do triangulo standard sobre
   // os nos globais
   localFaceModeMap(face_num,p0,trimap); // mapeia o triangulo local no tetraedro
-
-  //cout << "chamando projetar_C0 para triangulo (localphel)"<< endl;
+ cout << "Tetrahedral   dados do triangulo (stdel) 2\n";
+   
+  cout << "chamando projetar_C0 para triangulo (localphel)"<< endl;
   localphel->projetar_C0(nullptr, func, varn);
 
    //mapeia os resultados sobre os modos globais
@@ -1568,7 +1571,7 @@ void Tetrahedral::Dirichlet(const int face_num,
   localphel->finaliza_vetores();
   delete localphel;
   delete triang;
-  //printf("Saindo Tetrahedral::Dirichlet para face %d\n\n",face_num);
+  printf("Saindo Tetrahedral::Dirichlet para face %d\n\n",face_num);
 };
 
 void Tetrahedral::face_Jacobian(const int face_num,

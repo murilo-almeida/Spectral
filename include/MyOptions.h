@@ -21,7 +21,7 @@
 
 // Parametros para as matrizes locais dos elementos
 # define MAXNFIELDS 2
-# define MAXMODES  64
+# define MAXMODES  256
 # define MAXQ  10
 # define MAXNB 202
 # define MAXNI 91

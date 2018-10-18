@@ -230,7 +230,7 @@ template < int NumVariaveis >
 PhElem<NumVariaveis>::PhElem()
 {
   //set_ptr_stdel(NULL,NULL);
-
+    vetores_iniciados = 0;
   // qn=0.0;
   // qw=0.0;
   // default value
@@ -388,6 +388,7 @@ void PhElem<NumVariaveis>::Atualizar_u0(const double X[])
     // *****************************************************************
   }
 };
+
 /*
  // ****************************************************************************
  template<int NumVariaveis>
@@ -551,9 +552,9 @@ void PhElem<NumVariaveis>::print_numeracao(FILE * fout,const int & k)
 template<int NumVariaveis>
 void PhElem<NumVariaveis>::print_modes(FILE * fout,const int & ia) const
 {
-  int nv=ptr_stdel[ia]->nv_val(); // number of vertices
-  fprintf(fout,"modes da variavel %d = %d",ia,nv);
-  for(int i=0; i<nv;i++){
+  int _nv=ptr_stdel[ia]->nv_val(); // number of vertices
+  fprintf(fout,"modes da variavel %d = %d",ia,_nv);
+  for(int i=0; i<_nv;i++){
     fprintf(fout," %d",gbnmap[ia][i]);
   }
   fprintf(fout,"\n");
@@ -561,10 +562,10 @@ void PhElem<NumVariaveis>::print_modes(FILE * fout,const int & ia) const
 
 // ***************************************************************************
 template<int NumVariaveis>
-void PhElem<NumVariaveis>::read_vertices(FILE * finput, const int & nv) // nao usada
+void PhElem<NumVariaveis>::read_vertices(FILE * finput, const int & _nv) // nao usada
 {
   int label;
-  for(int i=0;i<nv;i++)
+  for(int i=0;i<_nv;i++)
     fscanf(finput,"%d",&Vert_map[i]);
   fscanf(finput,"%d",&label);
 };
@@ -798,7 +799,7 @@ void PhElem<NumVariaveis>::check_connectivity(FILE * fout,const int & ia)
   int i,p,q,r;
   for(i=0; i<numb[ia]; ++i){
     ptr_stdel[ia]->show_ind(i,p,q,r);
-    fprintf(fout,"i = %3d gbnmap = %3d p = %3d q = %3d\n", i, gbnmap[ia][i],p,q);
+    fprintf(fout,"i = %3d gbnmap = %3d p = %3d q = %3d r = %3d\n", i, gbnmap[ia][i],p,q,r);
   }
 };
 
@@ -877,7 +878,7 @@ void PhElem<NumVariaveis>::projetar_C0(FILE *file,
                                        double (*func)(double,double,double),
                                        const int & ivar)
 {
-  printf("\nComeco de PhElem::projetar_C0 varialve %d\n",ivar);
+  //printf("\nComeco de PhElem::projetar_C0 variavel %d\n",ivar);
   int i,j,ii,jj,k;
   int nb=numb[ivar];//ptr_stdel[ivar]->nb_val();
   int nn=numn[ivar];//ptr_stdel[ivar]->nn_val();
@@ -898,7 +899,6 @@ void PhElem<NumVariaveis>::projetar_C0(FILE *file,
   for(j=0;j<numborders;j++){
     cout << "Chamar Dirichlet (ptr_stdel) para border = "<< j << endl;
     ptr_stdel[ivar]->Dirichlet(j,ptvert,Vert_map,nmap,sgn,bflag,Xl,func);
-
     // cout << "saindo de Dirichlet para a face "<< j << endl;
     //for(int k=0;k<nn;++k) cout << "Xl["<< k << "%d] = " <<Xl[k] << endl;
   }
@@ -949,10 +949,10 @@ void PhElem<NumVariaveis>::projetar_C0(FILE *file,
     //fprintf(file,"\n");
 
 #ifdef _NEWMAT
-    NEWMAT::ColumnVector Y = Mi.i() * B;  B=Y ; // newmat
+    NEWMAT::ColumnVector Y = Mi.i() * B; // B=Y ; // newmat
 #endif
 
-    for(i=nb;i<nn;++i)u0[ivar][i]=B.element(i-nb);
+    for(i=nb;i<nn;++i)u0[ivar][i]=Y.element(i-nb);
   }
   // fim de if(ni>0)
 
@@ -1369,7 +1369,7 @@ void PhElem<NumVariaveis>::compute_JV(const int & ia)
 {
   if(ia < NumVariaveis) {
     int q0=ptr_stdel[ia]->NGQP_val();
-    //printf("Calculo do Jacobiano: variavel %d\n",ia);
+      printf("PhElem<NumVariaveis>::compute_JV Calculo do Jacobiano: variavel %d\n",ia);
     // Armazenamento dinamico da memoria para JV;
     // Opcao 1: Uma matriz com 3 indices
     //   JV = new double ** [q0];
@@ -1383,7 +1383,7 @@ void PhElem<NumVariaveis>::compute_JV(const int & ia)
     //JV[ia] = new double [q0*q1*q2]; // opcao 2: um unico vetor
     JV = new double [q0];
 
-    //printf("ANTES: Calculo do Jacobiano da var %d  dimensao=%d\n",ia,q0*q1*q2);
+    //printf("ANTES: Calculo do Jacobiano da var %d  dimensao=%d\n",ia,q0);
 
     ptr_stdel[ia]->Jacobian(ptvert,Vert_map,JV);
   }
@@ -1765,15 +1765,15 @@ void PhElem<NumVariaveis>::gbnmap_faces(const int face_vec[],const int & ivar)
     if(nvf == 4) {
       quad_ordem(Av,ind,dir,sinal,v2);
 
-      if(v2 == 0) i[dir[2]] = 0;
-      else i[dir[2]] = ptr_stdel[ivar]->P_val(dir[2]);
+      if(v2 == 0) i[dir[2]] = 0; // indice na direcao perpendicular
+      else i[dir[2]] = ptr_stdel[ivar]->P_val(dir[2]); // indice na direcao perpendicular
       int P0 = ptr_stdel[ivar]->P_val(dir[0]);
       int P1 = ptr_stdel[ivar]->P_val(dir[1]);
 
       int inicio = face_vec[face_map[f]];
       int inc = 0;
       int aux0 = 1;
-
+        // numerar modos internos da face
       for(int i0 = 1; i0 < P0; ++i0) {
         i[dir[0]] = i0;
         int aux1 = 1;
@@ -1802,7 +1802,8 @@ void PhElem<NumVariaveis>::gbnmap_faces(const int face_vec[],const int & ivar)
       int inicio = face_vec[face_map[f]];
       int inc = 0;
       //int aux0 = 1;
-
+        
+        // numerar modos internos da face
       for(int i0 = 1; i0 < P0; ++i0) {
         i[dir[0]] = i0;
         //int aux1 = 1;
@@ -1849,19 +1850,19 @@ void PhElem<NumVariaveis>::gbnmap_arestas(const int aresta_vec[],const int & iva
 template<int NumVariaveis>
 void PhElem<NumVariaveis>::inicia_vetores()
 {
-  int nn;//nb,q0,q1;
+  int _nn;//nb,q0,q1;
   int i,k;//h, j
-
+ cout<< "PhElem<NumVariaveis>::inicia_vetores()\n";
   if(vetores_iniciados == 1) { cout<< "vetores locais de PhElem já iniciados\n"; }
 
   else {
     vetores_iniciados = 1;
-    //cout<< "PhElem<NumVariaveis>::inicia_vetores()\n";
+    cout<< "PhElem<NumVariaveis>::inicia_vetores()\n";
     for (k=0;k<NumVariaveis;++k){
-      nn=numn[k];
-      u0[k] = new double [nn];
-      usave[k] = new double [nn];
-      for(i=0;i<nn;++i){
+      _nn=numn[k];
+      u0[k] = new double [_nn];
+      usave[k] = new double [_nn];
+      for(i=0;i<_nn;++i){
         u0[k][i]=0.0;
       }
     }
@@ -1878,8 +1879,9 @@ void PhElem<NumVariaveis>::inicia_vetores()
     //printf("Calculo do Jacobiano: dimensao=%d\n",NGQP);
     //JV = new double [NGQP]; // opcao 2: um unico vetor
     //ptr_stdel[0]->Jacobian(ptvert,Vert_map,JV);
-
+      cout<< "PhElem<NumVariaveis>::inicia_vetores() antes de compute_JV(0)\n";
     compute_JV(0);
+      cout<< "PhElem<NumVariaveis>::inicia_vetores() apos de compute_JV(0)\n";
   }
 };
 

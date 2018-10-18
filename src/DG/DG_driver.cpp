@@ -81,3 +81,24 @@ cout << "Entrando em initial_conditions\n";
     printf("Terminou com sucesso!!!\n");
   }//if(myid==0)
 };
+// ********************************************************
+// Teste de numeracao de mesh com elementos continous
+void DG_Prob::Testar_gbnmap_continuous()
+{
+    
+    int count = 0;
+    const int ivar = 0;
+    gbnmap_continuous(0,count);
+    if(myid==0) DG_eco();
+    FILE * file;
+    file=fopen("saida_proj_C0","wb");
+    for(int i=0;i<NELEM;i++) {
+        // cout << "\nChamar PhElem::projetar_C0 para elemento "<< i << endl;
+        el[i].inicia_vetores();
+        el[i].projetar_C0(file,funcao,ivar);
+        // cout << "Terminou PhElem::projetar_C0 para elemento "<< i << endl<< endl;
+    }
+    fclose(file);
+    //exit(0);
+    // fim do teste
+};

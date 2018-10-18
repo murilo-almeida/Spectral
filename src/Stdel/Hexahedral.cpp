@@ -1422,100 +1422,118 @@ void Hexahedral::Dirichlet(const int face_num,
   //
   q =Q[fd0[face_num]];
   p0=P[fd0[face_num]];
+    
   Quadrilateral * quad = new Quadrilateral(p0,q);
-  int nn = quad->nn_val();
-  int nb = quad->nb_val();
-  int ni = nn - nb;
-  double Xl[nn];
-  double JV[q*q*q];
-  int lnmap[nn];
-  int lsgn[nn];
-  int lbflag[nn];
-  int quadmap[nn];// mapeia modos do quadrilatero sobre os do hexaedro
+  const int lnn = quad->nn_val();
+  const int lnb = quad->nb_val();
+  const int lni = lnn - lnb;
+  double Xl[lnn];
+  double JV[q*q];
+  int lnmap[lnn];
+  int lsgn[lnn];
+  int lbflag[lnn];
+  int quad2hex[lnn];// mapeia modos do quadrilatero sobre os do hexaedro
   // construcao do mapa dos vertices locais em vertices globais
+   /* int iaux=0;
+    for ( iaux=0;iaux<nn;++iaux){
+         cout << "mode ["<< iaux<< "]"; mode_[iaux].print();
+    
+    }
+    cout << "saiu com i = "<< iaux<< endl;
+    */
   for(int i=0;i<4;++i) {
     lvert_map[i]=vert_map[face[face_num][i]];
     //cout << "lvert_map["<< i << "] = "<< lvert_map[i] << endl;
   }
   cout << "Dentro do Hexahedral::Dirichlet\n terminou localphel->projetar_C0 da face " <<face_num<<endl;
-  localFaceModeMap(face_num,quadmap); // mapeia os modos do quadrilatero local no hexaedro
-  for(int i=0;i<quad->nn_val();++i){
-      int ii=quadmap[i]; // indice do modo no tetraedro
+    
+  localFaceModeMap(face_num,quad2hex); // mapeia os modos do quadrilatero local no hexaedro
+  for(int i=0;i<lnn;++i){
+      int ii=quad2hex[i]; // indice do modo no tetraedro
       // cria o mapeamento de modos globais para o quadrilatero
-      //lnmap[i]=nmap[ii];
+     // lnmap[i]=nmap[ii];
     //  lsgn[i]=1;
-      cout << "modo no quadrilatero "<< i <<"  equivale a "<< ii << " no hexahedro\n";
-    //  Xbc[nmap[ii]]=localphel->show_u(varn,i)*sgn[ii];
-      //bflag[nmap[ii]]=0; // conhecido
+      //cout << "modo no quadrilatero "<< i <<"  equivale a "<< ii << " no hexahedro\n";
+      //Xl[nmap[ii]]=quad->show_u(varn,i)*sgn[ii];
+      bflag[nmap[ii]]=0; // conhecido
   }
-  for(int i=0;i<nn;i++){
+    
+  for(int i=0;i<lnn;i++){
     lnmap[i]=i;
-    lsgn[i]=1; // todos positivos; o sinal do modo e definido no final
+    lsgn[i]=1; // todos positivos; o sinal nao muda entre hex e sub quadrilateral
     lbflag[i]=1;
     Xl[i]=0.0;
   }
   for(int j=0;j<4;++j){
     quad->Dirichlet(j,vert,lvert_map,lnmap,lsgn,lbflag,Xl,func);
   }
+    
+    for(int i=0;i<lnn;i++){
+        cout << "i = "<< i<<" lbflag[i] = "<< lbflag[i] << " Xl[i] = "<< Xl[i] << std::endl;
+    }
   //ni=0;
-  Jacobian(vert,vert_map,JV);
-  if(ni>0){
+  quad->Jacobian(vert,lvert_map,JV);// Jacobiano do quadrilateral
+  if(lni>0){
     //cout << "calcular o produto interno de f por phi dos "<< ni << " modos internos"<< endl;
 
   #ifdef _NEWMAT
     // newmat
-    NEWMAT::Matrix Mi(ni,ni);
-    NEWMAT::ColumnVector B(ni);
+    NEWMAT::Matrix Mi(lni,lni);
+    NEWMAT::ColumnVector B(lni);
   #endif
 
     //fprintf(file,"\n\n%5d\n",ni*ni);
     //printf("Matriz Mi\n");
-    for(int i=nb;i<nn;++i){
-      int ii=i-nb;
-      Mi.element(ii,ii)=mass(i,i,JV);
+    for(int i=lnb;i<lnn;++i){
+      int ii=i-lnb;
+      Mi.element(ii,ii)=quad->mass(i,i,JV);
       // printf("%3d %3d %g\n",ii,ii,Mi.element(ii,ii));
-      for(int j=i+1;j<nn;j++){
-        int jj=j-nb;
-        double aux=mass(i,j,JV);
+      for(int j=i+1;j<lnn;j++){
+        int jj=j-lnb;
+        double aux=quad->mass(i,j,JV);
         Mi.element(ii,jj)=aux;
         Mi.element(jj,ii)=aux;
         //printf("%3d %3d %g\n%3d %3d %g\n",ii,jj,aux,jj,ii,aux);
       }
     }
 
-    //int NGQP =NGQP_val();
-    double phi[NGQP];
-    double f[NGQP];
+    int lNGQP = quad->NGQP_val();
+    double phi[lNGQP];
+    double f[lNGQP];
     // inicializar f;
-    computeFuncGQ(f,vert,vert_map,func);
-    for(int j=0;j<nb;j++){
-      eval_Phi(j,phi);
+    quad->computeFuncGQ(f,vert,lvert_map,func);
+    for(int j=0;j<lnb;j++){
+      quad->eval_Phi(j,phi);
       double aux = Xl[j];
-      for(int k=0;k<NGQP;k++) {f[k] -= (aux*phi[k]);}
+      for(int k=0;k<lNGQP;k++) {f[k] -= (aux*phi[k]);}
     }
-    double b[nn];
-    vector_of_integral_of_f_Phi_dv(b,f,JV);
+    double b[lnn];
+    quad->vector_of_integral_of_f_Phi_dv(b,f,JV);
     //fprintf(file,"%5d\n",ni);
-    for(int i=0;i<ni;i++){
-      B.element(i)=b[i+nb];
+    for(int i=0;i<lni;i++){
+      B.element(i)=b[i+lnb];
       //fprintf(file,"%g ",B[i]);
     }
     //fprintf(file,"\n");
 
   #ifdef _NEWMAT
-    NEWMAT::ColumnVector Y = Mi.i() * B;  B=Y ; // newmat
+    NEWMAT::ColumnVector Y = Mi.i() * B; // newmat
   #endif
 
-    for(int i=nb;i<nn;++i)/*u0[ivar][i]*/ Xbc[nmap[i]]=sgn[nmap[i]]*B.element(i-nb);
-  }
+      for(int i=lnb;i<lnn;++i){
+          int ii = nmap[quad2hex[i]];
+          Xbc[ii]=lsgn[i]*Y.element(i-lnb);
+      }
+    }
   // fim de if(ni>0)
-  for(int i=0;i<nb;++i) /*u0[ivar]*/ Xbc[nmap[i]]=sgn[nmap[i]]*Xl[i]; // no contorno
-
-  delete quad;  quad=nullptr;
-
+    for(int i=0;i<lnb;++i){
+        int ii = nmap[quad2hex[i]];
+        Xbc[ii]=lsgn[i]*Xl[i]; // no contorno
+    }
+    delete quad;    quad = nullptr;
   //cout << "Saindo Hexahedral::Dirichlet para a face "<< face_num <<endl<<endl;
 };
-
+// ***************************************************************************************
 void Hexahedral::face_Jacobian(const int face_num,
                                const Vertice vert[],
                                const int vert_map[], // numero global dos vertices dos nos
@@ -1537,7 +1555,7 @@ void Hexahedral::face_Jacobian(const int face_num,
 
     int v2;
 
-    quad_ordem(Av,Bi,dir,sign,v2);
+    quad_ordem(Av,Bi,dir,sign,v2); // coloca na ordem global
 
     q =Q[fd0[face_num]];
     p0=P[fd0[face_num]];
@@ -1545,7 +1563,7 @@ void Hexahedral::face_Jacobian(const int face_num,
     //dados do quadrilatero (stdel)
     //Quadrilateral * quad = new Quadrilateral(p0,q);
    Quadrilateral quad(p0,q);
-    quad.Jacobian(vert,Av,J);
+    quad.Jacobian(vert,Av,J); // ordem global
 
     //delete quad;
 
@@ -1891,7 +1909,7 @@ void Hexahedral::superficie_externa(const Vertice vert[],const int Vert_map[],
 };
 
 // **********************************************************************
-void Hexahedral::localFaceModeMap(const int fnum, int quadmap[])
+void Hexahedral::localFaceModeMap(const int fnum, int quad2hex[])
 {
   cout << "Hexahedral::localFaceModeMap\n";
   int dir[3] = {fd0[fnum],fd1[fnum],3-fd0[fnum]-fd1[fnum]};
@@ -1901,26 +1919,26 @@ void Hexahedral::localFaceModeMap(const int fnum, int quadmap[])
 
   ind[dir[0]]=0;
   ind[dir[1]]=0;
-  quadmap[a++]=ind_mode_[ind[0]][ind[1]][ind[2]];// A
+  quad2hex[a++]=ind_mode_[ind[0]][ind[1]][ind[2]];// A
 
   ind[dir[0]]=P[dir[0]];
   ind[dir[1]]=0;
-  quadmap[a++]=ind_mode_[ind[0]][ind[1]][ind[2]];// B
+  quad2hex[a++]=ind_mode_[ind[0]][ind[1]][ind[2]];// B
 
   ind[dir[0]]=P[dir[0]];
   ind[dir[1]]=P[dir[1]];
-  quadmap[a++]=ind_mode_[ind[0]][ind[1]][ind[2]];// C
+  quad2hex[a++]=ind_mode_[ind[0]][ind[1]][ind[2]];// C
 
   ind[dir[0]]=0;
   ind[dir[1]]=P[dir[1]];
-  quadmap[a++]=ind_mode_[ind[0]][ind[1]][ind[2]];// D
+  quad2hex[a++]=ind_mode_[ind[0]][ind[1]][ind[2]];// D
 
 
   // AB
   for(int i=1;i<P[dir[0]];++i){
     ind[dir[0]]=i;
     ind[dir[1]]=0;
-    quadmap[a++]=ind_mode_[ind[0]][ind[1]][ind[2]];
+    quad2hex[a++]=ind_mode_[ind[0]][ind[1]][ind[2]];
   }
 
   // BC
@@ -1928,7 +1946,7 @@ void Hexahedral::localFaceModeMap(const int fnum, int quadmap[])
   for(int j=1;j<P[dir[1]];++j){
     ind[dir[0]]=P[0];
     ind[dir[1]]=j;
-    quadmap[a++]=ind_mode_[ind[0]][ind[1]][ind[2]];
+    quad2hex[a++]=ind_mode_[ind[0]][ind[1]][ind[2]];
   }
 
   // DC
@@ -1936,7 +1954,7 @@ void Hexahedral::localFaceModeMap(const int fnum, int quadmap[])
   for(int i=1;i<P[dir[0]];++i){
     ind[dir[0]]=i;
     ind[dir[1]]=P[dir[1]];
-    quadmap[a++]=ind_mode_[ind[0]][ind[1]][ind[2]];
+    quad2hex[a++]=ind_mode_[ind[0]][ind[1]][ind[2]];
   }
 
   // AD
@@ -1944,7 +1962,7 @@ void Hexahedral::localFaceModeMap(const int fnum, int quadmap[])
   for(int j=1;j<P[dir[1]];++j){
     ind[dir[0]]=0;
     ind[dir[1]]=j;
-    quadmap[a++]=ind_mode_[ind[0]][ind[1]][ind[2]];
+    quad2hex[a++]=ind_mode_[ind[0]][ind[1]][ind[2]];
   }
 
   //Verificar
@@ -1953,15 +1971,15 @@ void Hexahedral::localFaceModeMap(const int fnum, int quadmap[])
     ind[dir[0]]=i;
     for(int j=1; j<P[dir[1]];++j){
       ind[dir[1]]=j;
-      quadmap[a++]=ind_mode_[ind[0]][ind[1]][ind[2]];
+      quad2hex[a++]=ind_mode_[ind[0]][ind[1]][ind[2]];
     }
   }
 
 #ifdef PRINTF_ON
-  printf("quadmap da face %d\n",fnum);
+  printf("quad2hex da face %d\n",fnum);
   for(int i=0;i<a;++i){
-    printf("quadmap[%d] = %d ", i,quadmap[i]);
-    mode_[quadmap[i]].print();
+    printf("quad2hex[%d] = %d ", i,quad2hex[i]);
+    mode_[quad2hex[i]].print();
   }
   printf("Saindo de Hexahedral::localFaceModeMap\n");
 #endif

@@ -2,6 +2,7 @@
 # include "spectral.h"
 void quad_ordem(int Av[4],int Bi[4],int dir[3], int sgn[3], int & v2)
 {
+    // Exemplo:
     // Entrada Av na ordem anti-horaria
     //    2
     //    D ----- C 3   Av = {A, B, C, D} nos globais
@@ -57,7 +58,7 @@ void quad_ordem(int Av[4],int Bi[4],int dir[3], int sgn[3], int & v2)
 
   dir[2]=((dir[0] ^ 7) ^ dir[1]);
 
-  v2=(i[0] & i[1] & i[2] & i[3] & dir[2])/dir[2];
+  v2=(i[0] & i[1] & i[2] & i[3] & dir[2]) / dir[2];
 
   dir[0] /=2;
   dir[1] /=2;
@@ -440,7 +441,7 @@ int face_gbnum(const int nvf, const int v[], int & NF, std::vector<FACE> & face_
 {
  // cout << "entrou face_gbnum " << endl;
   int flag = 0;
-  int face_n;
+  int face_n = 0;
   std:vector<int> var;
   for(int i=0;i<nvf;++i) {
     var.push_back(v[i]);

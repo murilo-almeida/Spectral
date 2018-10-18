@@ -43,7 +43,7 @@ class DG_Prob : public GeProb<MyElem,2,2>
                double & valor,
                int & token,
                double_t & norm_delta_X);
-    void DG_FECrsGraph_generate(Teuchos::RCP<Epetra_FECrsGraph> A /*,Teuchos::RCP<Epetra_FEVector> RHS*/);
+  void DG_FECrsGraph_generate(Teuchos::RCP<Epetra_FECrsGraph> A /*,Teuchos::RCP<Epetra_FEVector> RHS*/);
   int Eigenvectors(const double Dt, const Epetra_Map & Map);
   void DG_conditionNumber(Epetra_Map Map);
   void Ler_Arquivo_Dados_DG(char *arq_par);
@@ -123,6 +123,7 @@ class DG_Prob : public GeProb<MyElem,2,2>
                 Epetra_RowMatrix* Jacobian);
 
  void Processa_condicoes_contornos();
+    void Testar_gbnmap_continuous();
   // ***************************************************************************
 
  private:

@@ -1417,7 +1417,7 @@ void Quadrilateral::Dirichlet(const int aresta,
 {
   //printf("Quadrilateral::Dirichlet\n");
   cout << "Entrou em Quadrilateral::Dirichlet\n";
-  int flag=0;
+  const int flag=0;
   // **************************************************************************
   // flag = 0 : Dirichlet, valor conhecido, bflag=0
   //      = 1 : valor desconhecido, bflag=1

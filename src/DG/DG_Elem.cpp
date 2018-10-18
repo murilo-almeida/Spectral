@@ -1528,7 +1528,7 @@ void DG_Elem::inicia_vetores()
 {
   int nn;//nb,q0,q1;
   int h,i,j,k;
-  
+    cout<< "DG_Elem::inicia_vetores\n";
   if(vetores_iniciados == 1) { cout<< "vetores locais de PhElem já iniciados\n"; }
   
   else {
