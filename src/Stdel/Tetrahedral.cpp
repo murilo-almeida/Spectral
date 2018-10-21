@@ -1462,24 +1462,25 @@ void Tetrahedral::print_nome(FILE * fout)
 // valor 0 (conhecido)
 // ************************************************************************
 void Tetrahedral::localFaceModeMap(const int fnum,
-                                   const int P,
+                                   const int _P,
                                    int trimap[])
 {
   cout << "Tetrahedral::localFaceModeMap\n";
-  int mar[6][P-1];
-  int mface[4][(P-1)*(P-2)/2];
+    //const int _P = P[fd[fnum]];
+  int mar[6][_P-1];
+  int mface[4][(_P-1)*(_P-2)/2];
   int ar[3]; // aresta que compoem a face
 
   // criar numeracao local dos modos do tetraedro
   int a=4; // numero do proximo modo
   for(int i=0;i<6;++i) { // loop sobre as arestas
-    for(int j=0;j<P-1;++j)
+    for(int j=0;j<_P-1;++j)
       mar[i][j] = a++;
   }
   for(int k=0;k<4;++k) { // loop sobre as faces
     int count=0;
-    for(int i=1;i<P;++i)
-      for(int j=1;j<P-i;++j)
+    for(int i=1;i<_P;++i)
+      for(int j=1;j<_P-i;++j)
         mface[k][count++] = a++;
   }
 
@@ -1491,10 +1492,10 @@ void Tetrahedral::localFaceModeMap(const int fnum,
     ar[i] = face_aresta[fnum][i];
   }
   for(int i=0;i<3; ++i) { //loop sobre as arestas do triangulo
-    for(int j=0;j<P-1;++j)
+    for(int j=0;j<_P-1;++j)
       trimap[l++] = mar[ar[i]][j];
   }
-  int aux = (P-1)*(P-2)/2;
+  int aux = (_P-1)*(_P-2)/2;
   for(int j=0;j<aux;++j)
     trimap[l++] = mface[fnum][j];
 
@@ -1505,7 +1506,7 @@ void Tetrahedral::localFaceModeMap(const int fnum,
     mode_[trimap[i]].print();
   }
 
- printf("Saindo de Tetrahedral::set: nv = %d  nn = %d (< MAXMODES = %d) nb = %d (< MAXNB = %d)\n",nv,nn,MAXMODES,nb,MAXNB);
+ printf("Saindo de Tetrahedral::localFaceModeMap nv = %d  nn = %d (< MAXMODES = %d) nb = %d (< MAXNB = %d)\n",nv,nn,MAXMODES,nb,MAXNB);
 #endif
 };
 // ************************************************************************
@@ -1520,60 +1521,123 @@ void Tetrahedral::Dirichlet(const int face_num,
                             double (*func)(double,double,double))
 {
 
+    
    cout << "Entrando em Tetrahedral::Dirichlet para a face "<< face_num << endl;
-
-  const int varn = 0;
-  //const int NFields = 1;
- // double xa,ya,za,xb,yb,zb,xc,yc,zc,xd,yd,zd;
- // Vertice lvert[3]; //Vertices para problema local
-  int lvert_map[3]={0,1,2};
-  int trimap[MAXMODES];// mapeia modos do triangulo sobre os do tetraedro
-  //double Xbc1[MAXNB];
-  //int bflag1[MAXNB];
-  int p0,p1;
-  int i,ii;
-   // construcao do mapa dos vertices locais em vertices globais
-  for(int i=0;i<3;++i) {
-    lvert_map[i]=vert_map[face[face_num][i]];
-  }
-  p0=P[fd0[face_num]];
-  p1=P[fd1[face_num]];
-
-  int q=Q[0];
-  //"dados do triangulo (stdel)\n";
-  Triangle * triang = new Triangle(p0,q);
-  PhElem<1> * localphel = new PhElem<1>();// So um campo
-  localphel->set_ptr_stdel(triang,triang);
-  localphel->set_type(2); // triangulo
-  localphel->set_ptvert(vert); // array de vertices recebido nos argumentos
-  localphel->set_Vert_map(3,lvert_map);
-  localphel->compute_JV(0);// Jacobiano J deve ser calculado antes do vetor
-    cout << "Tetrahedral  dados do triangulo (stdel) 0\n";
-  //inicia_vetores();// zera o vetor b de localphel
-  int count = 0;
-  localphel->inicia_gbnmap(0,count);// inicia gbnmap[i]=i,sgn[i]=1, i=0,nn-1;
-     cout << "Tetrahedral  dados do triangulo (stdel) 1\n";
-  // Encontrar os nos.
-  //Criar trimap[]; mapeamento dos nos do triangulo standard sobre
-  // os nos globais
-  localFaceModeMap(face_num,p0,trimap); // mapeia o triangulo local no tetraedro
- cout << "Tetrahedral   dados do triangulo (stdel) 2\n";
+    const int varn = 0;
+    //const int NFields = 1;
+    int lvert_map[3];
+    int p0,q;
+    //int p1;
+    //
+    q =Q[fd0[face_num]];
+    p0=P[fd0[face_num]];
+    
+    Triangle * triang = new Triangle(p0,q);
+    const int lnn = triang->nn_val();
+    const int lnb = triang->nb_val();
+    const int lni = lnn - lnb;
+    double Xl[lnn];
+    double JV[q*q];
+    int lnmap[lnn];
+    int lsgn[lnn];
+    int lbflag[lnn];
+    int tri2tet[lnn];// mapeia modos do tringulo sobre os do tetraedro
+    // construcao do mapa dos vertices locais em vertices globais
+    /* int iaux=0;
+     for ( iaux=0;iaux<nn;++iaux){
+     cout << "mode ["<< iaux<< "]"; mode_[iaux].print();
+     
+     }
+     cout << "saiu com i = "<< iaux<< endl;
+     */
+    for(int i=0;i<3;++i) {
+        lvert_map[i]=vert_map[face[face_num][i]];
+        //cout << "lvert_map["<< i << "] = "<< lvert_map[i] << endl;
+    }
+    cout << "Dentro do Hexahedral::Dirichlet face " <<face_num<<endl;
+    localFaceModeMap(face_num,p0,tri2tet); // mapeia os modos do triangulo local no tetraaedro
+    for(int i=0;i<lnn;++i){
+        int ii=nmap[tri2tet[i]]; // indice do modo no tetraedro
+        bflag[ii]=0; // conhecido
+    }
+    
+    for(int i=0;i<lnn;i++){
+        lnmap[i]=i;
+        lsgn[i]=1; // todos positivos; o sinal nao muda entre hex e sub quadrilateral
+        lbflag[i]=1;
+        Xl[i]=0.0;
+    }
+    for(int j=0;j<4;++j){
+        triang->Dirichlet(j,vert,lvert_map,lnmap,lsgn,lbflag,Xl,func);
+    }
+    
+    for(int i=0;i<lnn;i++){
+        cout << "i = "<< i<<" lbflag[i] = "<< lbflag[i] << " Xl[i] = "<< Xl[i] << std::endl;
+    }
+    //ni=0;
+    triang->Jacobian(vert,lvert_map,JV);// Jacobiano do quadrilateral
+    if(lni>0){
+        //cout << "calcular o produto interno de f por phi dos "<< ni << " modos internos"<< endl;
+        
+#ifdef _NEWMAT
+        // newmat
+        NEWMAT::Matrix Mi(lni,lni);
+        NEWMAT::ColumnVector B(lni);
+#endif
+        
+        //fprintf(file,"\n\n%5d\n",ni*ni);
+        //printf("Matriz Mi\n");
+        for(int i=lnb;i<lnn;++i){
+            int ii=i-lnb;
+            Mi.element(ii,ii)=triang->mass(i,i,JV);
+            // printf("%3d %3d %g\n",ii,ii,Mi.element(ii,ii));
+            for(int j=i+1;j<lnn;j++){
+                int jj=j-lnb;
+                double aux=triang->mass(i,j,JV);
+                Mi.element(ii,jj)=aux;
+                Mi.element(jj,ii)=aux;
+                //printf("%3d %3d %g\n%3d %3d %g\n",ii,jj,aux,jj,ii,aux);
+            }
+        }
+        
+        int lNGQP = triang->NGQP_val();
+        double phi[lNGQP];
+        double f[lNGQP];
+        // inicializar f;
+        triang->computeFuncGQ(f,vert,lvert_map,func);
+        for(int j=0;j<lnb;j++){
+            triang->eval_Phi(j,phi);
+            double aux = Xl[j];
+            for(int k=0;k<lNGQP;k++) {f[k] -= (aux*phi[k]);}
+        }
+        double b[lnn];
+        triang->vector_of_integral_of_f_Phi_dv(b,f,JV);
+        //fprintf(file,"%5d\n",ni);
+        for(int i=0;i<lni;i++){
+            B.element(i)=b[i+lnb];
+            //fprintf(file,"%g ",B[i]);
+        }
+        //fprintf(file,"\n");
+        
+#ifdef _NEWMAT
+        NEWMAT::ColumnVector Y = Mi.i() * B; // newmat
+#endif
+        
+        for(int i=lnb;i<lnn;++i){
+            int ii = nmap[tri2tet[i]];
+            Xbc[ii]=lsgn[i]*Y.element(i-lnb);
+        }
+    }
+    // fim de if(ni>0)
+    for(int i=0;i<lnb;++i){
+        int ii = nmap[tri2tet[i]];
+        Xbc[ii]=lsgn[i]*Xl[i]; // no contorno
+    }
+    delete triang;    triang = nullptr;
    
-  cout << "chamando projetar_C0 para triangulo (localphel)"<< endl;
-  localphel->projetar_C0(nullptr, func, varn);
-
-   //mapeia os resultados sobre os modos globais
-  for(i=0;i<triang->nn_val();++i){
-    ii=trimap[i]; // indice do modo no tetraedro
-    Xbc[nmap[ii]]=localphel->show_u(varn,i)*sgn[ii];
-    bflag[nmap[ii]]=0; // conhecido
-  }
-  localphel->finaliza_vetores();
-  delete localphel;
-  delete triang;
-  printf("Saindo Tetrahedral::Dirichlet para face %d\n\n",face_num);
+    printf("Saindo Tetrahedral::Dirichlet para face %d\n\n",face_num);
 };
-
+// **************************************************************************
 void Tetrahedral::face_Jacobian(const int face_num,
                                const Vertice vert[],
                                const int vert_map[], // numero global dos vertices dos nos

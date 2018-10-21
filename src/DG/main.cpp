@@ -73,8 +73,8 @@ int main(int argc, char* argv[])
     // Driver contem as especificacoes dos algoritmos a serem usados
     // Deve ser usado para mudar os parâmetros como o tipo de solver
         
-    //p->Driver();
-    p->Testar_gbnmap_continuous();
+    p->Driver();
+   // p->Testar_gbnmap_continuous();
     // Criar o nox solver my_solver
     // Teuchos::RCP<My_Nox_Problem<DG_Prob>>  nox_problem =
     // Teuchos::rcp(new My_Nox_Problem<DG_Prob> (*p,Comm));

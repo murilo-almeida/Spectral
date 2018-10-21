@@ -1445,7 +1445,7 @@ void Hexahedral::Dirichlet(const int face_num,
     lvert_map[i]=vert_map[face[face_num][i]];
     //cout << "lvert_map["<< i << "] = "<< lvert_map[i] << endl;
   }
-  cout << "Dentro do Hexahedral::Dirichlet\n terminou localphel->projetar_C0 da face " <<face_num<<endl;
+  cout << "Dentro do Hexahedral::Dirichlet face " <<face_num<<endl;
     
   localFaceModeMap(face_num,quad2hex); // mapeia os modos do quadrilatero local no hexaedro
   for(int i=0;i<lnn;++i){

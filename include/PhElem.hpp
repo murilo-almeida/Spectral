@@ -879,49 +879,49 @@ void PhElem<NumVariaveis>::projetar_C0(FILE *file,
                                        const int & ivar)
 {
   //printf("\nComeco de PhElem::projetar_C0 variavel %d\n",ivar);
-  int i,j,ii,jj,k;
-  int nb=numb[ivar];//ptr_stdel[ivar]->nb_val();
-  int nn=numn[ivar];//ptr_stdel[ivar]->nn_val();
-  int ni=nn-nb;
+  //int i,j,ii,jj,k;
+  int _nb=/*numb[ivar];*/ ptr_stdel[ivar]->nb_val();
+  int _nn=/*numn[ivar];*/ ptr_stdel[ivar]->nn_val();
+  int _ni=_nn-_nb;
   //cout << "PhElem::projetar_C0 ni = "<< ni << endl;
   double aux=0.0;
-  int nmap[nn],bflag[nn],sgn[nn];
-  double Xl[nn];// coeficientes dos modos locais; vetor a ser calculado
+  int nmap[_nn],bflag[_nn],sgn[_nn];
+  double Xl[_nn];// coeficientes dos modos locais; vetor a ser calculado
   //cout << "\n Projetar C0\n";
   // cout << "nb "<< nb << " nn "<< nn <<" nborder "<< nborder<< "\n";
-  for(i=0;i<nn;i++){
+  for(int i=0;i<_nn;i++){
     nmap[i]=i;
     sgn[i]=1;
     bflag[i]=1;
     Xl[i]=0.0;
   }
 
-  for(j=0;j<numborders;j++){
+  for(int j=0;j<numborders;j++){
     cout << "Chamar Dirichlet (ptr_stdel) para border = "<< j << endl;
     ptr_stdel[ivar]->Dirichlet(j,ptvert,Vert_map,nmap,sgn,bflag,Xl,func);
     // cout << "saindo de Dirichlet para a face "<< j << endl;
     //for(int k=0;k<nn;++k) cout << "Xl["<< k << "%d] = " <<Xl[k] << endl;
   }
-  //cout << "Terminou loop sobre as bordas (ptr_stdel)\nRetornou a PhElem::projetar\n";
+  cout << "Terminou loop sobre as bordas (ptr_stdel)\nRetornou a PhElem::projetar\n";
 
   //ni=0;
-  if(ni>0){
+  if(_ni>0){
     //cout << "calcular o produto interno de f por phi dos "<< ni << " modos internos"<< endl;
 
 #ifdef _NEWMAT
     // newmat
-    NEWMAT::Matrix Mi(ni,ni);
-    NEWMAT::ColumnVector B(ni);
+    NEWMAT::Matrix Mi(_ni,_ni);
+    NEWMAT::ColumnVector B(_ni);
 #endif
 
     //fprintf(file,"\n\n%5d\n",ni*ni);
     //printf("Matriz Mi\n");
-    for(i=nb;i<nn;++i){
-      ii=i-nb;
+    for(int i=_nb;i<_nn;++i){
+      int ii=i-_nb;
       Mi.element(ii,ii)=ptr_stdel[ivar]->mass(i,i,JV);
       // printf("%3d %3d %g\n",ii,ii,Mi.element(ii,ii));
-      for(j=i+1;j<nn;j++){
-        jj=j-nb;
+      for(int j=i+1;j<_nn;j++){
+        int jj=j-_nb;
         aux=ptr_stdel[ivar]->mass(i,j,JV);
         Mi.element(ii,jj)=aux;
         Mi.element(jj,ii)=aux;
@@ -929,21 +929,21 @@ void PhElem<NumVariaveis>::projetar_C0(FILE *file,
       }
     }
 
-    int NGQP = ptr_stdel[ivar]->NGQP_val();
-    double phi[NGQP];
-    double f[NGQP];
+    int _NGQP = ptr_stdel[ivar]->NGQP_val();
+    double phi[_NGQP];
+    double f[_NGQP];
     // inicializar f;
     ptr_stdel[ivar]->computeFuncGQ(f,ptvert,Vert_map,func);
-    for(j=0;j<nb;j++){
+    for(int j=0;j<_nb;j++){
       ptr_stdel[ivar]->eval_Phi(j,phi);
       double aux = Xl[j];
-      for(k=0;k<NGQP;k++) {f[k] -= (aux*phi[k]);}
+      for(int k=0;k<_NGQP;k++) {f[k] -= (aux*phi[k]);}
     }
-    double b[nn];
+    double b[_nn];
     ptr_stdel[ivar]->vector_of_integral_of_f_Phi_dv(b,f,JV);
     //fprintf(file,"%5d\n",ni);
-    for(i=0;i<ni;i++){
-      B.element(i)=b[i+nb];
+    for(int i=0;i<_ni;i++){
+      B.element(i)=b[i+_nb];
       //fprintf(file,"%g ",B[i]);
     }
     //fprintf(file,"\n");
@@ -952,16 +952,16 @@ void PhElem<NumVariaveis>::projetar_C0(FILE *file,
     NEWMAT::ColumnVector Y = Mi.i() * B; // B=Y ; // newmat
 #endif
 
-    for(i=nb;i<nn;++i)u0[ivar][i]=Y.element(i-nb);
+    for(int i=_nb;i<_nn;++i)u0[ivar][i]=Y.element(i-_nb);
   }
   // fim de if(ni>0)
 
-  for(i=0;i<nb;++i) u0[ivar][i]=Xl[i]; // no contorno
+  for(int i=0;i<_nb;++i) u0[ivar][i]=Xl[i]; // no contorno
 
   if(file != NULL)
     ptr_stdel[ivar]->printtofile(file,u0[ivar],func,ptvert,Vert_map);
 
-  //cout << "Terminou  PhElem::projetar_C0\n\n";
+  cout << "Terminou  PhElem::projetar_C0\n\n";
 
 };
 
@@ -1367,9 +1367,12 @@ void PhElem<NumVariaveis>::transformacao_direta(double f[],const int & ivar)
 template<int NumVariaveis>
 void PhElem<NumVariaveis>::compute_JV(const int & ia)
 {
+    cout << " PhElem<NumVariaveis>::compute_JV(const int & ia): ia =  " << ia << endl;
+    cout << " PhElem<NumVariaveis>::compute_JV: NumVariaveis =  " << NumVariaveis << endl;
   if(ia < NumVariaveis) {
-    int q0=ptr_stdel[ia]->NGQP_val();
       printf("PhElem<NumVariaveis>::compute_JV Calculo do Jacobiano: variavel %d\n",ia);
+    int q0=ptr_stdel[ia]->NGQP_val();
+    
     // Armazenamento dinamico da memoria para JV;
     // Opcao 1: Uma matriz com 3 indices
     //   JV = new double ** [q0];
@@ -1383,7 +1386,7 @@ void PhElem<NumVariaveis>::compute_JV(const int & ia)
     //JV[ia] = new double [q0*q1*q2]; // opcao 2: um unico vetor
     JV = new double [q0];
 
-    //printf("ANTES: Calculo do Jacobiano da var %d  dimensao=%d\n",ia,q0);
+    printf("ANTES: Calculo do Jacobiano da var %d  dimensao=%d\n",ia,q0);
 
     ptr_stdel[ia]->Jacobian(ptvert,Vert_map,JV);
   }

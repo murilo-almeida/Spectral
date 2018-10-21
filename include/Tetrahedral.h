@@ -17,7 +17,7 @@ class Tetrahedral : public Stdel
   void map_aresta(int imin,int imax,int sgn0,int ng0,int map[],int sgn[]);
   void map_face(int & imin,int P0,int P1,int sign0,int ng0,int map[],int sgn[]);
   //int show_vtk_type() const {return vtk_type;};
-  void localFaceModeMap(const int fnum,const int P,int trimap[]);
+  void localFaceModeMap(const int fnum,const int _P,int trimap[]);
   
   /*
   void Dirichlet(const int face,

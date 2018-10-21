@@ -1271,7 +1271,7 @@ void Triangle::Dirichlet(const int aresta,
                          double X[],
                          double (*f)(double,double,double))
 {
-  cout << "Entrando em Triangle::Dirichlet" << endl;
+    cout << "Entrando em Triangle::Dirichlet  aresta:" <<aresta << endl;
   // **************************************************************************
   // flag = 0 : Dirichlet, valor conhecido, bflag=0
   //      = 1 : valor desconhecido, bflag=1
