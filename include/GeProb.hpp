@@ -120,12 +120,12 @@ protected:
   int NL = 0;
   int NF = 0;
   int NBORDER = 0;
-  Vertice * V;
+  Vertice * V = nullptr;
   std::vector<ARESTA>   Aresta;
   std::vector<FACE>     Face;
-  ElemType * el; // Aqui eh o ponto chave de usar o <typename ElemType>
+  ElemType * el = nullptr; // Aqui eh o ponto chave de usar o <typename ElemType>
   //Elemento * Elem;
-  int * novoNum;
+  int * novoNum = nullptr;
 
 
   //std::vector<EDGE>     border;
@@ -173,11 +173,15 @@ template <typename ElemType,int N_VAR,int N_FIELDS>
 GeProb<ElemType,N_VAR,N_FIELDS>::~GeProb()
 {cout<<"\nGeProb destructor\n";
 
+    if (V!=nullptr){
   delete [] V; V=nullptr;
-
+    }
+    if(el!=nullptr){
   delete [] el; el=nullptr;
-
+    }
+    if(novoNum != nullptr){
   delete [] novoNum; novoNum = nullptr;
+    }
   // Terminou de estabelecer as condicoes de contorno
 
   if(border != nullptr) {
@@ -338,7 +342,7 @@ void GeProb<ElemType,N_VAR,N_FIELDS>::Processar_elementos()
   for(int i=0; i < N_FIELDS; ++i) {
     //	cout << "DG_Prob::set_orders:  "<< i << '\n';
     // cout << "Aloca memoria dinamica\n ";
-    //ptrLinear[i] = new Linear(Field[i].P,Field[i].Q);// type =1
+    ptrLinear[i] = new Linear(Field[i].P,Field[i].Q);// type =1
     ptrTriang[i] = new Triangle(Field[i].P,Field[i].Q);// type =2
     ptrQuadri[i] = new  Quadrilateral(Field[i].P,Field[i].Q);// type =3
     ptrTetrahedral[i] = new  Tetrahedral(Field[i].P,Field[i].Q);// type =4
